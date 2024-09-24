@@ -8,10 +8,30 @@ namespace DBCodeGen.VisualStudioSupport
 		public VCProject( string fileName ) : base( fileName )
 		{
 			XmlDocument project = LoadProject();
-			
-			XmlNode projectNameNode = project.SelectSingleNode( "/VisualStudioProject/@Name" );
+
+            var fname = System.IO.Path.GetFileNameWithoutExtension( fileName );
+            SetProjectName(fname);
+            foreach (var node in project.ChildNodes)
+			{
+				var nname = node.ToString();
+
+                //SetProjectName(nname);
+            }
+
+			var projNode = project.GetElementsByTagName("Project");
+
+            XmlNode projectNameNode = project.SelectSingleNode( "/VisualStudioProject/@Name" );
 			if ( projectNameNode != null )
 				SetProjectName( projectNameNode.Value );
+			else
+			{
+
+				XmlNode projectNameNode2 = project.SelectSingleNode("/Project/ItemGroup/RootNamespace");
+				if(projectNameNode2 != null )
+				{
+                    SetProjectName(projectNameNode2.Value);
+                }
+            }
 
 			XmlNodeList filesNodes = project.SelectNodes( "/VisualStudioProject/Files//File/@RelativePath" );
 			if ( filesNodes != null )

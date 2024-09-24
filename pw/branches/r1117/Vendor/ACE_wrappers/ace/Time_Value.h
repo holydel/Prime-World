@@ -21,7 +21,7 @@
 # pragma once
 #endif /* ACE_LACKS_PRAGMA_ONCE */
 
-# include "ace/os_include/os_time.h"
+#include "ace/os_include/os_time.h"
 
 // Define some helpful constants.
 // Not type-safe, and signed.  For backward compatibility.

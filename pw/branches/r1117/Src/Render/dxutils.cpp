@@ -309,9 +309,9 @@ void SharedD3DBufferST<_DynBuffer>::QuerySize(UINT _size)
 }
 
 // Explicit instantiation
-INTERMODULE_EXPORT void SharedD3DBufferST<DXVertexBufferDynamicRef>::QuerySize(UINT _size);
-INTERMODULE_EXPORT void SharedD3DBufferST<DXIndexBufferDynamicRef>::QuerySize(UINT _size);
-INTERMODULE_EXPORT void SharedD3DBufferST<DXIndexBufferDynamicRef16>::QuerySize(UINT _size);
+//INTERMODULE_EXPORT void SharedD3DBufferST<DXVertexBufferDynamicRef>::QuerySize(UINT _size);
+//INTERMODULE_EXPORT void SharedD3DBufferST<DXIndexBufferDynamicRef>::QuerySize(UINT _size);
+//INTERMODULE_EXPORT void SharedD3DBufferST<DXIndexBufferDynamicRef16>::QuerySize(UINT _size);
 
 
 template<class _DynBuffer>

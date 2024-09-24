@@ -5,3 +5,5 @@
 #include "specific.h"
 #include "../Render/NullRenderSignal.h"
 
+//FILE _iob[] = { *stdin, *stdout, *stderr };
+//extern "C" FILE* __cdecl __iob_func(void) { return _iob; }

@@ -193,7 +193,7 @@ void LightningFX::Update(CVec3 const& a, CVec3 const& b, float dt)
 	Multiply(&xform, world, orientation);
 
 	// animate V coordinate in texture atlas
-	float increment = 0.0f;
+	double increment = 0.0f;
 	frameOffset = modf(frameOffset + params.animSpeed * dt, &increment);
   int animFrameCount = Max(0, params.animLastFrame - params.animFirstFrame) + 1;
 	switch (params.animType)

@@ -86,6 +86,7 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <CodeAnalysisRules />
     <CodeAnalysisRuleAssemblies />
+    <IgnoreImportLibrary>true</IgnoreImportLibrary>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>$(ProjectDir)..\_$(Configuration)\</OutDir>
@@ -131,6 +132,7 @@
       <WarningLevel>Level4</WarningLevel>
       <TreatWarningAsError>false</TreatWarningAsError>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4458;</DisableSpecificWarnings>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -149,7 +151,7 @@ dir&gt;nul
 </Command>
     </PreLinkEvent>
     <Link>
-      <AdditionalDependencies>zdll.lib;jpeglib.lib;freetype244MT_D.lib;Tamarin.lib;winmm.lib;GlU32.Lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>legacy_stdio_definitions.lib;zdll.lib;jpeglib.lib;freetype244MT_D.lib;Tamarin.lib;winmm.lib;GlU32.Lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)$(ProjectName).dll</OutputFile>
       <AdditionalLibraryDirectories>../../vendor\zlib\lib;../../vendor/jpeglib/lib;../../vendor/freetype/lib;../../vendor/Tamarin/lib/Debug;../../vendor/Gl/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ModuleDefinitionFile>$(IntDir)$(ProjectName).def</ModuleDefinitionFile>
@@ -162,6 +164,10 @@ dir&gt;nul
     <PostBuildEvent>
       <Command>"$(ProjectDir)..\..\vendor\BuildUtils\CopyReference.exe" $(ProjectPath) $(Configuration) $(TargetDir)</Command>
     </PostBuildEvent>
+    <ProjectReference>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+      <UseLibraryDependencyInputs>true</UseLibraryDependencyInputs>
+    </ProjectReference>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>

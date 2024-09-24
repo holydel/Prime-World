@@ -129,6 +129,7 @@
       <WarningLevel>Level4</WarningLevel>
       <TreatWarningAsError>false</TreatWarningAsError>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4458;</DisableSpecificWarnings>
     </ClCompile>
     <PreLinkEvent>
       <Command>cd $(IntDir)
