@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Common">
+      <UniqueIdentifier>{dfe7f8d7-a8bd-4bee-a66c-dea3df65a002}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Binds">
+      <UniqueIdentifier>{738c689f-3547-4a1d-941a-82fa5ae74398}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectInput">
+      <UniqueIdentifier>{617fc4cb-9c14-4c51-b7a2-f39ead60a218}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="specific.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Binds.h">
+      <Filter>Binds</Filter>
+    </ClInclude>
+    <ClInclude Include="BindsContainer.h">
+      <Filter>Binds</Filter>
+    </ClInclude>
+    <ClInclude Include="BindsContainerImpl.hpp">
+      <Filter>Binds</Filter>
+    </ClInclude>
+    <ClInclude Include="ControlsSet.h">
+      <Filter>Binds</Filter>
+    </ClInclude>
+    <ClInclude Include="InputCommandInstance.h">
+      <Filter>Binds</Filter>
+    </ClInclude>
+    <ClInclude Include="InputCommandRef.h">
+      <Filter>Binds</Filter>
+    </ClInclude>
+    <ClInclude Include="InputEvent.h">
+      <Filter>Binds</Filter>
+    </ClInclude>
+    <ClInclude Include="Section.h">
+      <Filter>Binds</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemInputEvents.h">
+      <Filter>Binds</Filter>
+    </ClInclude>
+    <ClInclude Include="HwInput.h">
+      <Filter>DirectInput</Filter>
+    </ClInclude>
+    <ClInclude Include="HwInputInterface.h">
+      <Filter>DirectInput</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Binds.cpp">
+      <Filter>Binds</Filter>
+    </ClCompile>
+    <ClCompile Include="ControlsSet.cpp">
+      <Filter>Binds</Filter>
+    </ClCompile>
+    <ClCompile Include="InputCommandInstance.cpp">
+      <Filter>Binds</Filter>
+    </ClCompile>
+    <ClCompile Include="InputCommandRef.cpp">
+      <Filter>Binds</Filter>
+    </ClCompile>
+    <ClCompile Include="InputConsoleCommands.cpp">
+      <Filter>Binds</Filter>
+    </ClCompile>
+    <ClCompile Include="InputEvent.cpp">
+      <Filter>Binds</Filter>
+    </ClCompile>
+    <ClCompile Include="Section.cpp">
+      <Filter>Binds</Filter>
+    </ClCompile>
+    <ClCompile Include="SystemInputEvents.cpp">
+      <Filter>Binds</Filter>
+    </ClCompile>
+    <ClCompile Include="HwInput.cpp">
+      <Filter>DirectInput</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="HwInputKeys.inl">
+      <Filter>DirectInput</Filter>
+    </None>
+    <None Include="Input.component" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\Version.rc" />
+  </ItemGroup>
+</Project>

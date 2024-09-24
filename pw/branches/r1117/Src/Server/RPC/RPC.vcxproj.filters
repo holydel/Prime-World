@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="DebugVarUpdate">
+      <UniqueIdentifier>{006094e0-5b51-4301-b6ff-8942e074ccd6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\DebugVarUpdate\DebugVarReporter.cpp">
+      <Filter>DebugVarUpdate</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DebugVarUpdate\DebugVarRequester.cpp">
+      <Filter>DebugVarUpdate</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DebugVarUpdate\LDebugVarReporter.auto.cpp">
+      <Filter>DebugVarUpdate</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DebugVarUpdate\RDebugVarReporter.auto.cpp">
+      <Filter>DebugVarUpdate</Filter>
+    </ClCompile>
+    <ClCompile Include="Arguments.cpp" />
+    <ClCompile Include="Base.cpp" />
+    <ClCompile Include="ClassFactory.cpp" />
+    <ClCompile Include="CppWrapper.cpp" />
+    <ClCompile Include="EntityMap.cpp" />
+    <ClCompile Include="GateKeeper.cpp" />
+    <ClCompile Include="Parser.cpp" />
+    <ClCompile Include="PollJob.cpp" />
+    <ClCompile Include="RPC.cpp" />
+    <ClCompile Include="RpcArgs.cpp" />
+    <ClCompile Include="RpcDataProcessor.cpp" />
+    <ClCompile Include="RpcEntityHandler.cpp" />
+    <ClCompile Include="RpcGate.cpp" />
+    <ClCompile Include="RpcMultiPacketPipe.cpp" />
+    <ClCompile Include="RpcNode.cpp" />
+    <ClCompile Include="RpcNodes.cpp" />
+    <ClCompile Include="RpcPipeEntities.cpp" />
+    <ClCompile Include="RpcThreadPool.cpp" />
+    <ClCompile Include="RpcUtils.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="Transaction.cpp" />
+    <ClCompile Include="TransportPipeTrackerFactory.cpp" />
+    <ClCompile Include="TransportPipeTrafficTracker.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\DebugVarUpdate\DebugVarReporter.h">
+      <Filter>DebugVarUpdate</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DebugVarUpdate\DebugVarRequester.h">
+      <Filter>DebugVarUpdate</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DebugVarUpdate\LDebugVarReporter.auto.h">
+      <Filter>DebugVarUpdate</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DebugVarUpdate\RDebugVarReporter.auto.h">
+      <Filter>DebugVarUpdate</Filter>
+    </ClInclude>
+    <ClInclude Include="Arguments.h" />
+    <ClInclude Include="ArgWriter.h" />
+    <ClInclude Include="Base.h" />
+    <ClInclude Include="Calls.h" />
+    <ClInclude Include="ClassFactory.h" />
+    <ClInclude Include="CppWrapper.h" />
+    <ClInclude Include="EntityMap.h" />
+    <ClInclude Include="GateKeeper.h" />
+    <ClInclude Include="IfaceRequester.h" />
+    <ClInclude Include="Interfaces.h" />
+    <ClInclude Include="P2PNode.h" />
+    <ClInclude Include="Packets.h" />
+    <ClInclude Include="Parser.h" />
+    <ClInclude Include="PollJob.h" />
+    <ClInclude Include="ReplicationTypes.h" />
+    <ClInclude Include="RPC.h" />
+    <ClInclude Include="RpcArgs.h" />
+    <ClInclude Include="RpcDataProcessor.h" />
+    <ClInclude Include="RpcEntityHandler.h" />
+    <ClInclude Include="RpcGate.h" />
+    <ClInclude Include="RpcMultiPacketPipe.h" />
+    <ClInclude Include="RpcNode.h" />
+    <ClInclude Include="RpcNodes.h" />
+    <ClInclude Include="RpcPipeEntities.h" />
+    <ClInclude Include="RpcThreadPool.h" />
+    <ClInclude Include="RpcUtils.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="TransportPipeTrackerFactory.h" />
+    <ClInclude Include="TransportPipeTrafficTracker.h" />
+    <ClInclude Include="Types.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\DebugVarUpdate\Report.component">
+      <Filter>DebugVarUpdate</Filter>
+    </None>
+    <None Include="all.component" />
+    <None Include="RPCMixin.component" />
+    <None Include="simple.test.component" />
+    <None Include="WalkingRabbit.test.component" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\..\Version.rc" />
+  </ItemGroup>
+</Project>

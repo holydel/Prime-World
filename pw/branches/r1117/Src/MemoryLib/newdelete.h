@@ -54,21 +54,21 @@ NEWDEL_RETARG void* NEWDEL_CCDECL operator new[](size_t size, int , const char *
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #endif // #ifdef CHECK_MEMORY_LEAKS
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-#ifdef WIN32
-#ifndef ALLOC_DATA_DEBUG_INIT
-  inline void* NEWDEL_CCDECL operator new(size_t, void *p) { return (p); }
-#else
-  //Если убрать static в объявлении, то данный вариант подлинкуется к ATL и там упадёт 
-  //А всё потому, что стандарт не разрешает переопределение placement new
-  inline static void* NEWDEL_CCDECL operator new(size_t size, void *p) 
-  { 
-    memset(p, 0xCD, size);
-    return p;
-  }
-#endif
-
-inline void NEWDEL_CCDECL operator delete(void *, void *) { return; }
-#endif // WIN32
+//#ifdef WIN32
+//#ifndef ALLOC_DATA_DEBUG_INIT
+//  inline void* NEWDEL_CCDECL operator new(size_t, void *p) { return (p); }
+//#else
+//  //Если убрать static в объявлении, то данный вариант подлинкуется к ATL и там упадёт 
+//  //А всё потому, что стандарт не разрешает переопределение placement new
+//  inline static void* NEWDEL_CCDECL operator new(size_t size, void *p) 
+//  { 
+//    memset(p, 0xCD, size);
+//    return p;
+//  }
+//#endif
+//
+//inline void NEWDEL_CCDECL operator delete(void *, void *) { return; }
+//#endif // WIN32
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // define ::std::nothrow tag due ACE use it
 #ifndef __NOTHROW_T_DEFINED

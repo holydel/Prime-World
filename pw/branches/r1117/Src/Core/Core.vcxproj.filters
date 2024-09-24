@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Common">
+      <UniqueIdentifier>{53b22576-f840-43bd-a9c4-1b61172fbe38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Transceiver">
+      <UniqueIdentifier>{a00f796b-1e79-4cfb-8cad-63d8bf4a7cb6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Transceiver\Game Commands">
+      <UniqueIdentifier>{6e17b1b5-42b8-4b02-90d2-d97ae26e4daa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Transceiver\Replay">
+      <UniqueIdentifier>{738208a1-5b99-43be-86ca-6b4397cd2a22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CoreFSM">
+      <UniqueIdentifier>{447a7125-a3f6-4e38-9474-32dc5c8c0922}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CoreFSM\Base">
+      <UniqueIdentifier>{43b55e28-1a7c-4393-baa1-d0d06d69e9ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="World">
+      <UniqueIdentifier>{80fca8a1-b6a9-4fbe-a591-14e163ec439f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="World\ScriptSystem">
+      <UniqueIdentifier>{760c48e3-8389-4b51-a8fe-c1068abaab9e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CRC">
+      <UniqueIdentifier>{d9138fa1-fc8c-44be-b2b1-2447a1c6fafe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameTypes">
+      <UniqueIdentifier>{e4cf13f8-09b6-4071-bad5-7d1daf620283}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="specific.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="RemoteCommandScheduler.h">
+      <Filter>Transceiver</Filter>
+    </ClInclude>
+    <ClInclude Include="Scheduler.h">
+      <Filter>Transceiver</Filter>
+    </ClInclude>
+    <ClInclude Include="SessionRunner.h">
+      <Filter>Transceiver</Filter>
+    </ClInclude>
+    <ClInclude Include="Transceiver.h">
+      <Filter>Transceiver</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandSerializer.h">
+      <Filter>Transceiver\Game Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="GameCommand.h">
+      <Filter>Transceiver\Game Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldCommand.h">
+      <Filter>Transceiver\Game Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Replay.h">
+      <Filter>Transceiver\Replay</Filter>
+    </ClInclude>
+    <ClInclude Include="CoreFSM.h">
+      <Filter>CoreFSM</Filter>
+    </ClInclude>
+    <ClInclude Include="CoreFSMState.h">
+      <Filter>CoreFSM</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseFSM.h">
+      <Filter>CoreFSM\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseState.h">
+      <Filter>CoreFSM\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldBase.h">
+      <Filter>World</Filter>
+    </ClInclude>
+    <ClInclude Include="AdventureScriptMachine.h">
+      <Filter>World\ScriptSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="BinStatsCollector.h">
+      <Filter>CRC</Filter>
+    </ClInclude>
+    <ClInclude Include="GameTypes.h">
+      <Filter>GameTypes</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="RemoteCommandScheduler.cpp">
+      <Filter>Transceiver</Filter>
+    </ClCompile>
+    <ClCompile Include="Transceiver.cpp">
+      <Filter>Transceiver</Filter>
+    </ClCompile>
+    <ClCompile Include="CommandSerializer.cpp">
+      <Filter>Transceiver\Game Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="GameCommand.cpp">
+      <Filter>Transceiver\Game Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldCommand.cpp">
+      <Filter>Transceiver\Game Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Replay.cpp">
+      <Filter>Transceiver\Replay</Filter>
+    </ClCompile>
+    <ClCompile Include="CoreFSM.cpp">
+      <Filter>CoreFSM</Filter>
+    </ClCompile>
+    <ClCompile Include="CoreFSMState.cpp">
+      <Filter>CoreFSM</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseFSM.cpp">
+      <Filter>CoreFSM\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseState.cpp">
+      <Filter>CoreFSM\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="AdventureScriptMachine.cpp">
+      <Filter>World\ScriptSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="BinStatsCollector.cpp">
+      <Filter>CRC</Filter>
+    </ClCompile>
+    <ClCompile Include="GameTypes.cpp">
+      <Filter>GameTypes</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Transceiver.component">
+      <Filter>Transceiver</Filter>
+    </None>
+    <None Include="CoreFSM.component">
+      <Filter>CoreFSM</Filter>
+    </None>
+    <None Include="GameTypes.component">
+      <Filter>GameTypes</Filter>
+    </None>
+    <None Include="all.component" />
+    <None Include="PlayerAdapters.component" />
+    <None Include="World.component" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\Version.rc" />
+  </ItemGroup>
+</Project>

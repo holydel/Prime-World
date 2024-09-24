@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="Current" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">Win32</Platform>
@@ -25,6 +25,11 @@
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|Win32' ">
     <DebugSymbols>False</DebugSymbols>
@@ -38,6 +43,7 @@
     <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|Win32' ">
     <DebugSymbols>True</DebugSymbols>
@@ -52,6 +58,7 @@
     <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Shipping|Win32' ">
     <OutputPath>..\_Shipping\</OutputPath>
@@ -61,6 +68,7 @@
     <PlatformTarget>x86</PlatformTarget>
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>none</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ShippingSingleExe|Win32' ">
     <OutputPath>..\_ShippingSingleExe\</OutputPath>
@@ -70,6 +78,7 @@
     <PlatformTarget>x86</PlatformTarget>
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>none</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ScintillaNET, Version=2.5.2.0, Culture=neutral, PublicKeyToken=948d6c9751444115, processorArchitecture=MSIL">
@@ -143,7 +152,7 @@
       <Project>{AEB9B15A-6C51-4B9B-8838-7254064A4E98}</Project>
       <Name>EditorLib</Name>
     </ProjectReference>
-    <ProjectReference Include="..\EditorNative\EditorNative.vcproj">
+    <ProjectReference Include="..\EditorNative\EditorNative.vcxproj">
       <Project>{8661805A-1298-4D53-8666-1FB9922886AF}</Project>
       <Name>EditorNative</Name>
     </ProjectReference>
@@ -159,7 +168,7 @@
       <Project>{5DFA0790-582A-4A71-93AE-A5D31AA7864F}</Project>
       <Name>MayaExeInteraction</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PF_EditorNative\PF_EditorNative.vcproj">
+    <ProjectReference Include="..\PF_EditorNative\PF_EditorNative.vcxproj">
       <Project>{8661805A-1298-4D53-8666-1FB9922886AE}</Project>
       <Name>PF_EditorNative</Name>
     </ProjectReference>

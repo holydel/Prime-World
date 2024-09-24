@@ -1,0 +1,948 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseSingleExe|Win32">
+      <Configuration>ReleaseSingleExe</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ShippingSingleExe|Win32">
+      <Configuration>ShippingSingleExe</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Shipping|Win32">
+      <Configuration>Shipping</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <ProjectGuid>{39AE0307-9E9E-4A5E-B962-25DE686C7CC2}</ProjectGuid>
+    <RootNamespace>Foundation</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseSingleExe|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ShippingSingleExe|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseSingleExe|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ShippingSingleExe|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>17.0.35209.166</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(ProjectDir)..\_$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)..\_$(Configuration)\$(ProjectName)\</IntDir>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules />
+    <CodeAnalysisRuleAssemblies />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(ProjectDir)..\_$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)..\_$(Configuration)\$(ProjectName)\</IntDir>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules />
+    <CodeAnalysisRuleAssemblies />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'">
+    <OutDir>$(ProjectDir)..\_$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)..\_$(Configuration)\$(ProjectName)\</IntDir>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules />
+    <CodeAnalysisRuleAssemblies />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ShippingSingleExe|Win32'">
+    <OutDir>$(ProjectDir)..\_$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)..\_$(Configuration)\$(ProjectName)\</IntDir>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules />
+    <CodeAnalysisRuleAssemblies />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseSingleExe|Win32'">
+    <OutDir>$(ProjectDir)..\_$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)..\_$(Configuration)\$(ProjectName)\</IntDir>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules />
+    <CodeAnalysisRuleAssemblies />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/MP /D_SCL_SECURE_NO_WARNINGS /D_SECURE_SCL=0 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>../..;../../vendor\zlib\include;../../Vendor/WTL/Include;../../vendor\CxxTest\Include;../../Vendor/CrashRpt/include;../;../../Vendor/StarForce;../../vendor/MD4;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_ALLOW_RTCc_IN_STL;WIN32;_WINDOWS;DLL;NDEBUG;_DO_ASSERT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling />
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <SmallerTypeCheck>false</SmallerTypeCheck>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <PreLinkEvent>
+      <Command>cd $(IntDir)
+..\..\..\vendor\BuildUtils\DefBuild.exe $(ProjectName).def
+if errorlevel 1 goto checklib
+:BuildImportLib
+lib /NOLOGO *.obj /def:$(ProjectName).def /MACHINE:X86 /out:"$(OutDir)$(ProjectName).lib"
+goto end
+:checklib
+if not exist "$(OutDir)$(ProjectName).lib" goto BuildImportLib
+:end
+dir&gt;nul
+</Command>
+    </PreLinkEvent>
+    <Link>
+      <AdditionalDependencies>zdll.lib;CxxTest.lib;DbgHelp.lib;Psapi.lib;detours.lib;detoured.lib;shlwapi.lib;Rpcrt4.lib;CrashRpt.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName).dll</OutputFile>
+      <AdditionalLibraryDirectories>../../vendor\zlib\lib;../../vendor\CxxTest\lib;../../vendor\DTW\lib\i386;../../vendor\Detour\lib\;../../vendor/CrashRpt/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ModuleDefinitionFile>$(IntDir)$(ProjectName).def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>NotSet</SubSystem>
+      <LargeAddressAware>true</LargeAddressAware>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <FixedBaseAddress />
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>"$(ProjectDir)..\..\vendor\BuildUtils\CopyReference.exe" $(ProjectPath) $(Configuration) $(TargetDir)</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/MP %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../..;../../vendor\zlib\include;../../Vendor/WTL/Include;../../vendor\CxxTest\Include;../../Vendor/CrashRpt/include;../;../../Vendor/StarForce;../..;../../vendor/MD4;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_ALLOW_RTCc_IN_STL;WIN32;_WINDOWS;DLL;_DEBUG;_DO_ASSERT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling />
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <SmallerTypeCheck>true</SmallerTypeCheck>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <PreLinkEvent>
+      <Command>cd $(IntDir)
+..\..\..\vendor\BuildUtils\DefBuild.exe $(ProjectName).def
+if errorlevel 1 goto checklib
+:BuildImportLib
+lib /NOLOGO *.obj /def:$(ProjectName).def /MACHINE:X86 /out:"$(OutDir)$(ProjectName).lib"
+goto end
+:checklib
+if not exist "$(OutDir)$(ProjectName).lib" goto BuildImportLib
+:end
+dir&gt;nul
+</Command>
+    </PreLinkEvent>
+    <Link>
+      <AdditionalDependencies>zdll.lib;CxxTestD.lib;DbgHelp.lib;Psapi.lib;detours.lib;detoured.lib;shlwapi.lib;rpcrt4.lib;CrashRpt.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName).dll</OutputFile>
+      <AdditionalLibraryDirectories>../../vendor\zlib\lib;../../vendor\CxxTest\lib;../../vendor\DTW\lib\i386;../../vendor\Detour\lib\;../../vendor/CrashRpt/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ModuleDefinitionFile>$(IntDir)$(ProjectName).def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>NotSet</SubSystem>
+      <LargeAddressAware>true</LargeAddressAware>
+      <FixedBaseAddress />
+      <ImportLibrary>$(OutDir)$(TargetName).lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>"$(ProjectDir)..\..\vendor\BuildUtils\CopyReference.exe" $(ProjectPath) $(Configuration) $(TargetDir)</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/MP /D_SCL_SECURE_NO_WARNINGS /D_SECURE_SCL=0 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>../..;../../vendor\zlib\include;../../Vendor/WTL/Include;../../vendor\CxxTest\Include;../../Vendor/CrashRpt/include;../;../../Vendor/StarForce;../../vendor/MD4;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_ALLOW_RTCc_IN_STL;WIN32;_WINDOWS;DLL;NDEBUG;_SHIPPING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling />
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <SmallerTypeCheck>false</SmallerTypeCheck>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <PreLinkEvent>
+      <Command>cd $(IntDir)
+..\..\..\vendor\BuildUtils\DefBuild.exe $(ProjectName).def
+if errorlevel 1 goto checklib
+:BuildImportLib
+lib /NOLOGO *.obj /def:$(ProjectName).def /MACHINE:X86 /out:"$(OutDir)$(ProjectName).lib"
+goto end
+:checklib
+if not exist "$(OutDir)$(ProjectName).lib" goto BuildImportLib
+:end
+dir&gt;nul
+</Command>
+    </PreLinkEvent>
+    <Link>
+      <AdditionalDependencies>zdll.lib;CxxTest.lib;DbgHelp.lib;Psapi.lib;shlwapi.lib;Rpcrt4.lib;CrashRpt.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName).dll</OutputFile>
+      <AdditionalLibraryDirectories>../../vendor\zlib\lib;../../vendor\CxxTest\lib;../../vendor\DTW\lib\i386;../../vendor/CrashRpt/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ModuleDefinitionFile>$(IntDir)$(ProjectName).def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>NotSet</SubSystem>
+      <LargeAddressAware>true</LargeAddressAware>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <FixedBaseAddress />
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>"$(ProjectDir)..\..\vendor\BuildUtils\CopyReference.exe" $(ProjectPath) $(Configuration) $(TargetDir)</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ShippingSingleExe|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/MP /D_SCL_SECURE_NO_WARNINGS /D_SECURE_SCL=0 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <AdditionalIncludeDirectories>../..;../../vendor\zlib\include;../../Vendor/WTL/Include;../../vendor\CxxTest\Include;../../Vendor/CrashRpt/include;../;../../Vendor/StarForce;../../vendor/MD4;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_ALLOW_RTCc_IN_STL;WIN32;_WINDOWS;STATIC_LIB;NDEBUG;_SHIPPING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling />
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <SmallerTypeCheck>false</SmallerTypeCheck>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_RELEASE;USE_SINGLE_RES_FILE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <PreLinkEvent>
+      <Command />
+    </PreLinkEvent>
+    <PostBuildEvent>
+      <Command>"$(ProjectDir)..\..\vendor\BuildUtils\CopyReference.exe" $(ProjectPath) $(Configuration) $(TargetDir)</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseSingleExe|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/MP /D_SCL_SECURE_NO_WARNINGS /D_SECURE_SCL=0 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <AdditionalIncludeDirectories>../..;../../vendor\zlib\include;../../Vendor/WTL/Include;../../vendor\CxxTest\Include;../../Vendor/CrashRpt/include;../;../../Vendor/StarForce;../../vendor/MD4;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_ALLOW_RTCc_IN_STL;WIN32;_WINDOWS;STATIC_LIB;NDEBUG;_DO_ASSERT;STARFORCE_PROTECTED;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling />
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <SmallerTypeCheck>false</SmallerTypeCheck>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_RELEASE;USE_SINGLE_RES_FILE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <PreLinkEvent>
+      <Command />
+    </PreLinkEvent>
+    <PostBuildEvent>
+      <Command>"$(ProjectDir)..\..\vendor\BuildUtils\CopyReference.exe" $(ProjectPath) $(Configuration) $(TargetDir)</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Vendor\MD4\global.h" />
+    <ClInclude Include="..\..\Vendor\MD4\md4.h" />
+    <ClInclude Include="..\..\Vendor\MD4\md5.h" />
+    <ClInclude Include="2Darray.h" />
+    <ClInclude Include="2DArrayRLEWrapper.h" />
+    <ClInclude Include="AppInstancesLimit.h" />
+    <ClInclude Include="Array2DWrapper.h" />
+    <ClInclude Include="AssertDumper.h" />
+    <ClInclude Include="Asserts.h" />
+    <ClInclude Include="AsyncInvoker.h" />
+    <ClInclude Include="AsyncTextFileDumper.h" />
+    <ClInclude Include="AutoPtr.h" />
+    <ClInclude Include="AxisBoxGeometry.h" />
+    <ClInclude Include="Base64.h" />
+    <ClInclude Include="Basic.h" />
+    <ClCompile Include="Basic.test.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSingleExe|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ShippingSingleExe|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClInclude Include="BilinearSolver.h" />
+    <ClInclude Include="BiMap.h" />
+    <ClInclude Include="BiMultimap.h" />
+    <ClInclude Include="BinChunkLoaderImpl.h" />
+    <ClInclude Include="BinChunkSaverImpl.h" />
+    <ClInclude Include="BinChunkSerializer.h" />
+    <ClInclude Include="BinChunkSerializerBase.h" />
+    <ClInclude Include="BinSaver.h" />
+    <ClInclude Include="BinSaverStatsCollector.h" />
+    <ClInclude Include="BitData.h" />
+    <ClInclude Include="BitStreams.h" />
+    <ClInclude Include="BitTools.h" />
+    <ClInclude Include="BoundCalcer.h" />
+    <ClInclude Include="Bresenham.h" />
+    <ClInclude Include="BSDialogFunctions.h" />
+    <ClInclude Include="BSResources.h" />
+    <ClInclude Include="BSUtil.h" />
+    <ClInclude Include="ChannelLogger.h" />
+    <ClInclude Include="ChunklessSaver.h" />
+    <ClInclude Include="Classify.h" />
+    <ClInclude Include="CmdLine.h" />
+    <ClInclude Include="CmdLineLite.h" />
+    <ClInclude Include="Color.h" />
+    <ClInclude Include="Commands.h" />
+    <ClInclude Include="Compatibility.h" />
+    <ClInclude Include="CompileTimeAssert.h" />
+    <ClInclude Include="ConfigFiles.h" />
+    <ClInclude Include="CrashRptWrapper.h" />
+    <ClInclude Include="Crc32Calculator.h" />
+    <ClInclude Include="Crc32Checksum.h" />
+    <ClInclude Include="CreateHelper.h" />
+    <ClInclude Include="CustomAtomics.h" />
+    <ClInclude Include="CyclicBuffer.h" />
+    <ClInclude Include="DarkSide.h" />
+    <ClInclude Include="DataExecutor.h" />
+    <ClInclude Include="DebugTraceDumper.h" />
+    <ClInclude Include="DebugVar.h" />
+    <ClInclude Include="Decompose.h" />
+    <ClInclude Include="DefaultTypes.h" />
+    <ClInclude Include="dummyallocator.h" />
+    <ClInclude Include="Dumper.h" />
+    <ClInclude Include="DumpingStream.h" />
+    <ClInclude Include="EditBoxDumper.h" />
+    <ClInclude Include="EnumToString.h" />
+    <ClInclude Include="EulTools.h" />
+    <ClInclude Include="EventDumper.h" />
+    <ClInclude Include="EventFileLogger.h" />
+    <ClInclude Include="Events.h" />
+    <ClInclude Include="ExecutionMemoryManager.h" />
+    <ClInclude Include="expreport.h" />
+    <ClInclude Include="FastMath.h" />
+    <ClInclude Include="FileStreamDumper.h" />
+    <ClInclude Include="FileSystem\CombinerFileSystem.h" />
+    <ClInclude Include="FileSystem\FileActivitySimpleMonitor.h" />
+    <ClInclude Include="FileSystem\FileExtensionStatisticsMonitor.h" />
+    <ClInclude Include="FileSystem\FilePath.h" />
+    <ClInclude Include="FileSystem\FilePileFormat.h" />
+    <ClInclude Include="FileSystem\FilePileLoader.h" />
+    <ClInclude Include="FileSystem\FilePileStream.h" />
+    <ClInclude Include="FileSystem\FileStream.h" />
+    <ClInclude Include="FileSystem\FileStream_stdlib.h" />
+    <ClInclude Include="FileSystem\FileSystem.h" />
+    <ClInclude Include="FileSystem\FileSystemChangesProcessor.h" />
+    <ClInclude Include="FileSystem\FileSystemDebugMonitor.h" />
+    <ClInclude Include="FileSystem\FileTime.h" />
+    <ClInclude Include="FileSystem\FileUtils.h" />
+    <ClInclude Include="FileSystem\FileWriteAsynchronousStream.h" />
+    <ClInclude Include="FileSystem\FileWriteBufferedStream.h" />
+    <ClInclude Include="FileSystem\FileWriteStream.h" />
+    <ClInclude Include="FileSystem\PileFileSystem.h" />
+    <ClInclude Include="FileSystem\TinyFileWriteStream.h" />
+    <ClInclude Include="FileSystem\WinFileSystem.h" />
+    <ClInclude Include="FileSystem\WinFileSystemWatcher.h" />
+    <ClInclude Include="FileSystem\WinFileUnbuffered.h" />
+    <ClInclude Include="FixedMemoryStream.h" />
+    <ClInclude Include="fixedString.h" />
+    <ClInclude Include="fixedvector.h" />
+    <ClInclude Include="FlashWindow.h" />
+    <ClInclude Include="Float16.h" />
+    <ClInclude Include="Functor.h" />
+    <ClInclude Include="Geom.h" />
+    <ClInclude Include="GeomMisc.h" />
+    <ClInclude Include="GeomStreamers.h" />
+    <ClInclude Include="Heap.h" />
+    <ClInclude Include="helpdebugmacroses.h" />
+    <ClInclude Include="Histogram.h" />
+    <ClInclude Include="HPTimer.h" />
+    <ClInclude Include="hwbreak.h" />
+    <ClInclude Include="IDGenerator.h" />
+    <ClInclude Include="ImageDDS.h" />
+    <ClInclude Include="ImageFormatDDS.h" />
+    <ClInclude Include="ImageInternal.h" />
+    <ClInclude Include="ImageTGA.h" />
+    <ClInclude Include="ImageUnpackDXT.h" />
+    <ClInclude Include="IniFiles.h" />
+    <ClInclude Include="InlineProfiler.h" />
+    <ClInclude Include="InlineProfiler3\InlineProfiler3.h" />
+    <ClInclude Include="InlineProfiler3\InlineProfiler3CG.h" />
+    <ClInclude Include="InlineProfiler3\InlineProfiler3Control.h" />
+    <ClInclude Include="InlineProfiler3\InlineProfilerStorage.h" />
+    <ClInclude Include="InlineProfiler3\InlineProfilerTLD.h" />
+    <ClInclude Include="InlineProfiler3\Profiler3UI.h" />
+    <ClInclude Include="InlineProfiler3\Profiler3UIData.h" />
+    <ClInclude Include="InlineProfiler3\Profiler3UIMainDlg.h" />
+    <ClInclude Include="InlineProfiler3\Profiler3UIResource.h" />
+    <ClInclude Include="InlineProfiler3\Profiler3UITimeline.h" />
+    <ClInclude Include="InlineProfiler3\Profiler3UIWTL.h" />
+    <ClInclude Include="IntrusivePtr.h" />
+    <ClInclude Include="iterator.h" />
+    <ClInclude Include="JobThread.h" />
+    <ClInclude Include="Lifehacks.h" />
+    <ClInclude Include="LoadingProgress.h" />
+    <ClInclude Include="LogFileName.h" />
+    <ClInclude Include="Logger.h" />
+    <ClInclude Include="LogHelpers.h" />
+    <ClInclude Include="LogLevel.h" />
+    <ClInclude Include="LogStreamBuffer.h" />
+    <ClInclude Include="LogStreamHolder.h" />
+    <ClInclude Include="MainFrame.h" />
+    <ClInclude Include="MathTools.h" />
+    <ClInclude Include="Math\ieeehalfprecision.h" />
+    <ClInclude Include="Math\MD4.h" />
+    <ClInclude Include="matrix43.h" />
+    <ClInclude Include="meminfo.h" />
+    <ClInclude Include="MemoryBlockPool.h" />
+    <ClInclude Include="memorypool.h" />
+    <ClInclude Include="MemoryStream.h" />
+    <ClInclude Include="MetaProg.h" />
+    <ClInclude Include="MiniDump.h" />
+    <ClInclude Include="MultiReaderLock.h" />
+    <ClInclude Include="nalgobase.h" />
+    <ClInclude Include="nalgoritm.h" />
+    <ClInclude Include="NameMap.h" />
+    <ClInclude Include="NameMapImplementation.h" />
+    <ClInclude Include="ncircular_buffer.h" />
+    <ClInclude Include="nfixed_string.h" />
+    <ClInclude Include="nhash_fun.h" />
+    <ClInclude Include="nhash_fun2.h" />
+    <ClInclude Include="nhash_map.h" />
+    <ClInclude Include="nhash_set.h" />
+    <ClInclude Include="nhash_table.h" />
+    <ClInclude Include="nheap.h" />
+    <ClInclude Include="nhelpdebug.h" />
+    <ClInclude Include="NiTimer.h" />
+    <ClInclude Include="nlist.h" />
+    <ClInclude Include="nmap.h" />
+    <ClInclude Include="noncopyable.h" />
+    <ClInclude Include="npair.h" />
+    <ClInclude Include="nqueue.h" />
+    <ClInclude Include="nset.h" />
+    <ClInclude Include="nstring.h" />
+    <ClInclude Include="nstrings_map.h" />
+    <ClInclude Include="ntree.h" />
+    <ClInclude Include="nuninitialized.h" />
+    <ClInclude Include="nvector.h" />
+    <ClInclude Include="ObjectFactory.h" />
+    <ClInclude Include="OpenHashSet.h" />
+    <ClInclude Include="PersistEvents.h" />
+    <ClInclude Include="Placement.h" />
+    <ClInclude Include="PlacementSpline.h" />
+    <ClInclude Include="PlaneGeometry.h" />
+    <ClInclude Include="PointersCollector.h" />
+    <ClInclude Include="Pointers\BaseInterface.h" />
+    <ClInclude Include="Pointers\BaseObjectMT.h" />
+    <ClInclude Include="Pointers\BaseObjectST.h" />
+    <ClInclude Include="Pointers\BasicFactory.h" />
+    <ClInclude Include="Pointers\BasicType.h" />
+    <ClInclude Include="Pointers\Pointers.h" />
+    <ClInclude Include="Pointers\PointersDetail.h" />
+    <ClInclude Include="Pointers\PointersMacroses.h" />
+    <ClInclude Include="Pointers\Strong.h" />
+    <ClInclude Include="Pointers\Weak.h" />
+    <ClInclude Include="Pointers\WeakMT.h" />
+    <ClInclude Include="Polynomial.h" />
+    <ClInclude Include="Pool.h" />
+    <ClInclude Include="PooledContainer.h" />
+    <ClInclude Include="ProfileManager.h" />
+    <ClInclude Include="ProfilingHelper.h" />
+    <ClInclude Include="Progress.h" />
+    <ClInclude Include="ProtectedStream.h" />
+    <ClInclude Include="RandomGen.h" />
+    <ClInclude Include="RandomGenerator.h" />
+    <ClInclude Include="RandomInterface.h" />
+    <ClInclude Include="RandomInterfaceImpl.h" />
+    <ClInclude Include="RefCntObject.h" />
+    <ClInclude Include="RegistryStorage.h" />
+    <ClInclude Include="Reminder.h" />
+    <ClInclude Include="Ring.h" />
+    <ClInclude Include="RTTI.h" />
+    <ClInclude Include="SafeTextFormat.h" />
+    <ClInclude Include="SafeTextFormatBuffers.h" />
+    <ClInclude Include="SafeTextFormatCyclicBuffer.h" />
+    <ClInclude Include="SafeTextFormatEx.h" />
+    <ClInclude Include="SafeTextFormatHistogram.h" />
+    <ClInclude Include="SafeTextFormatNstl.h" />
+    <ClInclude Include="SafeTextFormatStl.h" />
+    <ClInclude Include="Schedule.h" />
+    <ClInclude Include="ScopedArray.h" />
+    <ClInclude Include="ScopedPtr.h" />
+    <ClInclude Include="ScopeGuards.h" />
+    <ClInclude Include="SimpleObjectsFactory.h" />
+    <ClInclude Include="SimpleSignalST.h" />
+    <ClInclude Include="Singleton.h" />
+    <ClInclude Include="Singleton4DLL.h" />
+    <ClInclude Include="Span.h" />
+    <ClInclude Include="specific.h" />
+    <ClInclude Include="SpinLock.h" />
+    <ClInclude Include="SplashScreen.h" />
+    <ClInclude Include="Spline.h" />
+    <ClInclude Include="ssememcopy.h" />
+    <ClInclude Include="StackWalk.h" />
+    <ClInclude Include="StackWalker.h" />
+    <ClInclude Include="StarForce\HiddenVars.h" />
+    <ClInclude Include="StarForce\StarForce.h" />
+    <ClInclude Include="StarForce\StarForce_test.h" />
+    <ClInclude Include="staticarray.h" />
+    <ClInclude Include="StaticArray2D.h" />
+    <ClInclude Include="staticstring.h" />
+    <ClInclude Include="staticvector.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="StdOutDumper.h" />
+    <ClInclude Include="StrConvert.h" />
+    <ClInclude Include="Stream.h" />
+    <ClInclude Include="StrFormatter.h" />
+    <ClInclude Include="StringDumper.h" />
+    <ClInclude Include="StrProc.h" />
+    <ClInclude Include="StrUtils.h" />
+    <ClInclude Include="SyncPrimitives.h" />
+    <ClInclude Include="SyncProcessorState.h" />
+    <ClInclude Include="SyncTextFileDumper.h" />
+    <ClInclude Include="SystemLog.h" />
+    <ClInclude Include="systemStdAfx.h" />
+    <ClInclude Include="TextDumpSerializer.h" />
+    <ClInclude Include="TextFileDumper.h" />
+    <ClInclude Include="TextFileWorker.h" />
+    <ClInclude Include="Texts.h" />
+    <ClInclude Include="Thread.h" />
+    <ClInclude Include="ThreadHelpers.h" />
+    <ClInclude Include="ThreadLocal.h" />
+    <ClInclude Include="ThreadNames.h" />
+    <ClInclude Include="ThreadPool.h" />
+    <ClInclude Include="Time64.h" />
+    <ClInclude Include="TimeHelpers.h" />
+    <ClInclude Include="TimeUtils.h" />
+    <ClInclude Include="TPJobIntf.h" />
+    <ClInclude Include="Transform.h" />
+    <ClInclude Include="TSList.h" />
+    <ClInclude Include="TypeList.h" />
+    <ClInclude Include="Update.h" />
+    <ClInclude Include="UpdateProcessor.h" />
+    <ClInclude Include="Updater.h" />
+    <ClInclude Include="Vec2_Base.h" />
+    <ClInclude Include="WER.h" />
+    <ClInclude Include="Win32Helper.h" />
+    <ClInclude Include="Win32Random.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Vendor\MD4\md4c.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ReleaseSingleExe|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ShippingSingleExe|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\Vendor\MD4\md5c.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ReleaseSingleExe|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ShippingSingleExe|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="AppInstancesLimit.cpp" />
+    <ClCompile Include="AssertDumper.cpp" />
+    <ClCompile Include="Asserts.cpp" />
+    <ClCompile Include="AsyncTextFileDumper.cpp" />
+    <ClCompile Include="Base64.cpp" />
+    <ClCompile Include="Basic.cpp" />
+    <ClCompile Include="BilinearSolver.cpp" />
+    <ClCompile Include="BinChunkLoaderImpl.cpp" />
+    <ClCompile Include="BinChunkSaverImpl.cpp" />
+    <ClCompile Include="BinChunkSerializer.cpp" />
+    <ClCompile Include="BinChunkSerializerBase.cpp" />
+    <ClCompile Include="BinSaverStatsCollector.cpp" />
+    <ClCompile Include="BitStreams.cpp" />
+    <ClCompile Include="BSAssertDialog.cpp" />
+    <ClCompile Include="BSDialogFunctions.cpp" />
+    <ClCompile Include="BSExceptionDialog.cpp" />
+    <ClCompile Include="BSUtil.cpp" />
+    <ClCompile Include="ChannelLogger.cpp" />
+    <ClCompile Include="ChunklessSaver.cpp" />
+    <ClCompile Include="CmdLine.cpp" />
+    <ClCompile Include="CmdLineLite.cpp" />
+    <ClCompile Include="Color.cpp" />
+    <ClCompile Include="Commands.cpp" />
+    <ClCompile Include="Compatibility.cpp" />
+    <ClCompile Include="ConfigFiles.cpp" />
+    <ClCompile Include="CrashRptWrapper.cpp" />
+    <ClCompile Include="Crc32Checksum.cpp" />
+    <ClCompile Include="DataExecutor.cpp">
+      <ExceptionHandling Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Sync</ExceptionHandling>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <ExceptionHandling Condition="'$(Configuration)|$(Platform)'=='ReleaseSingleExe|Win32'">Sync</ExceptionHandling>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ReleaseSingleExe|Win32'">
+      </PrecompiledHeader>
+      <ExceptionHandling Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Sync</ExceptionHandling>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+      <ExceptionHandling Condition="'$(Configuration)|$(Platform)'=='ShippingSingleExe|Win32'">Sync</ExceptionHandling>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ShippingSingleExe|Win32'">
+      </PrecompiledHeader>
+      <ExceptionHandling Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'">Sync</ExceptionHandling>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="DebugTraceDumper.cpp" />
+    <ClCompile Include="DebugVar.cpp" />
+    <ClCompile Include="Decompose.cpp" />
+    <ClCompile Include="dummyallocator.cpp" />
+    <ClCompile Include="Dumper.cpp" />
+    <ClCompile Include="DumpingStream.cpp" />
+    <ClCompile Include="EditBoxDumper.cpp" />
+    <ClCompile Include="EventDumper.cpp" />
+    <ClCompile Include="Events.cpp" />
+    <ClCompile Include="ExecutionMemoryManager.cpp" />
+    <ClCompile Include="expreport.cpp">
+      <ExceptionHandling Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Async</ExceptionHandling>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="FastMath.cpp" />
+    <ClCompile Include="FileStreamDumper.cpp" />
+    <ClCompile Include="FileSystem\CombinerFileSystem.cpp" />
+    <ClCompile Include="FileSystem\FileActivitySimpleMonitor.cpp" />
+    <ClCompile Include="FileSystem\FileExtensionStatisticsMonitor.cpp" />
+    <ClCompile Include="FileSystem\FilePath.cpp" />
+    <ClCompile Include="FileSystem\FilePileLoader.cpp" />
+    <ClCompile Include="FileSystem\FileStream_stdlib.cpp" />
+    <ClCompile Include="FileSystem\FileStream_win.cpp" />
+    <ClCompile Include="FileSystem\FileSystem.cpp" />
+    <ClCompile Include="FileSystem\FileSystemChangesProcessor.cpp" />
+    <ClCompile Include="FileSystem\FileUtils.cpp" />
+    <ClCompile Include="FileSystem\FileUtils_win.cpp" />
+    <ClCompile Include="FileSystem\FileWriteAsynchronousStream_win.cpp" />
+    <ClCompile Include="FileSystem\FileWriteBufferedStream.cpp" />
+    <ClCompile Include="FileSystem\FileWriteStream.cpp" />
+    <ClCompile Include="FileSystem\PileFileSystem.cpp" />
+    <ClCompile Include="FileSystem\TinyFileWriteStream.cpp" />
+    <ClCompile Include="FileSystem\WinFileSystem.cpp" />
+    <ClCompile Include="FileSystem\WinFileSystemWatcher.cpp" />
+    <ClCompile Include="FileSystem\WinFileUnbuffered.cpp" />
+    <ClCompile Include="FixedMemoryStream.cpp" />
+    <ClCompile Include="FlashWindow.cpp" />
+    <ClCompile Include="Geom.cpp" />
+    <ClCompile Include="Histogram.cpp" />
+    <ClCompile Include="HPTimer.cpp" />
+    <ClCompile Include="HPTimer_win.cpp" />
+    <ClCompile Include="hwbreak.cpp" />
+    <ClCompile Include="IDGenerator.cpp" />
+    <ClCompile Include="ImageDDS.cpp" />
+    <ClCompile Include="ImageInternal.cpp" />
+    <ClCompile Include="ImageTGA.cpp" />
+    <ClCompile Include="ImageUnpackDXT.cpp" />
+    <ClCompile Include="IniFiles.cpp" />
+    <ClCompile Include="InlineProfiler3\InlineProfiler3.cpp" />
+    <ClCompile Include="InlineProfiler3\InlineProfiler3CG.cpp" />
+    <ClCompile Include="InlineProfiler3\InlineProfilerStorage.cpp" />
+    <ClCompile Include="InlineProfiler3\Profiler3UI.cpp" />
+    <ClCompile Include="InlineProfiler3\Profiler3UIData.cpp" />
+    <ClCompile Include="InlineProfiler3\Profiler3UIMainDlg.cpp" />
+    <ClCompile Include="InlineProfiler3\Profiler3UITimeline.cpp" />
+    <ClCompile Include="JobThread.cpp" />
+    <ClCompile Include="LoadingProgress.cpp" />
+    <ClCompile Include="LogFileName.cpp" />
+    <ClCompile Include="Logger.cpp" />
+    <ClCompile Include="LogHelpers.cpp" />
+    <ClCompile Include="LogStreamBuffer.cpp" />
+    <ClCompile Include="LogStreamHolder.cpp" />
+    <ClCompile Include="MainFrame.cpp">
+      <ShowIncludes Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ShowIncludes>
+    </ClCompile>
+    <ClCompile Include="MathTools.cpp" />
+    <ClCompile Include="Math\ieeehalfprecision.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ReleaseSingleExe|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ShippingSingleExe|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Math\MD.cpp" />
+    <ClCompile Include="meminfo.cpp" />
+    <ClCompile Include="MemoryBlockPool.cpp" />
+    <ClCompile Include="memorypool.cpp" />
+    <ClCompile Include="MemoryStream.cpp" />
+    <ClCompile Include="MiniDump.cpp" />
+    <ClCompile Include="MultiReaderLock.cpp" />
+    <ClCompile Include="NameMap.cpp" />
+    <ClCompile Include="ntree.cpp" />
+    <ClCompile Include="ObjectFactory.cpp" />
+    <ClCompile Include="PersistEvents.cpp" />
+    <ClCompile Include="PlacementSpline.cpp" />
+    <ClCompile Include="PlaneGeometry.cpp" />
+    <ClCompile Include="Pointers\BaseObjectMT.cpp" />
+    <ClCompile Include="Pointers\BaseObjectST.cpp" />
+    <ClCompile Include="Pointers\BasicFactory.cpp" />
+    <ClCompile Include="Pointers\BasicType.cpp" />
+    <ClCompile Include="ProfileManager.cpp" />
+    <ClCompile Include="ProfilingHelper.cpp" />
+    <ClCompile Include="Progress.cpp" />
+    <ClCompile Include="ProtectedStream.cpp" />
+    <ClCompile Include="RandomGen.cpp" />
+    <ClCompile Include="RandomGenerator.cpp" />
+    <ClCompile Include="RandomInterfaceImpl.cpp" />
+    <ClCompile Include="RegistryStorage.cpp" />
+    <ClCompile Include="RTTI.cpp" />
+    <ClCompile Include="SafeTextFormat.cpp" />
+    <ClCompile Include="Schedule.cpp" />
+    <ClCompile Include="SpinLock.cpp" />
+    <ClCompile Include="SplashScreen.cpp" />
+    <ClCompile Include="Spline.cpp" />
+    <ClCompile Include="ssememcopy.cpp" />
+    <ClCompile Include="StackWalk.cpp" />
+    <ClCompile Include="StackWalker.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Level3</WarningLevel>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ReleaseSingleExe|Win32'">
+      </PrecompiledHeader>
+      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='ReleaseSingleExe|Win32'">Level3</WarningLevel>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Level3</WarningLevel>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ShippingSingleExe|Win32'">
+      </PrecompiledHeader>
+      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='ShippingSingleExe|Win32'">Level3</WarningLevel>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'">
+      </PrecompiledHeader>
+      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'">Level3</WarningLevel>
+    </ClCompile>
+    <ClCompile Include="StarForce\StarForce.cpp" />
+    <ClCompile Include="StarForce\StarForce_test.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ReleaseSingleExe|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ShippingSingleExe|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="StdOutDumper.cpp" />
+    <ClCompile Include="StrConvert.cpp" />
+    <ClCompile Include="Stream.cpp" />
+    <ClCompile Include="StrFormatter.cpp" />
+    <ClCompile Include="StringDumper.cpp" />
+    <ClCompile Include="StrProc.cpp" />
+    <ClCompile Include="StrUtils_win.cpp" />
+    <ClCompile Include="SyncPrimitives.cpp" />
+    <ClCompile Include="SyncProcessorState.cpp" />
+    <ClCompile Include="SyncTextFileDumper.cpp" />
+    <ClCompile Include="SystemLog.cpp" />
+    <ClCompile Include="TextDumpSerializer.cpp" />
+    <ClCompile Include="TextFileDumper.cpp" />
+    <ClCompile Include="TextFileWorker.cpp" />
+    <ClCompile Include="Texts.cpp" />
+    <ClCompile Include="Thread.cpp" />
+    <ClCompile Include="ThreadHelpers.cpp" />
+    <ClCompile Include="ThreadLocal.cpp" />
+    <ClCompile Include="ThreadNames.cpp" />
+    <ClCompile Include="ThreadPool.cpp" />
+    <ClCompile Include="TimeUtils_win.cpp" />
+    <ClCompile Include="Transform.cpp" />
+    <ClCompile Include="UpdateProcessor.cpp" />
+    <ClCompile Include="Updater.cpp" />
+    <ClCompile Include="UpdaterTest.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSingleExe|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ShippingSingleExe|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="WER.cpp" />
+    <ClCompile Include="Win32Random.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\Vendor\MD4\all.component" />
+    <None Include="Asserts.component" />
+    <None Include="CmdLine.component" />
+    <None Include="CmdLineLite.component" />
+    <None Include="Commands.component" />
+    <None Include="CompositeSpline.inl" />
+    <None Include="ConfigFiles.component" />
+    <None Include="CrashHandler.component" />
+    <None Include="CrashRptWrapper.component" />
+    <None Include="Crc32Calculator.component" />
+    <None Include="Crc32Utils.component" />
+    <None Include="CyclicBuffer.component" />
+    <None Include="DarkSide.component" />
+    <None Include="DataExecutor.component" />
+    <None Include="DebugVar.component" />
+    <None Include="Dumpers.component" />
+    <None Include="EnumToString.component" />
+    <None Include="EventFileLogger.component" />
+    <None Include="FileSystem\FileSystem.component" />
+    <None Include="FileSystem\FileSystemChangesProcessor.component" />
+    <None Include="FileSystem\FileUtils.component" />
+    <None Include="FileSystem\PileFileSystem.component" />
+    <None Include="FileSystem\TestFileSystem.component" />
+    <None Include="foundation.refs" />
+    <None Include="Histogram.component" />
+    <None Include="Image.component" />
+    <None Include="imageTGA.component" />
+    <None Include="InlineProfiler.component" />
+    <None Include="InlineProfiler3\Analyzer.component" />
+    <None Include="InlineProfiler3\InlineProfiler3TestApp.application" />
+    <None Include="InlineProfiler3\InlineProfilerTLD.inl" />
+    <None Include="InlineProfiler3\Sampler.component" />
+    <None Include="InlineProfiler3\SamplerStub.component" />
+    <None Include="InlineProfiler3\UI.component" />
+    <None Include="InlineProfilerUI.component" />
+    <None Include="LogFileName.component" />
+    <None Include="Logging.component" />
+    <None Include="MainFrame.component" />
+    <None Include="Math.component" />
+    <None Include="Math\ieeehalfprecision.component" />
+    <None Include="Math\MD4.component" />
+    <None Include="Memory.component" />
+    <None Include="MemoryBlockPool.component" />
+    <None Include="MemoryPool.component" />
+    <None Include="NSTL.component" />
+    <None Include="Pointers\Pointers.component" />
+    <None Include="ProfilingHelper.component" />
+    <None Include="Progress.component" />
+    <None Include="Ptr.component" />
+    <None Include="Random.component" />
+    <None Include="RandomInterface.component" />
+    <None Include="RegistryStorage.component" />
+    <None Include="SafeTextFormat.component" />
+    <None Include="Savers.component" />
+    <None Include="Schedule.component" />
+    <None Include="StackWalk.component" />
+    <None Include="StaticContainers.component" />
+    <None Include="StreamingContainers.component" />
+    <None Include="Streams.component" />
+    <None Include="StrUtils.component" />
+    <None Include="SyncPrimitives.component" />
+    <None Include="SyncProcessorState.component" />
+    <None Include="SystemLog.component" />
+    <None Include="Texts.component" />
+    <None Include="Threading.component" />
+    <None Include="ThreadNames.component" />
+    <None Include="Timer.component" />
+    <None Include="Updater.component" />
+    <None Include="WER.component" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\Version.rc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSingleExe|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ShippingSingleExe|Win32'">true</ExcludedFromBuild>
+    </ResourceCompile>
+    <ResourceCompile Include="BSResources.rc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSingleExe|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ShippingSingleExe|Win32'">true</ExcludedFromBuild>
+    </ResourceCompile>
+    <ResourceCompile Include="InlineProfiler3\Profiler3UI.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="error.ico" />
+    <Image Include="exclamation.ico" />
+    <Image Include="InlineProfiler3\Images.bmp" />
+    <Image Include="InlineProfiler3\Profiler3UI.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MemoryLib\MemoryLib.vcxproj">
+      <Project>{18ec1173-935f-40e5-bb18-0d21b2a63619}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

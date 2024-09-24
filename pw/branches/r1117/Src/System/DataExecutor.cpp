@@ -151,8 +151,10 @@ void __declspec(naked) __cdecl DataExecutor::ExecuteFreeStackless() const
 {
   //the stack here is: ret_addr(ExecuteFreeStackless), this, epb, ret_addr(ExecuteFree), this, desired stack
   //we want stack like: ret_addr(ExecuteFree), desired stack and we need to calculate call address
-  static unsigned const binaryCode       =  offsetof(DataExecutor, pBinaryCode);
-  static unsigned const entryPointOffset =  offsetof(DataExecutor, nEntryPointOffset);
+    size_t binaryCode;// = offsetof(DataExecutor, pBinaryCode);
+    unsigned entryPointOffset;// = offsetof(DataExecutor, nEntryPointOffset);
+    binaryCode = 0;// offsetof(DataExecutor, pBinaryCode);
+    entryPointOffset = 4; //offsetof(DataExecutor, nEntryPointOffset);
   //call address is binaryCode + entryPointOffset
   __asm 
   {

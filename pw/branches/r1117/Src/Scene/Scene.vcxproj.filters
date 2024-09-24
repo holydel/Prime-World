@@ -1,0 +1,533 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Common">
+      <UniqueIdentifier>{ae5e15fb-bc39-4c35-a4f8-2ac72333d8f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Camera">
+      <UniqueIdentifier>{ce7e704d-8e0c-4837-b843-1417895d34d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Animation">
+      <UniqueIdentifier>{67d5c747-1c7d-4e72-b008-df6fb47db046}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DB">
+      <UniqueIdentifier>{d7ff2974-072e-44d8-91b7-2f43783f838e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene">
+      <UniqueIdentifier>{2554c818-82a3-4d22-929a-1bd74533368a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Collision">
+      <UniqueIdentifier>{c7d047b3-be23-4c4e-80e2-df37d4695237}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SceneComponents">
+      <UniqueIdentifier>{f7b93cd4-eed5-419f-bfb1-5fa58b1e3002}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="VoxelGrid">
+      <UniqueIdentifier>{7f7d998a-442e-4b37-8a64-573bf6d01350}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RenderComponents">
+      <UniqueIdentifier>{bb935fcb-8f26-4c78-bcd4-f09a33da6eed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UnitTests">
+      <UniqueIdentifier>{dc3c03e8-2c31-477a-a224-25e98f144f9c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CameraControllers">
+      <UniqueIdentifier>{5b06d4b0-4bdd-4e42-bae3-c358f98d10b0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="specific.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.hpp">
+      <Filter>Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Animators.h">
+      <Filter>Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimGraphApplicator.hpp">
+      <Filter>Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimGraphBlender.h">
+      <Filter>Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimGraphController.h">
+      <Filter>Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimSequencer.hpp">
+      <Filter>Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="DiAnGr.h">
+      <Filter>Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="DiAnGrAPI.h">
+      <Filter>Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="DiAnGrExtPars.h">
+      <Filter>Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="DiAnGrExtParsAd.h">
+      <Filter>Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="DiAnGrMarker.h">
+      <Filter>Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="DiAnGrNLinker.h">
+      <Filter>Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="DiAnGrSStorage.h">
+      <Filter>Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="DiAnGrUtils.h">
+      <Filter>Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="DiAnSol.h">
+      <Filter>Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="DiGraph.h">
+      <Filter>Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="dimath.h">
+      <Filter>Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="DiMatrix.h">
+      <Filter>Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="DiTypes.h">
+      <Filter>Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="DiVector.h">
+      <Filter>Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="SequencerData.hpp">
+      <Filter>Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="TimedChannel.h">
+      <Filter>Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="DBScene.h">
+      <Filter>DB</Filter>
+    </ClInclude>
+    <ClInclude Include="include_BaseVisualObject.h">
+      <Filter>DB</Filter>
+    </ClInclude>
+    <ClInclude Include="include_VisualObject.h">
+      <Filter>DB</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimatedPlacement.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="HeightsController.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="PointSelector.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderableScene.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.hpp">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneComponent.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneObject.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneObjectsPool.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneObjectTrack.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneObjectUtils.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="ScenePassabilityMask.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneTypes.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneUtils.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SHGrid.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SHGridCalculator.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeController.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeMutator.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="VertexColorManager.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionGeometry.h">
+      <Filter>Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionGeometryManager.h">
+      <Filter>Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionHull.h">
+      <Filter>Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionMap.h">
+      <Filter>Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionVolumeNode.h">
+      <Filter>Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="GeometryBuilders.h">
+      <Filter>Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="GeometryTracer.h">
+      <Filter>Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="Octree.h">
+      <Filter>Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimatedSceneComponent.h">
+      <Filter>SceneComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimatedSplitSceneComponent.h">
+      <Filter>SceneComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimSequencer.h">
+      <Filter>SceneComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="AttacherSceneComponent.h">
+      <Filter>SceneComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="EditorSceneObject.h">
+      <Filter>SceneComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="LightningSceneComponent.h">
+      <Filter>SceneComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleSceneComponent.h">
+      <Filter>SceneComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="RoadGeometryBuilder.h">
+      <Filter>SceneComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="RoadSceneObject.h">
+      <Filter>SceneComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneObjectCreation.h">
+      <Filter>SceneComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundSceneComponent.h">
+      <Filter>SceneComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="StaticSceneComponent.h">
+      <Filter>SceneComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="TestBB.h">
+      <Filter>SceneComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="TraceSceneComponent.h">
+      <Filter>SceneComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="WaterSceneComponent.h">
+      <Filter>SceneComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="CollectionList.h">
+      <Filter>VoxelGrid</Filter>
+    </ClInclude>
+    <ClInclude Include="CollectionVG.h">
+      <Filter>VoxelGrid</Filter>
+    </ClInclude>
+    <ClInclude Include="VoxelGrid.h">
+      <Filter>VoxelGrid</Filter>
+    </ClInclude>
+    <ClInclude Include="VoxelGridObj.h">
+      <Filter>VoxelGrid</Filter>
+    </ClInclude>
+    <ClInclude Include="LightningFX.h">
+      <Filter>RenderComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="TraceFX.h">
+      <Filter>RenderComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="TraceFXGeo.h">
+      <Filter>RenderComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="TestObject.h">
+      <Filter>UnitTests</Filter>
+    </ClInclude>
+    <ClInclude Include="TestSceneComponent.h">
+      <Filter>UnitTests</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraController.h">
+      <Filter>CameraControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraControllersContainer.h">
+      <Filter>CameraControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraInputModifier.h">
+      <Filter>CameraControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeCameraController.hpp">
+      <Filter>CameraControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="AmbienceMap.h" />
+    <ClInclude Include="BitMap.h" />
+    <ClInclude Include="DBSceneBase.h" />
+    <ClInclude Include="LightingScene.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Animators.cpp">
+      <Filter>Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimGraphApplicator.cpp">
+      <Filter>Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimGraphBlender.cpp">
+      <Filter>Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimGraphController.cpp">
+      <Filter>Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimSequencer.cpp">
+      <Filter>Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="DiAnGr.cpp">
+      <Filter>Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="DiAnGrAPI.cpp">
+      <Filter>Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="DiAnGrCl.cpp">
+      <Filter>Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="DiAnGrDb.cpp">
+      <Filter>Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="DiAnGrEditor.cpp">
+      <Filter>Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="DiAnGrExtPars.cpp">
+      <Filter>Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="DiAnGrExtParsAd.cpp">
+      <Filter>Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="DiAnGrG.cpp">
+      <Filter>Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="DiAnGrIo2.cpp">
+      <Filter>Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="DiAnGrMarker.cpp">
+      <Filter>Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="DiAnGrNLinker.cpp">
+      <Filter>Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="DiAnGrSStorage.cpp">
+      <Filter>Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="DiAnGrUp.cpp">
+      <Filter>Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="DiAnGrUtils.cpp">
+      <Filter>Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="DiGraph.cpp">
+      <Filter>Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="DBScene.cpp">
+      <Filter>DB</Filter>
+    </ClCompile>
+    <ClCompile Include="HeightsController.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneComponent.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneObject.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneObjectsPool.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneObjectTrack.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneObjectUtils.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="ScenePassabilityMask.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneUtils.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SHGrid.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SHGridCalculator.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="TimeController.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="TimeMutator.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="VertexColorManager.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionGeometry.cpp">
+      <Filter>Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionGeometryManager.cpp">
+      <Filter>Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionHull.cpp">
+      <Filter>Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionMap.cpp">
+      <Filter>Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="GeometryBuilders.cpp">
+      <Filter>Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="GeometryTracer.cpp">
+      <Filter>Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimatedSceneComponent.cpp">
+      <Filter>SceneComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimatedSplitSceneComponent.cpp">
+      <Filter>SceneComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="AttacherSceneComponent.cpp">
+      <Filter>SceneComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="EditorSceneObject.cpp">
+      <Filter>SceneComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="LightningSceneComponent.cpp">
+      <Filter>SceneComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleSceneComponent.cpp">
+      <Filter>SceneComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="RoadGeometryBuilder.cpp">
+      <Filter>SceneComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="RoadSceneObject.cpp">
+      <Filter>SceneComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneObjectCreation.cpp">
+      <Filter>SceneComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="SoundSceneComponent.cpp">
+      <Filter>SceneComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="StaticSceneComponent.cpp">
+      <Filter>SceneComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="TraceSceneComponent.cpp">
+      <Filter>SceneComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="WaterSceneComponent.cpp">
+      <Filter>SceneComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="LightningFX.cpp">
+      <Filter>RenderComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="TraceFX.cpp">
+      <Filter>RenderComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="TraceFXGeo.cpp">
+      <Filter>RenderComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="TestSceneComponent.cpp">
+      <Filter>UnitTests</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraControllersContainer.cpp">
+      <Filter>CameraControllers</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraInputModifier.cpp">
+      <Filter>CameraControllers</Filter>
+    </ClCompile>
+    <ClCompile Include="FreeCameraController.cpp">
+      <Filter>CameraControllers</Filter>
+    </ClCompile>
+    <ClCompile Include="AmbienceMap.cpp" />
+    <ClCompile Include="BitMap.cpp" />
+    <ClCompile Include="DBSceneBase.cpp" />
+    <ClCompile Include="LightingScene.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Animation.component">
+      <Filter>Animation</Filter>
+    </None>
+    <None Include="DiAnGr.inl">
+      <Filter>Animation</Filter>
+    </None>
+    <None Include="DiM4d.inl">
+      <Filter>Animation</Filter>
+    </None>
+    <None Include="DiMath.inl">
+      <Filter>Animation</Filter>
+    </None>
+    <None Include="DiMathOp.inl">
+      <Filter>Animation</Filter>
+    </None>
+    <None Include="DiV2d.inl">
+      <Filter>Animation</Filter>
+    </None>
+    <None Include="DiV3d.inl">
+      <Filter>Animation</Filter>
+    </None>
+    <None Include="DiV4d.inl">
+      <Filter>Animation</Filter>
+    </None>
+    <None Include="DB.component">
+      <Filter>DB</Filter>
+    </None>
+    <None Include="Collision.component">
+      <Filter>Collision</Filter>
+    </None>
+    <None Include="SceneObjects.component">
+      <Filter>SceneComponents</Filter>
+    </None>
+    <None Include="VoxelGrid.component">
+      <Filter>VoxelGrid</Filter>
+    </None>
+    <None Include="all.component" />
+    <None Include="Camera.component" />
+    <None Include="SceneObject.component" />
+    <None Include="Sound.component" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\Version.rc" />
+  </ItemGroup>
+</Project>

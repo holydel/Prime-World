@@ -1,0 +1,497 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Net">
+      <UniqueIdentifier>{48e67da2-4de9-460b-bd12-cf1d50bd995c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Transport">
+      <UniqueIdentifier>{9a3ad800-a7f9-4c63-bcd9-da496eb999fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ClusterConfiguration">
+      <UniqueIdentifier>{c96cfa20-22e1-4140-b6ae-9ff90ee9ace6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LoginClient">
+      <UniqueIdentifier>{713bc7fe-0bfd-4c67-9b5c-eacc80a8f794}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LoginClient\Types">
+      <UniqueIdentifier>{ae7ef2c8-0efc-40b3-887c-804d565f2355}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{5a56bc6a-4719-4f2b-aaa0-4c111a2993bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FreePortsFinder">
+      <UniqueIdentifier>{0d72d0f7-23f4-4a09-b4a3-86fa0a06de5e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RdpTransport">
+      <UniqueIdentifier>{8334934a-08f2-42f8-b046-f09c7e5e509f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RdpTransport\RUDP">
+      <UniqueIdentifier>{282f3afb-84b6-4e11-91da-d8f319bfc6fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RdpTransport\RUDP\Rdp">
+      <UniqueIdentifier>{94cad961-0337-4e74-882d-1d18cc2ec7ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RdpTransport\RUDP\SockSrv">
+      <UniqueIdentifier>{a1c77515-77ad-4309-838b-e0dd889d0bdd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RdpTransport\RUDP\SockSrvWinsock">
+      <UniqueIdentifier>{3edef3aa-6850-403a-a047-0ab5addd7167}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RdpTransport\RUDP\UdpSocket">
+      <UniqueIdentifier>{1dd70ed1-c633-40e2-bf31-fefdcac26695}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RdpTransport\Utils">
+      <UniqueIdentifier>{3c394ec2-aac8-48e5-a14a-8adeca2b12d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RdpTransport\ClientTransport">
+      <UniqueIdentifier>{76105513-3107-4a56-a016-402bb0471f01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RdpTransport\TransportBase">
+      <UniqueIdentifier>{fd096b41-8408-4f37-8826-33384864c54e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RdpTransport\NewLoginTypes">
+      <UniqueIdentifier>{ea86ad84-35bc-402d-9fcd-581b04b29659}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RdpTransport\PacketDispatcher">
+      <UniqueIdentifier>{2eff11a4-8a2a-472b-8991-11fc18b8eca3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Address.cpp">
+      <Filter>Net</Filter>
+    </ClCompile>
+    <ClCompile Include="Connection.cpp">
+      <Filter>Net</Filter>
+    </ClCompile>
+    <ClCompile Include="ConnectionManager.cpp">
+      <Filter>Net</Filter>
+    </ClCompile>
+    <ClCompile Include="ConnectionsContainer.cpp">
+      <Filter>Net</Filter>
+    </ClCompile>
+    <ClCompile Include="ConnectionState.cpp">
+      <Filter>Net</Filter>
+    </ClCompile>
+    <ClCompile Include="Driver.cpp">
+      <Filter>Net</Filter>
+    </ClCompile>
+    <ClCompile Include="DriverSettings.cpp">
+      <Filter>Net</Filter>
+    </ClCompile>
+    <ClCompile Include="Errors.cpp">
+      <Filter>Net</Filter>
+    </ClCompile>
+    <ClCompile Include="Initializer.cpp">
+      <Filter>Net</Filter>
+    </ClCompile>
+    <ClCompile Include="Network.cpp">
+      <Filter>Net</Filter>
+    </ClCompile>
+    <ClCompile Include="network.test.cpp">
+      <Filter>Net</Filter>
+    </ClCompile>
+    <ClCompile Include="SSLEncoder.cpp">
+      <Filter>Net</Filter>
+    </ClCompile>
+    <ClCompile Include="StreamAllocator.cpp">
+      <Filter>Net</Filter>
+    </ClCompile>
+    <ClCompile Include="Message.cpp">
+      <Filter>Transport</Filter>
+    </ClCompile>
+    <ClCompile Include="TransportAddress.cpp">
+      <Filter>Transport</Filter>
+    </ClCompile>
+    <ClCompile Include="TransportBase.cpp">
+      <Filter>Transport</Filter>
+    </ClCompile>
+    <ClCompile Include="TransportChannel.cpp">
+      <Filter>Transport</Filter>
+    </ClCompile>
+    <ClCompile Include="TransportChannelListener.cpp">
+      <Filter>Transport</Filter>
+    </ClCompile>
+    <ClCompile Include="TransportChannelType.cpp">
+      <Filter>Transport</Filter>
+    </ClCompile>
+    <ClCompile Include="TransportDefaults.cpp">
+      <Filter>Transport</Filter>
+    </ClCompile>
+    <ClCompile Include="TransportError.cpp">
+      <Filter>Transport</Filter>
+    </ClCompile>
+    <ClCompile Include="TransportMessages.cpp">
+      <Filter>Transport</Filter>
+    </ClCompile>
+    <ClCompile Include="TransportMux.cpp">
+      <Filter>Transport</Filter>
+    </ClCompile>
+    <ClCompile Include="TransportSystem.cpp">
+      <Filter>Transport</Filter>
+    </ClCompile>
+    <ClCompile Include="ClusterConfiguration.cpp">
+      <Filter>ClusterConfiguration</Filter>
+    </ClCompile>
+    <ClCompile Include="LoginClient.cpp">
+      <Filter>LoginClient</Filter>
+    </ClCompile>
+    <ClCompile Include="LoginTypes.cpp">
+      <Filter>LoginClient\Types</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="FreePortsFinder.cpp">
+      <Filter>FreePortsFinder</Filter>
+    </ClCompile>
+    <ClCompile Include="RUDP\Rdp.cpp">
+      <Filter>RdpTransport\RUDP\Rdp</Filter>
+    </ClCompile>
+    <ClCompile Include="RUDP\RdpCongestionControl.cpp">
+      <Filter>RdpTransport\RUDP\Rdp</Filter>
+    </ClCompile>
+    <ClCompile Include="RUDP\RdpConnection.cpp">
+      <Filter>RdpTransport\RUDP\Rdp</Filter>
+    </ClCompile>
+    <ClCompile Include="RUDP\RdpEphMux.cpp">
+      <Filter>RdpTransport\RUDP\Rdp</Filter>
+    </ClCompile>
+    <ClCompile Include="RUDP\RdpHandshake.cpp">
+      <Filter>RdpTransport\RUDP\Rdp</Filter>
+    </ClCompile>
+    <ClCompile Include="RUDP\RdpInPktQueue.cpp">
+      <Filter>RdpTransport\RUDP\Rdp</Filter>
+    </ClCompile>
+    <ClCompile Include="RUDP\RdpListenContext.cpp">
+      <Filter>RdpTransport\RUDP\Rdp</Filter>
+    </ClCompile>
+    <ClCompile Include="RUDP\RdpLogic.cpp">
+      <Filter>RdpTransport\RUDP\Rdp</Filter>
+    </ClCompile>
+    <ClCompile Include="RUDP\RdpOutPktQueue.cpp">
+      <Filter>RdpTransport\RUDP\Rdp</Filter>
+    </ClCompile>
+    <ClCompile Include="RUDP\RdpPacket.cpp">
+      <Filter>RdpTransport\RUDP\Rdp</Filter>
+    </ClCompile>
+    <ClCompile Include="RUDP\RdpPacketPool.cpp">
+      <Filter>RdpTransport\RUDP\Rdp</Filter>
+    </ClCompile>
+    <ClCompile Include="RUDP\RdpPing.cpp">
+      <Filter>RdpTransport\RUDP\Rdp</Filter>
+    </ClCompile>
+    <ClCompile Include="RUDP\RdpProto.cpp">
+      <Filter>RdpTransport\RUDP\Rdp</Filter>
+    </ClCompile>
+    <ClCompile Include="RUDP\RdpWriter.cpp">
+      <Filter>RdpTransport\RUDP\Rdp</Filter>
+    </ClCompile>
+    <ClCompile Include="RUDP\SockSrvWinsockAsync.cpp">
+      <Filter>RdpTransport\RUDP\SockSrvWinsock</Filter>
+    </ClCompile>
+    <ClCompile Include="RUDP\SockSrvWinsockBlocking.cpp">
+      <Filter>RdpTransport\RUDP\SockSrvWinsock</Filter>
+    </ClCompile>
+    <ClCompile Include="RUDP\UdpAddr.cpp">
+      <Filter>RdpTransport\RUDP\UdpSocket</Filter>
+    </ClCompile>
+    <ClCompile Include="RUDP\UdpSocket.cpp">
+      <Filter>RdpTransport\RUDP\UdpSocket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Server\RdpTransport\RdpTransportMsg.cpp">
+      <Filter>RdpTransport\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Server\RdpTransport\RdpTransportUtils.cpp">
+      <Filter>RdpTransport\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="RdpClientTransport\RdpClientChannel.cpp">
+      <Filter>RdpTransport\ClientTransport</Filter>
+    </ClCompile>
+    <ClCompile Include="RdpClientTransport\RdpClientTransport.cpp">
+      <Filter>RdpTransport\ClientTransport</Filter>
+    </ClCompile>
+    <ClCompile Include="RdpClientTransport\RdpLoginClient.cpp">
+      <Filter>RdpTransport\ClientTransport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Server\RdpTransport\RdpTransportChannel.cpp">
+      <Filter>RdpTransport\TransportBase</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Server\NewLogin\NewLoginTypes.cpp">
+      <Filter>RdpTransport\NewLoginTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="PacketDispatcher.cpp">
+      <Filter>RdpTransport\PacketDispatcher</Filter>
+    </ClCompile>
+    <ClCompile Include="TransportUtils.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Address.h">
+      <Filter>Net</Filter>
+    </ClInclude>
+    <ClInclude Include="Connection.h">
+      <Filter>Net</Filter>
+    </ClInclude>
+    <ClInclude Include="ConnectionManager.h">
+      <Filter>Net</Filter>
+    </ClInclude>
+    <ClInclude Include="ConnectionsContainer.h">
+      <Filter>Net</Filter>
+    </ClInclude>
+    <ClInclude Include="ConnectionState.h">
+      <Filter>Net</Filter>
+    </ClInclude>
+    <ClInclude Include="Driver.h">
+      <Filter>Net</Filter>
+    </ClInclude>
+    <ClInclude Include="DriverSettings.h">
+      <Filter>Net</Filter>
+    </ClInclude>
+    <ClInclude Include="Errors.h">
+      <Filter>Net</Filter>
+    </ClInclude>
+    <ClInclude Include="Initializer.h">
+      <Filter>Net</Filter>
+    </ClInclude>
+    <ClInclude Include="Network.h">
+      <Filter>Net</Filter>
+    </ClInclude>
+    <ClInclude Include="NetworkBuffers.h">
+      <Filter>Net</Filter>
+    </ClInclude>
+    <ClInclude Include="SSLEncoder.h">
+      <Filter>Net</Filter>
+    </ClInclude>
+    <ClInclude Include="StreamAllocator.h">
+      <Filter>Net</Filter>
+    </ClInclude>
+    <ClInclude Include="AddressTranslator.h">
+      <Filter>Transport</Filter>
+    </ClInclude>
+    <ClInclude Include="Message.h">
+      <Filter>Transport</Filter>
+    </ClInclude>
+    <ClInclude Include="Transport.h">
+      <Filter>Transport</Filter>
+    </ClInclude>
+    <ClInclude Include="TransportAddress.h">
+      <Filter>Transport</Filter>
+    </ClInclude>
+    <ClInclude Include="TransportBase.h">
+      <Filter>Transport</Filter>
+    </ClInclude>
+    <ClInclude Include="TransportChannel.h">
+      <Filter>Transport</Filter>
+    </ClInclude>
+    <ClInclude Include="TransportChannelListener.h">
+      <Filter>Transport</Filter>
+    </ClInclude>
+    <ClInclude Include="TransportChannelType.h">
+      <Filter>Transport</Filter>
+    </ClInclude>
+    <ClInclude Include="TransportDefaults.h">
+      <Filter>Transport</Filter>
+    </ClInclude>
+    <ClInclude Include="TransportError.h">
+      <Filter>Transport</Filter>
+    </ClInclude>
+    <ClInclude Include="TransportInitializer.h">
+      <Filter>Transport</Filter>
+    </ClInclude>
+    <ClInclude Include="TransportMessages.h">
+      <Filter>Transport</Filter>
+    </ClInclude>
+    <ClInclude Include="TransportMulticastChannel.h">
+      <Filter>Transport</Filter>
+    </ClInclude>
+    <ClInclude Include="TransportMux.h">
+      <Filter>Transport</Filter>
+    </ClInclude>
+    <ClInclude Include="TransportSystem.h">
+      <Filter>Transport</Filter>
+    </ClInclude>
+    <ClInclude Include="LoginClient.h">
+      <Filter>LoginClient</Filter>
+    </ClInclude>
+    <ClInclude Include="LoginTypes.h">
+      <Filter>LoginClient\Types</Filter>
+    </ClInclude>
+    <ClInclude Include="specific.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="FreePortsFinder.h">
+      <Filter>FreePortsFinder</Filter>
+    </ClInclude>
+    <ClInclude Include="RUDP\IRdp.h">
+      <Filter>RdpTransport\RUDP\Rdp</Filter>
+    </ClInclude>
+    <ClInclude Include="RUDP\Rdp.h">
+      <Filter>RdpTransport\RUDP\Rdp</Filter>
+    </ClInclude>
+    <ClInclude Include="RUDP\RdpCommon.h">
+      <Filter>RdpTransport\RUDP\Rdp</Filter>
+    </ClInclude>
+    <ClInclude Include="RUDP\RdpCongestionControl.h">
+      <Filter>RdpTransport\RUDP\Rdp</Filter>
+    </ClInclude>
+    <ClInclude Include="RUDP\RdpConnDescriptor.h">
+      <Filter>RdpTransport\RUDP\Rdp</Filter>
+    </ClInclude>
+    <ClInclude Include="RUDP\RdpConnection.h">
+      <Filter>RdpTransport\RUDP\Rdp</Filter>
+    </ClInclude>
+    <ClInclude Include="RUDP\RdpEphMux.h">
+      <Filter>RdpTransport\RUDP\Rdp</Filter>
+    </ClInclude>
+    <ClInclude Include="RUDP\RdpHandshake.h">
+      <Filter>RdpTransport\RUDP\Rdp</Filter>
+    </ClInclude>
+    <ClInclude Include="RUDP\RdpInPktQueue.h">
+      <Filter>RdpTransport\RUDP\Rdp</Filter>
+    </ClInclude>
+    <ClInclude Include="RUDP\RdpListenContext.h">
+      <Filter>RdpTransport\RUDP\Rdp</Filter>
+    </ClInclude>
+    <ClInclude Include="RUDP\RdpLogic.h">
+      <Filter>RdpTransport\RUDP\Rdp</Filter>
+    </ClInclude>
+    <ClInclude Include="RUDP\RdpOutPktQueue.h">
+      <Filter>RdpTransport\RUDP\Rdp</Filter>
+    </ClInclude>
+    <ClInclude Include="RUDP\RdpPacket.h">
+      <Filter>RdpTransport\RUDP\Rdp</Filter>
+    </ClInclude>
+    <ClInclude Include="RUDP\RdpPacketPool.h">
+      <Filter>RdpTransport\RUDP\Rdp</Filter>
+    </ClInclude>
+    <ClInclude Include="RUDP\RdpPing.h">
+      <Filter>RdpTransport\RUDP\Rdp</Filter>
+    </ClInclude>
+    <ClInclude Include="RUDP\RdpPktQueue.h">
+      <Filter>RdpTransport\RUDP\Rdp</Filter>
+    </ClInclude>
+    <ClInclude Include="RUDP\RdpProto.h">
+      <Filter>RdpTransport\RUDP\Rdp</Filter>
+    </ClInclude>
+    <ClInclude Include="RUDP\RdpStats.h">
+      <Filter>RdpTransport\RUDP\Rdp</Filter>
+    </ClInclude>
+    <ClInclude Include="RUDP\RdpWriter.h">
+      <Filter>RdpTransport\RUDP\Rdp</Filter>
+    </ClInclude>
+    <ClInclude Include="RUDP\ISockSrv.h">
+      <Filter>RdpTransport\RUDP\SockSrv</Filter>
+    </ClInclude>
+    <ClInclude Include="RUDP\SockSrvWinsockAsync.h">
+      <Filter>RdpTransport\RUDP\SockSrvWinsock</Filter>
+    </ClInclude>
+    <ClInclude Include="RUDP\SockSrvWinsockBlocking.h">
+      <Filter>RdpTransport\RUDP\SockSrvWinsock</Filter>
+    </ClInclude>
+    <ClInclude Include="RUDP\UdpAddr.h">
+      <Filter>RdpTransport\RUDP\UdpSocket</Filter>
+    </ClInclude>
+    <ClInclude Include="RUDP\UdpSocket.h">
+      <Filter>RdpTransport\RUDP\UdpSocket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Server\RdpTransport\RdpSocketFactory.h">
+      <Filter>RdpTransport\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Server\RdpTransport\RdpTransportMsg.h">
+      <Filter>RdpTransport\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Server\RdpTransport\RdpTransportUtils.h">
+      <Filter>RdpTransport\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="RdpClientTransport\RdpClientChannel.h">
+      <Filter>RdpTransport\ClientTransport</Filter>
+    </ClInclude>
+    <ClInclude Include="RdpClientTransport\RdpClientTransport.h">
+      <Filter>RdpTransport\ClientTransport</Filter>
+    </ClInclude>
+    <ClInclude Include="RdpClientTransport\RdpLoginClient.h">
+      <Filter>RdpTransport\ClientTransport</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Server\RdpTransport\RdpTransportChannel.h">
+      <Filter>RdpTransport\TransportBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Server\NewLogin\NewLoginTypes.h">
+      <Filter>RdpTransport\NewLoginTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="PacketDispatcher.h">
+      <Filter>RdpTransport\PacketDispatcher</Filter>
+    </ClInclude>
+    <ClInclude Include="TransportUtils.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ConnectionState.component">
+      <Filter>Net</Filter>
+    </None>
+    <None Include="Interfaces.component">
+      <Filter>Net</Filter>
+    </None>
+    <None Include="RealDriver.component">
+      <Filter>Net</Filter>
+    </None>
+    <None Include="StreamAllocator.component">
+      <Filter>Net</Filter>
+    </None>
+    <None Include="Transport.component">
+      <Filter>Transport</Filter>
+    </None>
+    <None Include="TransportMessages.component">
+      <Filter>Transport</Filter>
+    </None>
+    <None Include="LoginClient.component">
+      <Filter>LoginClient</Filter>
+    </None>
+    <None Include="LoginTypes.component">
+      <Filter>LoginClient\Types</Filter>
+    </None>
+    <None Include="FreePortsFinder.component">
+      <Filter>FreePortsFinder</Filter>
+    </None>
+    <None Include="RUDP\Rdp.component">
+      <Filter>RdpTransport\RUDP\Rdp</Filter>
+    </None>
+    <None Include="RUDP\SockSrv.component">
+      <Filter>RdpTransport\RUDP\SockSrv</Filter>
+    </None>
+    <None Include="RUDP\SockSrvWinsock.component">
+      <Filter>RdpTransport\RUDP\SockSrvWinsock</Filter>
+    </None>
+    <None Include="RUDP\UdpSocket.component">
+      <Filter>RdpTransport\RUDP\UdpSocket</Filter>
+    </None>
+    <None Include="..\Server\RdpTransport\RdpTransportUtils.component">
+      <Filter>RdpTransport\Utils</Filter>
+    </None>
+    <None Include="RdpClientTransport\RdpClientTransport.component">
+      <Filter>RdpTransport\ClientTransport</Filter>
+    </None>
+    <None Include="..\Server\RdpTransport\RdpTransportChannel.component">
+      <Filter>RdpTransport\TransportBase</Filter>
+    </None>
+    <None Include="..\Server\NewLogin\NewLoginTypes.component">
+      <Filter>RdpTransport\NewLoginTypes</Filter>
+    </None>
+    <None Include="PacketDispatcher.component">
+      <Filter>RdpTransport\PacketDispatcher</Filter>
+    </None>
+    <None Include="all.component" />
+    <None Include="TransportInterface.component" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\Version.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="ClusterConfiguration.component">
+      <Filter>ClusterConfiguration</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ClusterConfiguration.h">
+      <Filter>ClusterConfiguration</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

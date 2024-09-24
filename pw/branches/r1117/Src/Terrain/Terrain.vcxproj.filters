@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Common">
+      <UniqueIdentifier>{798d7728-7c13-43e4-96b0-259e28726f94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TerrainManagers">
+      <UniqueIdentifier>{503e3f6d-c5b2-4333-a36c-21ccf56e62c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TerrainManagers\Helpers">
+      <UniqueIdentifier>{efcaef67-c015-486a-bd0e-973ea812a713}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GrassObsolete">
+      <UniqueIdentifier>{7bcc40b4-6fb0-4555-bb27-5b205698f518}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GrassObsolete\SpeedGrass">
+      <UniqueIdentifier>{b7ca4b93-ddc3-4320-991d-20cd1a46cec7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GrassObsolete\Managers">
+      <UniqueIdentifier>{004f175b-12e5-4678-938d-1b6644a86545}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="specific.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="DBTerrain.h">
+      <Filter>TerrainManagers</Filter>
+    </ClInclude>
+    <ClInclude Include="Terrain.h">
+      <Filter>TerrainManagers</Filter>
+    </ClInclude>
+    <ClInclude Include="TerrainElement.h">
+      <Filter>TerrainManagers</Filter>
+    </ClInclude>
+    <ClInclude Include="TerrainElementManager.h">
+      <Filter>TerrainManagers</Filter>
+    </ClInclude>
+    <ClInclude Include="TerrainGeometryManager.h">
+      <Filter>TerrainManagers</Filter>
+    </ClInclude>
+    <ClInclude Include="TerrainHeightManager.h">
+      <Filter>TerrainManagers</Filter>
+    </ClInclude>
+    <ClInclude Include="TerrainLayerManager.h">
+      <Filter>TerrainManagers</Filter>
+    </ClInclude>
+    <ClInclude Include="TerrainMaterialCache.h">
+      <Filter>TerrainManagers</Filter>
+    </ClInclude>
+    <ClInclude Include="TerrainTextureCache.h">
+      <Filter>TerrainManagers</Filter>
+    </ClInclude>
+    <ClInclude Include="ArrayInVRAM.h">
+      <Filter>TerrainManagers\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="ArraySampler.h">
+      <Filter>TerrainManagers\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="BezierSurface.h">
+      <Filter>TerrainManagers\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="SpeedGrass.h">
+      <Filter>GrassObsolete\SpeedGrass</Filter>
+    </ClInclude>
+    <ClInclude Include="GrassLayersManager.h">
+      <Filter>GrassObsolete\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="GrassRegion.h">
+      <Filter>GrassObsolete\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="GrassRenderManager.h">
+      <Filter>GrassObsolete\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="NatureAttackSpace.h" />
+    <ClInclude Include="NatureMap.h" />
+    <ClInclude Include="NatureMapVisual.h" />
+    <ClInclude Include="PatchCacheParams.h" />
+    <ClInclude Include="RoadGeometryVertex.h" />
+    <ClInclude Include="RoadPrimitive.h" />
+    <ClInclude Include="TEGetter.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="DBTerrain.cpp">
+      <Filter>TerrainManagers</Filter>
+    </ClCompile>
+    <ClCompile Include="Terrain.cpp">
+      <Filter>TerrainManagers</Filter>
+    </ClCompile>
+    <ClCompile Include="TerrainCollision.cpp">
+      <Filter>TerrainManagers</Filter>
+    </ClCompile>
+    <ClCompile Include="TerrainElement.cpp">
+      <Filter>TerrainManagers</Filter>
+    </ClCompile>
+    <ClCompile Include="TerrainElementManager.cpp">
+      <Filter>TerrainManagers</Filter>
+    </ClCompile>
+    <ClCompile Include="TerrainGeometryManager.cpp">
+      <Filter>TerrainManagers</Filter>
+    </ClCompile>
+    <ClCompile Include="TerrainHeightManager.cpp">
+      <Filter>TerrainManagers</Filter>
+    </ClCompile>
+    <ClCompile Include="TerrainLayerManager.cpp">
+      <Filter>TerrainManagers</Filter>
+    </ClCompile>
+    <ClCompile Include="TerrainMaterialCache.cpp">
+      <Filter>TerrainManagers</Filter>
+    </ClCompile>
+    <ClCompile Include="TerrainTextureCache.cpp">
+      <Filter>TerrainManagers</Filter>
+    </ClCompile>
+    <ClCompile Include="BezierSurface.cpp">
+      <Filter>TerrainManagers\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="SpeedGrass.cpp">
+      <Filter>GrassObsolete\SpeedGrass</Filter>
+    </ClCompile>
+    <ClCompile Include="GrassLayersManager.cpp">
+      <Filter>GrassObsolete\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="GrassRegion.cpp">
+      <Filter>GrassObsolete\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="GrassRenderManager.cpp">
+      <Filter>GrassObsolete\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="NatureAttackSpace.cpp" />
+    <ClCompile Include="NatureMap.cpp" />
+    <ClCompile Include="NatureMapVisual.cpp" />
+    <ClCompile Include="RoadPrimitive.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DB.component">
+      <Filter>TerrainManagers</Filter>
+    </None>
+    <None Include="all.component" />
+    <None Include="Grass_OBSOLETE.component" />
+    <None Include="TerrainManagers.component" />
+    <None Include="Visual.component" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\Version.rc" />
+  </ItemGroup>
+</Project>

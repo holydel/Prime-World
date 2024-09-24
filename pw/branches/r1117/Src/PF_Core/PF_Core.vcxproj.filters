@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Common">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Tests">
+      <UniqueIdentifier>{f5e0db98-67ba-4270-8e46-3100ed3f877f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core">
+      <UniqueIdentifier>{6fb0e627-dac2-477d-a3fb-f3be23552a6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Effects">
+      <UniqueIdentifier>{23ba0f42-6479-45fb-92e7-a90dad42df95}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{71747063-184f-4166-8dfc-d1d4efc52d9b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="specific.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientObject.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="IUpdateable.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="World.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="World.hpp">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldObject.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimatedTexture.h">
+      <Filter>Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="BasicEffect.h">
+      <Filter>Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraShakeController.h">
+      <Filter>Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraShakeSceneComponent.h">
+      <Filter>Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="ChangeMaterialEffect.h">
+      <Filter>Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="ColorModificationChannel.h">
+      <Filter>Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="ControlledStatusEffect.h">
+      <Filter>Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="DBEffect.h">
+      <Filter>Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="EffectGenSceneComponent.h">
+      <Filter>Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="EffectsPool.h">
+      <Filter>Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="EnableSCEffect.h">
+      <Filter>Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="GhostEffect.h">
+      <Filter>Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="LightningEffect.h">
+      <Filter>Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectsPool.h">
+      <Filter>Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleSceneComponentWithEffect.h">
+      <Filter>Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="RecolorableTexture.h">
+      <Filter>Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="ScaleColorEffect.h">
+      <Filter>Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="SpectatorEffectsPool.h">
+      <Filter>Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="SpringSceneComponent.h">
+      <Filter>Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="TraceGenSceneComponent.h">
+      <Filter>Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="ForceLink.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="TestWorld.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="IUpdateable.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="World.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimatedTexture.cpp">
+      <Filter>Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="BasicEffect.cpp">
+      <Filter>Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraShakeController.cpp">
+      <Filter>Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraShakeSceneComponent.cpp">
+      <Filter>Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="ChangeMaterialEffect.cpp">
+      <Filter>Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="ControlledStatusEffect.cpp">
+      <Filter>Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="DBEffect.cpp">
+      <Filter>Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="EffectGenSceneComponent.cpp">
+      <Filter>Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="EffectsPool.cpp">
+      <Filter>Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="EnableSCEffect.cpp">
+      <Filter>Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="GhostEffect.cpp">
+      <Filter>Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="LightningEffect.cpp">
+      <Filter>Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectsPool.cpp">
+      <Filter>Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleSceneComponentWithEffect.cpp">
+      <Filter>Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="RecolorableTexture.cpp">
+      <Filter>Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="ScaleColorEffect.cpp">
+      <Filter>Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="SpectatorEffectsPool.cpp">
+      <Filter>Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="SpringSceneComponent.cpp">
+      <Filter>Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="TraceGenSceneComponent.cpp">
+      <Filter>Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="ForceLink.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Base.component">
+      <Filter>Core</Filter>
+    </None>
+    <None Include="Interfaces.component">
+      <Filter>Core</Filter>
+    </None>
+    <None Include="World.component">
+      <Filter>Core</Filter>
+    </None>
+    <None Include="DBEffects.component">
+      <Filter>Effects</Filter>
+    </None>
+    <None Include="Effects.component">
+      <Filter>Effects</Filter>
+    </None>
+    <None Include="all.component" />
+    <None Include="Implementation.component" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\Version.rc">
+      <Filter>Resources</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

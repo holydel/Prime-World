@@ -1,0 +1,622 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseSingleExe|Win32">
+      <Configuration>ReleaseSingleExe</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ShippingSingleExe|Win32">
+      <Configuration>ShippingSingleExe</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Shipping|Win32">
+      <Configuration>Shipping</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <ProjectGuid>{270919DB-13D8-4A90-9C6F-BD60BAB2AE13}</ProjectGuid>
+    <RootNamespace>Render</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseSingleExe|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ShippingSingleExe|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseSingleExe|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ShippingSingleExe|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>17.0.35209.166</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(ProjectDir)..\_$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)..\_$(Configuration)\$(ProjectName)\</IntDir>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules />
+    <CodeAnalysisRuleAssemblies />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(ProjectDir)..\_$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)..\_$(Configuration)\$(ProjectName)\</IntDir>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules />
+    <CodeAnalysisRuleAssemblies />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'">
+    <OutDir>$(ProjectDir)..\_$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)..\_$(Configuration)\$(ProjectName)\</IntDir>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules />
+    <CodeAnalysisRuleAssemblies />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ShippingSingleExe|Win32'">
+    <OutDir>$(ProjectDir)..\_$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)..\_$(Configuration)\$(ProjectName)\</IntDir>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules />
+    <CodeAnalysisRuleAssemblies />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseSingleExe|Win32'">
+    <OutDir>$(ProjectDir)..\_$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)..\_$(Configuration)\$(ProjectName)\</IntDir>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules />
+    <CodeAnalysisRuleAssemblies />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../..;../../vendor\DirectShow\include;../../vendor\zlib\include;../../vendor\DirectX\Include;../;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;DLL;_DEBUG;_DO_ASSERT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <ExceptionHandling />
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <SmallerTypeCheck>true</SmallerTypeCheck>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <PreLinkEvent>
+      <Command>cd $(IntDir)
+..\..\..\vendor\BuildUtils\DefBuild.exe $(ProjectName).def
+if errorlevel 1 goto checklib
+:BuildImportLib
+lib /NOLOGO *.obj /def:$(ProjectName).def /MACHINE:X86 /out:"$(OutDir)$(ProjectName).lib"
+goto end
+:checklib
+if not exist "$(OutDir)$(ProjectName).lib" goto BuildImportLib
+:end
+dir&gt;nul
+</Command>
+    </PreLinkEvent>
+    <Link>
+      <AdditionalDependencies>comsuppwd.lib;Winmm.lib;gtrtst32.lib;zdll.lib;dxguid.lib;d3d9.lib;d3dx9.lib;dxerr.lib;dbghelp.lib;version.lib;wbemuuid.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName).dll</OutputFile>
+      <AdditionalLibraryDirectories>../../vendor\DirectShow\lib;../../vendor\zlib\lib;../../vendor\DirectX\Lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ModuleDefinitionFile>$(IntDir)$(ProjectName).def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>NotSet</SubSystem>
+      <LargeAddressAware>true</LargeAddressAware>
+      <FixedBaseAddress />
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>"$(ProjectDir)..\..\vendor\BuildUtils\CopyReference.exe" $(ProjectPath) $(Configuration) $(TargetDir)</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/MP /D_SCL_SECURE_NO_WARNINGS /D_SECURE_SCL=0 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>../..;../../vendor\DirectShow\include;../../vendor\zlib\include;../../vendor\DirectX\Include;../;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;DLL;NDEBUG;_DO_ASSERT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling />
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <SmallerTypeCheck>false</SmallerTypeCheck>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <PreLinkEvent>
+      <Command>cd $(IntDir)
+..\..\..\vendor\BuildUtils\DefBuild.exe $(ProjectName).def
+if errorlevel 1 goto checklib
+:BuildImportLib
+lib /NOLOGO *.obj /def:$(ProjectName).def /MACHINE:X86 /out:"$(OutDir)$(ProjectName).lib"
+goto end
+:checklib
+if not exist "$(OutDir)$(ProjectName).lib" goto BuildImportLib
+:end
+dir&gt;nul
+</Command>
+    </PreLinkEvent>
+    <Link>
+      <AdditionalDependencies>comsuppw.lib;Winmm.lib;gtrtst32.lib;zdll.lib;dxguid.lib;d3d9.lib;d3dx9.lib;dxerr.lib;DbgHelp.lib;version.lib;wbemuuid.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName).dll</OutputFile>
+      <AdditionalLibraryDirectories>../../vendor\DirectShow\lib;../../vendor\zlib\lib;../../vendor\DirectX\Lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ModuleDefinitionFile>$(IntDir)$(ProjectName).def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>NotSet</SubSystem>
+      <LargeAddressAware>true</LargeAddressAware>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <FixedBaseAddress />
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>"$(ProjectDir)..\..\vendor\BuildUtils\CopyReference.exe" $(ProjectPath) $(Configuration) $(TargetDir)</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/MP /D_SCL_SECURE_NO_WARNINGS /D_SECURE_SCL=0 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>../..;../../vendor\DirectShow\include;../../vendor\zlib\include;../../vendor\DirectX\Include;../;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;DLL;NDEBUG;_SHIPPING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling />
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <SmallerTypeCheck>false</SmallerTypeCheck>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <PreLinkEvent>
+      <Command>cd $(IntDir)
+..\..\..\vendor\BuildUtils\DefBuild.exe $(ProjectName).def
+if errorlevel 1 goto checklib
+:BuildImportLib
+lib /NOLOGO *.obj /def:$(ProjectName).def /MACHINE:X86 /out:"$(OutDir)$(ProjectName).lib"
+goto end
+:checklib
+if not exist "$(OutDir)$(ProjectName).lib" goto BuildImportLib
+:end
+dir&gt;nul
+</Command>
+    </PreLinkEvent>
+    <Link>
+      <AdditionalDependencies>comsuppw.lib;Winmm.lib;gtrtst32.lib;zdll.lib;dxguid.lib;d3d9.lib;d3dx9.lib;dxerr.lib;DbgHelp.lib;version.lib;wbemuuid.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName).dll</OutputFile>
+      <AdditionalLibraryDirectories>../../vendor\DirectShow\lib;../../vendor\zlib\lib;../../vendor\DirectX\Lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ModuleDefinitionFile>$(IntDir)$(ProjectName).def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>NotSet</SubSystem>
+      <LargeAddressAware>true</LargeAddressAware>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <FixedBaseAddress />
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>"$(ProjectDir)..\..\vendor\BuildUtils\CopyReference.exe" $(ProjectPath) $(Configuration) $(TargetDir)</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ShippingSingleExe|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/MP /D_SCL_SECURE_NO_WARNINGS /D_SECURE_SCL=0 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <AdditionalIncludeDirectories>../..;../../vendor\DirectShow\include;../../vendor\zlib\include;../../vendor\DirectX\Include;../;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;STATIC_LIB;NDEBUG;_SHIPPING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling />
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <SmallerTypeCheck>false</SmallerTypeCheck>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <PreLinkEvent>
+      <Command />
+    </PreLinkEvent>
+    <PostBuildEvent>
+      <Command>"$(ProjectDir)..\..\vendor\BuildUtils\CopyReference.exe" $(ProjectPath) $(Configuration) $(TargetDir)</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseSingleExe|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/MP /D_SCL_SECURE_NO_WARNINGS /D_SECURE_SCL=0 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <AdditionalIncludeDirectories>../..;../../vendor\DirectShow\include;../../vendor\zlib\include;../../vendor\DirectX\Include;../;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;STATIC_LIB;NDEBUG;_DO_ASSERT;STARFORCE_PROTECTED;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling />
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <SmallerTypeCheck>false</SmallerTypeCheck>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <PreLinkEvent>
+      <Command />
+    </PreLinkEvent>
+    <PostBuildEvent>
+      <Command>"$(ProjectDir)..\..\vendor\BuildUtils\CopyReference.exe" $(ProjectPath) $(Configuration) $(TargetDir)</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\vendorFOURCC.h" />
+    <ClInclude Include="aabb.h" />
+    <ClInclude Include="AOERenderer.h" />
+    <ClInclude Include="atir2vb.h" />
+    <ClInclude Include="batch.h" />
+    <ClInclude Include="Bloom.h" />
+    <ClInclude Include="Blur.h" />
+    <ClInclude Include="BoundingPrimitives.h" />
+    <ClInclude Include="CleanGeometry.h" />
+    <ClInclude Include="configdatabase.h" />
+    <ClInclude Include="ConfigManager.h" />
+    <ClInclude Include="ConstantProtection.h" />
+    <ClInclude Include="ConvertDirection.h" />
+    <ClInclude Include="ConvexVolume.h" />
+    <ClInclude Include="DBRender.h" />
+    <ClInclude Include="DBRenderResources.h" />
+    <ClInclude Include="DDS.h" />
+    <ClInclude Include="DebugLocks.h" />
+    <ClInclude Include="debugmesh.h" />
+    <ClInclude Include="debugrenderer.h" />
+    <ClInclude Include="debugstaticmesh.h" />
+    <ClInclude Include="DeviceLost.h" />
+    <ClInclude Include="dipdescriptor.h" />
+    <ClInclude Include="DXHelpers.h" />
+    <ClInclude Include="DxIntrusivePtr.h" />
+    <ClInclude Include="DXManager.h" />
+    <ClInclude Include="DxResourcesControl.h" />
+    <ClInclude Include="dxutils.h" />
+    <ClInclude Include="DXWarnSignal.h" />
+    <ClInclude Include="Features.h" />
+    <ClInclude Include="Filter.h" />
+    <ClInclude Include="FlashRenderer.h" />
+    <ClInclude Include="FlashRendererInterface.h" />
+    <ClInclude Include="FrustumCuller.h" />
+    <ClInclude Include="FullScreenFX.h" />
+    <ClInclude Include="GlobalMasks.h" />
+    <ClInclude Include="IConfigManager.h" />
+    <ClInclude Include="ImmediateRenderer.h" />
+    <ClInclude Include="InstancedMesh.h" />
+    <ClInclude Include="InstancedMeshResource.h" />
+    <ClInclude Include="light.h" />
+    <ClInclude Include="LightsManager.h" />
+    <ClInclude Include="locktype.h" />
+    <ClInclude Include="Material.h" />
+    <ClInclude Include="MaterialSpec.h" />
+    <ClInclude Include="MeshResource.h" />
+    <ClInclude Include="multishader.h" />
+    <ClInclude Include="NullRenderSignal.h" />
+    <ClInclude Include="OcclusionQueries.h" />
+    <ClInclude Include="omnilight.h" />
+    <ClInclude Include="ParticleFX.h" />
+    <ClInclude Include="primitive.h" />
+    <ClInclude Include="priorities.h" />
+    <ClInclude Include="ReadDDS.h" />
+    <ClInclude Include="Rect.h" />
+    <ClInclude Include="renderableprimitive.h" />
+    <ClInclude Include="RenderComponent.h" />
+    <ClInclude Include="renderer.h" />
+    <ClInclude Include="renderflagsconverter.h" />
+    <ClInclude Include="renderformat.h" />
+    <ClInclude Include="RenderInterface.h" />
+    <ClInclude Include="rendermode.h" />
+    <ClInclude Include="renderprimitivetype.h" />
+    <ClInclude Include="renderresourcemanager.h" />
+    <ClInclude Include="renderstates.h" />
+    <ClInclude Include="renderstatesmanager.h" />
+    <ClInclude Include="rendersurface.h" />
+    <ClInclude Include="RoadGeometryVertex.h" />
+    <ClInclude Include="sampler.h" />
+    <ClInclude Include="sceneconstants.h" />
+    <ClInclude Include="shadercompiler.h" />
+    <ClInclude Include="ShaderInitializers.h" />
+    <ClInclude Include="shaderpair.h" />
+    <ClInclude Include="ShadowManager.h" />
+    <ClInclude Include="ShadowMap.h" />
+    <ClInclude Include="ShadowReceiverVolume.h" />
+    <ClInclude Include="SHCoeffs.h" />
+    <ClInclude Include="SkeletalAnimationBlender.h" />
+    <ClInclude Include="SkeletalAnimationSampler.h" />
+    <ClInclude Include="SkeletalMesh.h" />
+    <ClInclude Include="skeletonanimation.h" />
+    <ClInclude Include="SkeletonReindexResource.h" />
+    <ClInclude Include="SkeletonWrapper.h" />
+    <ClInclude Include="smartrenderer.h" />
+    <ClInclude Include="specific.h" />
+    <ClInclude Include="states.h" />
+    <ClInclude Include="StaticMesh.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Stretcher.h" />
+    <ClInclude Include="texture.h" />
+    <ClInclude Include="TextureManager.h" />
+    <ClInclude Include="uirenderer.h" />
+    <ClInclude Include="uirenderer.hpp" />
+    <ClInclude Include="UITextureAtlasItem.h" />
+    <ClInclude Include="UITextureCache.h" />
+    <ClInclude Include="UITextureCacheInterface.h" />
+    <ClInclude Include="VertexColorStream.h" />
+    <ClInclude Include="vertexelementdescriptor.h" />
+    <ClInclude Include="vertexelementtype.h" />
+    <ClInclude Include="vertexelementusage.h" />
+    <ClInclude Include="vertexformatdescriptor.h" />
+    <ClInclude Include="vertexstreamdescriptor.h" />
+    <ClInclude Include="WaterConvexes.h" />
+    <ClInclude Include="WaterManager.h" />
+    <ClInclude Include="WaterMathTex.h" />
+    <ClInclude Include="WaterMesh.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="aabb.cpp" />
+    <ClCompile Include="AOERenderer.cpp" />
+    <ClCompile Include="batch.cpp" />
+    <ClCompile Include="Bloom.cpp" />
+    <ClCompile Include="Blur.cpp" />
+    <ClCompile Include="BoundingPrimitives.cpp" />
+    <ClCompile Include="CleanGeometry.cpp" />
+    <ClCompile Include="configdatabase.cpp" />
+    <ClCompile Include="ConfigManager.cpp" />
+    <ClCompile Include="ConstantProtection.cpp" />
+    <ClCompile Include="ConvexVolume.cpp" />
+    <ClCompile Include="DBRender.cpp" />
+    <ClCompile Include="DBRenderResources.cpp" />
+    <ClCompile Include="debugmesh.cpp" />
+    <ClCompile Include="debugrenderer.cpp" />
+    <ClCompile Include="debugstaticmesh.cpp" />
+    <ClCompile Include="DeviceLost.cpp" />
+    <ClCompile Include="dipdescriptor.cpp" />
+    <ClCompile Include="DXManager.cpp" />
+    <ClCompile Include="DxResourcesControl.cpp" />
+    <ClCompile Include="dxutils.cpp" />
+    <ClCompile Include="FlashRenderer.cpp" />
+    <ClCompile Include="FrustumCuller.cpp" />
+    <ClCompile Include="FullScreenFX.cpp" />
+    <ClCompile Include="ImmediateRenderer.cpp" />
+    <ClCompile Include="InstancedMesh.cpp" />
+    <ClCompile Include="InstancedMeshResource.cpp" />
+    <ClCompile Include="LightsManager.cpp" />
+    <ClCompile Include="Material.cpp" />
+    <ClCompile Include="MaterialSpec.cpp" />
+    <ClCompile Include="multishader.cpp" />
+    <ClCompile Include="OcclusionQueries.cpp" />
+    <ClCompile Include="ParticleFX.cpp" />
+    <ClCompile Include="primitive.cpp" />
+    <ClCompile Include="ReadDDS.cpp" />
+    <ClCompile Include="RenderComponent.cpp" />
+    <ClCompile Include="renderer.cpp" />
+    <ClCompile Include="renderflagsconverter.cpp" />
+    <ClCompile Include="RenderInterface.cpp" />
+    <ClCompile Include="rendermode.cpp" />
+    <ClCompile Include="renderresourcemanager.cpp" />
+    <ClCompile Include="renderstatesmanager.cpp" />
+    <ClCompile Include="rendersurface.cpp" />
+    <ClCompile Include="sampler.cpp" />
+    <ClCompile Include="sceneconstants.cpp" />
+    <ClCompile Include="shadercompiler.cpp" />
+    <ClCompile Include="ShadowManager.cpp" />
+    <ClCompile Include="ShadowMap.cpp" />
+    <ClCompile Include="SHCoeffs.cpp" />
+    <ClCompile Include="SkeletalAnimationBlender.cpp" />
+    <ClCompile Include="SkeletalAnimationSampler.cpp" />
+    <ClCompile Include="SkeletalMesh.cpp" />
+    <ClCompile Include="skeletonanimation.cpp" />
+    <ClCompile Include="SkeletonWrapper.cpp" />
+    <ClCompile Include="smartrenderer.cpp" />
+    <ClCompile Include="StaticMesh.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ReleaseSingleExe|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ShippingSingleExe|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Stretcher.cpp" />
+    <ClCompile Include="texture.cpp" />
+    <ClCompile Include="TextureManager.cpp" />
+    <ClCompile Include="uirenderer.cpp" />
+    <ClCompile Include="UITextureAtlasItem.cpp" />
+    <ClCompile Include="UITextureCache.cpp" />
+    <ClCompile Include="VertexColorStream.cpp" />
+    <ClCompile Include="vertexformatdescriptor.cpp" />
+    <ClCompile Include="VidMemViaDDraw.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ReleaseSingleExe|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ShippingSingleExe|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="VidMemViaWMI.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ReleaseSingleExe|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ShippingSingleExe|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="WaterConvexes.cpp" />
+    <ClCompile Include="WaterManager.cpp" />
+    <ClCompile Include="WaterMathTex.cpp" />
+    <ClCompile Include="WaterMesh.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="all.component" />
+    <None Include="BasicFXMaterial.inl" />
+    <None Include="BasicMaterial.inl" />
+    <None Include="BasicMaterialWithBatch.inl" />
+    <None Include="BatchedRenderer.component" />
+    <None Include="CommonMaterialFunc.inl" />
+    <None Include="ConfigManager.component" />
+    <None Include="Culling.component" />
+    <None Include="DBRender.component" />
+    <None Include="DebugRenderer.component" />
+    <None Include="DropMaterial.inl" />
+    <None Include="EaselPaintMaterial.inl" />
+    <None Include="HeightfogMaterial.inl" />
+    <None Include="ImmediateRenderer.component" />
+    <None Include="InstancingMaterial.inl" />
+    <None Include="Material.component" />
+    <None Include="MaterialSpec.inl" />
+    <None Include="ParticleFXMaterial.inl" />
+    <None Include="PFXLogger.inl" />
+    <None Include="render.refs" />
+    <None Include="Renderer.component" />
+    <None Include="RenderScene.component" />
+    <None Include="Shaders.component" />
+    <None Include="Shadow.component" />
+    <None Include="ShadowMaterialFunc.inl" />
+    <None Include="SkyMaterial.inl" />
+    <None Include="SpecialTransparency.inl" />
+    <None Include="TerrainMaterialFunc.inl" />
+    <None Include="TestTownMaterial.inl" />
+    <None Include="Textures.component" />
+    <None Include="UIBaseMaterial.inl" />
+    <None Include="UIButtonMaterial.inl" />
+    <None Include="UIFontMaterial.inl" />
+    <None Include="UIGlassMaterial.inl" />
+    <None Include="UI_Renderer.component" />
+    <None Include="Water.component" />
+    <None Include="WaterMaterial.inl" />
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="..\..\Data\deprecated_shaders\debug3d_shader.hlsl" />
+    <FxCompile Include="..\..\Data\deprecated_shaders\debug_points2d_shader.hlsl" />
+    <FxCompile Include="..\..\Data\deprecated_shaders\debug_points3d_shader.hlsl" />
+    <FxCompile Include="..\..\Data\deprecated_shaders\debug_shader.hlsl" />
+    <FxCompile Include="Shaders\MaterialSpec.hlsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="Shaders\MaterialSpec.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\Version.rc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSingleExe|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ShippingSingleExe|Win32'">true</ExcludedFromBuild>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\libdb\libdb.vcxproj">
+      <Project>{0295967b-b4ed-4f85-bb3a-c56f3769e59f}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\MemoryLib\MemoryLib.vcxproj">
+      <Project>{18ec1173-935f-40e5-bb18-0d21b2a63619}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\System\Foundation.vcxproj">
+      <Project>{39ae0307-9e9e-4a5e-b962-25de686c7cc2}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Types.DBTypes\Types.DBTypes.csproj">
+      <Project>{cb33bf48-712e-4eab-8436-e64dc30cbcd7}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Types\Types.csproj">
+      <Project>{2d99c064-8d94-402f-afb8-19fc429df5c2}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

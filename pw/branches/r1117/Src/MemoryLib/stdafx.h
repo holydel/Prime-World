@@ -7,7 +7,7 @@
 
 #if defined( NV_WIN_PLATFORM )
 #include <windows.h>
-#include <typeinfo.h>
+#include <typeinfo>
 #elif defined( NV_LINUX_PLATFORM )
 #include <typeinfo>
 #endif

@@ -1,0 +1,434 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Common">
+      <UniqueIdentifier>{90ddbd3c-9563-48d1-b607-c2eebf5a1ce5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{aebb84e8-fd45-4f0b-ad08-32500961a46c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HybridClient">
+      <UniqueIdentifier>{987fbeae-0e9b-4173-bbfc-582ae25fd48f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HybridClient\.auto">
+      <UniqueIdentifier>{657ebfb0-d2e7-49b3-9fbb-c345756ff1c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LoadingScreen">
+      <UniqueIdentifier>{016b9b3a-e50f-4a9d-b293-d61a43da7494}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LobbyScreens">
+      <UniqueIdentifier>{fbcad23d-8599-4642-a87c-8cee91dc6c46}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="StatisticClient">
+      <UniqueIdentifier>{5df288c6-7602-4f4d-a3e6-fab1e60338c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="StatisticClient\Types">
+      <UniqueIdentifier>{6e039133-0130-44f9-b109-5f0e6eaeea24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4055ab5a-eb7f-44b8-a508-e7526e4df4a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LobbyClient">
+      <UniqueIdentifier>{9280e4dd-988b-4503-a997-d2b15ff823c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LobbyClient\.auto">
+      <UniqueIdentifier>{3f329881-3643-4bf1-9600-e87d1691df14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LobbyClient\CommonTypes">
+      <UniqueIdentifier>{3a10e7dd-4cdf-4d6f-9e73-537feaf4b405}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LobbyClientPW">
+      <UniqueIdentifier>{ac53f816-1e40-4845-bd5c-4a02f4b566d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RollTypes">
+      <UniqueIdentifier>{699065f7-249c-448a-92d7-6844ddf42e5b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="WebClient">
+      <UniqueIdentifier>{861196eb-45e9-4bf2-8d02-4a0281981774}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="specific.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ApplicationResources.h">
+      <Filter>Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Version.h">
+      <Filter>Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Game\PF\Client\LobbyPvx\HybridServerNodeImpl.h">
+      <Filter>HybridClient</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Game\PF\HybridServer\PeeredTypes.h">
+      <Filter>HybridClient</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadingFlashInterface.h">
+      <Filter>LoadingScreen</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadingHeroes.h">
+      <Filter>LoadingScreen</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadingScreen.h">
+      <Filter>LoadingScreen</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadingScreenLogic.h">
+      <Filter>LoadingScreen</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadingStatusHandler.h">
+      <Filter>LobbyScreens</Filter>
+    </ClInclude>
+    <ClInclude Include="LobbyScreenInterface.h">
+      <Filter>LobbyScreens</Filter>
+    </ClInclude>
+    <ClInclude Include="NetworkStatusScreen.h">
+      <Filter>LobbyScreens</Filter>
+    </ClInclude>
+    <ClInclude Include="SelectGameModeLogic.h">
+      <Filter>LobbyScreens</Filter>
+    </ClInclude>
+    <ClInclude Include="SelectGameModeScreen.h">
+      <Filter>LobbyScreens</Filter>
+    </ClInclude>
+    <ClInclude Include="SelectHeroScreen.h">
+      <Filter>LobbyScreens</Filter>
+    </ClInclude>
+    <ClInclude Include="SelectHeroScreenLogic.h">
+      <Filter>LobbyScreens</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugVarsSender.h">
+      <Filter>StatisticClient</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Game\PF\Server\Statistic\GameStatClient.h">
+      <Filter>StatisticClient</Filter>
+    </ClInclude>
+    <ClInclude Include="GameStatistics.h">
+      <Filter>StatisticClient</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Game\PF\Server\Statistic\StatClientDiskDispatcher.h">
+      <Filter>StatisticClient</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Game\PF\Server\Statistic\StatClientHttpDispatcher.h">
+      <Filter>StatisticClient</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Game\PF\Server\Statistic\GameStatServiceId.h">
+      <Filter>StatisticClient\Types</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Game\PF\Server\Statistic\SpecialStatisticTypes.h">
+      <Filter>StatisticClient\Types</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Game\PF\Server\Statistic\StatisticsClientTypes.h">
+      <Filter>StatisticClient\Types</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Game\PF\Server\Statistic\StatisticsDebugTypes.h">
+      <Filter>StatisticClient\Types</Filter>
+    </ClInclude>
+    <ClInclude Include="CpuTopology.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameContext.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IGameContext.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LobbyConnection.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LocalCmdScheduler.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LocalGameContext.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PF_TypesHash.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RegistryToolbox.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ReplayRunner.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ReplayTransceiver.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TypesHash.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Game\PF\Client\LobbyPvx\ClientAccountingGadget.h">
+      <Filter>LobbyClient</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Game\PF\Client\LobbyPvx\FastReconnectCtx.h">
+      <Filter>LobbyClient</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Game\PF\Client\LobbyPvx\LobbyClientBase.h">
+      <Filter>LobbyClient</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Game\PF\Client\LobbyPvx\LobbyClientInterface.h">
+      <Filter>LobbyClient</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Game\PF\Client\LobbyPvx\LobbyGameClient.h">
+      <Filter>LobbyClient</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Game\PF\Client\LobbyPvx\stdafx.h">
+      <Filter>LobbyClient</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Game\PF\Client\LobbyPvx\LLobbyClientInterface.auto.h">
+      <Filter>LobbyClient\.auto</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Game\PF\Server\Accounting\RLobbyAccounting.auto.h">
+      <Filter>LobbyClient\.auto</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Game\PF\Client\LobbyPvx\RLobbyClientInterface.auto.h">
+      <Filter>LobbyClient\.auto</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Game\PF\Server\LobbyPvx\RLobbyIEntrance.auto.h">
+      <Filter>LobbyClient\.auto</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Game\PF\Server\LobbyPvx\RLobbyIServerInstance.auto.h">
+      <Filter>LobbyClient\.auto</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Game\PF\Server\LobbyPvx\CommonTypes.h">
+      <Filter>LobbyClient\CommonTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="FastReconnectCtxPW.h">
+      <Filter>LobbyClientPW</Filter>
+    </ClInclude>
+    <ClInclude Include="LobbyUIInterface.h">
+      <Filter>LobbyClientPW</Filter>
+    </ClInclude>
+    <ClInclude Include="NewLobbyClientPW.h">
+      <Filter>LobbyClientPW</Filter>
+    </ClInclude>
+    <ClInclude Include="NewLobbyGameClientPW.h">
+      <Filter>LobbyClientPW</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Game\PF\Server\Roll\RollTypes.h">
+      <Filter>RollTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Server\WebClient\WebClient.h">
+      <Filter>WebClient</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Game\PF\Client\LobbyPvx\base64.h" />
+    <ClInclude Include="..\Game\PF\Client\LobbyPvx\NewReplay.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Game\PF\Client\LobbyPvx\HybridServerNodeImpl.cpp">
+      <Filter>HybridClient</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Game\PF\HybridServer\PeeredTypes.cpp">
+      <Filter>HybridClient</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Game\PF\HybridServer\LPeered.auto.cpp">
+      <Filter>HybridClient\.auto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Game\PF\HybridServer\RPeered.auto.cpp">
+      <Filter>HybridClient\.auto</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadingFlashInterface.cpp">
+      <Filter>LoadingScreen</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadingHeroes.cpp">
+      <Filter>LoadingScreen</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadingScreen.cpp">
+      <Filter>LoadingScreen</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadingScreenLogic.cpp">
+      <Filter>LoadingScreen</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadingStatusHandler.cpp">
+      <Filter>LobbyScreens</Filter>
+    </ClCompile>
+    <ClCompile Include="NetworkStatusScreen.cpp">
+      <Filter>LobbyScreens</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectGameModeLogic.cpp">
+      <Filter>LobbyScreens</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectGameModeScreen.cpp">
+      <Filter>LobbyScreens</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectHeroScreen.cpp">
+      <Filter>LobbyScreens</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectHeroScreenLogic.cpp">
+      <Filter>LobbyScreens</Filter>
+    </ClCompile>
+    <ClCompile Include="DebugVarsSender.cpp">
+      <Filter>StatisticClient</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Game\PF\Server\Statistic\GameStatClient.cpp">
+      <Filter>StatisticClient</Filter>
+    </ClCompile>
+    <ClCompile Include="GameStatistics.cpp">
+      <Filter>StatisticClient</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Game\PF\Server\Statistic\StatClientDiskDispatcher.cpp">
+      <Filter>StatisticClient</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Game\PF\Server\Statistic\StatClientHttpDispatcher.cpp">
+      <Filter>StatisticClient</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Game\PF\Server\Statistic\SpecialStatisticTypes.cpp">
+      <Filter>StatisticClient\Types</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Game\PF\Server\Statistic\StatisticsClientTypes.cpp">
+      <Filter>StatisticClient\Types</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Game\PF\Server\Statistic\StatisticsDebugTypes.cpp">
+      <Filter>StatisticClient\Types</Filter>
+    </ClCompile>
+    <ClCompile Include="CpuTopology.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameContext.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LobbyConnection.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LocalCmdScheduler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LocalGameContext.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RegistryToolbox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ReplayRunner.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ReplayTransceiver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Game\PF\Client\LobbyPvx\LobbyClientBase.cpp">
+      <Filter>LobbyClient</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Game\PF\Client\LobbyPvx\LobbyGameClient.cpp">
+      <Filter>LobbyClient</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Game\PF\Client\LobbyPvx\stdafx.cpp">
+      <Filter>LobbyClient</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Game\PF\Client\LobbyPvx\LLobbyClientInterface.auto.cpp">
+      <Filter>LobbyClient\.auto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Game\PF\Server\Accounting\RLobbyAccounting.auto.cpp">
+      <Filter>LobbyClient\.auto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Game\PF\Client\LobbyPvx\RLobbyClientInterface.auto.cpp">
+      <Filter>LobbyClient\.auto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Game\PF\Server\LobbyPvx\RLobbyIEntrance.auto.cpp">
+      <Filter>LobbyClient\.auto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Game\PF\Server\LobbyPvx\RLobbyIServerInstance.auto.cpp">
+      <Filter>LobbyClient\.auto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Game\PF\Server\LobbyPvx\CommonTypes.cpp">
+      <Filter>LobbyClient\CommonTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="NewLobbyClientPW.cpp">
+      <Filter>LobbyClientPW</Filter>
+    </ClCompile>
+    <ClCompile Include="NewLobbyGameClientPW.cpp">
+      <Filter>LobbyClientPW</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Game\PF\Server\Roll\RollTypes.cpp">
+      <Filter>RollTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Server\WebClient\WebClient.cpp">
+      <Filter>WebClient</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Game\PF\Client\LobbyPvx\base64.cpp" />
+    <ClCompile Include="..\Game\PF\Client\LobbyPvx\NewReplay.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\App.ico">
+      <Filter>Resources</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Manifest Include="..\Application.manifest">
+      <Filter>Resources</Filter>
+    </Manifest>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\Application.rc">
+      <Filter>Resources</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="..\Version.rc">
+      <Filter>Resources</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="..\Version.h.xslt">
+      <Filter>Resources</Filter>
+    </Xml>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Game\PF\Client\LobbyPvx\HybridClient.component">
+      <Filter>HybridClient</Filter>
+    </None>
+    <None Include="..\Game\PF\HybridServer\PeeredTypes.component">
+      <Filter>HybridClient</Filter>
+    </None>
+    <None Include="LoadingScreen.component">
+      <Filter>LoadingScreen</Filter>
+    </None>
+    <None Include="..\Game\PF\Server\Statistic\GameStatClient.component">
+      <Filter>StatisticClient</Filter>
+    </None>
+    <None Include="..\Game\PF\Server\Statistic\StatClientHttpDispatcher.component">
+      <Filter>StatisticClient</Filter>
+    </None>
+    <None Include="..\Game\PF\Server\Statistic\StatisticsClientTypes.component">
+      <Filter>StatisticClient\Types</Filter>
+    </None>
+    <None Include="GameContext.component">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="..\Game\PF\Client\LobbyPvx\all.component">
+      <Filter>LobbyClient</Filter>
+    </None>
+    <None Include="..\Game\PF\Client\LobbyPvx\GameClient.component">
+      <Filter>LobbyClient</Filter>
+    </None>
+    <None Include="..\Game\PF\Client\LobbyPvx\LobbyClientLInterface.component">
+      <Filter>LobbyClient</Filter>
+    </None>
+    <None Include="..\Game\PF\Client\LobbyPvx\LobbyClientRInterface.component">
+      <Filter>LobbyClient</Filter>
+    </None>
+    <None Include="..\Game\PF\Server\LobbyPvx\CommonTypes.component">
+      <Filter>LobbyClient\CommonTypes</Filter>
+    </None>
+    <None Include="..\Game\PF\Server\Roll\RollTypes.component">
+      <Filter>RollTypes</Filter>
+    </None>
+    <None Include="..\Server\WebClient\WebClient.component">
+      <Filter>WebClient</Filter>
+    </None>
+    <None Include="pw_client.refs" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\Game\PF\HybridServer\LPeered.auto.h">
+      <Filter>HybridClient\.auto</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\Game\PF\HybridServer\RPeered.auto.h">
+      <Filter>HybridClient\.auto</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

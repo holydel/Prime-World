@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="GameChatClient">
+      <UniqueIdentifier>{cfcde124-c601-4836-910b-6fed856dbed3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameChatClient\.auto">
+      <UniqueIdentifier>{faa2ac43-8f9b-40c3-bc73-c3645ebc7e5f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="all.component">
+      <Filter>GameChatClient</Filter>
+    </None>
+    <None Include="..\..\..\..\Server\Chat\ChatSvc\LChatClientIfaceCallback.component">
+      <Filter>GameChatClient\.auto</Filter>
+    </None>
+    <None Include="..\..\..\..\Server\Chat\ChatSvc\RChatClientIface.component">
+      <Filter>GameChatClient\.auto</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\Server\Chat\ChatSvc\ChatClientIfaceCallback.h">
+      <Filter>GameChatClient</Filter>
+    </ClInclude>
+    <ClInclude Include="GameChatClient.h">
+      <Filter>GameChatClient</Filter>
+    </ClInclude>
+    <ClInclude Include="IGameChatClient.h">
+      <Filter>GameChatClient</Filter>
+    </ClInclude>
+    <ClInclude Include="specific.h">
+      <Filter>GameChatClient</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>GameChatClient</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Server\Chat\ChatSvc\LChatClientIfaceCallback.auto.h">
+      <Filter>GameChatClient\.auto</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Server\Chat\ChatSvc\RChatClientIface.auto.h">
+      <Filter>GameChatClient\.auto</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GameChatClient.cpp">
+      <Filter>GameChatClient</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>GameChatClient</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Server\Chat\ChatSvc\LChatClientIfaceCallback.auto.cpp">
+      <Filter>GameChatClient\.auto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Server\Chat\ChatSvc\RChatClientIface.auto.cpp">
+      <Filter>GameChatClient\.auto</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\..\..\..\Version.rc" />
+  </ItemGroup>
+</Project>

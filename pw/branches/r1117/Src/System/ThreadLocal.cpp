@@ -12,17 +12,12 @@
 #if defined( NV_WIN_PLATFORM )
 
 	#pragma pack(push, 1)
-	typedef struct _CLIENT_ID
-	{
-	  PVOID UniqueProcess;
-	  PVOID UniqueThread;
-	} CLIENT_ID, *PCLIENT_ID;
 
 	typedef struct My_TEB 
 	{
 	  NT_TIB Tib; 
 	  PVOID EnvironmentPointer; 
-	  CLIENT_ID Cid; 
+	  CLIENT_ID Cid;
 	  PVOID ActiveRpcInfo; 
 	  PVOID ThreadLocalStoragePointer; 
 	  PPEB Peb; 
@@ -42,7 +37,7 @@
 	  ULONG GdiRgn; 
 	  ULONG GdiPen; 
 	  ULONG GdiBrush; 
-	  CLIENT_ID RealClientId; 
+	  CLIENT_ID RealClientId;
 	  PVOID GdiCachedProcessHandle; 
 	  ULONG GdiClientPID; 
 	  ULONG GdiClientTID; 
@@ -79,29 +74,16 @@
 	  PVOID StackReserved;
 	} MyTEB, *PMyTEB;
 
-	typedef int KPRIORITY;
-
 	typedef struct _THREAD_BASIC_INFORMATION {
 
 	  NTSTATUS  ExitStatus; 
 	  PTEB      TebBaseAddress; 
-	  CLIENT_ID ClientId; 
+	  CLIENT_ID ClientId;
 	  KAFFINITY AffinityMask; 
 	  KPRIORITY Priority; 
 	  KPRIORITY BasePriority;
 
 	} THREAD_BASIC_INFORMATION, *PTHREAD_BASIC_INFORMATION;
-
-	typedef struct _PEB_LDR_DATA
-	{
-	  ULONG Length;
-	  UCHAR Initialized;
-	  PVOID SsHandle;
-	  LIST_ENTRY InLoadOrderModuleList;
-	  LIST_ENTRY InMemoryOrderModuleList;
-	  LIST_ENTRY InInitializationOrderModuleList;
-	  PVOID EntryInProgress;
-	} PEB_LDR_DATA, *PPEB_LDR_DATA;
 
 	typedef struct _CURDIR
 	{
@@ -116,39 +98,6 @@
 	  ULONG TimeStamp;
 	  STRING DosPath;
 	} RTL_DRIVE_LETTER_CURDIR, *PRTL_DRIVE_LETTER_CURDIR;
-
-	typedef struct _RTL_USER_PROCESS_PARAMETERS
-	{
-	  ULONG MaximumLength;
-	  ULONG Length;
-	  ULONG Flags;
-	  ULONG DebugFlags;
-	  PVOID ConsoleHandle;
-	  ULONG ConsoleFlags;
-	  PVOID StandardInput;
-	  PVOID StandardOutput;
-	  PVOID StandardError;
-	  CURDIR CurrentDirectory;
-	  UNICODE_STRING DllPath;
-	  UNICODE_STRING ImagePathName;
-	  UNICODE_STRING CommandLine;
-	  PVOID Environment;
-	  ULONG StartingX;
-	  ULONG StartingY;
-	  ULONG CountX;
-	  ULONG CountY;
-	  ULONG CountCharsX;
-	  ULONG CountCharsY;
-	  ULONG FillAttribute;
-	  ULONG WindowFlags;
-	  ULONG ShowWindowFlags;
-	  UNICODE_STRING WindowTitle;
-	  UNICODE_STRING DesktopInfo;
-	  UNICODE_STRING ShellInfo;
-	  UNICODE_STRING RuntimeData;
-	  RTL_DRIVE_LETTER_CURDIR CurrentDirectores[32];
-	  ULONG EnvironmentSize;
-	} RTL_USER_PROCESS_PARAMETERS, *PRTL_USER_PROCESS_PARAMETERS;
 
 	typedef struct _PEB_FREE_BLOCK
 	{

@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Common">
+      <UniqueIdentifier>{c9aabc78-1d62-42b0-a8e6-c688879fe0aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MainLoop">
+      <UniqueIdentifier>{a4a922a8-1aa9-460f-8110-88f31735f56f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Console">
+      <UniqueIdentifier>{f7a06225-7097-4e34-a6b6-04c5c780573e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Screens">
+      <UniqueIdentifier>{c4e1bae5-77fb-4b4e-8cc0-d0455f2539da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tooltips">
+      <UniqueIdentifier>{ca49d01c-fabb-48a9-8b3f-214716450cc0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MessageScreen">
+      <UniqueIdentifier>{4bcf035e-36a2-40be-b808-89ed7bb19093}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DebugTextDraw">
+      <UniqueIdentifier>{ff421a0e-5c07-414e-87c9-e3072aaff3ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CommandBinds">
+      <UniqueIdentifier>{91576cf9-1606-4d2e-b373-109b60837e51}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="specific.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="MainLoop.h">
+      <Filter>MainLoop</Filter>
+    </ClInclude>
+    <ClInclude Include="MainTimer.h">
+      <Filter>MainLoop</Filter>
+    </ClInclude>
+    <ClInclude Include="ScreenCommands.h">
+      <Filter>MainLoop</Filter>
+    </ClInclude>
+    <ClInclude Include="VSyncController.h">
+      <Filter>MainLoop</Filter>
+    </ClInclude>
+    <ClInclude Include="Console.h">
+      <Filter>Console</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsoleLogic.h">
+      <Filter>Console</Filter>
+    </ClInclude>
+    <ClInclude Include="AdventureScreenBaseClient.h">
+      <Filter>Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseOvertipsScreenLogic.h">
+      <Filter>Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="DefaultScreenBase.h">
+      <Filter>Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="Overtips.h">
+      <Filter>Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="ScreenBase.h">
+      <Filter>Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="ScreenUILogicBase.h">
+      <Filter>Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="WasserzeichenScreen.h">
+      <Filter>Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="Tooltips.h">
+      <Filter>Tooltips</Filter>
+    </ClInclude>
+    <ClInclude Include="TooltipsScreen.h">
+      <Filter>Tooltips</Filter>
+    </ClInclude>
+    <ClInclude Include="TooltipsScreenLogic.h">
+      <Filter>Tooltips</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageDialog.h">
+      <Filter>MessageScreen</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageScreen.h">
+      <Filter>MessageScreen</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageScreenLogic.h">
+      <Filter>MessageScreen</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugTextDraw.h">
+      <Filter>DebugTextDraw</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandBinds.h">
+      <Filter>CommandBinds</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="MainLoop.cpp">
+      <Filter>MainLoop</Filter>
+    </ClCompile>
+    <ClCompile Include="MainTimer.cpp">
+      <Filter>MainLoop</Filter>
+    </ClCompile>
+    <ClCompile Include="ScreenCommands.cpp">
+      <Filter>MainLoop</Filter>
+    </ClCompile>
+    <ClCompile Include="VSyncController.cpp">
+      <Filter>MainLoop</Filter>
+    </ClCompile>
+    <ClCompile Include="Console.cpp">
+      <Filter>Console</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsoleLogic.cpp">
+      <Filter>Console</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseOvertipsScreenLogic.cpp">
+      <Filter>Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="DefaultScreenBase.cpp">
+      <Filter>Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="ScreenUILogicBase.cpp">
+      <Filter>Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="WasserzeichenScreen.cpp">
+      <Filter>Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="TooltipsScreen.cpp">
+      <Filter>Tooltips</Filter>
+    </ClCompile>
+    <ClCompile Include="TooltipsScreenLogic.cpp">
+      <Filter>Tooltips</Filter>
+    </ClCompile>
+    <ClCompile Include="MessageScreen.cpp">
+      <Filter>MessageScreen</Filter>
+    </ClCompile>
+    <ClCompile Include="MessageScreenLogic.cpp">
+      <Filter>MessageScreen</Filter>
+    </ClCompile>
+    <ClCompile Include="DebugTextDraw.cpp">
+      <Filter>DebugTextDraw</Filter>
+    </ClCompile>
+    <ClCompile Include="CommandBinds.cpp">
+      <Filter>CommandBinds</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MainLoop.component">
+      <Filter>MainLoop</Filter>
+    </None>
+    <None Include="Console.component">
+      <Filter>Console</Filter>
+    </None>
+    <None Include="Screens.component">
+      <Filter>Screens</Filter>
+    </None>
+    <None Include="Tooltips.component">
+      <Filter>Tooltips</Filter>
+    </None>
+    <None Include="MessageScreen.component">
+      <Filter>MessageScreen</Filter>
+    </None>
+    <None Include="DebugTextDraw.component">
+      <Filter>DebugTextDraw</Filter>
+    </None>
+    <None Include="CommandBinds.component">
+      <Filter>CommandBinds</Filter>
+    </None>
+    <None Include="all.component" />
+    <None Include="ClassDiagram1.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\Version.rc" />
+  </ItemGroup>
+</Project>
