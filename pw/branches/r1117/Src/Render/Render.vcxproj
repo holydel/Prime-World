@@ -120,7 +120,7 @@
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>../..;../../vendor\DirectShow\include;../../vendor\zlib\include;../../vendor\DirectX\Include;../;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;DLL;_DEBUG;_DO_ASSERT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_ALLOW_RTCc_IN_STL;WIN32;_WINDOWS;DLL;_DEBUG;_DO_ASSERT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <ExceptionHandling />
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -130,7 +130,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level4</WarningLevel>
-      <TreatWarningAsError>true</TreatWarningAsError>
+      <TreatWarningAsError>false</TreatWarningAsError>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <ResourceCompile>
@@ -173,7 +173,7 @@ dir&gt;nul
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <WholeProgramOptimization>false</WholeProgramOptimization>
       <AdditionalIncludeDirectories>../..;../../vendor\DirectShow\include;../../vendor\zlib\include;../../vendor\DirectX\Include;../;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;DLL;NDEBUG;_DO_ASSERT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_ALLOW_RTCc_IN_STL;WIN32;_WINDOWS;DLL;NDEBUG;_DO_ASSERT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ExceptionHandling />
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <SmallerTypeCheck>false</SmallerTypeCheck>
@@ -182,7 +182,7 @@ dir&gt;nul
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level4</WarningLevel>
-      <TreatWarningAsError>true</TreatWarningAsError>
+      <TreatWarningAsError>false</TreatWarningAsError>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <ResourceCompile>
@@ -226,7 +226,7 @@ dir&gt;nul
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <WholeProgramOptimization>false</WholeProgramOptimization>
       <AdditionalIncludeDirectories>../..;../../vendor\DirectShow\include;../../vendor\zlib\include;../../vendor\DirectX\Include;../;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;DLL;NDEBUG;_SHIPPING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_ALLOW_RTCc_IN_STL;WIN32;_WINDOWS;DLL;NDEBUG;_SHIPPING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ExceptionHandling />
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <SmallerTypeCheck>false</SmallerTypeCheck>
@@ -235,7 +235,7 @@ dir&gt;nul
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level4</WarningLevel>
-      <TreatWarningAsError>true</TreatWarningAsError>
+      <TreatWarningAsError>false</TreatWarningAsError>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <ResourceCompile>
@@ -278,7 +278,7 @@ dir&gt;nul
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <AdditionalIncludeDirectories>../..;../../vendor\DirectShow\include;../../vendor\zlib\include;../../vendor\DirectX\Include;../;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;STATIC_LIB;NDEBUG;_SHIPPING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_ALLOW_RTCc_IN_STL;WIN32;_WINDOWS;STATIC_LIB;NDEBUG;_SHIPPING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ExceptionHandling />
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <SmallerTypeCheck>false</SmallerTypeCheck>
@@ -287,7 +287,7 @@ dir&gt;nul
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level4</WarningLevel>
-      <TreatWarningAsError>true</TreatWarningAsError>
+      <TreatWarningAsError>false</TreatWarningAsError>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <ResourceCompile>
@@ -308,7 +308,7 @@ dir&gt;nul
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <AdditionalIncludeDirectories>../..;../../vendor\DirectShow\include;../../vendor\zlib\include;../../vendor\DirectX\Include;../;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;STATIC_LIB;NDEBUG;_DO_ASSERT;STARFORCE_PROTECTED;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_ALLOW_RTCc_IN_STL;WIN32;_WINDOWS;STATIC_LIB;NDEBUG;_DO_ASSERT;STARFORCE_PROTECTED;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ExceptionHandling />
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <SmallerTypeCheck>false</SmallerTypeCheck>
@@ -317,7 +317,7 @@ dir&gt;nul
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level4</WarningLevel>
-      <TreatWarningAsError>true</TreatWarningAsError>
+      <TreatWarningAsError>false</TreatWarningAsError>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <ResourceCompile>

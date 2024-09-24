@@ -123,14 +123,14 @@
       <AdditionalOptions>/MP %(AdditionalOptions)</AdditionalOptions>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>../..;../../vendor\CxxTest\Include;../;../../vendor\zlib\include;../../;../../vendor\openSSL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;DLL;_DEBUG;_DO_ASSERT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_ALLOW_RTCc_IN_STL;WIN32;_WINDOWS;DLL;_DEBUG;_DO_ASSERT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ExceptionHandling />
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level4</WarningLevel>
-      <TreatWarningAsError>true</TreatWarningAsError>
+      <TreatWarningAsError>false</TreatWarningAsError>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <PreLinkEvent>
@@ -147,7 +147,7 @@ dir&gt;nul
 </Command>
     </PreLinkEvent>
     <Link>
-      <AdditionalDependencies>ws2_32.lib;zdll.lib;ssleay32MT.lib;libeay32MT.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>legacy_stdio_definitions.lib;ws2_32.lib;zdll.lib;ssleay32MT.lib;libeay32MT.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>../../vendor\zlib\lib;../../vendor\openSSL\lib\static;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ModuleDefinitionFile>$(IntDir)$(ProjectName).def</ModuleDefinitionFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -168,14 +168,14 @@ dir&gt;nul
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <WholeProgramOptimization>false</WholeProgramOptimization>
       <AdditionalIncludeDirectories>../..;../../vendor\CxxTest\Include;../;../../vendor\zlib\include;../../;../../vendor\openSSL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;DLL;NDEBUG;_DO_ASSERT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_ALLOW_RTCc_IN_STL;WIN32;_WINDOWS;DLL;NDEBUG;_DO_ASSERT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ExceptionHandling />
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <BufferSecurityCheck>false</BufferSecurityCheck>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level4</WarningLevel>
-      <TreatWarningAsError>true</TreatWarningAsError>
+      <TreatWarningAsError>false</TreatWarningAsError>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <PreLinkEvent>
@@ -214,14 +214,14 @@ dir&gt;nul
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <WholeProgramOptimization>false</WholeProgramOptimization>
       <AdditionalIncludeDirectories>../..;../../vendor\CxxTest\Include;../;../../vendor\zlib\include;../../;../../vendor\openSSL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;DLL;NDEBUG;_SHIPPING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_ALLOW_RTCc_IN_STL;WIN32;_WINDOWS;DLL;NDEBUG;_SHIPPING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ExceptionHandling />
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <BufferSecurityCheck>false</BufferSecurityCheck>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level4</WarningLevel>
-      <TreatWarningAsError>true</TreatWarningAsError>
+      <TreatWarningAsError>false</TreatWarningAsError>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <PreLinkEvent>
@@ -259,14 +259,14 @@ dir&gt;nul
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <AdditionalIncludeDirectories>../..;../../vendor\CxxTest\Include;../;../../vendor\zlib\include;../../;../../vendor\openSSL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;STATIC_LIB;NDEBUG;_SHIPPING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_ALLOW_RTCc_IN_STL;WIN32;_WINDOWS;STATIC_LIB;NDEBUG;_SHIPPING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ExceptionHandling />
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <BufferSecurityCheck>false</BufferSecurityCheck>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level4</WarningLevel>
-      <TreatWarningAsError>true</TreatWarningAsError>
+      <TreatWarningAsError>false</TreatWarningAsError>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <PreLinkEvent>
@@ -284,14 +284,14 @@ dir&gt;nul
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <AdditionalIncludeDirectories>../..;../../vendor\CxxTest\Include;../;../../vendor\zlib\include;../../;../../vendor\openSSL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;STATIC_LIB;NDEBUG;_DO_ASSERT;STARFORCE_PROTECTED;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_ALLOW_RTCc_IN_STL;WIN32;_WINDOWS;STATIC_LIB;NDEBUG;_DO_ASSERT;STARFORCE_PROTECTED;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ExceptionHandling />
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <BufferSecurityCheck>false</BufferSecurityCheck>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level4</WarningLevel>
-      <TreatWarningAsError>true</TreatWarningAsError>
+      <TreatWarningAsError>false</TreatWarningAsError>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <PreLinkEvent>

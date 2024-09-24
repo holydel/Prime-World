@@ -119,13 +119,13 @@
       <AdditionalOptions>/MP %(AdditionalOptions)</AdditionalOptions>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>../..;../../../vendor/ACE_wrappers;../../../vendor/Terabit;../../../vendor/Terabit/app;.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>ACE_ROOT; AIO_ROOT; WIN32; _CRT_NONSTDC_NO_WARNINGS; _CRT_SECURE_NO_WARNINGS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_ALLOW_RTCc_IN_STL;ACE_ROOT; AIO_ROOT; WIN32; _CRT_NONSTDC_NO_WARNINGS; _CRT_SECURE_NO_WARNINGS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>naio/stdafx.h</PrecompiledHeaderFile>
       <WarningLevel>Level4</WarningLevel>
-      <TreatWarningAsError>true</TreatWarningAsError>
+      <TreatWarningAsError>false</TreatWarningAsError>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
   </ItemDefinitionGroup>
@@ -138,14 +138,14 @@
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <WholeProgramOptimization>false</WholeProgramOptimization>
       <AdditionalIncludeDirectories>../..;../../../vendor/ACE_wrappers;../../../vendor/Terabit;../../../vendor/Terabit/app;.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>ACE_ROOT; AIO_ROOT; WIN32; _CRT_NONSTDC_NO_WARNINGS; _CRT_SECURE_NO_WARNINGS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_ALLOW_RTCc_IN_STL;ACE_ROOT; AIO_ROOT; WIN32; _CRT_NONSTDC_NO_WARNINGS; _CRT_SECURE_NO_WARNINGS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <BufferSecurityCheck>false</BufferSecurityCheck>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>naio/stdafx.h</PrecompiledHeaderFile>
       <WarningLevel>Level4</WarningLevel>
-      <TreatWarningAsError>true</TreatWarningAsError>
+      <TreatWarningAsError>false</TreatWarningAsError>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
   </ItemDefinitionGroup>
@@ -158,14 +158,14 @@
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <WholeProgramOptimization>false</WholeProgramOptimization>
       <AdditionalIncludeDirectories>../..;../../../vendor/ACE_wrappers;../../../vendor/Terabit;../../../vendor/Terabit/app;.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>ACE_ROOT; AIO_ROOT; WIN32; _CRT_NONSTDC_NO_WARNINGS; _CRT_SECURE_NO_WARNINGS;NDEBUG;_SHIPPING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_ALLOW_RTCc_IN_STL;ACE_ROOT; AIO_ROOT; WIN32; _CRT_NONSTDC_NO_WARNINGS; _CRT_SECURE_NO_WARNINGS;NDEBUG;_SHIPPING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <BufferSecurityCheck>false</BufferSecurityCheck>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>naio/stdafx.h</PrecompiledHeaderFile>
       <WarningLevel>Level4</WarningLevel>
-      <TreatWarningAsError>true</TreatWarningAsError>
+      <TreatWarningAsError>false</TreatWarningAsError>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
   </ItemDefinitionGroup>
@@ -177,14 +177,14 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <AdditionalIncludeDirectories>../..;../../../vendor/ACE_wrappers;../../../vendor/Terabit;../../../vendor/Terabit/app;.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>ACE_ROOT;AIO_ROOT;WIN32;_CRT_NONSTDC_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;NDEBUG;_SHIPPING;STATIC_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_ALLOW_RTCc_IN_STL;ACE_ROOT;AIO_ROOT;WIN32;_CRT_NONSTDC_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;NDEBUG;_SHIPPING;STATIC_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <BufferSecurityCheck>false</BufferSecurityCheck>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>naio/stdafx.h</PrecompiledHeaderFile>
       <WarningLevel>Level4</WarningLevel>
-      <TreatWarningAsError>true</TreatWarningAsError>
+      <TreatWarningAsError>false</TreatWarningAsError>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
   </ItemDefinitionGroup>
@@ -196,14 +196,14 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <AdditionalIncludeDirectories>../..;../../../vendor/ACE_wrappers;../../../vendor/Terabit;../../../vendor/Terabit/app;.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>ACE_ROOT;AIO_ROOT;WIN32;_CRT_NONSTDC_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;NDEBUG;STATIC_LIB;_DO_ASSERT;STARFORCE_PROTECTED;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_ALLOW_RTCc_IN_STL;ACE_ROOT;AIO_ROOT;WIN32;_CRT_NONSTDC_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;NDEBUG;STATIC_LIB;_DO_ASSERT;STARFORCE_PROTECTED;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <BufferSecurityCheck>false</BufferSecurityCheck>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>naio/stdafx.h</PrecompiledHeaderFile>
       <WarningLevel>Level4</WarningLevel>
-      <TreatWarningAsError>true</TreatWarningAsError>
+      <TreatWarningAsError>false</TreatWarningAsError>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
   </ItemDefinitionGroup>

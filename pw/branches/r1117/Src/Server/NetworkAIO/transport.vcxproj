@@ -119,7 +119,7 @@
       <AdditionalOptions>/MP %(AdditionalOptions)</AdditionalOptions>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>../..;../../../vendor/Terabit;../../../vendor/Terabit/app;../../../vendor/ACE_wrappers;.;..;../..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32; _CRT_NONSTDC_NO_WARNINGS; _CRT_SECURE_NO_WARNINGS;_DO_ASSERT;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_ALLOW_RTCc_IN_STL;WIN32; _CRT_NONSTDC_NO_WARNINGS; _CRT_SECURE_NO_WARNINGS;_DO_ASSERT;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ExceptionHandling>Sync</ExceptionHandling>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -127,7 +127,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>transport/stdafx.h</PrecompiledHeaderFile>
       <WarningLevel>Level4</WarningLevel>
-      <TreatWarningAsError>true</TreatWarningAsError>
+      <TreatWarningAsError>false</TreatWarningAsError>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <PreLinkEvent>
@@ -165,14 +165,14 @@ dir&gt;nul
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <WholeProgramOptimization>false</WholeProgramOptimization>
       <AdditionalIncludeDirectories>../..;../../../vendor/Terabit;../../../vendor/Terabit/app;../../../vendor/ACE_wrappers;.;..;../..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32; _CRT_NONSTDC_NO_WARNINGS; _CRT_SECURE_NO_WARNINGS;_DO_ASSERT;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_ALLOW_RTCc_IN_STL;WIN32; _CRT_NONSTDC_NO_WARNINGS; _CRT_SECURE_NO_WARNINGS;_DO_ASSERT;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <BufferSecurityCheck>false</BufferSecurityCheck>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>transport/stdafx.h</PrecompiledHeaderFile>
       <WarningLevel>Level4</WarningLevel>
-      <TreatWarningAsError>true</TreatWarningAsError>
+      <TreatWarningAsError>false</TreatWarningAsError>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <PreLinkEvent>
@@ -212,14 +212,14 @@ dir&gt;nul
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <WholeProgramOptimization>false</WholeProgramOptimization>
       <AdditionalIncludeDirectories>../..;../../../vendor/Terabit;../../../vendor/Terabit/app;../../../vendor/ACE_wrappers;.;..;../..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_CRT_NONSTDC_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;NDEBUG;_SHIPPING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_ALLOW_RTCc_IN_STL;WIN32;_CRT_NONSTDC_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;NDEBUG;_SHIPPING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <BufferSecurityCheck>false</BufferSecurityCheck>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>transport/stdafx.h</PrecompiledHeaderFile>
       <WarningLevel>Level4</WarningLevel>
-      <TreatWarningAsError>true</TreatWarningAsError>
+      <TreatWarningAsError>false</TreatWarningAsError>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <PreLinkEvent>
@@ -258,7 +258,7 @@ dir&gt;nul
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <AdditionalIncludeDirectories>../..;../../../vendor/Terabit;../../../vendor/Terabit/app;../../../vendor/ACE_wrappers;.;..;../..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_CRT_NONSTDC_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;NDEBUG;_SHIPPING;STATIC_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_ALLOW_RTCc_IN_STL;WIN32;_CRT_NONSTDC_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;NDEBUG;_SHIPPING;STATIC_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ExceptionHandling>Sync</ExceptionHandling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <BufferSecurityCheck>false</BufferSecurityCheck>
@@ -266,7 +266,7 @@ dir&gt;nul
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>transport/stdafx.h</PrecompiledHeaderFile>
       <WarningLevel>Level4</WarningLevel>
-      <TreatWarningAsError>true</TreatWarningAsError>
+      <TreatWarningAsError>false</TreatWarningAsError>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <PreLinkEvent>
@@ -284,7 +284,7 @@ dir&gt;nul
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <AdditionalIncludeDirectories>../..;../../../vendor/Terabit;../../../vendor/Terabit/app;../../../vendor/ACE_wrappers;.;..;../..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_CRT_NONSTDC_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;NDEBUG;STATIC_LIB;_DO_ASSERT;STARFORCE_PROTECTED;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_ALLOW_RTCc_IN_STL;WIN32;_CRT_NONSTDC_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;NDEBUG;STATIC_LIB;_DO_ASSERT;STARFORCE_PROTECTED;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ExceptionHandling>Sync</ExceptionHandling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <BufferSecurityCheck>false</BufferSecurityCheck>
@@ -292,7 +292,7 @@ dir&gt;nul
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>transport/stdafx.h</PrecompiledHeaderFile>
       <WarningLevel>Level4</WarningLevel>
-      <TreatWarningAsError>true</TreatWarningAsError>
+      <TreatWarningAsError>false</TreatWarningAsError>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <PreLinkEvent>

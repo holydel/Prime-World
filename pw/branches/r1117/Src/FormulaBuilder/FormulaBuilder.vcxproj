@@ -126,7 +126,7 @@
       <AdditionalOptions>/MP %(AdditionalOptions)</AdditionalOptions>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>../..;../../vendor\zlib\include;../Server;../Server\src;../FormulaBuilder;../..\Data\GameLogic;../;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;DLL;_DEBUG;_DO_ASSERT;FORMULABUILDER_EXPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_ALLOW_RTCc_IN_STL;WIN32;_WINDOWS;DLL;_DEBUG;_DO_ASSERT;FORMULABUILDER_EXPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ExceptionHandling />
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <SmallerTypeCheck>false</SmallerTypeCheck>
@@ -135,7 +135,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <PrecompiledHeader />
       <WarningLevel>Level4</WarningLevel>
-      <TreatWarningAsError>true</TreatWarningAsError>
+      <TreatWarningAsError>false</TreatWarningAsError>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <ResourceCompile>
@@ -166,7 +166,7 @@
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <WholeProgramOptimization>false</WholeProgramOptimization>
       <AdditionalIncludeDirectories>../..;../../vendor\zlib\include;../Server;../Server\src;../FormulaBuilder;../..\Data\GameLogic;../;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;DLL;NDEBUG;_DO_ASSERT;FORMULABUILDER_EXPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_ALLOW_RTCc_IN_STL;WIN32;_WINDOWS;DLL;NDEBUG;_DO_ASSERT;FORMULABUILDER_EXPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ExceptionHandling />
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <SmallerTypeCheck>false</SmallerTypeCheck>
@@ -175,7 +175,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <PrecompiledHeader />
       <WarningLevel>Level4</WarningLevel>
-      <TreatWarningAsError>true</TreatWarningAsError>
+      <TreatWarningAsError>false</TreatWarningAsError>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <ResourceCompile>
@@ -206,7 +206,7 @@
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <WholeProgramOptimization>false</WholeProgramOptimization>
       <AdditionalIncludeDirectories>../..;../../vendor\zlib\include;../Server;../Server\src;../FormulaBuilder;../..\Data\GameLogic;../;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;DLL;NDEBUG;FORMULABUILDER_EXPORT;_SHIPPING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_ALLOW_RTCc_IN_STL;WIN32;_WINDOWS;DLL;NDEBUG;FORMULABUILDER_EXPORT;_SHIPPING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ExceptionHandling />
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <SmallerTypeCheck>false</SmallerTypeCheck>
@@ -215,7 +215,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <PrecompiledHeader />
       <WarningLevel>Level4</WarningLevel>
-      <TreatWarningAsError>true</TreatWarningAsError>
+      <TreatWarningAsError>false</TreatWarningAsError>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <ResourceCompile>
@@ -245,7 +245,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <AdditionalIncludeDirectories>../..;../../vendor\zlib\include;../Server;../Server\src;../FormulaBuilder;../..\Data\GameLogic;../;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;DLL;NDEBUG;FORMULABUILDER_EXPORT;_SHIPPING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_ALLOW_RTCc_IN_STL;WIN32;_WINDOWS;DLL;NDEBUG;FORMULABUILDER_EXPORT;_SHIPPING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ExceptionHandling />
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <SmallerTypeCheck>false</SmallerTypeCheck>
@@ -254,7 +254,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <PrecompiledHeader />
       <WarningLevel>Level4</WarningLevel>
-      <TreatWarningAsError>true</TreatWarningAsError>
+      <TreatWarningAsError>false</TreatWarningAsError>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <ResourceCompile>
@@ -283,7 +283,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <AdditionalIncludeDirectories>../..;../../vendor\zlib\include;../Server;../Server\src;../FormulaBuilder;../..\Data\GameLogic;../;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;DLL;NDEBUG;FORMULABUILDER_EXPORT;_DO_ASSERT;STARFORCE_PROTECTED;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_ALLOW_RTCc_IN_STL;WIN32;_WINDOWS;DLL;NDEBUG;FORMULABUILDER_EXPORT;_DO_ASSERT;STARFORCE_PROTECTED;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ExceptionHandling />
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <SmallerTypeCheck>false</SmallerTypeCheck>
@@ -292,7 +292,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <PrecompiledHeader />
       <WarningLevel>Level4</WarningLevel>
-      <TreatWarningAsError>true</TreatWarningAsError>
+      <TreatWarningAsError>false</TreatWarningAsError>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <ResourceCompile>

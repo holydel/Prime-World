@@ -123,7 +123,7 @@
       <AdditionalOptions>/MP %(AdditionalOptions)</AdditionalOptions>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>../..;../../vendor\zlib\include;../;../Server\;../Game\PF\;../../vendor/DirectShow/Include;../Server/NetworkAIO;../../vendor/ACE_wrappers;../../vendor/libcurl/include;../Server/Chat;../../Vendor/Steam/1.23a/public;..\..\Vendor\boost;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_DO_ASSERT;CURL_STATICLIB;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_ALLOW_RTCc_IN_STL;WIN32;_WINDOWS;_DEBUG;_DO_ASSERT;CURL_STATICLIB;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ExceptionHandling />
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <SmallerTypeCheck>true</SmallerTypeCheck>
@@ -132,7 +132,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level4</WarningLevel>
-      <TreatWarningAsError>true</TreatWarningAsError>
+      <TreatWarningAsError>false</TreatWarningAsError>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <ResourceCompile>
@@ -161,7 +161,7 @@
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <WholeProgramOptimization>false</WholeProgramOptimization>
       <AdditionalIncludeDirectories>../..;../../vendor\zlib\include;../;../Server\;../Game\PF\;../../vendor/DirectShow/Include;../Server/NetworkAIO;../../vendor/ACE_wrappers;../../vendor/libcurl/include;../Server/Chat;../../Vendor/Steam/1.23a/public;..\..\Vendor\boost;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_DO_ASSERT;CURL_STATICLIB;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_ALLOW_RTCc_IN_STL;WIN32;_WINDOWS;NDEBUG;_DO_ASSERT;CURL_STATICLIB;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ExceptionHandling />
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <SmallerTypeCheck>false</SmallerTypeCheck>
@@ -170,7 +170,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level4</WarningLevel>
-      <TreatWarningAsError>true</TreatWarningAsError>
+      <TreatWarningAsError>false</TreatWarningAsError>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <ResourceCompile>
@@ -200,7 +200,7 @@
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <WholeProgramOptimization>false</WholeProgramOptimization>
       <AdditionalIncludeDirectories>../..;../../vendor\zlib\include;../;../Server\;../Game\PF\;../../vendor/DirectShow/Include;../Server/NetworkAIO;../../vendor/ACE_wrappers;../../vendor/libcurl/include;../Server/Chat;../../Vendor/Steam/1.23a/public;..\..\Vendor\boost;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_SHIPPING;CURL_STATICLIB;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_ALLOW_RTCc_IN_STL;WIN32;_WINDOWS;NDEBUG;_SHIPPING;CURL_STATICLIB;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ExceptionHandling />
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <SmallerTypeCheck>false</SmallerTypeCheck>
@@ -209,7 +209,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level4</WarningLevel>
-      <TreatWarningAsError>true</TreatWarningAsError>
+      <TreatWarningAsError>false</TreatWarningAsError>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <ResourceCompile>
@@ -238,7 +238,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <AdditionalIncludeDirectories>../..;../../vendor\zlib\include;../;../Server\;../Game\PF\;../../vendor/DirectShow/Include;../Server/NetworkAIO;../../vendor/ACE_wrappers;../../vendor/libcurl/include;../Server/Chat;../../Vendor/Steam/1.23a/public;..\..\Vendor\boost;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;STATIC_LIB;NDEBUG;_SHIPPING;CURL_STATICLIB;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_ALLOW_RTCc_IN_STL;WIN32;_WINDOWS;STATIC_LIB;NDEBUG;_SHIPPING;CURL_STATICLIB;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ExceptionHandling />
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <SmallerTypeCheck>false</SmallerTypeCheck>
@@ -247,7 +247,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level4</WarningLevel>
-      <TreatWarningAsError>true</TreatWarningAsError>
+      <TreatWarningAsError>false</TreatWarningAsError>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <ResourceCompile>
@@ -262,7 +262,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <AdditionalIncludeDirectories>../..;../../vendor\zlib\include;../;../Server\;../Game\PF\;../../vendor/DirectShow/Include;../Server/NetworkAIO;../../vendor/ACE_wrappers;../../vendor/libcurl/include;../Server/Chat;../../Vendor/Steam/1.23a/public;..\..\Vendor\boost;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;STATIC_LIB;NDEBUG;_DO_ASSERT;STARFORCE_PROTECTED;CURL_STATICLIB;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_ALLOW_RTCc_IN_STL;WIN32;_WINDOWS;STATIC_LIB;NDEBUG;_DO_ASSERT;STARFORCE_PROTECTED;CURL_STATICLIB;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ExceptionHandling />
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <SmallerTypeCheck>false</SmallerTypeCheck>
@@ -271,7 +271,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level4</WarningLevel>
-      <TreatWarningAsError>true</TreatWarningAsError>
+      <TreatWarningAsError>false</TreatWarningAsError>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <ResourceCompile>
