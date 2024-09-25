@@ -22,5 +22,3 @@
 # pragma nopushoptwarn
 # pragma nopackwarning
 #endif
-
-#include <time.h>

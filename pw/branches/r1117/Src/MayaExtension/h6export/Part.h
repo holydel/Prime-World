@@ -18,5 +18,5 @@ struct particle
 	TVTrack<1> spr;
 };
 
-typedef stdext::hash_map<unsigned, particle> hmPartData;
+typedef std::unordered_map<unsigned, particle> hmPartData;
 

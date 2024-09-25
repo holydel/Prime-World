@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|Win32'">
-    <StartArguments>Types --solution=D:\Projects\Prime-World\pw\branches\r1117\Src\PF.sln --project=Types.DBTypes --materials=Render --hash=D:\Projects\Prime-World\pw\branches\r1117\Src\Types\..\..\Data\Types.md5 --hash=PW_Client/TypesHash.h --hash=PF_Editor/TypesHash.cs</StartArguments>
+    <StartArguments>D:\Projects\Prime-World\pw\branches\r1117\Src\Types.DBTypes\..\Types\Types.csproj --solution=D:\Projects\Prime-World\pw\branches\r1117\Src\Types.DBTypes\..\PF.sln --project=Types.DBTypes --target=cs</StartArguments>
     <EnableUnmanagedDebugging>true</EnableUnmanagedDebugging>
   </PropertyGroup>
 </Project>
