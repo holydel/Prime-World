@@ -108,7 +108,7 @@ namespace DBCodeGen.SourceCompiler
       compilerParameters.WarningLevel = 4;
       compilerParameters.IncludeDebugInformation = true;
       compilerParameters.OutputAssembly = Path.Combine(Path.GetTempPath(), Path.GetFileNameWithoutExtension(Path.GetRandomFileName())) + suffix + ".dll";
-      compilerParameters.ReferencedAssemblies.Add("mscorlib.dll");
+      //compilerParameters.ReferencedAssemblies.Add("mscorlib.dll");
       compilerParameters.ReferencedAssemblies.Add("System.dll");
       compilerParameters.ReferencedAssemblies.Add(Path.GetFullPath(Assembly.GetEntryAssembly().Location));
 
