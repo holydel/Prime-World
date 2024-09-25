@@ -76,7 +76,7 @@ inline bool isinbounds( float x, float left, float right )
 }
 
 #ifndef round
-__forceinline float round( float fVal )
+__forceinline float roundPW( float fVal )
 {
   if (fVal >= 0.0f)
     return (floor(fVal + 0.5f));

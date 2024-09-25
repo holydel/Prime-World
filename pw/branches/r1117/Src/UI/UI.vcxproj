@@ -1538,6 +1538,7 @@ dir&gt;nul
     <ClCompile Include="ImageComponent.cpp" />
     <ClCompile Include="ImageLabel.cpp" />
     <ClCompile Include="LuaEventResult.cpp" />
+    <ClCompile Include="MissedReferences.cpp" />
     <ClCompile Include="NameMappedWindow.cpp" />
     <ClCompile Include="PageTabControl.cpp" />
     <ClCompile Include="PreferencesProcessor.cpp" />

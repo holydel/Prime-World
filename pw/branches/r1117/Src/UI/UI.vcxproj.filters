@@ -1115,6 +1115,9 @@
     <ClCompile Include="PreferencesProcessor.cpp">
       <Filter>Preferences</Filter>
     </ClCompile>
+    <ClCompile Include="MissedReferences.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Core.component">
