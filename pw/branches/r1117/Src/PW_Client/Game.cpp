@@ -1122,7 +1122,7 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
   }
   else if (isTutorial)
   {
-    context = new Game::GameContext(socialLaunchData.sessionId.c_str(), NULL, socialLaunchData.mapId.c_str(), socialServer, guildEmblem, false, true);
+    context = new Game::GameContext(socialLaunchData.sessionId.c_str(), NULL, NULL, socialLaunchData.mapId.c_str(), socialServer, guildEmblem, false, true);
   }
 
   {
@@ -1157,7 +1157,8 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
     */
 
     const char * mapId = CmdLineLite::Instance().GetStringKey( "mapId", "" );
-    context = new Game::GameContext( sessLogin, response.response.c_str(), mapId, socialServer, guildEmblem, isSpectator, false );
+    std::string lastUsedSessionKey = WideCharToMultiByteString(NGlobal::GetVar("last_user_session_key").GetString().c_str());
+    context = new Game::GameContext( sessLogin, response.response.c_str(), lastUsedSessionKey.c_str(), mapId, socialServer, guildEmblem, isSpectator, false );
   }
 
   context->Start();

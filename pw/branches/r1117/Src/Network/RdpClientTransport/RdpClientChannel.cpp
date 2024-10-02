@@ -4,6 +4,9 @@
 namespace rdp_transport
 {
 
+static nstl::string lastUserSessionKey = "";
+REGISTER_VAR( "last_user_session_key", lastUserSessionKey, STORAGE_NONE )
+
 static float defaultTimeout = 15.0f;
 REGISTER_VAR( "login_chann_timeout", defaultTimeout, STORAGE_NONE );
 
@@ -69,6 +72,7 @@ void ClientChannel::OnSvcRequestReply( const newLogin::ServiceReqReply & _reply 
     return;
   }
 
+  NGlobal::SetVar("last_user_session_key", nstl::string(_reply.key.c_str()), STORAGE_NONE);
   Switch( EClientChanState::ConnectingToSvc );
   timeout.Restart( defaultTimeout );
 }
@@ -274,6 +278,7 @@ void ClientChannel::OnHelloReply( const newLogin::FrontendHelloReply & _reply )
 
 void ClientChannel::CloseClientChannel()
 {
+  NGlobal::SetVar("last_user_session_key", "", STORAGE_NONE);
   Close();
 
   Switch( EClientChanState::Closed );

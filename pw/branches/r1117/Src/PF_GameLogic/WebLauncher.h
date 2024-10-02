@@ -34,3 +34,5 @@ public:
 	std::string ConvertFromClassID(int id);
   WebLoginResponse GetNickName(const char* token);
 };
+
+extern std::string WideCharToMultiByteString(const wchar_t* wideCharString);

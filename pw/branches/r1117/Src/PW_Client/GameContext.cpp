@@ -76,7 +76,7 @@ NI_DEFINE_REFCOUNT( Game::IGameContextUiInterface )
 namespace Game
 {
 
-GameContext::GameContext( const char * _sessionKey, const char * _devLogin, const char * _mapId, NGameX::ISocialConnection * _socialConnection, NGameX::GuildEmblem* _guildEmblem, const bool _isSpectator, const bool _isTutorial ) :
+GameContext::GameContext( const char * _sessionKey, const char * _devLogin, const char * _webToken, const char * _mapId, NGameX::ISocialConnection * _socialConnection, NGameX::GuildEmblem* _guildEmblem, const bool _isSpectator, const bool _isTutorial ) :
   socialMode( _sessionKey ? true : false ),
   status( EContextStatus::Ready ),
   clientWasInitialized( false ),
@@ -91,6 +91,9 @@ GameContext::GameContext( const char * _sessionKey, const char * _devLogin, cons
 
   if (_devLogin)
     devLogin = _devLogin;
+
+  if (_webToken)
+    sessionKey = _webToken;
 
   if (_mapId)
     mapId = _mapId;
@@ -617,6 +620,9 @@ void GameContext::SetDeveloperSex( lobby::ESex::Enum _sex )
 
 void GameContext::ConnectToCluster( const string & login, const string & password, Login::LoginType::Enum _loginType )
 {
+  if (!sessionKey.empty()) {
+    _loginType = Login::LoginType::FAST_RECONNECT;
+  }
   Cleanup();
   Init();
 
@@ -632,7 +638,7 @@ void GameContext::ConnectToCluster( const string & login, const string & passwor
   else
   {
 //#ifndef _SHIPPING
-    clientTransportSystem->Login( Transport::ClientCfg::GetLoginAddress(), login, password, g_loginTestSessionPath, _loginType );
+    clientTransportSystem->Login( Transport::ClientCfg::GetLoginAddress(), login, password, sessionKey, _loginType );
 //#endif
     lastLogin = login;
   }

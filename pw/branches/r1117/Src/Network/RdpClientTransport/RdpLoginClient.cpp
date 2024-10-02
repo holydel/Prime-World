@@ -187,6 +187,7 @@ void LoginClient::OnDatagram( ni_udp::IRdpConnection * _conn, const void * _data
 void LoginClient::OnHelloReply( const newLogin::LoginReply & _reply )
 {
   MessageTrace( "LoginClient: Got login reply. code=%s(%d), uid=%d, welcome=%s", Login::ELoginResult::ToString( _reply.code ), (int)_reply.code, _reply.uid, _reply.welcomingSvcId );
+  NGlobal::SetVar("last_user_session_key", nstl::string(""), STORAGE_NONE);
 
   if ( state == ELoginClientState::Failed )
     return;

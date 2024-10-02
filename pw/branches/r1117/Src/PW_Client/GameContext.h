@@ -68,7 +68,7 @@ class GameContext : public BaseObjectMT, public IGameContext, public lobby::ICli
   NI_DECLARE_REFCOUNT_CLASS_4( GameContext, BaseObjectMT, IGameContextUiInterface, lobby::IClientNotify, rpc::IGateKeeperCallback )
 
 public:
-  GameContext( const char * _sessionKey, const char * _devLogin, const char * _mapId, NGameX::ISocialConnection * _socialConnection, NGameX::GuildEmblem* _guildEmblem, const bool _isSpectator, const bool _isTutorial );
+  GameContext( const char * _sessionKey, const char * _devLogin, const char * _webToken, const char * _mapId, NGameX::ISocialConnection * _socialConnection, NGameX::GuildEmblem* _guildEmblem, const bool _isSpectator, const bool _isTutorial );
   ~GameContext();
 
   //IGameContext
@@ -139,6 +139,7 @@ private:
 
   string                              lastLogin;
   string                              devLogin;
+  string                              sessionKey;
   string                              mapId;    
   Weak<NGameX::LoadingStatusHandler>  loadingStatusHandler;
 
