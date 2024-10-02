@@ -162,10 +162,6 @@ public:
   {
     handler->Go(handler->Call( 8, party ));
   }
-  void ExitLobby(   )
-  {
-    handler->Go(handler->Call( 9, 0 ));
-  }
 
   template <typename T>
   rpc::ECallResult::Enum JoinSocialGame( T* object, void (T::*func)(EOperationResult::Enum result) )
