@@ -15,14 +15,11 @@ namespace PW_MiniLauncher
     {
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
-      string defaultName = "";
+      string protocolArgs = "";
       if ( args.Length > 0 )
-        defaultName = args[0];
+        protocolArgs = args[0];
 
-      if ( args.Contains("force_play") )
-        LoginForm.LaunchGame(defaultName, false);
-            else
-                Application.Run(new LoginForm(defaultName));
+      Application.Run(new LoginForm(protocolArgs));
     }
   }
 }

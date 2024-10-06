@@ -17,7 +17,7 @@ namespace PW_MiniLauncher
       private string currentGameVersion = "0.2";
       private string currentLauncherVersion = "1.0"; // текущая версия лаунчера
 
-      private const string baseUrlLauncher = "https://playpw.fun/update/launcher/"; // URL for all files of launcher
+      private const string baseUrlLauncher = "https://rekongstor.github.io/update/launcher/"; // URL for all files of launcher
       private const string baseUrlGame = "https://playpw.fun/update/client/"; // URL for all files of game
       private string endFileName = ".zip"; // file with new launcher
       private string newLauncherFile;
@@ -56,15 +56,12 @@ namespace PW_MiniLauncher
          {
             playButton.Enabled = true;
          }
+
+         // Get game path from registry key (Inno setup installation folder)
          const string userRoot = "HKEY_CURRENT_USER";
-         const string subkey = "Software\\Classes\\pwclassic\\shell\\open\\command";
+         const string subkey = "Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\{869C346D-5682-4A41-BA14-DE721CA43B24}_is1";
          const string keyName = userRoot + "\\" + subkey;
-
-
-         string exeDir = (string)Registry.GetValue(keyName, "", "");
-         //noSuch.Split("PW_Minilauncher.exe %s");
-         bool hasSemicolons = exeDir[0] == '\"';
-         gameDirectory = exeDir.Substring(hasSemicolons ? 1 : 0, exeDir.Length - (hasSemicolons ? 25 : 23));
+         gameDirectory = (string)Registry.GetValue(keyName, "InstallLocation", "") + "Bin";
       }
 
       private void RunConditional()
@@ -93,7 +90,7 @@ namespace PW_MiniLauncher
             newLauncherFile = EditArchive(serverVersion);
             var launcherPath = GetLauncherDirectory();
             var newLauncherPath = Path.Combine(launcherPath, "PW_MiniLauncher.exe");
-
+            
             if ((serverVersion != currentLauncherVersion) && System.IO.File.Exists(newLauncherPath))
             {
                await DownloadAndUpdateLauncher();
@@ -333,11 +330,11 @@ namespace PW_MiniLauncher
 
       }
 
-      public static void LaunchGame(string name, bool spectate)
+      public void LaunchGame(string name, bool spectate)
       {
          Debug.Print("Launch PW with Login = " + name);
 
-         string fullPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "PW_Game.exe");
+         string fullPath = Path.Combine(GetLauncherDirectory(), "PW_Game.exe");
 
          if (!File.Exists(fullPath))
          {
@@ -349,7 +346,7 @@ namespace PW_MiniLauncher
             FileName = fullPath,
             Arguments = "web_token " + name,
             UseShellExecute = false,
-            WorkingDirectory = AppDomain.CurrentDomain.BaseDirectory,
+            WorkingDirectory = GetLauncherDirectory(),
          };
          Process.Start(startInfo);
       }
@@ -368,8 +365,6 @@ namespace PW_MiniLauncher
 
       private string GetGameInstallationDirectory()
       {
-
-
          return gameDirectory;
       }
 
