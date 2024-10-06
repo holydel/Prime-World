@@ -9,9 +9,12 @@
 #include "SelectHeroScreenLogic.h"
 #include "NewLobbyClientPW.h"
 #include "Client/ScreenCommands.h"
-
+#include <set>
+#include <string>
 extern string g_devLogin;
 extern bool g_needNotifyLobbyClients;
+
+std::set<std::string> selectedOtherHeroes;
 
 namespace UI
 {
@@ -29,10 +32,15 @@ END_LUA_TYPEINFO( SelectHeroScreenLogic )
 #pragma warning(pop)
   
 
+
 void SelectHeroScreenLogic::SelectHero( const char * heroId )
 {
+	std::string curHero = heroId;
+	if(selectedOtherHeroes.find(curHero) == selectedOtherHeroes.end())
+	{
   if ( StrongMT<Game::IGameContextUiInterface> locked = screen->GameCtx().Lock() )
     locked->ChangeCustomGameSettings( lobby::ETeam::None, lobby::ETeam::None, heroId );
+	}
 }
 
 

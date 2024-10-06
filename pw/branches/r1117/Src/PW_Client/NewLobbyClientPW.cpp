@@ -8,9 +8,15 @@
 #include "SelectGameModeScreen.h"
 #include "SelectHeroScreen.h"
 #include "FastReconnectCtxPW.h"
+#include <set>
+#include <string>
 
+#pragma optimize("",off)
 
 bool g_needNotifyLobbyClients = false;
+
+extern string g_devLogin;
+extern std::set<std::string> selectedOtherHeroes;
 
 namespace lobby
 {
@@ -105,6 +111,8 @@ void ClientPW::RemoveFirstLobbyScreen()
     NScreenCommands::PushCommand( NScreenCommands::CreatePopScreenCommand( lobbyScreen ) );
 }
 
+
+
 void ClientPW::UpdateCustomLobbyPlayers( const set<int> & hilitePlayers )
 {
   if ( !heroScreen )
@@ -113,6 +121,7 @@ void ClientPW::UpdateCustomLobbyPlayers( const set<int> & hilitePlayers )
   vector<int> linesIds;
 
   int readyPlayers = 0;
+selectedOtherHeroes.clear();
 
   for( int i = 0; i < 2; ++i )
   {
@@ -129,6 +138,8 @@ void ClientPW::UpdateCustomLobbyPlayers( const set<int> & hilitePlayers )
       const bool ready = ( ReadyPlayers().find( memb.user.userId ) != ReadyPlayers().end() );
       readyPlayers += ready ? 1 : 0;
 
+	  selectedOtherHeroes.insert(memb.context.hero.c_str());
+	  
       wstring line = NStr::StrFmtW( L"<space:2>%s (%d) as %s (%s), %s",
         memb.user.nickname.c_str(),
         memb.user.userId,
