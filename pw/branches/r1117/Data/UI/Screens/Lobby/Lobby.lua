@@ -1,18 +1,11 @@
 -------------------------------------------------------------------------------------------------------------------------------
 LobbyMainWnd = LobbyMainWnd or {}
-LobbyMainWnd.selectedHeroes = {}
 
 -------------------------------------------------------------------------------------------------------------------------------
 function LobbyMainWnd:OnInit( )
   local button = self:GetChild("Btn_StartSession")
   if button then
-    button.OnAction = function()  
-      if self.pendingHero and not self.selectedHeroes[self.pendingHero] then
-        self.selectedHeroes[self.pendingHero] = true
-        self:UpdateAvailableHeroes()
-        self.context:PlayerReady()
-      end
-    end
+    button.OnAction = function()  self.context:PlayerReady() end
   end
   
   button = self:GetChild("Btn_LeaveLobby")
@@ -81,24 +74,13 @@ end
 -------------------------------------------------------------------------------------------------------------------------------
 function LobbyMainWnd:OnSelectHero( heroId )
   if heroId then
-    self.context:SelectHero( heroId )
+    self.context:SelectHero( heroId )  
     self:SetButtonCap( heroId );
-    self.pendingHero = heroId  
   end
 end
 
 -------------------------------------------------------------------------------------------------------------------------------
 Lobby_HeroRadioBtn = Lobby_HeroRadioBtn or {}
 function Lobby_HeroRadioBtn:OnAction( action )
-  self:GetParent():GetParent():OnSelectHero(self.name)
-end
-
--------------------------------------------------------------------------------------------------------------------------------
-function LobbyMainWnd:UpdateAvailableHeroes()
-  for heroId, _ in pairs(self.selectedHeroes) do
-      local button = self:GetBaseParent():FindChild("Btn_Hero" .. tostring(heroId))
-      if button then
-          button:SetEnabled(false) 
-      end
-  end
+  self:GetParent():GetParent():OnSelectHero( self.name )
 end

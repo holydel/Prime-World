@@ -40,6 +40,7 @@
 #include "GameLogicStatisticsTypes.h"
 #include "Server/Statistic/StatisticsCommonTypes.h"
 #include "Client/ScreenCommands.h"
+#include <set>
 
 #include "PFCheat.h"
 #include "PFDebug.h"
@@ -154,6 +155,8 @@ static DebugMouseDown debugMousePick;
 static int updateMouseMode = 0;
 
 // tmp, IgorKaa
+
+
 namespace
 {
 DECLARE_NULL_RENDER_FLAG
@@ -161,7 +164,6 @@ DECLARE_NULL_RENDER_FLAG
 int g_needHeroLink = -1;
 int _nCommandLag   = 5;
 }
-
 
 // Camera user settings
 static float s_camera_rod = -1.0f; // -1 == use map default value
@@ -3962,14 +3964,24 @@ NWorld::PFBaseHero * AdventureScreen::GetHeroById( int heroId ) const
 
 void AdventureScreen::SetLogicHero( NWorld::PFBaseHero * pHero )
 {
-  if (NULL != pHero)
+	static std::set<NWorld::PFBaseHero*> occupiedHeroes;
+	if (NULL == pHero)
+	{
+		return;
+	}
+	
+  if (occupiedHeroes.find(pHero) != occupiedHeroes.end())
   {
+	  return;
+  }
+
     objectInfoHelper->SetLocalHero(pHero);
 
     pLogic->SetHero(pHero);
     minimap->SetLocalHero(pHero);
     objectsInfo2d->SetLocalHero(pHero);
-  }
+
+	occupiedHeroes.insert(pHero);
 }
 
 NWorld::PFAbilityData * AdventureScreen::GetAbilityData(Command cmd, int index)
