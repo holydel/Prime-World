@@ -9,7 +9,10 @@
 #include "LLobbyClientInterface.auto.h"
 #include "Version.h"
 #include "UI/FrameTimeRender.h"
+#include "PF_GameLogic/WebLauncher.h"
+#include "System/ConfigFiles.h"
 
+extern string g_devLogin;
 namespace lobby
 {
 
@@ -23,6 +26,10 @@ REGISTER_VAR( "lobby_cl_leave_timeout", s_leaveTimeout, STORAGE_NONE );
 static int s_overrideManoeuvresFaction = lobby::ETeam::None;
 REGISTER_DEV_VAR( "override_manoeuvres_faction", s_overrideManoeuvresFaction, STORAGE_NONE );
 
+static int s_lastTeam = 0;
+REGISTER_VAR( "last_team", s_lastTeam, STORAGE_USER );
+static string s_lastHeroId = "";
+REGISTER_VAR( "last_heroId", s_lastHeroId, STORAGE_USER );
 
 
 class LobbyUserProxy : public ILobbyUser, public BaseObjectMT
@@ -395,15 +402,26 @@ void ClientBase::UpdateCustomGameMemberReadiness( int userId, bool ready )
   OnLobbyDataChange();
 }
 
-
+#pragma optimize("", off)
 
 void ClientBase::StartSession( TGameId _sessionId, const SGameParameters & _params, const TGameLineUp & _gameLineUp, Peered::RIGameServer * _gameServerInstance, const Peered::SInstanceId & _gsInstId, unsigned timestamp32 )
 {
   MessageTrace( "Starting game session. map='%s', players=%d, gameid=%s, custom=%i, gs_svcid=%s, gs_instid=%s", _params.mapId, _gameLineUp.size(), FmtGameId( _sessionId ), _params.customGame, _gsInstId.serviceId, _gsInstId.instanceId );
 
-  for ( int i = 0; i < _gameLineUp.size(); ++i )
+  for ( int i = 0; i < _gameLineUp.size(); ++i ) {
     MessageTrace( "  Player info. uid=%d, sex=%d, nick=%d, type=%d, team=%d, hero=%s, bot_skin=%s", _gameLineUp[i].user.userId, (int)_gameLineUp[i].user.zzimaSex, _gameLineUp[i].user.nickname,
-    (int)_gameLineUp[i].context.playerType, (int)_gameLineUp[i].context.team, _gameLineUp[i].context.hero, _gameLineUp[i].context.botSkin );
+      (int)_gameLineUp[i].context.playerType, (int)_gameLineUp[i].context.team, _gameLineUp[i].context.hero, _gameLineUp[i].context.botSkin );
+      const nstl::wstring& curNickname = _gameLineUp[i].user.nickname;
+      nstl::wstring userNickname = ConvertUtf8ToWide1251(g_devLogin.c_str()).c_str();
+
+    if (curNickname.compare(userNickname) == 0) {
+      s_lastTeam = _gameLineUp[i].context.team;
+      NGlobal::SetVar("last_team",s_lastTeam,STORAGE_USER);
+      s_lastHeroId = _gameLineUp[i].context.hero;
+      NGlobal::SetVar("last_heroId",s_lastHeroId,STORAGE_USER);
+      NGlobal::SaveConfig( NProfile::GetFullFilePath( "user.cfg", NProfile::FOLDER_USER ), STORAGE_USER );
+    }
+  }
 
   bool statusIsRight = false;
   if ( status == EClientStatus::InCustomLobby )
@@ -584,8 +602,10 @@ void ClientBase::ReconnectGame( int gameId, int team, const string& heroId )
 {
   NI_VERIFY( status == EClientStatus::Connected, "", return );
   NI_VERIFY( serverInst, "", return );
-  
-  serverInst->ReconnectToCustomGame(gameId, team, heroId, this, &ClientBase::OnOperatioResult);
+  s_lastTeam = NGlobal::GetVar( "last_team", 0 ).GetInt64();
+  s_lastHeroId = WideCharToMultiByteString(NGlobal::GetVar( "last_heroId", 0 ).GetString().c_str()).c_str();
+
+  serverInst->ReconnectToCustomGame(gameId, s_lastTeam, s_lastHeroId, this, &ClientBase::OnOperatioResult);
   lastLobbyOperationResult = EOperationResult::InProgress;
 }
 

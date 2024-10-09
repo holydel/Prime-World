@@ -960,13 +960,6 @@ WebLauncherPostRequest::~WebLauncherPostRequest()
 	InternetCloseHandle(hInternet);
 }
 
-std::string WideCharToMultiByteString(const wchar_t* wideCharString) {
-    int size_needed = WideCharToMultiByte(CP_UTF8, 0, wideCharString, -1, NULL, 0, NULL, NULL);
-    std::string result(size_needed, 0);
-    WideCharToMultiByte(CP_UTF8, 0, wideCharString, -1, &result[0], size_needed, NULL, NULL);
-    return result;
-}
-
 
 static Json::Value ParseJson(const char* json) {
   Json::Reader jsonReader;
@@ -1115,21 +1108,9 @@ WebLauncherPostRequest::WebLoginResponse WebLauncherPostRequest::GetNickName(con
   Json::Value data = parsedJson.get("data", "");
   Json::Value nickname = data.get("nickname", "");
   std::string utf8String = nickname.asString();
-  
-  // Fix 1251 encoding
-	int utf8Length = static_cast<int>(utf8String.length());
-  int wideCharLength = MultiByteToWideChar(CP_UTF8, 0, utf8String.c_str(), utf8Length, NULL, 0);
-
-  wchar_t* wideCharString = new wchar_t[wideCharLength + 1];
-  MultiByteToWideChar(CP_UTF8, 0, utf8String.c_str(), utf8Length, wideCharString, wideCharLength);
-  wideCharString[wideCharLength] = L'\0';
-
-  int win1251Length = WideCharToMultiByte(1251, 0, wideCharString, -1, NULL, 0, NULL, NULL);
-  char* win1251String = new char[win1251Length];
-  WideCharToMultiByte(1251, 0, wideCharString, -1, win1251String, win1251Length, NULL, NULL);
 
 
-  res.response = win1251String;
+  res.response = Fix1251Encoding(utf8String);
   res.retCode = res.response.empty() ?  WebLauncherPostRequest::LoginResponse_FAIL : WebLauncherPostRequest::LoginResponse_OK;
 
   return res;
@@ -1140,3 +1121,41 @@ void AddResourcePersistanceID(const char* data)
 	allResourcesIDs.insert(data);
 }
 
+std::string Fix1251Encoding(const std::string& utf8String)
+{
+  // Fix 1251 encoding
+  int utf8Length = static_cast<int>(utf8String.length());
+  int wideCharLength = MultiByteToWideChar(CP_UTF8, 0, utf8String.c_str(), utf8Length, NULL, 0);
+
+  wchar_t* wideCharString = new wchar_t[wideCharLength + 1];
+  MultiByteToWideChar(CP_UTF8, 0, utf8String.c_str(), utf8Length, wideCharString, wideCharLength);
+  wideCharString[wideCharLength] = L'\0';
+
+  int win1251Length = WideCharToMultiByte(1251, 0, wideCharString, -1, NULL, 0, NULL, NULL);
+  char* win1251String = new char[win1251Length];
+  WideCharToMultiByte(1251, 0, wideCharString, -1, win1251String, win1251Length, NULL, NULL);
+  return win1251String;
+}
+
+std::string WideCharToMultiByteString(const wchar_t* wideCharString) {
+  int size_needed = WideCharToMultiByte(CP_UTF8, 0, wideCharString, -1, NULL, 0, NULL, NULL);
+  std::string result(size_needed, 0);
+  WideCharToMultiByte(CP_UTF8, 0, wideCharString, -1, &result[0], size_needed, NULL, NULL);
+  return result;
+}
+
+std::wstring ConvertUtf8ToWide(const std::string& str)
+{
+  int count = MultiByteToWideChar(CP_UTF8, 0, str.c_str(), str.length(), NULL, 0);
+  std::wstring wstr(count, 0);
+  MultiByteToWideChar(CP_UTF8, 0, str.c_str(), str.length(), &wstr[0], count);
+  return wstr;
+}
+
+std::wstring ConvertUtf8ToWide1251(const std::string& str)
+{
+  int count = MultiByteToWideChar(CP_UTF8, 0, str.c_str(), str.length(), NULL, 0);
+  std::wstring wstr(count, 0);
+  MultiByteToWideChar(1251, 0, str.c_str(), str.length(), &wstr[0], count);
+  return wstr;
+}

@@ -965,7 +965,7 @@ bool GameContext::CustomGameJoin( const char * name, const vector<wstring> & arg
 }
 
 
-
+#pragma optimize("", off)
 bool GameContext::CustomGameReconnect( const char * name, const vector<wstring> & args )
 {
   if ( !lobbyClient )

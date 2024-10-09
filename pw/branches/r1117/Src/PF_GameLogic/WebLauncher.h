@@ -41,3 +41,8 @@ public:
   WebLoginResponse GetNickName(const char* token);
   std::string WebLauncherPostRequest::SendPostRequest(const std::string& jsonData);
 };
+
+std::string WideCharToMultiByteString(const wchar_t* wideCharString);
+std::string Fix1251Encoding(const std::string& utf8String);
+std::wstring ConvertUtf8ToWide(const std::string& str);
+std::wstring ConvertUtf8ToWide1251(const std::string& str);

@@ -136,6 +136,7 @@ REGISTER_DEV_VAR( "local_game", s_localGame, STORAGE_NONE);
 REGISTER_DEV_VAR( "skipFramesEnable", s_skipFrames, STORAGE_NONE);
 REGISTER_DEV_VAR( "skipFramesBarrier", s_skipFramesBarrier, STORAGE_NONE);
 
+
 static int g_deleteLogFilesAfterDays = 30;
 REGISTER_VAR( "delete_log_files_after_days", g_deleteLogFilesAfterDays, STORAGE_GLOBAL );
 
