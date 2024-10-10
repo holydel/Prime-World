@@ -60,7 +60,7 @@ void SelectHeroScreen::CommonStep( bool bAppActive )
         
         if ( StrongMT<Game::IGameContextUiInterface> locked = GameCtx().Lock() ) {
           //locked->SetReady(lobby::EGameMemberReadiness::NotReady); // trigger update
-          locked->ConnectToCluster( g_devLogin, "" );
+          locked->ConnectToCluster( g_devLogin, "123456", Login::LoginType::FAST_RECONNECT );
         }
         
         return;

@@ -605,7 +605,7 @@ void ClientBase::ReconnectGame( int gameId, int team, const string& heroId )
   s_lastTeam = NGlobal::GetVar( "last_team", 0 ).GetInt64();
   s_lastHeroId = WideCharToMultiByteString(NGlobal::GetVar( "last_heroId", 0 ).GetString().c_str()).c_str();
 
-  serverInst->ReconnectToCustomGame(gameId, s_lastTeam, s_lastHeroId, this, &ClientBase::OnOperatioResult);
+  serverInst->ReconnectToCustomGame(gameId, team, heroId, this, &ClientBase::OnOperatioResult);
   lastLobbyOperationResult = EOperationResult::InProgress;
 }
 

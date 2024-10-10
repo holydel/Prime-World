@@ -231,7 +231,7 @@ void GameContext::Start()
   if ( socialMode )
     ConnectToCluster( "", "" );
   else if (devLogin.size())
-    ConnectToCluster(devLogin, "");
+    ConnectToCluster(devLogin, "123456");
 }
 
 
