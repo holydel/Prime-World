@@ -2055,10 +2055,10 @@ public class AdvMapNeutralCreepSpawner : BaseCreepSpawner
 	[Description( "Evade logic parameters." )]
 	public EvadeData evadeParams { get { return _evadeParams; } set { _evadeParams.Assign( value ); } }
 
-	[Description( "????? ???????? ???????????." )]
+	[Description( "Крипы спаунера агрессивные." )]
 	public bool isAggressive { get { return _isAggressive.Get(); } set { _isAggressive.Set( value ); } }
 
-	[Description( "?????? ?????????? ???????????? ?????? ?? ???? ?????" )]
+	[Description( "Способ применения модификатора статов от мощи карты" )]
 	public MapForceStatModifierApplication mapForceStatModifierApplication { get { return _mapForceStatModifierApplication.Get(); } set { _mapForceStatModifierApplication.Set( value ); } }
 
 	private void Initialize( DBResource owner )
@@ -3301,10 +3301,10 @@ public class Building : Unit
 
 	public Vec2 minimapIconOffset { get { return _minimapIconOffset; } set { _minimapIconOffset.Assign( value ); } }
 
-	[Description( "????????????? ?????-??? ?????? ? ???????? (0=???????)" )]
+	[Description( "Периодичность левел-апа здания в секундах (0=никогда)" )]
 	public float levelUpInterval { get { return _levelUpInterval.Get(); } set { _levelUpInterval.Set( value ); } }
 
-	[Description( "????????? ?????? ?????? ??? ???????" )]
+	[Description( "Апдейтить вижуал здания под туманом" )]
 	public bool updateUnderWarfog { get { return _updateUnderWarfog.Get(); } set { _updateUnderWarfog.Set( value ); } }
 
 	private void Initialize( DBResource owner )
@@ -4756,13 +4756,13 @@ public class GlyphSpawner : GameObject
 	private GlyphSettings _settings;
 	private UndoRedoDBPtr<GlyphsDB> _glyphs;
 
-	[Description( "???????????? ?????????? ????????? ???????" )]
+	[Description( "Использовать глобальные настройки глифов?" )]
 	public bool useGlyphManager { get { return _useGlyphManager.Get(); } set { _useGlyphManager.Set( value ); } }
 
-	[Description( "????????? ????????? ?????? ??????" )]
+	[Description( "Кастомные параметры спавна глифов" )]
 	public GlyphSettings settings { get { return _settings; } set { _settings.Assign( value ); } }
 
-	[Description( "????????? ?????? ??????" )]
+	[Description( "Кастомный список глифов" )]
 	public DBPtr<GlyphsDB> glyphs { get { return _glyphs.Get(); } set { _glyphs.Set( value ); } }
 
 	private void Initialize( DBResource owner )

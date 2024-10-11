@@ -545,7 +545,7 @@ namespace NWorld
 								talentInfo.actionBarIdx = -1;
 							}
 
-              talentInfo.refineRate = NDb::TalentRarityToRefineRemap[talentPtr->rarity];
+//              talentInfo.refineRate = NDb::TalentRarityToRefineRemap[talentPtr->rarity];
 				
               if(talentPtr->isUltimateTalent && talentPtr->rarity == NDb::TALENTRARITY_CLASS) {
 								numUltimates++;

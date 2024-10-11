@@ -19,7 +19,7 @@
 #include "SessionEventType.h"
 
 #include "PlayerBehaviourTracking.h"
-
+/*
 namespace 
 {
   void HideUnit(NWorld::PFBaseUnit * unit, bool hide)
@@ -32,10 +32,9 @@ namespace
 
     if( hide )
       unit->EventHappened(NWorld::PFBaseUnitEvent(NDb::BASEUNITEVENT_ISOLATE));
-
   }
 }
-
+*/
 namespace NWorld
 {
 
@@ -137,7 +136,7 @@ void PFEaselPlayer::Isolate( bool isolate )
 
   isolated = isolate;
 
-  HideUnit(this, isolate);
+  //HideUnit(this, isolate);
 
   struct Func : public ISummonAction, public NonCopyable
   {
@@ -145,7 +144,7 @@ void PFEaselPlayer::Isolate( bool isolate )
     Func(bool _hide): hide(_hide) {}
     virtual void operator()(PFBaseUnit * pUnit)
     {
-      HideUnit(pUnit, hide);
+//      HideUnit(pUnit, hide);
     }
   } hider(isolate);
 
