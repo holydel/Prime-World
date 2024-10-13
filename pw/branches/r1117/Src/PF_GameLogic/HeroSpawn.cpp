@@ -437,6 +437,9 @@ namespace NWorld
       int inTeamId = 1; // yes, I know :( it`s pretty bad, but I need count heroes starting from 1
       for( TTeamSpawnInfo::const_iterator it = team_it->begin(), end = team_it->end(); it != end; ++it )
       {
+        if( -1 == it->playerId )
+          break; // spawned all heroes for this team
+
         if (players[it->playerId].playerType == NCore::EPlayerType::Human) {
           const NDb::Hero * hero = FindHero( pHeroes, advMapDescription, it->playerInfo.heroId );
           
