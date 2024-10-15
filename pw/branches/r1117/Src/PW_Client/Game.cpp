@@ -766,11 +766,6 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
     size_t found = fullPath.find_last_of("\\");
     std::string executableName = fullPath.substr(found + 1);
 
-	if(NumProcessRunning(executableName.c_str()) > 1)
-	{
-		return -1;
-	}
-
   MainVars mainVars;
 
   g_oldInvalidParamHandler = _set_invalid_parameter_handler( DebugTraceInvalidParamsHandler );
@@ -824,11 +819,13 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
   NDebug::SetProductNameAndVersion( NProfile::GetFullFolderPath(NProfile::FOLDER_PLAYER), PRODUCT_TITLE_SHORT, VERSION_LINE, VERSION_MAJOR, VERSION_MINOR, VERSION_PATCH, VERSION_REVISION );
 #endif //_SHIP_FALSE
 
-  if ( !instancesLimit.Lock( 3 ) )
+#ifdef _SHIPPING
+  if ( !instancesLimit.Lock( 1 ) )
   {
     mainVars.DeInit();
     return 0;
   }
+#endif
 
   string logsPath = GetFullFolderPath( NProfile::FOLDER_LOGS );
   if (!NFile::DoesFolderExist(logsPath))

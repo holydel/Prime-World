@@ -51,6 +51,7 @@ void SelectHeroScreen::CommonStep( bool bAppActive )
   float dt = NMainLoop::GetTimeDelta();
 
   const float kickoutTime = 30.0f;
+#ifdef _SHIPPING
   // Temporary solution
   if (!logic->IsPlayerReady() && debugPlayerIds.size() == 12) {
     lobbyTimeout += dt;
@@ -69,6 +70,7 @@ void SelectHeroScreen::CommonStep( bool bAppActive )
   } else {
     lobbyTimeout = 0.f;
   }
+#endif
 
   bool update = false;
   for( map<int, float>::iterator it = debugHiliteTimes.begin(), next = it; it != debugHiliteTimes.end(); it = next )

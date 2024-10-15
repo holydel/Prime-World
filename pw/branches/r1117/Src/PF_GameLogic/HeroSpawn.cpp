@@ -434,7 +434,7 @@ namespace NWorld
 
     for( TSpawnInfo::const_iterator team_it = pSpawnInfo->begin(), team_end = pSpawnInfo->end(); team_it != team_end; ++team_it )
     {
-      int inTeamId = 1; // yes, I know :( it`s pretty bad, but I need count heroes starting from 1
+      //int inTeamId = 1; // yes, I know :( it`s pretty bad, but I need count heroes starting from 1
       for( TTeamSpawnInfo::const_iterator it = team_it->begin(), end = team_it->end(); it != end; ++it )
       {
         if( -1 == it->playerId )
@@ -595,7 +595,6 @@ namespace NWorld
         }
 
         heroSpawnDesc.playerInfo.heroSkin = GetSkinByHeroPersistentId(heroSpawnDesc.pHero->persistentId.c_str(), kindaRandomNumber).c_str() ; //"invisible_S41";
-        int ikas = 0;
 			}
 		}
 
