@@ -94,7 +94,7 @@ bool Console::IsModal() const
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 bool Console::OpenClose()
 {
-#ifdef ENABLE_CHEATS
+#ifndef _SHIPPING
   consoleActive = !consoleActive;
   logic->Show( consoleActive );
   return true;
