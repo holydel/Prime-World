@@ -36,6 +36,12 @@ public:
     bool isSmartCast;
   };
 
+  struct WebPlayerInfo {
+    int teamId;
+    nstl::wstring nickname;
+   
+};
+
   struct WebUserData {
     std::vector<TalentWebData> talents;
   };
@@ -45,6 +51,7 @@ public:
 	std::string ConvertFromClassID(int id);
   WebLoginResponse GetNickName(const char* token);
   std::string WebLauncherPostRequest::SendPostRequest(const std::string& jsonData);
+  void SendGameFinishInfo(const vector<WebPlayerInfo>& playerWebInfo, int winnerTeam);
 
 };
 

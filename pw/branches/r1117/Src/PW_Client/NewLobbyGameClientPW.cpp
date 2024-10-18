@@ -47,6 +47,7 @@
 #include "UI/FrameTimeRender.h"
 #include "PF_GameLogic/SocialConnection.h"
 #include "PF_GameLogic/PlayerBehaviourTracking.h"
+#include "PF_GameLogic/WebLauncher.h"
 
 static bool s_threaded_loading = true;
 REGISTER_VAR( "threaded_loading", s_threaded_loading, STORAGE_NONE );
@@ -63,6 +64,9 @@ REGISTER_DEV_VAR( "boost_thread_priority_val", s_boostVal, STORAGE_NONE);
 #ifndef INSULT_REPORT_ITEM_ID
 #define INSULT_REPORT_ITEM_ID 2
 #endif
+
+std::map<int , WebLauncherPostRequest::WebPlayerInfo> playersInfo;
+
 
 namespace lobby
 {
@@ -522,7 +526,7 @@ void GameClientPW::HideLoadingScreen()
 
 
 //////////////////////////////////////////////////////////////////////////
-
+#pragma optimize("", off)
 void GameClientPW::OnPlayerInfoLoaded()
 {
   if (!loadingScreeen)
@@ -536,6 +540,8 @@ void GameClientPW::OnPlayerInfoLoaded()
 
 
   bool hasBots = false;
+
+
 
 
   const NCore::MapStartInfo & startInfo = GetMapStartInfo();
@@ -555,6 +561,11 @@ void GameClientPW::OnPlayerInfoLoaded()
     
     if ( playerStartInfo.playerInfo.heroId == 0 || playerStartInfo.teamID == NCore::ETeam::None)
       continue;
+	WebLauncherPostRequest::WebPlayerInfo playerWebInfo;
+	playerWebInfo.teamId = (playerStartInfo.teamID + 1);
+	playerWebInfo.nickname = playerStartInfo.nickname;
+
+	playersInfo[playerStartInfo.userID] = playerWebInfo;
 
     Game::HeroInfo info;
 

@@ -4,6 +4,9 @@
 #include <map>
 #include <set>
 #include <json/json.h>
+#include "PW_Client\NewLobbyGameClientPW.h"
+
+string g_web_Token;
 
 #pragma comment(lib, "wininet.lib")
 
@@ -1187,6 +1190,7 @@ WebLauncherPostRequest::WebLoginResponse WebLauncherPostRequest::GetNickName(con
   WebLoginResponse res;
   res.response = std::string();
   res.retCode = LoginResponse_FAIL;
+  g_web_Token = token;
 
   char jsonBuff[1024];
   ZeroMemory(jsonBuff,1024);
@@ -1311,3 +1315,25 @@ void AddResourcePersistanceID(const char* data)
 	allResourcesIDs.insert(data);
 }
 
+
+void WebLauncherPostRequest::SendGameFinishInfo(const vector<WebLauncherPostRequest::WebPlayerInfo>& playerWebInfo, int winner){
+  Json::Value jsonData;
+  jsonData["metod"] = "sendGameFinishInfo";
+
+  Json::Value data;
+  data["playerToken"] = g_web_Token.c_str();
+
+  for (WebPlayerInfo& player : playerWebInfo) {
+    Json::Value playerData;
+    playerData["nickName"] = player.second.nickName;
+    playerData["won"] = won;
+
+    data["players"].append(playerData);
+  }
+
+  jsonData["data"] = data;
+
+  Json::StreamWriterBuilder writer;
+  string jsonString = Json::writeString(writer, jsonData);
+  return;
+}

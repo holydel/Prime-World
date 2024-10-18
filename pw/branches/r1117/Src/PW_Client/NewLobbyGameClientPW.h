@@ -87,6 +87,14 @@ public:
   GameClientPW( ClientPW * _client, NWorld::IMapCollection * _mapCollection, Game::NetworkStatusScreen * _networkStatusScreen, FastReconnectCtxPW * _fastReconnectCtxPw, NGameX::ISocialConnection * _socialConnection, Game::LoadingScreen * _loadingScreen, NGameX::GuildEmblem* _guildEmblem, const bool _isSpectator, const bool _isTutorial );
   virtual ~GameClientPW(); 
 
+#ifndef WEB_PLAYER_INFO_H
+#define WEB_PLAYER_INFO_H
+
+
+
+#endif // WEB_PLAYER_INFO_H
+
+
   void SetChatClient( gamechat::IClient * chatClient );
   void SetDebugVarSender( Game::DebugVarsSender * sender ) { debugVarsSender = sender; }
 
