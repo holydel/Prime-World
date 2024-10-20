@@ -68,6 +68,16 @@ REGISTER_DEV_VAR( "valid_pets", g_validPets, STORAGE_NONE );
 namespace NWorld
 {
    
+  static const int TalentRarityToRefineRemap[] =
+  {
+    5,  //TALENTRARITY_CLASS = 0,
+    10, //TALENTRARITY_ORDINARY = 1,
+    10, //TALENTRARITY_GOOD = 2,
+    10, //TALENTRARITY_EXCELLENT = 3,
+    9,  //TALENTRARITY_MAGNIFICENT = 4,
+    7,  //TALENTRARITY_EXCLUSIVE = 5,
+    5,  //TALENTRARITY_OUTSTANDING = 6,
+  };
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #ifndef VISUAL_CUTTED
   void PreloadHero( NDb::Ptr<NDb::BaseHero> pHero, NWorld::PFWorld* pWorld, int teamID )
@@ -579,7 +589,7 @@ namespace NWorld
 								talentInfo.actionBarIdx = -1;
 							}
 
-              talentInfo.refineRate = NDb::TalentRarityToRefineRemap[talentPtr->rarity];
+              talentInfo.refineRate = TalentRarityToRefineRemap[talentPtr->rarity];
 				
               if(talentPtr->isUltimateTalent && talentPtr->rarity == NDb::TALENTRARITY_CLASS) {
 								numUltimates++;

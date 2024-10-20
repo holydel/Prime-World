@@ -1154,9 +1154,8 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
     return false;
   }
 
-#if 1
-//#ifdef _SHIPPING
-  NGlobal::ExecuteConfig( "input_new.cfg", NProfile::FOLDER_USER, L"input" );
+#ifdef _SHIPPING
+  NGlobal::ExecuteConfig( "input_pwc.cfg", NProfile::FOLDER_USER, L"input" );
   NGlobal::ExecuteConfig( "smart_chat.cfg", NProfile::FOLDER_GLOBAL );
 #endif
 
@@ -1591,9 +1590,8 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
 
 	if(!isReplay)
   {
-#if 1
-//#ifdef _SHIPPING
-		Input::SaveInputConfig( NProfile::GetFullFilePath( "input_new.cfg", NProfile::FOLDER_USER ), L"input" );
+#ifdef _SHIPPING
+		Input::SaveInputConfig( NProfile::GetFullFilePath( "input_pwc.cfg", NProfile::FOLDER_USER ), L"input" );
 #endif
     NGlobal::SaveConfig( NProfile::GetFullFilePath( "user.cfg", NProfile::FOLDER_USER ), STORAGE_USER );
   }
