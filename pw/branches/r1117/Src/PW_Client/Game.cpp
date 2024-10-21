@@ -716,6 +716,9 @@ void InitCensorDicts()
 string g_devLogin;
 string g_sessionToken;
 
+string g_sessionName;
+WebLauncherPostRequest::RegisterSessionRequest g_registerInSessionResponse;
+
 std::string GetDirectoryFromPath(const std::string& fullPath) {
     std::size_t found = fullPath.find_last_of("/\\");
     if (found != std::string::npos) {
@@ -1206,7 +1209,13 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
 
 	int selectedHeroID = atoi(allTokens[2].c_str());
   const char* versionStr = allTokens[3].c_str();
-  const char* sessionToken = allTokens[4].c_str();
+  string protocolMethod = allTokens[4].c_str();
+  const char* sessionToken = allTokens[5].c_str();
+
+  if (protocolMethod == "checkInstall") {
+    // Post "validateInstall" method
+    return 0;
+  }
 
 	int versionMajor = VERSION_MAJOR;
 	int versionMinor = VERSION_MINOR;
@@ -1261,15 +1270,32 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
           return 0xA005;
         }
       }
+
+      const char * mapId = CmdLineLite::Instance().GetStringKey( "mapId", "" );
+
+      context = new Game::GameContext(sessLogin, g_devLogin.c_str(), mapId, socialServer, guildEmblem, isSpectator, false );
+      context->Start();
+      g_registerInSessionResponse = registerInSessionResponse;
+      g_sessionName = gameName.c_str();
+/*
+      if (registerInSessionResponse == WebLauncherPostRequest::RegisterInSessionRequest_Connect) {
+        lobby::TDevGamesList gameList;
+        context->RefreshGamesList();
+        context->PopGameList(gameList);
+        
+        int requiredGameId = 0;
+        for( lobby::TDevGamesList::iterator it = gameList.begin(); it != gameList.end(); ++it ) {
+          OutputDebugStringW(it->name.c_str());
+          requiredGameId = it->gameId;
+        }
+        context->JoinGame(requiredGameId);
+      }
+      */
+
     }
-
-    const char * mapId = CmdLineLite::Instance().GetStringKey( "mapId", "" );
-
-    context = new Game::GameContext(sessLogin, g_devLogin.c_str(), mapId, socialServer, guildEmblem, isSpectator, false );
     }
   }
 
-  context->Start();
   mainVars.initContext = true;
 
   //This config is mainly needed to enable custom lobby console commands

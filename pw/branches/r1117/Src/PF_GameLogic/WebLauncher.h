@@ -52,6 +52,8 @@ public:
     RegisterInSessionRequest_Wait,
     RegisterInSessionRequest_Connect,
 
+    RegisterInSessionRequest_Joined,
+
     RegisterInSessionRequest_Error,
   };
 

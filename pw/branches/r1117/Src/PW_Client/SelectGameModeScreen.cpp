@@ -7,7 +7,10 @@
 #include "NewLobbyClientPW.h"
 
 #include "System/InlineProfiler.h"
+#include "../PF_GameLogic/WebLauncher.h"
 
+extern string g_sessionName;
+extern WebLauncherPostRequest::RegisterSessionRequest g_registerInSessionResponse;
 
 namespace NGameX
 {
@@ -54,7 +57,6 @@ bool SelectGameModeScreen::Init( UI::User * uiUser )
 } 
 
 
-
 void SelectGameModeScreen::Step( bool bAppActive )
 {
   StrongMT<Game::IGameContextUiInterface> locked = gameCtx.Lock();
@@ -64,8 +66,42 @@ void SelectGameModeScreen::Step( bool bAppActive )
   lobby::TDevGamesList infos;
   locked->PopGameList( infos );
 
+  if (g_registerInSessionResponse == WebLauncherPostRequest::RegisterInSessionRequest_Create) {
+    locked->CreateGame("Maps/Multiplayer/MOBA/_.ADMPDSCR.xdb", 10);
+    g_registerInSessionResponse = WebLauncherPostRequest::RegisterInSessionRequest_Joined;
+  }
+  
+
   for( lobby::TDevGamesList::iterator it = infos.begin(); it != infos.end(); ++it )
     logic->UpdateSessionInfo( *it );
+
+
+  if (g_registerInSessionResponse == WebLauncherPostRequest::RegisterInSessionRequest_Connect) {
+    int requiredGameId = -1;
+
+    // Fix 1251 encoding
+    int utf8Length = static_cast<int>(g_sessionName.length());
+    int wideCharLength = MultiByteToWideChar(CP_UTF8, 0, g_sessionName.c_str(), utf8Length, NULL, 0);
+
+    wchar_t* wideCharString = new wchar_t[wideCharLength + 1];
+    MultiByteToWideChar(CP_UTF8, 0, g_sessionName.c_str(), utf8Length, wideCharString, wideCharLength);
+    wideCharString[wideCharLength] = L'\0';
+
+    wstring nameTofind = wideCharString;
+    nameTofind += L"'s game";
+
+    for( lobby::TDevGamesList::iterator it = infos.begin(); it != infos.end(); ++it ) {
+      OutputDebugStringW(it->name.c_str());
+      if (nameTofind.compare(it->name.c_str() + 1) == 0) {
+        requiredGameId = it->gameId;
+      }
+    }
+    if (requiredGameId != -1) {
+      locked->JoinGame(requiredGameId);
+      g_registerInSessionResponse = WebLauncherPostRequest::RegisterInSessionRequest_Joined;
+    }
+  }
+
 
   lobby::EOperationResult::Enum joinResult = locked->LastLobbyOperationResult();
   if ( joinResult != lobby::EOperationResult::InProgress )
