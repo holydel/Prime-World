@@ -63,6 +63,26 @@ def api():
             else:
                 return 'Invalid session id'
 
+        if method == "checkIsGameReady":
+            sessionToken = data["sessionToken"]
+            if sessionToken in activeSessionTokens:
+                session = activeSessionTokens[sessionToken]
+
+                if len(session['players']) < 10:  # not enough players
+                    response = {
+                        'error': '',
+                        'data': False
+                    }
+                    return jsonify(response)
+                else:
+                    response = {
+                        'error': '',
+                        'data': True
+                    }
+                    return jsonify(response)
+            else:
+                return 'Invalid session id'
+
         return 'Unknown method in json'
     else:
         return 'Request method is not allowed'

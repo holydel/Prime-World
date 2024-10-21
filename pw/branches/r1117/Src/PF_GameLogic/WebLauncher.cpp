@@ -1376,30 +1376,35 @@ void WebLauncherPostRequest::LobbyCreatedRequest(const char* nickname, const cha
   const std::string jsonData = jsonBuff;
 
   std::string responseStream = SendPostRequest(jsonData);
-/*
+  // No response stream processing
+}
+
+bool WebLauncherPostRequest::CheckIsGameReady(const char* sessionToken)
+{
+  char jsonBuff[1024];
+  ZeroMemory(jsonBuff,1024);
+
+  sprintf(jsonBuff,"{\"method\": \"checkIsGameReady\", \"data\": {\"sessionToken\": \"%s\"}}", sessionToken);
+  const std::string jsonData = jsonBuff;
+
+  std::string responseStream = SendPostRequest(jsonData);
+
   OutputDebugStringA(responseStream.c_str()); 
   // 
   Json::Value parsedJson = ParseJson(responseStream.c_str());
   if (parsedJson.empty()) {
-    return RegisterInSessionRequest_Error; // Failed json
+    return false; // Failed json
   }
 
   Json::Value errorSet = parsedJson.get("error", "ERROR");
   if (!errorSet.asString().empty()) {
-    if (errorSet.asString() == "Wait") {
-      return RegisterInSessionRequest_Wait; // Just wait
-    }
-    return RegisterInSessionRequest_Error; // Unknown error
+    return false; // Unknown error
   }
 
   Json::Value data = parsedJson.get("data", "");
   if (data.empty()) {
-    return RegisterInSessionRequest_Error; // Failed getting data
+    return false; // Failed getting data
   }
 
-  static const int INVALID_GAME_ID = -1;
-
-  gameId = data.asInt();
-  return gameId == INVALID_GAME_ID ? RegisterInSessionRequest_Create : RegisterInSessionRequest_Connect;
-*/
+  return data.asBool();
 }

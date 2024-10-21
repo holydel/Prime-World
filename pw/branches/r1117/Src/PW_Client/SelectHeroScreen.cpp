@@ -7,9 +7,11 @@
 #include "Client/MainTimer.h"
 #include "System/InlineProfiler.h"
 #include "../PF_GameLogic/WebLauncher.h"
+#include "../PW_Game/server_ip.h"
 
 extern string g_devLogin;
 extern WebLauncherPostRequest::RegisterSessionRequest g_sessionStatus;
+extern string g_sessionToken;
 
 namespace NGameX
 {  
@@ -58,7 +60,17 @@ void SelectHeroScreen::CommonStep( bool bAppActive )
   if (g_sessionStatus == WebLauncherPostRequest::RegisterInSessionRequest_HeroSelected) {
 
     if ( StrongMT<Game::IGameContextUiInterface> locked = GameCtx().Lock() ) {
-      //locked->SetReady(lobby::EGameMemberReadiness::NotReady); // trigger update
+      WebLauncherPostRequest testreq(L"127.0.0.1", L"/api", SERVER_PORT_INT + 500, 0);
+
+      static const int CHECK_GAME_READY_MAX_RETRY_COUNT = 10;
+      int retryCount = 0;
+      while (!testreq.CheckIsGameReady(g_sessionToken.c_str())) {
+        Sleep(1000);
+        retryCount++;
+        if (retryCount >= CHECK_GAME_READY_MAX_RETRY_COUNT) {
+          break;
+        }
+      }
       locked->SetReady(lobby::EGameMemberReadiness::ReadyForAnything);
       g_sessionStatus = WebLauncherPostRequest::RegisterInSessionRequest_InReadyState;
     }
