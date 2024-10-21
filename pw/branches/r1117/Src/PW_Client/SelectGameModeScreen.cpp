@@ -10,7 +10,9 @@
 #include "../PF_GameLogic/WebLauncher.h"
 
 extern string g_sessionName;
-extern WebLauncherPostRequest::RegisterSessionRequest g_registerInSessionResponse;
+extern WebLauncherPostRequest::RegisterSessionRequest g_sessionStatus;
+extern int g_playerTeamId;
+extern int g_playerHeroId;
 
 namespace NGameX
 {
@@ -56,6 +58,73 @@ bool SelectGameModeScreen::Init( UI::User * uiUser )
   return true; 
 } 
 
+static const char* heroes [] = {
+"prince",
+"snowqueen",
+"faceless",
+"warlord",
+"thundergod",
+"invisible",
+"mowgly",
+"inventor",
+"artist",
+"highlander",
+"marine",
+"firefox",
+"healer",
+"night",
+"rockman",
+"assassin",
+"unicorn",
+"hunter",
+"ghostlord",
+"ratcatcher",
+"archeress",
+"werewolf",
+"frogenglut",
+"witchdoctor",
+"manawyrm",
+"bard",
+"naga",
+"mage",
+"fairy",
+"witcher",
+"alchemist",
+"demonolog",
+"vampire",
+"witch",
+"crusader_A",
+"crusader_B",
+"monster",
+"angel",
+"freeze",
+"gunslinger",
+"reaper",
+"fluffy",
+"rifleman",
+"magicgirl",
+"pinkgirl",
+"ironknight",
+"fallenangel",
+"bladedancer",
+"ent",
+"plaguedoctor",
+"katana",
+"plane",
+"zealot",
+"wraithking",
+"dryad",
+"stalker",
+"gunner",
+"chronicle",
+"brewer",
+"shadow",
+"wendigo",
+"trickster",
+"banshee",
+"shaman",
+"bomber"
+};
 
 void SelectGameModeScreen::Step( bool bAppActive )
 {
@@ -63,20 +132,29 @@ void SelectGameModeScreen::Step( bool bAppActive )
   if ( !locked || !logic )
     return;
 
+  // 3. Select hero
+  if (locked->GetLobbyStatus() == lobby::EClientStatus::InCustomLobby && g_sessionStatus == WebLauncherPostRequest::RegisterInSessionRequest_Joined) {
+    int heroId = std::min(std::max((size_t)(g_playerHeroId - 1), 0u), _countof(heroes) - 1u);
+    locked->ChangeCustomGameSettings(lobby::ETeam::Enum(g_playerTeamId), lobby::ETeam::Enum(g_playerTeamId), heroes[heroId]);
+    g_sessionStatus = WebLauncherPostRequest::RegisterInSessionRequest_HeroSelected;
+  }
+
   lobby::TDevGamesList infos;
   locked->PopGameList( infos );
 
-  if (g_registerInSessionResponse == WebLauncherPostRequest::RegisterInSessionRequest_Create) {
+  // 1. Create game for others
+  if (g_sessionStatus == WebLauncherPostRequest::RegisterInSessionRequest_Create) {
     locked->CreateGame("Maps/Multiplayer/MOBA/_.ADMPDSCR.xdb", 10);
-    g_registerInSessionResponse = WebLauncherPostRequest::RegisterInSessionRequest_Joined;
+    g_sessionStatus = WebLauncherPostRequest::RegisterInSessionRequest_Joined;
+
   }
   
 
   for( lobby::TDevGamesList::iterator it = infos.begin(); it != infos.end(); ++it )
     logic->UpdateSessionInfo( *it );
 
-
-  if (g_registerInSessionResponse == WebLauncherPostRequest::RegisterInSessionRequest_Connect) {
+  // 2. Connect to existing lobby by... session name
+  if (g_sessionStatus == WebLauncherPostRequest::RegisterInSessionRequest_Connect) {
     int requiredGameId = -1;
 
     // Fix 1251 encoding
@@ -98,7 +176,7 @@ void SelectGameModeScreen::Step( bool bAppActive )
     }
     if (requiredGameId != -1) {
       locked->JoinGame(requiredGameId);
-      g_registerInSessionResponse = WebLauncherPostRequest::RegisterInSessionRequest_Joined;
+      g_sessionStatus = WebLauncherPostRequest::RegisterInSessionRequest_Joined;
     }
   }
 

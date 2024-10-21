@@ -75,6 +75,7 @@ public:
   virtual StatisticService::GameStatistics * GameStatLogic() { return 0; }
 
   virtual void SetTimeScale( float timescale );
+  virtual lobby::EClientStatus::Enum GetLobbyStatus() const { return lobby::EClientStatus::Error; };
 
 protected:
   //IGameContextUiInterface

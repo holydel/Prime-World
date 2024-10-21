@@ -717,7 +717,9 @@ string g_devLogin;
 string g_sessionToken;
 
 string g_sessionName;
-WebLauncherPostRequest::RegisterSessionRequest g_registerInSessionResponse;
+WebLauncherPostRequest::RegisterSessionRequest g_sessionStatus;
+int g_playerTeamId;
+int g_playerHeroId;
 
 std::string GetDirectoryFromPath(const std::string& fullPath) {
     std::size_t found = fullPath.find_last_of("/\\");
@@ -1207,13 +1209,17 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
     return 0xA001;
   }
 
-	int selectedHeroID = atoi(allTokens[2].c_str());
-  const char* versionStr = allTokens[3].c_str();
-  string protocolMethod = allTokens[4].c_str();
-  const char* sessionToken = allTokens[5].c_str();
+  const char* versionStr = allTokens[2].c_str();
+  string protocolMethod = allTokens[3].c_str();
+  const char* sessionToken = allTokens[4].c_str();
+  int selectedHeroID = atoi(allTokens[5].c_str());
+  int teamId = atoi(allTokens[6].c_str());
+
+  g_playerHeroId = selectedHeroID;
+  g_playerTeamId = teamId;
 
   if (protocolMethod == "checkInstall") {
-    // Post "validateInstall" method
+    // TODO: Post "validateInstall" method
     return 0;
   }
 
@@ -1275,7 +1281,7 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
 
       context = new Game::GameContext(sessLogin, g_devLogin.c_str(), mapId, socialServer, guildEmblem, isSpectator, false );
       context->Start();
-      g_registerInSessionResponse = registerInSessionResponse;
+      g_sessionStatus = registerInSessionResponse;
       g_sessionName = gameName.c_str();
 /*
       if (registerInSessionResponse == WebLauncherPostRequest::RegisterInSessionRequest_Connect) {

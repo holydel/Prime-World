@@ -6,8 +6,10 @@
 #include "SelectHeroScreenLogic.h"
 #include "Client/MainTimer.h"
 #include "System/InlineProfiler.h"
+#include "../PF_GameLogic/WebLauncher.h"
 
 extern string g_devLogin;
+extern WebLauncherPostRequest::RegisterSessionRequest g_sessionStatus;
 
 namespace NGameX
 {  
@@ -51,7 +53,20 @@ void SelectHeroScreen::CommonStep( bool bAppActive )
   float dt = NMainLoop::GetTimeDelta();
 
   const float kickoutTime = 30.0f;
-#ifdef _SHIPPING
+
+  // 4. Set ready for anything state
+  if (g_sessionStatus == WebLauncherPostRequest::RegisterInSessionRequest_HeroSelected) {
+
+    if ( StrongMT<Game::IGameContextUiInterface> locked = GameCtx().Lock() ) {
+      //locked->SetReady(lobby::EGameMemberReadiness::NotReady); // trigger update
+      locked->SetReady(lobby::EGameMemberReadiness::ReadyForAnything);
+      g_sessionStatus = WebLauncherPostRequest::RegisterInSessionRequest_InReadyState;
+    }
+    
+  }
+
+#if 0 // Disabled in 1.4?
+//#ifdef _SHIPPING
   // Temporary solution
   if (!logic->IsPlayerReady() && debugPlayerIds.size() == 12) {
     lobbyTimeout += dt;

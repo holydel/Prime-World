@@ -53,6 +53,8 @@ public:
     RegisterInSessionRequest_Connect,
 
     RegisterInSessionRequest_Joined,
+    RegisterInSessionRequest_HeroSelected,
+    RegisterInSessionRequest_InReadyState,
 
     RegisterInSessionRequest_Error,
   };
