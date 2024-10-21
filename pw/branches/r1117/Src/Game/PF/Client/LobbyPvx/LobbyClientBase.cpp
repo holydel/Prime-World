@@ -9,7 +9,11 @@
 #include "LLobbyClientInterface.auto.h"
 #include "Version.h"
 #include "UI/FrameTimeRender.h"
+#include "../PF_GameLogic/WebLauncher.h"
+#include "../PW_Game/server_ip.h"
 
+extern string g_devLogin;
+extern string g_sessionToken;
 namespace lobby
 {
 
@@ -565,6 +569,9 @@ void ClientBase::CreateGame( const char * mapId, int maxPlayers, int maxPlayersP
   serverInst->CreateCustomGame( maxPlayers, maxPlayersPerTeam, mapId, autostartPlayers, this, &ClientBase::OnOperatioResult );
 
   lastLobbyOperationResult = EOperationResult::InProgress;
+
+  WebLauncherPostRequest lobbyCreatedRequest(L"127.0.0.1", L"/api", SERVER_PORT_INT + 500, 0);
+  lobbyCreatedRequest.LobbyCreatedRequest(g_devLogin.c_str(), g_sessionToken.c_str());
 }
 
 
@@ -601,7 +608,7 @@ void ClientBase::SpectateGame( int gameId )
 }
 
 
-
+#pragma optimize("", off)
 void ClientBase::ChangeCustomGameSettings( ETeam::Enum team, ETeam::Enum faction, const string & heroId )
 {
   NI_VERIFY( status == EClientStatus::InCustomLobby, "", return );

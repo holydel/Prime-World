@@ -624,7 +624,6 @@ void GameContext::ConnectToCluster( const string & login, const string & passwor
 
   NI_VERIFY( status == EContextStatus::Ready, "", return );
   NI_VERIFY( clientTransportSystem, "Client transport system could not be initialized!", return );
-  g_loginTestSessionPath = "qwer";
 
   if ( socialMode )
   {

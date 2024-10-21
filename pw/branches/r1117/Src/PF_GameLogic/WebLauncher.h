@@ -60,7 +60,8 @@ public:
 	std::string ConvertFromClassID(int id);
   WebLoginResponse GetNickName(const char* token);
   std::string WebLauncherPostRequest::SendPostRequest(const std::string& jsonData);
-  RegisterSessionRequest RegisterInSession(const char* nickname, int heroId, const char* sessionToken, int& gameId);
+  RegisterSessionRequest RegisterInSession(const char* nickname, int heroId, const char* sessionToken, string& gameName);
+  void LobbyCreatedRequest(const char* nickname, const char* sessionToken);
 };
 
 extern std::string GetSkinByHeroPersistentId(const std::string& heroId, int someValue);

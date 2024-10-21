@@ -77,13 +77,17 @@ void ClientPW::OnLobbyDataChange()
 }
 
 
-
+#pragma optimize("", off)
 void ClientPW::CreateGame( const char * mapId, int maxPlayers, int autostartPlayers /*= -1*/ )
 {
   StrongMT<NWorld::IMapLoader> mapLoader = mapCollection->CreateMapLoader( mapId );
   NI_DATA_VERIFY( mapLoader, NStr::StrFmt( "Could not load map '%s'", mapId ), return );
 
   ClientBase::CreateGame( mapId, maxPlayers, mapLoader->GetMaxPlayersPerTeam(), autostartPlayers );
+  //int gameId = gameParams.ID;
+  //string tmp(gameId);
+
+  //OutputDebugStringA(tmp.c_str()); 
 }
 
 

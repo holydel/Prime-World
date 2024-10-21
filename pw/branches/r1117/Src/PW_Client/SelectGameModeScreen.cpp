@@ -19,7 +19,7 @@ gameCtx( _ctx )
 }
 
 
-
+#pragma optimize("", off)
 bool SelectGameModeScreen::Init( UI::User * uiUser )
 { 
   NI_PROFILE_FUNCTION

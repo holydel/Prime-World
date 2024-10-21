@@ -163,7 +163,7 @@ static NDebug::DebugVar<int> unfreeVirtualAllocs( "UnfreeVirtualAllocs", "", tru
 
 static NDebug::DebugVar<int> totalAllocsSize( "TotalAllocsSize", "", true );
 
-//#pragma optimize ("", off)
+#pragma optimize ("", off)
 //CRAP
 extern "C" INTERMODULE_EXPORT void TooSmartLinker();
 
@@ -714,6 +714,7 @@ void InitCensorDicts()
 }
 
 string g_devLogin;
+string g_sessionToken;
 
 std::string GetDirectoryFromPath(const std::string& fullPath) {
     std::size_t found = fullPath.find_last_of("/\\");
@@ -1238,11 +1239,12 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
       currentLogin = std::string(" ") + response.response;
       currentLogin[0] = 0x09;
       g_devLogin = currentLogin.c_str();
+      g_sessionToken = sessionToken;
 
       WebLauncherPostRequest testreq(L"127.0.0.1", L"/api", SERVER_PORT_INT + 500, 0);
   
-      int gameId;
-      WebLauncherPostRequest::RegisterSessionRequest registerInSessionResponse = testreq.RegisterInSession(response.response.c_str(), selectedHeroID, sessionToken, gameId);
+      string gameName = "";
+      WebLauncherPostRequest::RegisterSessionRequest registerInSessionResponse = testreq.RegisterInSession(response.response.c_str(), selectedHeroID, sessionToken, gameName);
       if (registerInSessionResponse == WebLauncherPostRequest::RegisterInSessionRequest_Error) {
         ShowLocalizedErrorMB( L"Error", L"Sync-server request failed" );
         return 0xA005;
@@ -1252,7 +1254,7 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
       int retryCount = 0;
       while (registerInSessionResponse == WebLauncherPostRequest::RegisterInSessionRequest_Wait) {
         Sleep(1000);
-        registerInSessionResponse = testreq.RegisterInSession(response.response.c_str(), selectedHeroID, sessionToken, gameId);
+        registerInSessionResponse = testreq.RegisterInSession(response.response.c_str(), selectedHeroID, sessionToken, gameName);
         retryCount++;
         if (retryCount >= REGISTER_IN_SESSION_MAX_RETRY_COUNT) {
           ShowLocalizedErrorMB( L"Error", L"Sync-server connection failed - max retry count reached" );
@@ -1263,7 +1265,7 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
 
     const char * mapId = CmdLineLite::Instance().GetStringKey( "mapId", "" );
 
-    context = new Game::GameContext("", g_devLogin.c_str(), mapId, socialServer, guildEmblem, isSpectator, false );
+    context = new Game::GameContext(sessLogin, g_devLogin.c_str(), mapId, socialServer, guildEmblem, isSpectator, false );
     }
   }
 

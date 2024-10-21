@@ -1247,12 +1247,8 @@ WebLauncherPostRequest::WebLoginResponse WebLauncherPostRequest::GetNickName(con
 }
 
 #pragma optimize("", off)
-WebLauncherPostRequest::RegisterSessionRequest WebLauncherPostRequest::RegisterInSession(const char* nickname, int heroId, const char* sessionToken, int& gameId)
+WebLauncherPostRequest::RegisterSessionRequest WebLauncherPostRequest::RegisterInSession(const char* nickname, int heroId, const char* sessionToken, string& gameName)
 {
-  WebLoginResponse res;
-  res.response = std::string();
-  res.retCode = LoginResponse_FAIL;
-
   char jsonBuff[1024];
   ZeroMemory(jsonBuff,1024);
 
@@ -1268,10 +1264,8 @@ WebLauncherPostRequest::RegisterSessionRequest WebLauncherPostRequest::RegisterI
     return RegisterInSessionRequest_Error; // Failed json
   }
 
-  Json::Value errorSet = parsedJson.get("error", "");
-  if (errorSet.asString().empty()) {
-    return RegisterInSessionRequest_Error; // Failed getting error
-  } else {
+  Json::Value errorSet = parsedJson.get("error", "ERROR");
+  if (!errorSet.asString().empty()) {
     if (errorSet.asString() == "Wait") {
       return RegisterInSessionRequest_Wait; // Just wait
     }
@@ -1285,8 +1279,8 @@ WebLauncherPostRequest::RegisterSessionRequest WebLauncherPostRequest::RegisterI
 
   static const int INVALID_GAME_ID = -1;
 
-  gameId = data.asInt();
-  return gameId == INVALID_GAME_ID ? RegisterInSessionRequest_Create : RegisterInSessionRequest_Connect;
+  gameName = data.asString().c_str();
+  return gameName == "" ? RegisterInSessionRequest_Create : RegisterInSessionRequest_Connect;
 }
 
 std::string GetSkinByHeroPersistentId(const std::string& heroId, int someValue)
@@ -1372,3 +1366,40 @@ void AddResourcePersistanceID(const char* data)
 	allResourcesIDs.insert(data);
 }
 
+
+void WebLauncherPostRequest::LobbyCreatedRequest(const char* nickname, const char* sessionToken)
+{
+  char jsonBuff[1024];
+  ZeroMemory(jsonBuff,1024);
+
+  sprintf(jsonBuff,"{\"method\": \"lobbyCreated\", \"data\": {\"nickname\": \"%s\", \"sessionToken\": \"%s\"}}", nickname + 1, sessionToken);
+  const std::string jsonData = jsonBuff;
+
+  std::string responseStream = SendPostRequest(jsonData);
+/*
+  OutputDebugStringA(responseStream.c_str()); 
+  // 
+  Json::Value parsedJson = ParseJson(responseStream.c_str());
+  if (parsedJson.empty()) {
+    return RegisterInSessionRequest_Error; // Failed json
+  }
+
+  Json::Value errorSet = parsedJson.get("error", "ERROR");
+  if (!errorSet.asString().empty()) {
+    if (errorSet.asString() == "Wait") {
+      return RegisterInSessionRequest_Wait; // Just wait
+    }
+    return RegisterInSessionRequest_Error; // Unknown error
+  }
+
+  Json::Value data = parsedJson.get("data", "");
+  if (data.empty()) {
+    return RegisterInSessionRequest_Error; // Failed getting data
+  }
+
+  static const int INVALID_GAME_ID = -1;
+
+  gameId = data.asInt();
+  return gameId == INVALID_GAME_ID ? RegisterInSessionRequest_Create : RegisterInSessionRequest_Connect;
+*/
+}

@@ -1,45 +1,67 @@
 from flask import Flask, request, jsonify
+import json
 
 service_port_global = 35010
 service_port_local = 500
 
 activeSessionTokens = {}
 
-INVALID_GAME_ID = -1
+#INVALID_GAME_ID = -1
 
 app = Flask(__name__)
 
+
 @app.route('/api', methods=['POST'])
 def api():
+    data = request.data.decode('cp1251')
     if request.method == 'POST':
-        reqJson = request.get_json()
+        #reqJson = request.get_json()
+        reqJson = json.loads(data)
         method = str(reqJson["method"])
         data = reqJson["data"]
+
         if method == "registerUserInSession":
             sessionToken = data["sessionToken"]
             if sessionToken in activeSessionTokens: # if session exists - try to add new player
                 session = activeSessionTokens[sessionToken]
 
-                if session['gameId'] == INVALID_GAME_ID: # wait for creator
+                if session['gameName'] == '': # wait for creator
                     response = {
                         'error': 'Wait',
                         'data': ''
                     }
                     return jsonify(response)
-                else: # lobby successfully was created
+                else: # lobby was successfully created
                     activeSessionTokens[sessionToken]['players'].append({ 'nickname': data["nickname"], 'heroId': data["heroId"] })
                     response = {
                         'error': '',
-                        'data': session['gameId']
+                        'data': session['gameName']
                     }
                     return jsonify(response)
             else: # if session does not exist - create one
-                activeSessionTokens[sessionToken] = {'gameId': INVALID_GAME_ID, 'players': [ { 'nickname': data["nickname"], 'heroId': data["heroId"] } ]}
+                activeSessionTokens[sessionToken] = {'gameName': '', 'players': [ { 'nickname': data["nickname"], 'heroId': data["heroId"] } ]}
                 response = {
                     'error': '',
-                    'data': INVALID_GAME_ID
+                    'data': ''
                 }
                 return jsonify(response)
+
+        if method == "lobbyCreated":
+            sessionToken = data["sessionToken"]
+            if sessionToken in activeSessionTokens:
+                session = activeSessionTokens[sessionToken]
+
+                if session['gameName'] == '':  # save gameId
+                    activeSessionTokens[sessionToken]['gameName'] = data["nickname"] # just save creator's nickname for now
+                    response = {
+                        'error': '',
+                        'data': 0
+                    }
+                    return jsonify(response)
+                else:
+                    return 'Game already registered by someone else'
+            else:
+                return 'Invalid session id'
 
         return 'Unknown method in json'
     else:
