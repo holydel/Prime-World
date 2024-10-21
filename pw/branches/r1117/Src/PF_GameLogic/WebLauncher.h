@@ -16,8 +16,15 @@ class WebLauncherPostRequest
 
 	std::vector<int> keysClassTalent;
 public:
-	WebLauncherPostRequest();
-	~WebLauncherPostRequest();
+  WebLauncherPostRequest();
+	WebLauncherPostRequest(const wchar_t* serverUrl, const wchar_t* objectName, int serverPort, DWORD flags);
+
+  void Init(const wchar_t* serverUrl, const wchar_t* objectName, int serverPort, DWORD flags);
+
+
+  void FillData();
+
+  ~WebLauncherPostRequest();
 
   enum LoginResponse {
     LoginResponse_OK,
@@ -40,12 +47,20 @@ public:
     std::vector<TalentWebData> talents;
   };
 
+  enum RegisterSessionRequest {
+    RegisterInSessionRequest_Create,
+    RegisterInSessionRequest_Wait,
+    RegisterInSessionRequest_Connect,
+
+    RegisterInSessionRequest_Error,
+  };
+
 	std::vector<TalentWebData> GetTallentSet(const wchar_t* nickName, const char* heroName);
   std::map<std::wstring, WebUserData> WebLauncherPostRequest::GetUsersData(const std::vector<std::wstring>& nickNames, const std::vector<std::string>& heroNames);
 	std::string ConvertFromClassID(int id);
   WebLoginResponse GetNickName(const char* token);
   std::string WebLauncherPostRequest::SendPostRequest(const std::string& jsonData);
-
+  RegisterSessionRequest RegisterInSession(const char* nickname, int heroId, const char* sessionToken, int& gameId);
 };
 
 extern std::string GetSkinByHeroPersistentId(const std::string& heroId, int someValue);

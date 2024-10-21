@@ -108,6 +108,7 @@
 
 #include "RegistryToolbox.h"
 #include "../PF_GameLogic/WebLauncher.h"
+#include "../PW_Game/server_ip.h"
 
 static int    g_VideoFPS = 10;
 static float  g_RecordingTime = 10.0f;
@@ -1181,7 +1182,7 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
 	  
 
   if(CmdLineLite::Instance().ArgsCount() < 2) {
-      ShowLocalizedErrorMB( L"StartViaLauncher", L"Please start the game via the web-launcher. https://playpw.fun" );
+      ShowLocalizedErrorMB( L"StartViaLauncher", L"Invalid arguments! Please start the game via the web-launcher. https://playpw.fun" );
     return 0xA000;
     } else {
 		
@@ -1202,8 +1203,9 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
     return 0xA001;
   }
 
-	//int selectedHeroID = atoi(allTokens[2].c_str());
-	const char* versionStr = allTokens[3].c_str();
+	int selectedHeroID = atoi(allTokens[2].c_str());
+  const char* versionStr = allTokens[3].c_str();
+  const char* sessionToken = allTokens[4].c_str();
 
 	int versionMajor = VERSION_MAJOR;
 	int versionMinor = VERSION_MINOR;
@@ -1221,7 +1223,7 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
     WebLauncherPostRequest::WebLoginResponse response = prequest.GetNickName(webToken);
     if (response.retCode == WebLauncherPostRequest::LoginResponse_FAIL) {
       // Login failed
-      ShowLocalizedErrorMB( L"StartViaLauncher", L"Please start the game via the web-launcher. https://playpw.fun" );
+      ShowLocalizedErrorMB( L"StartViaLauncher", L"Login response failed! Please start the game via the web-launcher. https://playpw.fun" );
       return 0xA003;
     }
     if (response.retCode == WebLauncherPostRequest::LoginResponse_OFFLINE) {
@@ -1236,10 +1238,32 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
       currentLogin = std::string(" ") + response.response;
       currentLogin[0] = 0x09;
       g_devLogin = currentLogin.c_str();
+
+      WebLauncherPostRequest testreq(L"127.0.0.1", L"/api", SERVER_PORT_INT + 500, 0);
+  
+      int gameId;
+      WebLauncherPostRequest::RegisterSessionRequest registerInSessionResponse = testreq.RegisterInSession(response.response.c_str(), selectedHeroID, sessionToken, gameId);
+      if (registerInSessionResponse == WebLauncherPostRequest::RegisterInSessionRequest_Error) {
+        ShowLocalizedErrorMB( L"Error", L"Sync-server request failed" );
+        return 0xA005;
+      }
+
+      static const int REGISTER_IN_SESSION_MAX_RETRY_COUNT = 10;
+      int retryCount = 0;
+      while (registerInSessionResponse == WebLauncherPostRequest::RegisterInSessionRequest_Wait) {
+        Sleep(1000);
+        registerInSessionResponse = testreq.RegisterInSession(response.response.c_str(), selectedHeroID, sessionToken, gameId);
+        retryCount++;
+        if (retryCount >= REGISTER_IN_SESSION_MAX_RETRY_COUNT) {
+          ShowLocalizedErrorMB( L"Error", L"Sync-server connection failed - max retry count reached" );
+          return 0xA005;
+        }
+      }
     }
 
     const char * mapId = CmdLineLite::Instance().GetStringKey( "mapId", "" );
-    context = new Game::GameContext( sessLogin, g_devLogin.c_str(), mapId, socialServer, guildEmblem, isSpectator, false );
+
+    context = new Game::GameContext("", g_devLogin.c_str(), mapId, socialServer, guildEmblem, isSpectator, false );
     }
   }
 

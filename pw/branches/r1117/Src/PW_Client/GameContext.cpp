@@ -85,9 +85,11 @@ GameContext::GameContext( const char * _sessionKey, const char * _devLogin, cons
   isSpectator( _isSpectator ),
   isTutorial( _isTutorial )
 {
+  /*
   if ( _sessionKey )
     if ( !ParseSessionKey( _sessionKey ) )
       NI_ALWAYS_ASSERT( NStr::StrFmt( "Wrong session key '%s'", _sessionKey ) );
+      */
 
   if (_devLogin)
     devLogin = _devLogin;
@@ -229,7 +231,7 @@ void GameContext::Start()
   loadingStatusHandler = loadingScreen->GetLoadingStatusHandler();
 
   if ( socialMode )
-    ConnectToCluster( "", "" );
+    ConnectToCluster( devLogin, "" );
   else if (devLogin.size())
     ConnectToCluster(devLogin, "");
 }
@@ -622,12 +624,13 @@ void GameContext::ConnectToCluster( const string & login, const string & passwor
 
   NI_VERIFY( status == EContextStatus::Ready, "", return );
   NI_VERIFY( clientTransportSystem, "Client transport system could not be initialized!", return );
+  g_loginTestSessionPath = "qwer";
 
   if ( socialMode )
   {
     //clientTransportSystem->Login( socialLoginAddress, socialLogin, "", socialPassword, _loginType );
 	clientTransportSystem->Login( Transport::ClientCfg::GetLoginAddress(), login, password, g_loginTestSessionPath, _loginType );
-    lastLogin = socialLogin;
+    lastLogin = login;
   }
   else
   {
