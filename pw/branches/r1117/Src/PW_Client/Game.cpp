@@ -1211,16 +1211,14 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
 
   const char* versionStr = allTokens[2].c_str();
   string protocolMethod = allTokens[3].c_str();
-  const char* sessionToken = allTokens[4].c_str();
-  int selectedHeroID = atoi(allTokens[5].c_str());
-  int teamId = atoi(allTokens[6].c_str());
+  const char* sessionToken = NULL;
+  int selectedHeroID = 0;
+  int teamId = 0;
 
-  g_playerHeroId = selectedHeroID;
-  g_playerTeamId = teamId;
-
-  if (protocolMethod == "checkInstall") {
-    // TODO: Post "validateInstall" method
-    return 0;
+  if (allTokens.size() > 6) {
+    sessionToken = allTokens[4].c_str();
+    selectedHeroID = atoi(allTokens[5].c_str());
+    teamId = atoi(allTokens[6].c_str());
   }
 
 	int versionMajor = VERSION_MAJOR;
@@ -1250,32 +1248,55 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
 
     
     if (response.retCode == WebLauncherPostRequest::LoginResponse_OK) {
+      if (protocolMethod == "checkInstall") {
+        WebLauncherPostRequest syncCheckConnectionRequest(SERVER_IP_W, L"/api", SERVER_PORT_INT + 500, 0);
+        if (syncCheckConnectionRequest.CheckConnectionRequest()) {
+          systemLog( NLogg::LEVEL_MESSAGE ).Trace("Check install completed for %s", response.response.c_str());
+
+          WebLauncherPostRequest validateInstallRequest;
+          validateInstallRequest.ValidateInstallationRequest(webToken);
+        } else {
+          ShowLocalizedErrorMB( L"Error", L"Sync-server connection failed - not valid response" );
+        }
+        return 0;
+      }
+      /*
+      if (protocolMethod != "runGame") {
+        ShowLocalizedErrorMB( L"Error", L"Invalid protocol method" );
+        return 0xA005;
+      }
+      */
+
+      g_playerHeroId = selectedHeroID;
+      g_playerTeamId = teamId;
+
       // Login success
       currentLogin = std::string(" ") + response.response;
       currentLogin[0] = 0x09;
       g_devLogin = currentLogin.c_str();
       g_sessionToken = sessionToken;
 
-      WebLauncherPostRequest testreq(SERVER_IP_W, L"/api", SERVER_PORT_INT + 500, 0);
+      WebLauncherPostRequest syncRegisterRequest(SERVER_IP_W, L"/api", SERVER_PORT_INT + 500, 0);
   
       string gameName = "";
-      WebLauncherPostRequest::RegisterSessionRequest registerInSessionResponse = testreq.RegisterInSession(response.response.c_str(), selectedHeroID, sessionToken, gameName);
+      WebLauncherPostRequest::RegisterSessionRequest registerInSessionResponse = syncRegisterRequest.RegisterInSession(response.response.c_str(), selectedHeroID, sessionToken, gameName);
       if (registerInSessionResponse == WebLauncherPostRequest::RegisterInSessionRequest_Error) {
         ShowLocalizedErrorMB( L"Error", L"Sync-server request failed" );
-        return 0xA005;
+        return 0xA006;
       }
 
       static const int REGISTER_IN_SESSION_MAX_RETRY_COUNT = 10;
       int retryCount = 0;
       while (registerInSessionResponse == WebLauncherPostRequest::RegisterInSessionRequest_Wait) {
         Sleep(1000);
-        registerInSessionResponse = testreq.RegisterInSession(response.response.c_str(), selectedHeroID, sessionToken, gameName);
+        registerInSessionResponse = syncRegisterRequest.RegisterInSession(response.response.c_str(), selectedHeroID, sessionToken, gameName);
         retryCount++;
         if (retryCount >= REGISTER_IN_SESSION_MAX_RETRY_COUNT) {
           ShowLocalizedErrorMB( L"Error", L"Sync-server connection failed - max retry count reached" );
-          return 0xA005;
+          return 0xA007;
         }
       }
+      
 
       const char * mapId = CmdLineLite::Instance().GetStringKey( "mapId", "" );
 
@@ -1283,21 +1304,6 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
       context->Start();
       g_sessionStatus = registerInSessionResponse;
       g_sessionName = gameName.c_str();
-/*
-      if (registerInSessionResponse == WebLauncherPostRequest::RegisterInSessionRequest_Connect) {
-        lobby::TDevGamesList gameList;
-        context->RefreshGamesList();
-        context->PopGameList(gameList);
-        
-        int requiredGameId = 0;
-        for( lobby::TDevGamesList::iterator it = gameList.begin(); it != gameList.end(); ++it ) {
-          OutputDebugStringW(it->name.c_str());
-          requiredGameId = it->gameId;
-        }
-        context->JoinGame(requiredGameId);
-      }
-      */
-
     }
     }
   }

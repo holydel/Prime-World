@@ -67,6 +67,8 @@ public:
   RegisterSessionRequest RegisterInSession(const char* nickname, int heroId, const char* sessionToken, string& gameName);
   void LobbyCreatedRequest(const char* nickname, const char* sessionToken);
   bool CheckIsGameReady(const char* sessionToken);
+  bool CheckConnectionRequest();
+  void ValidateInstallationRequest(const char* playerToken);
 };
 
 extern std::string GetSkinByHeroPersistentId(const std::string& heroId, int someValue);

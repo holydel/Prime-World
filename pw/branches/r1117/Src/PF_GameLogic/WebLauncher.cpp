@@ -1410,3 +1410,44 @@ bool WebLauncherPostRequest::CheckIsGameReady(const char* sessionToken)
 
   return data.asBool();
 }
+
+bool WebLauncherPostRequest::CheckConnectionRequest()
+{
+  char jsonBuff[1024];
+  ZeroMemory(jsonBuff,1024);
+
+  sprintf(jsonBuff,"{\"method\": \"checkConnection\", \"data\": 0}");
+  const std::string jsonData = jsonBuff;
+
+  std::string responseStream = SendPostRequest(jsonData);
+
+  OutputDebugStringA(responseStream.c_str()); 
+  
+  Json::Value parsedJson = ParseJson(responseStream.c_str());
+  if (parsedJson.empty()) {
+    return false; // Failed json
+  }
+
+  Json::Value errorSet = parsedJson.get("error", "ERROR");
+  if (!errorSet.asString().empty()) {
+    return false; // Unknown error
+  }
+
+  Json::Value data = parsedJson.get("data", "");
+  if (data.empty()) {
+    return false; // Failed getting data
+  }
+
+  return data.asBool();
+}
+
+void WebLauncherPostRequest::ValidateInstallationRequest(const char* playerToken)
+{
+  char jsonBuff[1024];
+  ZeroMemory(jsonBuff,1024);
+
+  sprintf(jsonBuff,"{\"method\": \"validateInstall\", \"data\": \"%s\"}", playerToken);
+  const std::string jsonData = jsonBuff;
+
+  std::string responseStream = SendPostRequest(jsonData);
+}

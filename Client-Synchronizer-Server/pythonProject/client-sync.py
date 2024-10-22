@@ -25,6 +25,13 @@ def api():
         method = str(reqJson["method"])
         data = reqJson["data"]
 
+        if method == 'checkConnection':
+            response = {
+                'error': '',
+                'data': True
+            }
+            return jsonify(response)
+
         if method == "registerUserInSession":
             def checkOldSessions():
                 #fast check available sessions to kill
