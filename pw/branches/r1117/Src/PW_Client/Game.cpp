@@ -1256,7 +1256,7 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
       g_devLogin = currentLogin.c_str();
       g_sessionToken = sessionToken;
 
-      WebLauncherPostRequest testreq(L"127.0.0.1", L"/api", SERVER_PORT_INT + 500, 0);
+      WebLauncherPostRequest testreq(SERVER_IP_W, L"/api", SERVER_PORT_INT + 500, 0);
   
       string gameName = "";
       WebLauncherPostRequest::RegisterSessionRequest registerInSessionResponse = testreq.RegisterInSession(response.response.c_str(), selectedHeroID, sessionToken, gameName);

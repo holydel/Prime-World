@@ -88,4 +88,4 @@ def api():
         return 'Request method is not allowed'
 
 if __name__ == '__main__':
-    app.run(debug=True, port=service_port_global + service_port_local)
+    app.run(debug=True, port=service_port_global + service_port_local, host="0.0.0.0")

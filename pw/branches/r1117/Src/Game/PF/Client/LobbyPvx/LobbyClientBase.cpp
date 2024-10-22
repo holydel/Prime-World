@@ -570,7 +570,7 @@ void ClientBase::CreateGame( const char * mapId, int maxPlayers, int maxPlayersP
 
   lastLobbyOperationResult = EOperationResult::InProgress;
 
-  WebLauncherPostRequest lobbyCreatedRequest(L"127.0.0.1", L"/api", SERVER_PORT_INT + 500, 0);
+  WebLauncherPostRequest lobbyCreatedRequest(SERVER_IP_W, L"/api", SERVER_PORT_INT + 500, 0);
   lobbyCreatedRequest.LobbyCreatedRequest(g_devLogin.c_str(), g_sessionToken.c_str());
 }
 
