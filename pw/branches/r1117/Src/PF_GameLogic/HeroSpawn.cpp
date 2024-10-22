@@ -34,6 +34,7 @@
 #include <curl/curl.h>
 #include <PF_GameLogic/PFTalent.h>
 #include "WebLauncher.h"
+#include "../PW_Game/server_ip.h"
 //#pragma optimize("", off)
 
 namespace 
@@ -459,7 +460,7 @@ namespace NWorld
         }
       }
     }
-    WebLauncherPostRequest prequest;
+    WebLauncherPostRequest prequest(SERVER_IP_W, L"/api", SERVER_PORT_INT + 500, 0);
 
     std::map<std::wstring, WebLauncherPostRequest::WebUserData> usersData = prequest.GetUsersData(nickNames, heroNames);
 

@@ -8,6 +8,7 @@
 #pragma comment(lib, "wininet.lib")
 
 static std::set<std::string> allResourcesIDs;
+extern string g_sessionToken;
 //#pragma optimize("", off)
 
 WebLauncherPostRequest::WebLauncherPostRequest(const wchar_t* serverUrl, const wchar_t* objectName, int serverPort, DWORD flags)
@@ -1039,21 +1040,24 @@ std::map<std::wstring, WebLauncherPostRequest::WebUserData> WebLauncherPostReque
     sprintf(jsonBuff,"{\"nickname\": \"%s\", \"hero\": %d}%s",nickNameU8.c_str(), heroID, pId == nickNames.size() - 1 ? "" : "," );
     jsonReq += jsonBuff;
   }
-  jsonReq += "]}";
+  jsonReq += "],\"sessionToken\":\"";
+  jsonReq += g_sessionToken.c_str();
+  jsonReq += "\"}";
 
   std::string responseStream = SendPostRequest(jsonReq);
 
   Json::Value parsedJsonSet = ParseJson(responseStream.c_str());
   int buildFetchRetryCount = 0;
   while (parsedJsonSet.empty() && buildFetchRetryCount < 10) {
-    CriticalTrace( "Build fetch failed!" );
+    systemLog( NLogg::LEVEL_DEBUG ).Trace("Build fetch failed");
+
+    responseStream = SendPostRequest(jsonReq);
     parsedJsonSet = ParseJson(responseStream.c_str());
     Sleep(1000);
     buildFetchRetryCount++; // Failed json
   }
   if (parsedJsonSet.empty()) {
-    ErrorTrace( "Build fetch failed! Player may be kicked from server" );
-    ErrorTrace( responseStream.c_str() );
+    systemLog( NLogg::LEVEL_ERROR ).Trace("Build fetch failed! Player may be kicked from server! %s", responseStream.c_str());
     return resWebData; // server failed
   }
 

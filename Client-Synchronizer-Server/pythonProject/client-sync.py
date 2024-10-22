@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 import json
 from datetime import datetime as dt
+import requests
 
 service_port_global = 35000
 service_port_local = 510
@@ -31,6 +32,19 @@ def api():
                 'data': True
             }
             return jsonify(response)
+
+        if method == 'getDataUsers':
+            sessionToken = reqJson["sessionToken"]
+            if sessionToken in activeSessionTokens: # if session exists - request or load usersTalents
+                session = activeSessionTokens[sessionToken]
+                if 'usersData' in session:
+                    return session['usersData']
+                r = requests.post('https://playpw.fun/api/launcher/', json={"method": "getDataUsers", "data": data})
+                activeSessionTokens[sessionToken]['usersData'] = r
+                return r.content
+            else:
+                return "No session exists"
+
 
         if method == "registerUserInSession":
             def checkOldSessions():
