@@ -1,12 +1,17 @@
 from flask import Flask, request, jsonify
 import json
+from datetime import datetime as dt
 
-service_port_global = 35010
-service_port_local = 500
+service_port_global = 35000
+service_port_local = 510
+timeToKillPublicSession = 7200 # 2 hours
+timeToKillTestSession = 30 # test session - 30 seconds
+
+timeToCheckOldSessions = 30 # better be lower or equal than test session kill time
+
+lastTimeCheck = dt.now()
 
 activeSessionTokens = {}
-
-#INVALID_GAME_ID = -1
 
 app = Flask(__name__)
 
@@ -21,6 +26,16 @@ def api():
         data = reqJson["data"]
 
         if method == "registerUserInSession":
+            def checkOldSessions():
+                #fast check available sessions to kill
+                for oldSessionToken in list(activeSessionTokens.keys()):
+                    oldSession = activeSessionTokens[oldSessionToken]
+                    targetTimeDifferenceToKill = timeToKillPublicSession
+                    if oldSessionToken == 'testSessionToken':
+                        targetTimeDifferenceToKill = timeToKillTestSession
+                    if (dt.now() - oldSession['timestamp']).total_seconds() > targetTimeDifferenceToKill:
+                        del activeSessionTokens[oldSessionToken] # remove old sessions
+
             sessionToken = data["sessionToken"]
             if sessionToken in activeSessionTokens: # if session exists - try to add new player
                 session = activeSessionTokens[sessionToken]
@@ -32,6 +47,14 @@ def api():
                     }
                     return jsonify(response)
                 else: # lobby was successfully created
+                    for player in activeSessionTokens[sessionToken]['players']:
+                        if player['nickname'] == data["nickname"]: # player already registered in this session
+                            checkOldSessions()
+                            response = {
+                                'error': 'PlayerAlreadyRegistered',
+                                'data': ''
+                            }
+                            return jsonify(response)
                     activeSessionTokens[sessionToken]['players'].append({ 'nickname': data["nickname"], 'heroId': data["heroId"] })
                     response = {
                         'error': '',
@@ -39,7 +62,8 @@ def api():
                     }
                     return jsonify(response)
             else: # if session does not exist - create one
-                activeSessionTokens[sessionToken] = {'gameName': '', 'players': [ { 'nickname': data["nickname"], 'heroId': data["heroId"] } ]}
+                checkOldSessions()
+                activeSessionTokens[sessionToken] = {'token': sessionToken, 'gameName': '', 'players': [ { 'nickname': data["nickname"], 'heroId': data["heroId"] } ], 'timestamp': dt.now()}
                 response = {
                     'error': '',
                     'data': ''

@@ -194,7 +194,7 @@ bool GameContext::ParseSessionKey( const char * _sessKey )
     return false;
   NI_ASSERT( loginEnd[0], "" );
 
-  socialLoginAddress = string( _sessKey, addrEnd - _sessKey );
+  socialLoginAddress = Transport::ClientCfg::GetLoginAddress().c_str();
   socialLogin = string( addrEnd + 1, loginEnd - ( addrEnd + 1 ) );
   socialPassword = string( loginEnd + 1 );
   return !socialLoginAddress.empty() && !socialLogin.empty() && !socialPassword.empty();

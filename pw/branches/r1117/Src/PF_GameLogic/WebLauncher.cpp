@@ -1269,6 +1269,8 @@ WebLauncherPostRequest::RegisterSessionRequest WebLauncherPostRequest::RegisterI
     if (errorSet.asString() == "Wait") {
       return RegisterInSessionRequest_Wait; // Just wait
     }
+    systemLog( NLogg::LEVEL_ERROR ).Trace("Error while registering session login=%s, error=%s", nickname, errorSet.asString().c_str());
+    OutputDebugStringA(errorSet.asString().c_str()); 
     return RegisterInSessionRequest_Error; // Unknown error
   }
 
