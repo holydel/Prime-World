@@ -1287,23 +1287,46 @@ WebLauncherPostRequest::RegisterSessionRequest WebLauncherPostRequest::RegisterI
   }
 
   static const int INVALID_GAME_ID = -1;
-/*
-  std::string utf8String = data.asString();
-  // Fix 1251 encoding
-  int utf8Length = static_cast<int>(utf8String.length());
-  int wideCharLength = MultiByteToWideChar(CP_UTF8, 0, utf8String.c_str(), utf8Length, NULL, 0);
 
-  wchar_t* wideCharString = new wchar_t[wideCharLength + 1];
-  MultiByteToWideChar(CP_UTF8, 0, utf8String.c_str(), utf8Length, wideCharString, wideCharLength);
-  wideCharString[wideCharLength] = L'\0';
-
-  int win1251Length = WideCharToMultiByte(1251, 0, wideCharString, -1, NULL, 0, NULL, NULL);
-  char* win1251String = new char[win1251Length];
-  WideCharToMultiByte(1251, 0, wideCharString, -1, win1251String, win1251Length, NULL, NULL);
-*/
   gameName = data.asString().c_str();
 
   return gameName == "" ? RegisterInSessionRequest_Create : RegisterInSessionRequest_Connect;
+}
+
+WebLauncherPostRequest::RegisterSessionRequest WebLauncherPostRequest::ReconnectInSession(const char* sessionToken, string& gameName)
+{
+  char jsonBuff[1024];
+  ZeroMemory(jsonBuff,1024);
+
+  sprintf(jsonBuff,"{\"method\": \"getGameNameForReconnect\", \"data\": {\"sessionToken\": \"%s\"}}", sessionToken);
+  const std::string jsonData = jsonBuff;
+
+  std::string responseStream = SendPostRequest(jsonData);
+
+  OutputDebugStringA(responseStream.c_str()); 
+  // 
+  Json::Value parsedJson = ParseJson(responseStream.c_str());
+  if (parsedJson.empty()) {
+    return RegisterInSessionRequest_Error; // Failed json
+  }
+
+  Json::Value errorSet = parsedJson.get("error", "ERROR");
+  if (!errorSet.asString().empty()) {
+    systemLog( NLogg::LEVEL_ERROR ).Trace("Error while reconnecting to session error=%s", errorSet.asString().c_str());
+    OutputDebugStringA(errorSet.asString().c_str()); 
+    return RegisterInSessionRequest_Error; // Unknown error
+  }
+
+  Json::Value data = parsedJson.get("data", "");
+  if (data.empty()) {
+    return RegisterInSessionRequest_Error; // Failed getting data
+  }
+
+  static const int INVALID_GAME_ID = -1;
+
+  gameName = data.asString().c_str();
+
+  return gameName == "" ? RegisterInSessionRequest_Error : RegisterInSessionRequest_Reconnect;
 }
 
 std::string GetSkinByHeroPersistentId(const std::string& heroId, int someValue)

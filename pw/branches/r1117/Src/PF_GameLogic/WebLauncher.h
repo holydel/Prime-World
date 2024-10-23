@@ -57,6 +57,8 @@ public:
     RegisterInSessionRequest_Wait,
     RegisterInSessionRequest_Connect,
 
+    RegisterInSessionRequest_Reconnect,
+
     RegisterInSessionRequest_Joined,
     RegisterInSessionRequest_HeroSelected,
     RegisterInSessionRequest_InReadyState,
@@ -70,6 +72,7 @@ public:
   WebLoginResponse GetNickName(const char* token);
   std::string WebLauncherPostRequest::SendPostRequest(const std::string& jsonData);
   RegisterSessionRequest RegisterInSession(const char* nickname, int heroId, const char* sessionToken, string& gameName);
+  RegisterSessionRequest ReconnectInSession(const char* sessionToken, string& gameName);
   void LobbyCreatedRequest(const char* nickname, const char* sessionToken);
   bool CheckIsGameReady(const char* sessionToken);
   bool CheckConnectionRequest();

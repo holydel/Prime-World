@@ -14,6 +14,11 @@ extern WebLauncherPostRequest::RegisterSessionRequest g_sessionStatus;
 extern int g_playerTeamId;
 extern int g_playerHeroId;
 
+static string s_reconnect_hero = "rockman";
+static int s_reconnect_team = 1;
+REGISTER_VAR( "custom_game_reconnect_hero", s_reconnect_hero, STORAGE_NONE );
+REGISTER_VAR( "custom_game_reconnect_team", s_reconnect_team, STORAGE_NONE );
+
 namespace NGameX
 {
 
@@ -146,7 +151,33 @@ void SelectGameModeScreen::Step( bool bAppActive )
   if (g_sessionStatus == WebLauncherPostRequest::RegisterInSessionRequest_Create) {
     locked->CreateGame("Maps/Multiplayer/MOBA/_.ADMPDSCR.xdb", 10);
     g_sessionStatus = WebLauncherPostRequest::RegisterInSessionRequest_Joined;
+  }
 
+  // xxx Reconnect xxx
+  if (g_sessionStatus == WebLauncherPostRequest::RegisterInSessionRequest_Reconnect) {
+    int requiredGameId = -1;
+
+    // Fix 1251 encoding
+    int utf8Length = static_cast<int>(g_sessionName.length());
+    int wideCharLength = MultiByteToWideChar(CP_UTF8, 0, g_sessionName.c_str(), utf8Length, NULL, 0);
+
+    wchar_t* wideCharString = new wchar_t[wideCharLength + 1];
+    MultiByteToWideChar(CP_UTF8, 0, g_sessionName.c_str(), utf8Length, wideCharString, wideCharLength);
+    wideCharString[wideCharLength] = L'\0';
+
+    wstring nameTofind = wideCharString;
+    nameTofind += L"'s game";
+
+    for( lobby::TDevGamesList::iterator it = infos.begin(); it != infos.end(); ++it ) {
+      OutputDebugStringW(it->name.c_str());
+      if (nameTofind.compare(it->name.c_str() + 1) == 0) {
+        requiredGameId = it->gameId;
+      }
+    }
+    if (requiredGameId != -1) {
+      locked->Reconnect(requiredGameId, s_reconnect_team, s_reconnect_hero );
+      g_sessionStatus = WebLauncherPostRequest::RegisterInSessionRequest_Joined;
+    }
   }
   
 

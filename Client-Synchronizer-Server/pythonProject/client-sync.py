@@ -130,6 +130,19 @@ def api():
             else:
                 return 'Invalid session id'
 
+        if method == "getGameNameForReconnect":
+            sessionToken = data["sessionToken"]
+            if sessionToken in activeSessionTokens:
+                session = activeSessionTokens[sessionToken]
+
+                response = {
+                    'error': '',
+                    'data': session['gameName']
+                }
+                return jsonify(response)
+            else:
+                return 'Invalid session id'
+
         return 'Unknown method in json'
     else:
         return 'Request method is not allowed'

@@ -1279,9 +1279,15 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
       g_playerToken = webToken;
 
       WebLauncherPostRequest syncRegisterRequest(SERVER_IP_W, L"/api", SERVER_PORT_INT + 500, 0);
-  
+
       string gameName = "";
-      WebLauncherPostRequest::RegisterSessionRequest registerInSessionResponse = syncRegisterRequest.RegisterInSession(response.response.c_str(), selectedHeroID, sessionToken, gameName);
+      WebLauncherPostRequest::RegisterSessionRequest registerInSessionResponse;
+      if (protocolMethod == "reconnect") {
+        registerInSessionResponse = syncRegisterRequest.ReconnectInSession(sessionToken, gameName);
+      } else {
+        registerInSessionResponse = syncRegisterRequest.RegisterInSession(response.response.c_str(), selectedHeroID, sessionToken, gameName);
+      }
+  
       if (registerInSessionResponse == WebLauncherPostRequest::RegisterInSessionRequest_Error) {
         ShowLocalizedErrorMB( L"Error", L"Sync-server request failed" );
         return 0xA006;
