@@ -59,6 +59,8 @@ def api():
                     if (dt.now() - oldSession['timestamp']).total_seconds() > targetTimeDifferenceToKill:
                         del activeSessionTokens[oldSessionToken] # remove old sessions
 
+            checkOldSessions()
+
             sessionToken = data["sessionToken"]
             if sessionToken in activeSessionTokens: # if session exists - try to add new player
                 session = activeSessionTokens[sessionToken]
@@ -72,7 +74,6 @@ def api():
                 else: # lobby was successfully created
                     for player in activeSessionTokens[sessionToken]['players']:
                         if player['nickname'] == data["nickname"]: # player already registered in this session
-                            checkOldSessions()
                             response = {
                                 'error': 'PlayerAlreadyRegistered',
                                 'data': ''
@@ -85,7 +86,6 @@ def api():
                     }
                     return jsonify(response)
             else: # if session does not exist - create one
-                checkOldSessions()
                 activeSessionTokens[sessionToken] = {'token': sessionToken, 'gameName': '', 'players': [ { 'nickname': data["nickname"], 'heroId': data["heroId"] } ], 'timestamp': dt.now()}
                 response = {
                     'error': '',

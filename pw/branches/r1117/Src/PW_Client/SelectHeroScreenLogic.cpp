@@ -32,13 +32,6 @@ END_LUA_TYPEINFO( SelectHeroScreenLogic )
 
 void SelectHeroScreenLogic::SelectHero( const char * heroId )
 {
-#ifdef _SHIPPING
-  for (int i = 0; i < 10; ++i) {
-    if (g_selectedHeroes[i] == heroId) {
-      return;
-    }
-  }
-#endif
   if ( StrongMT<Game::IGameContextUiInterface> locked = screen->GameCtx().Lock() )
     locked->ChangeCustomGameSettings( lobby::ETeam::None, lobby::ETeam::None, heroId );
 }

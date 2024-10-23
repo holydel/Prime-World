@@ -1210,8 +1210,8 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
     return 0xA001;
   }
 
-  const char* versionStr = allTokens[2].c_str();
-  string protocolMethod = allTokens[3].c_str();
+  string protocolMethod = allTokens[2].c_str();
+  const char* versionStr = allTokens[3].c_str();
   const char* sessionToken = NULL;
   int selectedHeroID = 0;
   int teamId = 0;
