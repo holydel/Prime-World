@@ -19,10 +19,10 @@ app = Flask(__name__)
 
 @app.route('/api', methods=['POST'])
 def api():
-    data = request.data.decode('cp1251')
+    reqData = request.data.decode('cp1251')
     if request.method == 'POST':
         #reqJson = request.get_json()
-        reqJson = json.loads(data)
+        reqJson = json.loads(reqData)
         method = str(reqJson["method"])
         data = reqJson["data"]
 
@@ -34,13 +34,15 @@ def api():
             return jsonify(response)
 
         if method == 'getDataUsers':
+            reqJson = json.loads(request.data.decode('utf-8')) # for some reason encoding is not valid here
+            data = reqJson["data"]
             sessionToken = reqJson["sessionToken"]
             if sessionToken in activeSessionTokens: # if session exists - request or load usersTalents
                 session = activeSessionTokens[sessionToken]
                 if 'usersData' in session:
                     return session['usersData']
                 r = requests.post('https://playpw.fun/api/launcher/', json={"method": "getDataUsers", "data": data})
-                activeSessionTokens[sessionToken]['usersData'] = r
+                activeSessionTokens[sessionToken]['usersData'] = r.content
                 return r.content
             else:
                 return "No session exists"

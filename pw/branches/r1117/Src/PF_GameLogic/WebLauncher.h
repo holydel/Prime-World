@@ -47,6 +47,11 @@ public:
     std::vector<TalentWebData> talents;
   };
 
+  struct PlayerInfoByUserId {
+    wstring nickname;
+    int teamId;
+  };
+
   enum RegisterSessionRequest {
     RegisterInSessionRequest_Create,
     RegisterInSessionRequest_Wait,
@@ -69,6 +74,8 @@ public:
   bool CheckIsGameReady(const char* sessionToken);
   bool CheckConnectionRequest();
   void ValidateInstallationRequest(const char* playerToken);
+  void SendSessionResults(const vector<int>& playerUserIds, int winningTeam);
 };
 
 extern std::string GetSkinByHeroPersistentId(const std::string& heroId, int someValue);
+extern std::string WideCharToMultiByteString(const wchar_t* wideCharString);

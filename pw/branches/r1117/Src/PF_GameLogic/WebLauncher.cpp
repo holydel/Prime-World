@@ -9,6 +9,9 @@
 
 static std::set<std::string> allResourcesIDs;
 extern string g_sessionToken;
+extern string g_playerToken;
+
+extern map<int, WebLauncherPostRequest::PlayerInfoByUserId> userIdToNicknameMap;
 //#pragma optimize("", off)
 
 WebLauncherPostRequest::WebLauncherPostRequest(const wchar_t* serverUrl, const wchar_t* objectName, int serverPort, DWORD flags)
@@ -1284,8 +1287,22 @@ WebLauncherPostRequest::RegisterSessionRequest WebLauncherPostRequest::RegisterI
   }
 
   static const int INVALID_GAME_ID = -1;
+/*
+  std::string utf8String = data.asString();
+  // Fix 1251 encoding
+  int utf8Length = static_cast<int>(utf8String.length());
+  int wideCharLength = MultiByteToWideChar(CP_UTF8, 0, utf8String.c_str(), utf8Length, NULL, 0);
 
+  wchar_t* wideCharString = new wchar_t[wideCharLength + 1];
+  MultiByteToWideChar(CP_UTF8, 0, utf8String.c_str(), utf8Length, wideCharString, wideCharLength);
+  wideCharString[wideCharLength] = L'\0';
+
+  int win1251Length = WideCharToMultiByte(1251, 0, wideCharString, -1, NULL, 0, NULL, NULL);
+  char* win1251String = new char[win1251Length];
+  WideCharToMultiByte(1251, 0, wideCharString, -1, win1251String, win1251Length, NULL, NULL);
+*/
   gameName = data.asString().c_str();
+
   return gameName == "" ? RegisterInSessionRequest_Create : RegisterInSessionRequest_Connect;
 }
 
@@ -1454,4 +1471,32 @@ void WebLauncherPostRequest::ValidateInstallationRequest(const char* playerToken
   const std::string jsonData = jsonBuff;
 
   std::string responseStream = SendPostRequest(jsonData);
+}
+
+
+void WebLauncherPostRequest::SendSessionResults(const vector<int>& playerUserIds, int winningTeam)
+{
+  char jsonBuff[2048];
+  ZeroMemory(jsonBuff,2048);
+
+  sprintf(jsonBuff,"{\"method\": \"sendGameFinishInfo\", \"data\": {\"sessionToken\":\"%s\",\"playerToken\":\"%s\",\"players\":[", g_sessionToken.c_str(), g_playerToken.c_str());
+  std::string jsonReq = jsonBuff;
+
+  // Prepare json request
+  for (int pId = 0; pId < playerUserIds.size(); ++pId) {
+    map<int, WebLauncherPostRequest::PlayerInfoByUserId>::iterator playerIt = userIdToNicknameMap.find(playerUserIds[pId]);
+    if (!(playerIt == userIdToNicknameMap.end())) {
+      WebLauncherPostRequest::PlayerInfoByUserId& playerInfoByUserId = (*playerIt).second;
+      std::string nickNameU8 = WideCharToMultiByteString(playerInfoByUserId.nickname.c_str());
+
+      ZeroMemory(jsonBuff,2048);
+      sprintf(jsonBuff,"{\"nickname\": \"%s\", \"won\": %s%s", nickNameU8.c_str(), playerInfoByUserId.teamId == winningTeam ? "true}" : "false}", pId == playerUserIds.size() - 1 ? "" : "," );
+      jsonReq += jsonBuff;
+    }
+  }
+  jsonReq += "]}}";
+
+  systemLog( NLogg::LEVEL_DEBUG ).Trace("Finishing game: %s", jsonReq.c_str());
+
+  std::string responseStream = SendPostRequest(jsonReq);
 }

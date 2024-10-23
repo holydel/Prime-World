@@ -37,6 +37,8 @@
 #include "../PW_Game/server_ip.h"
 //#pragma optimize("", off)
 
+map<int, WebLauncherPostRequest::PlayerInfoByUserId> userIdToNicknameMap;
+
 namespace 
 {
   struct BotOverride
@@ -516,11 +518,17 @@ namespace NWorld
 		if (players[it->playerId].playerType == NCore::EPlayerType::Human)
 		{
 			if (!players[it->playerId].nickname.empty()) {
+        WebLauncherPostRequest::PlayerInfoByUserId pInfo;
+        pInfo.nickname = players[it->playerId].nickname.c_str() + 1;
+        pInfo.teamId = (int)players[it->playerId].teamID;
+
+        userIdToNicknameMap[players[it->playerId].userID] = pInfo;
+
+
 				WebLauncherPostRequest prequest;
 
         std::wstring nick = players[it->playerId].nickname.c_str() + 1;
         std::vector<WebLauncherPostRequest::TalentWebData>& talentSet = usersData[nick].talents;
-        //prequest.GetTallentSet(players[it->playerId].nickname.c_str() + 1,heroSpawnDesc.pHero->persistentId.c_str());
 			
 			if(talentSet.empty())
 			{

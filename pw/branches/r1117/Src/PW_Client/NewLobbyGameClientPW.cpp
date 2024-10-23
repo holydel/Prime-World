@@ -47,6 +47,7 @@
 #include "UI/FrameTimeRender.h"
 #include "PF_GameLogic/SocialConnection.h"
 #include "PF_GameLogic/PlayerBehaviourTracking.h"
+#include "PF_GameLogic/WebLauncher.h"
 
 static bool s_threaded_loading = true;
 REGISTER_VAR( "threaded_loading", s_threaded_loading, STORAGE_NONE );
@@ -779,6 +780,13 @@ void GameClientPW::OnVictory( const StatisticService::RPC::SessionClientResults 
   if ( networkStatusScreen )
     NScreenCommands::PushCommand( NScreenCommands::CreatePopScreenCommand( networkStatusScreen ) );
   networkStatusScreen = 0;
+
+  vector<int> playersIds;
+  for (int i = 0; i < _sessionResults.players.size(); ++i) {
+    playersIds.push_back(_sessionResults.players[i].userid);
+  }
+  WebLauncherPostRequest sessionResultRequest;
+  sessionResultRequest.SendSessionResults(playersIds, _sessionResults.sideWon);
 
   GameClient::OnVictory( _sessionResults, _replayInfo );
 }

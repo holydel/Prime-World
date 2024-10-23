@@ -715,6 +715,7 @@ void InitCensorDicts()
 
 string g_devLogin;
 string g_sessionToken;
+string g_playerToken;
 
 string g_sessionName;
 WebLauncherPostRequest::RegisterSessionRequest g_sessionStatus;
@@ -1275,6 +1276,7 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
       currentLogin[0] = 0x09;
       g_devLogin = currentLogin.c_str();
       g_sessionToken = sessionToken;
+      g_playerToken = webToken;
 
       WebLauncherPostRequest syncRegisterRequest(SERVER_IP_W, L"/api", SERVER_PORT_INT + 500, 0);
   

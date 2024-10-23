@@ -56,6 +56,7 @@ void SelectHeroScreen::CommonStep( bool bAppActive )
 
   const float kickoutTime = 30.0f;
 
+  
   // 4. Set ready for anything state
   if (g_sessionStatus == WebLauncherPostRequest::RegisterInSessionRequest_HeroSelected) {
 
@@ -64,6 +65,7 @@ void SelectHeroScreen::CommonStep( bool bAppActive )
 
       static const int CHECK_GAME_READY_MAX_RETRY_COUNT = 10;
       int retryCount = 0;
+      Sleep(1000); // Sleep because server is not ready for us
       while (!testreq.CheckIsGameReady(g_sessionToken.c_str())) {
         Sleep(1000);
         retryCount++;
@@ -71,11 +73,22 @@ void SelectHeroScreen::CommonStep( bool bAppActive )
           break;
         }
       }
+      Sleep(1000);
       locked->SetReady(lobby::EGameMemberReadiness::ReadyForAnything);
       g_sessionStatus = WebLauncherPostRequest::RegisterInSessionRequest_InReadyState;
     }
     
   }
+  
+/*
+  if (!logic->IsPlayerReady() && debugPlayerIds.size() == 4) {
+    if ( StrongMT<Game::IGameContextUiInterface> locked = GameCtx().Lock() ) {
+      if (locked->GetLobbyStatus() == lobby::EClientStatus::InCustomLobby) {
+        locked->SetReady(lobby::EGameMemberReadiness::ReadyForAnything);
+      }
+    }
+  }
+  */
 
 #if 0 // Disabled in 1.4?
 //#ifdef _SHIPPING
