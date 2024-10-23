@@ -81,11 +81,11 @@
 				<draggable>false</draggable>
 				<enabled>true</enabled>
 				<fontStyle></fontStyle>
-				<hAlign>Left</hAlign>
+				<hAlign>Center</hAlign>
 				<keepAspectRatio>DontCare</keepAspectRatio>
 				<location>
-					<x>0</x>
-					<y>0</y>
+					<x>-320</x>
+					<y>-28</y>
 				</location>
 				<name>Background</name>
 				<needCrop>false</needCrop>
@@ -97,6 +97,156 @@
 				<size>
 					<x>1920</x>
 					<y>1080</y>
+				</size>
+				<soundActivate>
+					<eventName></eventName>
+					<groupName></groupName>
+					<projectName></projectName>
+				</soundActivate>
+				<soundHide>
+					<eventName></eventName>
+					<groupName></groupName>
+					<projectName></projectName>
+				</soundHide>
+				<soundShow>
+					<eventName></eventName>
+					<groupName></groupName>
+					<projectName></projectName>
+				</soundShow>
+				<stretchText>false</stretchText>
+				<subclass></subclass>
+				<subLayouts />
+				<textHAlign>Center</textHAlign>
+				<textMargins>
+					<x1>0</x1>
+					<x2>0</x2>
+					<y1>0</y1>
+					<y2>0</y2>
+				</textMargins>
+				<textVAlign>Center</textVAlign>
+				<tooltipText textref="" />
+				<transparent>false</transparent>
+				<vAlign>Top</vAlign>
+				<visible>true</visible>
+				<wordWrap>true</wordWrap>
+			</UIImageLabelLayout>
+		</Item>
+		<Item href="/UI/Screens/Lobby/Lobby_SelectGameMode" id="7512BF95-D85C-4D3B-AFBC-011136D786FE">
+			<UIImageLabelLayout parent="/UI/Screens/Tooltips/Simple.IMGLBL">
+				<backgroundMaterial href="/UI/Styles/ASSETS_UI/tooltip/tooltip_base.MTRL" />
+				<captionOpacity>1</captionOpacity>
+				<captionText textref="/UI/Screens/Lobby/Lobby_SelectGameMode_7512bf95d85c4d3bafbc011136d786fe_captionText.txt" />
+				<cursors>
+					<disabled>ui_disabled</disabled>
+					<dragable>ui_dragable</dragable>
+					<dragging>ui_dragging</dragging>
+					<focused>ui_focused</focused>
+					<normal>ui_normal</normal>
+					<pushable>ui_pushable</pushable>
+					<pushing>ui_pushing</pushing>
+				</cursors>
+				<cursorTransparent>true</cursorTransparent>
+				<defaultEventsCatch>
+					<leftDoubleClick>true</leftDoubleClick>
+					<leftMouseDown>true</leftMouseDown>
+					<leftMouseUp>true</leftMouseUp>
+					<mouseMove>true</mouseMove>
+					<rightDoubleClick>true</rightDoubleClick>
+					<rightMouseDown>true</rightMouseDown>
+					<rightMouseUp>true</rightMouseUp>
+				</defaultEventsCatch>
+				<draggable>false</draggable>
+				<enabled>true</enabled>
+				<fontStyle>TT_Body</fontStyle>
+				<hAlign>Center</hAlign>
+				<keepAspectRatio>DontCare</keepAspectRatio>
+				<location>
+					<x>544</x>
+					<y>666</y>
+				</location>
+				<name>PW_status</name>
+				<needCrop>false</needCrop>
+				<rawTextMode>false</rawTextMode>
+				<scriptFile></scriptFile>
+				<shapeType>SimpleBox</shapeType>
+				<size>
+					<x>195</x>
+					<y>59</y>
+				</size>
+				<soundActivate>
+					<eventName></eventName>
+					<groupName></groupName>
+					<projectName></projectName>
+				</soundActivate>
+				<soundHide>
+					<eventName></eventName>
+					<groupName></groupName>
+					<projectName></projectName>
+				</soundHide>
+				<soundShow>
+					<eventName></eventName>
+					<groupName></groupName>
+					<projectName></projectName>
+				</soundShow>
+				<stretchText>false</stretchText>
+				<subclass></subclass>
+				<textHAlign>Center</textHAlign>
+				<textMargins>
+					<x1>0</x1>
+					<x2>0</x2>
+					<y1>0</y1>
+					<y2>0</y2>
+				</textMargins>
+				<textVAlign>Center</textVAlign>
+				<transparent>true</transparent>
+				<vAlign>Center</vAlign>
+				<visible>true</visible>
+				<wordWrap>true</wordWrap>
+			</UIImageLabelLayout>
+		</Item>
+		<Item href="/UI/Screens/Lobby/Lobby_SelectGameMode" id="7512BF95-D85C-4D3B-AFBC-011136D786FF">
+			<UIImageLabelLayout>
+				<backgroundMaterial href="/UI/Styles/Lobby/PW_logo.MTRL" />
+				<captionOpacity>1</captionOpacity>
+				<captionText textref="" />
+				<cursors>
+					<disabled>ui_disabled</disabled>
+					<dragable>ui_dragable</dragable>
+					<dragging>ui_dragging</dragging>
+					<focused>ui_focused</focused>
+					<normal>ui_normal</normal>
+					<pushable>ui_pushable</pushable>
+					<pushing>ui_pushing</pushing>
+				</cursors>
+				<cursorTransparent>false</cursorTransparent>
+				<defaultEventsCatch>
+					<leftDoubleClick>true</leftDoubleClick>
+					<leftMouseDown>true</leftMouseDown>
+					<leftMouseUp>true</leftMouseUp>
+					<mouseMove>true</mouseMove>
+					<rightDoubleClick>true</rightDoubleClick>
+					<rightMouseDown>true</rightMouseDown>
+					<rightMouseUp>true</rightMouseUp>
+				</defaultEventsCatch>
+				<draggable>false</draggable>
+				<enabled>true</enabled>
+				<fontStyle></fontStyle>
+				<hAlign>Center</hAlign>
+				<keepAspectRatio>DontCare</keepAspectRatio>
+				<location>
+					<x>295</x>
+					<y>0</y>
+				</location>
+				<name>PW_logo</name>
+				<needCrop>false</needCrop>
+				<rawTextMode>false</rawTextMode>
+				<relatedLayouts />
+				<relatedTexts />
+				<scriptFile></scriptFile>
+				<shapeType>FromShapeOrBackgroundStyle</shapeType>
+				<size>
+					<x>690</x>
+					<y>320</y>
 				</size>
 				<soundActivate>
 					<eventName></eventName>
@@ -158,7 +308,7 @@
 				<keepAspectRatio>DontCare</keepAspectRatio>
 				<location>
 					<x>240</x>
-					<y>0</y>
+					<y>50000</y>
 				</location>
 				<name>MainFrame</name>
 				<needCrop>false</needCrop>
@@ -217,7 +367,7 @@
 							<keepAspectRatio>DontCare</keepAspectRatio>
 							<location>
 								<x>-330</x>
-								<y>9</y>
+								<y>509</y>
 							</location>
 							<name>ChooseHero_Frame</name>
 							<needCrop>false</needCrop>
@@ -228,7 +378,7 @@
 							<shapeType>FromShapeOrBackgroundStyle</shapeType>
 							<size>
 								<x>1456</x>
-								<y>611</y>
+								<y>50611</y>
 							</size>
 							<soundActivate>
 								<eventName></eventName>
@@ -295,15 +445,15 @@
 												<HighlightPin>Present</HighlightPin>
 												<imageSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageTileSize>
 												<UseAutosize>Present</UseAutosize>
 											</UIButtonMaterial>
@@ -311,7 +461,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>20</x>
-											<y>445</y>
+											<y>50445</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>healer</name>
@@ -331,7 +481,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -421,7 +571,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>120</x>
-											<y>45</y>
+											<y>5045</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>rockman</name>
@@ -441,7 +591,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -531,7 +681,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>220</x>
-											<y>45</y>
+											<y>5045</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>ratcatcher</name>
@@ -551,7 +701,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -641,7 +791,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>320</x>
-											<y>45</y>
+											<y>5045</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>mowgly</name>
@@ -661,7 +811,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -751,7 +901,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>520</x>
-											<y>45</y>
+											<y>5045</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>witchdoctor</name>
@@ -771,7 +921,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -861,7 +1011,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>620</x>
-											<y>45</y>
+											<y>5045</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>manawyrm</name>
@@ -881,7 +1031,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -968,15 +1118,15 @@
 												<HighlightPin>Present</HighlightPin>
 												<imageSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageTileSize>
 												<UseAutosize>Present</UseAutosize>
 											</UIButtonMaterial>
@@ -984,7 +1134,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>20</x>
-											<y>45</y>
+											<y>5045</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>faceless</name>
@@ -1004,7 +1154,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -1091,15 +1241,15 @@
 												<HighlightPin>Present</HighlightPin>
 												<imageSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageTileSize>
 												<UseAutosize>Present</UseAutosize>
 											</UIButtonMaterial>
@@ -1107,7 +1257,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>820</x>
-											<y>45</y>
+											<y>5045</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>highlander</name>
@@ -1127,7 +1277,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -1217,7 +1367,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>120</x>
-											<y>445</y>
+											<y>50445</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>night</name>
@@ -1237,7 +1387,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -1327,7 +1477,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>220</x>
-											<y>445</y>
+											<y>50445</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>firefox</name>
@@ -1347,7 +1497,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -1437,7 +1587,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>320</x>
-											<y>445</y>
+											<y>50445</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>unicorn</name>
@@ -1457,7 +1607,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -1547,7 +1697,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>720</x>
-											<y>45</y>
+											<y>5045</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>thundergod</name>
@@ -1567,7 +1717,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -1654,15 +1804,15 @@
 												<HighlightPin>Present</HighlightPin>
 												<imageSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageTileSize>
 												<UseAutosize>Present</UseAutosize>
 											</UIButtonMaterial>
@@ -1670,7 +1820,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>20</x>
-											<y>145</y>
+											<y>50145</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>prince</name>
@@ -1690,7 +1840,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -1777,15 +1927,15 @@
 												<HighlightPin>Present</HighlightPin>
 												<imageSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageTileSize>
 												<UseAutosize>Present</UseAutosize>
 											</UIButtonMaterial>
@@ -1793,7 +1943,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>120</x>
-											<y>145</y>
+											<y>50145</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>frogenglut</name>
@@ -1813,7 +1963,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -1900,15 +2050,15 @@
 												<HighlightPin>Present</HighlightPin>
 												<imageSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageTileSize>
 												<UseAutosize>Present</UseAutosize>
 											</UIButtonMaterial>
@@ -1916,7 +2066,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>220</x>
-											<y>145</y>
+											<y>50145</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>hunter</name>
@@ -1936,7 +2086,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -2023,15 +2173,15 @@
 												<HighlightPin>Present</HighlightPin>
 												<imageSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageTileSize>
 												<UseAutosize>Present</UseAutosize>
 											</UIButtonMaterial>
@@ -2039,7 +2189,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>320</x>
-											<y>145</y>
+											<y>50145</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>mage</name>
@@ -2059,7 +2209,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -2146,15 +2296,15 @@
 												<HighlightPin>Present</HighlightPin>
 												<imageSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageTileSize>
 												<UseAutosize>Present</UseAutosize>
 											</UIButtonMaterial>
@@ -2162,7 +2312,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>520</x>
-											<y>145</y>
+											<y>50145</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>naga</name>
@@ -2182,7 +2332,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -2269,15 +2419,15 @@
 												<HighlightPin>Present</HighlightPin>
 												<imageSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageTileSize>
 												<UseAutosize>Present</UseAutosize>
 											</UIButtonMaterial>
@@ -2285,7 +2435,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>620</x>
-											<y>145</y>
+											<y>50145</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>warlord</name>
@@ -2305,7 +2455,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -2392,15 +2542,15 @@
 												<HighlightPin>Present</HighlightPin>
 												<imageSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageTileSize>
 												<UseAutosize>Present</UseAutosize>
 											</UIButtonMaterial>
@@ -2408,7 +2558,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>720</x>
-											<y>145</y>
+											<y>50145</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>werewolf</name>
@@ -2428,7 +2578,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -2515,15 +2665,15 @@
 												<HighlightPin>Present</HighlightPin>
 												<imageSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageTileSize>
 												<UseAutosize>Present</UseAutosize>
 											</UIButtonMaterial>
@@ -2531,7 +2681,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>820</x>
-											<y>145</y>
+											<y>50145</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>assassin</name>
@@ -2551,7 +2701,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -2638,15 +2788,15 @@
 												<HighlightPin>Present</HighlightPin>
 												<imageSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageTileSize>
 												<UseAutosize>Present</UseAutosize>
 											</UIButtonMaterial>
@@ -2654,7 +2804,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>220</x>
-											<y>245</y>
+											<y>50245</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>ghostlord</name>
@@ -2674,7 +2824,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -2761,15 +2911,15 @@
 												<HighlightPin>Present</HighlightPin>
 												<imageSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageTileSize>
 												<UseAutosize>Present</UseAutosize>
 											</UIButtonMaterial>
@@ -2777,7 +2927,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>420</x>
-											<y>145</y>
+											<y>50145</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>marine</name>
@@ -2797,7 +2947,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -2884,15 +3034,15 @@
 												<HighlightPin>Present</HighlightPin>
 												<imageSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageTileSize>
 												<UseAutosize>Present</UseAutosize>
 											</UIButtonMaterial>
@@ -2900,7 +3050,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>420</x>
-											<y>445</y>
+											<y>50445</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>snowqueen</name>
@@ -2920,7 +3070,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -3007,15 +3157,15 @@
 												<HighlightPin>Present</HighlightPin>
 												<imageSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageTileSize>
 												<UseAutosize>Present</UseAutosize>
 											</UIButtonMaterial>
@@ -3023,7 +3173,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>520</x>
-											<y>445</y>
+											<y>50445</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>invisible</name>
@@ -3043,7 +3193,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -3130,15 +3280,15 @@
 												<HighlightPin>Present</HighlightPin>
 												<imageSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageTileSize>
 												<UseAutosize>Present</UseAutosize>
 											</UIButtonMaterial>
@@ -3146,7 +3296,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>620</x>
-											<y>445</y>
+											<y>50445</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>archeress</name>
@@ -3166,7 +3316,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -3253,15 +3403,15 @@
 												<HighlightPin>Present</HighlightPin>
 												<imageSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageTileSize>
 												<UseAutosize>Present</UseAutosize>
 											</UIButtonMaterial>
@@ -3269,7 +3419,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>20</x>
-											<y>245</y>
+											<y>50245</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>inventor</name>
@@ -3289,7 +3439,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -3376,15 +3526,15 @@
 												<HighlightPin>Present</HighlightPin>
 												<imageSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageTileSize>
 												<UseAutosize>Present</UseAutosize>
 											</UIButtonMaterial>
@@ -3392,7 +3542,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>720</x>
-											<y>445</y>
+											<y>50445</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>bard</name>
@@ -3412,7 +3562,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -3499,15 +3649,15 @@
 												<HighlightPin>Present</HighlightPin>
 												<imageSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageTileSize>
 												<UseAutosize>Present</UseAutosize>
 											</UIButtonMaterial>
@@ -3515,7 +3665,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>820</x>
-											<y>245</y>
+											<y>50245</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>gunslinger</name>
@@ -3535,7 +3685,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -3622,15 +3772,15 @@
 												<HighlightPin>Present</HighlightPin>
 												<imageSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageTileSize>
 												<UseAutosize>Present</UseAutosize>
 											</UIButtonMaterial>
@@ -3638,7 +3788,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>20</x>
-											<y>345</y>
+											<y>50345</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>artist</name>
@@ -3658,7 +3808,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -3781,15 +3931,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -3894,7 +4044,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -4041,15 +4191,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -4154,7 +4304,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -4195,7 +4345,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>420</x>
-											<y>45</y>
+											<y>5045</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>witcher</name>
@@ -4284,15 +4434,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -4397,7 +4547,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -4438,7 +4588,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -4561,15 +4711,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -4674,7 +4824,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -4821,15 +4971,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -4934,7 +5084,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -4975,7 +5125,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>120</x>
-											<y>345</y>
+											<y>50345</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>alchemist</name>
@@ -5064,15 +5214,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -5177,7 +5327,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -5218,7 +5368,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -5341,15 +5491,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -5454,7 +5604,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -5601,15 +5751,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -5714,7 +5864,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -5755,7 +5905,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>120</x>
-											<y>245</y>
+											<y>50245</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>demonolog</name>
@@ -5844,15 +5994,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -5957,7 +6107,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -5998,7 +6148,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -6088,7 +6238,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>320</x>
-											<y>245</y>
+											<y>50245</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>vampire</name>
@@ -6108,7 +6258,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -6195,15 +6345,15 @@
 												<HighlightPin>Present</HighlightPin>
 												<imageSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageTileSize>
 												<UseAutosize>Present</UseAutosize>
 											</UIButtonMaterial>
@@ -6211,7 +6361,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>220</x>
-											<y>345</y>
+											<y>50345</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>witch</name>
@@ -6231,7 +6381,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -6354,15 +6504,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -6467,7 +6617,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -6614,15 +6764,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -6727,7 +6877,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -6768,7 +6918,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>420</x>
-											<y>245</y>
+											<y>50245</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>crusader_A</name>
@@ -6857,15 +7007,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -6970,7 +7120,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -7011,7 +7161,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -7134,15 +7284,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -7247,7 +7397,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -7394,15 +7544,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -7507,7 +7657,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -7548,7 +7698,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>1220</x>
-											<y>445</y>
+											<y>50445</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>ironknight</name>
@@ -7637,15 +7787,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -7750,7 +7900,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -7791,7 +7941,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -7914,15 +8064,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -8027,7 +8177,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -8174,15 +8324,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -8287,7 +8437,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -8328,7 +8478,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>620</x>
-											<y>245</y>
+											<y>50245</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>monster</name>
@@ -8417,15 +8567,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -8530,7 +8680,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -8571,7 +8721,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -8658,15 +8808,15 @@
 												<HighlightPin>Present</HighlightPin>
 												<imageSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageTileSize>
 												<UseAutosize>Present</UseAutosize>
 											</UIButtonMaterial>
@@ -8674,7 +8824,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>320</x>
-											<y>345</y>
+											<y>50345</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>angel</name>
@@ -8694,7 +8844,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -8817,15 +8967,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -8930,7 +9080,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -9077,15 +9227,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -9190,7 +9340,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -9231,7 +9381,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>720</x>
-											<y>245</y>
+											<y>50245</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>freeze</name>
@@ -9320,15 +9470,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -9433,7 +9583,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -9474,7 +9624,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -9561,15 +9711,15 @@
 												<HighlightPin>Present</HighlightPin>
 												<imageSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageTileSize>
 												<UseAutosize>Present</UseAutosize>
 											</UIButtonMaterial>
@@ -9577,7 +9727,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>420</x>
-											<y>345</y>
+											<y>50345</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>magicgirl</name>
@@ -9597,7 +9747,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -9684,15 +9834,15 @@
 												<HighlightPin>Present</HighlightPin>
 												<imageSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageTileSize>
 												<UseAutosize>Present</UseAutosize>
 											</UIButtonMaterial>
@@ -9700,7 +9850,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>920</x>
-											<y>45</y>
+											<y>5045</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>reaper</name>
@@ -9720,7 +9870,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -9832,7 +9982,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>920</x>
-											<y>145</y>
+											<y>50145</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>fluffy</name>
@@ -9852,7 +10002,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -9964,7 +10114,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>920</x>
-											<y>245</y>
+											<y>50245</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>rifleman</name>
@@ -9984,7 +10134,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -10071,15 +10221,15 @@
 												<HighlightPin>Present</HighlightPin>
 												<imageSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageTileSize>
 												<UseAutosize>Present</UseAutosize>
 											</UIButtonMaterial>
@@ -10087,7 +10237,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>820</x>
-											<y>445</y>
+											<y>50445</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>fairy</name>
@@ -10107,7 +10257,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -10194,15 +10344,15 @@
 												<HighlightPin>Present</HighlightPin>
 												<imageSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageTileSize>
 												<UseAutosize>Present</UseAutosize>
 											</UIButtonMaterial>
@@ -10210,7 +10360,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>520</x>
-											<y>345</y>
+											<y>50345</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>pinkgirl</name>
@@ -10230,7 +10380,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -10317,15 +10467,15 @@
 												<HighlightPin>Present</HighlightPin>
 												<imageSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageTileSize>
 												<UseAutosize>Present</UseAutosize>
 											</UIButtonMaterial>
@@ -10333,7 +10483,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>920</x>
-											<y>445</y>
+											<y>50445</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>fallenangel</name>
@@ -10353,7 +10503,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -10440,15 +10590,15 @@
 												<HighlightPin>Present</HighlightPin>
 												<imageSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageTileSize>
 												<UseAutosize>Present</UseAutosize>
 											</UIButtonMaterial>
@@ -10456,7 +10606,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>920</x>
-											<y>345</y>
+											<y>50345</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>bladedancer</name>
@@ -10476,7 +10626,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -10599,15 +10749,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -10712,7 +10862,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -10859,15 +11009,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -10972,7 +11122,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -11013,7 +11163,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>820</x>
-											<y>345</y>
+											<y>50345</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>ent</name>
@@ -11102,15 +11252,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -11215,7 +11365,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -11256,7 +11406,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -11379,15 +11529,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -11492,7 +11642,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -11639,15 +11789,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -11752,7 +11902,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -11793,7 +11943,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>720</x>
-											<y>345</y>
+											<y>50345</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>plaguedoctor</name>
@@ -11882,15 +12032,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -11995,7 +12145,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -12036,7 +12186,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -12159,15 +12309,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -12272,7 +12422,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -12419,15 +12569,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -12532,7 +12682,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -12573,7 +12723,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>620</x>
-											<y>345</y>
+											<y>50345</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>katana</name>
@@ -12662,15 +12812,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -12775,7 +12925,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -12816,7 +12966,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -12903,15 +13053,15 @@
 												<HighlightPin>Present</HighlightPin>
 												<imageSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageTileSize>
 												<UseAutosize>Present</UseAutosize>
 											</UIButtonMaterial>
@@ -12919,7 +13069,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>1020</x>
-											<y>45</y>
+											<y>5045</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>plane</name>
@@ -12939,7 +13089,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -13026,15 +13176,15 @@
 												<HighlightPin>Present</HighlightPin>
 												<imageSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageTileSize>
 												<UseAutosize>Present</UseAutosize>
 											</UIButtonMaterial>
@@ -13042,7 +13192,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>1020</x>
-											<y>145</y>
+											<y>50145</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>zealot</name>
@@ -13062,7 +13212,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -13185,15 +13335,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -13298,7 +13448,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -13445,15 +13595,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -13558,7 +13708,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -13599,7 +13749,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>1020</x>
-											<y>245</y>
+											<y>50245</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>wraithking</name>
@@ -13688,15 +13838,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -13801,7 +13951,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -13842,7 +13992,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -13929,15 +14079,15 @@
 												<HighlightPin>Present</HighlightPin>
 												<imageSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageTileSize>
 												<UseAutosize>Present</UseAutosize>
 											</UIButtonMaterial>
@@ -13945,7 +14095,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>1020</x>
-											<y>345</y>
+											<y>50345</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>dryad</name>
@@ -13965,7 +14115,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -14088,15 +14238,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -14201,7 +14351,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -14348,15 +14498,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -14461,7 +14611,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -14502,7 +14652,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>1020</x>
-											<y>445</y>
+											<y>50445</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>stalker</name>
@@ -14591,15 +14741,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -14704,7 +14854,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -14745,7 +14895,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -14868,15 +15018,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -14981,7 +15131,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -15128,15 +15278,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -15241,7 +15391,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -15282,7 +15432,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>1120</x>
-											<y>445</y>
+											<y>50445</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>gunner</name>
@@ -15371,15 +15521,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -15484,7 +15634,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -15525,7 +15675,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -15648,15 +15798,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -15761,7 +15911,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -15908,15 +16058,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -16021,7 +16171,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -16062,7 +16212,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>1120</x>
-											<y>345</y>
+											<y>50345</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>chronicle</name>
@@ -16151,15 +16301,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -16264,7 +16414,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -16305,7 +16455,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -16428,15 +16578,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -16541,7 +16691,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -16688,15 +16838,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -16801,7 +16951,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -16842,7 +16992,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>1120</x>
-											<y>245</y>
+											<y>50245</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>brewer</name>
@@ -16931,15 +17081,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -17044,7 +17194,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -17085,7 +17235,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -17208,15 +17358,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -17321,7 +17471,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -17468,15 +17618,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -17581,7 +17731,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -17622,7 +17772,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>1120</x>
-											<y>145</y>
+											<y>50145</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>shadow</name>
@@ -17711,15 +17861,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -17824,7 +17974,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -17865,7 +18015,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -17988,15 +18138,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -18101,7 +18251,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -18248,15 +18398,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -18361,7 +18511,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -18402,7 +18552,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>1120</x>
-											<y>45</y>
+											<y>5045</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>wendigo</name>
@@ -18491,15 +18641,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -18604,7 +18754,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -18645,7 +18795,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -18768,15 +18918,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -18881,7 +19031,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -19028,15 +19178,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -19141,7 +19291,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -19182,7 +19332,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>1220</x>
-											<y>45</y>
+											<y>5045</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>trickster</name>
@@ -19271,15 +19421,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -19384,7 +19534,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -19425,7 +19575,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -19548,15 +19698,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -19661,7 +19811,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -19808,15 +19958,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -19921,7 +20071,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -19962,7 +20112,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>1220</x>
-											<y>145</y>
+											<y>50145</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>banshee</name>
@@ -20051,15 +20201,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -20164,7 +20314,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -20205,7 +20355,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -20328,15 +20478,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -20441,7 +20591,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -20588,15 +20738,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -20701,7 +20851,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -20742,7 +20892,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>1220</x>
-											<y>245</y>
+											<y>50245</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>shaman</name>
@@ -20831,15 +20981,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -20944,7 +21094,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -20985,7 +21135,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -21108,15 +21258,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -21221,7 +21371,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -21368,15 +21518,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -21481,7 +21631,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -21522,7 +21672,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>1220</x>
-											<y>345</y>
+											<y>50345</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>bomber</name>
@@ -21611,15 +21761,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -21724,7 +21874,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -21765,7 +21915,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -21888,15 +22038,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -22001,7 +22151,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -22148,15 +22298,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>120</x>
-													<y>120</y>
+													<y>50120</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -22261,7 +22411,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -22302,7 +22452,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>520</x>
-											<y>245</y>
+											<y>50245</y>
 										</location>
 										<mouseActions>Left</mouseActions>
 										<name>crusader_B</name>
@@ -22391,15 +22541,15 @@
 												<ignoreRenderState>false</ignoreRenderState>
 												<imageSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageSize>
 												<imageTileShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</imageTileShift>
 												<imageTileSize>
 													<x>52</x>
-													<y>52</y>
+													<y>5052</y>
 												</imageTileSize>
 												<LackOfManaMap>
 													<samplerState>
@@ -22504,7 +22654,7 @@
 												<SubPriority>0</SubPriority>
 												<textureShift>
 													<x>0</x>
-													<y>0</y>
+													<y>500</y>
 												</textureShift>
 												<UseAutosize>Present</UseAutosize>
 												<UseDiffusePin>Present</UseDiffusePin>
@@ -22545,7 +22695,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>80</x>
-											<y>80</y>
+											<y>5080</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -22636,7 +22786,7 @@
 							<keepAspectRatio>WidthBased</keepAspectRatio>
 							<location>
 								<x>180</x>
-								<y>640</y>
+								<y>50640</y>
 							</location>
 							<mouseActions>Left</mouseActions>
 							<name>Btn_StartSession</name>
@@ -22660,7 +22810,7 @@
 							<shapeType>FromShapeOrBackgroundStyle</shapeType>
 							<size>
 								<x>200</x>
-								<y>60</y>
+								<y>5060</y>
 							</size>
 							<soundActivate>
 								<eventName></eventName>
@@ -22732,7 +22882,7 @@
 							<keepAspectRatio>DontCare</keepAspectRatio>
 							<location>
 								<x>10</x>
-								<y>15</y>
+								<y>5015</y>
 							</location>
 							<name>Text_SelectHero</name>
 							<needCrop>false</needCrop>
@@ -22743,7 +22893,7 @@
 							<shapeType>FromShapeOrBackgroundStyle</shapeType>
 							<size>
 								<x>778</x>
-								<y>41</y>
+								<y>5041</y>
 							</size>
 							<soundActivate>
 								<eventName></eventName>
@@ -22794,7 +22944,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>14</x>
-											<y>551</y>
+											<y>50551</y>
 										</location>
 										<name>Text_PWClassicLabel</name>
 										<needCrop>false</needCrop>
@@ -22805,7 +22955,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>778</x>
-											<y>41</y>
+											<y>5041</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -22871,7 +23021,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>310</x>
-											<y>545</y>
+											<y>50545</y>
 										</location>
 										<name>Text_Timer</name>
 										<needCrop>false</needCrop>
@@ -22882,7 +23032,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>159</x>
-											<y>41</y>
+											<y>5041</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -22933,7 +23083,7 @@
 													<keepAspectRatio>DontCare</keepAspectRatio>
 													<location>
 														<x>-295</x>
-														<y>551</y>
+														<y>50551</y>
 													</location>
 													<name>Text_PWClassicLabel</name>
 													<needCrop>false</needCrop>
@@ -22944,7 +23094,7 @@
 													<shapeType>FromShapeOrBackgroundStyle</shapeType>
 													<size>
 														<x>778</x>
-														<y>41</y>
+														<y>5041</y>
 													</size>
 													<soundActivate>
 														<eventName></eventName>
@@ -23046,7 +23196,7 @@
 							<keepAspectRatio>DontCare</keepAspectRatio>
 							<location>
 								<x>400</x>
-								<y>640</y>
+								<y>50640</y>
 							</location>
 							<mouseActions>Left</mouseActions>
 							<name>Btn_LeaveLobby</name>
@@ -23070,7 +23220,7 @@
 							<shapeType>FromShapeOrBackgroundStyle</shapeType>
 							<size>
 								<x>200</x>
-								<y>60</y>
+								<y>5060</y>
 							</size>
 							<soundActivate>
 								<eventName></eventName>
@@ -23153,7 +23303,7 @@
 				<keepAspectRatio>WidthBased</keepAspectRatio>
 				<location>
 					<x>400</x>
-					<y>640</y>
+					<y>50640</y>
 				</location>
 				<mouseActions>Left</mouseActions>
 				<name>Btn_Team1</name>
@@ -23166,7 +23316,7 @@
 				<shapeType>FromShapeOrBackgroundStyle</shapeType>
 				<size>
 					<x>150</x>
-					<y>60</y>
+					<y>5060</y>
 				</size>
 				<soundActivate>
 					<eventName></eventName>
@@ -23242,7 +23392,7 @@
 				<keepAspectRatio>WidthBased</keepAspectRatio>
 				<location>
 					<x>730</x>
-					<y>640</y>
+					<y>50640</y>
 				</location>
 				<mouseActions>Left</mouseActions>
 				<name>Btn_Team2</name>
@@ -23255,7 +23405,7 @@
 				<shapeType>FromShapeOrBackgroundStyle</shapeType>
 				<size>
 					<x>150</x>
-					<y>60</y>
+					<y>5060</y>
 				</size>
 				<soundActivate>
 					<eventName></eventName>
@@ -23327,7 +23477,7 @@
 				<keepAspectRatio>DontCare</keepAspectRatio>
 				<location>
 					<x>220</x>
-					<y>714</y>
+					<y>50714</y>
 				</location>
 				<name>DebugPlayers</name>
 				<needCrop>false</needCrop>
@@ -23338,7 +23488,7 @@
 				<shapeType>FromShapeOrBackgroundStyle</shapeType>
 				<size>
 					<x>844</x>
-					<y>300</y>
+					<y>50300</y>
 				</size>
 				<soundActivate>
 					<eventName></eventName>
@@ -23408,7 +23558,7 @@
 				<keepAspectRatio>WidthBased</keepAspectRatio>
 				<location>
 					<x>220</x>
-					<y>2640</y> <!-- 640 -->
+					<y>502640</y> <!-- 640 -->
 				</location>
 				<mouseActions>Left</mouseActions>
 				<name>Btn_Faction1</name>
@@ -23421,7 +23571,7 @@
 				<shapeType>FromShapeOrBackgroundStyle</shapeType>
 				<size>
 					<x>1</x> <!-- 150 -->
-					<y>1</y> <!-- 60 -->
+					<y>501</y> <!-- 60 -->
 				</size>
 				<soundActivate>
 					<eventName></eventName>
@@ -23497,7 +23647,7 @@
 				<keepAspectRatio>WidthBased</keepAspectRatio>
 				<location>
 					<x>910</x>
-					<y>2640</y> <!-- 640 -->
+					<y>502640</y> <!-- 640 -->
 				</location>
 				<mouseActions>Left</mouseActions>
 				<name>Btn_Faction2</name>
@@ -23510,7 +23660,7 @@
 				<shapeType>FromShapeOrBackgroundStyle</shapeType>
 				<size>
 					<x>1</x> <!-- 150 -->
-					<y>1</y> <!-- 60 -->
+					<y>501</y> <!-- 60 -->
 				</size>
 				<soundActivate>
 					<eventName></eventName>
@@ -23586,7 +23736,7 @@
 				<keepAspectRatio>DontCare</keepAspectRatio>
 				<location>
 					<x>1150</x>
-					<y>677</y>
+					<y>50677</y>
 				</location>
 				<mouseActions>Left</mouseActions>
 				<name>Btn_Party0</name>
@@ -23599,7 +23749,7 @@
 				<shapeType>FromShapeOrBackgroundStyle</shapeType>
 				<size>
 					<x>60</x>
-					<y>50</y>
+					<y>5050</y>
 				</size>
 				<soundActivate>
 					<eventName></eventName>
@@ -23675,7 +23825,7 @@
 				<keepAspectRatio>DontCare</keepAspectRatio>
 				<location>
 					<x>1150</x>
-					<y>727</y>
+					<y>50727</y>
 				</location>
 				<mouseActions>Left</mouseActions>
 				<name>Btn_Party1</name>
@@ -23688,7 +23838,7 @@
 				<shapeType>FromShapeOrBackgroundStyle</shapeType>
 				<size>
 					<x>60</x>
-					<y>50</y>
+					<y>5050</y>
 				</size>
 				<soundActivate>
 					<eventName></eventName>
@@ -23764,7 +23914,7 @@
 				<keepAspectRatio>DontCare</keepAspectRatio>
 				<location>
 					<x>1150</x>
-					<y>777</y>
+					<y>50777</y>
 				</location>
 				<mouseActions>Left</mouseActions>
 				<name>Btn_Party2</name>
@@ -23777,7 +23927,7 @@
 				<shapeType>FromShapeOrBackgroundStyle</shapeType>
 				<size>
 					<x>60</x>
-					<y>50</y>
+					<y>5050</y>
 				</size>
 				<soundActivate>
 					<eventName></eventName>
@@ -23853,7 +24003,7 @@
 				<keepAspectRatio>DontCare</keepAspectRatio>
 				<location>
 					<x>1150</x>
-					<y>827</y>
+					<y>50827</y>
 				</location>
 				<mouseActions>Left</mouseActions>
 				<name>Btn_Party3</name>
@@ -23866,7 +24016,7 @@
 				<shapeType>FromShapeOrBackgroundStyle</shapeType>
 				<size>
 					<x>60</x>
-					<y>50</y>
+					<y>5050</y>
 				</size>
 				<soundActivate>
 					<eventName></eventName>
@@ -23942,7 +24092,7 @@
 				<keepAspectRatio>DontCare</keepAspectRatio>
 				<location>
 					<x>1150</x>
-					<y>877</y>
+					<y>50877</y>
 				</location>
 				<mouseActions>Left</mouseActions>
 				<name>Btn_Party4</name>
@@ -23955,7 +24105,7 @@
 				<shapeType>FromShapeOrBackgroundStyle</shapeType>
 				<size>
 					<x>60</x>
-					<y>50</y>
+					<y>5050</y>
 				</size>
 				<soundActivate>
 					<eventName></eventName>
@@ -24031,7 +24181,7 @@
 				<keepAspectRatio>DontCare</keepAspectRatio>
 				<location>
 					<x>1150</x>
-					<y>927</y>
+					<y>50927</y>
 				</location>
 				<mouseActions>Left</mouseActions>
 				<name>Btn_Party5</name>
@@ -24044,7 +24194,7 @@
 				<shapeType>FromShapeOrBackgroundStyle</shapeType>
 				<size>
 					<x>60</x>
-					<y>50</y>
+					<y>5050</y>
 				</size>
 				<soundActivate>
 					<eventName></eventName>
