@@ -604,7 +604,17 @@ namespace NWorld
 					heroSpawnDesc.usePlayerInfoTalentSet = false;
         }
 
-        heroSpawnDesc.playerInfo.heroSkin = GetSkinByHeroPersistentId(heroSpawnDesc.pHero->persistentId.c_str(), kindaRandomNumber).c_str() ; //"invisible_S41";
+        	  int heroSkinId = usersData[nick].heroSkinID;
+	    	  int heroSkinSize = hero->heroSkins.size();
+	    	  if(heroSkinId == -255){
+				//Random skin
+	    	  	heroSkinId = (kindaRandomNumber % (heroSkinSize + 1)) - 1;
+	    	  }
+	    	  DebugTrace(" skinId %d", heroSkinId);
+			  //heroSkinId < 0 - do not install the skin (default skin)
+	    	  if((heroSkinSize != 0) && (heroSkinId >= 0)){
+	    	  	heroSpawnDesc.playerInfo.heroSkin = hero->heroSkins[heroSkinId % heroSkinSize]->persistentId;
+			  }
 			}
 		}
 

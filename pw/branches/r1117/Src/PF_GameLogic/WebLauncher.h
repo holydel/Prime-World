@@ -38,6 +38,7 @@ public:
 
   struct WebUserData {
     std::vector<TalentWebData> talents;
+	  int heroSkinID;
   };
 
 	std::vector<TalentWebData> GetTallentSet(const wchar_t* nickName, const char* heroName);
@@ -47,5 +48,3 @@ public:
   std::string WebLauncherPostRequest::SendPostRequest(const std::string& jsonData);
 
 };
-
-extern std::string GetSkinByHeroPersistentId(const std::string& heroId, int someValue);
