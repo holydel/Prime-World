@@ -72,7 +72,7 @@
 		<sString>0.0f</sString>
 	</castAllowRange>
 	<castLimitations />
-	<commonDescription textref="" />
+	<commonDescription textref="/Items/Talents/Level3/G565_AxesStr.TALENT_commonDescription.txt" />
 	<compiledDescriptionA textref="" />
 	<compiledDescriptionB textref="" />
 	<conditionFormulas>
@@ -95,9 +95,9 @@
 					<UnitConstant>
 						<name>Add_DexOrAtSpd</name>
 						<var>
-							<compiledString>FQAAAAACAAAABgAAABAAAABVi+xR2QUqAAAA2RwkUdkFJgAAANkcJItFEIsQi00Qi0Js/9BdwwAAQEAAAAA/</compiledString>
+							<compiledString>FQAAAAACAAAABgAAABAAAABVi+xR2QUqAAAA2RwkUdkFJgAAANkcJItFEIsQi00Qi0Js/9BdwwAAoEAAAAA/</compiledString>
 							<returnType>float</returnType>
-							<sString>refineScale(3, 0.5)</sString>
+							<sString>refineScale(5, 0.5)</sString>
 						</var>
 					</UnitConstant>
 				</Item>
@@ -261,7 +261,7 @@
 	<prerequisiteTalents />
 	<rarity>outstanding</rarity>
 	<requireLineOfSight>true</requireLineOfSight>
-	<shortDescription textref="" />
+	<shortDescription textref="/Items/Talents/Level3/G565_AxesStr.TALENT_shortDescription.txt" />
 	<talentRollGroups>16</talentRollGroups>
 	<talentStats />
 	<targetType>714342456</targetType>

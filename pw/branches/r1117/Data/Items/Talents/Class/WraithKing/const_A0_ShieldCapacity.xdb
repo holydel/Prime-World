@@ -10,8 +10,8 @@
 	<BackLink DBID="/Items/Talents/Class/WraithKing/Ability_A4_2.TALENT" Count="1" />
 	<name>A0_ShieldCapacity</name>
 	<var>
-		<compiledString>FQAAAAAEAAAACwAAABUAAABGAAAAUAAAAFWL7IPsDGoBUdkFmAAAANkcJFHZBZQAAADZHCRqAItFCIsQi00Ii4IwAQAA/9BR2RwkagGLTRCLEYtNEItCYP/QagFR2QWQAAAA2RwkUdkFjAAAANkcJGoAi00IixGLTQiLgjQBAADdXfj/0FHZHCRqAYtNEIsRi00Qi0Jg/9DcRfjZXfTZRfSL5V3DAABwQQAAyEIAAOBBAABwQw==</compiledString>
+		<compiledString>FQAAAAAEAAAACwAAABUAAABGAAAAUAAAAFWL7IPsDGoBUdkFmAAAANkcJFHZBZQAAADZHCRqAItFCIsQi00Ii4IwAQAA/9BR2RwkagGLTRCLEYtNEItCYP/QagFR2QWQAAAA2RwkUdkFjAAAANkcJGoAi00IixGLTQiLgjQBAADdXfj/0FHZHCRqAYtNEIsRi00Qi0Jg/9DcRfjZXfTZRfSL5V3DAABwQQAA8EIAAOBBAABcQw==</compiledString>
 		<returnType>float</returnType>
-		<sString>damageScale((sStrength), 28, 240)+damageScale((sIntellect), 15, 100)</sString>
+		<sString>damageScale((sStrength), 28, 220)+damageScale((sIntellect), 15, 120)</sString>
 	</var>
 </UnitConstant>

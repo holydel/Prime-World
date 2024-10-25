@@ -7,8 +7,8 @@
 	<BackLink DBID="/Items/Talents/Class/Brewer/Ability_A4.TALENT" Count="1" />
 	<name>AddLife</name>
 	<var>
-		<compiledString></compiledString>
+		<compiledString>FQAAAAACAAAACAAAABIAAABVi+xqAVHZBUQAAADZHCRR2QVAAAAA2RwkagCLRQiLEItNCIuCNAEAAP/QUdkcJGoBi00QixGLTRCLQmD/0F3DAAAYQgCAjkM=</compiledString>
 		<returnType>float</returnType>
-		<sString>damageScale(sIntellect), 38, 285)</sString>
+		<sString>damageScale(sIntellect, 38, 285)</sString>
 	</var>
 </UnitConstant>

@@ -84,6 +84,39 @@
 																		<uiEvent href="/UI/Events/CommonEvents/EventDamageDealed_Energy.UIEV" />
 																	</DamageApplicator>
 																</Item>
+																<Item href="/Items/Talents/Class/Bomber/Ability_A2.TALENT" id="1C3A6FB0-7F37-46A7-A9F7-8A860210CD5E">
+																	<FlagsApplicator>
+																		<applyTarget>ApplicatorTarget</applyTarget>
+																		<behaviorFlags>248</behaviorFlags>
+																		<caption>FX взрыва</caption>
+																		<consumables />
+																		<effect>
+																			<Item href="/Effects/Debuffs/Explosion/_KamikazeBomber.EFFT" />
+																			<Item href="" />
+																		</effect>
+																		<enabled>
+																			<compiledString></compiledString>
+																			<returnType>bool</returnType>
+																			<sString>true</sString>
+																		</enabled>
+																		<flag>0</flag>
+																		<formulaName></formulaName>
+																		<lifeTime>
+																			<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DmpmZPg==</compiledString>
+																			<returnType>float</returnType>
+																			<sString>0.3</sString>
+																		</lifeTime>
+																		<LoggingEvent>-1</LoggingEvent>
+																		<providerName></providerName>
+																		<startCondition>
+																			<compiledString></compiledString>
+																			<returnType>bool</returnType>
+																			<sString>true</sString>
+																		</startCondition>
+																		<talents />
+																		<useListAs>ListAsRule</useListAs>
+																	</FlagsApplicator>
+																</Item>
 																<Item href="/Items/Talents/Class/Bomber/Ability_A2.TALENT" id="08DD7150-3088-4B2D-89FA-B44D8C654EE6">
 																	<StatusApplicator>
 																		<applicators>
@@ -190,7 +223,7 @@
 																			<sString>cSlow_Duration</sString>
 																		</lifeTime>
 																		<LoggingEvent>-1</LoggingEvent>
-																		<name textref="" />
+																		<name textref="/Items/Talents/Class/Bomber/Ability_A2.TALENT_08dd715030884b2d89fab44d8c654ee6_name.txt" />
 																		<power>9</power>
 																		<providerName></providerName>
 																		<stackableAcrossUnits>Unstackable</stackableAcrossUnits>
@@ -205,6 +238,7 @@
 																		<unstackableWith href="/Heroes/DefaultStatus/List_SlowUnstacked.APLS" />
 																	</StatusApplicator>
 																</Item>
+																<Item href="/Heroes/DefaultStatus/SlowFX.APLR" />
 															</applicators>
 															<dispatch href="/Items/Talents/Class/Bomber/Ability_A2.TALENT" id="5D5851B2-AA0D-47A5-90B2-AED234E8B8C8">
 																<DispatchImmediate>
