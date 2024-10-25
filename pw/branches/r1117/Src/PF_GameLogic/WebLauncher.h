@@ -48,3 +48,5 @@ public:
   std::string WebLauncherPostRequest::SendPostRequest(const std::string& jsonData);
 
 };
+
+extern std::string GetSkinByHeroPersistentId(const std::string& heroId, int someValue);
