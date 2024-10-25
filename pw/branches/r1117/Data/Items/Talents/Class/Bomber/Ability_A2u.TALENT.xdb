@@ -26,7 +26,7 @@
 	<askId>0</askId>
 	<autoTargetSelector href="" />
 	<budget>-1</budget>
-	<caption>A2u. Оглушающий заряд</caption>
+	<caption>A2u. Замедляющий заряд</caption>
 	<castAllowRange>
 		<compiledString></compiledString>
 		<returnType>float</returnType>

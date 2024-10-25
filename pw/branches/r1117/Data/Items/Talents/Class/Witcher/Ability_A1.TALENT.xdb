@@ -1384,9 +1384,9 @@
 					<UnitConstant>
 						<name>A1_creepDamage</name>
 						<var>
-							<compiledString>FQAAAAACAAAACAAAABIAAABVi+xqAVHZBUQAAADZHCRR2QVAAAAA2RwkagCLRQiLEItNCIuCNAEAAP/QUdkcJGoBi00QixGLTRCLQmD/0F3DAAAgQQAASEM=</compiledString>
+							<compiledString>FQAAAAACAAAACAAAABIAAABVi+xqAVHZBUQAAADZHCRR2QVAAAAA2RwkagCLRQiLEItNCIuCNAEAAP/QUdkcJGoBi00QixGLTRCLQmD/0F3DAAAgQQAAyEI=</compiledString>
 							<returnType>float</returnType>
-							<sString>damageScale(sIntellect, 10, 200)</sString>
+							<sString>damageScale(sIntellect, 10, 100)</sString>
 						</var>
 					</UnitConstant>
 				</Item>
