@@ -8,6 +8,7 @@
 	<BackLink DBID="/Items/Talents/Class/Crusader/Ability_A4u.TALENT" Count="1" />
 	<BackLink DBID="/Items/Talents/Level2/G567_CasterBase.TALENT" Count="1" />
 	<BackLink DBID="/Items/Talents/TalentKits/Redset5_7_Ultimate/Status_Redset5_7_Cooldown.APLR" Count="1" />
+	<BackLink DBID="/Items/Talents/Crusader_A.TALENTSET" Count="1" />
 	<activationConditions />
 	<activeCustomTrigger>true</activeCustomTrigger>
 	<allowChase>
@@ -402,9 +403,9 @@
 					<UnitConstant>
 						<name>Stun_Duration</name>
 						<var>
-							<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAADAPw==</compiledString>
+							<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DmpmZPw==</compiledString>
 							<returnType>float</returnType>
-							<sString>1.5</sString>
+							<sString>1.2</sString>
 						</var>
 					</UnitConstant>
 				</Item>
@@ -412,9 +413,9 @@
 					<UnitConstant>
 						<name>A4_2_Damage</name>
 						<var>
-							<compiledString>FQAAAAACAAAACAAAABIAAABVi+xqAVHZBWMAAADZHCRR2QVfAAAA2RwkagCLRQiLEItNCIuCNAEAAP/QUdkcJItNCIsRi00Ii4IwAQAA/9BR2Rwk6B8AAACDxATZHCRqAYtNEIsRi00Qi0Jg/9BdwwAA8EIAAGFEVYvsUdlFCNlFDN7Z3+D2xAV6CNlFCNld/OsG2UUM2V382UX8i+Vdww==</compiledString>
+							<compiledString>FQAAAAACAAAACAAAABIAAABVi+xqAVHZBUQAAADZHCRR2QVAAAAA2RwkagCLRQiLEItNCIuCNAEAAP/QUdkcJGoBi00QixGLTRCLQmD/0F3DAADcQgCAVEQ=</compiledString>
 							<returnType>float</returnType>
-							<sString>damageScale(max(sStrength, sIntellect), 120, 900)</sString>
+							<sString>damageScale(sIntellect, 110, 850)</sString>
 						</var>
 					</UnitConstant>
 				</Item>
@@ -502,6 +503,7 @@
 						</var>
 					</UnitConstant>
 				</Item>
+				<Item href="/Items/Talents/Class/Crusader/const_A0_BaseDamage" />
 			</vars>
 		</UnitConstantsContainer>
 	</constants>
@@ -549,9 +551,9 @@
 	<isUltimateTalent>true</isUltimateTalent>
 	<isUnitFreeAfterCast>true</isUnitFreeAfterCast>
 	<manaCost>
-		<compiledString>FQAAAAAAAAAAVYvs2e5dwwAAAAA=</compiledString>
+		<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAABIQw==</compiledString>
 		<returnType>float</returnType>
-		<sString>0</sString>
+		<sString>200</sString>
 	</manaCost>
 	<marker>doCast4</marker>
 	<microAI href="/Items/Talents/Class/Crusader/Ability_A4_2.TALENT" id="05574A08-F5BB-4595-AEA3-DCF0D34C40BC">
@@ -574,9 +576,9 @@
 							<flags>0</flags>
 							<mode>Normal</mode>
 							<range>
-								<compiledString>FQsAAAABAAAAFwAAAFJhbmdlX0xvbmcAVYvsi0UMUItNCFFoAAAAAItVEIsCi00Qi1BQ/9Jdww==</compiledString>
+								<compiledString>FQ0AAAABAAAAGQAAAFJhbmdlX01lZGl1bQBVi+yLRQxQi00IUWgAAAAAi1UQiwKLTRCLUFD/0l3D</compiledString>
 								<returnType>float</returnType>
-								<sString>cRange_Long</sString>
+								<sString>cRange_Medium</sString>
 							</range>
 							<targetFilter>679477251</targetFilter>
 							<targetSelector href="" />

@@ -22,6 +22,7 @@
 	<BackLink DBID="/Test/Talents/Crusader/Epic_A_Str.TALENTSET" Count="1" />
 	<BackLink DBID="/Test/Talents/Crusader/Epic_B_Int.TALENTSET" Count="1" />
 	<BackLink DBID="/Test/Talents/Crusader/Epic_B_Str.TALENTSET" Count="1" />
+	<BackLink DBID="/Items/Talents/123Crusader_B.TALENTSET" Count="1" />
 	<activationConditions />
 	<activeCustomTrigger>true</activeCustomTrigger>
 	<allowChase>
@@ -93,6 +94,8 @@
 						</var>
 					</UnitConstant>
 				</Item>
+				<Item href="/Items/Talents/Class/Crusader/const_A0_BaseDamage" />
+				<Item href="/Items/Talents/Class/Crusader/const_A0_TotalDamage" />
 			</vars>
 		</UnitConstantsContainer>
 	</constants>
@@ -454,7 +457,6 @@
 				<useAbilityOwnerMana>false</useAbilityOwnerMana>
 			</TriggerApplicator>
 		</Item>
-		<Item href="/Heroes/DefaultStatus/_ManalessHero.APLR" />
 	</passiveApplicators>
 	<persistentId>Crusader_A0</persistentId>
 	<prerequisiteTalents />

@@ -28,7 +28,7 @@
 	</aoeSize>
 	<aoeType>Wall</aoeType>
 	<applicators>
-		<Item href="/Items/Talents/Class/Ent/Ability_A3.TALENT" id="C76530ED-8ABD-4961-9204-F9169116F69A">
+		<Item href="/Items/Talents/Class/Ent/Ability_A3.TALENT" id="22D0D25D-BC3C-4C08-965F-A9BDDF8B12DB">
 			<SpellApplicator>
 				<applyTarget>ApplicatorTarget</applyTarget>
 				<caption></caption>
@@ -40,10 +40,10 @@
 				<formulaName></formulaName>
 				<LoggingEvent>-1</LoggingEvent>
 				<providerName></providerName>
-				<spell href="/Items/Talents/Class/Ent/Ability_A3.TALENT" id="73883024-B5E7-4B18-879A-492442EE546F">
+				<spell href="/Items/Talents/Class/Ent/Ability_A3.TALENT" id="EB149971-B876-437F-8AB8-EFFC52DDF817">
 					<Spell>
 						<applicators />
-						<dispatch href="/Items/Talents/Class/Ent/Ability_A3.TALENT" id="213A4923-1C9F-406D-B3D4-01317B6EBD3F">
+						<dispatch href="/Items/Talents/Class/Ent/Ability_A3.TALENT" id="4279BBB2-A75D-4D91-BA83-666CD439B6D8">
 							<DispatchByTime>
 								<alwaysApply>false</alwaysApply>
 								<applyEffect>
@@ -56,7 +56,7 @@
 								<cancelOnSenderDeath>false</cancelOnSenderDeath>
 								<dieAfterApply>true</dieAfterApply>
 								<dispatchEffect>
-									<Item href="/Items/Talents/Class/Ent/Ability_A3.TALENT" id="57696802-06E2-4FD8-A430-AF7B47A38473">
+									<Item href="/Items/Talents/Class/Ent/Ability_A3.TALENT" id="EE1EA2F1-1389-481B-88D1-F983A9E0BDA2">
 										<EffectSwitcher>
 											<deathType>Manual</deathType>
 											<effectOnInvisible href="/Effects/Debuffs/Roots/_BushEnemy.EFFT" />
@@ -76,7 +76,7 @@
 									<sString>cA3_WallLifeTime</sString>
 								</lifeTime>
 								<persistentApplicators>
-									<Item href="/Items/Talents/Class/Ent/Ability_A3.TALENT" id="D1C9EB89-64D4-4278-9926-EE298565EFA4">
+									<Item href="/Items/Talents/Class/Ent/Ability_A3.TALENT" id="370E9BB4-1CDF-4812-A675-9CA1B4DAA6BB">
 										<AuraApplicator>
 											<applicators>
 												<Item href="/Heroes/DefaultStatus/_ROOT_Status.APLR" />
@@ -114,7 +114,7 @@
 												<sString>true</sString>
 											</startCondition>
 											<targets>538771519</targets>
-											<targetSelector href="/Items/Talents/Class/Ent/Ability_A3.TALENT" id="316964C9-0D24-467A-BC1E-C5F478E0EB06">
+											<targetSelector href="/Items/Talents/Class/Ent/Ability_A3.TALENT" id="2898212A-D95C-4A1F-9ABD-CB674C0B785B">
 												<ConditionTargetSelector>
 													<condition>
 														<compiledString>FQAAAAAAAAAAVYvssAFdww==</compiledString>
@@ -123,9 +123,9 @@
 													</condition>
 													<flags>0</flags>
 													<mode>Normal</mode>
-													<targetSelector href="/Items/Talents/Class/Ent/Ability_A3.TALENT" id="416FC0DA-5B6E-4FE9-9BFF-7A6CDE057ABF">
+													<targetSelector href="/Items/Talents/Class/Ent/Ability_A3.TALENT" id="5E2788E7-F2CA-4E8A-A58C-CA3C03B1776F">
 														<WallTargetSelector>
-															<direction href="/Items/Talents/Class/Ent/Ability_A3.TALENT" id="EFDB31F7-0FCF-4E60-A404-E840BA861CD9">
+															<direction href="/Items/Talents/Class/Ent/Ability_A3.TALENT" id="6EE4BE40-4E0A-466C-882A-EC96884E4804">
 																<SelectApplicatorTarget>
 																	<applicatorIndex>0</applicatorIndex>
 																	<applicatorName></applicatorName>
@@ -140,10 +140,10 @@
 																<sString>cA3_WallSize</sString>
 															</length>
 															<mode>Normal</mode>
-															<origin href="/Items/Talents/Class/Ent/Ability_A3.TALENT" id="750648A7-3A11-4797-8739-3CF3B83F279A">
+															<origin href="/Items/Talents/Class/Ent/Ability_A3.TALENT" id="0DF0BFA3-2E65-4E06-ACAE-D41AFBA9E353">
 																<ConvertTargetToLand>
 																	<aggregateMode>First</aggregateMode>
-																	<targetSelector href="/Items/Talents/Class/Ent/Ability_A3.TALENT" id="B4BC4035-B86C-4310-8339-50882E00AC92">
+																	<targetSelector href="/Items/Talents/Class/Ent/Ability_A3.TALENT" id="8DAD13D3-6545-493B-8312-ECBF46876FD2">
 																		<SelectApplicatorTarget>
 																			<applicatorIndex>0</applicatorIndex>
 																			<applicatorName></applicatorName>
@@ -166,35 +166,51 @@
 											<type>None</type>
 										</AuraApplicator>
 									</Item>
-									<Item href="/Items/Talents/Class/Ent/Ability_A3.TALENT" id="1DB3A655-1C67-4E19-B0D9-E99D8EC4974F">
-										<SpellApplicator>
+									<Item href="/Items/Talents/Class/Ent/Ability_A3.TALENT" id="DA97740E-F9C6-4B74-AA61-4C1C6240595D">
+										<SpellPeriodicallyApplicator>
 											<applyTarget>ApplicatorTarget</applyTarget>
-											<caption>обертка для символа леса с уроном</caption>
+											<behaviorFlags>152</behaviorFlags>
+											<caption>период спелл</caption>
+											<effect>
+												<Item href="" />
+												<Item href="" />
+											</effect>
 											<enabled>
-												<compiledString>FRcAAAACAAAAHgAAADcAAABFbnRfQTNfU1VQAABFbnRfQTNfU1VQAFWL7IPsCGgAAAAAi0UIixCLTQiLgqgBAAD/0IXAdCpoDAAAAItNCIsRi00Ii4KoAQAA/9CJRfyLTfyLEYtN/ItCBP/QiEX76wTGRfsAikX7i+Vdww==</compiledString>
+												<compiledString></compiledString>
 												<returnType>bool</returnType>
-												<sString>tal("Ent_A3_SUP")</sString>
+												<sString>true</sString>
 											</enabled>
 											<formulaName></formulaName>
+											<lifeTime>
+												<compiledString>FRAAAAABAAAAHAAAAEEzX1dhbGxMaWZlVGltZQBVi+yLRQxQi00IUWgAAAAAi1UQiwKLTRCLUFD/0l3D</compiledString>
+												<returnType>float</returnType>
+												<sString>cA3_WallLifeTime</sString>
+											</lifeTime>
 											<LoggingEvent>-1</LoggingEvent>
+											<period>
+												<compiledString>FQoAAAABAAAAFgAAAEEzX1BlcmlvZABVi+yLRQxQi00IUWgAAAAAi1UQiwKLTRCLUFD/0l3D</compiledString>
+												<returnType>float</returnType>
+												<sString>cA3_Period</sString>
+											</period>
 											<providerName></providerName>
-											<spell href="/Items/Talents/Class/Ent/Ability_A3.TALENT" id="141BB2C2-C6DA-441C-A7FA-5B6D96E82929">
+											<scaleMode>ScaleIsCount</scaleMode>
+											<spell href="/Items/Talents/Class/Ent/Ability_A3.TALENT" id="95FF5F17-E703-48FD-BED2-DCDD468320A1">
 												<Spell>
 													<applicators>
-														<Item href="/Items/Talents/Class/Ent/Ability_A3.TALENT" id="C1C67465-C976-4BE9-9290-A6D552324484">
+														<Item href="/Items/Talents/Class/Ent/Ability_A3.TALENT" id="AE90FBD8-3C2C-465D-AE00-5F0AB69B0673">
 															<DamageApplicator>
 																<applyTarget>ApplicatorTarget</applyTarget>
 																<cancelInvisibility>false</cancelInvisibility>
-																<caption>Урон</caption>
+																<caption>урон</caption>
 																<damage>
-																	<compiledString>FQ4AAAABAAAAGgAAAEEzX1NVUF9EYW1hZ2UAVYvsi0UMUItNCFFoAAAAAItVEIsCi00Qi1BQ/9Jdww==</compiledString>
+																	<compiledString>FQoAAAABAAAAFgAAAEEzX0RhbWFnZQBVi+yLRQxQi00IUWgAAAAAi1UQiwKLTRCLUFD/0l3D</compiledString>
 																	<returnType>float</returnType>
-																	<sString>cA3_SUP_Damage</sString>
+																	<sString>cA3_Damage</sString>
 																</damage>
-																<damageMode>0</damageMode>
+																<damageMode>4</damageMode>
 																<damageType>Energy</damageType>
 																<enabled>
-																	<compiledString>FQAAAAAAAAAAVYvssAFdww==</compiledString>
+																	<compiledString></compiledString>
 																	<returnType>bool</returnType>
 																	<sString>true</sString>
 																</enabled>
@@ -206,7 +222,7 @@
 															</DamageApplicator>
 														</Item>
 													</applicators>
-													<dispatch href="/Items/Talents/Class/Ent/Ability_A3.TALENT" id="D904F1D2-F42D-4CF4-9115-3D464EBECD29">
+													<dispatch href="/Items/Talents/Class/Ent/Ability_A3.TALENT" id="77A7EC46-8BCB-40AB-BB24-84B1C3DF6A9D">
 														<DispatchImmediate>
 															<alwaysApply>false</alwaysApply>
 															<applyEffect>
@@ -227,8 +243,17 @@
 													</dispatch>
 												</Spell>
 											</spell>
-											<spellTarget>ApplicatorTarget</spellTarget>
-											<targetSelector href="/Items/Talents/Class/Ent/Ability_A3.TALENT" id="7C2206C1-A321-442C-ADF1-2F44BE27F8F2">
+											<startCondition>
+												<compiledString></compiledString>
+												<returnType>bool</returnType>
+												<sString>true</sString>
+											</startCondition>
+											<startOffset>
+												<compiledString>FQUAAAABAAAAEQAAAFNURVAAVYvsi0UMUItNCFFoAAAAAItVEIsCi00Qi1BQ/9Jdww==</compiledString>
+												<returnType>float</returnType>
+												<sString>cSTEP</sString>
+											</startOffset>
+											<targetSelector href="/Items/Talents/Class/Ent/Ability_A3.TALENT" id="3168D1CF-91A6-46EE-8433-684C7C71DB27">
 												<ConditionTargetSelector>
 													<condition>
 														<compiledString>FQAAAAAAAAAAVYvssAFdww==</compiledString>
@@ -237,9 +262,9 @@
 													</condition>
 													<flags>0</flags>
 													<mode>Normal</mode>
-													<targetSelector href="/Items/Talents/Class/Ent/Ability_A3.TALENT" id="D41FDC31-A7DA-46BA-8B52-4C9F83A45A90">
+													<targetSelector href="/Items/Talents/Class/Ent/Ability_A3.TALENT" id="1EAA0B40-D264-4143-B5FB-DE288B9D59DD">
 														<WallTargetSelector>
-															<direction href="/Items/Talents/Class/Ent/Ability_A3.TALENT" id="4AAA17E3-A2D6-40ED-AA58-DF1908F982E2">
+															<direction href="/Items/Talents/Class/Ent/Ability_A3.TALENT" id="002CB890-A9D0-4891-BF29-24CE3710989A">
 																<SelectApplicatorTarget>
 																	<applicatorIndex>0</applicatorIndex>
 																	<applicatorName></applicatorName>
@@ -254,10 +279,10 @@
 																<sString>cA3_WallSize</sString>
 															</length>
 															<mode>Normal</mode>
-															<origin href="/Items/Talents/Class/Ent/Ability_A3.TALENT" id="93401A22-7232-4780-9FAF-3AF06E2DE563">
+															<origin href="/Items/Talents/Class/Ent/Ability_A3.TALENT" id="B224F54C-F7D1-49C5-8918-D213962173CA">
 																<ConvertTargetToLand>
 																	<aggregateMode>First</aggregateMode>
-																	<targetSelector href="/Items/Talents/Class/Ent/Ability_A3.TALENT" id="5D8CA6D1-BD77-4A43-91B8-EC4C74B904F2">
+																	<targetSelector href="/Items/Talents/Class/Ent/Ability_A3.TALENT" id="16C3FFCA-FFF4-4E1B-94D6-258977C75703">
 																		<SelectApplicatorTarget>
 																			<applicatorIndex>0</applicatorIndex>
 																			<applicatorName></applicatorName>
@@ -277,7 +302,7 @@
 													</targetSelector>
 												</ConditionTargetSelector>
 											</targetSelector>
-										</SpellApplicator>
+										</SpellPeriodicallyApplicator>
 									</Item>
 								</persistentApplicators>
 							</DispatchByTime>
@@ -388,7 +413,7 @@
 						</var>
 					</UnitConstant>
 				</Item>
-				<Item href="/Items/Talents/Class/Ent/const_A3_SUP_Damage" />
+				<Item href="/Items/Talents/Class/Ent/const_A3_Damage" />
 				<Item href="/Items/Talents/Class/Ent/const_A3_SUP_RootDuration" />
 				<Item href="/Items/Talents/Class/Ent/Ability_A3.TALENT" id="C085C8B2-7BF7-4B21-8E00-FC46FFCCDC18">
 					<UnitConstant>
@@ -440,6 +465,7 @@
 						</var>
 					</UnitConstant>
 				</Item>
+				<Item href="/Items/Talents/Class/Ent/const_A3_Period" />
 			</vars>
 		</UnitConstantsContainer>
 	</constants>
