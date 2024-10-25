@@ -247,7 +247,7 @@ void AdventureScreenLogic::UpdatePreferences()
     {
       NGlobal::SaveConfig( NProfile::GetFullFilePath( "user.cfg", NProfile::FOLDER_USER ), STORAGE_USER );
 #ifdef _SHIPPING
-      Input::SaveInputConfig( NProfile::GetFullFilePath( "input_pwc.cfg", NProfile::FOLDER_USER ), L"input" );
+      Input::SaveInputConfig( NProfile::GetFullFilePath( "input_new.cfg", NProfile::FOLDER_USER ), L"input" );
 #endif
     }
   }
@@ -261,7 +261,7 @@ void AdventurepreferencesProcessor::Apply()
   {
     NGlobal::SaveConfig( NProfile::GetFullFilePath( "user.cfg", NProfile::FOLDER_USER ), STORAGE_USER );
 #ifdef _SHIPPING
-    Input::SaveInputConfig( NProfile::GetFullFilePath( "input_pwc.cfg", NProfile::FOLDER_USER ), L"input" );
+    Input::SaveInputConfig( NProfile::GetFullFilePath( "input_new.cfg", NProfile::FOLDER_USER ), L"input" );
 #endif
   }
 }
@@ -277,7 +277,7 @@ void AdventurepreferencesProcessor::Cancel()
     NGlobal::SaveConfig( NProfile::GetFullFilePath( "user.cfg", NProfile::FOLDER_USER ), STORAGE_USER );
 
 #ifdef _SHIPPING
-    Input::SaveInputConfig( NProfile::GetFullFilePath( "input_pwc.cfg", NProfile::FOLDER_USER ), L"input" );
+    Input::SaveInputConfig( NProfile::GetFullFilePath( "input_new.cfg", NProfile::FOLDER_USER ), L"input" );
 #endif
   }
 }
@@ -312,7 +312,7 @@ void AdventurepreferencesProcessor::ApplyShortcuts()
     }
 
 #ifdef _SHIPPING
-    Input::SaveInputConfig( NProfile::GetFullFilePath( "input_pwc.cfg", NProfile::FOLDER_USER ), L"input" );
+    Input::SaveInputConfig( NProfile::GetFullFilePath( "input_new.cfg", NProfile::FOLDER_USER ), L"input" );
 #endif
   }
 }

@@ -516,7 +516,8 @@ namespace NWorld
 		//get tallent set by NickName and HeroID
 
 		if (players[it->playerId].playerType == NCore::EPlayerType::Human)
-		{
+    {
+      heroSpawnDesc.playerInfo.heroRating = 1000;
 			if (!players[it->playerId].nickname.empty()) {
         WebLauncherPostRequest::PlayerInfoByUserId pInfo;
         pInfo.nickname = players[it->playerId].nickname.c_str() + 1;

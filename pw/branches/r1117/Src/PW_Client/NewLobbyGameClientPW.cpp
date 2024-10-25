@@ -190,12 +190,15 @@ int GameClientPW::Poll( float transceiverDeltaTime )
 
       if ( const NDb::AdvMapSettings * advMapSettings = mapLoadingJob->MapSettingsResource() )
       {
+        /*
         bool enableBotsAI = mapLoadingJob->MapSettingsResource()->overrideBotsSettings ? mapLoadingJob->MapSettingsResource()->overrideBotsSettings->enableBotsAI 
                                                                                        : NDb::SessionRoot::GetRoot()->logicRoot->aiLogic->botsSettings->enableBotsAI;
         if ( enableBotsAI && Client()->GameParams().gameType == EGameType::SocialMMaking )
         {
           advScreeen->StartBots( NGameX::AdventureScreen::FilterHumans, true );
         }
+        */
+        advScreeen->StartBots( NGameX::AdventureScreen::FilterHumans, true );
       }
 
       OnMapLoaded();

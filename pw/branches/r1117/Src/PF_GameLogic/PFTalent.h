@@ -208,7 +208,7 @@ private:
   //////////////////////////////////////////////////////////////////////////
   // *** Temporary stuff! For debug only! Do not use! *** //
   static void PreparePredefinedSet(const NDb::AILogicParameters* pAIParams, const NDb::BaseHero* pDBHero, string const& forceSetName, 
-                            ITalentCalculator& calculator, SetInfo& info);
+                            ITalentCalculator& calculator, SetInfo& info, bool isBot = false);
 
 	PFTalentsSet( );
 
