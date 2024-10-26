@@ -198,7 +198,7 @@ int GameClientPW::Poll( float transceiverDeltaTime )
           advScreeen->StartBots( NGameX::AdventureScreen::FilterHumans, true );
         }
         */
-        advScreeen->StartBots( NGameX::AdventureScreen::FilterHumans, true );
+        advScreeen->StartBots( NGameX::AdventureScreen::FilterHumans, true, true );
       }
 
       OnMapLoaded();
