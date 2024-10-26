@@ -759,7 +759,8 @@ static const char* talentsMap[] = { "G001",
   "G784",
   "G785",
   "G786",
-  "GXXX",
-  "GXXX",
-  "G736"
+  "G786", // fake
+  "G786", // fake
+  "G736",
+  "G094"
 };
