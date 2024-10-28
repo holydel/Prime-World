@@ -5,8 +5,8 @@
 	<BackLink DBID="/Items/Talents/Class/Shaman/Ability_A3u.TALENT" Count="1" />
 	<name>A2u_Duration</name>
 	<var>
-		<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAACAQA==</compiledString>
+		<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAACgQA==</compiledString>
 		<returnType>float</returnType>
-		<sString>4.0f</sString>
+		<sString>5.0f</sString>
 	</var>
 </UnitConstant>
