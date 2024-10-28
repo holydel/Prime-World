@@ -7,7 +7,7 @@
 namespace 
 {
   string coordinatorAddr = string(SERVER_IP) + ":" + SERVER_PORT;
-  string loginAddr = string(SERVER_IP) + ":" + LOGIN_PORT;
+  string loginAddr = string(SERVER_IP) + ":" + LOGIN_PORT + "@10";
   int firstServerPort = SERVER_PORT_INT;
   string frontendIPAddr = "localhost";
   string backendIPAddr = "localhost";
