@@ -78,7 +78,10 @@ void SelectHeroScreen::CommonStep( bool bAppActive )
       if (gameReadyWaitCount < GAME_READY_WAIT_COUNT) {
         Sleep(1000);
       } else {
-        locked->SetReady(lobby::EGameMemberReadiness::ReadyForAnything);
+        if (!logic->isPlayerReady) {
+          locked->SetReady(lobby::EGameMemberReadiness::ReadyForAnything);
+          logic->isPlayerReady = true;
+        }
       }
       gameReadyWaitCount++;
     }
