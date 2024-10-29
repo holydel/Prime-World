@@ -58,7 +58,7 @@
 					<returnType>bool</returnType>
 					<sString>sender.vG782_StrInt==1</sString>
 				</condition>
-				<name>StrInt</name>
+				<name>StrOrInt</name>
 			</ConditionFormula>
 		</Item>
 		<Item href="/Items/Talents/Level4/G782_StrInt.TALENT" id="B22A3B22-C887-4767-AB5F-CC760C5E23CF">
