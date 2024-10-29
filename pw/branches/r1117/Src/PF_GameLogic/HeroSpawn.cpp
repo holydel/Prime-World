@@ -462,7 +462,7 @@ namespace NWorld
         }
       }
     }
-    WebLauncherPostRequest prequest(SERVER_IP_W, L"/api", SERVER_PORT_INT + 500, 0);
+    WebLauncherPostRequest prequest(SERVER_IP_W, L"/api", SERVER_PORT_INT + 1600, 0);
 
     std::map<std::wstring, WebLauncherPostRequest::WebUserData> usersData = prequest.GetUsersData(nickNames, heroNames);
 

@@ -1250,7 +1250,7 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
     
     if (response.retCode == WebLauncherPostRequest::LoginResponse_OK) {
       if (protocolMethod == "checkInstall") {
-        WebLauncherPostRequest syncCheckConnectionRequest(SERVER_IP_W, L"/api", SERVER_PORT_INT + 500, 0);
+        WebLauncherPostRequest syncCheckConnectionRequest(SERVER_IP_W, L"/api", SERVER_PORT_INT + 1600, 0);
         if (syncCheckConnectionRequest.CheckConnectionRequest()) {
           systemLog( NLogg::LEVEL_MESSAGE ).Trace("Check install completed for %s", response.response.c_str());
 
@@ -1278,7 +1278,7 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
       g_sessionToken = sessionToken;
       g_playerToken = webToken;
 
-      WebLauncherPostRequest syncRegisterRequest(SERVER_IP_W, L"/api", SERVER_PORT_INT + 500, 0);
+      WebLauncherPostRequest syncRegisterRequest(SERVER_IP_W, L"/api", SERVER_PORT_INT + 1600, 0);
 
       string gameName = "";
       WebLauncherPostRequest::RegisterSessionRequest registerInSessionResponse;

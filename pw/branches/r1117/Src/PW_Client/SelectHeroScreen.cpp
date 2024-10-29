@@ -61,7 +61,7 @@ void SelectHeroScreen::CommonStep( bool bAppActive )
   if (g_sessionStatus == WebLauncherPostRequest::RegisterInSessionRequest_HeroSelected) {
 
     if ( StrongMT<Game::IGameContextUiInterface> locked = GameCtx().Lock() ) {
-      WebLauncherPostRequest testreq(SERVER_IP_W, L"/api", SERVER_PORT_INT + 500, 0);
+      WebLauncherPostRequest testreq(SERVER_IP_W, L"/api", SERVER_PORT_INT + 1600, 0);
 
       static const int CHECK_GAME_READY_MAX_RETRY_COUNT = 20;
       int retryCount = 0;
