@@ -1312,6 +1312,9 @@ WebLauncherPostRequest::RegisterSessionRequest WebLauncherPostRequest::Reconnect
 
   Json::Value errorSet = parsedJson.get("error", "ERROR");
   if (!errorSet.asString().empty()) {
+    if (errorSet.asString() == "Connect") { // Lobby is not started yet
+      return RegisterInSessionRequest_Connect; 
+    }
     systemLog( NLogg::LEVEL_ERROR ).Trace("Error while reconnecting to session error=%s", errorSet.asString().c_str());
     OutputDebugStringA(errorSet.asString().c_str()); 
     return RegisterInSessionRequest_Error; // Unknown error

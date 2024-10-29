@@ -55,29 +55,36 @@ void SelectHeroScreen::CommonStep( bool bAppActive )
   float dt = NMainLoop::GetTimeDelta();
 
   const float kickoutTime = 30.0f;
+  static int gameReadyRetryCount = 0;
 
-  
-  // 4. Set ready for anything state
+  // 4. Wait for other players
   if (g_sessionStatus == WebLauncherPostRequest::RegisterInSessionRequest_HeroSelected) {
+    WebLauncherPostRequest testreq(SERVER_IP_W, L"/api", SERVER_PORT_INT + 500, 0);
 
-    if ( StrongMT<Game::IGameContextUiInterface> locked = GameCtx().Lock() ) {
-      WebLauncherPostRequest testreq(SERVER_IP_W, L"/api", SERVER_PORT_INT + 500, 0);
-
-      static const int CHECK_GAME_READY_MAX_RETRY_COUNT = 20;
-      int retryCount = 0;
-      Sleep(1000); // Sleep because server is not ready for us
-      while (!testreq.CheckIsGameReady(g_sessionToken.c_str())) {
-        Sleep(1000);
-        retryCount++;
-        if (retryCount >= CHECK_GAME_READY_MAX_RETRY_COUNT) {
-          break;
-        }
-      }
+    static const int CHECK_GAME_READY_MAX_RETRY_COUNT = 20;
+    if (!testreq.CheckIsGameReady(g_sessionToken.c_str()) && gameReadyRetryCount < CHECK_GAME_READY_MAX_RETRY_COUNT) {
       Sleep(1000);
-      locked->SetReady(lobby::EGameMemberReadiness::ReadyForAnything);
+    } else {
       g_sessionStatus = WebLauncherPostRequest::RegisterInSessionRequest_InReadyState;
     }
-    
+    gameReadyRetryCount++;
+  }
+
+  // 5. Set ready for anything state
+  static int gameReadyWaitCount = 0;
+  if (g_sessionStatus == WebLauncherPostRequest::RegisterInSessionRequest_InReadyState) {
+    if ( StrongMT<Game::IGameContextUiInterface> locked = GameCtx().Lock() ) {
+      static const int GAME_READY_WAIT_COUNT = 5;
+      if (gameReadyWaitCount < GAME_READY_WAIT_COUNT) {
+        Sleep(1000);
+      } else {
+        if (!logic->isPlayerReady) {
+          locked->SetReady(lobby::EGameMemberReadiness::ReadyForAnything);
+          logic->isPlayerReady = true;
+        }
+      }
+      gameReadyWaitCount++;
+    }
   }
   
 /*

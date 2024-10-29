@@ -131,11 +131,11 @@
 				<wordWrap>true</wordWrap>
 			</UIImageLabelLayout>
 		</Item>
-		<Item href="/UI/Screens/Lobby/Lobby_SelectGameMode" id="7512BF95-D85C-4D3B-AFBC-011136D786FE">
+		<Item href="/UI/Screens/Lobby/Lobby_SelectGameMode" id="7512BF95-D85C-4D3B-AFBC-011136D786FF">
 			<UIImageLabelLayout parent="/UI/Screens/Tooltips/Simple.IMGLBL">
 				<backgroundMaterial href="/UI/Styles/ASSETS_UI/tooltip/tooltip_base.MTRL" />
 				<captionOpacity>1</captionOpacity>
-				<captionText textref="/UI/Screens/Lobby/Lobby_SelectGameMode_7512bf95d85c4d3bafbc011136d786fe_captionText.txt" />
+				<captionText textref="/UI/Screens/Lobby/Lobby_SelectGameMode_7512bf95d85c4d3bafbc011136d786ff_captionText.txt" />
 				<cursors>
 					<disabled>ui_disabled</disabled>
 					<dragable>ui_dragable</dragable>
@@ -204,7 +204,7 @@
 				<wordWrap>true</wordWrap>
 			</UIImageLabelLayout>
 		</Item>
-		<Item href="/UI/Screens/Lobby/Lobby_SelectGameMode" id="7512BF95-D85C-4D3B-AFBC-011136D786FF">
+		<Item href="/UI/Screens/Lobby/Lobby_SelectGameMode" id="7512BF95-D85C-4D3B-AFBC-011136D786FA">
 			<UIImageLabelLayout>
 				<backgroundMaterial href="/UI/Styles/Lobby/PW_logo.MTRL" />
 				<captionOpacity>1</captionOpacity>

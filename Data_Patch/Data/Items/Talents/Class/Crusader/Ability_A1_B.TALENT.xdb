@@ -16,7 +16,6 @@
 	<BackLink DBID="/Test/Talents/Crusader/Elite_B_Str.TALENTSET" Count="1" />
 	<BackLink DBID="/Test/Talents/Crusader/Epic_B_Int.TALENTSET" Count="1" />
 	<BackLink DBID="/Test/Talents/Crusader/Epic_B_Str.TALENTSET" Count="1" />
-	<BackLink DBID="/Items/Talents/123Crusader_B.TALENTSET" Count="1" />
 	<activationConditions />
 	<activeCustomTrigger>true</activeCustomTrigger>
 	<allowChase>
@@ -315,7 +314,6 @@
 						</var>
 					</UnitConstant>
 				</Item>
-				<Item href="/Items/Talents/Class/Crusader/const_A0_BaseDamage" />
 			</vars>
 		</UnitConstantsContainer>
 	</constants>
@@ -363,9 +361,9 @@
 	<isUltimateTalent>false</isUltimateTalent>
 	<isUnitFreeAfterCast>true</isUnitFreeAfterCast>
 	<manaCost>
-		<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAABIQg==</compiledString>
+		<compiledString>FQAAAAAAAAAAVYvs2e5dwwAAAAA=</compiledString>
 		<returnType>float</returnType>
-		<sString>50</sString>
+		<sString>0</sString>
 	</manaCost>
 	<marker></marker>
 	<microAI href="/Items/Talents/Class/Crusader/Ability_A1_B.TALENT" id="3826C2D8-2946-4A48-891A-C150C821CEA3">
