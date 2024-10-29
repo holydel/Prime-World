@@ -40,8 +40,8 @@
 	</castAllowRange>
 	<castLimitations />
 	<commonDescription textref="" />
-	<compiledDescriptionA textref="/Items/Talents/Class/Night/Ability1_Upg.TALENT_compiledDescriptionA.txt" />
-	<compiledDescriptionB textref="/Items/Talents/Class/Night/Ability1_Upg.TALENT_compiledDescriptionB.txt" />
+	<compiledDescriptionA textref="" />
+	<compiledDescriptionB textref="" />
 	<conditionFormulas>
 		<Item href="/Items/Talents/Class/Night/Ability1_Upg.TALENT" id="2241A062-9033-4778-B50E-0522AE674CF4">
 			<ConditionFormula>
