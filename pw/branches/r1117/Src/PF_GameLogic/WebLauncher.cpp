@@ -1322,7 +1322,7 @@ WebLauncherPostRequest::RegisterSessionRequest WebLauncherPostRequest::Reconnect
     if (errorSet.asString() == "Connect") { // Lobby is not started yet
       Json::Value gameToReconnect = parsedJson.get("data", "");
       if (!gameToReconnect.empty()) {
-        gameName = data.asString().c_str();
+        gameName = gameToReconnect.asString().c_str();
         return RegisterInSessionRequest_Connect; 
       }
     }
