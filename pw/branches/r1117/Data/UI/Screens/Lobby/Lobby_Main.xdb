@@ -22882,7 +22882,7 @@
 							<keepAspectRatio>DontCare</keepAspectRatio>
 							<location>
 								<x>10</x>
-								<y>5015</y>
+								<y>15</y>
 							</location>
 							<name>Text_SelectHero</name>
 							<needCrop>false</needCrop>
@@ -22893,7 +22893,7 @@
 							<shapeType>FromShapeOrBackgroundStyle</shapeType>
 							<size>
 								<x>778</x>
-								<y>5041</y>
+								<y>41</y>
 							</size>
 							<soundActivate>
 								<eventName></eventName>
@@ -23021,7 +23021,7 @@
 										<keepAspectRatio>DontCare</keepAspectRatio>
 										<location>
 											<x>310</x>
-											<y>50545</y>
+											<y>-50000</y>
 										</location>
 										<name>Text_Timer</name>
 										<needCrop>false</needCrop>
@@ -23032,7 +23032,7 @@
 										<shapeType>FromShapeOrBackgroundStyle</shapeType>
 										<size>
 											<x>159</x>
-											<y>5041</y>
+											<y>41</y>
 										</size>
 										<soundActivate>
 											<eventName></eventName>
@@ -23083,7 +23083,7 @@
 													<keepAspectRatio>DontCare</keepAspectRatio>
 													<location>
 														<x>-295</x>
-														<y>50551</y>
+														<y>551</y>
 													</location>
 													<name>Text_PWClassicLabel</name>
 													<needCrop>false</needCrop>
@@ -23094,7 +23094,7 @@
 													<shapeType>FromShapeOrBackgroundStyle</shapeType>
 													<size>
 														<x>778</x>
-														<y>5041</y>
+														<y>41</y>
 													</size>
 													<soundActivate>
 														<eventName></eventName>
@@ -23126,7 +23126,7 @@
 													<transparent>false</transparent>
 													<vAlign>Top</vAlign>
 													<visible>true</visible>
-													<wordWrap>true</wordWrap>
+													<wordWrap>false</wordWrap>
 												</UIImageLabelLayout>
 											</Item>
 										</subLayouts>
@@ -23142,7 +23142,7 @@
 										<transparent>false</transparent>
 										<vAlign>Top</vAlign>
 										<visible>true</visible>
-										<wordWrap>true</wordWrap>
+										<wordWrap>false</wordWrap>
 									</UIImageLabelLayout>
 								</Item>
 							</subLayouts>

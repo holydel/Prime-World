@@ -1190,7 +1190,7 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
 
   if(CmdLineLite::Instance().ArgsCount() < 2) {
       ShowLocalizedErrorMB( L"StartViaLauncher", L"Invalid arguments! Please start the game via the web-launcher. https://playpw.fun" );
-    return 0xA000;
+    return 0;
     } else {
 		
   const char* protocolLine = CmdLineLite::Instance().GetStringKey( "protocol", "" );
@@ -1207,7 +1207,7 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
 
   if(allTokens.size() < 4) {
     ShowLocalizedErrorMB( L"StartViaLauncher", L"Invalid protocol" );
-    return 0xA001;
+    return 0;
   }
 
   string protocolMethod = allTokens[2].c_str();
@@ -1231,7 +1231,7 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
 	if(strcmp(versionStrBuff, versionStr) != 0)
   {
     ShowLocalizedErrorMB( L"Update failed", L"Game update has failed! Try to run from web-launcher" );
-    return 0xA002;
+    return 0;
 	}
 	  const char * webToken = allTokens[1].c_str();
     WebLauncherPostRequest prequest;
@@ -1239,18 +1239,18 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
     if (response.retCode == WebLauncherPostRequest::LoginResponse_FAIL) {
       // Login failed
       ShowLocalizedErrorMB( L"StartViaLauncher", L"Login response failed! Please start the game via the web-launcher. https://playpw.fun" );
-      return 0xA003;
+      return 0;
     }
     if (response.retCode == WebLauncherPostRequest::LoginResponse_OFFLINE) {
       // Web is offline
       ShowLocalizedErrorMB( L"WebOffline", L"Web-launcher is offline" );
-      return 0xA004;
+      return 0;
     }
 
     
     if (response.retCode == WebLauncherPostRequest::LoginResponse_OK) {
       if (protocolMethod == "checkInstall") {
-        WebLauncherPostRequest syncCheckConnectionRequest(SERVER_IP_W, L"/api", SERVER_PORT_INT + 500, 0);
+        WebLauncherPostRequest syncCheckConnectionRequest(SERVER_IP_W, L"/api", SERVER_PORT_INT - 8, 0);
         if (syncCheckConnectionRequest.CheckConnectionRequest()) {
           systemLog( NLogg::LEVEL_MESSAGE ).Trace("Check install completed for %s", response.response.c_str());
 
@@ -1278,7 +1278,7 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
       g_sessionToken = sessionToken;
       g_playerToken = webToken;
 
-      WebLauncherPostRequest syncRegisterRequest(SERVER_IP_W, L"/api", SERVER_PORT_INT + 500, 0);
+      WebLauncherPostRequest syncRegisterRequest(SERVER_IP_W, L"/api", SERVER_PORT_INT - 8, 0);
 
       string gameName = "";
       WebLauncherPostRequest::RegisterSessionRequest registerInSessionResponse;
@@ -1287,21 +1287,27 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
       } else {
         registerInSessionResponse = syncRegisterRequest.RegisterInSession(response.response.c_str(), selectedHeroID, sessionToken, gameName);
       }
-  
-      if (registerInSessionResponse == WebLauncherPostRequest::RegisterInSessionRequest_Error) {
-        ShowLocalizedErrorMB( L"Error", L"Sync-server request failed" );
-        return 0xA006;
-      }
 
       static const int REGISTER_IN_SESSION_MAX_RETRY_COUNT = 10;
       int retryCount = 0;
+      while (registerInSessionResponse == WebLauncherPostRequest::RegisterInSessionRequest_Error) {
+        Sleep(1000);
+        registerInSessionResponse = syncRegisterRequest.RegisterInSession(response.response.c_str(), selectedHeroID, sessionToken, gameName);
+        retryCount++;
+        if (retryCount >= REGISTER_IN_SESSION_MAX_RETRY_COUNT) {
+          ShowLocalizedErrorMB( L"Error", L"Sync-server request failed - unable to join" );
+          return 0;
+        }
+      }
+
+      retryCount = 0;
       while (registerInSessionResponse == WebLauncherPostRequest::RegisterInSessionRequest_Wait) {
         Sleep(1000);
         registerInSessionResponse = syncRegisterRequest.RegisterInSession(response.response.c_str(), selectedHeroID, sessionToken, gameName);
         retryCount++;
         if (retryCount >= REGISTER_IN_SESSION_MAX_RETRY_COUNT) {
           ShowLocalizedErrorMB( L"Error", L"Sync-server connection failed - max retry count reached" );
-          return 0xA007;
+          return 0;
         }
       }
       

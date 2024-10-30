@@ -54,14 +54,14 @@ void SelectHeroScreen::CommonStep( bool bAppActive )
 
   float dt = NMainLoop::GetTimeDelta();
 
-  const float kickoutTime = 30.0f;
+  //const float kickoutTime = 60.0f;
   static int gameReadyRetryCount = 0;
 
   // 4. Wait for other players
   if (g_sessionStatus == WebLauncherPostRequest::RegisterInSessionRequest_HeroSelected) {
-    WebLauncherPostRequest testreq(SERVER_IP_W, L"/api", SERVER_PORT_INT + 500, 0);
+    WebLauncherPostRequest testreq(SERVER_IP_W, L"/api", SERVER_PORT_INT - 8, 0);
 
-    static const int CHECK_GAME_READY_MAX_RETRY_COUNT = 20;
+    static const int CHECK_GAME_READY_MAX_RETRY_COUNT = 60;
     if (!testreq.CheckIsGameReady(g_sessionToken.c_str()) && gameReadyRetryCount < CHECK_GAME_READY_MAX_RETRY_COUNT) {
       Sleep(1000);
     } else {
@@ -139,7 +139,7 @@ void SelectHeroScreen::CommonStep( bool bAppActive )
     logic->DebugDisplayPlayers( debugPlayerStatus );
   }
 
-  logic->UpdateTimer((int)(kickoutTime - lobbyTimeout));
+  logic->UpdateTimer((int)(debugPlayerIds.size() - 2));
 }
 
 
