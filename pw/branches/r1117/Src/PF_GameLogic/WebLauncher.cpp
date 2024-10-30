@@ -1210,7 +1210,7 @@ std::string WebLauncherPostRequest::ConvertFromClassID(int id)
 WebLauncherPostRequest::WebLoginResponse WebLauncherPostRequest::GetNickName(const char* token)
 {
   WebLoginResponse res;
-  res.response = std::string();
+  res.response = std::string(" ");
   res.retCode = LoginResponse_FAIL;
 
   char jsonBuff[1024];
@@ -1231,6 +1231,13 @@ WebLauncherPostRequest::WebLoginResponse WebLauncherPostRequest::GetNickName(con
   }
   
   Json::Value data = parsedJson.get("data", "");
+
+  Json::Value errorSet = parsedJson.get("error", "ERROR");
+  if (!errorSet.asString().empty()) {
+    res.retCode = LoginResponse_BLOCK;
+    return res;
+  }
+
   Json::Value nickname = data.get("nickname", "");
   std::string utf8String = nickname.asString();
   

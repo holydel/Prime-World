@@ -29,6 +29,7 @@ public:
   enum LoginResponse {
     LoginResponse_OK,
     LoginResponse_FAIL,
+    LoginResponse_BLOCK,
     LoginResponse_OFFLINE, // Not safe
   };
 

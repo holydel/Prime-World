@@ -1241,6 +1241,11 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
       ShowLocalizedErrorMB( L"StartViaLauncher", L"Login response failed! Please start the game via the web-launcher. https://playpw.fun" );
       return 0;
     }
+    if (response.retCode == WebLauncherPostRequest::LoginResponse_BLOCK) {
+      // Login failed
+      ShowLocalizedErrorMB( L"StartViaLauncher", L"Account is blocked!" );
+      return 0;
+    }
     if (response.retCode == WebLauncherPostRequest::LoginResponse_OFFLINE) {
       // Web is offline
       ShowLocalizedErrorMB( L"WebOffline", L"Web-launcher is offline" );
