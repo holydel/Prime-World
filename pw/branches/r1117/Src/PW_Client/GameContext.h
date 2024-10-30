@@ -77,7 +77,7 @@ public:
   virtual void Shutdown();
   virtual void OnAltTab(bool isActive);
   virtual StatisticService::GameStatistics * GameStatLogic() { return gameStatLogic; }
-  virtual lobby::EClientStatus::Enum GetLobbyStatus() const { return lobbyClient->Status(); }
+  virtual lobby::EClientStatus::Enum GetLobbyStatus() const { return lobbyClient ? lobbyClient->Status() : lobby::EClientStatus::Error; }
 
 protected:
   //IGateKeeperCallback
