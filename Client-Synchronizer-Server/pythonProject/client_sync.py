@@ -129,13 +129,6 @@ def api():
             sessionToken = data["sessionToken"]
             if sessionToken in activeSessionTokens:
                 session = activeSessionTokens[sessionToken]
-                # HACK!
-                response = {
-                    'error': '',
-                    'data': False
-                }
-                return jsonify(response)
-                # HACK
 
                 if len(session['players']) < 10:  # not enough players
                     response = {
@@ -156,6 +149,13 @@ def api():
             sessionToken = data["sessionToken"]
             if sessionToken in activeSessionTokens:
                 session = activeSessionTokens[sessionToken]
+
+                if 'usersData' in session:
+                    response = {
+                        'error': 'Connect',
+                        'data': session['gameName']
+                    }
+                    return jsonify(response)
 
                 response = {
                     'error': '',
