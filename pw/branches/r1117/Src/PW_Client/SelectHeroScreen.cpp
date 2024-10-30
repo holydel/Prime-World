@@ -62,10 +62,10 @@ void SelectHeroScreen::CommonStep( bool bAppActive )
     WebLauncherPostRequest testreq(SERVER_IP_W, L"/api", SERVER_PORT_INT - 8, 0);
 
     static const int CHECK_GAME_READY_MAX_RETRY_COUNT = 60;
-    if (!testreq.CheckIsGameReady(g_sessionToken.c_str()) && gameReadyRetryCount < CHECK_GAME_READY_MAX_RETRY_COUNT) {
-      Sleep(1000);
-    } else {
+    if (testreq.CheckIsGameReady(g_sessionToken.c_str()) || gameReadyRetryCount > CHECK_GAME_READY_MAX_RETRY_COUNT) {
       g_sessionStatus = WebLauncherPostRequest::RegisterInSessionRequest_InReadyState;
+    } else {
+      Sleep(1000);
     }
     gameReadyRetryCount++;
   }
