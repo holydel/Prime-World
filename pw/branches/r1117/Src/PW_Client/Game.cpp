@@ -1288,7 +1288,7 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
         registerInSessionResponse = syncRegisterRequest.RegisterInSession(response.response.c_str(), selectedHeroID, sessionToken, gameName);
       }
 
-      static const int REGISTER_IN_SESSION_MAX_RETRY_COUNT = 10;
+      static const int REGISTER_IN_SESSION_MAX_RETRY_COUNT = 20;
       int retryCount = 0;
       while (registerInSessionResponse == WebLauncherPostRequest::RegisterInSessionRequest_Error) {
         Sleep(1000);
