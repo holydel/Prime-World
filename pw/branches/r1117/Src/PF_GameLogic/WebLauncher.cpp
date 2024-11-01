@@ -1090,6 +1090,15 @@ std::map<std::wstring, WebLauncherPostRequest::WebUserData> WebLauncherPostReque
       useUserActives = false;
     }
 
+	Json::Value dataSkin = playerData.get("skin" , "");
+	if (!dataSkin.isInt()) {
+		//Random skin
+	 	webUserData.heroSkinID = -255;
+	 }
+	 else {
+	 	webUserData.heroSkinID = dataSkin.asInt();
+	 }
+	
     webUserData.talents.resize(36);
 
     for (int i = 0; i < 36; ++i) {

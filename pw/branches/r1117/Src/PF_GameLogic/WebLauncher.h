@@ -46,6 +46,7 @@ public:
 
   struct WebUserData {
     std::vector<TalentWebData> talents;
+	  int heroSkinID;
   };
 
   struct PlayerInfoByUserId {
