@@ -1093,7 +1093,7 @@ std::map<std::wstring, WebLauncherPostRequest::WebUserData> WebLauncherPostReque
 	Json::Value dataSkin = playerData.get("skin" , "");
 	if (!dataSkin.isInt()) {
 		//Random skin
-	 	webUserData.heroSkinID = -255;
+	 	webUserData.heroSkinID = 0;
 	 }
 	 else {
 	 	webUserData.heroSkinID = dataSkin.asInt();

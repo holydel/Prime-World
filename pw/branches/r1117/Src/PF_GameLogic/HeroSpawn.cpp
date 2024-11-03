@@ -616,7 +616,7 @@ namespace NWorld
 
         	  int heroSkinId = usersData[nick].heroSkinID;
 	    	  int heroSkinSize = hero->heroSkins.size();
-	    	  if(heroSkinId == -255){
+	    	  if(heroSkinId == 0){
 				//Random skin
 	    	  	heroSkinId = (kindaRandomNumber % (heroSkinSize + 1)) - 1;
 	    	  }
