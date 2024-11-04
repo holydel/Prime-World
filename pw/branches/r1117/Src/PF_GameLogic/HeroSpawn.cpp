@@ -517,7 +517,10 @@ namespace NWorld
 
 		if (players[it->playerId].playerType == NCore::EPlayerType::Human)
     {
-      heroSpawnDesc.playerInfo.heroRating = 1000;
+      heroSpawnDesc.playerInfo.heroRating = 1234;
+      heroSpawnDesc.playerInfo.ratingDeltaPrediction.onVictory = 15.1f;
+      heroSpawnDesc.playerInfo.ratingDeltaPrediction.onDefeat = -14.1f;
+
 			if (!players[it->playerId].nickname.empty()) {
         WebLauncherPostRequest::PlayerInfoByUserId pInfo;
         pInfo.nickname = players[it->playerId].nickname.c_str() + 1;
@@ -614,16 +617,9 @@ namespace NWorld
 					heroSpawnDesc.usePlayerInfoTalentSet = false;
         }
 
-        	  int heroSkinId = usersData[nick].heroSkinID;
-	    	  int heroSkinSize = hero->heroSkins.size();
-	    	  if(heroSkinId == 0){
-				//Random skin
-	    	  	heroSkinId = (kindaRandomNumber % (heroSkinSize + 1)) - 1;
-	    	  }
-	    	  DebugTrace(" skinId %d", heroSkinId);
-			  //heroSkinId < 0 - do not install the skin (default skin)
-	    	  if((heroSkinSize != 0) && (heroSkinId >= 0)){
-	    	  	heroSpawnDesc.playerInfo.heroSkin = hero->heroSkins[heroSkinId % heroSkinSize]->persistentId;
+      	int heroSkinId = usersData[nick].heroSkinID;
+    	  if(heroSkinId > 0){
+    	  	heroSpawnDesc.playerInfo.heroSkin = GetSkinByHeroPersistentId(hero->persistentId.c_str(), heroSkinId).c_str();
 			  }
 			}
 		}

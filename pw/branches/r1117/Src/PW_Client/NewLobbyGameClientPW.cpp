@@ -48,6 +48,7 @@
 #include "PF_GameLogic/SocialConnection.h"
 #include "PF_GameLogic/PlayerBehaviourTracking.h"
 #include "PF_GameLogic/WebLauncher.h"
+#include "PF_GameLogic/HeroSpawn.h"
 
 static bool s_threaded_loading = true;
 REGISTER_VAR( "threaded_loading", s_threaded_loading, STORAGE_NONE );
@@ -553,6 +554,7 @@ void GameClientPW::OnPlayerInfoLoaded()
     }  
   }
 
+  NDb::Ptr<NDb::HeroesDB> m_heroDb = NDb::SessionRoot::GetRoot()->logicRoot->heroes;
   for( int i = 0; i < startInfo.playersInfo.size(); ++i )
   {
     const NCore::PlayerStartInfo & playerStartInfo = startInfo.playersInfo[i];
@@ -568,13 +570,12 @@ void GameClientPW::OnPlayerInfoLoaded()
 
       info.exp = playerStartInfo.playerInfo.heroExp;
       info.force = force;
-      info.raiting = (int)( playerStartInfo.playerInfo.heroRating );
 
-      if (!hasBots && !Client()->GameParams().customGame) // с ботами или в договорных не дают рейт
-      {
-        info.winDeltaRaiting = playerStartInfo.playerInfo.ratingDeltaPrediction.onVictory;
-        info.loseDeltaRaiting = playerStartInfo.playerInfo.ratingDeltaPrediction.onDefeat;
-      }
+      info.raiting = (int)( 1234 );
+      info.winDeltaRaiting = 15.1f;
+      info.loseDeltaRaiting = -14.1f;
+      NDb::Ptr<NDb::Hero> hero = NWorld::FindHero( m_heroDb, NULL, playerStartInfo.playerInfo.heroId );
+      info.skinId = string(GetSkinByHeroPersistentId(hero->persistentId.c_str(), 1).c_str());
 
       info.isNovice = ( playerStartInfo.playerInfo.basket == NCore::EBasket::Newbie );
       info.isPremium = playerStartInfo.playerInfo.hasPremium;
@@ -599,8 +600,8 @@ void GameClientPW::OnPlayerInfoLoaded()
     info.locale = playerStartInfo.playerInfo.locale;
     if (MapDescription()->Description->canUseSkins)
     {
-      info.skinId = playerStartInfo.playerInfo.heroSkin;
-      info.isAnimatedAvatar = playerStartInfo.playerInfo.isAnimatedAvatar;
+      //info.skinId = playerStartInfo.playerInfo.heroSkin;
+      info.isAnimatedAvatar = false; //playerStartInfo.playerInfo.isAnimatedAvatar;
     }
     info.heroId = playerStartInfo.playerInfo.heroId;
     info.leagueIndex = playerStartInfo.playerInfo.leagueIndex;

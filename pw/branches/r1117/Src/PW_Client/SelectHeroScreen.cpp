@@ -54,70 +54,25 @@ void SelectHeroScreen::CommonStep( bool bAppActive )
 
   float dt = NMainLoop::GetTimeDelta();
 
-  //const float kickoutTime = 60.0f;
-  static int gameReadyRetryCount = 0;
+  const float timeToReady = 60.0f;
+  const int playersToReadyCount = 1;
 
-  // 4. Wait for other players
+  // 4. SetReady with all players connected or 
   if (g_sessionStatus == WebLauncherPostRequest::RegisterInSessionRequest_HeroSelected) {
-    WebLauncherPostRequest testreq(SERVER_IP_W, L"/api", SERVER_PORT_INT - 8, 0);
-
-    static const int CHECK_GAME_READY_MAX_RETRY_COUNT = 60;
-    if (testreq.CheckIsGameReady(g_sessionToken.c_str()) || gameReadyRetryCount > CHECK_GAME_READY_MAX_RETRY_COUNT) {
-      g_sessionStatus = WebLauncherPostRequest::RegisterInSessionRequest_InReadyState;
-    } else {
-      Sleep(1000);
-    }
-    gameReadyRetryCount++;
-  }
-
-  // 5. Set ready for anything state
-  static int gameReadyWaitCount = 0;
-  if (g_sessionStatus == WebLauncherPostRequest::RegisterInSessionRequest_InReadyState) {
-    if ( StrongMT<Game::IGameContextUiInterface> locked = GameCtx().Lock() ) {
-      static const int GAME_READY_WAIT_COUNT = 5;
-      if (gameReadyWaitCount < GAME_READY_WAIT_COUNT) {
-        Sleep(1000);
-      } else {
-        if (!logic->isPlayerReady) {
-          locked->SetReady(lobby::EGameMemberReadiness::ReadyForAnything);
-          logic->isPlayerReady = true;
-        }
-      }
-      gameReadyWaitCount++;
-    }
-  }
-  
-/*
-  if (!logic->IsPlayerReady() && debugPlayerIds.size() == 4) {
-    if ( StrongMT<Game::IGameContextUiInterface> locked = GameCtx().Lock() ) {
-      if (locked->GetLobbyStatus() == lobby::EClientStatus::InCustomLobby) {
-        locked->SetReady(lobby::EGameMemberReadiness::ReadyForAnything);
-      }
-    }
-  }
-  */
-
-#if 0 // Disabled in 1.4?
-//#ifdef _SHIPPING
-  // Temporary solution
-  if (!logic->IsPlayerReady() && debugPlayerIds.size() == 12) {
     lobbyTimeout += dt;
-    if (lobbyTimeout > kickoutTime) {
-        canBeKicked = true;
-        
-        CloseThisScreen();
-        
-        if ( StrongMT<Game::IGameContextUiInterface> locked = GameCtx().Lock() ) {
-          //locked->SetReady(lobby::EGameMemberReadiness::NotReady); // trigger update
-          locked->ConnectToCluster( g_devLogin, "" );
+    if (!logic->IsPlayerReady() && (debugPlayerIds.size() == playersToReadyCount + 2 || lobbyTimeout > timeToReady)) {
+      g_sessionStatus = WebLauncherPostRequest::RegisterInSessionRequest_InReadyState;
+      logic->PlayerReady();
+      if ( StrongMT<Game::IGameContextUiInterface> locked = GameCtx().Lock() ) {
+        if (locked->GetLobbyStatus() == lobby::EClientStatus::InCustomLobby) {
+          locked->SetReady(lobby::EGameMemberReadiness::ReadyForAnything);
         }
-        
-        return;
+      }
     }
   } else {
-    lobbyTimeout = 0.f;
+    lobbyTimeout = 0;
   }
-#endif
+
 
   bool update = false;
   for( map<int, float>::iterator it = debugHiliteTimes.begin(), next = it; it != debugHiliteTimes.end(); it = next )
