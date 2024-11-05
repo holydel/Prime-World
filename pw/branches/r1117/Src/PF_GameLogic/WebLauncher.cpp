@@ -10,9 +10,17 @@
 static std::set<std::string> allResourcesIDs;
 extern string g_sessionToken;
 extern string g_playerToken;
+extern string g_sessionName;
+extern WebLauncherPostRequest::RegisterSessionRequest g_sessionStatus;
+extern int g_playerTeamId;
+extern int g_playerHeroId;
+extern int g_playerPartyId;
+
+std::map<std::wstring, WebLauncherPostRequest::WebUserData> g_usersData;
+int g_playersCount;
 
 extern map<int, WebLauncherPostRequest::PlayerInfoByUserId> userIdToNicknameMap;
-//#pragma optimize("", off)
+#pragma optimize("", off)
 
 WebLauncherPostRequest::WebLauncherPostRequest(const wchar_t* serverUrl, const wchar_t* objectName, int serverPort, DWORD flags)
 {
@@ -988,7 +996,21 @@ std::string WideCharToMultiByteString(const wchar_t* wideCharString) {
     WideCharToMultiByte(CP_UTF8, 0, wideCharString, -1, &result[0], size_needed, NULL, NULL);
     return result;
 }
+std::string Fix1251Encoding(std::string utf8String)
+{
+  int utf8Length = static_cast<int>(utf8String.length());
+  int wideCharLength = MultiByteToWideChar(CP_UTF8, 0, utf8String.c_str(), utf8Length, NULL, 0);
 
+  wchar_t* wideCharString = new wchar_t[wideCharLength + 1];
+  MultiByteToWideChar(CP_UTF8, 0, utf8String.c_str(), utf8Length, wideCharString, wideCharLength);
+  wideCharString[wideCharLength] = L'\0';
+
+  int win1251Length = WideCharToMultiByte(1251, 0, wideCharString, -1, NULL, 0, NULL, NULL);
+  char* win1251String = new char[win1251Length];
+  WideCharToMultiByte(1251, 0, wideCharString, -1, win1251String, win1251Length, NULL, NULL);
+
+  return win1251String;
+}
 
 static Json::Value ParseJson(const char* json) {
   Json::Reader jsonReader;
@@ -1028,6 +1050,8 @@ std::string WebLauncherPostRequest::SendPostRequest(const std::string& jsonData)
 
   return responseStream;
 }
+
+
 
 std::map<std::wstring, WebLauncherPostRequest::WebUserData> WebLauncherPostRequest::GetUsersData(const std::vector<std::wstring>& nickNames, const std::vector<std::string>& heroNames)
 {
@@ -1207,15 +1231,12 @@ std::vector<WebLauncherPostRequest::TalentWebData> WebLauncherPostRequest::GetTa
 	return result;
 }
 
-static int firstID = 360;
-
 std::string WebLauncherPostRequest::ConvertFromClassID(int id)
 {
 	return classTalentMap[id-1];
 }
 
 
-// TODO: Remove duplicate code
 WebLauncherPostRequest::WebLoginResponse WebLauncherPostRequest::GetNickName(const char* token)
 {
   WebLoginResponse res;
@@ -1269,7 +1290,6 @@ WebLauncherPostRequest::WebLoginResponse WebLauncherPostRequest::GetNickName(con
   return res;
 }
 
-#pragma optimize("", off)
 WebLauncherPostRequest::RegisterSessionRequest WebLauncherPostRequest::RegisterInSession(const char* nickname, int heroId, const char* sessionToken, string& gameName)
 {
   char jsonBuff[1024];
@@ -1441,7 +1461,7 @@ void WebLauncherPostRequest::LobbyCreatedRequest(const char* nickname, const cha
   char jsonBuff[1024];
   ZeroMemory(jsonBuff,1024);
 
-  sprintf(jsonBuff,"{\"method\": \"lobbyCreated\", \"data\": {\"nickname\": \"%s\", \"sessionToken\": \"%s\"}}", nickname + 1, sessionToken);
+  sprintf(jsonBuff,"{\"method\": \"%s\", \"data\": {\"nickname\": \"%s\", \"sessionToken\": \"%s\"}}", g_sessionStatus == RegisterInSessionRequest_WebCreate ? "webLobbyCreated" : "lobbyCreated", nickname + 1, sessionToken);
   const std::string jsonData = jsonBuff;
 
   std::string responseStream = SendPostRequest(jsonData);
@@ -1545,4 +1565,322 @@ void WebLauncherPostRequest::SendSessionResults(const vector<int>& playerUserIds
   systemLog( NLogg::LEVEL_DEBUG ).Trace("Finishing game: %s", jsonReq.c_str());
 
   std::string responseStream = SendPostRequest(jsonReq);
+}
+
+
+static bool CheckPlayerInfo(const Json::Value& playerInfo)
+{
+  Json::Value nickname = playerInfo.get("nickname", Json::Value());
+  if (nickname.empty() || !nickname.isString()) {
+    OutputDebugStringA("Invalid nickname");
+    return false;
+  }
+  Json::Value hero = playerInfo.get("hero", Json::Value());
+  if (hero.empty() || !hero.isInt()) {
+    OutputDebugStringA("Invalid hero");
+    return false;
+  }
+  Json::Value team = playerInfo.get("team", Json::Value());
+  if (team.empty() || !team.isInt()) {
+    OutputDebugStringA("Invalid team");
+    return false;
+  }
+  Json::Value party = playerInfo.get("party", Json::Value());
+  if (party.empty() || !party.isInt()) {
+    OutputDebugStringA("Invalid party");
+    return false;
+  }
+  Json::Value skin = playerInfo.get("skin", Json::Value());
+  if (skin.empty() || !skin.isInt()) {
+    OutputDebugStringA("Invalid skin");
+    return false;
+  }
+  Json::Value rating = playerInfo.get("rating", Json::Value());
+  if (rating.empty()) {
+    OutputDebugStringA("Invalid rating");
+    return false;
+  }
+  {
+    Json::Value current = rating.get("current", Json::Value());
+    if (current.empty() || !current.isInt()) {
+      OutputDebugStringA("Invalid rating::current");
+      return false;
+    }
+    Json::Value victory = rating.get("victory", Json::Value());
+    if (victory.empty() || !victory.isInt()) {
+      OutputDebugStringA("Invalid rating::victory");
+      return false;
+    }
+    Json::Value loss = rating.get("loss", Json::Value());
+    if (loss.empty() || !loss.isInt()) {
+      OutputDebugStringA("Invalid rating::loss");
+      return false;
+    }
+  }
+  Json::Value build = playerInfo.get("build", Json::Value());
+  if (build.empty() || !build.isArray()) {
+    OutputDebugStringA("Invalid build");
+    return false;
+  }
+  Json::Value bar = playerInfo.get("bar", Json::Value());
+  if (bar.empty() || !bar.isArray()) {
+    OutputDebugStringA("Invalid bar");
+    return false;
+  }
+
+  return true;
+}
+
+WebLauncherPostRequest::WebLoginResponse WebLauncherPostRequest::GetSessionData(const char* token)
+{
+  WebLoginResponse res;
+  res.response = "";
+  res.retCode = LoginResponse_WEB_FAIL;
+
+  char jsonBuff[4096];
+  ZeroMemory(jsonBuff,4096);
+
+  std::string sessionToken(token, 32);
+  std::string playerKey(token + 32);
+
+  g_sessionToken = sessionToken.c_str();
+  g_playerToken = playerKey.c_str();
+
+  sprintf(jsonBuff,"{\"method\":\"connectToWebSession\",\"data\":{\"sessionToken\":\"%s\",\"playerKey\":\"%s\"}}", sessionToken.c_str(), playerKey.c_str());
+  OutputDebugStringA(jsonBuff);
+  const std::string jsonData = jsonBuff;
+
+  std::string responseStream = SendPostRequest(jsonData);
+
+  OutputDebugStringA(responseStream.c_str());
+
+  std::string curNumber = "";
+
+  Json::Value parsedJson = ParseJson(responseStream.c_str());
+  if (parsedJson.empty()) {
+    res.response = responseStream.c_str();
+    res.retCode = LoginResponse_WEB_FAIL;
+    return res; // Failed json
+  }
+
+  Json::Value error = parsedJson.get("error", "ERROR");
+  if (!error.asString().empty()) {
+    res.response = error.asString().c_str();
+    res.retCode = LoginResponse_WEB_FAIL;
+    return res;
+  }
+
+  Json::Value playerInfo = parsedJson.get("playerInfo", Json::Value());
+  if (playerInfo.empty()) {
+    res.response = "playerInfo section is empty";
+    res.retCode = LoginResponse_WEB_FAIL;
+    return res;
+  }
+  if (!CheckPlayerInfo(playerInfo)) {
+    res.response = "playerInfo section is not valid";
+    res.retCode = LoginResponse_WEB_FAIL;
+    return res;
+  }
+
+  Json::Value usersData = parsedJson.get("usersData", Json::Value());
+  if (usersData.empty() || !usersData.isArray()) {
+    res.response = "usersData section is empty or not array";
+    res.retCode = LoginResponse_WEB_FAIL;
+    return res;
+  }
+
+  Json::Value method = parsedJson.get("method", Json::Value());
+  if (method.empty()) {
+    res.response = "method section is empty";
+    res.retCode = LoginResponse_WEB_FAIL;
+    return res;
+  }
+
+  Json::Value nickname = playerInfo.get("nickname", Json::Value());
+  res.response = nickname.asString().c_str();
+
+  Json::Value hero = playerInfo.get("hero", Json::Value());
+  Json::Value team = playerInfo.get("team", Json::Value());
+  Json::Value party = playerInfo.get("party", Json::Value());
+  g_playerHeroId = hero.asInt();
+  g_playerTeamId = team.asInt();
+  g_playerPartyId = party.asInt();
+
+  if (method.asString() == "create") {
+    res.retCode = LoginResponse_WEB_CREATE;
+    g_sessionStatus = RegisterInSessionRequest_WebCreate;
+  }
+  if (method.asString() == "connect") {
+    res.retCode = LoginResponse_WEB_CONNECT;
+    g_sessionStatus = RegisterInSessionRequest_WebConnect;
+
+    Json::Value gameName = parsedJson.get("gameName", Json::Value());
+    if (gameName.empty()) {
+      res.response = "gameName section is empty";
+      res.retCode = LoginResponse_WEB_FAIL;
+      return res;
+    }
+    g_sessionName = gameName.asString().c_str();
+  }
+  if (method.asString() == "reconnect") {
+    res.retCode = LoginResponse_WEB_RECONNECT;
+    g_sessionStatus = RegisterInSessionRequest_WebReconnect;
+
+    Json::Value gameName = parsedJson.get("gameName", Json::Value());
+    if (gameName.empty() || gameName.asString().empty()) {
+      res.response = "gameName section is empty";
+      res.retCode = LoginResponse_WEB_FAIL;
+      return res;
+    }
+    g_sessionName = gameName.asString().c_str();
+  }
+
+  // Get users data
+  g_playersCount = 0;
+  Json::Value curPlayer = usersData[g_playersCount];
+  while (!curPlayer.empty()) {
+    if (!CheckPlayerInfo(curPlayer)) {
+      res.response = "player info is not valid";
+      res.retCode = LoginResponse_WEB_FAIL;
+      return res;
+    }
+
+    std::string curNickname = curPlayer.get("nickname", Json::Value()).asString();
+    int utf8Length = static_cast<int>(curNickname.length());
+    int wideCharLength = MultiByteToWideChar(CP_UTF8, 0, curNickname.c_str(), utf8Length, NULL, 0);
+
+    wchar_t* wideCharString = new wchar_t[wideCharLength + 1];
+    MultiByteToWideChar(CP_UTF8, 0, curNickname.c_str(), utf8Length, wideCharString, wideCharLength);
+    wideCharString[wideCharLength] = L'\0';
+    
+    WebUserData resData;
+    Json::Value rating = curPlayer.get("rating", Json::Value());
+    resData.currentRating = rating.get("current", Json::Value()).asInt();
+    resData.victoryRating = rating.get("victory", Json::Value()).asInt();
+    resData.lossRating = rating.get("loss", Json::Value()).asInt();
+    resData.heroSkinID = curPlayer.get("skin", Json::Value()).asInt();
+    
+    resData.talents.resize(36);
+
+    Json::Value dataTalents = curPlayer.get("build", Json::Value());
+    for (int i = 0; i < 36; ++i) {
+      if (dataTalents[i].empty() || dataTalents[i].asInt() == 0) {
+        resData.talents.clear();
+        break; // empty slot in build
+      }
+      resData.talents[i].webTalentId = dataTalents[i].asInt();
+    }
+    if (!resData.talents.empty()) {
+      Json::Value dataActives = curPlayer.get("bar", Json::Value());
+      for (int a = 0; a < 10; ++a) {
+        if (!dataActives[a].empty()) {
+          int activeRaw = dataActives[a].asInt();
+          if (activeRaw != 0) {
+            int activeRef = abs(activeRaw) - 1;
+            bool isSmartCast = activeRaw < 0;
+
+            resData.talents[activeRef].activeSlot = a;
+            resData.talents[activeRef].isSmartCast = isSmartCast;
+          }
+        }
+      }
+    }
+
+    g_usersData[wideCharString] = resData;
+
+    g_playersCount++;
+    curPlayer = usersData[g_playersCount];
+  }
+
+  return res;
+}
+
+std::string WebLauncherPostRequest::CreateDebugSession()
+{
+  std::string res = "";
+
+  char jsonBuff[4096];
+  ZeroMemory(jsonBuff,4096);
+
+  sprintf(jsonBuff,"{\"method\":\"registerSession\",\"key\":\"%s\",\"data\":{\"sessionToken\":\"%s\",\"players\":%s}}", "", "",
+    "[{\"id\":1,\"nickname\":\"Rekongstor\",\"hero\":9,\"team\":0,\"party\":0,\"skin\":1,\"rating\":{\"current\":2001,\"victory\":2021,\"loss\":1995},\"build\":[626,625,740,613,691,693,-645,38,746,611,610,692,-108,557,444,469,296,298,-107,-106,741,429,752,568,-103,-105,443,432,751,-104,-101,-102,390,609,564,-9],\"bar\":[31,26,19,24,3,0,0,0,0,0]}]"
+    );
+  OutputDebugStringA(jsonBuff);
+  const std::string jsonData = jsonBuff;
+
+  std::string responseStream = SendPostRequest(jsonData);
+
+  OutputDebugStringA(responseStream.c_str());
+
+  std::string curNumber = "";
+
+  Json::Value parsedJson = ParseJson(responseStream.c_str());
+  if (parsedJson.empty()) {
+    res = responseStream.c_str();
+    return res; // Failed json
+  }
+
+  Json::Value error = parsedJson.get("error", "ERROR");
+  if (!error.asString().empty()) {
+    res = error.asString().c_str();
+    return res;
+  }
+
+  return res;
+}
+void WebLauncherPostRequest::GetGameNameForConnection(const char* token)
+{
+  char jsonBuff[4096];
+  ZeroMemory(jsonBuff,4096);
+
+  std::string sessionToken(token, 32);
+  g_sessionToken = sessionToken.c_str();
+
+  sprintf(jsonBuff,"{\"method\":\"getGameNameForConnection\",\"data\":{\"sessionToken\":\"%s\"}}", sessionToken.c_str());
+  OutputDebugStringA(jsonBuff);
+  const std::string jsonData = jsonBuff;
+
+  std::string responseStream = SendPostRequest(jsonData);
+
+  OutputDebugStringA(responseStream.c_str());
+
+  std::string curNumber = "";
+
+  Json::Value parsedJson = ParseJson(responseStream.c_str());
+  if (parsedJson.empty()) {
+    return;
+  }
+
+  Json::Value error = parsedJson.get("error", "ERROR");
+  if (!error.asString().empty()) {
+    if (error.asString() == "reconnect") {
+      g_sessionStatus = RegisterInSessionRequest_WebReconnect;
+    } else {
+      return;
+    }
+  }
+
+  Json::Value data = parsedJson.get("data", Json::Value());
+  if (data.empty()) {
+    return;
+  }
+
+  Json::Value gameName = data.get("gameName", Json::Value());
+  if (gameName.empty()) {
+    return;
+  }
+  g_sessionName = gameName.asString().c_str();
+
+  return;
+}
+void WebLauncherPostRequest::NotifyGameStart(const char* nickname, const char* sessionToken)
+{
+  char jsonBuff[1024];
+  ZeroMemory(jsonBuff,1024);
+
+  sprintf(jsonBuff,"{\"method\": \"notifyGameStart\", \"data\": {\"nickname\": \"%s\", \"sessionToken\": \"%s\"}}", nickname + 1, sessionToken);
+  const std::string jsonData = jsonBuff;
+
+  std::string responseStream = SendPostRequest(jsonData);
+  // No response stream processing
 }

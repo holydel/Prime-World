@@ -12,6 +12,7 @@
 extern string g_devLogin;
 extern WebLauncherPostRequest::RegisterSessionRequest g_sessionStatus;
 extern string g_sessionToken;
+extern int g_playersCount;
 
 namespace NGameX
 {  
@@ -55,12 +56,11 @@ void SelectHeroScreen::CommonStep( bool bAppActive )
   float dt = NMainLoop::GetTimeDelta();
 
   const float timeToReady = 60.0f;
-  const int playersToReadyCount = 1;
 
   // 4. SetReady with all players connected or 
-  if (g_sessionStatus == WebLauncherPostRequest::RegisterInSessionRequest_HeroSelected) {
+  if (g_sessionStatus == WebLauncherPostRequest::RegisterInSessionRequest_HeroSelected || g_sessionStatus == WebLauncherPostRequest::RegisterInSessionRequest_WebHeroSelected) {
     lobbyTimeout += dt;
-    if (!logic->IsPlayerReady() && (debugPlayerIds.size() == playersToReadyCount + 2 || lobbyTimeout > timeToReady)) {
+    if (!logic->IsPlayerReady() && (debugPlayerIds.size() == g_playersCount + 2 || lobbyTimeout > timeToReady)) {
       g_sessionStatus = WebLauncherPostRequest::RegisterInSessionRequest_InReadyState;
       logic->PlayerReady();
       if ( StrongMT<Game::IGameContextUiInterface> locked = GameCtx().Lock() ) {

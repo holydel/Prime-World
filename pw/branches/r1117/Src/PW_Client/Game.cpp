@@ -719,8 +719,10 @@ string g_playerToken;
 
 string g_sessionName;
 WebLauncherPostRequest::RegisterSessionRequest g_sessionStatus;
+WebLauncherPostRequest::WebLoginResponse g_webLoginResponse;
 int g_playerTeamId;
 int g_playerHeroId;
+int g_playerPartyId;
 
 std::string GetDirectoryFromPath(const std::string& fullPath) {
     std::size_t found = fullPath.find_last_of("/\\");
@@ -1185,57 +1187,55 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
     context = new Game::GameContext(socialLaunchData.sessionId.c_str(), NULL, socialLaunchData.mapId.c_str(), socialServer, guildEmblem, false, true);
   }
 
-  {
-	  
+
 
   if(CmdLineLite::Instance().ArgsCount() < 2) {
-      ShowLocalizedErrorMB( L"StartViaLauncher", L"Invalid arguments! Please start the game via the web-launcher. https://playpw.fun" );
+    ShowLocalizedErrorMB( L"StartViaLauncher", L"Invalid arguments! Please start the game via the web-launcher. https://playpw.fun" );
     return 0;
-    } else {
-		
-  const char* protocolLine = CmdLineLite::Instance().GetStringKey( "protocol", "" );
-	  const char* delimiter = "/";
+  } else {
+    const char* protocolLine = CmdLineLite::Instance().GetStringKey( "protocol", "" );
+    const char* delimiter = "/";
 
     char* token = strtok(const_cast<char*>(protocolLine), delimiter);
-	std::vector<std::string> allTokens;
-	allTokens.reserve(4);
+    std::vector<std::string> allTokens;
+    allTokens.reserve(4);
 
     while (token != 0) {
-		allTokens.push_back(token);
-        token = strtok(0, delimiter);
+      allTokens.push_back(token);
+      token = strtok(0, delimiter);
     }
 
-  if(allTokens.size() < 4) {
-    ShowLocalizedErrorMB( L"StartViaLauncher", L"Invalid protocol" );
-    return 0;
-  }
+    if(allTokens.size() < 4) {
+      ShowLocalizedErrorMB( L"StartViaLauncher", L"Invalid protocol" );
+      return 0;
+    }
 
-  string protocolMethod = allTokens[2].c_str();
-  const char* versionStr = allTokens[3].c_str();
-  const char* sessionToken = NULL;
-  int selectedHeroID = 0;
-  int teamId = 0;
+    string protocolMethod = allTokens[1].c_str();
+    const char* protocolToken = allTokens[2].c_str();
+    const char* versionStr = allTokens[3].c_str();
 
-  if (allTokens.size() > 6) {
-    sessionToken = allTokens[4].c_str();
-    selectedHeroID = atoi(allTokens[5].c_str());
-    teamId = atoi(allTokens[6].c_str());
-  }
+    int versionMajor = VERSION_MAJOR;
+    int versionMinor = VERSION_MINOR;
+    char versionStrBuff[64] = {};
 
-	int versionMajor = VERSION_MAJOR;
-	int versionMinor = VERSION_MINOR;
-	char versionStrBuff[64] = {};
+    sprintf_s(versionStrBuff,"%d.%d",versionMajor, versionMinor);
 
-	sprintf_s(versionStrBuff,"%d.%d",versionMajor, versionMinor);
+    if(strcmp(versionStrBuff, versionStr) != 0) {
+      ShowLocalizedErrorMB( L"Update failed", L"Game update has failed! Try to run from web-launcher" );
+      return 0;
+    }
 
-	if(strcmp(versionStrBuff, versionStr) != 0)
-  {
-    ShowLocalizedErrorMB( L"Update failed", L"Game update has failed! Try to run from web-launcher" );
-    return 0;
-	}
-	  const char * webToken = allTokens[1].c_str();
-    WebLauncherPostRequest prequest;
-    WebLauncherPostRequest::WebLoginResponse response = prequest.GetNickName(webToken);
+    WebLauncherPostRequest::WebLoginResponse response;
+    if (protocolMethod == "runGame" || protocolMethod == "reconnect") {
+      WebLauncherPostRequest cprequest(SERVER_IP_W, L"/api", SERVER_PORT_INT - 8, 0);
+      cprequest.CreateDebugSession();
+      WebLauncherPostRequest rprequest(SERVER_IP_W, L"/api", SERVER_PORT_INT - 8, 0);
+      response = rprequest.GetSessionData(protocolToken);
+    } else {
+      WebLauncherPostRequest prequest;
+      response = prequest.GetNickName(protocolToken);
+    }
+
     if (response.retCode == WebLauncherPostRequest::LoginResponse_FAIL) {
       // Login failed
       ShowLocalizedErrorMB( L"StartViaLauncher", L"Login response failed! Please start the game via the web-launcher. https://playpw.fun" );
@@ -1251,8 +1251,13 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
       ShowLocalizedErrorMB( L"WebOffline", L"Web-launcher is offline" );
       return 0;
     }
+    if (response.retCode == WebLauncherPostRequest::LoginResponse_WEB_FAIL) {
+      systemLog( NLogg::LEVEL_MESSAGE ).Trace("Failed connection with reason: %s", response.response.c_str());
+      ShowLocalizedErrorMB( L"Connection failed", L"Connection failed! Please start the game via the web-launcher" );
+      return 0;
+    }
 
-    
+
     if (response.retCode == WebLauncherPostRequest::LoginResponse_OK) {
       if (protocolMethod == "checkInstall") {
         WebLauncherPostRequest syncCheckConnectionRequest(SERVER_IP_W, L"/api", SERVER_PORT_INT - 8, 0);
@@ -1260,70 +1265,94 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
           systemLog( NLogg::LEVEL_MESSAGE ).Trace("Check install completed for %s", response.response.c_str());
 
           WebLauncherPostRequest validateInstallRequest;
-          validateInstallRequest.ValidateInstallationRequest(webToken);
+          validateInstallRequest.ValidateInstallationRequest(protocolToken);
         } else {
           ShowLocalizedErrorMB( L"Error", L"Sync-server connection failed - not valid response" );
         }
         return 0;
-      }
-      /*
-      if (protocolMethod != "runGame") {
-        ShowLocalizedErrorMB( L"Error", L"Invalid protocol method" );
-        return 0xA005;
-      }
-      */
-
-      g_playerHeroId = selectedHeroID;
-      g_playerTeamId = teamId;
-
-      // Login success
-      currentLogin = std::string(" ") + response.response;
-      currentLogin[0] = 0x09;
-      g_devLogin = currentLogin.c_str();
-      g_sessionToken = sessionToken;
-      g_playerToken = webToken;
-
-      WebLauncherPostRequest syncRegisterRequest(SERVER_IP_W, L"/api", SERVER_PORT_INT - 8, 0);
-
-      string gameName = "";
-      WebLauncherPostRequest::RegisterSessionRequest registerInSessionResponse;
-      if (protocolMethod == "reconnect") {
-        registerInSessionResponse = syncRegisterRequest.ReconnectInSession(sessionToken, gameName);
       } else {
-        registerInSessionResponse = syncRegisterRequest.RegisterInSession(response.response.c_str(), selectedHeroID, sessionToken, gameName);
-      }
-
-      static const int REGISTER_IN_SESSION_MAX_RETRY_COUNT = 20;
-      int retryCount = 0;
-      while (registerInSessionResponse == WebLauncherPostRequest::RegisterInSessionRequest_Error) {
-        Sleep(1000);
-        registerInSessionResponse = syncRegisterRequest.RegisterInSession(response.response.c_str(), selectedHeroID, sessionToken, gameName);
-        retryCount++;
-        if (retryCount >= REGISTER_IN_SESSION_MAX_RETRY_COUNT) {
-          ShowLocalizedErrorMB( L"Error", L"Sync-server request failed - unable to join" );
+        // Old connection method
+        if (allTokens.size() < 5) {
+          ShowLocalizedErrorMB( L"Error", L"Not enough protocol parameters" );
           return 0;
         }
-      }
+        currentLogin = std::string(" ") + response.response;
+        currentLogin[0] = 0x09;
+        g_devLogin = currentLogin.c_str();
+        int selectedHeroID = atoi(allTokens[4].c_str());
 
-      retryCount = 0;
-      while (registerInSessionResponse == WebLauncherPostRequest::RegisterInSessionRequest_Wait) {
-        Sleep(1000);
-        registerInSessionResponse = syncRegisterRequest.RegisterInSession(response.response.c_str(), selectedHeroID, sessionToken, gameName);
-        retryCount++;
-        if (retryCount >= REGISTER_IN_SESSION_MAX_RETRY_COUNT) {
-          ShowLocalizedErrorMB( L"Error", L"Sync-server connection failed - max retry count reached" );
-          return 0;
+        WebLauncherPostRequest syncRegisterRequest(SERVER_IP_W, L"/api", SERVER_PORT_INT - 8, 0);
+
+        string gameName = "";
+        WebLauncherPostRequest::RegisterSessionRequest registerInSessionResponse;
+        if (protocolMethod == "reconnectCustom") {
+          registerInSessionResponse = syncRegisterRequest.ReconnectInSession("testSessionToken", gameName);
+        } else {
+          registerInSessionResponse = syncRegisterRequest.RegisterInSession(response.response.c_str(), selectedHeroID, "testSessionToken", gameName);
         }
+
+        static const int REGISTER_IN_SESSION_MAX_RETRY_COUNT = 20;
+        int retryCount = 0;
+        while (registerInSessionResponse == WebLauncherPostRequest::RegisterInSessionRequest_Error) {
+          Sleep(1000);
+          registerInSessionResponse = syncRegisterRequest.RegisterInSession(response.response.c_str(), selectedHeroID, "testSessionToken", gameName);
+          retryCount++;
+          if (retryCount >= REGISTER_IN_SESSION_MAX_RETRY_COUNT) {
+            ShowLocalizedErrorMB( L"Error", L"Sync-server request failed - unable to join" );
+            return 0;
+          }
+        }
+
+        retryCount = 0;
+        while (registerInSessionResponse == WebLauncherPostRequest::RegisterInSessionRequest_Wait) {
+          Sleep(1000);
+          registerInSessionResponse = syncRegisterRequest.RegisterInSession(response.response.c_str(), selectedHeroID, "testSessionToken", gameName);
+          retryCount++;
+          if (retryCount >= REGISTER_IN_SESSION_MAX_RETRY_COUNT) {
+            ShowLocalizedErrorMB( L"Error", L"Sync-server connection failed - max retry count reached" );
+            return 0;
+          }
+        }
+
+
+        const char * mapId = CmdLineLite::Instance().GetStringKey( "mapId", "" );
+
+        context = new Game::GameContext(sessLogin, g_devLogin.c_str(), mapId, socialServer, guildEmblem, isSpectator, false );
+        context->Start();
+        g_sessionStatus = registerInSessionResponse;
+        g_sessionName = gameName.c_str();
       }
-      
-
-      const char * mapId = CmdLineLite::Instance().GetStringKey( "mapId", "" );
-
-      context = new Game::GameContext(sessLogin, g_devLogin.c_str(), mapId, socialServer, guildEmblem, isSpectator, false );
-      context->Start();
-      g_sessionStatus = registerInSessionResponse;
-      g_sessionName = gameName.c_str();
     }
+
+    if (response.retCode == WebLauncherPostRequest::LoginResponse_WEB_CREATE ||
+      response.retCode == WebLauncherPostRequest::LoginResponse_WEB_CONNECT ||
+      response.retCode == WebLauncherPostRequest::LoginResponse_WEB_RECONNECT) {
+        // Login success
+        currentLogin = std::string(" ") + response.response;
+        currentLogin[0] = 0x09;
+        g_devLogin = currentLogin.c_str();
+
+        static const int REGISTER_IN_SESSION_MAX_RETRY_COUNT = 20;
+        for (int rrc = 0; rrc < REGISTER_IN_SESSION_MAX_RETRY_COUNT; ++rrc) {
+          if (!g_sessionName.empty() || response.retCode == WebLauncherPostRequest::LoginResponse_WEB_CREATE) {
+            break;
+          }
+          if (rrc >= REGISTER_IN_SESSION_MAX_RETRY_COUNT - 1) {
+            ShowLocalizedErrorMB( L"Error", L"Sync-server connection failed - max retry count reached" );
+            return 0;
+          }
+          Sleep(1000);
+          WebLauncherPostRequest waitSessionNameRequest(SERVER_IP_W, L"/api", SERVER_PORT_INT - 8, 0);
+          waitSessionNameRequest.GetGameNameForConnection(response.response.c_str());
+        }
+
+        const char * mapId = CmdLineLite::Instance().GetStringKey( "mapId", "" );
+
+        context = new Game::GameContext(sessLogin, g_devLogin.c_str(), mapId, socialServer, guildEmblem, isSpectator, false );
+        context->Start();
+    } else {
+      ShowLocalizedErrorMB( L"Error", L"Unknown connection status" );
+      return 0;
     }
   }
 

@@ -38,6 +38,7 @@
 //#pragma optimize("", off)
 
 map<int, WebLauncherPostRequest::PlayerInfoByUserId> userIdToNicknameMap;
+extern std::map<std::wstring, WebLauncherPostRequest::WebUserData> g_usersData;
 
 namespace 
 {
@@ -298,7 +299,7 @@ namespace NWorld
     return 1;
   }
 
-
+#pragma optimize("", off)
   bool SpawnHeroes( NWorld::PFWorld * pWorld, const NDb::AdvMapDescription* advMapDescription, const NCore::TPlayersStartInfo & players, const bool isTutorial, 
         TSpawnInfo* pSpawnInfo, NScene::IScene * pScene, LoadingProgress * progress, const ::NWorld::PFResourcesCollection::TalentMap& talents )
   {
@@ -464,7 +465,7 @@ namespace NWorld
     }
     WebLauncherPostRequest prequest(SERVER_IP_W, L"/api", SERVER_PORT_INT - 8, 0);
 
-    std::map<std::wstring, WebLauncherPostRequest::WebUserData> usersData = prequest.GetUsersData(nickNames, heroNames);
+    std::map<std::wstring, WebLauncherPostRequest::WebUserData> usersData = g_usersData.empty() ? prequest.GetUsersData(nickNames, heroNames) : g_usersData;
 
     // process spawn
     int heroesSpawned = 0;
@@ -515,11 +516,8 @@ namespace NWorld
 
 		//get tallent set by NickName and HeroID
 
-		if (players[it->playerId].playerType == NCore::EPlayerType::Human)
-    {
-      heroSpawnDesc.playerInfo.heroRating = 1234;
-      heroSpawnDesc.playerInfo.ratingDeltaPrediction.onVictory = 15.1f;
-      heroSpawnDesc.playerInfo.ratingDeltaPrediction.onDefeat = -14.1f;
+		if (players[it->playerId].playerType == NCore::EPlayerType::Human) {
+      WebLauncherPostRequest::WebUserData userData;
 
 			if (!players[it->playerId].nickname.empty()) {
         WebLauncherPostRequest::PlayerInfoByUserId pInfo;
@@ -532,7 +530,11 @@ namespace NWorld
 				WebLauncherPostRequest prequest;
 
         std::wstring nick = players[it->playerId].nickname.c_str() + 1;
-        std::vector<WebLauncherPostRequest::TalentWebData>& talentSet = usersData[nick].talents;
+        userData = usersData[nick];
+        heroSpawnDesc.playerInfo.heroRating = userData.currentRating;
+        heroSpawnDesc.playerInfo.ratingDeltaPrediction.onVictory = userData.victoryRating - userData.currentRating;
+        heroSpawnDesc.playerInfo.ratingDeltaPrediction.onDefeat = userData.lossRating - userData.currentRating;
+        std::vector<WebLauncherPostRequest::TalentWebData>& talentSet = userData.talents;
 			
 			if(talentSet.empty())
 			{
@@ -617,7 +619,7 @@ namespace NWorld
 					heroSpawnDesc.usePlayerInfoTalentSet = false;
         }
 
-      	int heroSkinId = usersData[nick].heroSkinID;
+      	int heroSkinId = userData.heroSkinID;
     	  if(heroSkinId > 0){
     	  	heroSpawnDesc.playerInfo.heroSkin = GetSkinByHeroPersistentId(hero->persistentId.c_str(), heroSkinId).c_str();
 			  }

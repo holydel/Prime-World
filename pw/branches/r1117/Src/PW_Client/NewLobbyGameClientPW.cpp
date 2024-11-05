@@ -66,6 +66,10 @@ REGISTER_DEV_VAR( "boost_thread_priority_val", s_boostVal, STORAGE_NONE);
 #define INSULT_REPORT_ITEM_ID 2
 #endif
 
+
+extern std::map<std::wstring, WebLauncherPostRequest::WebUserData> g_usersData;
+
+
 namespace lobby
 {
 
@@ -527,7 +531,7 @@ void GameClientPW::HideLoadingScreen()
 
 
 //////////////////////////////////////////////////////////////////////////
-
+#pragma optimize("", off)
 void GameClientPW::OnPlayerInfoLoaded()
 {
   if (!loadingScreeen)
@@ -566,16 +570,17 @@ void GameClientPW::OnPlayerInfoLoaded()
 
     if (playerStartInfo.playerType == NCore::EPlayerType::Human)
     {
+      WebLauncherPostRequest::WebUserData userData = g_usersData[playerStartInfo.nickname.c_str() + 1];
       float force = NWorld::Force::CalculateForce(playerStartInfo.playerInfo, playerStartInfo.usePlayerInfoTalentSet, resourceCollection, MapDescription()->Description);
 
       info.exp = playerStartInfo.playerInfo.heroExp;
       info.force = force;
 
-      info.raiting = (int)( 1234 );
-      info.winDeltaRaiting = 15.1f;
-      info.loseDeltaRaiting = -14.1f;
+      info.raiting = (int)( userData.currentRating );
+      info.winDeltaRaiting = userData.victoryRating - userData.currentRating;
+      info.loseDeltaRaiting = userData.lossRating - userData.currentRating;
       NDb::Ptr<NDb::Hero> hero = NWorld::FindHero( m_heroDb, NULL, playerStartInfo.playerInfo.heroId );
-      info.skinId = string(GetSkinByHeroPersistentId(hero->persistentId.c_str(), 1).c_str());
+      info.skinId = string(GetSkinByHeroPersistentId(hero->persistentId.c_str(), userData.heroSkinID).c_str());
 
       info.isNovice = ( playerStartInfo.playerInfo.basket == NCore::EBasket::Newbie );
       info.isPremium = playerStartInfo.playerInfo.hasPremium;

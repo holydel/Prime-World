@@ -143,6 +143,11 @@ void SelectGameModeScreen::Step( bool bAppActive )
     locked->ChangeCustomGameSettings(lobby::ETeam::Enum(g_playerTeamId), lobby::ETeam::Enum(g_playerTeamId), heroes[heroId]);
     g_sessionStatus = WebLauncherPostRequest::RegisterInSessionRequest_HeroSelected;
   }
+  if (locked->GetLobbyStatus() == lobby::EClientStatus::InCustomLobby && g_sessionStatus == WebLauncherPostRequest::RegisterInSessionRequest_WebJoined) {
+    int heroId = std::min(std::max((size_t)(g_playerHeroId - 1), 0u), _countof(heroes) - 1u);
+    locked->ChangeCustomGameSettings(lobby::ETeam::Enum(g_playerTeamId), lobby::ETeam::Enum(g_playerTeamId), heroes[heroId]);
+    g_sessionStatus = WebLauncherPostRequest::RegisterInSessionRequest_WebHeroSelected;
+  }
 
   lobby::TDevGamesList infos;
   locked->PopGameList( infos );
@@ -152,9 +157,13 @@ void SelectGameModeScreen::Step( bool bAppActive )
     locked->CreateGame("Maps/Multiplayer/MOBA/_.ADMPDSCR.xdb", 10);
     g_sessionStatus = WebLauncherPostRequest::RegisterInSessionRequest_Joined;
   }
+  if (g_sessionStatus == WebLauncherPostRequest::RegisterInSessionRequest_WebCreate) {
+    locked->CreateGame("Maps/Multiplayer/MOBA/_.ADMPDSCR.xdb", 10);
+    g_sessionStatus = WebLauncherPostRequest::RegisterInSessionRequest_WebJoined;
+  }
 
   // xxx Reconnect xxx
-  if (g_sessionStatus == WebLauncherPostRequest::RegisterInSessionRequest_Reconnect) {
+  if (g_sessionStatus == WebLauncherPostRequest::RegisterInSessionRequest_Reconnect || g_sessionStatus == WebLauncherPostRequest::RegisterInSessionRequest_WebReconnect) {
     int requiredGameId = -1;
 
     // Fix 1251 encoding
@@ -176,7 +185,11 @@ void SelectGameModeScreen::Step( bool bAppActive )
     }
     if (requiredGameId != -1) {
       locked->Reconnect(requiredGameId, s_reconnect_team, s_reconnect_hero );
-      g_sessionStatus = WebLauncherPostRequest::RegisterInSessionRequest_Joined;
+      if (g_sessionStatus == WebLauncherPostRequest::RegisterInSessionRequest_Reconnect) {
+        g_sessionStatus = WebLauncherPostRequest::RegisterInSessionRequest_Joined;
+      } else {
+        g_sessionStatus = WebLauncherPostRequest::RegisterInSessionRequest_WebJoined;
+      }
     }
   }
   
@@ -185,7 +198,7 @@ void SelectGameModeScreen::Step( bool bAppActive )
     logic->UpdateSessionInfo( *it );
 
   // 2. Connect to existing lobby by... session name
-  if (g_sessionStatus == WebLauncherPostRequest::RegisterInSessionRequest_Connect) {
+  if (g_sessionStatus == WebLauncherPostRequest::RegisterInSessionRequest_Connect || g_sessionStatus == WebLauncherPostRequest::RegisterInSessionRequest_WebConnect) {
     int requiredGameId = -1;
 
     // Fix 1251 encoding
@@ -207,8 +220,12 @@ void SelectGameModeScreen::Step( bool bAppActive )
     }
     if (requiredGameId != -1) {
       locked->JoinGame(requiredGameId);
-      g_sessionStatus = WebLauncherPostRequest::RegisterInSessionRequest_Joined;
-    }
+      if (g_sessionStatus == WebLauncherPostRequest::RegisterInSessionRequest_Connect) {
+        g_sessionStatus = WebLauncherPostRequest::RegisterInSessionRequest_Joined;
+      } else {
+        g_sessionStatus = WebLauncherPostRequest::RegisterInSessionRequest_WebJoined;
+      }
+    } 
   }
 
 

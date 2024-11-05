@@ -52,7 +52,7 @@ def api():
 
         # Register session (from web-launcher)
         if method == 'registerSession':
-            key = str(reqJson['key'])
+            key = reqJson['key']
             if key != api_key:
                 response = {
                     'error': 'Invalid API key'
@@ -81,8 +81,9 @@ def api():
                     }
                     return jsonify(response)
 
-                m = hashlib.sha256(player['id'] + data['sessionToken'] + api_key)
+                m = hashlib.sha256(str(player['id']) + data['sessionToken'] + api_key)
                 webSessions[data['sessionToken']]['players'][m.hexdigest()] = player
+                logger.info(m.hexdigest())
 
             response = {
                 'error': ''
@@ -126,8 +127,9 @@ def api():
                 response = {
                     'error': '',
                     'method': method,
-                    'playerInfo': jsonify(webSessions[sessionToken]['players'][playerKey]),
-                    'usersData': jsonify(list(webSessions[sessionToken]['players'].values()))
+                    'playerInfo': webSessions[sessionToken]['players'][playerKey],
+                    'usersData': list(webSessions[sessionToken]['players'].values()),
+                    'gameName': webSessions[sessionToken]['gameName']
                 }
                 return jsonify(response)
 
@@ -146,6 +148,51 @@ def api():
                     'error': '',
                 }
                 return jsonify(response)
+
+        # Get game name if is in connection process
+        if method == 'getGameNameForConnection':
+            if 'sessionToken' not in data:
+                response = {
+                    'error': 'Invalid request'
+                }
+                return jsonify(response)
+            sessionToken = data['sessionToken']
+
+            with webSessions[sessionToken]['lock']:
+                if webSessions[sessionToken]['gameStarted']:
+                    response = {
+                        'error': 'reconnect',
+                        'gameName': webSessions[sessionToken]['gameName']
+                    }
+                    return jsonify(response)
+                response = {
+                    'error': '',
+                    'gameName': webSessions[sessionToken]['gameName']
+                }
+                return jsonify(response)
+
+        # Web-Lobby created by player
+        if method == 'webLobbyCreated':
+            if 'sessionToken' not in data:
+                response = {
+                    'error': 'Invalid request'
+                }
+                return jsonify(response)
+            sessionToken = data['sessionToken']
+            if sessionToken in webSessions:
+                with webSessions[sessionToken]['lock']:
+                    webSession = webSessions[sessionToken]
+
+                    if webSession['gameName'] == '':  # save gameId
+                        webSessions[sessionToken]['gameName'] = data['nickname']
+                        response = {
+                            'error': ''
+                        }
+                        return jsonify(response)
+                    else:
+                        return 'Game already registered by someone else'
+            else:
+                return 'Invalid session id'
 
         # Check connection (checkInstall)
         if method == 'checkConnection':

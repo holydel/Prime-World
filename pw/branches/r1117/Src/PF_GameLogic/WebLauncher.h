@@ -31,6 +31,11 @@ public:
     LoginResponse_FAIL,
     LoginResponse_BLOCK,
     LoginResponse_OFFLINE, // Not safe
+
+    LoginResponse_WEB_CREATE,
+    LoginResponse_WEB_CONNECT,
+    LoginResponse_WEB_RECONNECT,
+    LoginResponse_WEB_FAIL,
   };
 
   struct WebLoginResponse {
@@ -45,8 +50,12 @@ public:
   };
 
   struct WebUserData {
+    WebUserData(): heroSkinID(0), currentRating(1100), victoryRating(1100), lossRating(1100) {}
     std::vector<TalentWebData> talents;
 	  int heroSkinID;
+    int currentRating;
+    int victoryRating;
+    int lossRating;
   };
 
   struct PlayerInfoByUserId {
@@ -65,12 +74,20 @@ public:
     RegisterInSessionRequest_HeroSelected,
     RegisterInSessionRequest_InReadyState,
 
+    RegisterInSessionRequest_WebCreate,
+    RegisterInSessionRequest_WebConnect,
+    RegisterInSessionRequest_WebReconnect,
+
+    RegisterInSessionRequest_WebJoined,
+    RegisterInSessionRequest_WebHeroSelected,
+
     RegisterInSessionRequest_Error,
   };
 
 	std::vector<TalentWebData> GetTallentSet(const wchar_t* nickName, const char* heroName);
   std::map<std::wstring, WebUserData> WebLauncherPostRequest::GetUsersData(const std::vector<std::wstring>& nickNames, const std::vector<std::string>& heroNames);
-	std::string ConvertFromClassID(int id);
+  std::string ConvertFromClassID(int id);
+  WebLoginResponse GetSessionData(const char* token);
   WebLoginResponse GetNickName(const char* token);
   std::string WebLauncherPostRequest::SendPostRequest(const std::string& jsonData);
   RegisterSessionRequest RegisterInSession(const char* nickname, int heroId, const char* sessionToken, string& gameName);
@@ -80,7 +97,11 @@ public:
   bool CheckConnectionRequest();
   void ValidateInstallationRequest(const char* playerToken);
   void SendSessionResults(const vector<int>& playerUserIds, int winningTeam);
+  std::string CreateDebugSession();
+  void GetGameNameForConnection(const char* token);
+  void NotifyGameStart(const char* nickname, const char* sessionToken);
 };
 
 extern std::string GetSkinByHeroPersistentId(const std::string& heroId, int someValue);
 extern std::string WideCharToMultiByteString(const wchar_t* wideCharString);
+extern std::string Fix1251Encoding(std::string utf8String);
