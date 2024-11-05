@@ -13,6 +13,7 @@ extern string g_sessionName;
 extern WebLauncherPostRequest::RegisterSessionRequest g_sessionStatus;
 extern int g_playerTeamId;
 extern int g_playerHeroId;
+extern int g_playerPartyId;
 
 static string s_reconnect_hero = "rockman";
 static int s_reconnect_team = 1;
@@ -146,6 +147,7 @@ void SelectGameModeScreen::Step( bool bAppActive )
   if (locked->GetLobbyStatus() == lobby::EClientStatus::InCustomLobby && g_sessionStatus == WebLauncherPostRequest::RegisterInSessionRequest_WebJoined) {
     int heroId = std::min(std::max((size_t)(g_playerHeroId - 1), 0u), _countof(heroes) - 1u);
     locked->ChangeCustomGameSettings(lobby::ETeam::Enum(g_playerTeamId), lobby::ETeam::Enum(g_playerTeamId), heroes[heroId]);
+    locked->SetDeveloperParty(g_playerPartyId);
     g_sessionStatus = WebLauncherPostRequest::RegisterInSessionRequest_WebHeroSelected;
   }
 
