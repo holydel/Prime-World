@@ -12,7 +12,6 @@
 
 bool g_needNotifyLobbyClients = false;
 string g_selectedHeroes[10];
-extern int g_playersCount;
 
 namespace lobby
 {
@@ -84,7 +83,7 @@ void ClientPW::CreateGame( const char * mapId, int maxPlayers, int autostartPlay
   StrongMT<NWorld::IMapLoader> mapLoader = mapCollection->CreateMapLoader( mapId );
   NI_DATA_VERIFY( mapLoader, NStr::StrFmt( "Could not load map '%s'", mapId ), return );
 
-  ClientBase::CreateGame( mapId, g_playersCount, mapLoader->GetMaxPlayersPerTeam(), autostartPlayers );
+  ClientBase::CreateGame( mapId, maxPlayers, mapLoader->GetMaxPlayersPerTeam(), autostartPlayers );
   //int gameId = gameParams.ID;
   //string tmp(gameId);
 

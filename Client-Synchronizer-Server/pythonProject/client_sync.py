@@ -18,7 +18,7 @@ stdout_handler = logging.StreamHandler(sys.stdout)
 stdout_handler.setLevel(logging.DEBUG)
 stdout_handler.setFormatter(formatter)
 
-file_handler = logging.FileHandler('sync_log.txt')
+file_handler = logging.FileHandler('sync_log.txt',encoding='utf-8')
 file_handler.setLevel(logging.DEBUG)
 file_handler.setFormatter(formatter)
 
@@ -48,7 +48,11 @@ def api():
     if request.method == 'POST':
         reqJson = json.loads(reqData, strict=False)
         method = str(reqJson['method'])
-        data = reqJson['data']
+        data = 0
+        if 'data' in reqJson:
+            data = reqJson['data']
+        if 'body' in reqJson:
+            data = reqJson['body']
 
         # Register session (from web-launcher)
         if method == 'registerSession':
@@ -81,7 +85,7 @@ def api():
                     }
                     return jsonify(response)
 
-                m = hashlib.sha256(str(player['id']) + data['sessionToken'] + api_key)
+                m = hashlib.sha256((str(player['id']) + data['sessionToken'] + api_key).encode('utf-8'))
                 webSessions[data['sessionToken']]['players'][m.hexdigest()] = player
                 logger.info(m.hexdigest())
 

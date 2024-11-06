@@ -1802,8 +1802,8 @@ std::string WebLauncherPostRequest::CreateDebugSession()
   char jsonBuff[4096];
   ZeroMemory(jsonBuff,4096);
 
-  sprintf(jsonBuff,"{\"method\":\"registerSession\",\"key\":\"%s\",\"data\":{\"sessionToken\":\"%s\",\"players\":%s}}", "", "",
-    "[{\"id\":1,\"nickname\":\"Rekongstor\",\"hero\":9,\"team\":0,\"party\":0,\"skin\":1,\"rating\":{\"current\":2001,\"victory\":2021,\"loss\":1995},\"build\":[626,625,740,613,691,693,-645,38,746,611,610,692,-108,557,444,469,296,298,-107,-106,741,429,752,568,-103,-105,443,432,751,-104,-101,-102,390,609,564,-9],\"bar\":[31,26,19,24,3,0,0,0,0,0]}]"
+  sprintf(jsonBuff,"{\"method\":\"registerSession\",\"key\":\"%s\",\"body\":{\"sessionToken\":\"%s\",\"players\":%s}}", "", "",
+    "[{\"id\":1,\"nickname\":\"Rekongstor\",\"muteChat\":false,\"hero\":9,\"team\":0,\"party\":0,\"skin\":1,\"rating\":{\"current\":2001,\"victory\":2021,\"loss\":1995},\"build\":[626,625,740,613,691,693,-645,38,746,611,610,692,-108,557,444,469,296,298,-107,-106,741,429,752,568,-103,-105,443,432,751,-104,-101,-102,390,609,564,-9],\"bar\":[31,26,19,24,3,0,0,0,0,0]}]"
     );
   OutputDebugStringA(jsonBuff);
   const std::string jsonData = jsonBuff;

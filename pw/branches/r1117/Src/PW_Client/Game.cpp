@@ -1227,8 +1227,8 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
 
     WebLauncherPostRequest::WebLoginResponse response;
     if (protocolMethod == "runGame" || protocolMethod == "reconnect") {
-      WebLauncherPostRequest cprequest(SERVER_IP_W, L"/api", SERVER_PORT_INT - 8, 0);
-      cprequest.CreateDebugSession();
+      //WebLauncherPostRequest cprequest(SERVER_IP_W, L"/api", SERVER_PORT_INT - 8, 0);
+      //cprequest.CreateDebugSession();
       WebLauncherPostRequest rprequest(SERVER_IP_W, L"/api", SERVER_PORT_INT - 8, 0);
       response = rprequest.GetSessionData(protocolToken);
     } else {
