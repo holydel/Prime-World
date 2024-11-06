@@ -14,6 +14,8 @@
 #include "BoundingPrimitives.h"
 #include "ConvertDirection.h"
 
+extern int g_playerTeamId;
+extern int g_fixedTeamCam;
 
 static float s_SizeScale = 1.0f;
 REGISTER_VAR("shadowMapScale", s_SizeScale, STORAGE_USER)
@@ -120,7 +122,8 @@ void Render::ShadowManager::Params::FromBlend(const Params& lhs, const Params& r
   shadowFarRange = Lerp(lhs.shadowFarRange, rhs.shadowFarRange, factor);
 
   // TODO: slerp?
-  shadowDirection.Yaw = Lerp(lhs.shadowDirection.Yaw, rhs.shadowDirection.Yaw, factor);
+  float teamCorrectionYaw = (g_fixedTeamCam == 0 || g_fixedTeamCam - 1 == g_playerTeamId) ? 0.f : 180.f;
+  shadowDirection.Yaw = Lerp(lhs.shadowDirection.Yaw + teamCorrectionYaw, rhs.shadowDirection.Yaw + teamCorrectionYaw, factor);
   shadowDirection.Pitch = Lerp(lhs.shadowDirection.Pitch, rhs.shadowDirection.Pitch, factor);
 }
 
