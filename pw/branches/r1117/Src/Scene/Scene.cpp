@@ -43,6 +43,9 @@ REGISTER_DEV_VAR("frustum_refineBB", s_refineFrustumBB, STORAGE_NONE)
 static NDebug::StringDebugVar mainPerf_SCSummary( "SCs summary", "PerfCnt" );
 #endif // SCENECOMPONENT_STATS
 
+extern int g_playerTeamId;
+extern int g_fixedTeamCam;
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 static Render::StaticMesh* pPickPointModel = 0;
 static float culledscreensize = 0.1f;
@@ -682,6 +685,14 @@ void Scene::CalculateLightingConstants(const NDb::LightEnvironment* const lightE
 {
   using namespace Render;
 
+  float teamCorrectionYaw = (g_fixedTeamCam == 0 || g_fixedTeamCam - 1 == g_playerTeamId) ? 0.f : 180.f;
+  NDb::Direction light1Dir = lightEnvironment->Light1Direction;
+  light1Dir.Yaw += teamCorrectionYaw;
+  NDb::Direction light2Dir = lightEnvironment->Light2Direction;
+  light2Dir.Yaw += teamCorrectionYaw;
+  NDb::Direction smDir = lightEnvironment->shadowDirection;
+  smDir.Yaw += teamCorrectionYaw;
+
   if ( lightEnvironment )
   {
     // Make shader constants for environment lighting
@@ -691,11 +702,11 @@ void Scene::CalculateLightingConstants(const NDb::LightEnvironment* const lightE
       SHShaderConstants envLighting2;
       CVec3 dir;
 
-      ConvertDirection(lightEnvironment->Light1Direction, dir);
+      ConvertDirection(light1Dir, dir);
       EvaluateSHCoeffsForDirLight(lightEnvironment->Light1DiffuseColor, CVec3(-dir.x, -dir.y, -dir.z), c1);
       ConvertSHCoeffs2ShaderConstants(c1, sc.envLighting);
 
-      ConvertDirection(lightEnvironment->Light2Direction, dir);
+      ConvertDirection(light2Dir, dir);
       EvaluateSHCoeffsForDirLight(lightEnvironment->Light2DiffuseColor, CVec3(-dir.x, -dir.y, -dir.z), c2);
       ConvertSHCoeffs2ShaderConstants(c2, envLighting2);
 
@@ -708,9 +719,9 @@ void Scene::CalculateLightingConstants(const NDb::LightEnvironment* const lightE
     }
 
     // Update scene constants
-    ConvertDirection(lightEnvironment->Light1Direction, sc.light1Direction);
-    ConvertDirection(lightEnvironment->Light2Direction, sc.light2Direction);
-    ConvertDirection(lightEnvironment->shadowDirection, sc.shadowDirection);
+    ConvertDirection(light1Dir, sc.light1Direction);
+    ConvertDirection(light2Dir, sc.light2Direction);
+    ConvertDirection(smDir, sc.shadowDirection);
 
     sc.ambientColor  = lightEnvironment->AmbientColor;
     sc.diffuse1Color = lightEnvironment->Light1DiffuseColor;

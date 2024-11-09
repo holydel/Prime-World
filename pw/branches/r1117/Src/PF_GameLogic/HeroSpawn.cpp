@@ -299,7 +299,6 @@ namespace NWorld
     return 1;
   }
 
-#pragma optimize("", off)
   bool SpawnHeroes( NWorld::PFWorld * pWorld, const NDb::AdvMapDescription* advMapDescription, const NCore::TPlayersStartInfo & players, const bool isTutorial, 
         TSpawnInfo* pSpawnInfo, NScene::IScene * pScene, LoadingProgress * progress, const ::NWorld::PFResourcesCollection::TalentMap& talents )
   {
@@ -531,7 +530,7 @@ namespace NWorld
 
         std::wstring nick = players[it->playerId].nickname.c_str() + 1;
         userData = usersData[nick];
-        heroSpawnDesc.playerInfo.heroRating = userData.currentRating;
+        heroSpawnDesc.playerInfo.heroRating = (int)userData.currentRating;
         heroSpawnDesc.playerInfo.ratingDeltaPrediction.onVictory = userData.victoryRating - userData.currentRating;
         heroSpawnDesc.playerInfo.ratingDeltaPrediction.onDefeat = userData.lossRating - userData.currentRating;
         std::vector<WebLauncherPostRequest::TalentWebData>& talentSet = userData.talents;
@@ -621,7 +620,7 @@ namespace NWorld
 
       	int heroSkinId = userData.heroSkinID;
     	  if(heroSkinId > 0){
-    	  	heroSpawnDesc.playerInfo.heroSkin = GetSkinByHeroPersistentId(hero->persistentId.c_str(), heroSkinId).c_str();
+    	  	heroSpawnDesc.playerInfo.heroSkin = GetSkinByHeroPersistentId(hero->persistentId.c_str(), heroSkinId - 1).c_str();
 			  }
 			}
 		}

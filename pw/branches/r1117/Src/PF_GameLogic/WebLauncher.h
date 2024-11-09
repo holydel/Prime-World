@@ -53,9 +53,9 @@ public:
     WebUserData(): heroSkinID(0), currentRating(1100), victoryRating(1100), lossRating(1100) {}
     std::vector<TalentWebData> talents;
 	  int heroSkinID;
-    int currentRating;
-    int victoryRating;
-    int lossRating;
+    float currentRating;
+    float victoryRating;
+    float lossRating;
   };
 
   struct PlayerInfoByUserId {

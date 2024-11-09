@@ -77,7 +77,6 @@ void ClientPW::OnLobbyDataChange()
 }
 
 
-#pragma optimize("", off)
 void ClientPW::CreateGame( const char * mapId, int maxPlayers, int autostartPlayers /*= -1*/ )
 {
   StrongMT<NWorld::IMapLoader> mapLoader = mapCollection->CreateMapLoader( mapId );

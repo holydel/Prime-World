@@ -531,7 +531,6 @@ void GameClientPW::HideLoadingScreen()
 
 
 //////////////////////////////////////////////////////////////////////////
-#pragma optimize("", off)
 void GameClientPW::OnPlayerInfoLoaded()
 {
   if (!loadingScreeen)
@@ -580,7 +579,7 @@ void GameClientPW::OnPlayerInfoLoaded()
       info.winDeltaRaiting = userData.victoryRating - userData.currentRating;
       info.loseDeltaRaiting = userData.lossRating - userData.currentRating;
       NDb::Ptr<NDb::Hero> hero = NWorld::FindHero( m_heroDb, NULL, playerStartInfo.playerInfo.heroId );
-      info.skinId = string(GetSkinByHeroPersistentId(hero->persistentId.c_str(), userData.heroSkinID).c_str());
+      info.skinId = string(GetSkinByHeroPersistentId(hero->persistentId.c_str(), userData.heroSkinID - 1).c_str());
 
       info.isNovice = ( playerStartInfo.playerInfo.basket == NCore::EBasket::Newbie );
       info.isPremium = playerStartInfo.playerInfo.hasPremium;

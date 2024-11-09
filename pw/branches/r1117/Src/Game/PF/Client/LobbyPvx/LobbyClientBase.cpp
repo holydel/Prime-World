@@ -611,7 +611,6 @@ void ClientBase::SpectateGame( int gameId )
 }
 
 
-#pragma optimize("", off)
 void ClientBase::ChangeCustomGameSettings( ETeam::Enum team, ETeam::Enum faction, const string & heroId )
 {
   NI_VERIFY( status == EClientStatus::InCustomLobby, "", return );

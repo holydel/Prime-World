@@ -20,7 +20,6 @@ std::map<std::wstring, WebLauncherPostRequest::WebUserData> g_usersData;
 int g_playersCount;
 
 extern map<int, WebLauncherPostRequest::PlayerInfoByUserId> userIdToNicknameMap;
-#pragma optimize("", off)
 
 WebLauncherPostRequest::WebLauncherPostRequest(const wchar_t* serverUrl, const wchar_t* objectName, int serverPort, DWORD flags)
 {
@@ -1602,17 +1601,17 @@ static bool CheckPlayerInfo(const Json::Value& playerInfo)
   }
   {
     Json::Value current = rating.get("current", Json::Value());
-    if (current.empty() || !current.isInt()) {
+    if (current.empty() || !current.isNumeric()) {
       OutputDebugStringA("Invalid rating::current");
       return false;
     }
     Json::Value victory = rating.get("victory", Json::Value());
-    if (victory.empty() || !victory.isInt()) {
+    if (victory.empty() || !victory.isNumeric()) {
       OutputDebugStringA("Invalid rating::victory");
       return false;
     }
     Json::Value loss = rating.get("loss", Json::Value());
-    if (loss.empty() || !loss.isInt()) {
+    if (loss.empty() || !loss.isNumeric()) {
       OutputDebugStringA("Invalid rating::loss");
       return false;
     }
@@ -1703,7 +1702,7 @@ WebLauncherPostRequest::WebLoginResponse WebLauncherPostRequest::GetSessionData(
   Json::Value team = playerInfo.get("team", Json::Value());
   Json::Value party = playerInfo.get("party", Json::Value());
   g_playerHeroId = hero.asInt();
-  g_playerTeamId = team.asInt();
+  g_playerTeamId = team.asInt() - 1;
   g_playerPartyId = party.asInt();
 
   if (method.asString() == "create") {
@@ -1755,9 +1754,9 @@ WebLauncherPostRequest::WebLoginResponse WebLauncherPostRequest::GetSessionData(
     
     WebUserData resData;
     Json::Value rating = curPlayer.get("rating", Json::Value());
-    resData.currentRating = rating.get("current", Json::Value()).asInt();
-    resData.victoryRating = rating.get("victory", Json::Value()).asInt();
-    resData.lossRating = rating.get("loss", Json::Value()).asInt();
+    resData.currentRating = rating.get("current", Json::Value()).asFloat();
+    resData.victoryRating = rating.get("victory", Json::Value()).asFloat();
+    resData.lossRating = rating.get("loss", Json::Value()).asFloat();
     resData.heroSkinID = curPlayer.get("skin", Json::Value()).asInt();
     
     resData.talents.resize(36);
@@ -1803,7 +1802,7 @@ std::string WebLauncherPostRequest::CreateDebugSession()
   ZeroMemory(jsonBuff,4096);
 
   sprintf(jsonBuff,"{\"method\":\"registerSession\",\"key\":\"%s\",\"body\":{\"sessionToken\":\"%s\",\"players\":%s}}", "", "",
-    "[{\"id\":1,\"nickname\":\"Rekongstor\",\"muteChat\":false,\"hero\":9,\"team\":0,\"party\":0,\"skin\":1,\"rating\":{\"current\":2001,\"victory\":2021,\"loss\":1995},\"build\":[626,625,740,613,691,693,-645,38,746,611,610,692,-108,557,444,469,296,298,-107,-106,741,429,752,568,-103,-105,443,432,751,-104,-101,-102,390,609,564,-9],\"bar\":[31,26,19,24,3,0,0,0,0,0]}]"
+    "[{\"id\":1,\"nickname\":\"Rekongstor\",\"muteChat\":false,\"hero\":29,\"team\":2,\"party\":0,\"skin\":1,\"rating\":{\"current\":2001.01234567,\"victory\":2021.987654321,\"loss\":1995.456789123123456},\"build\":[689,634,413,576,415,377,687,632,370,510,426,723,686,631,605,508,677,676,-266,420,607,577,429,675,-263,-264,606,506,431,-265,-261,-262,406,507,564,-29],\"bar\":[-31,-32,30,19,8,0,0,0,0,0]}]"
     );
   OutputDebugStringA(jsonBuff);
   const std::string jsonData = jsonBuff;
