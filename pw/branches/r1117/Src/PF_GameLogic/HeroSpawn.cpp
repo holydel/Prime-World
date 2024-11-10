@@ -522,6 +522,7 @@ namespace NWorld
         WebLauncherPostRequest::PlayerInfoByUserId pInfo;
         pInfo.nickname = players[it->playerId].nickname.c_str() + 1;
         pInfo.teamId = (int)players[it->playerId].teamID;
+        pInfo.isLeaver = false;
 
         userIdToNicknameMap[players[it->playerId].userID] = pInfo;
 

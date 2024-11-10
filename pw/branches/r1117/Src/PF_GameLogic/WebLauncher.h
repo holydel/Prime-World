@@ -61,6 +61,7 @@ public:
   struct PlayerInfoByUserId {
     wstring nickname;
     int teamId;
+    bool isLeaver;
   };
 
   enum RegisterSessionRequest {

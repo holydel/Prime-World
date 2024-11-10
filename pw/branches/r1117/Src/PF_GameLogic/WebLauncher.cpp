@@ -16,6 +16,8 @@ extern int g_playerTeamId;
 extern int g_playerHeroId;
 extern int g_playerPartyId;
 
+static std::map<std::string, int> s_userNicknameToUserIdMap;
+
 std::map<std::wstring, WebLauncherPostRequest::WebUserData> g_usersData;
 int g_playersCount;
 
@@ -1567,11 +1569,50 @@ void WebLauncherPostRequest::SendSessionResults(const vector<int>& playerUserIds
 }
 
 
+void WebLauncherPostRequest::SendFinishGameRequest(const vector<int>& playerUserIds, int winningTeam)
+{
+  char jsonBuff[2048];
+  ZeroMemory(jsonBuff,2048);
+
+  sprintf(jsonBuff,"{\"method\":\"notifyGameFinish\",\"data\":{\"sessionToken\":\"%s\",\"win\":%d,\"afk\":[", g_sessionToken.c_str(), winningTeam + 1, g_playerToken.c_str());
+  std::string jsonReq = jsonBuff;
+
+  std::vector<int> leavers;
+  // Prepare json request
+  for (int pId = 0; pId < playerUserIds.size(); ++pId) {
+    map<int, WebLauncherPostRequest::PlayerInfoByUserId>::iterator playerIt = userIdToNicknameMap.find(playerUserIds[pId]);
+    if (!(playerIt == userIdToNicknameMap.end())) {
+      WebLauncherPostRequest::PlayerInfoByUserId& playerInfoByUserId = (*playerIt).second;
+      std::string nickNameU8 = WideCharToMultiByteString(playerInfoByUserId.nickname.c_str());
+      if (playerInfoByUserId.isLeaver && s_userNicknameToUserIdMap.find(nickNameU8) != s_userNicknameToUserIdMap.end()) {
+        leavers.push_back(s_userNicknameToUserIdMap[nickNameU8]);
+      }
+    }
+  }
+
+  for (int pId = 0; pId < leavers.size(); ++pId) {
+    ZeroMemory(jsonBuff,2048);
+    sprintf(jsonBuff,"%d%s", leavers[pId], pId == leavers.size() - 1 ? "" : "," );
+    jsonReq += jsonBuff;
+  }
+
+  jsonReq += "]}}";
+
+  systemLog( NLogg::LEVEL_DEBUG ).Trace("Finishing game: %s", jsonReq.c_str());
+
+  std::string responseStream = SendPostRequest(jsonReq);
+}
+
 static bool CheckPlayerInfo(const Json::Value& playerInfo)
 {
   Json::Value nickname = playerInfo.get("nickname", Json::Value());
   if (nickname.empty() || !nickname.isString()) {
     OutputDebugStringA("Invalid nickname");
+    return false;
+  }
+  Json::Value userId = playerInfo.get("id", Json::Value());
+  if (userId.empty() || !userId.isInt()) {
+    OutputDebugStringA("Invalid userId");
     return false;
   }
   Json::Value hero = playerInfo.get("hero", Json::Value());
@@ -1697,6 +1738,9 @@ WebLauncherPostRequest::WebLoginResponse WebLauncherPostRequest::GetSessionData(
 
   Json::Value nickname = playerInfo.get("nickname", Json::Value());
   res.response = nickname.asString().c_str();
+
+  Json::Value userId = playerInfo.get("id", Json::Value());
+  s_userNicknameToUserIdMap[nickname.asString()] = userId;
 
   Json::Value hero = playerInfo.get("hero", Json::Value());
   Json::Value team = playerInfo.get("team", Json::Value());

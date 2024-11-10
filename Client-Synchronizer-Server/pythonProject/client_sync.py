@@ -75,7 +75,7 @@ def api():
                 }
                 return jsonify(response)
 
-            webSessions[data['sessionToken']] = {'players': {}, 'lock': threading.Lock(), 'gameName': '', 'gameStarted': False }
+            webSessions[data['sessionToken']] = {'players': {}, 'lock': threading.Lock(), 'gameName': '', 'gameStarted': False, 'gameFinished': False }
 
             # generate player keys, fill player data
             for player in data['players']:
@@ -152,6 +152,28 @@ def api():
                     'error': '',
                 }
                 return jsonify(response)
+
+        if method == 'notifyGameFinish':
+            if 'sessionToken' not in data:
+                response = {
+                    'error': 'Invalid request'
+                }
+                return jsonify(response)
+            sessionToken = data['sessionToken']
+
+            with webSessions[sessionToken]['lock']:
+                if webSessions[sessionToken]['gameFinished']:
+                    response = {
+                        'error': 'Game finished'
+                    }
+                    return jsonify(response)
+                else:
+                    webSessions[sessionToken]['gameFinished'] = True
+                    requests.post('https://playpw.fun/api/launcher/', json={'method': 'finishGame', 'data': data})
+                    response = {
+                        'error': '',
+                    }
+                    return jsonify(response)
 
         # Get game name if is in connection process
         if method == 'getGameNameForConnection':

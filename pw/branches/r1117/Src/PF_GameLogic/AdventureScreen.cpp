@@ -122,6 +122,8 @@ extern "C" INTERMODULE_EXPORT void TooSmartCompiler()
 {
 }
 
+extern map<int, WebLauncherPostRequest::PlayerInfoByUserId> userIdToNicknameMap;
+
 //UGLY: Global to access "precache_session_data" var defined in HeroSpawn.cpp
 extern bool G_GetPrechacheSessionData();
 
@@ -5953,6 +5955,11 @@ void AdventureScreen::OnClientStatusChange( int userId, int status, int step, NW
 
   if (!player)
     return;
+
+  if (userIdToNicknameMap.find(userId) != userIdToNicknameMap.end()) {
+    bool isLeaver = !(status == Peered::Connecting || status == Peered::Ready || status == Peered::Active || status == Peered::Away);
+    userIdToNicknameMap[userId].isLeaver = isLeaver;
+  }
 
   NWorld::PFBaseHero * hero = player->GetHero();
 

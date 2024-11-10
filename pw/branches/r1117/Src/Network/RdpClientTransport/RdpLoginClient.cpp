@@ -226,13 +226,21 @@ void LoginClient::OnSvcReqReply( const newLogin::ServiceReqReply  & _reply )
   const char* port = std::find(_reply.externalAddress.begin(),_reply.externalAddress.end(), ':');
   int portSize = strlen(port);
 
+
+  if (portSize) {
   const char whiteIp[] = SERVER_IP;
   char newAddress[64];
-
+    ZeroMemory(newAddress, sizeof(newAddress));
   memcpy((void*)newAddress, whiteIp, sizeof(whiteIp));
   memcpy((void*)(newAddress + sizeof(whiteIp) - 1), (void*)port, portSize + 1);
-  
+    _reply.externalAddress = newAddress;
+  } else {
+    string newAddress = SERVER_IP;
+    newAddress += ':';
+    newAddress += _reply.externalAddress;
   _reply.externalAddress = newAddress;
+  }
+  
   MessageTrace( "LoginClient: Got svc request reply. svcid=%s, req_id=%d, code=%d, addr=%s", _reply.svcId.c_str(), _reply.requestId, (int)_reply.code, _reply.externalAddress );
 
   if ( state != ELoginClientState::Ready )
