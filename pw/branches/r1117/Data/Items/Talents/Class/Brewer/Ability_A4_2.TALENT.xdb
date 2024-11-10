@@ -82,7 +82,7 @@
 	<imageSecondState href="" />
 	<isGenderTalent>false</isGenderTalent>
 	<isTakenOnStart>false</isTakenOnStart>
-	<isUltimateTalent>false</isUltimateTalent>
+	<isUltimateTalent>true</isUltimateTalent>
 	<isUnitFreeAfterCast>true</isUnitFreeAfterCast>
 	<manaCost>
 		<compiledString></compiledString>
