@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UnitConstant>
+	<BackLink DBID="/Items/Talents/Level1/G295_LifeDrain.TALENT" Count="1" />
+	<BackLink DBID="/Items/Talents/Level4/G306_K_LifeDrain_AttackSpeed.TALENT" Count="2" />
+	<BackLink DBID="/Items/Talents/Level5/G314_Aura_LifeDrain.TALENT" Count="2" />
+	<name>TotalDamage</name>
+	<var>
+		<compiledString>FSQAAAADAAAAMwAAAE0AAABtAAAARzMxNF9EYW1hZ2UARzMwNl9EYW1hZ2UARzI5NV9EYW1hZ2UAVYvsg+wUi0UMUItNCFFoAAAAAItVEIsCi00Qi1BQ/9KLRQxQi00IUWgMAAAAi1UQiwKLTRCLUFDdXfj/0txF+ItFDFCLTQhRaBgAAACLVRCLAotNEItQUN1d8P/S3EXw2V3s2UXsi+Vdww==</compiledString>
+		<returnType>float</returnType>
+		<sString>cG314_Damage+cG306_Damage+cG295_Damage</sString>
+	</var>
+</UnitConstant>
