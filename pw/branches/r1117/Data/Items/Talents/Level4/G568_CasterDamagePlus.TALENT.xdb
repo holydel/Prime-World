@@ -13,6 +13,7 @@
 	<BackLink DBID="/Social/Lootboxes/ROLLCONTS/roll_Season9_Mediocre.ROLLCONT" Count="1" />
 	<BackLink DBID="/Test/Talents/RedSet4.TALENTSET" Count="1" />
 	<BackLink DBID="/Test/Talents/RedSet4Add.TALENTSET" Count="1" />
+	<BackLink DBID="/Items/Talents/SnowQueen.TALENTSET" Count="1" />
 	<activationConditions />
 	<activeCustomTrigger>true</activeCustomTrigger>
 	<allowChase>

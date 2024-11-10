@@ -2,7 +2,6 @@
 <Talent>
 	<BackLink DBID="/Social.ROOT" Count="1" />
 	<BackLink DBID="/SocialTest.ROOT" Count="1" />
-	<BackLink DBID="/Items/Talents/Assassin.TALENTSET" Count="1" />
 	<BackLink DBID="/Test/Talents/Assassin/Duel.TALENTSET" Count="1" />
 	<BackLink DBID="/Test/Talents/Assassin/Elite_Int.TALENTSET" Count="1" />
 	<BackLink DBID="/Test/Talents/Assassin/Epic_Int.TALENTSET" Count="1" />
@@ -99,9 +98,9 @@
 	</manaCost>
 	<marker></marker>
 	<microAI href="" />
-	<minLevel>2</minLevel>
+	<minLevel>3</minLevel>
 	<minUseRangeCorrection>0</minUseRangeCorrection>
-	<naftaCost>440</naftaCost>
+	<naftaCost>540</naftaCost>
 	<name textref="/Items/Talents/Class/Assassin/Ability_A3u.TALENT_name.txt" />
 	<node></node>
 	<passiveApplicators />

@@ -3,7 +3,6 @@
 	<BackLink DBID="/Social.ROOT" Count="1" />
 	<BackLink DBID="/SocialTest.ROOT" Count="1" />
 	<BackLink DBID="/Creeps/Normals/Normal7/PvE_Coop1.CREEP" Count="1" />
-	<BackLink DBID="/Items/Talents/Assassin.TALENTSET" Count="1" />
 	<BackLink DBID="/Items/Talents/Assassin_Alternative.TALENTSET" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/Assassin/A0_RefreshCd.APLR" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/Assassin/Ability_A0.TALENT" Count="1" />
@@ -16,6 +15,7 @@
 	<BackLink DBID="/Test/Talents/Assassin/Elite_Int.TALENTSET" Count="1" />
 	<BackLink DBID="/Test/Talents/Assassin/Epic_Int.TALENTSET" Count="1" />
 	<BackLink DBID="/Test/Talents/Assassin/Epic_Str.TALENTSET" Count="1" />
+	<BackLink DBID="/Items/Talents/Assassin.TALENTSET" Count="1" />
 	<activationConditions />
 	<activeCustomTrigger>true</activeCustomTrigger>
 	<allowChase>
@@ -530,6 +530,67 @@
 															</stopCondition>
 															<stopEvents>0</stopEvents>
 														</Item>
+														<Item>
+															<applicator href="/Items/Talents/Class/Assassin/Ability_A4.TALENT" id="D9E09CFA-3D20-4886-B4DE-E0B71BCF3E38">
+																<SpellApplicator>
+																	<applyTarget>AbilityTarget</applyTarget>
+																	<caption>Снижаем стойкость</caption>
+																	<enabled>
+																		<compiledString></compiledString>
+																		<returnType>bool</returnType>
+																		<sString>true</sString>
+																	</enabled>
+																	<formulaName></formulaName>
+																	<LoggingEvent>-1</LoggingEvent>
+																	<providerName></providerName>
+																	<spell href="/Items/Talents/Class/Assassin/Ability_A4.TALENT" id="62B763BD-9FFA-411B-91F2-BD1E1C231F24">
+																		<Spell>
+																			<applicators>
+																				<Item href="/Heroes/DefaultStatus/_ARMORCUT_status.APLR" />
+																			</applicators>
+																			<dispatch href="/Items/Talents/Class/Assassin/Ability_A4.TALENT" id="230008DB-A3E0-48AD-9E84-D344463B0643">
+																				<DispatchImmediate>
+																					<alwaysApply>false</alwaysApply>
+																					<applyEffect>
+																						<Item href="" />
+																						<Item href="" />
+																					</applyEffect>
+																					<applyEffectIgnoreVisibility>false</applyEffectIgnoreVisibility>
+																					<applyEffectOrientation>Default</applyEffectOrientation>
+																					<applyEffectRandomAnglePoints>0</applyEffectRandomAnglePoints>
+																					<dieAfterApply>true</dieAfterApply>
+																					<dispatchEffect>
+																						<Item href="" />
+																						<Item href="" />
+																					</dispatchEffect>
+																					<flags>0</flags>
+																					<instantApply>false</instantApply>
+																				</DispatchImmediate>
+																			</dispatch>
+																		</Spell>
+																	</spell>
+																	<spellTarget>ApplicatorTarget</spellTarget>
+																	<targetSelector href="" />
+																</SpellApplicator>
+															</applicator>
+															<continueCondition>
+																<compiledString></compiledString>
+																<returnType>bool</returnType>
+																<sString>0</sString>
+															</continueCondition>
+															<continueEvents>2</continueEvents>
+															<delay>
+																<compiledString></compiledString>
+																<returnType>float</returnType>
+																<sString>-1.0</sString>
+															</delay>
+															<stopCondition>
+																<compiledString></compiledString>
+																<returnType>bool</returnType>
+																<sString>0</sString>
+															</stopCondition>
+															<stopEvents>0</stopEvents>
+														</Item>
 													</applicators>
 													<applyTarget>AbilityOwner</applyTarget>
 													<behaviorFlags>0</behaviorFlags>
@@ -787,9 +848,9 @@
 					<UnitConstant>
 						<name>A4_Damage</name>
 						<var>
-							<compiledString>FQAAAAACAAAACAAAABIAAABVi+xqAVHZBUQAAADZHCRR2QVAAAAA2RwkagCLRQiLEItNCIuCNAEAAP/QUdkcJGoBi00QixGLTRCLQmD/0F3DAAD+QgCAbUQ=</compiledString>
+							<compiledString>FQAAAAACAAAACAAAABIAAABVi+xqAVHZBUQAAADZHCRR2QVAAAAA2RwkagCLRQiLEItNCIuCNAEAAP/QUdkcJGoBi00QixGLTRCLQmD/0F3DAAALQwCggkQ=</compiledString>
 							<returnType>float</returnType>
-							<sString>damageScale( sIntellect, 127, 950 )</sString>
+							<sString>damageScale( sIntellect, 139, 1045 )</sString>
 						</var>
 					</UnitConstant>
 				</Item>
@@ -862,6 +923,46 @@
 				</Item>
 				<Item href="/Items/Talents/Class/Assassin/const_A0_SUP_2_Appl_Duration" />
 				<Item href="/Items/Talents/Class/Assassin/const_A0_SUP_2_Inc_Resp_Time" />
+				<Item href="/Items/Talents/Class/Assassin/Ability_A4.TALENT" id="0D37E1ED-F29E-4259-8DE7-F717EE1D0AF0">
+					<UnitConstant>
+						<name>ArmorCut_StartCondition</name>
+						<var>
+							<compiledString>FQAAAAAAAAAAVYvs2ehdwwAAgD8=</compiledString>
+							<returnType>float</returnType>
+							<sString>true</sString>
+						</var>
+					</UnitConstant>
+				</Item>
+				<Item href="/Items/Talents/Class/Assassin/Ability_A4.TALENT" id="9AF79EC6-92B9-4F4C-8F8C-BED035FCB336">
+					<UnitConstant>
+						<name>ArmorCut_Amount</name>
+						<var>
+							<compiledString>FQAAAAACAAAACAAAABIAAABVi+xqAVHZBUQAAADZHCRR2QVAAAAA2RwkagCLRQiLEItNCIuCMAEAAP/QUdkcJGoAi00QixGLTRCLQmD/0F3DAABAQAAAoEE=</compiledString>
+							<returnType>float</returnType>
+							<sString>abilityScale(sStrength, 3, 20)</sString>
+						</var>
+					</UnitConstant>
+				</Item>
+				<Item href="/Items/Talents/Class/Assassin/Ability_A4.TALENT" id="CFA9460C-C977-4027-ACC1-7B9E3C10A165">
+					<UnitConstant>
+						<name>ArmorCut_Duration</name>
+						<var>
+							<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAACgQA==</compiledString>
+							<returnType>float</returnType>
+							<sString>5</sString>
+						</var>
+					</UnitConstant>
+				</Item>
+				<Item href="/Items/Talents/Class/Assassin/Ability_A4.TALENT" id="424E5920-47C9-4D60-B829-AA408D93FF30">
+					<UnitConstant>
+						<name>cArmorCut_Condition</name>
+						<var>
+							<compiledString>FQAAAAAAAAAAVYvs2ehdwwAAgD8=</compiledString>
+							<returnType>float</returnType>
+							<sString>true</sString>
+						</var>
+					</UnitConstant>
+				</Item>
 			</vars>
 		</UnitConstantsContainer>
 	</constants>
@@ -957,9 +1058,9 @@
 			</targetSelector>
 		</TargetSelectorMicroAI>
 	</microAI>
-	<minLevel>2</minLevel>
+	<minLevel>1</minLevel>
 	<minUseRangeCorrection>0</minUseRangeCorrection>
-	<naftaCost>540</naftaCost>
+	<naftaCost>390</naftaCost>
 	<name textref="/Items/Talents/Class/Assassin/Ability_A4.TALENT_name.txt" />
 	<node></node>
 	<passiveApplicators>

@@ -12,6 +12,7 @@
 	<BackLink DBID="/Test/Talents/RedSet4Add.TALENTSET" Count="1" />
 	<BackLink DBID="/Social/Lootboxes/ROLLCONTS/roll_NY2020_BadList.ROLLCONT" Count="1" />
 	<BackLink DBID="/Social/Lootboxes/ROLLCONTS/roll_Season13_BadList.ROLLCONT" Count="1" />
+	<BackLink DBID="/Items/Talents/SnowQueen.TALENTSET" Count="1" />
 	<activationConditions />
 	<activeCustomTrigger>true</activeCustomTrigger>
 	<allowChase>
@@ -72,11 +73,11 @@
 				</Item>
 				<Item href="/Items/Talents/Level5/G570_CasterDexWill.TALENT" id="F29D5468-D355-46EB-B0AF-0AC2ACB5F1AF">
 					<UnitConstant>
-						<name>Add_Will</name>
+						<name>Add_Life</name>
 						<var>
-							<compiledString>FQAAAAACAAAABgAAABAAAABVi+xR2QUqAAAA2RwkUdkFJgAAANkcJItFEIsQi00Qi0Js/9BdwwAAEEEzMzM/</compiledString>
+							<compiledString>FQAAAAADAAAABwAAABEAAAAnAAAAVYvsUVHZBUEAAADZHCRR2QU9AAAA2Rwki0UQixCLTRCLQmz/0NwNNQAAANld/NlF/IvlXcMAAAAAAAA+QAAAEEEzMzM/</compiledString>
 							<returnType>float</returnType>
-							<sString>refineScale(9, 0.7)</sString>
+							<sString>refineScale(9, 0.7)*30</sString>
 						</var>
 					</UnitConstant>
 				</Item>
@@ -165,7 +166,7 @@
 		<Item href="/Items/Talents/Level5/G570_CasterDexWill.TALENT" id="0E71700D-2F50-4F2B-BEAA-BE29A414A002">
 			<PermanentStatModApplicator>
 				<applyTarget>ApplicatorTarget</applyTarget>
-				<caption>Add_Will</caption>
+				<caption>Add_Life</caption>
 				<customApplyType>None</customApplyType>
 				<enabled>
 					<compiledString></compiledString>
@@ -176,16 +177,16 @@
 				<LoggingEvent>-1</LoggingEvent>
 				<modifier>
 					<addValue>
-						<compiledString>FQkAAAABAAAAFQAAAEFkZF9XaWxsAFWL7ItFDFCLTQhRaAAAAACLVRCLAotNEItQUP/SXcM=</compiledString>
+						<compiledString>FQkAAAABAAAAFQAAAEFkZF9MaWZlAFWL7ItFDFCLTQhRaAAAAACLVRCLAotNEItQUP/SXcM=</compiledString>
 						<returnType>float</returnType>
-						<sString>cAdd_Will</sString>
+						<sString>cAdd_Life</sString>
 					</addValue>
 					<multValue>
 						<compiledString></compiledString>
 						<returnType>float</returnType>
 						<sString>1.0f</sString>
 					</multValue>
-					<stat>Will</stat>
+					<stat>Life</stat>
 					<topModifier>false</topModifier>
 					<variable></variable>
 				</modifier>

@@ -103,9 +103,9 @@
 													<cancelInvisibility>false</cancelInvisibility>
 													<caption>Pure Урон</caption>
 													<damage>
-														<compiledString>FRQAAAABAAAAIAAAAEc1NzFfQWRkU2tpbGxEYW1hZ2UAVYvsi0UMUItNCFFoAAAAAItVEIsCi00Qi1BQ/9Jdww==</compiledString>
+														<compiledString>FRIAAAABAAAAHgAAAEc1NzFfSGVhbHRoRGFtYWdlAFWL7ItFDFCLTQhRaAAAAACLVRCLAotNEItQUP/SXcM=</compiledString>
 														<returnType>float</returnType>
-														<sString>cG571_AddSkillDamage</sString>
+														<sString>cG571_HealthDamage</sString>
 													</damage>
 													<damageMode>4</damageMode>
 													<damageType>Pure</damageType>

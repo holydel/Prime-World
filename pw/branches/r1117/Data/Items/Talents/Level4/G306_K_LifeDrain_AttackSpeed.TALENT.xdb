@@ -34,6 +34,7 @@
 	<BackLink DBID="/Test/Talents/Witch/Elite_IntAsp.TALENTSET" Count="1" />
 	<BackLink DBID="/Test/Talents/Witch/Elite_PvE.TALENTSET" Count="1" />
 	<BackLink DBID="/Test/Talents/Witch/Elite_StrAsp.TALENTSET" Count="1" />
+	<BackLink DBID="/Items/Talents/Archeress.TALENTSET" Count="1" />
 	<activationConditions />
 	<activeCustomTrigger>true</activeCustomTrigger>
 	<allowChase>
@@ -91,19 +92,11 @@
 						</var>
 					</UnitConstant>
 				</Item>
-				<Item href="/Items/Talents/TalentKits/Vampiric3_StunProc/const_Stun_Duration" />
-				<Item href="/Items/Talents/Level4/G306_K_LifeDrain_AttackSpeed.TALENT" id="CDEF49CF-A24D-42D7-B054-4CE76CB5ACBE">
-					<UnitConstant>
-						<name>TECH_AbilityProc</name>
-						<var>
-							<compiledString>FQ4AAAACAAAAKQAAADwAAABBYmlsaXR5Q2hhbmNlAFWL7IPsCItFDFCLTQhRagFqB4tVDFKLRQhQaAAAAACLTRCLEYtNEItCUP/Q3A1kAAAA2V382UX8UdkcJItNEIsRi00Qi0Jk/9APtsiJTfjbRfiL5V3DexSuR+F6hD8=</compiledString>
-							<returnType>float</returnType>
-							<sString>smartRoll(cAbilityChance*0.01 , 7 , 1)</sString>
-						</var>
-					</UnitConstant>
-				</Item>
-				<Item href="/Items/Talents/TalentKits/Vampiric3_StunProc/const_AbilityChance" />
-				<Item href="/Items/Talents/TalentKits/Vampiric3_StunProc/const_Cooldown" />
+				<Item href="/Items/Talents/TalentKits/Vampiric3_StunProc/const_TT_TotalDamage" />
+				<Item href="/Items/Talents/TalentKits/Vampiric3_StunProc/const_TotalDamage" />
+				<Item href="/Items/Talents/TalentKits/Vampiric3_StunProc/const_G295_Damage" />
+				<Item href="/Items/Talents/TalentKits/Vampiric3_StunProc/const_G306_Damage" />
+				<Item href="/Items/Talents/TalentKits/Vampiric3_StunProc/const_G314_Damage" />
 			</vars>
 		</UnitConstantsContainer>
 	</constants>
@@ -204,136 +197,6 @@
 				</modifier>
 				<providerName></providerName>
 			</PermanentStatModApplicator>
-		</Item>
-		<Item href="/Items/Talents/Level4/G306_K_LifeDrain_AttackSpeed.TALENT" id="0B38ACE6-560F-4EA5-85B6-560F18CCD0FA">
-			<AbilityUpgradeApplicator>
-				<applicators>
-					<Item href="/Items/Talents/Level4/G306_K_LifeDrain_AttackSpeed.TALENT" id="72611036-6D91-42E7-9DD4-CED9697E7D86">
-						<SpellApplicator>
-							<applyTarget>ApplicatorTarget</applyTarget>
-							<caption>Прок апликатор со стуном</caption>
-							<enabled>
-								<compiledString>FScAAAAEAAAANAAAAEcAAABTAAAAaQAAAFRFQ0hfQWJpbGl0eVByb2MAAAAAVmFtcGlyZTNTdHVuUHJvY0NEAFWL7FGLRQxQi00IUWgAAAAAi1UQiwKLTRCLUFD/0twdiwAAAN/g9sREeytoFAAAAItFCIsQi00Ii4KIAQAA/9DcHYsAAADf4PbERHoJx0X8AQAAAOsHx0X8AAAAAIpF/IvlXcMAAAAAAAAAAA==</compiledString>
-								<returnType>bool</returnType>
-								<sString>cTECH_AbilityProc &amp;&amp; sender.vVampire3StunProcCD == 0</sString>
-							</enabled>
-							<formulaName></formulaName>
-							<LoggingEvent>-1</LoggingEvent>
-							<providerName></providerName>
-							<spell href="/Items/Talents/Level4/G306_K_LifeDrain_AttackSpeed.TALENT" id="133019FA-1650-4C7A-ACC2-521B5AD2C166">
-								<Spell>
-									<applicators>
-										<Item href="/Items/Talents/Level4/G306_K_LifeDrain_AttackSpeed.TALENT" id="D4949C24-5111-4769-A23D-B15F23393F34">
-											<StatModApplicator>
-												<applyTarget>AbilityOwner</applyTarget>
-												<behaviorFlags>153</behaviorFlags>
-												<caption>Запоминаем, что стан прошел</caption>
-												<constraint>None</constraint>
-												<dontUpdate>false</dontUpdate>
-												<effect>
-													<Item href="" />
-													<Item href="" />
-												</effect>
-												<enabled>
-													<compiledString></compiledString>
-													<returnType>bool</returnType>
-													<sString>true</sString>
-												</enabled>
-												<formulaName></formulaName>
-												<lifeTime>
-													<compiledString>FQ4AAAABAAAAGgAAAEczMDZfQ29vbGRvd24AVYvsi0UMUItNCFFoAAAAAItVEIsCi00Qi1BQ/9Jdww==</compiledString>
-													<returnType>float</returnType>
-													<sString>cG306_Cooldown</sString>
-												</lifeTime>
-												<LoggingEvent>-1</LoggingEvent>
-												<modifier>
-													<addValue>
-														<compiledString></compiledString>
-														<returnType>float</returnType>
-														<sString>1.0f</sString>
-													</addValue>
-													<multValue>
-														<compiledString></compiledString>
-														<returnType>float</returnType>
-														<sString>0.0f</sString>
-													</multValue>
-													<stat>Life</stat>
-													<topModifier>false</topModifier>
-													<variable>Vampire3StunProcCD</variable>
-												</modifier>
-												<providerName></providerName>
-												<startCondition>
-													<compiledString>FTMAAAAHAAAAewAAAI8AAACiAAAArgAAAMQAAADYAAAA6wAAAFN0dW5fU3RhcnRDb25kaXRpb24ASW1tdW5lMkNvbnRyb2wAAFN0dW5fQ29uZGl0aW9uAFWL7IPsCItFDIsQi00Mi0JQ/9AzyYP4EQ+VwYlN/NtF/FHZHCRR2e7ZHCRqAYtVDIsCi00Mi1BY/9IPtsBQ6KMAAACDxAzcHQ0BAADf4PbERHt5i00MUYtVCFJoAAAAAItFEIsQi00Qi0JQ/9DcHQ0BAADf4PbERHtSaBQAAACLTQyLEYtNDIuCiAEAAP/Q3B0NAQAA3+D2xER6MItNDFGLVQhSaCQAAACLRRCLEItNEItCUP/Q3B0NAQAA3+D2xER7CcdF+AEAAADrB8dF+AAAAACKRfiL5V3DAAAAAAAAAAAAAAAAVYvsUQ+2RQiFwHQI2UUM2V386wbZRRDZXfzZRfyL5V3D</compiledString>
-													<returnType>bool</returnType>
-													<sString>ut_bldg( false, rUnitKind != 17 ) &amp;&amp; cStun_StartCondition &amp;&amp; receiver.vImmune2Control == 0 &amp;&amp; cStun_Condition</sString>
-												</startCondition>
-												<statModName></statModName>
-											</StatModApplicator>
-										</Item>
-										<Item href="/Heroes/DefaultStatus/_STUN_Status.APLR" />
-									</applicators>
-									<dispatch href="/Items/Talents/Level4/G306_K_LifeDrain_AttackSpeed.TALENT" id="7999156A-54C1-4ED0-AF4B-8113292E7728">
-										<DispatchImmediate>
-											<alwaysApply>false</alwaysApply>
-											<applyEffect>
-												<Item href="" />
-												<Item href="" />
-											</applyEffect>
-											<applyEffectIgnoreVisibility>false</applyEffectIgnoreVisibility>
-											<applyEffectOrientation>Default</applyEffectOrientation>
-											<applyEffectRandomAnglePoints>0</applyEffectRandomAnglePoints>
-											<dieAfterApply>true</dieAfterApply>
-											<dispatchEffect>
-												<Item href="" />
-												<Item href="" />
-											</dispatchEffect>
-											<flags>0</flags>
-											<instantApply>false</instantApply>
-										</DispatchImmediate>
-									</dispatch>
-								</Spell>
-							</spell>
-							<spellTarget>ApplicatorTarget</spellTarget>
-							<targetSelector href="" />
-						</SpellApplicator>
-					</Item>
-				</applicators>
-				<applyCount>
-					<compiledString></compiledString>
-					<returnType>int</returnType>
-					<sString>0</sString>
-				</applyCount>
-				<applyTarget>ApplicatorTarget</applyTarget>
-				<behaviorFlags>152</behaviorFlags>
-				<caption>вероятностный спелл на стан</caption>
-				<effect>
-					<Item href="" />
-					<Item href="" />
-				</effect>
-				<enabled>
-					<compiledString>FR0AAAAEAAAAOgAAAFMAAACJAAAAogAAAEcyOTUAAAAARzI5NQAAAABHMzE0AAAAAEczMTQAVYvsg+wUi0UMixCLTQyLQlD/0IP4EQ+EpwAAAGgAAAAAi00IixGLTQiLgqgBAAD/0IXAdCpoCAAAAItNCIsRi00Ii4KoAQAA/9CJRfyLTfyLEYtN/ItCBP/QiEX76wTGRfsAD7ZN+4XJdFhoEAAAAItVCIsCi00Ii5CoAQAA/9KFwHQqaBgAAACLRQiLEItNCIuCqAEAAP/QiUX0i030ixGLTfSLQgT/0IhF8+sExkXzAA+2TfOFyXQJx0XsAQAAAOsHx0XsAAAAAIpF7IvlXcM=</compiledString>
-					<returnType>bool</returnType>
-					<sString>rUnitKind != 17 &amp;&amp; tal("G295") &amp;&amp; tal("G314") </sString>
-				</enabled>
-				<flags>0</flags>
-				<formulaName></formulaName>
-				<lifeTime>
-					<compiledString></compiledString>
-					<returnType>float</returnType>
-					<sString>-1.0</sString>
-				</lifeTime>
-				<LoggingEvent>-1</LoggingEvent>
-				<persistentApplicators />
-				<providerName></providerName>
-				<startCondition>
-					<compiledString></compiledString>
-					<returnType>bool</returnType>
-					<sString>true</sString>
-				</startCondition>
-				<talents />
-				<targetAbility>BaseAttack</targetAbility>
-				<useListAs>ListAsRule</useListAs>
-			</AbilityUpgradeApplicator>
 		</Item>
 	</passiveApplicators>
 	<persistentId>G306</persistentId>

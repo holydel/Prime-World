@@ -6,8 +6,8 @@
 	<BackLink DBID="/Items/Talents/Class/Assassin/Ability_A3_2.TALENT" Count="1" />
 	<name>A3_MaxDamagePercent</name>
 	<var>
-		<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAADwQg==</compiledString>
+		<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAABwQg==</compiledString>
 		<returnType>float</returnType>
-		<sString>120</sString>
+		<sString>60</sString>
 	</var>
 </UnitConstant>

@@ -361,9 +361,9 @@
 	<isUltimateTalent>false</isUltimateTalent>
 	<isUnitFreeAfterCast>true</isUnitFreeAfterCast>
 	<manaCost>
-		<compiledString>FQAAAAAAAAAAVYvs2e5dwwAAAAA=</compiledString>
+		<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAABIQg==</compiledString>
 		<returnType>float</returnType>
-		<sString>0</sString>
+		<sString>50</sString>
 	</manaCost>
 	<marker></marker>
 	<microAI href="/Items/Talents/Class/Crusader/Ability_A1_B.TALENT" id="3826C2D8-2946-4A48-891A-C150C821CEA3">

@@ -2,7 +2,6 @@
 <Talent>
 	<BackLink DBID="/Social.ROOT" Count="1" />
 	<BackLink DBID="/SocialTest.ROOT" Count="1" />
-	<BackLink DBID="/Items/Talents/Assassin.TALENTSET" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/Assassin/A0_RefreshCd.APLR" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/Assassin/Ability_A0.TALENT" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/Assassin/Ability_A3u.TALENT" Count="1" />
@@ -111,9 +110,9 @@
 								<Item href="/Items/Talents/Class/Assassin/Ability_A3.TALENT" id="20BD45CE-18A8-4A53-806F-C6770949FB38">
 									<TriggerApplicator>
 										<actionsCount>
-											<compiledString>FQAAAAAAAAAAVYvsuAEAAABdww==</compiledString>
+											<compiledString>FQAAAAAAAAAAVYvsg8j/XcM=</compiledString>
 											<returnType>int</returnType>
-											<sString>1</sString>
+											<sString>-1</sString>
 										</actionsCount>
 										<applyTarget>AbilityTarget</applyTarget>
 										<behaviorFlags>0</behaviorFlags>
@@ -211,6 +210,43 @@
 								<Item href="/Items/Talents/Class/Assassin/A3_LifeTimer.APLR" />
 								<Item href="/Items/Talents/Class/Assassin/status_fake_A3.APLR" />
 								<Item href="/Items/Talents/Class/Assassin/status_fake_A3_2.APLR" />
+								<Item href="/Items/Talents/Class/Assassin/Ability_A3.TALENT" id="707C54D4-3D86-42CC-B6B5-B683A4DF83A7">
+									<EyeApplicator>
+										<applyTarget>ApplicatorTarget</applyTarget>
+										<behaviorFlags>0</behaviorFlags>
+										<cancelObstacles>false</cancelObstacles>
+										<caption>Обзор от A3u</caption>
+										<effect>
+											<Item href="" />
+											<Item href="" />
+										</effect>
+										<enabled>
+											<compiledString></compiledString>
+											<returnType>bool</returnType>
+											<sString>true</sString>
+										</enabled>
+										<eyeTarget>ApplicatorTarget</eyeTarget>
+										<flags>8</flags>
+										<formulaName></formulaName>
+										<lifeTime>
+											<compiledString></compiledString>
+											<returnType>float</returnType>
+											<sString>-1.0</sString>
+										</lifeTime>
+										<LoggingEvent>-1</LoggingEvent>
+										<providerName></providerName>
+										<startCondition>
+											<compiledString>FR0AAAACAAAAJAAAAD0AAABBc3Nhc3Npbl9BM3UAAAAAQXNzYXNzaW5fQTN1AFWL7IPsCGgAAAAAi0UIixCLTQiLgqgBAAD/0IXAdCpoEAAAAItNCIsRi00Ii4KoAQAA/9CJRfyLTfyLEYtN/ItCBP/QiEX76wTGRfsAikX7i+Vdww==</compiledString>
+											<returnType>bool</returnType>
+											<sString>tal("Assassin_A3u")</sString>
+										</startCondition>
+										<visRange>
+											<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAACAQA==</compiledString>
+											<returnType>float</returnType>
+											<sString>4</sString>
+										</visRange>
+									</EyeApplicator>
+								</Item>
 							</applicators>
 							<applyTarget>AbilityTarget</applyTarget>
 							<behaviorFlags>1</behaviorFlags>
@@ -514,9 +550,9 @@
 			</targetSelector>
 		</TargetSelectorMicroAI>
 	</microAI>
-	<minLevel>1</minLevel>
+	<minLevel>2</minLevel>
 	<minUseRangeCorrection>0</minUseRangeCorrection>
-	<naftaCost>390</naftaCost>
+	<naftaCost>560</naftaCost>
 	<name textref="/Items/Talents/Class/Assassin/Ability_A3.TALENT_name.txt" />
 	<node>ability3</node>
 	<passiveApplicators />

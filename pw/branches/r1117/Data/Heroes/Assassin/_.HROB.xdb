@@ -881,9 +881,9 @@
 					<calcIncrement>0.3</calcIncrement>
 					<calcValue>60</calcValue>
 					<increment>
-						<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DmpmZPg==</compiledString>
+						<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DzcwMPw==</compiledString>
 						<returnType>float</returnType>
-						<sString>0.3</sString>
+						<sString>0.55</sString>
 					</increment>
 					<levelUpgrades />
 					<statId>Strength</statId>
@@ -913,32 +913,32 @@
 					<calcIncrement>0.8</calcIncrement>
 					<calcValue>56</calcValue>
 					<increment>
-						<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DzcxMPw==</compiledString>
+						<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAAAAPw==</compiledString>
 						<returnType>float</returnType>
-						<sString>0.8</sString>
+						<sString>0.5</sString>
 					</increment>
 					<levelUpgrades />
 					<statId>Dexterity</statId>
 					<value>
-						<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAABgQg==</compiledString>
+						<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAABcQg==</compiledString>
 						<returnType>float</returnType>
-						<sString>56</sString>
+						<sString>55</sString>
 					</value>
 				</Item>
 				<Item>
 					<calcIncrement>0</calcIncrement>
 					<calcValue>50</calcValue>
 					<increment>
-						<compiledString>FQAAAAAAAAAAVYvs2e5dwwAAAAA=</compiledString>
+						<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAAAAPw==</compiledString>
 						<returnType>float</returnType>
-						<sString>0</sString>
+						<sString>0.5</sString>
 					</increment>
 					<levelUpgrades />
 					<statId>AttackSpeed</statId>
 					<value>
-						<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAABIQg==</compiledString>
+						<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAABcQg==</compiledString>
 						<returnType>float</returnType>
-						<sString>50</sString>
+						<sString>55</sString>
 					</value>
 				</Item>
 				<Item>
