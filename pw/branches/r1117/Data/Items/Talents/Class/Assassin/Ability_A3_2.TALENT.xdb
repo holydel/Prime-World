@@ -6,6 +6,7 @@
 	<BackLink DBID="/Items/Talents/Class/Assassin/Ability_A3_2u.TALENT" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/Assassin/Ability_A3u.TALENT" Count="1" />
 	<BackLink DBID="/Items/Talents/TalentKits/Redset5_7_Ultimate/Status_Redset5_7_Cooldown.APLR" Count="1" />
+	<BackLink DBID="/Items/Talents/Assassin.TALENTSET" Count="1" />
 	<activationConditions />
 	<activeCustomTrigger>true</activeCustomTrigger>
 	<allowChase>
@@ -202,6 +203,43 @@
 								<Item href="/Items/Talents/Class/Assassin/A3_LifeTimer.APLR" />
 								<Item href="/Items/Talents/Class/Assassin/status_fake_A3int.APLR" />
 								<Item href="/Items/Talents/Class/Assassin/status_fake_A3_2int.APLR" />
+								<Item href="/Items/Talents/Class/Assassin/Ability_A3_2.TALENT" id="2646CA04-8A1D-4608-8D77-EA3195C8CC30">
+									<EyeApplicator>
+										<applyTarget>ApplicatorTarget</applyTarget>
+										<behaviorFlags>0</behaviorFlags>
+										<cancelObstacles>false</cancelObstacles>
+										<caption>Открыть туман войны для A3_2u</caption>
+										<effect>
+											<Item href="" />
+											<Item href="" />
+										</effect>
+										<enabled>
+											<compiledString></compiledString>
+											<returnType>bool</returnType>
+											<sString>true</sString>
+										</enabled>
+										<eyeTarget>ApplicatorTarget</eyeTarget>
+										<flags>8</flags>
+										<formulaName></formulaName>
+										<lifeTime>
+											<compiledString></compiledString>
+											<returnType>float</returnType>
+											<sString>-1.0</sString>
+										</lifeTime>
+										<LoggingEvent>-1</LoggingEvent>
+										<providerName></providerName>
+										<startCondition>
+											<compiledString>FR8AAAACAAAAJgAAAD8AAABBc3Nhc3Npbl9BM18ydQAAQXNzYXNzaW5fQTNfMnUAVYvsg+wIaAAAAACLRQiLEItNCIuCqAEAAP/QhcB0KmgQAAAAi00IixGLTQiLgqgBAAD/0IlF/ItN/IsRi038i0IE/9CIRfvrBMZF+wCKRfuL5V3D</compiledString>
+											<returnType>bool</returnType>
+											<sString>tal("Assassin_A3_2u")</sString>
+										</startCondition>
+										<visRange>
+											<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAACAQA==</compiledString>
+											<returnType>float</returnType>
+											<sString>4</sString>
+										</visRange>
+									</EyeApplicator>
+								</Item>
 							</applicators>
 							<applyTarget>AbilityTarget</applyTarget>
 							<behaviorFlags>1</behaviorFlags>
@@ -532,9 +570,9 @@
 			</targetSelector>
 		</TargetSelectorMicroAI>
 	</microAI>
-	<minLevel>1</minLevel>
+	<minLevel>2</minLevel>
 	<minUseRangeCorrection>0</minUseRangeCorrection>
-	<naftaCost>390</naftaCost>
+	<naftaCost>560</naftaCost>
 	<name textref="/Items/Talents/Class/Assassin/Ability_A3_2.TALENT_name.txt" />
 	<node>ability3</node>
 	<passiveApplicators />

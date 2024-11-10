@@ -298,9 +298,9 @@
 										<cancelInvisibility>true</cancelInvisibility>
 										<caption>Урон</caption>
 										<damage>
-											<compiledString>FRcAAAACAAAAJgAAAEAAAABBMV9EYW1hZ2UAAABBMV9UYXJnZXRzAFWL7IPsDItFDFCLTQhRaAAAAACLVRCLAotNEItQUP/Si0UMUItNCFFoDAAAAItVEIsCi00Qi1BQ3V34/9LcffjZXfTZRfSL5V3D</compiledString>
+											<compiledString>FUMAAAAFAAAASgAAAGMAAAChAAAAwAAAANoAAABaZWFsb3RfQTFfU1VQAAAAWmVhbG90X0ExX1NVUAAAAEExX0RhbWFnZQAAAEExX0RhbWFnZQAAAEExX1RhcmdldHMAVYvsg+wcaAAAAACLRQiLEItNCIuCqAEAAP/QhcB0KmgQAAAAi00IixGLTQiLgqgBAAD/0IlF/ItN/IsRi038i0IE/9CIRfvrBMZF+wAPtk37hcl0H4tVDFKLRQhQaCAAAACLTRCLEYtNEItCUP/Q3V3w6z2LTQxRi1UIUmgsAAAAi0UQixCLTRCLQlD/0ItNDFGLVQhSaDgAAACLRRCLEItNEItCUN1d6P/Q3H3o3V3w3UXw2V3k2UXki+Vdww==</compiledString>
 											<returnType>float</returnType>
-											<sString>cA1_Damage/cA1_Targets</sString>
+											<sString>tal("Zealot_A1_SUP") ? cA1_Damage : cA1_Damage/cA1_Targets</sString>
 										</damage>
 										<damageMode>0</damageMode>
 										<damageType>Material</damageType>

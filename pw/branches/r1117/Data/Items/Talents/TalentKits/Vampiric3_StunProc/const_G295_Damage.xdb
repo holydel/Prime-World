@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UnitConstant>
+	<BackLink DBID="/Items/Talents/Level4/G306_K_LifeDrain_AttackSpeed.TALENT" Count="1" />
+	<BackLink DBID="/Items/Talents/Level5/G314_Aura_LifeDrain.TALENT" Count="1" />
+	<name>G295_Damage</name>
+	<var>
+		<compiledString>FQ0AAAADAAAAFAAAAC0AAABkAAAARzI5NQAAAABHMjk1AFWL7IPsFGgAAAAAi0UIixCLTQiLgqgBAAD/0IXAdCpoCAAAAItNCIsRi00Ii4KoAQAA/9CJRfyLTfyLEYtN/ItCBP/QiEX76wTGRfsAD7ZN+4XJdAvdBYcAAADdXfDrBdnu3V3w3UXw2V3s2UXsi+VdwwAAAAAAAAAAAAAAAAAA4D8=</compiledString>
+		<returnType>float</returnType>
+		<sString>tal("G295") ? 0.5 : 0</sString>
+	</var>
+</UnitConstant>

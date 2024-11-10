@@ -132,9 +132,9 @@
 					<UnitConstant>
 						<name>Haste_Percent</name>
 						<var>
-							<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAACgQQ==</compiledString>
+							<compiledString>FRAAAAACAAAAQwAAAGMAAABBMl9UZXJyYWluQm9udXMAVYvsg+wIVotFCIsQi00Ii0JM/9CL8ItNCIsRi00Ii4KQAQAA/9A78HUfi00MUYtVCFJoAAAAAItFEIsQi00Qi0JQ/9DZXfzrBdnu2V382UX83AVyAAAA2V342UX4XovlXcMAAAAAAAA0QAAAAAA=</compiledString>
 							<returnType>float</returnType>
-							<sString>20</sString>
+							<sString>20+ nt( cA2_TerrainBonus, 0 )</sString>
 						</var>
 					</UnitConstant>
 				</Item>

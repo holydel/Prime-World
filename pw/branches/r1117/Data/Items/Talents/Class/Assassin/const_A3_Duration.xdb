@@ -6,8 +6,8 @@
 	<BackLink DBID="/Items/Talents/Class/Assassin/Ability_A3_2.TALENT" Count="1" />
 	<name>A3_Duration</name>
 	<var>
-		<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAABwQQ==</compiledString>
+		<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAAAAQQ==</compiledString>
 		<returnType>float</returnType>
-		<sString>15</sString>
+		<sString>8</sString>
 	</var>
 </UnitConstant>
