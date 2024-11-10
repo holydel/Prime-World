@@ -39,6 +39,14 @@ webSessions = {}
 
 app = Flask(__name__)
 
+def killOldSessions(sessionDict):
+    for oldSessionToken in list(sessionDict.keys()):
+        oldSession = sessionDict[oldSessionToken]
+        targetTimeDifferenceToKill = timeToKillPublicSession
+        if oldSessionToken == 'testSessionToken':
+            targetTimeDifferenceToKill = timeToKillTestSession
+        if (dt.now() - oldSession['timestamp']).total_seconds() > targetTimeDifferenceToKill:
+            del sessionDict[oldSessionToken] # remove old sessions
 
 @app.route('/api', methods=['POST'])
 def api():
@@ -56,6 +64,8 @@ def api():
 
         # Register session (from web-launcher)
         if method == 'registerSession':
+            killOldSessions(webSessions)
+
             key = reqJson['key']
             if key != api_key:
                 response = {
@@ -245,17 +255,7 @@ def api():
 
         # (Deprecated) Register user in (custom) session
         if method == 'registerUserInSession':
-            def checkOldSessions():
-                #fast check available sessions to kill
-                for oldSessionToken in list(activeSessionTokens.keys()):
-                    oldSession = activeSessionTokens[oldSessionToken]
-                    targetTimeDifferenceToKill = timeToKillPublicSession
-                    if oldSessionToken == 'testSessionToken':
-                        targetTimeDifferenceToKill = timeToKillTestSession
-                    if (dt.now() - oldSession['timestamp']).total_seconds() > targetTimeDifferenceToKill:
-                        del activeSessionTokens[oldSessionToken] # remove old sessions
-
-            checkOldSessions()
+            killOldSessions(activeSessionTokens)
             
             sessionToken = data['sessionToken']
             if sessionToken not in activeSessionTokens:
