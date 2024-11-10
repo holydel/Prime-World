@@ -4,6 +4,7 @@
 #include <map>
 #include <set>
 #include <json/json.h>
+#include "../PW_Game/server_ip.h"
 
 #pragma comment(lib, "wininet.lib")
 
@@ -1590,7 +1591,7 @@ void WebLauncherPostRequest::SendFinishGameRequest(const vector<int>& playerUser
     }
   }
 
-  for (int pId = 0; pId < leavers.size(); ++pId) {
+  for (size_t pId = 0; pId < leavers.size(); ++pId) {
     ZeroMemory(jsonBuff,2048);
     sprintf(jsonBuff,"%d%s", leavers[pId], pId == leavers.size() - 1 ? "" : "," );
     jsonReq += jsonBuff;
@@ -1740,7 +1741,7 @@ WebLauncherPostRequest::WebLoginResponse WebLauncherPostRequest::GetSessionData(
   res.response = nickname.asString().c_str();
 
   Json::Value userId = playerInfo.get("id", Json::Value());
-  s_userNicknameToUserIdMap[nickname.asString()] = userId;
+  s_userNicknameToUserIdMap[nickname.asString()] = userId.asInt();
 
   Json::Value hero = playerInfo.get("hero", Json::Value());
   Json::Value team = playerInfo.get("team", Json::Value());
@@ -1845,7 +1846,7 @@ std::string WebLauncherPostRequest::CreateDebugSession()
   char jsonBuff[4096];
   ZeroMemory(jsonBuff,4096);
 
-  sprintf(jsonBuff,"{\"method\":\"registerSession\",\"key\":\"%s\",\"body\":{\"sessionToken\":\"%s\",\"players\":%s}}", "", "",
+  sprintf(jsonBuff,"{\"method\":\"registerSession\",\"key\":\"%s\",\"body\":{\"sessionToken\":\"%s\",\"players\":%s}}", API_KEY, SESSION_TOKEN,
     "[{\"id\":1,\"nickname\":\"Rekongstor\",\"muteChat\":false,\"hero\":29,\"team\":2,\"party\":0,\"skin\":1,\"rating\":{\"current\":2001.01234567,\"victory\":2021.987654321,\"loss\":1995.456789123123456},\"build\":[689,634,413,576,415,377,687,632,370,510,426,723,686,631,605,508,677,676,-266,420,607,577,429,675,-263,-264,606,506,431,-265,-261,-262,406,507,564,-29],\"bar\":[-31,-32,30,19,8,0,0,0,0,0]}]"
     );
   OutputDebugStringA(jsonBuff);

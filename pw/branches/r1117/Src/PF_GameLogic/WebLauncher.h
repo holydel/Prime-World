@@ -98,6 +98,7 @@ public:
   bool CheckConnectionRequest();
   void ValidateInstallationRequest(const char* playerToken);
   void SendSessionResults(const vector<int>& playerUserIds, int winningTeam);
+  void SendFinishGameRequest(const vector<int>& playerUserIds, int winningTeam);
   std::string CreateDebugSession();
   void GetGameNameForConnection(const char* token);
   void NotifyGameStart(const char* nickname, const char* sessionToken);

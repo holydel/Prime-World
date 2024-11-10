@@ -117,6 +117,7 @@
 #include "PlayerBehaviourTracking.h"
 #include "BadBehaviourComplaintCmd.hpp"
 #include "TargetSelectorHelper.hpp"
+#include "../PF_GameLogic/WebLauncher.h"
 
 extern "C" INTERMODULE_EXPORT void TooSmartCompiler()
 {

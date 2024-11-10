@@ -49,6 +49,7 @@
 #include "PF_GameLogic/PlayerBehaviourTracking.h"
 #include "PF_GameLogic/WebLauncher.h"
 #include "PF_GameLogic/HeroSpawn.h"
+#include "../PW_Game/server_ip.h"
 
 static bool s_threaded_loading = true;
 REGISTER_VAR( "threaded_loading", s_threaded_loading, STORAGE_NONE );
