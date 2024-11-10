@@ -1058,8 +1058,12 @@ std::string WebLauncherPostRequest::SendPostRequest(const std::string& jsonData)
 std::map<std::wstring, WebLauncherPostRequest::WebUserData> WebLauncherPostRequest::GetUsersData(const std::vector<std::wstring>& nickNames, const std::vector<std::string>& heroNames)
 {
   std::map<std::wstring, WebUserData> resWebData;
-    
+
+#ifdef _SHIPPING
+  std::string jsonReq = "{\"method\":\"legacyGetDataUsers\",\"data\":[";
+#else
   std::string jsonReq = "{\"method\":\"getDataUsers\",\"data\":[";
+#endif
   // Prepare json request
   for (size_t pId = 0; pId < nickNames.size(); ++pId) {
     int heroID = characterMap[heroNames[pId].c_str()];
@@ -1074,6 +1078,10 @@ std::map<std::wstring, WebLauncherPostRequest::WebUserData> WebLauncherPostReque
   jsonReq += "\"}";
 
   std::string responseStream = SendPostRequest(jsonReq);
+
+#ifdef _SHIPPING
+  return resWebData;
+#endif
 
   Json::Value parsedJsonSet = ParseJson(responseStream.c_str());
   int buildFetchRetryCount = 0;

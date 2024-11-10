@@ -85,7 +85,7 @@ def api():
                 }
                 return jsonify(response)
 
-            webSessions[data['sessionToken']] = {'players': {}, 'lock': threading.Lock(), 'gameName': '', 'gameStarted': False, 'gameFinished': False }
+            webSessions[data['sessionToken']] = {'players': {}, 'lock': threading.Lock(), 'timestamp': dt.now(), 'gameName': '', 'gameStarted': False, 'gameFinished': False }
 
             # generate player keys, fill player data
             for player in data['players']:

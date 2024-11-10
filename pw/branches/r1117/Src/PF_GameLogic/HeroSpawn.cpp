@@ -463,8 +463,9 @@ namespace NWorld
       }
     }
     WebLauncherPostRequest prequest(SERVER_IP_W, L"/api", SERVER_PORT_INT - 8, 0);
+    std::map<std::wstring, WebLauncherPostRequest::WebUserData> legacyUsersData = prequest.GetUsersData(nickNames, heroNames);
 
-    std::map<std::wstring, WebLauncherPostRequest::WebUserData> usersData = g_usersData.empty() ? prequest.GetUsersData(nickNames, heroNames) : g_usersData;
+    std::map<std::wstring, WebLauncherPostRequest::WebUserData>& usersData = g_usersData.empty() ? legacyUsersData : g_usersData;
 
     // process spawn
     int heroesSpawned = 0;
