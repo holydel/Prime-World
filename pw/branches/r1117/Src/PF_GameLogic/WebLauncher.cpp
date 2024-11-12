@@ -1054,7 +1054,7 @@ std::string WebLauncherPostRequest::SendPostRequest(const std::string& jsonData)
 }
 
 
-std::map<std::wstring, WebLauncherPostRequest::WebUserData> WebLauncherPostRequest::GetLegacyUsersData()
+std::map<std::wstring, WebLauncherPostRequest::WebUserData> WebLauncherPostRequest::GetLegacyUsersData(const std::vector<std::wstring>& nickNames, const std::vector<std::string>& heroNames)
 {
   std::map<std::wstring, WebUserData> resWebData;
 

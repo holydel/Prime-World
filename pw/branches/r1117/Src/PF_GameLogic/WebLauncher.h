@@ -87,7 +87,7 @@ public:
 
 	std::vector<TalentWebData> GetTallentSet(const wchar_t* nickName, const char* heroName);
   std::map<std::wstring, WebUserData> WebLauncherPostRequest::GetUsersData(const std::vector<std::wstring>& nickNames, const std::vector<std::string>& heroNames);
-  std::map<std::wstring, WebUserData> WebLauncherPostRequest::GetLegacyUsersData();
+  std::map<std::wstring, WebUserData> WebLauncherPostRequest::GetLegacyUsersData(const std::vector<std::wstring>& nickNames, const std::vector<std::string>& heroNames);
   std::string ConvertFromClassID(int id);
   WebLoginResponse GetSessionData(const char* token);
   WebLoginResponse GetNickName(const char* token);

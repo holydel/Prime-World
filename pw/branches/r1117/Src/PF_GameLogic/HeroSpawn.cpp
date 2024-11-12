@@ -463,7 +463,7 @@ namespace NWorld
       }
     }
     WebLauncherPostRequest prequest(SERVER_IP_W, L"/api", SERVER_PORT_INT - 8, 0);
-    std::map<std::wstring, WebLauncherPostRequest::WebUserData> legacyUsersData = g_usersData.empty() ? prequest.GetUsersData(nickNames, heroNames) : prequest.GetLegacyUsersData();
+    std::map<std::wstring, WebLauncherPostRequest::WebUserData> legacyUsersData = g_usersData.empty() ? prequest.GetUsersData(nickNames, heroNames) : prequest.GetLegacyUsersData(nickNames, heroNames);
 
     std::map<std::wstring, WebLauncherPostRequest::WebUserData>& usersData = g_usersData.empty() ? legacyUsersData : g_usersData;
 
