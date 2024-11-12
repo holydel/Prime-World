@@ -527,9 +527,6 @@ namespace NWorld
 
         userIdToNicknameMap[players[it->playerId].userID] = pInfo;
 
-
-				WebLauncherPostRequest prequest;
-
         std::wstring nick = players[it->playerId].nickname.c_str() + 1;
         userData = usersData[nick];
         heroSpawnDesc.playerInfo.heroRating = (int)userData.currentRating;

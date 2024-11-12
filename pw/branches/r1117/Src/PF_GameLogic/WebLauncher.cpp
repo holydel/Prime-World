@@ -1577,7 +1577,7 @@ void WebLauncherPostRequest::SendSessionResults(const vector<int>& playerUserIds
   std::string responseStream = SendPostRequest(jsonReq);
 }
 
-#pragma optimize("", off)
+
 void WebLauncherPostRequest::SendFinishGameRequest(const vector<int>& playerUserIds, int winningTeam)
 {
   char jsonBuff[2048];
@@ -1746,7 +1746,7 @@ WebLauncherPostRequest::WebLoginResponse WebLauncherPostRequest::GetSessionData(
 
   Json::Value nickname = playerInfo.get("nickname", Json::Value());
 
-  res.response = Fix1251Encoding(nickname.asString()).c_str();
+  res.response = Fix1251Encoding(Fix1251Encoding(nickname.asString()).c_str());
 
   Json::Value hero = playerInfo.get("hero", Json::Value());
   Json::Value team = playerInfo.get("team", Json::Value());
@@ -1769,7 +1769,7 @@ WebLauncherPostRequest::WebLoginResponse WebLauncherPostRequest::GetSessionData(
       res.retCode = LoginResponse_WEB_FAIL;
       return res;
     }
-    g_sessionName = gameName.asString().c_str();
+    g_sessionName = Fix1251Encoding(gameName.asString()).c_str();
   }
   if (method.asString() == "reconnect") {
     res.retCode = LoginResponse_WEB_RECONNECT;
@@ -1781,7 +1781,7 @@ WebLauncherPostRequest::WebLoginResponse WebLauncherPostRequest::GetSessionData(
       res.retCode = LoginResponse_WEB_FAIL;
       return res;
     }
-    g_sessionName = gameName.asString().c_str();
+    g_sessionName = Fix1251Encoding(gameName.asString()).c_str();
   }
 
   // Get users data
@@ -1794,7 +1794,7 @@ WebLauncherPostRequest::WebLoginResponse WebLauncherPostRequest::GetSessionData(
       return res;
     }
 
-    std::string curNickname = curPlayer.get("nickname", Json::Value()).asString();
+    std::string curNickname = Fix1251Encoding(curPlayer.get("nickname", Json::Value()).asString());
     int utf8Length = static_cast<int>(curNickname.length());
     int wideCharLength = MultiByteToWideChar(CP_UTF8, 0, curNickname.c_str(), utf8Length, NULL, 0);
 
