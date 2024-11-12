@@ -593,7 +593,6 @@ namespace Render
     m_shadowFarRange = params.shadowFarRange;
 
     CVec3 lightDirWS;
-    float teamCorrectionYaw = (g_fixedTeamCam == 0 || g_fixedTeamCam - 1 == g_playerTeamId) ? 0.f : 180.f;
     NDb::Direction smDir = params.shadowDirection;
 
     ConvertDirection(smDir, lightDirWS);
