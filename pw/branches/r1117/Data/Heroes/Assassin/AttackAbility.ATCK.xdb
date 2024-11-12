@@ -35,7 +35,6 @@
 				<uiEvent href="/UI/Events/CommonEvents/EventDamageDealed_Material.UIEV" />
 			</DamageApplicator>
 		</Item>
-		<Item href="/Items/Talents/Class/Assassin/status_A3u_HasteBurst.APLR" />
 		<Item href="/Items/Talents/Class/Assassin/StopGhostRun.APLR" />
 		<Item href="/Items/Talents/Class/Assassin/A2u1_Stun.APLR" />
 	</applicators>

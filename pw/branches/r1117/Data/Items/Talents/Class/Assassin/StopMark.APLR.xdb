@@ -1,9 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <FlagsApplicator>
-	<BackLink DBID="/Items/Talents/Class/Assassin/A3_LifeTimer.APLR" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/Assassin/Ability_A3.TALENT" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/Assassin/Ability_A3_2.TALENT" Count="1" />
-	<BackLink DBID="/Items/Talents/Class/Hunter/status_A0_bleeding.APLR" Count="1" />
 	<applyTarget>ApplicatorTarget</applyTarget>
 	<behaviorFlags>0</behaviorFlags>
 	<caption>отключалка статуса MarkOfPrey</caption>
@@ -18,7 +16,7 @@
 		<sString>true</sString>
 	</enabled>
 	<flag>0</flag>
-	<formulaName>AssassinStopMark</formulaName>
+	<formulaName></formulaName>
 	<lifeTime>
 		<compiledString>FQUAAAABAAAAEgAAAFNURVAAVYvsUYtFDFCLTQhRaAAAAACLVRCLAotNEItQUP/S3MDZXfzZRfyL5V3D</compiledString>
 		<returnType>float</returnType>
