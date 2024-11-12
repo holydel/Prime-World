@@ -6,7 +6,7 @@
 	<BackLink DBID="/Items/Talents/Class/Assassin/Ability_A3_2u.TALENT" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/Assassin/Ability_A3u.TALENT" Count="1" />
 	<BackLink DBID="/Items/Talents/TalentKits/Redset5_7_Ultimate/Status_Redset5_7_Cooldown.APLR" Count="1" />
-	<BackLink DBID="/Items/Talents/Assassin.TALENTSET" Count="1" />
+	<BackLink DBID="/Items/Talents/Assassin.TALENTSET" Count="3" />
 	<activationConditions />
 	<activeCustomTrigger>true</activeCustomTrigger>
 	<allowChase>
@@ -407,8 +407,6 @@
 	<constants href="/Items/Talents/Class/Assassin/Ability_A3_2.TALENT" id="5CA6B7E3-4EC5-4CC3-9592-393B3515A4AB">
 		<UnitConstantsContainer>
 			<vars>
-				<Item href="/Items/Talents/Class/Assassin/const_A3_MaxDamagePercent" />
-				<Item href="/Items/Talents/Class/Assassin/const_A3_Duration" />
 				<Item href="/Items/Talents/Class/Assassin/Ability_A3_2.TALENT" id="6458F000-1304-4762-B26B-D1A24CA80FDC">
 					<UnitConstant>
 						<name>A3_IncrementTime</name>
@@ -475,6 +473,26 @@
 				</Item>
 				<Item href="/Items/Talents/Class/Assassin/const_A0_SUP_2_Appl_Duration" />
 				<Item href="/Items/Talents/Class/Assassin/const_A0_SUP_2_Inc_Resp_Time" />
+				<Item href="/Items/Talents/Class/Assassin/Ability_A3_2.TALENT" id="718E8D13-FB83-42B4-AD5D-CB40C3EEA13E">
+					<UnitConstant>
+						<name>A3_Duration</name>
+						<var>
+							<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAABwQQ==</compiledString>
+							<returnType>float</returnType>
+							<sString>15</sString>
+						</var>
+					</UnitConstant>
+				</Item>
+				<Item href="/Items/Talents/Class/Assassin/Ability_A3_2.TALENT" id="A5955930-B277-4825-A423-EAC2C0D057CC">
+					<UnitConstant>
+						<name>A3_MaxDamagePercent</name>
+						<var>
+							<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAADwQg==</compiledString>
+							<returnType>float</returnType>
+							<sString>120</sString>
+						</var>
+					</UnitConstant>
+				</Item>
 			</vars>
 		</UnitConstantsContainer>
 	</constants>
