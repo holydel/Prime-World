@@ -64,22 +64,54 @@
 										<stopEvents>0</stopEvents>
 									</Item>
 									<Item>
-										<applicator href="/Items/Talents/Class/Assassin/StopMark.APLR" />
+										<applicator href="/Items/Talents/Class/Assassin/A3_LifeTimer.APLR" id="BC1F541D-93E0-4605-9026-209397970A2F">
+											<FlagsApplicator>
+												<applyTarget>ApplicatorTarget</applyTarget>
+												<behaviorFlags>0</behaviorFlags>
+												<caption>отключалка статуса MarkOfPrey</caption>
+												<consumables />
+												<effect>
+													<Item href="" />
+													<Item href="" />
+												</effect>
+												<enabled>
+													<compiledString></compiledString>
+													<returnType>bool</returnType>
+													<sString>true</sString>
+												</enabled>
+												<flag>0</flag>
+												<formulaName>AssassinStopMark</formulaName>
+												<lifeTime>
+													<compiledString>FQUAAAABAAAAEgAAAFNURVAAVYvsUYtFDFCLTQhRaAAAAACLVRCLAotNEItQUP/S3MDZXfzZRfyL5V3D</compiledString>
+													<returnType>float</returnType>
+													<sString>cSTEP * 2</sString>
+												</lifeTime>
+												<LoggingEvent>-1</LoggingEvent>
+												<providerName></providerName>
+												<startCondition>
+													<compiledString></compiledString>
+													<returnType>bool</returnType>
+													<sString>true</sString>
+												</startCondition>
+												<talents />
+												<useListAs>ListAsRule</useListAs>
+											</FlagsApplicator>
+										</applicator>
 										<continueCondition>
-											<compiledString>FQAAAAAAAAAAVYvsMsBdww==</compiledString>
+											<compiledString></compiledString>
 											<returnType>bool</returnType>
 											<sString>0</sString>
 										</continueCondition>
-										<continueEvents>1</continueEvents>
+										<continueEvents>2</continueEvents>
 										<delay>
 											<compiledString></compiledString>
 											<returnType>float</returnType>
 											<sString>-1.0</sString>
 										</delay>
 										<stopCondition>
-											<compiledString>FQAAAAAAAAAAVYvsi0UIixCLTQiLgpABAAD/0FCLTQyLEYtNDItCdP/QXcM=</compiledString>
+											<compiledString></compiledString>
 											<returnType>bool</returnType>
-											<sString>receiver.IsVisibleForEnemy(sFctn)</sString>
+											<sString>0</sString>
 										</stopCondition>
 										<stopEvents>0</stopEvents>
 									</Item>

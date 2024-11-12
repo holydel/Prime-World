@@ -15,6 +15,7 @@
 	<BackLink DBID="/Test/Talents/Assassin/Elite_Int.TALENTSET" Count="1" />
 	<BackLink DBID="/Test/Talents/Assassin/Epic_Int.TALENTSET" Count="1" />
 	<BackLink DBID="/Test/Talents/Assassin/Epic_Str.TALENTSET" Count="1" />
+	<BackLink DBID="/Items/Talents/Class/Assassin/Ability_A4_1.TALENT" Count="2" />
 	<BackLink DBID="/Items/Talents/Assassin.TALENTSET" Count="1" />
 	<activationConditions />
 	<activeCustomTrigger>true</activeCustomTrigger>
@@ -848,9 +849,9 @@
 					<UnitConstant>
 						<name>A4_Damage</name>
 						<var>
-							<compiledString>FQAAAAACAAAACAAAABIAAABVi+xqAVHZBUQAAADZHCRR2QVAAAAA2RwkagCLRQiLEItNCIuCNAEAAP/QUdkcJGoBi00QixGLTRCLQmD/0F3DAAALQwCggkQ=</compiledString>
+							<compiledString>FQAAAAACAAAACAAAABIAAABVi+xqAVHZBUQAAADZHCRR2QVAAAAA2RwkagCLRQiLEItNCIuCNAEAAP/QUdkcJGoBi00QixGLTRCLQmD/0F3DAAD+QgCAbUQ=</compiledString>
 							<returnType>float</returnType>
-							<sString>damageScale( sIntellect, 139, 1045 )</sString>
+							<sString>damageScale( sIntellect, 127, 950 )</sString>
 						</var>
 					</UnitConstant>
 				</Item>
@@ -915,9 +916,9 @@
 					<UnitConstant>
 						<name>Haste_StartCondition</name>
 						<var>
-							<compiledString>FUQAAAAEAAAASwAAAGQAAACaAAAAtQAAAEFzc2Fzc2luX0EzXzJ1AABBc3Nhc3Npbl9BM18ydQAAQWJpbGl0eVRhcmdldAAAAEFzc2Fzc2luX01hcmtPZlByZXkAVYvsg+wQaAAAAACLRQiLEItNCIuCqAEAAP/QhcB0KmgQAAAAi00IixGLTQiLgqgBAAD/0IlF/ItN/IsRi038i0IE/9CIRfvrBMZF+wAPtk37hcl0PmggAAAAi1UQiwKLTRCLUEz/0olF9GoAi0UQUGgwAAAAi030ixGLTfSLgpwBAAD/0DtFEHQJx0XwAQAAAOsHx0XwAAAAANtF8IvlXcM=</compiledString>
+							<compiledString>FWQAAAAGAAAAawAAAIQAAAC+AAAA1wAAAA0BAAAoAQAAQXNzYXNzaW5fQTNfMnUAAEFzc2Fzc2luX0EzXzJ1AABBc3Nhc3Npbl9BM3UAAAAAQXNzYXNzaW5fQTN1AAAAAEFiaWxpdHlUYXJnZXQAAABBc3Nhc3Npbl9NYXJrT2ZQcmV5AFWL7IPsGGgAAAAAi0UIixCLTQiLgqgBAAD/0IXAdCpoEAAAAItNCIsRi00Ii4KoAQAA/9CJRfyLTfyLEYtN/ItCBP/QiEX76wTGRfsAD7ZN+4XJD4WNAAAAaCAAAACLVQiLAotNCIuQqAEAAP/ShcB0KmgwAAAAi0UIixCLTQiLgqgBAAD/0IlF9ItN9IsRi030i0IE/9CIRfPrBMZF8wAPtk3zhcl0NWhAAAAAi1UQiwKLTRCLUEz/0olF7GoAi0UQUGhQAAAAi03sixGLTeyLgpwBAAD/0DtFEHUJx0XoAAAAAOsHx0XoAQAAANtF6IvlXcM=</compiledString>
 							<returnType>float</returnType>
-							<sString>tal("Assassin_A3_2u") &amp;&amp; appl.oAbilityTarget.applAssassin_MarkOfPrey(GLOBAL) != pMisc</sString>
+							<sString>tal("Assassin_A3_2u")||tal("Assassin_A3u") &amp;&amp; appl.oAbilityTarget.applAssassin_MarkOfPrey(GLOBAL) != pMisc</sString>
 						</var>
 					</UnitConstant>
 				</Item>
