@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="bindFile">
+      <UniqueIdentifier>{68014435-89d9-447f-9e09-cc8901d2bf41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="blindDataShader">
+      <UniqueIdentifier>{f5ccadb3-2e7d-4355-a8cd-86d2a0fba42d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cvColorShader">
+      <UniqueIdentifier>{91a6e26e-fd08-4cf3-a21c-53627804f9cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="h6export">
+      <UniqueIdentifier>{31fd9264-1eec-40be-b037-8040578432f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="helloWorld">
+      <UniqueIdentifier>{e8d4943a-9ebb-4e5f-8ec5-16544d90edb7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mapFaces">
+      <UniqueIdentifier>{958fc666-d4b7-439b-96d1-a37ed22fdf22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="polyTrace">
+      <UniqueIdentifier>{b2f84011-0a2a-49b9-8be3-34190ba303db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="setVertexNormals">
+      <UniqueIdentifier>{cd692ce0-fd98-4cef-a679-98d4589743cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="displace">
+      <UniqueIdentifier>{0d1aa327-5148-45cf-9898-c188c80b5c1e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="bindFile\BNFL.cpp">
+      <Filter>bindFile</Filter>
+    </ClCompile>
+    <ClCompile Include="bindFile\reader.cpp">
+      <Filter>bindFile</Filter>
+    </ClCompile>
+    <ClCompile Include="bindFile\readerIDX.cpp">
+      <Filter>bindFile</Filter>
+    </ClCompile>
+    <ClCompile Include="bindFile\writer.cpp">
+      <Filter>bindFile</Filter>
+    </ClCompile>
+    <ClCompile Include="bindFile\writerBlind.cpp">
+      <Filter>bindFile</Filter>
+    </ClCompile>
+    <ClCompile Include="bindFile\writerIDX.cpp">
+      <Filter>bindFile</Filter>
+    </ClCompile>
+    <ClCompile Include="blindDataShader\blindDataMesh.cpp">
+      <Filter>blindDataShader</Filter>
+    </ClCompile>
+    <ClCompile Include="cvColorShader\CVCS.cpp">
+      <Filter>cvColorShader</Filter>
+    </ClCompile>
+    <ClCompile Include="h6export\Anim.cpp">
+      <Filter>h6export</Filter>
+    </ClCompile>
+    <ClCompile Include="h6export\Debug.cpp">
+      <Filter>h6export</Filter>
+    </ClCompile>
+    <ClCompile Include="h6export\H6EX.cpp">
+      <Filter>h6export</Filter>
+    </ClCompile>
+    <ClCompile Include="h6export\Lght.cpp">
+      <Filter>h6export</Filter>
+    </ClCompile>
+    <ClCompile Include="h6export\Part.cpp">
+      <Filter>h6export</Filter>
+    </ClCompile>
+    <ClCompile Include="h6export\Skel.cpp">
+      <Filter>h6export</Filter>
+    </ClCompile>
+    <ClCompile Include="h6export\Skin.cpp">
+      <Filter>h6export</Filter>
+    </ClCompile>
+    <ClCompile Include="h6export\Stat.cpp">
+      <Filter>h6export</Filter>
+    </ClCompile>
+    <ClCompile Include="h6export\Write.cpp">
+      <Filter>h6export</Filter>
+    </ClCompile>
+    <ClCompile Include="helloWorld\HLWD.cpp">
+      <Filter>helloWorld</Filter>
+    </ClCompile>
+    <ClCompile Include="mapFaces\MPFS.cpp">
+      <Filter>mapFaces</Filter>
+    </ClCompile>
+    <ClCompile Include="polyTrace\PTRC.cpp">
+      <Filter>polyTrace</Filter>
+    </ClCompile>
+    <ClCompile Include="setVertexNormals\VNRM.cpp">
+      <Filter>setVertexNormals</Filter>
+    </ClCompile>
+    <ClCompile Include="displace\DSPL.cpp">
+      <Filter>displace</Filter>
+    </ClCompile>
+    <ClCompile Include="plugin.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="bindFile\BNFL.h">
+      <Filter>bindFile</Filter>
+    </ClInclude>
+    <ClInclude Include="blindDataShader\blindDataMesh.h">
+      <Filter>blindDataShader</Filter>
+    </ClInclude>
+    <ClInclude Include="h6export\Anim.h">
+      <Filter>h6export</Filter>
+    </ClInclude>
+    <ClInclude Include="h6export\H6EX.h">
+      <Filter>h6export</Filter>
+    </ClInclude>
+    <ClInclude Include="h6export\Part.h">
+      <Filter>h6export</Filter>
+    </ClInclude>
+    <ClInclude Include="helloWorld\HLWD.h">
+      <Filter>helloWorld</Filter>
+    </ClInclude>
+    <ClInclude Include="displace\DSPL.h">
+      <Filter>displace</Filter>
+    </ClInclude>
+    <ClInclude Include="commandClasses.h" />
+    <ClInclude Include="libs.h" />
+  </ItemGroup>
+</Project>

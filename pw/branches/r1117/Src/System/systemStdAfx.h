@@ -104,6 +104,21 @@ using namespace nstl;
 #pragma warning( disable: 4324 ) // warning C4324: structure was padded due to __declspec(align())
 #pragma warning ( disable: 4793 ) // warning C4793: function compiled as native
 #pragma warning( disable: 4530 ) // warning C4530: C++ exception handler used, but unwind semantics are not enabled
+#pragma warning( disable: 4458 )
+#pragma warning( disable: 4477 )
+#pragma warning( disable: 4456 )
+#pragma warning( disable: 4091 )
+#pragma warning( disable: 4267 )
+#pragma warning( disable: 4706 )
+#pragma warning( disable: 4459 )
+#pragma warning( disable: 4474 )
+#pragma warning( disable: 4838 )
+#pragma warning( disable: 4457 )
+#pragma warning( disable: 4091 )
+#pragma warning( disable: 4996 )
+#pragma warning( disable: 4463 )
+#pragma warning( disable: 4316 )
+#pragma warning( disable: 4577 )
 
 #ifdef _SHIPPING
 #pragma warning( disable: 4505 ) // warning C4324: unreferenced local function has been removed

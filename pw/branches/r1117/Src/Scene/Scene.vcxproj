@@ -1,0 +1,496 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseSingleExe|Win32">
+      <Configuration>ReleaseSingleExe</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ShippingSingleExe|Win32">
+      <Configuration>ShippingSingleExe</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Shipping|Win32">
+      <Configuration>Shipping</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{599A6026-5CF2-47A1-8299-E3465CB6D436}</ProjectGuid>
+    <RootNamespace>Scene</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseSingleExe|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ShippingSingleExe|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseSingleExe|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ShippingSingleExe|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>14.0.25431.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(ProjectDir)..\_$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)..\_$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(ProjectDir)..\_$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)..\_$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'">
+    <OutDir>$(ProjectDir)..\_$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)..\_$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ShippingSingleExe|Win32'">
+    <OutDir>$(ProjectDir)..\_$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)..\_$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseSingleExe|Win32'">
+    <OutDir>$(ProjectDir)..\_$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)..\_$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/MP %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../..;../../vendor\zlib\include;../../vendor\CxxTest\Include;../../vendor\DirectX\Include;../;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;DLL;_DEBUG;_DO_ASSERT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling />
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <SmallerTypeCheck>true</SmallerTypeCheck>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <PreLinkEvent>
+      <Command>cd $(IntDir)
+..\..\..\vendor\BuildUtils\DefBuild.exe $(ProjectName).def
+if errorlevel 1 goto checklib
+:BuildImportLib
+lib /NOLOGO *.obj /def:$(ProjectName).def /MACHINE:X86 /out:"$(OutDir)$(ProjectName).lib"
+goto end
+:checklib
+if not exist "$(OutDir)$(ProjectName).lib" goto BuildImportLib
+:end
+dir&gt;nul
+</Command>
+    </PreLinkEvent>
+    <Link>
+      <AdditionalDependencies>zdll.lib;CxxTestD.lib;dxguid.lib;d3d9.lib;d3dx9.lib;dxerr.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName).dll</OutputFile>
+      <AdditionalLibraryDirectories>../../vendor\zlib\lib;../../vendor\CxxTest\lib;../../vendor\DirectX\Lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ModuleDefinitionFile>$(IntDir)$(ProjectName).def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>NotSet</SubSystem>
+      <LargeAddressAware>true</LargeAddressAware>
+      <FixedBaseAddress />
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/MP /D_SCL_SECURE_NO_WARNINGS /D_SECURE_SCL=0 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>../..;../../vendor\zlib\include;../../vendor\CxxTest\Include;../../vendor\DirectX\Include;../;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;DLL;NDEBUG;_DO_ASSERT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling />
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <SmallerTypeCheck>false</SmallerTypeCheck>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <PreLinkEvent>
+      <Command>cd $(IntDir)
+..\..\..\vendor\BuildUtils\DefBuild.exe $(ProjectName).def
+if errorlevel 1 goto checklib
+:BuildImportLib
+lib /NOLOGO *.obj /def:$(ProjectName).def /MACHINE:X86 /out:"$(OutDir)$(ProjectName).lib"
+goto end
+:checklib
+if not exist "$(OutDir)$(ProjectName).lib" goto BuildImportLib
+:end
+dir&gt;nul
+</Command>
+    </PreLinkEvent>
+    <Link>
+      <AdditionalDependencies>zdll.lib;CxxTest.lib;dxguid.lib;d3d9.lib;d3dx9.lib;dxerr.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName).dll</OutputFile>
+      <AdditionalLibraryDirectories>../../vendor\zlib\lib;../../vendor\CxxTest\lib;../../vendor\DirectX\Lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ModuleDefinitionFile>$(IntDir)$(ProjectName).def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>NotSet</SubSystem>
+      <LargeAddressAware>true</LargeAddressAware>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <FixedBaseAddress />
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/MP /D_SCL_SECURE_NO_WARNINGS /D_SECURE_SCL=0 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>../..;../../vendor\zlib\include;../../vendor\CxxTest\Include;../../vendor\DirectX\Include;../;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;DLL;NDEBUG;_SHIPPING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling />
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <SmallerTypeCheck>false</SmallerTypeCheck>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <PreLinkEvent>
+      <Command>cd $(IntDir)
+..\..\..\vendor\BuildUtils\DefBuild.exe $(ProjectName).def
+if errorlevel 1 goto checklib
+:BuildImportLib
+lib /NOLOGO *.obj /def:$(ProjectName).def /MACHINE:X86 /out:"$(OutDir)$(ProjectName).lib"
+goto end
+:checklib
+if not exist "$(OutDir)$(ProjectName).lib" goto BuildImportLib
+:end
+dir&gt;nul
+</Command>
+    </PreLinkEvent>
+    <Link>
+      <AdditionalDependencies>zdll.lib;CxxTest.lib;dxguid.lib;d3d9.lib;d3dx9.lib;dxerr.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName).dll</OutputFile>
+      <AdditionalLibraryDirectories>../../vendor\zlib\lib;../../vendor\CxxTest\lib;../../vendor\DirectX\Lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ModuleDefinitionFile>$(IntDir)$(ProjectName).def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>NotSet</SubSystem>
+      <LargeAddressAware>true</LargeAddressAware>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <FixedBaseAddress />
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ShippingSingleExe|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/MP /D_SCL_SECURE_NO_WARNINGS /D_SECURE_SCL=0 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <AdditionalIncludeDirectories>../..;../../vendor\zlib\include;../../vendor\CxxTest\Include;../../vendor\DirectX\Include;../;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>__PLACEMENT_NEW_INLINE;WIN32;_WINDOWS;STATIC_LIB;NDEBUG;_SHIPPING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <SmallerTypeCheck>false</SmallerTypeCheck>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <PreLinkEvent>
+      <Command />
+    </PreLinkEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseSingleExe|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/MP /D_SCL_SECURE_NO_WARNINGS /D_SECURE_SCL=0 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <AdditionalIncludeDirectories>../..;../../vendor\zlib\include;../../vendor\CxxTest\Include;../../vendor\DirectX\Include;../;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;STATIC_LIB;NDEBUG;_DO_ASSERT;STARFORCE_PROTECTED;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling />
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <SmallerTypeCheck>false</SmallerTypeCheck>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <PreLinkEvent>
+      <Command />
+    </PreLinkEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="AmbienceMap.h" />
+    <ClInclude Include="AnimatedPlacement.h" />
+    <ClInclude Include="AnimatedSceneComponent.h" />
+    <ClInclude Include="AnimatedSplitSceneComponent.h" />
+    <ClInclude Include="Animators.h" />
+    <ClInclude Include="AnimGraphApplicator.hpp" />
+    <ClInclude Include="AnimGraphBlender.h" />
+    <ClInclude Include="AnimGraphController.h" />
+    <ClInclude Include="AnimSequencer.h" />
+    <ClInclude Include="AnimSequencer.hpp" />
+    <ClInclude Include="AttacherSceneComponent.h" />
+    <ClInclude Include="BitMap.h" />
+    <ClInclude Include="Camera.h" />
+    <ClInclude Include="Camera.hpp" />
+    <ClInclude Include="CameraController.h" />
+    <ClInclude Include="CameraControllersContainer.h" />
+    <ClInclude Include="CameraInputModifier.h" />
+    <ClInclude Include="CollectionList.h" />
+    <ClInclude Include="CollectionVG.h" />
+    <ClInclude Include="CollisionGeometry.h" />
+    <ClInclude Include="CollisionGeometryManager.h" />
+    <ClInclude Include="CollisionHull.h" />
+    <ClInclude Include="CollisionMap.h" />
+    <ClInclude Include="CollisionVolumeNode.h" />
+    <ClInclude Include="DBScene.h" />
+    <ClInclude Include="DBSceneBase.h" />
+    <ClInclude Include="DiAnGr.h" />
+    <ClInclude Include="DiAnGrAPI.h" />
+    <ClInclude Include="DiAnGrExtPars.h" />
+    <ClInclude Include="DiAnGrExtParsAd.h" />
+    <ClInclude Include="DiAnGrMarker.h" />
+    <ClInclude Include="DiAnGrNLinker.h" />
+    <ClInclude Include="DiAnGrSStorage.h" />
+    <ClInclude Include="DiAnGrUtils.h" />
+    <ClInclude Include="DiAnSol.h" />
+    <ClInclude Include="DiGraph.h" />
+    <ClInclude Include="dimath.h" />
+    <ClInclude Include="DiMatrix.h" />
+    <ClInclude Include="DiTypes.h" />
+    <ClInclude Include="DiVector.h" />
+    <ClInclude Include="EditorSceneObject.h" />
+    <ClInclude Include="FreeCameraController.hpp" />
+    <ClInclude Include="GeometryBuilders.h" />
+    <ClInclude Include="GeometryTracer.h" />
+    <ClInclude Include="HeightsController.h" />
+    <ClInclude Include="include_BaseVisualObject.h" />
+    <ClInclude Include="include_VisualObject.h" />
+    <ClInclude Include="LightingScene.h" />
+    <ClInclude Include="LightningFX.h" />
+    <ClInclude Include="LightningSceneComponent.h" />
+    <ClInclude Include="Octree.h" />
+    <ClInclude Include="ParticleSceneComponent.h" />
+    <ClInclude Include="PointSelector.h" />
+    <ClInclude Include="RenderableScene.h" />
+    <ClInclude Include="RoadGeometryBuilder.h" />
+    <ClInclude Include="RoadSceneObject.h" />
+    <ClInclude Include="Scene.h" />
+    <ClInclude Include="Scene.hpp" />
+    <ClInclude Include="SceneComponent.h" />
+    <ClInclude Include="SceneObject.h" />
+    <ClInclude Include="SceneObjectCreation.h" />
+    <ClInclude Include="SceneObjectsPool.h" />
+    <ClInclude Include="SceneObjectTrack.h" />
+    <ClInclude Include="SceneObjectUtils.h" />
+    <ClInclude Include="ScenePassabilityMask.h" />
+    <ClInclude Include="SceneTypes.h" />
+    <ClInclude Include="SceneUtils.h" />
+    <ClInclude Include="SequencerData.hpp" />
+    <ClInclude Include="SHGrid.h" />
+    <ClInclude Include="SHGridCalculator.h" />
+    <ClInclude Include="SoundSceneComponent.h" />
+    <ClInclude Include="specific.h" />
+    <ClInclude Include="StaticSceneComponent.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="TestBB.h" />
+    <ClInclude Include="TestObject.h" />
+    <ClInclude Include="TestSceneComponent.h" />
+    <ClInclude Include="TimeController.h" />
+    <ClInclude Include="TimedChannel.h" />
+    <ClInclude Include="TimeMutator.h" />
+    <ClInclude Include="TraceFX.h" />
+    <ClInclude Include="TraceFXGeo.h" />
+    <ClInclude Include="TraceSceneComponent.h" />
+    <ClInclude Include="VertexColorManager.h" />
+    <ClInclude Include="VoxelGrid.h" />
+    <ClInclude Include="VoxelGridObj.h" />
+    <ClInclude Include="WaterSceneComponent.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AmbienceMap.cpp" />
+    <ClCompile Include="AnimatedSceneComponent.cpp" />
+    <ClCompile Include="AnimatedSplitSceneComponent.cpp" />
+    <ClCompile Include="Animators.cpp" />
+    <ClCompile Include="AnimGraphApplicator.cpp" />
+    <ClCompile Include="AnimGraphBlender.cpp" />
+    <ClCompile Include="AnimGraphController.cpp" />
+    <ClCompile Include="AnimSequencer.cpp" />
+    <ClCompile Include="AttacherSceneComponent.cpp" />
+    <ClCompile Include="BitMap.cpp" />
+    <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="CameraControllersContainer.cpp" />
+    <ClCompile Include="CameraInputModifier.cpp" />
+    <ClCompile Include="CollisionGeometry.cpp" />
+    <ClCompile Include="CollisionGeometryManager.cpp" />
+    <ClCompile Include="CollisionHull.cpp" />
+    <ClCompile Include="CollisionMap.cpp" />
+    <ClCompile Include="DBScene.cpp" />
+    <ClCompile Include="DBSceneBase.cpp" />
+    <ClCompile Include="DiAnGr.cpp" />
+    <ClCompile Include="DiAnGrAPI.cpp" />
+    <ClCompile Include="DiAnGrCl.cpp" />
+    <ClCompile Include="DiAnGrDb.cpp" />
+    <ClCompile Include="DiAnGrEditor.cpp" />
+    <ClCompile Include="DiAnGrExtPars.cpp" />
+    <ClCompile Include="DiAnGrExtParsAd.cpp" />
+    <ClCompile Include="DiAnGrG.cpp" />
+    <ClCompile Include="DiAnGrIo2.cpp" />
+    <ClCompile Include="DiAnGrMarker.cpp" />
+    <ClCompile Include="DiAnGrNLinker.cpp" />
+    <ClCompile Include="DiAnGrSStorage.cpp" />
+    <ClCompile Include="DiAnGrUp.cpp" />
+    <ClCompile Include="DiAnGrUtils.cpp" />
+    <ClCompile Include="DiGraph.cpp" />
+    <ClCompile Include="EditorSceneObject.cpp" />
+    <ClCompile Include="FreeCameraController.cpp" />
+    <ClCompile Include="GeometryBuilders.cpp" />
+    <ClCompile Include="GeometryTracer.cpp" />
+    <ClCompile Include="HeightsController.cpp" />
+    <ClCompile Include="LightingScene.cpp" />
+    <ClCompile Include="LightningFX.cpp" />
+    <ClCompile Include="LightningSceneComponent.cpp" />
+    <ClCompile Include="ParticleSceneComponent.cpp" />
+    <ClCompile Include="RoadGeometryBuilder.cpp" />
+    <ClCompile Include="RoadSceneObject.cpp" />
+    <ClCompile Include="Scene.cpp">
+      <PreprocessToFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</PreprocessToFile>
+      <PreprocessSuppressLineNumbers Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</PreprocessSuppressLineNumbers>
+    </ClCompile>
+    <ClCompile Include="SceneComponent.cpp" />
+    <ClCompile Include="SceneObject.cpp" />
+    <ClCompile Include="SceneObjectCreation.cpp" />
+    <ClCompile Include="SceneObjectsPool.cpp" />
+    <ClCompile Include="SceneObjectTrack.cpp" />
+    <ClCompile Include="SceneObjectUtils.cpp" />
+    <ClCompile Include="ScenePassabilityMask.cpp" />
+    <ClCompile Include="SceneUtils.cpp" />
+    <ClCompile Include="SHGrid.cpp" />
+    <ClCompile Include="SHGridCalculator.cpp" />
+    <ClCompile Include="SoundSceneComponent.cpp" />
+    <ClCompile Include="StaticSceneComponent.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ReleaseSingleExe|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ShippingSingleExe|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="TestSceneComponent.cpp" />
+    <ClCompile Include="TimeController.cpp" />
+    <ClCompile Include="TimeMutator.cpp" />
+    <ClCompile Include="TraceFX.cpp" />
+    <ClCompile Include="TraceFXGeo.cpp" />
+    <ClCompile Include="TraceSceneComponent.cpp" />
+    <ClCompile Include="VertexColorManager.cpp" />
+    <ClCompile Include="WaterSceneComponent.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="all.component" />
+    <None Include="Animation.component" />
+    <None Include="Camera.component" />
+    <None Include="Collision.component" />
+    <None Include="DB.component" />
+    <None Include="DiAnGr.inl" />
+    <None Include="DiM4d.inl" />
+    <None Include="DiMath.inl" />
+    <None Include="DiMathOp.inl" />
+    <None Include="DiV2d.inl" />
+    <None Include="DiV3d.inl" />
+    <None Include="DiV4d.inl" />
+    <None Include="SceneObject.component" />
+    <None Include="SceneObjects.component" />
+    <None Include="Sound.component" />
+    <None Include="VoxelGrid.component" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\Version.rc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSingleExe|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ShippingSingleExe|Win32'">true</ExcludedFromBuild>
+    </ResourceCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

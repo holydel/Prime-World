@@ -1,0 +1,953 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Game_Clinic">
+      <UniqueIdentifier>{fdc5f7db-4565-418f-81bf-e99908b584a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game_Clinic\Screens">
+      <UniqueIdentifier>{ab8b37b0-fa53-4709-929f-a2446abdff50}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game_Clinic\ClientObjects">
+      <UniqueIdentifier>{c652a413-a4c7-4f80-b2db-41e8a582af82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DB">
+      <UniqueIdentifier>{231b005f-0478-4292-8a68-807da269e817}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AnimationController">
+      <UniqueIdentifier>{2c2c0d8b-fbb8-47d6-9f7c-38b954c094a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game_Easel">
+      <UniqueIdentifier>{9bdaee74-acdd-4f57-a5c1-643498cc329f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game_Easel\Logic">
+      <UniqueIdentifier>{b723a98e-a5f2-482d-9e3b-3847034daff1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game_Easel\Logic\PlatformBoard">
+      <UniqueIdentifier>{ad530ded-1855-4045-a10e-aed6888bcf9a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game_Easel\Logic\GameBoard">
+      <UniqueIdentifier>{0cf959f4-3b15-4b55-b45c-1b8672c0b6a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game_Easel\Logic\FallingBoard">
+      <UniqueIdentifier>{bcbbbfc6-1141-47ce-ad00-4edbdb40e2a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game_Easel\Logic\datatypes">
+      <UniqueIdentifier>{5047250d-8937-4339-a133-3b301095242a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game_Easel\Logic\Notifications">
+      <UniqueIdentifier>{3a101628-5741-4c18-9d5c-409ff13eb119}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game_Easel\Logic\Notifications\Ball">
+      <UniqueIdentifier>{7fb5d492-858a-47f7-9d64-9b33fb0b5c27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game_Easel\Logic\Notifications\Boost">
+      <UniqueIdentifier>{5a105d60-f287-4ee7-a36c-53c27cc028b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game_Easel\Logic\Notifications\Chain">
+      <UniqueIdentifier>{140ecbe2-149c-45da-aec0-b0fea4f9af70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game_Easel\Logic\Notifications\Board">
+      <UniqueIdentifier>{65376018-6d69-4e0e-927f-3f24a674529f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game_Easel\Logic\Notifications\Easel">
+      <UniqueIdentifier>{ea9114ab-bd76-4421-bf7c-4d630f61c581}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game_Easel\Logic\Notifications\Paint">
+      <UniqueIdentifier>{10a41cee-901b-415e-987a-9e8a17f06f05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game_Easel\Logic\Boosts">
+      <UniqueIdentifier>{0e1d34b2-c4fb-47b1-8f25-e63aa7c913b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game_Easel\Logic\BoostBoard">
+      <UniqueIdentifier>{a4859b7b-de7a-49fc-9976-d3a3eafcf06d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game_Easel\Screens">
+      <UniqueIdentifier>{50cf28ea-86ae-41f1-ab1d-8eeb7c2f5755}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game_Easel\Sound">
+      <UniqueIdentifier>{2d1b4357-fe10-4969-bbe4-7d9ffd9da331}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game_Easel\Statistics">
+      <UniqueIdentifier>{cb5d4eae-456b-4efe-a472-ab05f6b99ff2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game_Easel\Easel">
+      <UniqueIdentifier>{122b5c0c-6d8a-490b-aa8b-bb00b0e6d239}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game_Easel\Easel\common">
+      <UniqueIdentifier>{a9bc41a6-42b2-4cb0-bd5b-8f925df82aeb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game_Easel\Easel\session">
+      <UniqueIdentifier>{c920dd17-5e94-4789-8a0a-e68a7c0418b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game_Easel\Easel\world">
+      <UniqueIdentifier>{82c57fcc-2a6c-40f7-a132-3749b78b06e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game_Easel\View">
+      <UniqueIdentifier>{0c72aa6f-125d-436d-8108-ce0bc88ada3f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game_Easel\View\converters">
+      <UniqueIdentifier>{478502eb-5232-4ec7-9175-f19fd62d34d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework">
+      <UniqueIdentifier>{97c84f3a-23cc-4a19-9b24-f1e4ad9d2c19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Screens">
+      <UniqueIdentifier>{c744d33d-1695-4757-879a-96c648bf7ee1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Scene">
+      <UniqueIdentifier>{96cc60e0-c1c8-4d9d-8752-7af46eebe138}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{47b26bda-9502-4ad7-9d44-f751e0e5f1e7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Clinic.cpp">
+      <Filter>Game_Clinic</Filter>
+    </ClCompile>
+    <ClCompile Include="ClinicBonus.cpp">
+      <Filter>Game_Clinic</Filter>
+    </ClCompile>
+    <ClCompile Include="ClinicCommands.cpp">
+      <Filter>Game_Clinic</Filter>
+    </ClCompile>
+    <ClCompile Include="ClinicCreep.cpp">
+      <Filter>Game_Clinic</Filter>
+    </ClCompile>
+    <ClCompile Include="ClinicEntrance.cpp">
+      <Filter>Game_Clinic</Filter>
+    </ClCompile>
+    <ClCompile Include="ClinicItem.cpp">
+      <Filter>Game_Clinic</Filter>
+    </ClCompile>
+    <ClCompile Include="ClinicPlace.cpp">
+      <Filter>Game_Clinic</Filter>
+    </ClCompile>
+    <ClCompile Include="ClinicPlayer.cpp">
+      <Filter>Game_Clinic</Filter>
+    </ClCompile>
+    <ClCompile Include="CreepStates.cpp">
+      <Filter>Game_Clinic</Filter>
+    </ClCompile>
+    <ClCompile Include="ClinicBuyDialog.cpp">
+      <Filter>Game_Clinic\Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="ClinicGiftsDialog.cpp">
+      <Filter>Game_Clinic\Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="ClinicLobbyScreen.cpp">
+      <Filter>Game_Clinic\Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="ClinicLobbyScreenLogic.cpp">
+      <Filter>Game_Clinic\Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="ClinicResultsScreen.cpp">
+      <Filter>Game_Clinic\Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="ClinicResultsScreenLogic.cpp">
+      <Filter>Game_Clinic\Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="ClinicScreen.cpp">
+      <Filter>Game_Clinic\Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="ClinicScreenLogic.cpp">
+      <Filter>Game_Clinic\Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="ClinicShopScreen.cpp">
+      <Filter>Game_Clinic\Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="ClinicShopScreenLogic.cpp">
+      <Filter>Game_Clinic\Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="ClinicBonusClientObject.cpp">
+      <Filter>Game_Clinic\ClientObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="ClinicCreepClientObject.cpp">
+      <Filter>Game_Clinic\ClientObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="ClinicEntranceClientObject.cpp">
+      <Filter>Game_Clinic\ClientObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="ClinicPlaceClientObject.cpp">
+      <Filter>Game_Clinic\ClientObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="ClinicPlayerClientObject.cpp">
+      <Filter>Game_Clinic\ClientObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="DBClinic.cpp">
+      <Filter>DB</Filter>
+    </ClCompile>
+    <ClCompile Include="DBEasel.cpp">
+      <Filter>DB</Filter>
+    </ClCompile>
+    <ClCompile Include="DBMinigames.cpp">
+      <Filter>DB</Filter>
+    </ClCompile>
+    <ClCompile Include="MovingUnitController.cpp">
+      <Filter>AnimationController</Filter>
+    </ClCompile>
+    <ClCompile Include="LuxBoard.cpp">
+      <Filter>Game_Easel\Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="LuxGameLogic.cpp">
+      <Filter>Game_Easel\Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="PaintLogic.cpp">
+      <Filter>Game_Easel\Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="LuxPlatform.cpp">
+      <Filter>Game_Easel\Logic\PlatformBoard</Filter>
+    </ClCompile>
+    <ClCompile Include="LuxPlatformBoard.cpp">
+      <Filter>Game_Easel\Logic\PlatformBoard</Filter>
+    </ClCompile>
+    <ClCompile Include="LuxChainGenerator.cpp">
+      <Filter>Game_Easel\Logic\GameBoard</Filter>
+    </ClCompile>
+    <ClCompile Include="LuxGameBoard.cpp">
+      <Filter>Game_Easel\Logic\GameBoard</Filter>
+    </ClCompile>
+    <ClCompile Include="LuxGameBoardChains.cpp">
+      <Filter>Game_Easel\Logic\GameBoard</Filter>
+    </ClCompile>
+    <ClCompile Include="LuxFallingBoard.cpp">
+      <Filter>Game_Easel\Logic\FallingBoard</Filter>
+    </ClCompile>
+    <ClCompile Include="EaselTrajectory.cpp">
+      <Filter>Game_Easel\Logic\datatypes</Filter>
+    </ClCompile>
+    <ClCompile Include="LuxBall.cpp">
+      <Filter>Game_Easel\Logic\datatypes</Filter>
+    </ClCompile>
+    <ClCompile Include="LuxBallChain.cpp">
+      <Filter>Game_Easel\Logic\datatypes</Filter>
+    </ClCompile>
+    <ClCompile Include="LuxFallingObject.cpp">
+      <Filter>Game_Easel\Logic\datatypes</Filter>
+    </ClCompile>
+    <ClCompile Include="LuxMagnet.cpp">
+      <Filter>Game_Easel\Logic\datatypes</Filter>
+    </ClCompile>
+    <ClCompile Include="LuxPath.cpp">
+      <Filter>Game_Easel\Logic\datatypes</Filter>
+    </ClCompile>
+    <ClCompile Include="PaintFragment.cpp">
+      <Filter>Game_Easel\Logic\datatypes</Filter>
+    </ClCompile>
+    <ClCompile Include="PaintPoint.cpp">
+      <Filter>Game_Easel\Logic\datatypes</Filter>
+    </ClCompile>
+    <ClCompile Include="LuxAlchemistBoost.cpp">
+      <Filter>Game_Easel\Logic\Boosts</Filter>
+    </ClCompile>
+    <ClCompile Include="LuxBoost.cpp">
+      <Filter>Game_Easel\Logic\Boosts</Filter>
+    </ClCompile>
+    <ClCompile Include="LuxFreezeBoost.cpp">
+      <Filter>Game_Easel\Logic\Boosts</Filter>
+    </ClCompile>
+    <ClCompile Include="LuxJokerBoost.cpp">
+      <Filter>Game_Easel\Logic\Boosts</Filter>
+    </ClCompile>
+    <ClCompile Include="LuxMagnetBoost.cpp">
+      <Filter>Game_Easel\Logic\Boosts</Filter>
+    </ClCompile>
+    <ClCompile Include="LuxPaintBlastBoost.cpp">
+      <Filter>Game_Easel\Logic\Boosts</Filter>
+    </ClCompile>
+    <ClCompile Include="LuxSorterBoost.cpp">
+      <Filter>Game_Easel\Logic\Boosts</Filter>
+    </ClCompile>
+    <ClCompile Include="BoostBoard.cpp">
+      <Filter>Game_Easel\Logic\BoostBoard</Filter>
+    </ClCompile>
+    <ClCompile Include="BoostsFactory.cpp">
+      <Filter>Game_Easel\Logic\BoostBoard</Filter>
+    </ClCompile>
+    <ClCompile Include="EaselFailScreen.cpp">
+      <Filter>Game_Easel\Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="EaselFailScreenLogic.cpp">
+      <Filter>Game_Easel\Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="EaselScreen.cpp">
+      <Filter>Game_Easel\Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="EaselScreenLobby.cpp">
+      <Filter>Game_Easel\Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="EaselScreenLogic.cpp">
+      <Filter>Game_Easel\Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="EaselScreenLogicLobby.cpp">
+      <Filter>Game_Easel\Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="EaselScreenLogicResults.cpp">
+      <Filter>Game_Easel\Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="EaselScreenResults.cpp">
+      <Filter>Game_Easel\Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="EaselScreensManager.cpp">
+      <Filter>Game_Easel\Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="EaselEventSounds.cpp">
+      <Filter>Game_Easel\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="EaselFModEvent.cpp">
+      <Filter>Game_Easel\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="SoundObserver.cpp">
+      <Filter>Game_Easel\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="EaselStatistics.cpp">
+      <Filter>Game_Easel\Statistics</Filter>
+    </ClCompile>
+    <ClCompile Include="EaselClient.cpp">
+      <Filter>Game_Easel\Easel</Filter>
+    </ClCompile>
+    <ClCompile Include="EaselConstants.cpp">
+      <Filter>Game_Easel\Easel</Filter>
+    </ClCompile>
+    <ClCompile Include="EaselView.cpp">
+      <Filter>Game_Easel\Easel</Filter>
+    </ClCompile>
+    <ClCompile Include="EaselMath.cpp">
+      <Filter>Game_Easel\Easel\common</Filter>
+    </ClCompile>
+    <ClCompile Include="EaselNotifications.cpp">
+      <Filter>Game_Easel\Easel\common</Filter>
+    </ClCompile>
+    <ClCompile Include="EaselWorldClientConvertHelper.cpp">
+      <Filter>Game_Easel\Easel\common</Filter>
+    </ClCompile>
+    <ClCompile Include="Easel.cpp">
+      <Filter>Game_Easel\Easel\session</Filter>
+    </ClCompile>
+    <ClCompile Include="EaselCommands.cpp">
+      <Filter>Game_Easel\Easel\session</Filter>
+    </ClCompile>
+    <ClCompile Include="EaselLocal.cpp">
+      <Filter>Game_Easel\Easel\session</Filter>
+    </ClCompile>
+    <ClCompile Include="EaselMinigame.cpp">
+      <Filter>Game_Easel\Easel\session</Filter>
+    </ClCompile>
+    <ClCompile Include="EaselRemote.cpp">
+      <Filter>Game_Easel\Easel\session</Filter>
+    </ClCompile>
+    <ClCompile Include="EaselPriestess.cpp">
+      <Filter>Game_Easel\Easel\world</Filter>
+    </ClCompile>
+    <ClCompile Include="EaselWorld.cpp">
+      <Filter>Game_Easel\Easel\world</Filter>
+    </ClCompile>
+    <ClCompile Include="EaselBallView.cpp">
+      <Filter>Game_Easel\View</Filter>
+    </ClCompile>
+    <ClCompile Include="EaselLuxLerp.cpp">
+      <Filter>Game_Easel\View</Filter>
+    </ClCompile>
+    <ClCompile Include="EaselLuxLerpContainer.cpp">
+      <Filter>Game_Easel\View</Filter>
+    </ClCompile>
+    <ClCompile Include="EaselLuxStaticObject.cpp">
+      <Filter>Game_Easel\View</Filter>
+    </ClCompile>
+    <ClCompile Include="EaselLuxView.cpp">
+      <Filter>Game_Easel\View</Filter>
+    </ClCompile>
+    <ClCompile Include="EaselLuxViewBambooObject.cpp">
+      <Filter>Game_Easel\View</Filter>
+    </ClCompile>
+    <ClCompile Include="EaselLuxViewDropDirector.cpp">
+      <Filter>Game_Easel\View</Filter>
+    </ClCompile>
+    <ClCompile Include="EaselLuxViewFallingObject.cpp">
+      <Filter>Game_Easel\View</Filter>
+    </ClCompile>
+    <ClCompile Include="EaselLuxViewPath.cpp">
+      <Filter>Game_Easel\View</Filter>
+    </ClCompile>
+    <ClCompile Include="EaselLuxViewPlatform.cpp">
+      <Filter>Game_Easel\View</Filter>
+    </ClCompile>
+    <ClCompile Include="EaselLuxViewTunnelPoint.cpp">
+      <Filter>Game_Easel\View</Filter>
+    </ClCompile>
+    <ClCompile Include="EaselLuxViewWellObject.cpp">
+      <Filter>Game_Easel\View</Filter>
+    </ClCompile>
+    <ClCompile Include="EaselPaintBlastBallView.cpp">
+      <Filter>Game_Easel\View</Filter>
+    </ClCompile>
+    <ClCompile Include="EaselPaintLayerSceneComponent.cpp">
+      <Filter>Game_Easel\View</Filter>
+    </ClCompile>
+    <ClCompile Include="EaselPaintView.cpp">
+      <Filter>Game_Easel\View</Filter>
+    </ClCompile>
+    <ClCompile Include="EaselPaintViewFragment.cpp">
+      <Filter>Game_Easel\View</Filter>
+    </ClCompile>
+    <ClCompile Include="EaselPaintViewPicture.cpp">
+      <Filter>Game_Easel\View</Filter>
+    </ClCompile>
+    <ClCompile Include="EaselViewAlchemistPot.cpp">
+      <Filter>Game_Easel\View</Filter>
+    </ClCompile>
+    <ClCompile Include="EaselViewEffects.cpp">
+      <Filter>Game_Easel\View</Filter>
+    </ClCompile>
+    <ClCompile Include="RollCoordsConverter.cpp">
+      <Filter>Game_Easel\View\converters</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewBallCoordsConverter.cpp">
+      <Filter>Game_Easel\View\converters</Filter>
+    </ClCompile>
+    <ClCompile Include="MinigameBase.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="MinigameClientObject.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="MinigameCommands.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Minigames.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="MinigamesBase.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="MinigameSessionInterface.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="MinigamesMain.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="MinigameWorldObject.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="MovingUnitClientObject.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Random.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="SingleMinigame.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="MinigameLobbyScreen.cpp">
+      <Filter>Framework\Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="MinigameLobbyScreenLogic.cpp">
+      <Filter>Framework\Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="MinigamePauseDialog.cpp">
+      <Filter>Framework\Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="MinigameScreen.cpp">
+      <Filter>Framework\Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="MinigameScreenLogic.cpp">
+      <Filter>Framework\Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="MinigameCameraController.cpp">
+      <Filter>Framework\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="ForceLink.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DBClinic.h">
+      <Filter>DB</Filter>
+    </ClInclude>
+    <ClInclude Include="DBEasel.h">
+      <Filter>DB</Filter>
+    </ClInclude>
+    <ClInclude Include="DBMinigames.h">
+      <Filter>DB</Filter>
+    </ClInclude>
+    <ClInclude Include="MovingUnitController.h">
+      <Filter>AnimationController</Filter>
+    </ClInclude>
+    <ClInclude Include="LuxBoard.h">
+      <Filter>Game_Easel\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="LuxDef.h">
+      <Filter>Game_Easel\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="LuxGameLogic.h">
+      <Filter>Game_Easel\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="PaintLogic.h">
+      <Filter>Game_Easel\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="LuxPlatform.h">
+      <Filter>Game_Easel\Logic\PlatformBoard</Filter>
+    </ClInclude>
+    <ClInclude Include="LuxPlatformBoard.h">
+      <Filter>Game_Easel\Logic\PlatformBoard</Filter>
+    </ClInclude>
+    <ClInclude Include="LuxChainGenerator.h">
+      <Filter>Game_Easel\Logic\GameBoard</Filter>
+    </ClInclude>
+    <ClInclude Include="LuxGameBoard.h">
+      <Filter>Game_Easel\Logic\GameBoard</Filter>
+    </ClInclude>
+    <ClInclude Include="LuxGameBoardChains.h">
+      <Filter>Game_Easel\Logic\GameBoard</Filter>
+    </ClInclude>
+    <ClInclude Include="LuxFallingBoard.h">
+      <Filter>Game_Easel\Logic\FallingBoard</Filter>
+    </ClInclude>
+    <ClInclude Include="EaselTrajectory.h">
+      <Filter>Game_Easel\Logic\datatypes</Filter>
+    </ClInclude>
+    <ClInclude Include="LuxBall.h">
+      <Filter>Game_Easel\Logic\datatypes</Filter>
+    </ClInclude>
+    <ClInclude Include="LuxBallChain.h">
+      <Filter>Game_Easel\Logic\datatypes</Filter>
+    </ClInclude>
+    <ClInclude Include="LuxCollidable.h">
+      <Filter>Game_Easel\Logic\datatypes</Filter>
+    </ClInclude>
+    <ClInclude Include="LuxFallingObject.h">
+      <Filter>Game_Easel\Logic\datatypes</Filter>
+    </ClInclude>
+    <ClInclude Include="LuxMagnet.h">
+      <Filter>Game_Easel\Logic\datatypes</Filter>
+    </ClInclude>
+    <ClInclude Include="LuxPath.h">
+      <Filter>Game_Easel\Logic\datatypes</Filter>
+    </ClInclude>
+    <ClInclude Include="PaintFragment.h">
+      <Filter>Game_Easel\Logic\datatypes</Filter>
+    </ClInclude>
+    <ClInclude Include="PaintPoint.h">
+      <Filter>Game_Easel\Logic\datatypes</Filter>
+    </ClInclude>
+    <ClInclude Include="LuxBallColorChangedNotification.h">
+      <Filter>Game_Easel\Logic\Notifications\Ball</Filter>
+    </ClInclude>
+    <ClInclude Include="LuxBallCreateNotification.h">
+      <Filter>Game_Easel\Logic\Notifications\Ball</Filter>
+    </ClInclude>
+    <ClInclude Include="LuxBallDeleteNotification.h">
+      <Filter>Game_Easel\Logic\Notifications\Ball</Filter>
+    </ClInclude>
+    <ClInclude Include="LuxBallExplodedNotification.h">
+      <Filter>Game_Easel\Logic\Notifications\Ball</Filter>
+    </ClInclude>
+    <ClInclude Include="LuxBallFiredNotification.h">
+      <Filter>Game_Easel\Logic\Notifications\Ball</Filter>
+    </ClInclude>
+    <ClInclude Include="LuxBallHitNotification.h">
+      <Filter>Game_Easel\Logic\Notifications\Ball</Filter>
+    </ClInclude>
+    <ClInclude Include="LuxBallInTunnelNotifications.h">
+      <Filter>Game_Easel\Logic\Notifications\Ball</Filter>
+    </ClInclude>
+    <ClInclude Include="LuxBallMissNotification.h">
+      <Filter>Game_Easel\Logic\Notifications\Ball</Filter>
+    </ClInclude>
+    <ClInclude Include="LuxAlchemistBoostsNotifications.h">
+      <Filter>Game_Easel\Logic\Notifications\Boost</Filter>
+    </ClInclude>
+    <ClInclude Include="LuxSorterBoostFiredNotification.h">
+      <Filter>Game_Easel\Logic\Notifications\Boost</Filter>
+    </ClInclude>
+    <ClInclude Include="LuxChainBallAddedNotification.h">
+      <Filter>Game_Easel\Logic\Notifications\Chain</Filter>
+    </ClInclude>
+    <ClInclude Include="LuxChainDestroyedNotification.h">
+      <Filter>Game_Easel\Logic\Notifications\Chain</Filter>
+    </ClInclude>
+    <ClInclude Include="LuxChainElementExplodedNotification.h">
+      <Filter>Game_Easel\Logic\Notifications\Chain</Filter>
+    </ClInclude>
+    <ClInclude Include="LuxChainFallingNotification.h">
+      <Filter>Game_Easel\Logic\Notifications\Chain</Filter>
+    </ClInclude>
+    <ClInclude Include="LuxChainGeneratedNotification.h">
+      <Filter>Game_Easel\Logic\Notifications\Chain</Filter>
+    </ClInclude>
+    <ClInclude Include="LuxChainMergedNotification.h">
+      <Filter>Game_Easel\Logic\Notifications\Chain</Filter>
+    </ClInclude>
+    <ClInclude Include="LuxChainMovingNotification.h">
+      <Filter>Game_Easel\Logic\Notifications\Chain</Filter>
+    </ClInclude>
+    <ClInclude Include="LuxChainSlideLowNotification.h">
+      <Filter>Game_Easel\Logic\Notifications\Chain</Filter>
+    </ClInclude>
+    <ClInclude Include="LuxChainStoppedNotification.h">
+      <Filter>Game_Easel\Logic\Notifications\Chain</Filter>
+    </ClInclude>
+    <ClInclude Include="LuxBoardRequestStateChangeNotification.h">
+      <Filter>Game_Easel\Logic\Notifications\Board</Filter>
+    </ClInclude>
+    <ClInclude Include="EaselGameLostNotitfication.h">
+      <Filter>Game_Easel\Logic\Notifications\Easel</Filter>
+    </ClInclude>
+    <ClInclude Include="EaselGameWonNotitfication.h">
+      <Filter>Game_Easel\Logic\Notifications\Easel</Filter>
+    </ClInclude>
+    <ClInclude Include="PaintFlyingNotification.h">
+      <Filter>Game_Easel\Logic\Notifications\Paint</Filter>
+    </ClInclude>
+    <ClInclude Include="LuxAlchemistBoost.h">
+      <Filter>Game_Easel\Logic\Boosts</Filter>
+    </ClInclude>
+    <ClInclude Include="LuxBoost.h">
+      <Filter>Game_Easel\Logic\Boosts</Filter>
+    </ClInclude>
+    <ClInclude Include="LuxFreezeBoost.h">
+      <Filter>Game_Easel\Logic\Boosts</Filter>
+    </ClInclude>
+    <ClInclude Include="LuxJokerBoost.h">
+      <Filter>Game_Easel\Logic\Boosts</Filter>
+    </ClInclude>
+    <ClInclude Include="LuxMagnetBoost.h">
+      <Filter>Game_Easel\Logic\Boosts</Filter>
+    </ClInclude>
+    <ClInclude Include="LuxPaintBlastBoost.h">
+      <Filter>Game_Easel\Logic\Boosts</Filter>
+    </ClInclude>
+    <ClInclude Include="LuxSorterBoost.h">
+      <Filter>Game_Easel\Logic\Boosts</Filter>
+    </ClInclude>
+    <ClInclude Include="BoostBoard.h">
+      <Filter>Game_Easel\Logic\BoostBoard</Filter>
+    </ClInclude>
+    <ClInclude Include="BoostsFactory.h">
+      <Filter>Game_Easel\Logic\BoostBoard</Filter>
+    </ClInclude>
+    <ClInclude Include="EaselFailScreen.h">
+      <Filter>Game_Easel\Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="EaselFailScreenLogic.h">
+      <Filter>Game_Easel\Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="EaselScreen.h">
+      <Filter>Game_Easel\Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="EaselScreenLogic.h">
+      <Filter>Game_Easel\Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="EaselScreenLogicResults.h">
+      <Filter>Game_Easel\Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="EaselScreenResults.h">
+      <Filter>Game_Easel\Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="EaselScreensManager.h">
+      <Filter>Game_Easel\Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="EaselEventSounds.h">
+      <Filter>Game_Easel\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="EaselFModEvent.h">
+      <Filter>Game_Easel\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="EaselSoundsInterface.h">
+      <Filter>Game_Easel\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundObserver.h">
+      <Filter>Game_Easel\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="EaselStatistics.h">
+      <Filter>Game_Easel\Statistics</Filter>
+    </ClInclude>
+    <ClInclude Include="EaselClient.h">
+      <Filter>Game_Easel\Easel</Filter>
+    </ClInclude>
+    <ClInclude Include="EaselConstants.h">
+      <Filter>Game_Easel\Easel</Filter>
+    </ClInclude>
+    <ClInclude Include="EaselDef.h">
+      <Filter>Game_Easel\Easel</Filter>
+    </ClInclude>
+    <ClInclude Include="EaselView.h">
+      <Filter>Game_Easel\Easel</Filter>
+    </ClInclude>
+    <ClInclude Include="EaselMath.h">
+      <Filter>Game_Easel\Easel\common</Filter>
+    </ClInclude>
+    <ClInclude Include="EaselNotifications.h">
+      <Filter>Game_Easel\Easel\common</Filter>
+    </ClInclude>
+    <ClInclude Include="EaselWorldClientConvertHelper.h">
+      <Filter>Game_Easel\Easel\common</Filter>
+    </ClInclude>
+    <ClInclude Include="Easel.h">
+      <Filter>Game_Easel\Easel\session</Filter>
+    </ClInclude>
+    <ClInclude Include="EaselCommands.h">
+      <Filter>Game_Easel\Easel\session</Filter>
+    </ClInclude>
+    <ClInclude Include="EaselLocal.h">
+      <Filter>Game_Easel\Easel\session</Filter>
+    </ClInclude>
+    <ClInclude Include="EaselMinigame.h">
+      <Filter>Game_Easel\Easel\session</Filter>
+    </ClInclude>
+    <ClInclude Include="EaselRemote.h">
+      <Filter>Game_Easel\Easel\session</Filter>
+    </ClInclude>
+    <ClInclude Include="EaselPriestess.h">
+      <Filter>Game_Easel\Easel\world</Filter>
+    </ClInclude>
+    <ClInclude Include="EaselWorld.h">
+      <Filter>Game_Easel\Easel\world</Filter>
+    </ClInclude>
+    <ClInclude Include="EaselWorldObject.h">
+      <Filter>Game_Easel\Easel\world</Filter>
+    </ClInclude>
+    <ClInclude Include="EaselBallView.h">
+      <Filter>Game_Easel\View</Filter>
+    </ClInclude>
+    <ClInclude Include="EaselLuxLerp.h">
+      <Filter>Game_Easel\View</Filter>
+    </ClInclude>
+    <ClInclude Include="EaselLuxLerpContainer.h">
+      <Filter>Game_Easel\View</Filter>
+    </ClInclude>
+    <ClInclude Include="EaselLuxStaticObject.h">
+      <Filter>Game_Easel\View</Filter>
+    </ClInclude>
+    <ClInclude Include="EaselLuxView.h">
+      <Filter>Game_Easel\View</Filter>
+    </ClInclude>
+    <ClInclude Include="EaselLuxViewBambooObject.h">
+      <Filter>Game_Easel\View</Filter>
+    </ClInclude>
+    <ClInclude Include="EaselLuxViewDropDirector.h">
+      <Filter>Game_Easel\View</Filter>
+    </ClInclude>
+    <ClInclude Include="EaselLuxViewFallingObject.h">
+      <Filter>Game_Easel\View</Filter>
+    </ClInclude>
+    <ClInclude Include="EaselLuxViewPath.h">
+      <Filter>Game_Easel\View</Filter>
+    </ClInclude>
+    <ClInclude Include="EaselLuxViewPlatform.h">
+      <Filter>Game_Easel\View</Filter>
+    </ClInclude>
+    <ClInclude Include="EaselLuxViewTunnelPoint.h">
+      <Filter>Game_Easel\View</Filter>
+    </ClInclude>
+    <ClInclude Include="EaselLuxViewWellObject.h">
+      <Filter>Game_Easel\View</Filter>
+    </ClInclude>
+    <ClInclude Include="EaselPaintBlastBallView.h">
+      <Filter>Game_Easel\View</Filter>
+    </ClInclude>
+    <ClInclude Include="EaselPaintLayerSceneComponent.h">
+      <Filter>Game_Easel\View</Filter>
+    </ClInclude>
+    <ClInclude Include="EaselPaintView.h">
+      <Filter>Game_Easel\View</Filter>
+    </ClInclude>
+    <ClInclude Include="EaselPaintViewFragment.h">
+      <Filter>Game_Easel\View</Filter>
+    </ClInclude>
+    <ClInclude Include="EaselPaintViewPicture.h">
+      <Filter>Game_Easel\View</Filter>
+    </ClInclude>
+    <ClInclude Include="EaselViewAlchemistPot.h">
+      <Filter>Game_Easel\View</Filter>
+    </ClInclude>
+    <ClInclude Include="EaselViewEffects.h">
+      <Filter>Game_Easel\View</Filter>
+    </ClInclude>
+    <ClInclude Include="RollCoordsConverter.h">
+      <Filter>Game_Easel\View\converters</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewBallCoordsConverter.h">
+      <Filter>Game_Easel\View\converters</Filter>
+    </ClInclude>
+    <ClInclude Include="MinigameBase.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="MinigameClientObject.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="MinigameCommands.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Minigames.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="MinigamesBase.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="MinigameSessionInterface.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="MinigamesMain.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="MinigameWorldObject.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="MovingUnitClientObject.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="SingleMinigame.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="MinigameLobbyScreen.h">
+      <Filter>Framework\Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="MinigameLobbyScreenLogic.h">
+      <Filter>Framework\Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="MinigamePauseDialog.h">
+      <Filter>Framework\Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="MinigameScreen.h">
+      <Filter>Framework\Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="MinigameScreenLogic.h">
+      <Filter>Framework\Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="MinigameCameraController.h">
+      <Filter>Framework\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SpringInterpoler.h">
+      <Filter>Framework\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="specific.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="ForceLink.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DB.component">
+      <Filter>DB</Filter>
+    </None>
+    <None Include="AnimationController.component">
+      <Filter>AnimationController</Filter>
+    </None>
+    <None Include="Game_Easel.component">
+      <Filter>Game_Easel</Filter>
+    </None>
+    <None Include="all.component" />
+    <None Include="Framework.component" />
+    <None Include="Game_Clinic.component" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\Version.rc">
+      <Filter>Resources</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Clinic.h">
+      <Filter>Game_Clinic</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ClinicBonus.h">
+      <Filter>Game_Clinic</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ClinicCommands.h">
+      <Filter>Game_Clinic</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ClinicCreep.h">
+      <Filter>Game_Clinic</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ClinicCreepWish.h">
+      <Filter>Game_Clinic</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ClinicEntrance.h">
+      <Filter>Game_Clinic</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ClinicHeader.h">
+      <Filter>Game_Clinic</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ClinicItem.h">
+      <Filter>Game_Clinic</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ClinicPlace.h">
+      <Filter>Game_Clinic</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ClinicPlayer.h">
+      <Filter>Game_Clinic</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ClinicUIDesc.h">
+      <Filter>Game_Clinic</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CreepStates.h">
+      <Filter>Game_Clinic</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Random.h">
+      <Filter>Game_Clinic</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ClinicBuyDialog.h">
+      <Filter>Game_Clinic\Screens</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ClinicGiftsDialog.h">
+      <Filter>Game_Clinic\Screens</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ClinicLobbyScreen.h">
+      <Filter>Game_Clinic\Screens</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ClinicLobbyScreenLogic.h">
+      <Filter>Game_Clinic\Screens</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ClinicResultsScreen.h">
+      <Filter>Game_Clinic\Screens</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ClinicResultsScreenLogic.h">
+      <Filter>Game_Clinic\Screens</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ClinicScreen.h">
+      <Filter>Game_Clinic\Screens</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ClinicScreenLogic.h">
+      <Filter>Game_Clinic\Screens</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ClinicShopScreen.h">
+      <Filter>Game_Clinic\Screens</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ClinicShopScreenLogic.h">
+      <Filter>Game_Clinic\Screens</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ClinicBonusClientObject.h">
+      <Filter>Game_Clinic\ClientObjects</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ClinicCreepClientObject.h">
+      <Filter>Game_Clinic\ClientObjects</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ClinicDecorationObject.h">
+      <Filter>Game_Clinic\ClientObjects</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ClinicEntranceClientObject.h">
+      <Filter>Game_Clinic\ClientObjects</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ClinicPlaceClientObject.h">
+      <Filter>Game_Clinic\ClientObjects</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ClinicPlayerClientObject.h">
+      <Filter>Game_Clinic\ClientObjects</Filter>
+    </CustomBuild>
+    <CustomBuild Include="EaselScreenLobby.h">
+      <Filter>Game_Easel\Screens</Filter>
+    </CustomBuild>
+    <CustomBuild Include="EaselScreenLogicLobby.h">
+      <Filter>Game_Easel\Screens</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,420 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseSingleExe|Win32">
+      <Configuration>ReleaseSingleExe</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ShippingSingleExe|Win32">
+      <Configuration>ShippingSingleExe</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Shipping|Win32">
+      <Configuration>Shipping</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{823E5818-3782-491B-B7A3-83080E55A40C}</ProjectGuid>
+    <RootNamespace>PW_Client</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseSingleExe|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ShippingSingleExe|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseSingleExe|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ShippingSingleExe|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>14.0.25431.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(ProjectDir)..\_$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)..\_$(Configuration)\$(ProjectName)\</IntDir>
+    <IgnoreImportLibrary>true</IgnoreImportLibrary>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(ProjectDir)..\_$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)..\_$(Configuration)\$(ProjectName)\</IntDir>
+    <IgnoreImportLibrary>true</IgnoreImportLibrary>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'">
+    <OutDir>$(ProjectDir)..\_$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)..\_$(Configuration)\$(ProjectName)\</IntDir>
+    <IgnoreImportLibrary>true</IgnoreImportLibrary>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ShippingSingleExe|Win32'">
+    <OutDir>$(ProjectDir)..\_$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)..\_$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseSingleExe|Win32'">
+    <OutDir>$(ProjectDir)..\_$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)..\_$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/MP %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../..;../../vendor\zlib\include;../;../Server\;../Game\PF\;../../vendor/DirectShow/Include;../Server/NetworkAIO;../../vendor/ACE_wrappers;../../vendor/libcurl/include;../Server/Chat;../../Vendor/Steam/1.23a/public;..\..\Vendor\boost;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_DO_ASSERT;CURL_STATICLIB;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling />
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <SmallerTypeCheck>true</SmallerTypeCheck>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>zdll.lib;comctl32.lib;winmm.lib;Rpcrt4.lib;steam_api.lib;libcurl.lib;CensorDll.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName).dll</OutputFile>
+      <AdditionalLibraryDirectories>../../Vendor/Steam/1.23a/redistributable_bin;../../vendor\zlib\lib;../../vendor\DirectShow\Lib;../../vendor/libcurl/lib/Debug;../../Tools/Censor/lib/Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <LargeAddressAware>true</LargeAddressAware>
+      <FixedBaseAddress />
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>"$(ProjectDir)..\..\vendor\BuildUtils\CopyReference.exe" $(ProjectPath) $(Configuration) $(TargetDir)</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/MP /D_SCL_SECURE_NO_WARNINGS /D_SECURE_SCL=0 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>../..;../../vendor\zlib\include;../;../Server\;../Game\PF\;../../vendor/DirectShow/Include;../Server/NetworkAIO;../../vendor/ACE_wrappers;../../vendor/libcurl/include;../Server/Chat;../../Vendor/Steam/1.23a/public;..\..\Vendor\boost;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_DO_ASSERT;CURL_STATICLIB;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling />
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <SmallerTypeCheck>false</SmallerTypeCheck>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>zdll.lib;comctl32.lib;winmm.lib;Rpcrt4.lib;steam_api.lib;libcurl.lib;CensorDll.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName).dll</OutputFile>
+      <AdditionalLibraryDirectories>../../Vendor/Steam/1.23a/redistributable_bin;../../vendor\zlib\lib;../../vendor\DirectShow\Lib;../../vendor/libcurl/lib/Release;../../Tools/Censor/lib/Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <LargeAddressAware>true</LargeAddressAware>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <FixedBaseAddress />
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>"$(ProjectDir)..\..\vendor\BuildUtils\CopyReference.exe" $(ProjectPath) $(Configuration) $(TargetDir)</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/MP /D_SCL_SECURE_NO_WARNINGS /D_SECURE_SCL=0 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>../..;../../vendor\zlib\include;../;../Server\;../Game\PF\;../../vendor/DirectShow/Include;../Server/NetworkAIO;../../vendor/ACE_wrappers;../../vendor/libcurl/include;../Server/Chat;../../Vendor/Steam/1.23a/public;..\..\Vendor\boost;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_SHIPPING;CURL_STATICLIB;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling />
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <SmallerTypeCheck>false</SmallerTypeCheck>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>zdll.lib;comctl32.lib;winmm.lib;Rpcrt4.lib;steam_api.lib;libcurl.lib;CensorDll.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName).dll</OutputFile>
+      <AdditionalLibraryDirectories>../../Vendor/Steam/1.23a/redistributable_bin;../../vendor\zlib\lib;../../vendor\DirectShow\Lib;../../vendor/libcurl/lib/Release;../../Tools/Censor/lib/Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <LargeAddressAware>true</LargeAddressAware>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <FixedBaseAddress />
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>"$(ProjectDir)..\..\vendor\BuildUtils\CopyReference.exe" $(ProjectPath) $(Configuration) $(TargetDir)</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ShippingSingleExe|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/MP /D_SCL_SECURE_NO_WARNINGS /D_SECURE_SCL=0 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <AdditionalIncludeDirectories>../..;../../vendor\zlib\include;../;../Server\;../Game\PF\;../../vendor/DirectShow/Include;../Server/NetworkAIO;../../vendor/ACE_wrappers;../../vendor/libcurl/include;../Server/Chat;../../Vendor/Steam/1.23a/public;..\..\Vendor\boost;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>__PLACEMENT_NEW_INLINE;WIN32;_WINDOWS;STATIC_LIB;NDEBUG;_SHIPPING;CURL_STATICLIB;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling />
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <SmallerTypeCheck>false</SmallerTypeCheck>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseSingleExe|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/MP /D_SCL_SECURE_NO_WARNINGS /D_SECURE_SCL=0 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <AdditionalIncludeDirectories>../..;../../vendor\zlib\include;../;../Server\;../Game\PF\;../../vendor/DirectShow/Include;../Server/NetworkAIO;../../vendor/ACE_wrappers;../../vendor/libcurl/include;../Server/Chat;../../Vendor/Steam/1.23a/public;..\..\Vendor\boost;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;STATIC_LIB;NDEBUG;_DO_ASSERT;STARFORCE_PROTECTED;CURL_STATICLIB;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling />
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <SmallerTypeCheck>false</SmallerTypeCheck>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\ApplicationResources.h" />
+    <ClInclude Include="..\Game\PF\Client\LobbyPvx\base64.h" />
+    <ClInclude Include="..\Game\PF\Client\LobbyPvx\ClientAccountingGadget.h" />
+    <ClInclude Include="..\Game\PF\Client\LobbyPvx\FastReconnectCtx.h" />
+    <ClInclude Include="..\Game\PF\Client\LobbyPvx\HybridServerNodeImpl.h" />
+    <ClInclude Include="..\Game\PF\Client\LobbyPvx\LLobbyClientInterface.auto.h" />
+    <ClInclude Include="..\Game\PF\Client\LobbyPvx\LobbyClientBase.h" />
+    <ClInclude Include="..\Game\PF\Client\LobbyPvx\LobbyClientInterface.h" />
+    <ClInclude Include="..\Game\PF\Client\LobbyPvx\LobbyGameClient.h" />
+    <ClInclude Include="..\Game\PF\Client\LobbyPvx\NewReplay.h" />
+    <ClInclude Include="..\Game\PF\Client\LobbyPvx\RLobbyClientInterface.auto.h" />
+    <ClInclude Include="..\Game\PF\Client\LobbyPvx\stdafx.h" />
+    <CustomBuild Include="..\Game\PF\HybridServer\LPeered.auto.h" />
+    <ClInclude Include="..\Game\PF\HybridServer\PeeredTypes.h" />
+    <CustomBuild Include="..\Game\PF\HybridServer\RPeered.auto.h" />
+    <ClInclude Include="..\Game\PF\Server\Accounting\RLobbyAccounting.auto.h" />
+    <ClInclude Include="..\Game\PF\Server\LobbyPvx\CommonTypes.h" />
+    <ClInclude Include="..\Game\PF\Server\LobbyPvx\RLobbyIEntrance.auto.h" />
+    <ClInclude Include="..\Game\PF\Server\LobbyPvx\RLobbyIServerInstance.auto.h" />
+    <ClInclude Include="..\Game\PF\Server\Roll\RollTypes.h" />
+    <ClInclude Include="..\Game\PF\Server\Statistic\GameStatClient.h" />
+    <ClInclude Include="..\Game\PF\Server\Statistic\GameStatServiceId.h" />
+    <ClInclude Include="..\Game\PF\Server\Statistic\SpecialStatisticTypes.h" />
+    <ClInclude Include="..\Game\PF\Server\Statistic\StatClientDiskDispatcher.h" />
+    <ClInclude Include="..\Game\PF\Server\Statistic\StatClientHttpDispatcher.h" />
+    <ClInclude Include="..\Game\PF\Server\Statistic\StatisticsClientTypes.h" />
+    <ClInclude Include="..\Game\PF\Server\Statistic\StatisticsDebugTypes.h" />
+    <ClInclude Include="..\Server\WebClient\WebClient.h" />
+    <ClInclude Include="..\Version.h" />
+    <ClInclude Include="CpuTopology.h" />
+    <ClInclude Include="DebugVarsSender.h" />
+    <ClInclude Include="FastReconnectCtxPW.h" />
+    <ClInclude Include="GameContext.h" />
+    <ClInclude Include="GameStatistics.h" />
+    <ClInclude Include="IGameContext.h" />
+    <ClInclude Include="LoadingFlashInterface.h" />
+    <ClInclude Include="LoadingHeroes.h" />
+    <ClInclude Include="LoadingScreen.h" />
+    <ClInclude Include="LoadingScreenLogic.h" />
+    <ClInclude Include="LoadingStatusHandler.h" />
+    <ClInclude Include="LobbyConnection.h" />
+    <ClInclude Include="LobbyScreenInterface.h" />
+    <ClInclude Include="LobbyUIInterface.h" />
+    <ClInclude Include="LocalCmdScheduler.h" />
+    <ClInclude Include="LocalGameContext.h" />
+    <ClInclude Include="NetworkStatusScreen.h" />
+    <ClInclude Include="NewLobbyClientPW.h" />
+    <ClInclude Include="NewLobbyGameClientPW.h" />
+    <ClInclude Include="PF_TypesHash.h" />
+    <ClInclude Include="RegistryToolbox.h" />
+    <ClInclude Include="ReplayRunner.h" />
+    <ClInclude Include="ReplayTransceiver.h" />
+    <ClInclude Include="SelectGameModeLogic.h" />
+    <ClInclude Include="SelectGameModeScreen.h" />
+    <ClInclude Include="SelectHeroScreen.h" />
+    <ClInclude Include="SelectHeroScreenLogic.h" />
+    <ClInclude Include="specific.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="TypesHash.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Game\PF\Client\LobbyPvx\base64.cpp" />
+    <ClCompile Include="..\Game\PF\Client\LobbyPvx\HybridServerNodeImpl.cpp" />
+    <ClCompile Include="..\Game\PF\Client\LobbyPvx\LLobbyClientInterface.auto.cpp" />
+    <ClCompile Include="..\Game\PF\Client\LobbyPvx\LobbyClientBase.cpp" />
+    <ClCompile Include="..\Game\PF\Client\LobbyPvx\LobbyGameClient.cpp" />
+    <ClCompile Include="..\Game\PF\Client\LobbyPvx\NewReplay.cpp" />
+    <ClCompile Include="..\Game\PF\Client\LobbyPvx\RLobbyClientInterface.auto.cpp" />
+    <ClCompile Include="..\Game\PF\Client\LobbyPvx\stdafx.cpp" />
+    <ClCompile Include="..\Game\PF\HybridServer\LPeered.auto.cpp" />
+    <ClCompile Include="..\Game\PF\HybridServer\PeeredTypes.cpp" />
+    <ClCompile Include="..\Game\PF\HybridServer\RPeered.auto.cpp" />
+    <ClCompile Include="..\Game\PF\Server\Accounting\RLobbyAccounting.auto.cpp" />
+    <ClCompile Include="..\Game\PF\Server\LobbyPvx\CommonTypes.cpp" />
+    <ClCompile Include="..\Game\PF\Server\LobbyPvx\RLobbyIEntrance.auto.cpp" />
+    <ClCompile Include="..\Game\PF\Server\LobbyPvx\RLobbyIServerInstance.auto.cpp" />
+    <ClCompile Include="..\Game\PF\Server\Roll\RollTypes.cpp" />
+    <ClCompile Include="..\Game\PF\Server\Statistic\GameStatClient.cpp" />
+    <ClCompile Include="..\Game\PF\Server\Statistic\SpecialStatisticTypes.cpp" />
+    <ClCompile Include="..\Game\PF\Server\Statistic\StatClientDiskDispatcher.cpp" />
+    <ClCompile Include="..\Game\PF\Server\Statistic\StatClientHttpDispatcher.cpp" />
+    <ClCompile Include="..\Game\PF\Server\Statistic\StatisticsClientTypes.cpp" />
+    <ClCompile Include="..\Game\PF\Server\Statistic\StatisticsDebugTypes.cpp" />
+    <ClCompile Include="..\Server\WebClient\WebClient.cpp" />
+    <ClCompile Include="CpuTopology.cpp" />
+    <ClCompile Include="DebugVarsSender.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameContext.cpp" />
+    <ClCompile Include="GameStatistics.cpp" />
+    <ClCompile Include="LoadingFlashInterface.cpp" />
+    <ClCompile Include="LoadingHeroes.cpp" />
+    <ClCompile Include="LoadingScreen.cpp" />
+    <ClCompile Include="LoadingScreenLogic.cpp" />
+    <ClCompile Include="LoadingStatusHandler.cpp" />
+    <ClCompile Include="LobbyConnection.cpp" />
+    <ClCompile Include="LocalCmdScheduler.cpp" />
+    <ClCompile Include="LocalGameContext.cpp" />
+    <ClCompile Include="NetworkStatusScreen.cpp" />
+    <ClCompile Include="NewLobbyClientPW.cpp" />
+    <ClCompile Include="NewLobbyGameClientPW.cpp" />
+    <ClCompile Include="RegistryToolbox.cpp" />
+    <ClCompile Include="ReplayRunner.cpp" />
+    <ClCompile Include="ReplayTransceiver.cpp" />
+    <ClCompile Include="SelectGameModeLogic.cpp" />
+    <ClCompile Include="SelectGameModeScreen.cpp" />
+    <ClCompile Include="SelectHeroScreen.cpp" />
+    <ClCompile Include="SelectHeroScreenLogic.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ReleaseSingleExe|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ShippingSingleExe|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\App.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Manifest Include="..\Application.manifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\Application.rc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSingleExe|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ShippingSingleExe|Win32'">true</ExcludedFromBuild>
+    </ResourceCompile>
+    <ResourceCompile Include="..\Version.rc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSingleExe|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ShippingSingleExe|Win32'">true</ExcludedFromBuild>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="..\Version.h.xslt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Game\PF\Client\LobbyPvx\all.component" />
+    <None Include="..\Game\PF\Client\LobbyPvx\GameClient.component" />
+    <None Include="..\Game\PF\Client\LobbyPvx\HybridClient.component" />
+    <None Include="..\Game\PF\Client\LobbyPvx\LobbyClientLInterface.component" />
+    <None Include="..\Game\PF\Client\LobbyPvx\LobbyClientRInterface.component" />
+    <None Include="..\Game\PF\HybridServer\PeeredTypes.component" />
+    <None Include="..\Game\PF\Server\LobbyPvx\CommonTypes.component" />
+    <None Include="..\Game\PF\Server\Roll\RollTypes.component" />
+    <None Include="..\Game\PF\Server\Statistic\GameStatClient.component" />
+    <None Include="..\Game\PF\Server\Statistic\StatClientHttpDispatcher.component" />
+    <None Include="..\Game\PF\Server\Statistic\StatisticsClientTypes.component" />
+    <None Include="..\Server\WebClient\WebClient.component" />
+    <None Include="GameContext.component" />
+    <None Include="LoadingScreen.component" />
+    <None Include="pw_client.refs" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

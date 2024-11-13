@@ -1,0 +1,1159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Common">
+      <UniqueIdentifier>{b292e6e2-1033-473e-86ad-72ef8b434da5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core">
+      <UniqueIdentifier>{1d084831-854a-41f9-9d3d-070eece515f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Elements">
+      <UniqueIdentifier>{c91a8b9c-2839-4523-be56-482e0e29e338}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Render">
+      <UniqueIdentifier>{e604efdc-6893-4b52-bb22-c60e14e9d410}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Flash">
+      <UniqueIdentifier>{1f505d8d-d1c1-4b81-ac1a-dfe3650ffeca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Flash\GameSWFIntegration">
+      <UniqueIdentifier>{42a2d07a-7cff-4a32-8f12-b4d63a875901}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Flash\GameSWFIntegration\builtins">
+      <UniqueIdentifier>{f6344d17-9302-4ba9-bd45-43b089250650}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Flash\GameSWFIntegration\Natives">
+      <UniqueIdentifier>{ce884ae4-c948-40bf-8c14-ebf29386abdf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Flash\GameSWFIntegration\Natives\accessibility">
+      <UniqueIdentifier>{95ca3f21-c058-472c-9eef-89e23d90b21b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Flash\GameSWFIntegration\Natives\display">
+      <UniqueIdentifier>{aa0d18e4-5c0a-4c05-8030-d6ff184f081f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Flash\GameSWFIntegration\Natives\events">
+      <UniqueIdentifier>{c77c2e93-01d6-4af4-8a8b-5c94d1e6ad07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Flash\GameSWFIntegration\Natives\filters">
+      <UniqueIdentifier>{ceb88364-e212-461e-9853-2d6de9a087ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Flash\GameSWFIntegration\Natives\geom">
+      <UniqueIdentifier>{1ed7a4be-ecf4-4765-b86a-42015d83c17c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Flash\GameSWFIntegration\Natives\media">
+      <UniqueIdentifier>{8bb66fb8-d732-47c2-ba94-094cf6f6b8fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Flash\GameSWFIntegration\Natives\net">
+      <UniqueIdentifier>{f6cf8d5c-f62a-4bfa-a605-503c4044a8e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Flash\GameSWFIntegration\Natives\system">
+      <UniqueIdentifier>{59e0e0a5-2f5b-4728-963f-f35690d629a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Flash\GameSWFIntegration\Natives\testing">
+      <UniqueIdentifier>{1ef3042c-5e79-42cc-b948-2729be8217c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Flash\GameSWFIntegration\Natives\text">
+      <UniqueIdentifier>{523592fb-6569-4b24-af00-a9692470f8c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Flash\GameSWFIntegration\Natives\text\engine">
+      <UniqueIdentifier>{d2e2add3-c752-4304-8bec-00880f588a87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Flash\GameSWFIntegration\Natives\ui">
+      <UniqueIdentifier>{214a45de-3a70-4116-bd6b-f917b034cff2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Flash\GameSWFIntegration\Natives\utils">
+      <UniqueIdentifier>{9fdf1003-bffe-4289-824f-a7929cbd526c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Flash\GameSWFIntegration\Natives\xml">
+      <UniqueIdentifier>{9e709c8a-e086-4ee7-bac2-8c7923e23425}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Flash\GameSWFIntegration\Text">
+      <UniqueIdentifier>{0e7f7ca3-81a3-48a2-9655-feea7eb74b1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Flash\GameSWFIntegration\Parser">
+      <UniqueIdentifier>{2fff0d73-7a2e-46df-9b2e-463ff1c4d871}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DBUI">
+      <UniqueIdentifier>{115af699-039e-4272-8c45-788a41aaffbb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TextComponent">
+      <UniqueIdentifier>{b579ddca-38ee-4979-9399-295374597ea0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FontsRender">
+      <UniqueIdentifier>{bc6b007a-2700-42fb-a45e-1b99d3352dde}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Preferences">
+      <UniqueIdentifier>{3210d658-6702-499c-af48-f2c6f27a4f4c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="specific.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Defines.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Root.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="ScreenLogicBase.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Scripts.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="User.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Button.h">
+      <Filter>Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="CheckBox.h">
+      <Filter>Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="CommonControl.h">
+      <Filter>Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="EditBox.h">
+      <Filter>Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="HealthBar.h">
+      <Filter>Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageLabel.h">
+      <Filter>Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="LuaEventResult.h">
+      <Filter>Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="NameMappedWindow.h">
+      <Filter>Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="PageTabControl.h">
+      <Filter>Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="ProgressBar.h">
+      <Filter>Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="RadioButton.h">
+      <Filter>Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="RadioPanel.h">
+      <Filter>Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="ScrollableWindow.h">
+      <Filter>Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="ScrollArea.h">
+      <Filter>Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="ScrollBar.h">
+      <Filter>Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="ScrollList.h">
+      <Filter>Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="View.h">
+      <Filter>Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="Window.h">
+      <Filter>Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowPointJob.h">
+      <Filter>Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="Cursor.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugDraw.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugVarsRender.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="FrameTimeRender.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageComponent.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Resolution.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="SkinStyles.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="FlashContainer2.h">
+      <Filter>Flash</Filter>
+    </ClInclude>
+    <ClInclude Include="FlashFontsRender.h">
+      <Filter>Flash</Filter>
+    </ClInclude>
+    <ClInclude Include="FlashInterface.h">
+      <Filter>Flash</Filter>
+    </ClInclude>
+    <ClInclude Include="FSCommandListner.h">
+      <Filter>Flash</Filter>
+    </ClInclude>
+    <ClInclude Include="IStageFocusHandler.h">
+      <Filter>Flash</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\ButtonCharacter.h">
+      <Filter>Flash\GameSWFIntegration</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Characters.h">
+      <Filter>Flash\GameSWFIntegration</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\DisplayList.h">
+      <Filter>Flash\GameSWFIntegration</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\DisplayTags.h">
+      <Filter>Flash\GameSWFIntegration</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\FlashBaseClasses.h">
+      <Filter>Flash\GameSWFIntegration</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\FlashClassesCache.h">
+      <Filter>Flash\GameSWFIntegration</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\FlashEnterFunction.h">
+      <Filter>Flash\GameSWFIntegration</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\FlashMovie.h">
+      <Filter>Flash\GameSWFIntegration</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\FlashMovieAvmCore.h">
+      <Filter>Flash\GameSWFIntegration</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\FlashPlayer.h">
+      <Filter>Flash\GameSWFIntegration</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\GCRootWrapper.h">
+      <Filter>Flash\GameSWFIntegration</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Image.h">
+      <Filter>Flash\GameSWFIntegration</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\ImageData.h">
+      <Filter>Flash\GameSWFIntegration</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\JPEGReader.h">
+      <Filter>Flash\GameSWFIntegration</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\MorphCharacter.h">
+      <Filter>Flash\GameSWFIntegration</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\MorphData.h">
+      <Filter>Flash\GameSWFIntegration</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\SafeGCRoot.h">
+      <Filter>Flash\GameSWFIntegration</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\ShapeData.h">
+      <Filter>Flash\GameSWFIntegration</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\SoundData.h">
+      <Filter>Flash\GameSWFIntegration</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\TamarinPCH.h">
+      <Filter>Flash\GameSWFIntegration</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\builtins\accessibility.h">
+      <Filter>Flash\GameSWFIntegration\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\builtins\BuiltinPools.h">
+      <Filter>Flash\GameSWFIntegration\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\builtins\ByteArray_builtin.h">
+      <Filter>Flash\GameSWFIntegration\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\builtins\display.h">
+      <Filter>Flash\GameSWFIntegration\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\builtins\events.h">
+      <Filter>Flash\GameSWFIntegration\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\builtins\filters.h">
+      <Filter>Flash\GameSWFIntegration\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\builtins\geom.h">
+      <Filter>Flash\GameSWFIntegration\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\builtins\NativesBuiltins.h">
+      <Filter>Flash\GameSWFIntegration\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\builtins\net.h">
+      <Filter>Flash\GameSWFIntegration\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\builtins\sound.h">
+      <Filter>Flash\GameSWFIntegration\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\builtins\system.h">
+      <Filter>Flash\GameSWFIntegration\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\builtins\testing.h">
+      <Filter>Flash\GameSWFIntegration\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\builtins\text.h">
+      <Filter>Flash\GameSWFIntegration\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\builtins\ui.h">
+      <Filter>Flash\GameSWFIntegration\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\builtins\utils.h">
+      <Filter>Flash\GameSWFIntegration\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\builtins\xml.h">
+      <Filter>Flash\GameSWFIntegration\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\ClassMacros.h">
+      <Filter>Flash\GameSWFIntegration\Natives</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\accessibility\Accessibility.h">
+      <Filter>Flash\GameSWFIntegration\Natives\accessibility</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\display\AVM1Movie.h">
+      <Filter>Flash\GameSWFIntegration\Natives\display</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\display\Bitmap.h">
+      <Filter>Flash\GameSWFIntegration\Natives\display</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\display\BitmapData.h">
+      <Filter>Flash\GameSWFIntegration\Natives\display</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\display\BlendMode.h">
+      <Filter>Flash\GameSWFIntegration\Natives\display</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\display\DisplayObject.h">
+      <Filter>Flash\GameSWFIntegration\Natives\display</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\display\DisplayObjectContainer.h">
+      <Filter>Flash\GameSWFIntegration\Natives\display</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\display\ear_clip_triangulate.h">
+      <Filter>Flash\GameSWFIntegration\Natives\display</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\display\ear_clip_triangulate_impl.h">
+      <Filter>Flash\GameSWFIntegration\Natives\display</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\display\FlashMeshCollection.h">
+      <Filter>Flash\GameSWFIntegration\Natives\display</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\display\Geometry.h">
+      <Filter>Flash\GameSWFIntegration\Natives\display</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\display\Graphics.h">
+      <Filter>Flash\GameSWFIntegration\Natives\display</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\display\grid_index.h">
+      <Filter>Flash\GameSWFIntegration\Natives\display</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\display\InteractiveObject.h">
+      <Filter>Flash\GameSWFIntegration\Natives\display</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\display\Loader.h">
+      <Filter>Flash\GameSWFIntegration\Natives\display</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\display\LoaderInfo.h">
+      <Filter>Flash\GameSWFIntegration\Natives\display</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\display\MeshSet.h">
+      <Filter>Flash\GameSWFIntegration\Natives\display</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\display\MorphShape.h">
+      <Filter>Flash\GameSWFIntegration\Natives\display</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\display\MovieClip.h">
+      <Filter>Flash\GameSWFIntegration\Natives\display</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\display\Shader.h">
+      <Filter>Flash\GameSWFIntegration\Natives\display</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\display\ShaderData.h">
+      <Filter>Flash\GameSWFIntegration\Natives\display</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\display\ShaderInput.h">
+      <Filter>Flash\GameSWFIntegration\Natives\display</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\display\ShaderJob.h">
+      <Filter>Flash\GameSWFIntegration\Natives\display</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\display\ShaderParameter.h">
+      <Filter>Flash\GameSWFIntegration\Natives\display</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\display\Shape.h">
+      <Filter>Flash\GameSWFIntegration\Natives\display</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\display\SimpleButton.h">
+      <Filter>Flash\GameSWFIntegration\Natives\display</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\display\Sprite.h">
+      <Filter>Flash\GameSWFIntegration\Natives\display</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\display\Stage.h">
+      <Filter>Flash\GameSWFIntegration\Natives\display</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\display\StageEnums.h">
+      <Filter>Flash\GameSWFIntegration\Natives\display</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\display\StageProvider.h">
+      <Filter>Flash\GameSWFIntegration\Natives\display</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\display\Tesselate.h">
+      <Filter>Flash\GameSWFIntegration\Natives\display</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\display\vert_types.h">
+      <Filter>Flash\GameSWFIntegration\Natives\display</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\events\Event.h">
+      <Filter>Flash\GameSWFIntegration\Natives\events</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\events\EventDispatcher.h">
+      <Filter>Flash\GameSWFIntegration\Natives\events</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\events\EventTypes.h">
+      <Filter>Flash\GameSWFIntegration\Natives\events</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\events\KeyboardEvent.h">
+      <Filter>Flash\GameSWFIntegration\Natives\events</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\events\MouseEvent.h">
+      <Filter>Flash\GameSWFIntegration\Natives\events</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\events\TimerEvent.h">
+      <Filter>Flash\GameSWFIntegration\Natives\events</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\events\WeakMethodClosure.h">
+      <Filter>Flash\GameSWFIntegration\Natives\events</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\filters\BevelFilter.h">
+      <Filter>Flash\GameSWFIntegration\Natives\filters</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\filters\BitmapFilter.h">
+      <Filter>Flash\GameSWFIntegration\Natives\filters</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\filters\BlurFilter.h">
+      <Filter>Flash\GameSWFIntegration\Natives\filters</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\filters\ColorMatrixFilter.h">
+      <Filter>Flash\GameSWFIntegration\Natives\filters</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\filters\ConvolutionFilter.h">
+      <Filter>Flash\GameSWFIntegration\Natives\filters</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\filters\DisplacementMapFilter.h">
+      <Filter>Flash\GameSWFIntegration\Natives\filters</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\filters\DropShadowFilter.h">
+      <Filter>Flash\GameSWFIntegration\Natives\filters</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\filters\GlowFilter.h">
+      <Filter>Flash\GameSWFIntegration\Natives\filters</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\filters\GradientBevelFilter.h">
+      <Filter>Flash\GameSWFIntegration\Natives\filters</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\filters\GradientGlowFilter.h">
+      <Filter>Flash\GameSWFIntegration\Natives\filters</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\filters\ShaderFilter.h">
+      <Filter>Flash\GameSWFIntegration\Natives\filters</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\geom\Matrix3D.h">
+      <Filter>Flash\GameSWFIntegration\Natives\geom</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\geom\PerspectiveProjection.h">
+      <Filter>Flash\GameSWFIntegration\Natives\geom</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\geom\Transform.h">
+      <Filter>Flash\GameSWFIntegration\Natives\geom</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\geom\Utils3D.h">
+      <Filter>Flash\GameSWFIntegration\Natives\geom</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\media\Camera.h">
+      <Filter>Flash\GameSWFIntegration\Natives\media</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\media\Microphone.h">
+      <Filter>Flash\GameSWFIntegration\Natives\media</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\media\Sound.h">
+      <Filter>Flash\GameSWFIntegration\Natives\media</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\media\SoundChannel.h">
+      <Filter>Flash\GameSWFIntegration\Natives\media</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\media\SoundMixer.h">
+      <Filter>Flash\GameSWFIntegration\Natives\media</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\media\SoundTransform.h">
+      <Filter>Flash\GameSWFIntegration\Natives\media</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\net\DynamicPropertyOutput.h">
+      <Filter>Flash\GameSWFIntegration\Natives\net</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\net\FileFilter.h">
+      <Filter>Flash\GameSWFIntegration\Natives\net</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\net\FileReference.h">
+      <Filter>Flash\GameSWFIntegration\Natives\net</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\net\FileReferenceList.h">
+      <Filter>Flash\GameSWFIntegration\Natives\net</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\net\LocalConnection.h">
+      <Filter>Flash\GameSWFIntegration\Natives\net</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\net\NetConnection.h">
+      <Filter>Flash\GameSWFIntegration\Natives\net</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\net\NetStream.h">
+      <Filter>Flash\GameSWFIntegration\Natives\net</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\net\ObjectEncoding.h">
+      <Filter>Flash\GameSWFIntegration\Natives\net</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\net\Responder.h">
+      <Filter>Flash\GameSWFIntegration\Natives\net</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\net\SharedObject.h">
+      <Filter>Flash\GameSWFIntegration\Natives\net</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\net\Socket.h">
+      <Filter>Flash\GameSWFIntegration\Natives\net</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\net\URLRequest.h">
+      <Filter>Flash\GameSWFIntegration\Natives\net</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\net\URLStream.h">
+      <Filter>Flash\GameSWFIntegration\Natives\net</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\system\ApplicationDomain.h">
+      <Filter>Flash\GameSWFIntegration\Natives\system</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\system\Capabilities.h">
+      <Filter>Flash\GameSWFIntegration\Natives\system</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\system\FSCommand.h">
+      <Filter>Flash\GameSWFIntegration\Natives\system</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\system\IME.h">
+      <Filter>Flash\GameSWFIntegration\Natives\system</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\system\Security.h">
+      <Filter>Flash\GameSWFIntegration\Natives\system</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\system\SecurityDomain.h">
+      <Filter>Flash\GameSWFIntegration\Natives\system</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\system\System.h">
+      <Filter>Flash\GameSWFIntegration\Natives\system</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\testing\CoreWrapper.h">
+      <Filter>Flash\GameSWFIntegration\Natives\testing</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\testing\TestingFacility.h">
+      <Filter>Flash\GameSWFIntegration\Natives\testing</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\text\Font.h">
+      <Filter>Flash\GameSWFIntegration\Natives\text</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\text\StaticText.h">
+      <Filter>Flash\GameSWFIntegration\Natives\text</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\text\StyleSheet.h">
+      <Filter>Flash\GameSWFIntegration\Natives\text</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\text\TextField.h">
+      <Filter>Flash\GameSWFIntegration\Natives\text</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\text\TextFieldAutoSize.h">
+      <Filter>Flash\GameSWFIntegration\Natives\text</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\text\TextFormat.h">
+      <Filter>Flash\GameSWFIntegration\Natives\text</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\text\TextRenderer.h">
+      <Filter>Flash\GameSWFIntegration\Natives\text</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\text\TextSnapshot.h">
+      <Filter>Flash\GameSWFIntegration\Natives\text</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\text\engine\ContentElement.h">
+      <Filter>Flash\GameSWFIntegration\Natives\text\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\text\engine\EastAsianJustifier.h">
+      <Filter>Flash\GameSWFIntegration\Natives\text\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\text\engine\ElementFormat.h">
+      <Filter>Flash\GameSWFIntegration\Natives\text\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\text\engine\FontDescription.h">
+      <Filter>Flash\GameSWFIntegration\Natives\text\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\text\engine\GraphicElement.h">
+      <Filter>Flash\GameSWFIntegration\Natives\text\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\text\engine\GroupElement.h">
+      <Filter>Flash\GameSWFIntegration\Natives\text\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\text\engine\SpaceJustifier.h">
+      <Filter>Flash\GameSWFIntegration\Natives\text\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\text\engine\TabStop.h">
+      <Filter>Flash\GameSWFIntegration\Natives\text\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\text\engine\TextBlock.h">
+      <Filter>Flash\GameSWFIntegration\Natives\text\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\text\engine\TextElement.h">
+      <Filter>Flash\GameSWFIntegration\Natives\text\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\text\engine\TextJustifier.h">
+      <Filter>Flash\GameSWFIntegration\Natives\text\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\text\engine\TextLine.h">
+      <Filter>Flash\GameSWFIntegration\Natives\text\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\text\engine\TextLineMirrorRegion.h">
+      <Filter>Flash\GameSWFIntegration\Natives\text\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\ui\ContextMenu.h">
+      <Filter>Flash\GameSWFIntegration\Natives\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\ui\ContextMenuItem.h">
+      <Filter>Flash\GameSWFIntegration\Natives\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\ui\Keyboard.h">
+      <Filter>Flash\GameSWFIntegration\Natives\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\ui\Mouse.h">
+      <Filter>Flash\GameSWFIntegration\Natives\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\utils\ByteArray.h">
+      <Filter>Flash\GameSWFIntegration\Natives\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\utils\ObjectInput.h">
+      <Filter>Flash\GameSWFIntegration\Natives\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\utils\ObjectOutput.h">
+      <Filter>Flash\GameSWFIntegration\Natives\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\utils\Proxy.h">
+      <Filter>Flash\GameSWFIntegration\Natives\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\utils\Timer.h">
+      <Filter>Flash\GameSWFIntegration\Natives\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\utils\UtilsScripts.h">
+      <Filter>Flash\GameSWFIntegration\Natives\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\xml\XMLNode.h">
+      <Filter>Flash\GameSWFIntegration\Natives\xml</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\xml\XMLParser.h">
+      <Filter>Flash\GameSWFIntegration\Natives\xml</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\Natives\xml\XMLTag.h">
+      <Filter>Flash\GameSWFIntegration\Natives\xml</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\BasicTextCharacter.h">
+      <Filter>Flash\GameSWFIntegration\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\EditTextCharacter.h">
+      <Filter>Flash\GameSWFIntegration\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\FontsDict.h">
+      <Filter>Flash\GameSWFIntegration\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\FontsRenderInterface.h">
+      <Filter>Flash\GameSWFIntegration\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\FontTags.h">
+      <Filter>Flash\GameSWFIntegration\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\TextCharacter.h">
+      <Filter>Flash\GameSWFIntegration\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\TextContainer.h">
+      <Filter>Flash\GameSWFIntegration\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\TextTagsData.h">
+      <Filter>Flash\GameSWFIntegration\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\swf_parse.h">
+      <Filter>Flash\GameSWFIntegration\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\SwfStreamReader.h">
+      <Filter>Flash\GameSWFIntegration\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="Flash\GameSWFIntegration\SwfTypes.h">
+      <Filter>Flash\GameSWFIntegration\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="DBPreferences.h">
+      <Filter>DBUI</Filter>
+    </ClInclude>
+    <ClInclude Include="DBUI.h">
+      <Filter>DBUI</Filter>
+    </ClInclude>
+    <ClInclude Include="DBVotingForSurrender.h">
+      <Filter>DBUI</Filter>
+    </ClInclude>
+    <ClInclude Include="TextComponent.h">
+      <Filter>TextComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="TextComponentBasic.h">
+      <Filter>TextComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="TextMarkup.h">
+      <Filter>TextComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="TextMarkupCommon.h">
+      <Filter>TextComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="TextMarkupLexems.h">
+      <Filter>TextComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="TextMarkupParser.h">
+      <Filter>TextComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowNameMapInterface.h">
+      <Filter>TextComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="Alphabet.h">
+      <Filter>FontsRender</Filter>
+    </ClInclude>
+    <ClInclude Include="FontRender.h">
+      <Filter>FontsRender</Filter>
+    </ClInclude>
+    <ClInclude Include="FontRender.hpp">
+      <Filter>FontsRender</Filter>
+    </ClInclude>
+    <ClInclude Include="FontStyle.h">
+      <Filter>FontsRender</Filter>
+    </ClInclude>
+    <ClInclude Include="PreferencesProcessor.h">
+      <Filter>Preferences</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Root.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="ScreenLogicBase.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="User.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Button.cpp">
+      <Filter>Elements</Filter>
+    </ClCompile>
+    <ClCompile Include="CheckBox.cpp">
+      <Filter>Elements</Filter>
+    </ClCompile>
+    <ClCompile Include="CommonControl.cpp">
+      <Filter>Elements</Filter>
+    </ClCompile>
+    <ClCompile Include="EditBox.cpp">
+      <Filter>Elements</Filter>
+    </ClCompile>
+    <ClCompile Include="HealthBar.cpp">
+      <Filter>Elements</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageLabel.cpp">
+      <Filter>Elements</Filter>
+    </ClCompile>
+    <ClCompile Include="LuaEventResult.cpp">
+      <Filter>Elements</Filter>
+    </ClCompile>
+    <ClCompile Include="NameMappedWindow.cpp">
+      <Filter>Elements</Filter>
+    </ClCompile>
+    <ClCompile Include="PageTabControl.cpp">
+      <Filter>Elements</Filter>
+    </ClCompile>
+    <ClCompile Include="ProgressBar.cpp">
+      <Filter>Elements</Filter>
+    </ClCompile>
+    <ClCompile Include="RadioButton.cpp">
+      <Filter>Elements</Filter>
+    </ClCompile>
+    <ClCompile Include="RadioPanel.cpp">
+      <Filter>Elements</Filter>
+    </ClCompile>
+    <ClCompile Include="ScrollableWindow.cpp">
+      <Filter>Elements</Filter>
+    </ClCompile>
+    <ClCompile Include="ScrollArea.cpp">
+      <Filter>Elements</Filter>
+    </ClCompile>
+    <ClCompile Include="ScrollBar.cpp">
+      <Filter>Elements</Filter>
+    </ClCompile>
+    <ClCompile Include="ScrollList.cpp">
+      <Filter>Elements</Filter>
+    </ClCompile>
+    <ClCompile Include="View.cpp">
+      <Filter>Elements</Filter>
+    </ClCompile>
+    <ClCompile Include="Window.cpp">
+      <Filter>Elements</Filter>
+    </ClCompile>
+    <ClCompile Include="WindowPointJob.cpp">
+      <Filter>Elements</Filter>
+    </ClCompile>
+    <ClCompile Include="Cursor.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="DebugDraw.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="DebugVarsRender.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="FrameTimeRender.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageComponent.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Resolution.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="SkinStyles.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="FlashContainer2.cpp">
+      <Filter>Flash</Filter>
+    </ClCompile>
+    <ClCompile Include="FlashFontsRender.cpp">
+      <Filter>Flash</Filter>
+    </ClCompile>
+    <ClCompile Include="FlashInterface.cpp">
+      <Filter>Flash</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\ButtonCharacter.cpp">
+      <Filter>Flash\GameSWFIntegration</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\Characters.cpp">
+      <Filter>Flash\GameSWFIntegration</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\DisplayTags.cpp">
+      <Filter>Flash\GameSWFIntegration</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\FlashBaseClasses.cpp">
+      <Filter>Flash\GameSWFIntegration</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\FlashEnterFunction.cpp">
+      <Filter>Flash\GameSWFIntegration</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\FlashMovie.cpp">
+      <Filter>Flash\GameSWFIntegration</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\FlashMovieAvmCore.cpp">
+      <Filter>Flash\GameSWFIntegration</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\FlashPlayer.cpp">
+      <Filter>Flash\GameSWFIntegration</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\Image.cpp">
+      <Filter>Flash\GameSWFIntegration</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\ImageData.cpp">
+      <Filter>Flash\GameSWFIntegration</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\JPEGReader.cpp">
+      <Filter>Flash\GameSWFIntegration</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\MorphCharacter.cpp">
+      <Filter>Flash\GameSWFIntegration</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\MorphData.cpp">
+      <Filter>Flash\GameSWFIntegration</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\ShapeData.cpp">
+      <Filter>Flash\GameSWFIntegration</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\SoundData.cpp">
+      <Filter>Flash\GameSWFIntegration</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\TamarinPCH.cpp">
+      <Filter>Flash\GameSWFIntegration</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\builtins\accessibility_builtin.cpp">
+      <Filter>Flash\GameSWFIntegration\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\builtins\ByteArray_builtin_Wrapper.cpp">
+      <Filter>Flash\GameSWFIntegration\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\builtins\display_builtin.cpp">
+      <Filter>Flash\GameSWFIntegration\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\builtins\events_builtin.cpp">
+      <Filter>Flash\GameSWFIntegration\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\builtins\filters_builtin.cpp">
+      <Filter>Flash\GameSWFIntegration\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\builtins\geom_builtin.cpp">
+      <Filter>Flash\GameSWFIntegration\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\builtins\net_builtin.cpp">
+      <Filter>Flash\GameSWFIntegration\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\builtins\sound_builtin.cpp">
+      <Filter>Flash\GameSWFIntegration\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\builtins\system_builtin.cpp">
+      <Filter>Flash\GameSWFIntegration\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\builtins\testing_builtin.cpp">
+      <Filter>Flash\GameSWFIntegration\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\builtins\text_builtin.cpp">
+      <Filter>Flash\GameSWFIntegration\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\builtins\ui_builtin.cpp">
+      <Filter>Flash\GameSWFIntegration\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\builtins\utils_builtin.cpp">
+      <Filter>Flash\GameSWFIntegration\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\builtins\xml_builtin.cpp">
+      <Filter>Flash\GameSWFIntegration\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\Natives\display\Bitmap.cpp">
+      <Filter>Flash\GameSWFIntegration\Natives\display</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\Natives\display\BitmapData.cpp">
+      <Filter>Flash\GameSWFIntegration\Natives\display</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\Natives\display\BlendMode.cpp">
+      <Filter>Flash\GameSWFIntegration\Natives\display</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\Natives\display\DisplayObject.cpp">
+      <Filter>Flash\GameSWFIntegration\Natives\display</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\Natives\display\DisplayObjectContainer.cpp">
+      <Filter>Flash\GameSWFIntegration\Natives\display</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\Natives\display\ear_clip_triangulate_float.cpp">
+      <Filter>Flash\GameSWFIntegration\Natives\display</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\Natives\display\FlashMeshCollection.cpp">
+      <Filter>Flash\GameSWFIntegration\Natives\display</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\Natives\display\Geometry.cpp">
+      <Filter>Flash\GameSWFIntegration\Natives\display</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\Natives\display\Graphics.cpp">
+      <Filter>Flash\GameSWFIntegration\Natives\display</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\Natives\display\InteractiveObject.cpp">
+      <Filter>Flash\GameSWFIntegration\Natives\display</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\Natives\display\Loader.cpp">
+      <Filter>Flash\GameSWFIntegration\Natives\display</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\Natives\display\LoaderInfo.cpp">
+      <Filter>Flash\GameSWFIntegration\Natives\display</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\Natives\display\MeshSet.cpp">
+      <Filter>Flash\GameSWFIntegration\Natives\display</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\Natives\display\MorphShape.cpp">
+      <Filter>Flash\GameSWFIntegration\Natives\display</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\Natives\display\MovieClip.cpp">
+      <Filter>Flash\GameSWFIntegration\Natives\display</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\Natives\display\Shape.cpp">
+      <Filter>Flash\GameSWFIntegration\Natives\display</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\Natives\display\SimpleButton.cpp">
+      <Filter>Flash\GameSWFIntegration\Natives\display</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\Natives\display\Sprite.cpp">
+      <Filter>Flash\GameSWFIntegration\Natives\display</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\Natives\display\Stage.cpp">
+      <Filter>Flash\GameSWFIntegration\Natives\display</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\Natives\display\StageEnums.cpp">
+      <Filter>Flash\GameSWFIntegration\Natives\display</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\Natives\display\Tesselate.cpp">
+      <Filter>Flash\GameSWFIntegration\Natives\display</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\Natives\events\Event.cpp">
+      <Filter>Flash\GameSWFIntegration\Natives\events</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\Natives\events\EventDispatcher.cpp">
+      <Filter>Flash\GameSWFIntegration\Natives\events</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\Natives\events\KeyboardEvent.cpp">
+      <Filter>Flash\GameSWFIntegration\Natives\events</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\Natives\events\MouseEvent.cpp">
+      <Filter>Flash\GameSWFIntegration\Natives\events</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\Natives\events\TimerEvent.cpp">
+      <Filter>Flash\GameSWFIntegration\Natives\events</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\Natives\filters\ColorMatrixFilter.cpp">
+      <Filter>Flash\GameSWFIntegration\Natives\filters</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\Natives\geom\Matrix3D.cpp">
+      <Filter>Flash\GameSWFIntegration\Natives\geom</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\Natives\geom\PerspectiveProjection.cpp">
+      <Filter>Flash\GameSWFIntegration\Natives\geom</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\Natives\geom\Transform.cpp">
+      <Filter>Flash\GameSWFIntegration\Natives\geom</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\Natives\media\Sound.cpp">
+      <Filter>Flash\GameSWFIntegration\Natives\media</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\Natives\system\ApplicationDomain.cpp">
+      <Filter>Flash\GameSWFIntegration\Natives\system</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\Natives\system\FSCommand.cpp">
+      <Filter>Flash\GameSWFIntegration\Natives\system</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\Natives\testing\CoreWrapper.cpp">
+      <Filter>Flash\GameSWFIntegration\Natives\testing</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\Natives\testing\TestingFacility.cpp">
+      <Filter>Flash\GameSWFIntegration\Natives\testing</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\Natives\text\StaticText.cpp">
+      <Filter>Flash\GameSWFIntegration\Natives\text</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\Natives\text\TextField.cpp">
+      <Filter>Flash\GameSWFIntegration\Natives\text</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\Natives\text\TextFieldAutoSize.cpp">
+      <Filter>Flash\GameSWFIntegration\Natives\text</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\Natives\utils\Timer.cpp">
+      <Filter>Flash\GameSWFIntegration\Natives\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\Natives\utils\UtilsScripts.cpp">
+      <Filter>Flash\GameSWFIntegration\Natives\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\EditTextCharacter.cpp">
+      <Filter>Flash\GameSWFIntegration\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\FontsDict.cpp">
+      <Filter>Flash\GameSWFIntegration\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\FontTags.cpp">
+      <Filter>Flash\GameSWFIntegration\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\TextCharacter.cpp">
+      <Filter>Flash\GameSWFIntegration\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\TextContainer.cpp">
+      <Filter>Flash\GameSWFIntegration\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\TextTagsData.cpp">
+      <Filter>Flash\GameSWFIntegration\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\swf_parse.cpp">
+      <Filter>Flash\GameSWFIntegration\Parser</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\SwfStreamReader.cpp">
+      <Filter>Flash\GameSWFIntegration\Parser</Filter>
+    </ClCompile>
+    <ClCompile Include="Flash\GameSWFIntegration\SwfTypes.cpp">
+      <Filter>Flash\GameSWFIntegration\Parser</Filter>
+    </ClCompile>
+    <ClCompile Include="DBPreferences.cpp">
+      <Filter>DBUI</Filter>
+    </ClCompile>
+    <ClCompile Include="DBUI.cpp">
+      <Filter>DBUI</Filter>
+    </ClCompile>
+    <ClCompile Include="DBVotingForSurrender.cpp">
+      <Filter>DBUI</Filter>
+    </ClCompile>
+    <ClCompile Include="TextComponent.cpp">
+      <Filter>TextComponent</Filter>
+    </ClCompile>
+    <ClCompile Include="TextComponentBasic.cpp">
+      <Filter>TextComponent</Filter>
+    </ClCompile>
+    <ClCompile Include="TextMarkup.cpp">
+      <Filter>TextComponent</Filter>
+    </ClCompile>
+    <ClCompile Include="TextMarkupLexems.cpp">
+      <Filter>TextComponent</Filter>
+    </ClCompile>
+    <ClCompile Include="TextMarkupParser.cpp">
+      <Filter>TextComponent</Filter>
+    </ClCompile>
+    <ClCompile Include="Alphabet.cpp">
+      <Filter>FontsRender</Filter>
+    </ClCompile>
+    <ClCompile Include="FontRender.cpp">
+      <Filter>FontsRender</Filter>
+    </ClCompile>
+    <ClCompile Include="FontStyle.cpp">
+      <Filter>FontsRender</Filter>
+    </ClCompile>
+    <ClCompile Include="PreferencesProcessor.cpp">
+      <Filter>Preferences</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core.component">
+      <Filter>Core</Filter>
+    </None>
+    <None Include="Elements.component">
+      <Filter>Elements</Filter>
+    </None>
+    <None Include="Render.component">
+      <Filter>Render</Filter>
+    </None>
+    <None Include="Flash.component">
+      <Filter>Flash</Filter>
+    </None>
+    <None Include="Flash\GameSWFIntegration\GameSWFIntegration.component">
+      <Filter>Flash\GameSWFIntegration</Filter>
+    </None>
+    <None Include="Flash\GameSWFIntegration\Natives\Natives.component">
+      <Filter>Flash\GameSWFIntegration\Natives</Filter>
+    </None>
+    <None Include="DBUI.component">
+      <Filter>DBUI</Filter>
+    </None>
+    <None Include="TextComponent.component">
+      <Filter>TextComponent</Filter>
+    </None>
+    <None Include="TextComponentBasic.component">
+      <Filter>TextComponent</Filter>
+    </None>
+    <None Include="TextMarkup.component">
+      <Filter>TextComponent</Filter>
+    </None>
+    <None Include="FontsRender.component">
+      <Filter>FontsRender</Filter>
+    </None>
+    <None Include="all.component" />
+    <None Include="ui.refs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\Version.rc" />
+  </ItemGroup>
+</Project>

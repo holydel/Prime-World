@@ -1,0 +1,442 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Common">
+      <UniqueIdentifier>{9f232593-c137-471a-a121-9693a6d4cc1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manipulators">
+      <UniqueIdentifier>{d31baf30-22fd-4028-9b9f-e78aed1611f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manipulators\Rotation">
+      <UniqueIdentifier>{8c42590b-f9e7-4acb-a781-718ef13f20ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manipulators\Moving">
+      <UniqueIdentifier>{f985c010-c1d6-474c-8e4c-4a43f2fe0ecc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manipulators\Scaling">
+      <UniqueIdentifier>{256bb087-dbab-4598-8b64-f2047fae7178}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Terrain">
+      <UniqueIdentifier>{c44ffdaa-0400-4245-8935-b79a2aa6f8f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Terrain\Layers">
+      <UniqueIdentifier>{66c4ff7b-aa27-40d8-ae94-679155887da0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FileSystem">
+      <UniqueIdentifier>{d9beaf18-8393-46af-b5f0-5b2b8d55a1dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SceneElements">
+      <UniqueIdentifier>{6a90f2c6-dda5-41f0-a9a5-572f2d6c59af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SceneElements\SceneObjects">
+      <UniqueIdentifier>{1fda707d-b806-421a-931c-3237ca15d740}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Math">
+      <UniqueIdentifier>{8057a97d-b447-4d11-9cba-53fb768ba854}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DebugVars">
+      <UniqueIdentifier>{1fb8913d-198c-4367-8ea2-df2ce3ec67b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AG">
+      <UniqueIdentifier>{43c74be5-e338-44e1-9b62-4f8bafd2ba27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditorLogger">
+      <UniqueIdentifier>{abf2325a-8343-467f-94c8-ca5496ca8472}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NewSceneElements">
+      <UniqueIdentifier>{cfcf66f3-1dce-4f56-bdec-5ff37b0a1b4b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UIScene">
+      <UniqueIdentifier>{9e4e8a3c-3b18-4324-9954-376c03e7d171}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditorScene">
+      <UniqueIdentifier>{90b64bd7-328e-4a54-9744-839308d6c6b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SimpleEditorScene">
+      <UniqueIdentifier>{10a44334-8f25-4bbd-a7fa-a1c34e4fdeb2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TextureImporter">
+      <UniqueIdentifier>{acd45c16-f984-4f40-847f-4dec3a53b975}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="CompositeTransformController.cpp">
+      <Filter>Manipulators</Filter>
+    </ClCompile>
+    <ClCompile Include="IObjectTransformController.cpp">
+      <Filter>Manipulators</Filter>
+    </ClCompile>
+    <ClCompile Include="IObjectTransformControllersProvider.cpp">
+      <Filter>Manipulators</Filter>
+    </ClCompile>
+    <ClCompile Include="Manipulator.cpp">
+      <Filter>Manipulators</Filter>
+    </ClCompile>
+    <ClCompile Include="ManipulatorElement.cpp">
+      <Filter>Manipulators</Filter>
+    </ClCompile>
+    <ClCompile Include="ManipulatorsController.cpp">
+      <Filter>Manipulators</Filter>
+    </ClCompile>
+    <ClCompile Include="TransformParameters.cpp">
+      <Filter>Manipulators</Filter>
+    </ClCompile>
+    <ClCompile Include="AxisRotatorElement.cpp">
+      <Filter>Manipulators\Rotation</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraPlaneRotatorElement.cpp">
+      <Filter>Manipulators\Rotation</Filter>
+    </ClCompile>
+    <ClCompile Include="Rotator.cpp">
+      <Filter>Manipulators\Rotation</Filter>
+    </ClCompile>
+    <ClCompile Include="RotatorElement.cpp">
+      <Filter>Manipulators\Rotation</Filter>
+    </ClCompile>
+    <ClCompile Include="AxisMoverElement.cpp">
+      <Filter>Manipulators\Moving</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraPlaneMoverElement.cpp">
+      <Filter>Manipulators\Moving</Filter>
+    </ClCompile>
+    <ClCompile Include="Mover.cpp">
+      <Filter>Manipulators\Moving</Filter>
+    </ClCompile>
+    <ClCompile Include="MoverElement.cpp">
+      <Filter>Manipulators\Moving</Filter>
+    </ClCompile>
+    <ClCompile Include="MultiDirectionScalerElement.cpp">
+      <Filter>Manipulators\Scaling</Filter>
+    </ClCompile>
+    <ClCompile Include="Scaler.cpp">
+      <Filter>Manipulators\Scaling</Filter>
+    </ClCompile>
+    <ClCompile Include="ScalerElement.cpp">
+      <Filter>Manipulators\Scaling</Filter>
+    </ClCompile>
+    <ClCompile Include="SingleDirectionScalerElement.cpp">
+      <Filter>Manipulators\Scaling</Filter>
+    </ClCompile>
+    <ClCompile Include="EditorTerrain.cpp">
+      <Filter>Terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="TcvMarker.cpp">
+      <Filter>Terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="TerrainElement.cpp">
+      <Filter>Terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="TerrainUtils.cpp">
+      <Filter>Terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="TerrainGlobalLayer.cpp">
+      <Filter>Terrain\Layers</Filter>
+    </ClCompile>
+    <ClCompile Include="TerrainLayer.cpp">
+      <Filter>Terrain\Layers</Filter>
+    </ClCompile>
+    <ClCompile Include="TerrainMaterialLayer.cpp">
+      <Filter>Terrain\Layers</Filter>
+    </ClCompile>
+    <ClCompile Include="EditorFileSystem.cpp">
+      <Filter>FileSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="RoadWrapper.cpp">
+      <Filter>SceneElements</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneElement.cpp">
+      <Filter>SceneElements</Filter>
+    </ClCompile>
+    <ClCompile Include="Bound.cpp">
+      <Filter>SceneElements\SceneObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="GameSceneObject.cpp">
+      <Filter>SceneElements\SceneObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="CubicSpline3D.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="PlacementSpline.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Quaternion.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector2.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector3.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="EditorDebugVars.cpp">
+      <Filter>DebugVars</Filter>
+    </ClCompile>
+    <ClCompile Include="AGController.cpp">
+      <Filter>AG</Filter>
+    </ClCompile>
+    <ClCompile Include="EditorDumper.cpp">
+      <Filter>EditorLogger</Filter>
+    </ClCompile>
+    <ClCompile Include="AABBSceneElement.cpp">
+      <Filter>NewSceneElements</Filter>
+    </ClCompile>
+    <ClCompile Include="CollSceneObject.cpp">
+      <Filter>NewSceneElements</Filter>
+    </ClCompile>
+    <ClCompile Include="ComponentSceneElement.cpp">
+      <Filter>NewSceneElements</Filter>
+    </ClCompile>
+    <ClCompile Include="EditorSceneComponent.cpp">
+      <Filter>NewSceneElements</Filter>
+    </ClCompile>
+    <ClCompile Include="EditorSceneObject.cpp">
+      <Filter>NewSceneElements</Filter>
+    </ClCompile>
+    <ClCompile Include="ISceneElement.cpp">
+      <Filter>NewSceneElements</Filter>
+    </ClCompile>
+    <ClCompile Include="LocatorSceneElement.cpp">
+      <Filter>NewSceneElements</Filter>
+    </ClCompile>
+    <ClCompile Include="ManipulatorSceneObject.cpp">
+      <Filter>NewSceneElements</Filter>
+    </ClCompile>
+    <ClCompile Include="MoveManipulatorSceneComponent.cpp">
+      <Filter>NewSceneElements</Filter>
+    </ClCompile>
+    <ClCompile Include="RotateManipulatorSceneComponent.cpp">
+      <Filter>NewSceneElements</Filter>
+    </ClCompile>
+    <ClCompile Include="ScaleManipulatorSceneComponent.cpp">
+      <Filter>NewSceneElements</Filter>
+    </ClCompile>
+    <ClCompile Include="Editor2DSceneBase.cpp">
+      <Filter>UIScene</Filter>
+    </ClCompile>
+    <ClCompile Include="EditorMaterialScene.cpp">
+      <Filter>UIScene</Filter>
+    </ClCompile>
+    <ClCompile Include="EditorUIScene.cpp">
+      <Filter>UIScene</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>EditorScene</Filter>
+    </ClCompile>
+    <ClCompile Include="EditorScene.cpp">
+      <Filter>EditorScene</Filter>
+    </ClCompile>
+    <ClCompile Include="PickResult.cpp">
+      <Filter>EditorScene</Filter>
+    </ClCompile>
+    <ClCompile Include="SimpleEditorScene.cpp">
+      <Filter>SimpleEditorScene</Filter>
+    </ClCompile>
+    <ClCompile Include="SimplePickResult.cpp">
+      <Filter>SimpleEditorScene</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureImporter.cpp">
+      <Filter>TextureImporter</Filter>
+    </ClCompile>
+    <ClCompile Include="CinemaMode.cpp" />
+    <ClCompile Include="EditorRender.cpp" />
+    <ClCompile Include="EditorSound.cpp" />
+    <ClCompile Include="PlacementConverter.cpp" />
+    <ClCompile Include="ResourceCache.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="CompositeTransformController.h">
+      <Filter>Manipulators</Filter>
+    </ClInclude>
+    <ClInclude Include="IObjectTransformController.h">
+      <Filter>Manipulators</Filter>
+    </ClInclude>
+    <ClInclude Include="IObjectTransformControllersProvider.h">
+      <Filter>Manipulators</Filter>
+    </ClInclude>
+    <ClInclude Include="Manipulator.h">
+      <Filter>Manipulators</Filter>
+    </ClInclude>
+    <ClInclude Include="ManipulatorElement.h">
+      <Filter>Manipulators</Filter>
+    </ClInclude>
+    <ClInclude Include="ManipulatorsController.h">
+      <Filter>Manipulators</Filter>
+    </ClInclude>
+    <ClInclude Include="TransformParameters.h">
+      <Filter>Manipulators</Filter>
+    </ClInclude>
+    <ClInclude Include="AxisRotatorElement.h">
+      <Filter>Manipulators\Rotation</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraPlaneRotatorElement.h">
+      <Filter>Manipulators\Rotation</Filter>
+    </ClInclude>
+    <ClInclude Include="Rotator.h">
+      <Filter>Manipulators\Rotation</Filter>
+    </ClInclude>
+    <ClInclude Include="RotatorElement.h">
+      <Filter>Manipulators\Rotation</Filter>
+    </ClInclude>
+    <ClInclude Include="AxisMoverElement.h">
+      <Filter>Manipulators\Moving</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraPlaneMoverElement.h">
+      <Filter>Manipulators\Moving</Filter>
+    </ClInclude>
+    <ClInclude Include="Mover.h">
+      <Filter>Manipulators\Moving</Filter>
+    </ClInclude>
+    <ClInclude Include="MoverElement.h">
+      <Filter>Manipulators\Moving</Filter>
+    </ClInclude>
+    <ClInclude Include="MultiDirectionScalerElement.h">
+      <Filter>Manipulators\Scaling</Filter>
+    </ClInclude>
+    <ClInclude Include="Scaler.h">
+      <Filter>Manipulators\Scaling</Filter>
+    </ClInclude>
+    <ClInclude Include="ScalerElement.h">
+      <Filter>Manipulators\Scaling</Filter>
+    </ClInclude>
+    <ClInclude Include="SingleDirectionScalerElement.h">
+      <Filter>Manipulators\Scaling</Filter>
+    </ClInclude>
+    <ClInclude Include="EditorTerrain.h">
+      <Filter>Terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="TcvMarker.h">
+      <Filter>Terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="TerrainElement.h">
+      <Filter>Terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="TerrainUtils.h">
+      <Filter>Terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="TerrainGlobalLayer.h">
+      <Filter>Terrain\Layers</Filter>
+    </ClInclude>
+    <ClInclude Include="TerrainLayer.h">
+      <Filter>Terrain\Layers</Filter>
+    </ClInclude>
+    <ClInclude Include="TerrainMaterialLayer.h">
+      <Filter>Terrain\Layers</Filter>
+    </ClInclude>
+    <ClInclude Include="EditorFileSystem.h">
+      <Filter>FileSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="RoadWrapper.h">
+      <Filter>SceneElements</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneElement.h">
+      <Filter>SceneElements</Filter>
+    </ClInclude>
+    <ClInclude Include="Bound.h">
+      <Filter>SceneElements\SceneObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="GameSceneObject.h">
+      <Filter>SceneElements\SceneObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="CubicSpline3D.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="PlacementSpline.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Quaternion.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector2.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector3.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="EditorDebugVars.h">
+      <Filter>DebugVars</Filter>
+    </ClInclude>
+    <ClInclude Include="AGController.h">
+      <Filter>AG</Filter>
+    </ClInclude>
+    <ClInclude Include="EditorDumper.h">
+      <Filter>EditorLogger</Filter>
+    </ClInclude>
+    <ClInclude Include="AABBSceneElement.h">
+      <Filter>NewSceneElements</Filter>
+    </ClInclude>
+    <ClInclude Include="CollSceneObject.h">
+      <Filter>NewSceneElements</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentSceneElement.h">
+      <Filter>NewSceneElements</Filter>
+    </ClInclude>
+    <ClInclude Include="EditorSceneComponent.h">
+      <Filter>NewSceneElements</Filter>
+    </ClInclude>
+    <ClInclude Include="EditorSceneObject.h">
+      <Filter>NewSceneElements</Filter>
+    </ClInclude>
+    <ClInclude Include="ISceneElement.h">
+      <Filter>NewSceneElements</Filter>
+    </ClInclude>
+    <ClInclude Include="LocatorSceneElement.h">
+      <Filter>NewSceneElements</Filter>
+    </ClInclude>
+    <ClInclude Include="ManipulatorSceneObject.h">
+      <Filter>NewSceneElements</Filter>
+    </ClInclude>
+    <ClInclude Include="MoveManipulatorSceneComponent.h">
+      <Filter>NewSceneElements</Filter>
+    </ClInclude>
+    <ClInclude Include="RotateManipulatorSceneComponent.h">
+      <Filter>NewSceneElements</Filter>
+    </ClInclude>
+    <ClInclude Include="ScaleManipulatorSceneComponent.h">
+      <Filter>NewSceneElements</Filter>
+    </ClInclude>
+    <ClInclude Include="Editor2DSceneBase.h">
+      <Filter>UIScene</Filter>
+    </ClInclude>
+    <ClInclude Include="EditorMaterialScene.h">
+      <Filter>UIScene</Filter>
+    </ClInclude>
+    <ClInclude Include="EditorUIScene.h">
+      <Filter>UIScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>EditorScene</Filter>
+    </ClInclude>
+    <ClInclude Include="EditorScene.h">
+      <Filter>EditorScene</Filter>
+    </ClInclude>
+    <ClInclude Include="PickResult.h">
+      <Filter>EditorScene</Filter>
+    </ClInclude>
+    <ClInclude Include="SimpleEditorScene.h">
+      <Filter>SimpleEditorScene</Filter>
+    </ClInclude>
+    <ClInclude Include="SimplePickResult.h">
+      <Filter>SimpleEditorScene</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureImporter.h">
+      <Filter>TextureImporter</Filter>
+    </ClInclude>
+    <ClInclude Include="CinemaMode.h" />
+    <ClInclude Include="EditorRender.h" />
+    <ClInclude Include="EditorSound.h" />
+    <ClInclude Include="PlacementConverter.h" />
+    <ClInclude Include="ResourceCache.h" />
+    <ClInclude Include="Settings.h" />
+    <ClInclude Include="StringUtils.h" />
+    <ClInclude Include="Utility.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="editornative.refs" />
+  </ItemGroup>
+</Project>

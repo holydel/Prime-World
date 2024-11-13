@@ -91,7 +91,7 @@
 	  KPRIORITY BasePriority;
 
 	} THREAD_BASIC_INFORMATION, *PTHREAD_BASIC_INFORMATION;
-
+	/*
 	typedef struct _PEB_LDR_DATA
 	{
 	  ULONG Length;
@@ -102,7 +102,7 @@
 	  LIST_ENTRY InInitializationOrderModuleList;
 	  PVOID EntryInProgress;
 	} PEB_LDR_DATA, *PPEB_LDR_DATA;
-
+	*/
 	typedef struct _CURDIR
 	{
 	  UNICODE_STRING DosPath;
@@ -116,7 +116,7 @@
 	  ULONG TimeStamp;
 	  STRING DosPath;
 	} RTL_DRIVE_LETTER_CURDIR, *PRTL_DRIVE_LETTER_CURDIR;
-
+	/*
 	typedef struct _RTL_USER_PROCESS_PARAMETERS
 	{
 	  ULONG MaximumLength;
@@ -149,7 +149,7 @@
 	  RTL_DRIVE_LETTER_CURDIR CurrentDirectores[32];
 	  ULONG EnvironmentSize;
 	} RTL_USER_PROCESS_PARAMETERS, *PRTL_USER_PROCESS_PARAMETERS;
-
+	*/
 	typedef struct _PEB_FREE_BLOCK
 	{
 	  struct _PEB_FREE_BLOCK* Next;

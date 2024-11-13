@@ -1,0 +1,968 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseSingleExe|Win32">
+      <Configuration>ReleaseSingleExe</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ShippingSingleExe|Win32">
+      <Configuration>ShippingSingleExe</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Shipping|Win32">
+      <Configuration>Shipping</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{6426D44C-08D7-4AFA-8682-14128B0FCB33}</ProjectGuid>
+    <RootNamespace>PF_GameLogic</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseSingleExe|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ShippingSingleExe|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseSingleExe|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ShippingSingleExe|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>14.0.25431.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(ProjectDir)..\_$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)..\_$(Configuration)\$(ProjectName)\</IntDir>
+    <IgnoreImportLibrary>false</IgnoreImportLibrary>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(ProjectDir)..\_$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)..\_$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'">
+    <OutDir>$(ProjectDir)..\_$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)..\_$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ShippingSingleExe|Win32'">
+    <OutDir>$(ProjectDir)..\_$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)..\_$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseSingleExe|Win32'">
+    <OutDir>$(ProjectDir)..\_$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)..\_$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/MP %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../..;../../vendor\zlib\include;../../vendor\DirectX\Include;../../vendor\fmod\api\inc;../../vendor\fmod\fmoddesignerapi\api\inc;../;../Server;../Game/PF;../../vendor/libcurl/include;..\Server\Chat;..\..\Vendor\boost;..\..\Vendor\JsonCpp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;DLL;_DEBUG;_DO_ASSERT;CURL_STATICLIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <PreprocessSuppressLineNumbers>false</PreprocessSuppressLineNumbers>
+      <ExceptionHandling />
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <SmallerTypeCheck>true</SmallerTypeCheck>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <PreLinkEvent>
+      <Command>cd $(IntDir)
+..\..\..\vendor\BuildUtils\DefBuild.exe $(ProjectName).def
+if errorlevel 1 goto checklib
+:BuildImportLib
+lib /NOLOGO *.obj /def:$(ProjectName).def /MACHINE:X86 /out:"$(OutDir)$(ProjectName).lib"
+goto end
+:checklib
+if not exist "$(OutDir)$(ProjectName).lib" goto BuildImportLib
+:end
+dir&gt;nul
+</Command>
+    </PreLinkEvent>
+    <Link>
+      <AdditionalDependencies>JsonCpp.lib;libcurl.lib;zdll.lib;dxguid.lib;d3d9.lib;d3dx9.lib;dxerr.lib;fmodex_vc.lib;fmod_event.lib;Ws2_32.lib;Iphlpapi.lib;CensorDll.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)PW_GameLogic.dll</OutputFile>
+      <AdditionalLibraryDirectories>../../vendor\zlib\lib;../../vendor\DirectX\Lib\x86;../../vendor\fmod\api\lib;../../vendor\fmod\fmoddesignerapi\api\lib;../../vendor/libcurl/lib/Debug;../../Tools/Censor/lib/Release;../../vendor/JsonCpp/lib/Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ModuleDefinitionFile>$(IntDir)$(ProjectName).def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <LargeAddressAware>true</LargeAddressAware>
+      <FixedBaseAddress />
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>"$(ProjectDir)..\..\vendor\BuildUtils\CopyReference.exe" $(ProjectPath) $(Configuration) $(TargetDir)</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/MP /D_SCL_SECURE_NO_WARNINGS /D_SECURE_SCL=0 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>../..;../../vendor\zlib\include;../../vendor\DirectX\Include;../../vendor\fmod\api\inc;../../vendor\fmod\fmoddesignerapi\api\inc;../;../Server;../Game/PF;../../vendor/libcurl/include;..\Server\Chat;..\..\Vendor\boost;..\..\Vendor\JsonCpp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;DLL;NDEBUG;_DO_ASSERT;CURL_STATICLIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling />
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <SmallerTypeCheck>false</SmallerTypeCheck>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <PreLinkEvent>
+      <Command>cd $(IntDir)
+..\..\..\vendor\BuildUtils\DefBuild.exe $(ProjectName).def
+if errorlevel 1 goto checklib
+:BuildImportLib
+lib /NOLOGO *.obj /def:$(ProjectName).def /MACHINE:X86 /out:"$(OutDir)$(ProjectName).lib"
+goto end
+:checklib
+if not exist "$(OutDir)$(ProjectName).lib" goto BuildImportLib
+:end
+dir&gt;nul
+</Command>
+    </PreLinkEvent>
+    <Link>
+      <AdditionalDependencies>JsonCpp.lib;zdll.lib;dxguid.lib;d3d9.lib;d3dx9.lib;dxerr.lib;fmodex_vc.lib;fmod_event.lib;Ws2_32.lib;Iphlpapi.lib;libcurl.lib;CensorDll.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)PW_GameLogic.dll</OutputFile>
+      <AdditionalLibraryDirectories>../../vendor\zlib\lib;../../vendor\DirectX\Lib\x86;../../vendor\fmod\api\lib;../../vendor\fmod\fmoddesignerapi\api\lib;../../vendor/libcurl/lib/Release;../../Tools/Censor/lib/Release;../../vendor/JsonCpp/lib/Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ModuleDefinitionFile>$(IntDir)$(ProjectName).def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>NotSet</SubSystem>
+      <LargeAddressAware>true</LargeAddressAware>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <FixedBaseAddress />
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>"$(ProjectDir)..\..\vendor\BuildUtils\CopyReference.exe" $(ProjectPath) $(Configuration) $(TargetDir)</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/MP /D_SCL_SECURE_NO_WARNINGS /D_SECURE_SCL=0 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>../..;../../vendor\zlib\include;../../vendor\DirectX\Include;../../vendor\fmod\api\inc;../../vendor\fmod\fmoddesignerapi\api\inc;../;../Server;../Game/PF;../../vendor/libcurl/include;..\Server\Chat;..\..\Vendor\boost;..\..\Vendor\JsonCpp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;DLL;NDEBUG;_SHIPPING;CURL_STATICLIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling />
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <SmallerTypeCheck>false</SmallerTypeCheck>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <PreLinkEvent>
+      <Command>cd $(IntDir)
+..\..\..\vendor\BuildUtils\DefBuild.exe $(ProjectName).def
+if errorlevel 1 goto checklib
+:BuildImportLib
+lib /NOLOGO *.obj /def:$(ProjectName).def /MACHINE:X86 /out:"$(OutDir)$(ProjectName).lib"
+goto end
+:checklib
+if not exist "$(OutDir)$(ProjectName).lib" goto BuildImportLib
+:end
+dir&gt;nul
+</Command>
+    </PreLinkEvent>
+    <Link>
+      <AdditionalDependencies>JsonCpp.lib;zdll.lib;dxguid.lib;d3d9.lib;d3dx9.lib;libcurl.lib;dxerr.lib;fmodex_vc.lib;fmod_event.lib;Ws2_32.lib;Iphlpapi.lib;CensorDll.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)PW_GameLogic.dll</OutputFile>
+      <AdditionalLibraryDirectories>../../vendor\zlib\lib;../../vendor\DirectX\Lib\x86;../../vendor\fmod\api\lib;../../vendor\fmod\fmoddesignerapi\api\lib;../../vendor/libcurl/lib/Release;../../Tools/Censor/lib/Release;../../vendor/JsonCpp/lib/Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ModuleDefinitionFile>$(IntDir)$(ProjectName).def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>NotSet</SubSystem>
+      <LargeAddressAware>true</LargeAddressAware>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <FixedBaseAddress />
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>"$(ProjectDir)..\..\vendor\BuildUtils\CopyReference.exe" $(ProjectPath) $(Configuration) $(TargetDir)</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ShippingSingleExe|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/MP /D_SCL_SECURE_NO_WARNINGS /D_SECURE_SCL=0 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <AdditionalIncludeDirectories>../..;../../vendor\zlib\include;../../vendor\DirectX\Include;../../vendor\fmod\api\inc;../../vendor\fmod\fmoddesignerapi\api\inc;../;../Server;../Game/PF;../../vendor/libcurl/include;..\Server\Chat;..\..\Vendor\boost;..\..\Vendor\JsonCpp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>__PLACEMENT_NEW_INLINE;WIN32;_WINDOWS;STATIC_LIB;NDEBUG;_SHIPPING;CURL_STATICLIB;STARFORCE_PROTECTED;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling />
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <SmallerTypeCheck>false</SmallerTypeCheck>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <PreLinkEvent>
+      <Command />
+    </PreLinkEvent>
+    <PostBuildEvent>
+      <Command>"$(ProjectDir)..\..\vendor\BuildUtils\CopyReference.exe" $(ProjectPath) $(Configuration) $(TargetDir)</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseSingleExe|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/MP /D_SCL_SECURE_NO_WARNINGS /D_SECURE_SCL=0 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <AdditionalIncludeDirectories>../..;../../vendor\zlib\include;../../vendor\DirectX\Include;../../vendor\fmod\api\inc;../../vendor\fmod\fmoddesignerapi\api\inc;../;../Server;../Game/PF;../../vendor/libcurl/include;..\Server\Chat;..\..\Vendor\boost;..\..\Vendor\JsonCpp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;STATIC_LIB;NDEBUG;_DO_ASSERT;STARFORCE_PROTECTED;CURL_STATICLIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling />
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <SmallerTypeCheck>false</SmallerTypeCheck>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <PreLinkEvent>
+      <Command />
+    </PreLinkEvent>
+    <PostBuildEvent>
+      <Command>"$(ProjectDir)..\..\vendor\BuildUtils\CopyReference.exe" $(ProjectPath) $(Configuration) $(TargetDir)</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Data\GameLogic\FormulaPars.h" />
+    <ClInclude Include="..\Game\PF\Server\Statistic\StatisticsCommonTypes.h" />
+    <ClInclude Include="ActionBarController.h" />
+    <ClInclude Include="AdventureCameraController.hpp" />
+    <ClInclude Include="AdventureFlashInterface.h" />
+    <ClInclude Include="AdventureScreen.h" />
+    <ClInclude Include="AdventureScreenBase.h" />
+    <ClInclude Include="AdventureScreenEvents.h" />
+    <ClInclude Include="AdventureScreenFacets\GameOverEffect.h" />
+    <ClInclude Include="AdventureScreenLogic.h" />
+    <ClInclude Include="AdventureTooltip.h" />
+    <ClInclude Include="AIWorldFacets\FemaleMaleAssistEffect.h" />
+    <ClInclude Include="AIWorldFacets\VotingForSurrenderLogic.h" />
+    <ClInclude Include="AnnouncementController.h" />
+    <ClInclude Include="AnnouncementParams.h" />
+    <ClInclude Include="AStarPathFinder.h" />
+    <ClInclude Include="AsyncMapStartup.h" />
+    <ClInclude Include="AwardsController.h" />
+    <ClInclude Include="BadBehaviourComplaintCmd.hpp" />
+    <ClInclude Include="BindsController.h" />
+    <ClInclude Include="BuffsController.h" />
+    <ClInclude Include="CharInfoContainer.h" />
+    <ClInclude Include="CharInfoController.h" />
+    <ClInclude Include="ChatController.h" />
+    <ClInclude Include="CircleRays.h" />
+    <ClInclude Include="ClientVisibilityFlags.hpp" />
+    <ClInclude Include="ClientVisibilityHelper.h" />
+    <ClInclude Include="CollisionResolver.h" />
+    <ClInclude Include="CommonCombatController.h" />
+    <ClInclude Include="CommonPathFinder.h" />
+    <ClInclude Include="ComplainController.h" />
+    <ClInclude Include="CTE_Controller.h" />
+    <ClInclude Include="DamageBloodMask.h" />
+    <ClInclude Include="DayNightController.h" />
+    <ClInclude Include="DBAbility.h" />
+    <ClInclude Include="DBAdvMap.h" />
+    <ClInclude Include="DBAnimations.h" />
+    <ClInclude Include="DBConsumable.h" />
+    <ClInclude Include="DBDayNight.h" />
+    <ClInclude Include="DBGameLogic.h" />
+    <ClInclude Include="DBGuild.h" />
+    <ClInclude Include="DBHeroesList.h" />
+    <ClInclude Include="DBHeroRanks.h" />
+    <ClInclude Include="DBImpulsiveBuffs.h" />
+    <ClInclude Include="DbMapList.h" />
+    <ClInclude Include="DBMinigamesTypes.h" />
+    <ClInclude Include="DBPFEffect.h" />
+    <ClInclude Include="DBResources.h" />
+    <ClInclude Include="DBServer.h" />
+    <ClInclude Include="DBSessionMessages.h" />
+    <ClInclude Include="DBSessionRoots.h" />
+    <ClInclude Include="DBSmartChat.h" />
+    <ClInclude Include="DBSound.h" />
+    <ClInclude Include="DBStats.h" />
+    <ClInclude Include="DBTalent.h" />
+    <ClInclude Include="DBUnit.h" />
+    <ClInclude Include="DBVisualRoots.h" />
+    <ClInclude Include="DebugCharStat.h" />
+    <ClInclude Include="DebugStateDump.h" />
+    <ClInclude Include="DefaultFormulaStorage.h" />
+    <ClInclude Include="DerStatsNameMap.h" />
+    <ClInclude Include="DialogController.h" />
+    <ClInclude Include="DieTimer.h" />
+    <ClInclude Include="DI\DI.hpp" />
+    <ClInclude Include="DI\TypeInfo.hpp" />
+    <ClInclude Include="ErrorMessageController.h" />
+    <ClInclude Include="EscMenuController.h" />
+    <ClInclude Include="FinalStatisticsController.h" />
+    <ClInclude Include="FlashFSCommands.h" />
+    <ClInclude Include="FlyTexts.h" />
+    <ClInclude Include="ForceCalc.h" />
+    <ClInclude Include="FormulaExecutor.h" />
+    <ClInclude Include="FPUState.h" />
+    <ClInclude Include="FriendsController.h" />
+    <ClInclude Include="GameControl.h" />
+    <ClInclude Include="GameLogicStatisticsTypes.h" />
+    <ClInclude Include="GameMaps.h" />
+    <ClInclude Include="GameMenuInterfaces.h" />
+    <ClInclude Include="GenericAbuseController.h" />
+    <ClInclude Include="GuildEmblem.h" />
+    <ClInclude Include="HeroActions.h" />
+    <ClInclude Include="HeroRankCalculator.h" />
+    <ClInclude Include="HeroScoreWrapper.h" />
+    <ClInclude Include="HeroSpawn.h" />
+    <ClInclude Include="HeroTitleCalculator.h" />
+    <ClInclude Include="HttpStuff.h" />
+    <ClInclude Include="IAdventureScreen.h" />
+    <ClInclude Include="IChatMessageHook.h" />
+    <ClInclude Include="IFlashChat.h" />
+    <ClInclude Include="IGameStatistics.h" />
+    <ClInclude Include="IgnoreListController.h" />
+    <ClInclude Include="IgnoreListStorage.h" />
+    <ClInclude Include="ImportedStruct.h" />
+    <ClInclude Include="ImpulseBuffsController.h" />
+    <ClInclude Include="InventoryController.h" />
+    <ClInclude Include="InventoryInterface.h" />
+    <ClInclude Include="ISocialConnection.h" />
+    <ClInclude Include="LuaScript.h" />
+    <ClInclude Include="LuaValueSettable.h" />
+    <ClInclude Include="MapCollection.h" />
+    <ClInclude Include="MapDescriptionLoader.h" />
+    <ClInclude Include="MapLoadingUtility.hpp" />
+    <ClInclude Include="MapStartup.h" />
+    <ClInclude Include="MarkersController.h" />
+    <ClInclude Include="Minimap.h" />
+    <ClInclude Include="MinimapController.h" />
+    <ClInclude Include="MoveToCameraController.h" />
+    <ClInclude Include="NaftaInfoProvider.h" />
+    <ClInclude Include="ObjectInfoHelper.h" />
+    <ClInclude Include="ObjectInfoMapper.hpp" />
+    <ClInclude Include="ObjectSelector.h" />
+    <ClInclude Include="ObjectsInfo2d.h" />
+    <ClInclude Include="Path.h" />
+    <ClInclude Include="PathChecker.h" />
+    <ClInclude Include="PathMap.h" />
+    <ClInclude Include="PathTools.h" />
+    <ClInclude Include="PFAbilityData.h" />
+    <ClInclude Include="PFAbilityInstance.h" />
+    <ClInclude Include="PFAchievement.h" />
+    <ClInclude Include="PFAdvancedSummon.h" />
+    <ClInclude Include="PFAdvMap.h" />
+    <ClInclude Include="PFAdvMapObject.h" />
+    <ClInclude Include="PFAICommon.h" />
+    <ClInclude Include="PFAIContainer.h" />
+    <ClInclude Include="PFAIController.h" />
+    <ClInclude Include="PFAIControllerInterfaces.h" />
+    <ClInclude Include="PFAIHelper.h" />
+    <ClInclude Include="PFAIStates.h" />
+    <ClInclude Include="PFAITargetSelectors.h" />
+    <ClInclude Include="PFAIWorld.h" />
+    <ClInclude Include="PFAnimController.h" />
+    <ClInclude Include="PFApplAura.h" />
+    <ClInclude Include="PFApplBounce.h" />
+    <ClInclude Include="PFApplBuff.h" />
+    <ClInclude Include="PFApplChainLightning.h" />
+    <ClInclude Include="PFApplChannelling.h" />
+    <ClInclude Include="PFApplDelegateDamage.h" />
+    <ClInclude Include="PFApplFx.h" />
+    <ClInclude Include="PFApplHelper.h" />
+    <ClInclude Include="PFApplicator.h" />
+    <ClInclude Include="PFApplicatorHistoryAnalysis.h" />
+    <ClInclude Include="PFApplInstant.h" />
+    <ClInclude Include="PFApplMod.h" />
+    <ClInclude Include="PFApplMove.h" />
+    <ClInclude Include="PFApplSpecial.h" />
+    <ClInclude Include="PFApplSummon.h" />
+    <ClInclude Include="PFApplUtils.h" />
+    <ClInclude Include="PFAuraEffect.h" />
+    <ClInclude Include="PFBaseAIController.h" />
+    <ClInclude Include="PFBaseAttackData.h" />
+    <ClInclude Include="PFBaseMovingUnit.h" />
+    <ClInclude Include="PFBaseSpawner.h" />
+    <ClInclude Include="PFBaseUnit.h" />
+    <ClInclude Include="PFBaseUnitEvent.h" />
+    <ClInclude Include="PFBaseUnitStates.h" />
+    <ClInclude Include="PFBaseUnitUpdate.h" />
+    <ClInclude Include="PFBaseUseState.h" />
+    <ClInclude Include="PFBattleBuilding.h" />
+    <ClInclude Include="PFBehaviour.h" />
+    <ClInclude Include="PFBuildings.h" />
+    <ClInclude Include="PFCastLimitations.h" />
+    <ClInclude Include="PFCheat.h" />
+    <ClInclude Include="PFChest.h" />
+    <ClInclude Include="PFClientApplicators.h" />
+    <ClInclude Include="PFClientBaseMovingUnit.h" />
+    <ClInclude Include="PFClientBaseUnit.h" />
+    <ClInclude Include="PFClientBuilding.h" />
+    <ClInclude Include="PFClientChest.h" />
+    <ClInclude Include="PFClientCreature.h" />
+    <ClInclude Include="PFClientCreep.h" />
+    <ClInclude Include="PFClientDispatch.h" />
+    <ClInclude Include="PFClientFlagpole.h" />
+    <ClInclude Include="PFClientHero.h" />
+    <ClInclude Include="PFClientLogicObject.h" />
+    <ClInclude Include="PFClientMinigamePlace.h" />
+    <ClInclude Include="PFClientMultistateObject.h" />
+    <ClInclude Include="PFClientNatureMap.h" />
+    <ClInclude Include="PFClientNatureSceneObjectsHolder.h" />
+    <ClInclude Include="PFClientObjectBase.h" />
+    <ClInclude Include="PFClientObjectHelpers.h" />
+    <ClInclude Include="PFClientSceneObjectsHolders.h" />
+    <ClInclude Include="PFClientSpawner.h" />
+    <ClInclude Include="PFClientSummoned.h" />
+    <ClInclude Include="PFClientTree.h" />
+    <ClInclude Include="PFClientVisibilityMap.h" />
+    <ClInclude Include="PFClientVotingForSurrender.h" />
+    <ClInclude Include="PFCommonCreep.h" />
+    <ClInclude Include="PFConsumable.h" />
+    <ClInclude Include="PFCreature.h" />
+    <ClInclude Include="PFCreep.h" />
+    <ClInclude Include="PFDBLinker.h" />
+    <ClInclude Include="PFDeadBody.h" />
+    <ClInclude Include="PFDebug.h" />
+    <ClInclude Include="PFDebugImpl.h" />
+    <ClInclude Include="PFDispatch.h" />
+    <ClInclude Include="PFDispatchCursor.h" />
+    <ClInclude Include="PFDispatchCursorClient.h" />
+    <ClInclude Include="PFDispatchFactory.h" />
+    <ClInclude Include="PFDispatchStrike1.h" />
+    <ClInclude Include="PFEaselPlayer.h" />
+    <ClInclude Include="PFEffectRandom.h" />
+    <ClInclude Include="PFEffectSwitcher.h" />
+    <ClInclude Include="PFFactionStatistics.h" />
+    <ClInclude Include="PFFlagpole.h" />
+    <ClInclude Include="PFFsm.h" />
+    <ClInclude Include="PFGameLogicDebugVisual.h" />
+    <ClInclude Include="PFGameLogicLog.h" />
+    <ClInclude Include="PFGlyph.h" />
+    <ClInclude Include="PFGlyphManager.h" />
+    <ClInclude Include="PFHero.h" />
+    <ClInclude Include="PFHeroStates.h" />
+    <ClInclude Include="PFHeroStatistics.h" />
+    <ClInclude Include="PFHighlander.h" />
+    <ClInclude Include="PFImpulsiveBuffs.h" />
+    <ClInclude Include="PFImpulsiveEvents.h" />
+    <ClInclude Include="PFInvisibilityEffect.h" />
+    <ClInclude Include="PFLogicDebug.h" />
+    <ClInclude Include="PFLogicObject.h" />
+    <ClInclude Include="PFMainBuilding.h" />
+    <ClInclude Include="PFMaleHero.h" />
+    <ClInclude Include="PFMicroAI.h" />
+    <ClInclude Include="PFMinigamePlace.h" />
+    <ClInclude Include="PFMinimapEffect.h" />
+    <ClInclude Include="PFNeutralCreep.h" />
+    <ClInclude Include="PFNeutralCreepBehavior.h" />
+    <ClInclude Include="PFPet.h" />
+    <ClInclude Include="PFPickupable.h" />
+    <ClInclude Include="PFPlayAnimEffect.h" />
+    <ClInclude Include="PFPlayer.h" />
+    <ClInclude Include="PFPostFXFader.h" />
+    <ClInclude Include="PFPostFXParams.h" />
+    <ClInclude Include="PFPredefinedUnitVariables.h" />
+    <ClInclude Include="PFPriestessSignEffect.h" />
+    <ClInclude Include="PFPureClientCritter.h" />
+    <ClInclude Include="PFPureClientObject.h" />
+    <ClInclude Include="PFRenderInterface.h" />
+    <ClInclude Include="PFRenderUtils.h" />
+    <ClInclude Include="PFRenderWater.h" />
+    <ClInclude Include="PFResourcesCollection.h" />
+    <ClInclude Include="PFResourcesCollectionClient.h" />
+    <ClInclude Include="PFRoadFlagpole.h" />
+    <ClInclude Include="PFScriptedFlagpole.h" />
+    <ClInclude Include="PFSeriesAIController.h" />
+    <ClInclude Include="PFSimpleObject.h" />
+    <ClInclude Include="PFSimpleObjectClient.h" />
+    <ClInclude Include="PFState.h" />
+    <ClInclude Include="PFStatistics.h" />
+    <ClInclude Include="PFStatisticsImpl.h" />
+    <ClInclude Include="PFStatisticsStuff.h" />
+    <ClInclude Include="PFSummoned.h" />
+    <ClInclude Include="PFSummonState.h" />
+    <ClInclude Include="PFTalent.h" />
+    <ClInclude Include="PFTargetSelector.h" />
+    <ClInclude Include="PFTower.h" />
+    <ClInclude Include="PFTree.h" />
+    <ClInclude Include="PFTriggerApplicator.h" />
+    <ClInclude Include="PFUIEvent.h" />
+    <ClInclude Include="PFUnitAbilities.h" />
+    <ClInclude Include="PFUniTarget.h" />
+    <ClInclude Include="PFUnitSceneObjectModify.h" />
+    <ClInclude Include="PFVoxelMap.h" />
+    <ClInclude Include="PFWorld.h" />
+    <ClInclude Include="PFWorldDummyProtection.hpp" />
+    <ClInclude Include="PFWorldNatureMap.h" />
+    <ClInclude Include="PFWorldObjectBase.h" />
+    <ClInclude Include="PFWorldProtection.h" />
+    <ClInclude Include="PFWorldRealProtection.hpp" />
+    <ClInclude Include="PFWorldRealProtectionUtility.hpp" />
+    <ClInclude Include="PlayerBehaviourTracker.h" />
+    <ClInclude Include="PlayerBehaviourTracking.h" />
+    <ClInclude Include="PlayerData.h" />
+    <ClInclude Include="PlayerInfoHelper.hpp" />
+    <ClInclude Include="PointChecking.h" />
+    <ClInclude Include="PointersHolder.h" />
+    <ClInclude Include="PrecompiledTooltips.h" />
+    <ClInclude Include="QuestsController.h" />
+    <ClInclude Include="QueueSoundPlayer.h" />
+    <ClInclude Include="Rasterizer.h" />
+    <ClInclude Include="RayPixels.h" />
+    <ClInclude Include="RegionPointChecker.h" />
+    <ClInclude Include="ReplayInfo.h" />
+    <ClInclude Include="ResourcesCollection.h" />
+    <ClInclude Include="ResourcesPreloader.h" />
+    <ClInclude Include="RoutePathFinder.h" />
+    <ClInclude Include="SessionEventType.h" />
+    <ClInclude Include="SessionEventTypeDef.h" />
+    <ClInclude Include="ShopController.h" />
+    <ClInclude Include="SingleFlyText.h" />
+    <ClInclude Include="SmartChatAntiSpam.h" />
+    <ClInclude Include="SmartChatController.h" />
+    <ClInclude Include="SmartRandom.h" />
+    <ClInclude Include="SocialBootstrap.h" />
+    <ClInclude Include="SocialConnection.h" />
+    <ClInclude Include="specific.h" />
+    <ClInclude Include="SplineCameraController.h" />
+    <ClInclude Include="StandartPath2.h" />
+    <ClInclude Include="Stat.hpp" />
+    <ClInclude Include="StaticPathInternal.h" />
+    <ClInclude Include="StatisticsController.h" />
+    <ClInclude Include="StatisticsStreak.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="StringExecutor.h" />
+    <ClInclude Include="TalentPanelNew.h" />
+    <ClInclude Include="TargetSelectorFormulaPars.h" />
+    <ClInclude Include="TargetSelectorHelper.hpp" />
+    <ClInclude Include="TeamInfoNew.h" />
+    <ClInclude Include="TileMap.h" />
+    <ClInclude Include="TriggerMarkerHandler.h" />
+    <ClInclude Include="TutorialSplash.h" />
+    <ClInclude Include="UIBlockingController.h" />
+    <ClInclude Include="UIEventHandler.h" />
+    <ClInclude Include="UnitInfoNew.h" />
+    <ClInclude Include="UnitNameMap.h" />
+    <ClInclude Include="ValueWithModifiers.hpp" />
+    <ClInclude Include="VisibilityHelper.h" />
+    <ClInclude Include="VotingForSurrenderController.h" />
+    <ClInclude Include="WarCraftCameraController.h" />
+    <ClInclude Include="WarFog.h" />
+    <ClInclude Include="WebLauncher.h" />
+    <ClInclude Include="WorldChecker.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Game\PF\Server\Statistic\StatisticsCommonTypes.cpp" />
+    <ClCompile Include="ActionBarController.cpp" />
+    <ClCompile Include="AdventureCameraController.cpp" />
+    <ClCompile Include="AdventureFlashInterface.cpp" />
+    <ClCompile Include="AdventureScreen.cpp" />
+    <ClCompile Include="AdventureScreenBase.cpp" />
+    <ClCompile Include="AdventureScreenDebug.cpp" />
+    <ClCompile Include="AdventureScreenEvents.cpp" />
+    <ClCompile Include="AdventureScreenFacets\GameOverEffect.cpp" />
+    <ClCompile Include="AdventureScreenLogic.cpp" />
+    <ClCompile Include="AdventureTooltip.cpp" />
+    <ClCompile Include="AIWorldFacets\FemaleMaleAssistEffect.cpp" />
+    <ClCompile Include="AIWorldFacets\VotingForSurrenderLogic.cpp" />
+    <ClCompile Include="AnnouncementController.cpp" />
+    <ClCompile Include="AStarPathFinder.cpp" />
+    <ClCompile Include="AsyncMapStartup.cpp" />
+    <ClCompile Include="AwardsController.cpp" />
+    <ClCompile Include="BindsController.cpp" />
+    <ClCompile Include="BuffsController.cpp" />
+    <ClCompile Include="CharInfoContainer.cpp" />
+    <ClCompile Include="CharInfoController.cpp" />
+    <ClCompile Include="ChatController.cpp" />
+    <ClCompile Include="CircleRays.cpp" />
+    <ClCompile Include="ClientVisibilityHelper.cpp" />
+    <ClCompile Include="CollisionResolver.cpp" />
+    <ClCompile Include="CommonCombatController.cpp" />
+    <ClCompile Include="CommonPathFinder.cpp" />
+    <ClCompile Include="ComplainController.cpp" />
+    <ClCompile Include="CTE_Controller.cpp" />
+    <ClCompile Include="DamageBloodMask.cpp" />
+    <ClCompile Include="DayNightController.cpp" />
+    <ClCompile Include="DBAbility.cpp" />
+    <ClCompile Include="DBAdvMap.cpp" />
+    <ClCompile Include="DBAnimations.cpp" />
+    <ClCompile Include="DBConsumable.cpp" />
+    <ClCompile Include="DBDayNight.cpp" />
+    <ClCompile Include="DBGameLogic.cpp" />
+    <ClCompile Include="DBGuild.cpp" />
+    <ClCompile Include="DBHeroesList.cpp" />
+    <ClCompile Include="DBHeroRanks.cpp" />
+    <ClCompile Include="DBImpulsiveBuffs.cpp" />
+    <ClCompile Include="DbMapList.cpp" />
+    <ClCompile Include="DBMinigamesTypes.cpp" />
+    <ClCompile Include="DBPFEffect.cpp" />
+    <ClCompile Include="DBResources.cpp" />
+    <ClCompile Include="DBServer.cpp" />
+    <ClCompile Include="DBSessionMessages.cpp" />
+    <ClCompile Include="DBSessionRoots.cpp" />
+    <ClCompile Include="DBSmartChat.cpp" />
+    <ClCompile Include="DBSound.cpp" />
+    <ClCompile Include="DBStats.cpp" />
+    <ClCompile Include="DBTalent.cpp" />
+    <ClCompile Include="DBUnit.cpp" />
+    <ClCompile Include="DBVisualRoots.cpp" />
+    <ClCompile Include="DebugCharStat.cpp" />
+    <ClCompile Include="DebugStateDump.cpp" />
+    <ClCompile Include="DefaultFormulaStorage.cpp" />
+    <ClCompile Include="DerStatsNameMap.cpp" />
+    <ClCompile Include="DialogController.cpp" />
+    <ClCompile Include="DieTimer.cpp" />
+    <ClCompile Include="DI\DI.cpp" />
+    <ClCompile Include="ErrorMessageController.cpp" />
+    <ClCompile Include="EscMenuController.cpp" />
+    <ClCompile Include="FinalStatisticsController.cpp" />
+    <ClCompile Include="FlashFSCommands.cpp" />
+    <ClCompile Include="FlyTexts.cpp" />
+    <ClCompile Include="ForceCalc.cpp" />
+    <ClCompile Include="FormulaExecutor.cpp" />
+    <ClCompile Include="FPUState.cpp" />
+    <ClCompile Include="FriendsController.cpp" />
+    <ClCompile Include="GameLogicStatisticsTypes.cpp" />
+    <ClCompile Include="GenericAbuseController.cpp" />
+    <ClCompile Include="GuildEmblem.cpp" />
+    <ClCompile Include="HeroActions.cpp" />
+    <ClCompile Include="HeroRankCalculator.cpp" />
+    <ClCompile Include="HeroScoreWrapper.cpp" />
+    <ClCompile Include="HeroSpawn.cpp" />
+    <ClCompile Include="HeroTitleCalculator.cpp" />
+    <ClCompile Include="HttpStuff.cpp" />
+    <ClCompile Include="IgnoreListController.cpp" />
+    <ClCompile Include="IgnoreListStorage.cpp" />
+    <ClCompile Include="ImpulseBuffsController.cpp" />
+    <ClCompile Include="InventoryController.cpp" />
+    <ClCompile Include="LuaScript.cpp" />
+    <ClCompile Include="MapCollection.cpp" />
+    <ClCompile Include="MapDescriptionLoader.cpp" />
+    <ClCompile Include="MapStartup.cpp" />
+    <ClCompile Include="MarkersController.cpp" />
+    <ClCompile Include="Minimap.cpp" />
+    <ClCompile Include="MinimapController.cpp" />
+    <ClCompile Include="MoveToCameraController.cpp" />
+    <ClCompile Include="ObjectInfoHelper.cpp" />
+    <ClCompile Include="ObjectSelector.cpp" />
+    <ClCompile Include="ObjectsInfo2d.cpp" />
+    <ClCompile Include="PathMap.cpp" />
+    <ClCompile Include="PathTools.cpp" />
+    <ClCompile Include="PFAbilityData.cpp" />
+    <ClCompile Include="PFAbilityDataNamemaps.cpp" />
+    <ClCompile Include="PFAbilityInstance.cpp" />
+    <ClCompile Include="PFAchievement.cpp" />
+    <ClCompile Include="PFAdvancedSummon.cpp" />
+    <ClCompile Include="PFAdvMap.cpp" />
+    <ClCompile Include="PFAdvMapObject.cpp" />
+    <ClCompile Include="PFAIContainer.cpp" />
+    <ClCompile Include="PFAIController.cpp" />
+    <ClCompile Include="PFAIHelper.cpp" />
+    <ClCompile Include="PFAIStates.cpp" />
+    <ClCompile Include="PFAITargetSelectors.cpp" />
+    <ClCompile Include="PFAIWorld.cpp" />
+    <ClCompile Include="PFAnimController.cpp" />
+    <ClCompile Include="PFApplAura.cpp" />
+    <ClCompile Include="PFApplBounce.cpp" />
+    <ClCompile Include="PFApplBuff.cpp" />
+    <ClCompile Include="PFApplChainLightning.cpp" />
+    <ClCompile Include="PFApplChannelling.cpp" />
+    <ClCompile Include="PFApplDelegateDamage.cpp" />
+    <ClCompile Include="PFApplFx.cpp" />
+    <ClCompile Include="PFApplHelper.cpp" />
+    <ClCompile Include="PFApplicator.cpp" />
+    <ClCompile Include="PFApplicatorHistoryAnalysis.cpp" />
+    <ClCompile Include="PFApplInstant.cpp" />
+    <ClCompile Include="PFApplMod.cpp" />
+    <ClCompile Include="PFApplMove.cpp" />
+    <ClCompile Include="PFApplSpecial.cpp" />
+    <ClCompile Include="PFApplSummon.cpp" />
+    <ClCompile Include="PFApplUtils.cpp" />
+    <ClCompile Include="PFAuraEffect.cpp" />
+    <ClCompile Include="PFBaseAIController.cpp" />
+    <ClCompile Include="PFBaseAttackData.cpp" />
+    <ClCompile Include="PFBaseMovingUnit.cpp" />
+    <ClCompile Include="PFBaseMovingUnitDebug.cpp" />
+    <ClCompile Include="PFBaseSpawner.cpp" />
+    <ClCompile Include="PFBaseUnit.cpp" />
+    <ClCompile Include="PFBaseUnitAppl.cpp" />
+    <ClCompile Include="PFBaseUnitEvent.cpp" />
+    <ClCompile Include="PFBaseUnitStates.cpp" />
+    <ClCompile Include="PFBaseUseState.cpp" />
+    <ClCompile Include="PFBattleBuilding.cpp" />
+    <ClCompile Include="PFBehaviour.cpp" />
+    <ClCompile Include="PFBuildings.cpp" />
+    <ClCompile Include="PFCastLimitations.cpp" />
+    <ClCompile Include="PFCheat.cpp" />
+    <ClCompile Include="PFChest.cpp" />
+    <ClCompile Include="PFClientApplicators.cpp" />
+    <ClCompile Include="PFClientBaseMovingUnit.cpp" />
+    <ClCompile Include="PFClientBaseUnit.cpp" />
+    <ClCompile Include="PFClientBuilding.cpp" />
+    <ClCompile Include="PFClientChest.cpp" />
+    <ClCompile Include="PFClientCreature.cpp" />
+    <ClCompile Include="PFClientCreep.cpp" />
+    <ClCompile Include="PFClientDispatch.cpp" />
+    <ClCompile Include="PFClientFlagpole.cpp" />
+    <ClCompile Include="PFClientHero.cpp" />
+    <ClCompile Include="PFClientLogicObject.cpp" />
+    <ClCompile Include="PFClientMinigamePlace.cpp" />
+    <ClCompile Include="PFClientMultistateObject.cpp" />
+    <ClCompile Include="PFClientNatureMap.cpp" />
+    <ClCompile Include="PFClientNatureSceneObjectsHolder.cpp" />
+    <ClCompile Include="PFClientSceneObjectsHolders.cpp" />
+    <ClCompile Include="PFClientSpawner.cpp" />
+    <ClCompile Include="PFClientSummoned.cpp" />
+    <ClCompile Include="PFClientTree.cpp" />
+    <ClCompile Include="PFClientVisibilityMap.cpp" />
+    <ClCompile Include="PFClientVotingForSurrender.cpp" />
+    <ClCompile Include="PFCommonCreep.cpp" />
+    <ClCompile Include="PFConsumable.cpp" />
+    <ClCompile Include="PFCreature.cpp" />
+    <ClCompile Include="PFCreep.cpp" />
+    <ClCompile Include="PFDeadBody.cpp" />
+    <ClCompile Include="PFDebug.cpp" />
+    <ClCompile Include="PFDebugCommands.cpp" />
+    <ClCompile Include="PFDispatch.cpp" />
+    <ClCompile Include="PFDispatchCursor.cpp" />
+    <ClCompile Include="PFDispatchCursorClient.cpp" />
+    <ClCompile Include="PFDispatchFactory.cpp" />
+    <ClCompile Include="PFDispatchStrike1.cpp" />
+    <ClCompile Include="PFEaselPlayer.cpp" />
+    <ClCompile Include="PFEffectRandom.cpp" />
+    <ClCompile Include="PFEffectSwitcher.cpp" />
+    <ClCompile Include="PFFactionStatistics.cpp" />
+    <ClCompile Include="PFFlagpole.cpp" />
+    <ClCompile Include="PFFsm.cpp" />
+    <ClCompile Include="PFGameLogicDebugVisual.cpp" />
+    <ClCompile Include="PFGameLogicLog.cpp" />
+    <ClCompile Include="PFGlyph.cpp" />
+    <ClCompile Include="PFGlyphManager.cpp" />
+    <ClCompile Include="PFHero.cpp" />
+    <ClCompile Include="PFHeroClone.cpp" />
+    <ClCompile Include="PFHeroesFactory.cpp" />
+    <ClCompile Include="PFHeroStates.cpp" />
+    <ClCompile Include="PFHeroStatistics.cpp" />
+    <ClCompile Include="PFHighlander.cpp" />
+    <ClCompile Include="PFImpulsiveBuffs.cpp" />
+    <ClCompile Include="PFImpulsiveEvents.cpp" />
+    <ClCompile Include="PFInvisibilityEffect.cpp" />
+    <ClCompile Include="PFLogicDebug.cpp" />
+    <ClCompile Include="PFLogicObject.cpp" />
+    <ClCompile Include="PFMainBuilding.cpp" />
+    <ClCompile Include="PFMaleHero.cpp" />
+    <ClCompile Include="PFMicroAI.cpp" />
+    <ClCompile Include="PFMinigamePlace.cpp" />
+    <ClCompile Include="PFMinimapEffect.cpp" />
+    <ClCompile Include="PFNeutralCreep.cpp" />
+    <ClCompile Include="PFNeutralCreepBehavior.cpp" />
+    <ClCompile Include="PFPet.cpp" />
+    <ClCompile Include="PFPickupable.cpp" />
+    <ClCompile Include="PFPlayAnimEffect.cpp" />
+    <ClCompile Include="PFPlayer.cpp" />
+    <ClCompile Include="PFPostFXFader.cpp" />
+    <ClCompile Include="PFPostFXParams.cpp" />
+    <ClCompile Include="PFPredefinedUnitVariables.cpp" />
+    <ClCompile Include="PFPriestessSignEffect.cpp" />
+    <ClCompile Include="PFPureClientCritter.cpp" />
+    <ClCompile Include="PFPureClientObject.cpp" />
+    <ClCompile Include="PFRenderInterface.cpp" />
+    <ClCompile Include="PFRenderUtils.cpp" />
+    <ClCompile Include="PFRenderWater.cpp" />
+    <ClCompile Include="PFResourcesCollection.cpp" />
+    <ClCompile Include="PFRoadFlagpole.cpp" />
+    <ClCompile Include="PFScriptedFlagpole.cpp" />
+    <ClCompile Include="PFSeriesAIController.cpp" />
+    <ClCompile Include="PFSimpleObject.cpp" />
+    <ClCompile Include="PFSimpleObjectClient.cpp" />
+    <ClCompile Include="PFState.cpp" />
+    <ClCompile Include="PFStatistics.cpp" />
+    <ClCompile Include="PFStatisticsStuff.cpp" />
+    <ClCompile Include="PFSummoned.cpp" />
+    <ClCompile Include="PFSummonState.cpp" />
+    <ClCompile Include="PFTalent.cpp" />
+    <ClCompile Include="PFTargetSelector.cpp" />
+    <ClCompile Include="PFTower.cpp" />
+    <ClCompile Include="PFTree.cpp" />
+    <ClCompile Include="PFTriggerApplicator.cpp" />
+    <ClCompile Include="PFUIEvent.cpp" />
+    <ClCompile Include="PFUnitAbilities.cpp" />
+    <ClCompile Include="PFUniTarget.cpp" />
+    <ClCompile Include="PFUnitSceneObjectModify.cpp" />
+    <ClCompile Include="PFVoxelMap.cpp" />
+    <ClCompile Include="PFWorld.cpp" />
+    <ClCompile Include="PFWorldNatureMap.cpp" />
+    <ClCompile Include="PFWorldObjectBase.cpp" />
+    <ClCompile Include="PFWorldProtection.cpp" />
+    <ClCompile Include="PlayerBehaviourTracker.cpp" />
+    <ClCompile Include="PlayerBehaviourTracking.cpp" />
+    <ClCompile Include="PlayerData.cpp" />
+    <ClCompile Include="PointersHolder.cpp" />
+    <ClCompile Include="PrecompiledTooltips.cpp" />
+    <ClCompile Include="QuestsController.cpp" />
+    <ClCompile Include="QueueSoundPlayer.cpp" />
+    <ClCompile Include="Rasterizer.cpp" />
+    <ClCompile Include="RayPixels.cpp" />
+    <ClCompile Include="RegionPointChecker.cpp" />
+    <ClCompile Include="ResourcesPreloader.cpp" />
+    <ClCompile Include="RoutePathFinder.cpp" />
+    <ClCompile Include="SessionEventType.cpp" />
+    <ClCompile Include="ShopController.cpp" />
+    <ClCompile Include="SingleFlyText.cpp" />
+    <ClCompile Include="SmartChatController.cpp" />
+    <ClCompile Include="SmartRandom.cpp" />
+    <ClCompile Include="SocialBootstrap.cpp" />
+    <ClCompile Include="SocialConnection.cpp" />
+    <ClCompile Include="SplineCameraController.cpp" />
+    <ClCompile Include="StandartPath2.cpp" />
+    <ClCompile Include="StarForce\zzz_StarForce.cpp" />
+    <ClCompile Include="Stat.cpp" />
+    <ClCompile Include="StaticPathInternal.cpp" />
+    <ClCompile Include="StatisticsController.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ReleaseSingleExe|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ShippingSingleExe|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="StringExecutor.cpp" />
+    <ClCompile Include="TalentPanelNew.cpp" />
+    <ClCompile Include="TeamInfoNew.cpp" />
+    <ClCompile Include="TestingUtils.cpp" />
+    <ClCompile Include="TileMap.cpp" />
+    <ClCompile Include="TileMapDebug.cpp" />
+    <ClCompile Include="TriggerMarkerHandler.cpp" />
+    <ClCompile Include="TutorialSplash.cpp" />
+    <ClCompile Include="UIBlockingController.cpp" />
+    <ClCompile Include="UnitInfoNew.cpp" />
+    <ClCompile Include="UnitNameMap.cpp" />
+    <ClCompile Include="VisibilityHelper.cpp" />
+    <ClCompile Include="VotingForSurrenderController.cpp" />
+    <ClCompile Include="WarCraftCameraController.cpp" />
+    <ClCompile Include="WarFog.cpp" />
+    <ClCompile Include="WebLauncher.cpp" />
+    <ClCompile Include="WorldChecker.cpp" />
+    <ClCompile Include="WorldScript.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AI.component" />
+    <None Include="all.component" />
+    <None Include="CommonScreens.component" />
+    <None Include="DB.component" />
+    <None Include="DBImpulsiveBuffs.component" />
+    <None Include="Effects.component" />
+    <None Include="NatureMap.component" />
+    <None Include="PathFinder.component" />
+    <None Include="PFAdvMap.component" />
+    <None Include="PFClientObjects.component" />
+    <None Include="PFPlayer.component" />
+    <None Include="PFWorld.component" />
+    <None Include="pf_gamelogic.refs" />
+    <None Include="Pickupable.component" />
+    <None Include="Render.component" />
+    <None Include="Screens.component" />
+    <None Include="ScreensLogics.component" />
+    <None Include="TileMap.component" />
+    <None Include="Tree.component" />
+    <None Include="VisibilityMap.component" />
+    <None Include="WarFog.component" />
+    <None Include="World.component" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\Version.rc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSingleExe|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ShippingSingleExe|Win32'">true</ExcludedFromBuild>
+    </ResourceCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

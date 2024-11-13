@@ -1,0 +1,1682 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Common">
+      <UniqueIdentifier>{257a742e-f1a8-43e3-881c-7670d2f16b8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="StackWalk">
+      <UniqueIdentifier>{6d53e74a-e62d-43e9-9b5c-0390bdbee611}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NSTL">
+      <UniqueIdentifier>{2c0db08c-508f-4522-87cb-e48030098f9e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logger">
+      <UniqueIdentifier>{3c364947-5102-4f52-a763-ade9156da86d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logger\Logger">
+      <UniqueIdentifier>{0125deef-489e-43c6-b234-b1eaf6ec7d35}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logger\Dumper">
+      <UniqueIdentifier>{52dcef0e-efce-4a47-94ee-87aca9a1767f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logger\Helpers">
+      <UniqueIdentifier>{7723f5ce-7608-4b3a-84c6-6997ebb5b2f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Math">
+      <UniqueIdentifier>{de74c072-969e-42b1-8059-fe65291b6631}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MainFrame">
+      <UniqueIdentifier>{3019535b-37f0-4e9c-810a-d3a6535d1b6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Misc">
+      <UniqueIdentifier>{33eeeb45-700b-41be-b1bc-554e97b4ad3d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BitsTools">
+      <UniqueIdentifier>{3baf2c0e-07f4-4a63-b5dc-037102b315cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Timer">
+      <UniqueIdentifier>{9b11f6ce-901f-4be4-a290-e8524a5fa924}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Commands">
+      <UniqueIdentifier>{a5a77ea8-7db1-42ad-9ca8-968662ebdf20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Random">
+      <UniqueIdentifier>{4c803db5-ba57-42ab-bc1b-49bef3ac4faf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Storage">
+      <UniqueIdentifier>{e30c3a7f-be7d-4468-82b2-640d97cde74e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FileUtils">
+      <UniqueIdentifier>{e47b1616-0fff-4b46-b7a1-6ea218a8fb10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Stream">
+      <UniqueIdentifier>{52e03f83-fc35-42d5-b7f4-0b3eec189be1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="StrUtils">
+      <UniqueIdentifier>{159f6bbf-dbea-422c-9f80-f93e5fa08935}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MetaProg">
+      <UniqueIdentifier>{ce6b6f89-bc6c-4958-8559-b4ea92e9f535}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Serialization">
+      <UniqueIdentifier>{5d0dfe53-3a4f-4023-8dfb-cf9aee77aec8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Basic">
+      <UniqueIdentifier>{4cb85397-9291-48be-962b-a99a398a4970}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FileSystem">
+      <UniqueIdentifier>{f49b5d43-2be9-455e-abde-1a2e5d3b0ab2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Progress">
+      <UniqueIdentifier>{cae9c519-81d5-491d-992e-6cce779e17b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Updates">
+      <UniqueIdentifier>{a91f741d-44ff-4afe-a2fa-fe38fb0a7bbe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Profiles">
+      <UniqueIdentifier>{12ac9068-6b39-42c0-a0fd-c2da13efbb28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CmdLine">
+      <UniqueIdentifier>{1b50a1ff-5a4a-453d-9795-89731750663e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RenderTypes">
+      <UniqueIdentifier>{6b0c4fb3-29c7-4c89-88e6-43d3afd3a5ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Image">
+      <UniqueIdentifier>{13ed613c-c87d-4d6e-8ca0-16ae84b0375d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Memory">
+      <UniqueIdentifier>{d90c4917-ce4d-4ddf-b32c-42f657f3b8f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Texts">
+      <UniqueIdentifier>{2a60ea6b-bc6e-4033-b268-b02ff986fcfc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Performance">
+      <UniqueIdentifier>{96f9fb0c-c66e-4dc9-b74a-ff3c8fbeae0d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Smart Pointers">
+      <UniqueIdentifier>{ff1a7f22-403c-41f2-8879-f3ad54c0f524}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assert">
+      <UniqueIdentifier>{31f3f794-5485-416a-a4d5-e76a14186143}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AssertDumper">
+      <UniqueIdentifier>{60bdb074-8c2c-47bc-a83e-ff0717f8721f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LogFileName">
+      <UniqueIdentifier>{5c031602-c27b-4eb0-b8f9-b78db9fd6316}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NameMap">
+      <UniqueIdentifier>{66df6415-61b4-4525-8086-7fdbeb6b0039}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DataExecution">
+      <UniqueIdentifier>{561067ef-24f1-4980-b7f5-b7972bf9cb2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AppInstances">
+      <UniqueIdentifier>{a84fe0bf-9fba-45a5-9e8f-4685d2a4ef63}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Crc32">
+      <UniqueIdentifier>{99e254a9-0adf-4c26-99c7-558d8242b847}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Profiler">
+      <UniqueIdentifier>{111cdf29-b433-4ff2-b4a2-05db5f9487b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="WER">
+      <UniqueIdentifier>{179b96b3-d14a-4656-b064-b2f25d214274}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Threading">
+      <UniqueIdentifier>{a354ddd6-304b-4d47-945c-51633044762b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pointers">
+      <UniqueIdentifier>{04ad658a-e5b4-4474-bf8a-ebfdf58bb58e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Profiler3">
+      <UniqueIdentifier>{53c588a6-374e-4e10-bbd4-3442176afccd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Profiler3\UI">
+      <UniqueIdentifier>{675dfe55-ecd4-41c0-81ee-a032b197639f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Registry Storage">
+      <UniqueIdentifier>{074591db-6b5a-4bb3-bd7f-22fbfe6184bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CrashRptWrapper">
+      <UniqueIdentifier>{34247452-af74-415b-b536-722871d7f28f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EnumToString">
+      <UniqueIdentifier>{f0aec27b-034c-4e49-8ca6-c77236b4667b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SafeTextFormat">
+      <UniqueIdentifier>{64008730-5d3a-42d1-b86a-f0706c1226a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="StarForce">
+      <UniqueIdentifier>{0ded6f8c-70d7-4e19-849b-4e2d577c613d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PersistEvents">
+      <UniqueIdentifier>{71e0b997-5d3c-4289-993f-f3df9f227a51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MD5.Vendor">
+      <UniqueIdentifier>{1f8cc57a-5b36-4960-8b1f-9dfa1306b174}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="INI Files">
+      <UniqueIdentifier>{6553be0a-00fd-460f-8350-4dbb570eaf69}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MD4">
+      <UniqueIdentifier>{a911c3cd-3fe2-400d-a046-0cdfb9891c95}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Schedule">
+      <UniqueIdentifier>{4a67fa50-fcc5-407d-b57b-c5232bdccd13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DarkSide">
+      <UniqueIdentifier>{a46fc3c0-ff5b-4f16-b651-c22eba07c465}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Histogram">
+      <UniqueIdentifier>{5c9c5e1f-3ba4-4531-88d0-bdc4de977050}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CyclicBuffer">
+      <UniqueIdentifier>{4d127e0e-7aef-4e82-865f-6812fa9c7102}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="specific.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="systemStdAfx.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="MiniDump.h">
+      <Filter>StackWalk</Filter>
+    </ClInclude>
+    <ClInclude Include="StackWalk.h">
+      <Filter>StackWalk</Filter>
+    </ClInclude>
+    <ClInclude Include="StackWalker.h">
+      <Filter>StackWalk</Filter>
+    </ClInclude>
+    <ClInclude Include="helpdebugmacroses.h">
+      <Filter>NSTL</Filter>
+    </ClInclude>
+    <ClInclude Include="iterator.h">
+      <Filter>NSTL</Filter>
+    </ClInclude>
+    <ClInclude Include="nalgobase.h">
+      <Filter>NSTL</Filter>
+    </ClInclude>
+    <ClInclude Include="nalgoritm.h">
+      <Filter>NSTL</Filter>
+    </ClInclude>
+    <ClInclude Include="ncircular_buffer.h">
+      <Filter>NSTL</Filter>
+    </ClInclude>
+    <ClInclude Include="nfixed_string.h">
+      <Filter>NSTL</Filter>
+    </ClInclude>
+    <ClInclude Include="nhash_fun.h">
+      <Filter>NSTL</Filter>
+    </ClInclude>
+    <ClInclude Include="nhash_fun2.h">
+      <Filter>NSTL</Filter>
+    </ClInclude>
+    <ClInclude Include="nhash_map.h">
+      <Filter>NSTL</Filter>
+    </ClInclude>
+    <ClInclude Include="nhash_set.h">
+      <Filter>NSTL</Filter>
+    </ClInclude>
+    <ClInclude Include="nhash_table.h">
+      <Filter>NSTL</Filter>
+    </ClInclude>
+    <ClInclude Include="nheap.h">
+      <Filter>NSTL</Filter>
+    </ClInclude>
+    <ClInclude Include="nhelpdebug.h">
+      <Filter>NSTL</Filter>
+    </ClInclude>
+    <ClInclude Include="nlist.h">
+      <Filter>NSTL</Filter>
+    </ClInclude>
+    <ClInclude Include="nmap.h">
+      <Filter>NSTL</Filter>
+    </ClInclude>
+    <ClInclude Include="npair.h">
+      <Filter>NSTL</Filter>
+    </ClInclude>
+    <ClInclude Include="nqueue.h">
+      <Filter>NSTL</Filter>
+    </ClInclude>
+    <ClInclude Include="nset.h">
+      <Filter>NSTL</Filter>
+    </ClInclude>
+    <ClInclude Include="nstring.h">
+      <Filter>NSTL</Filter>
+    </ClInclude>
+    <ClInclude Include="nstrings_map.h">
+      <Filter>NSTL</Filter>
+    </ClInclude>
+    <ClInclude Include="ntree.h">
+      <Filter>NSTL</Filter>
+    </ClInclude>
+    <ClInclude Include="nuninitialized.h">
+      <Filter>NSTL</Filter>
+    </ClInclude>
+    <ClInclude Include="nvector.h">
+      <Filter>NSTL</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemLog.h">
+      <Filter>Logger</Filter>
+    </ClInclude>
+    <ClInclude Include="ChannelLogger.h">
+      <Filter>Logger\Logger</Filter>
+    </ClInclude>
+    <ClInclude Include="Logger.h">
+      <Filter>Logger\Logger</Filter>
+    </ClInclude>
+    <ClInclude Include="LogLevel.h">
+      <Filter>Logger\Logger</Filter>
+    </ClInclude>
+    <ClInclude Include="LogStreamBuffer.h">
+      <Filter>Logger\Logger</Filter>
+    </ClInclude>
+    <ClInclude Include="LogStreamHolder.h">
+      <Filter>Logger\Logger</Filter>
+    </ClInclude>
+    <ClInclude Include="AsyncTextFileDumper.h">
+      <Filter>Logger\Dumper</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugTraceDumper.h">
+      <Filter>Logger\Dumper</Filter>
+    </ClInclude>
+    <ClInclude Include="Dumper.h">
+      <Filter>Logger\Dumper</Filter>
+    </ClInclude>
+    <ClInclude Include="EditBoxDumper.h">
+      <Filter>Logger\Dumper</Filter>
+    </ClInclude>
+    <ClInclude Include="EventDumper.h">
+      <Filter>Logger\Dumper</Filter>
+    </ClInclude>
+    <ClInclude Include="FileStreamDumper.h">
+      <Filter>Logger\Dumper</Filter>
+    </ClInclude>
+    <ClInclude Include="StdOutDumper.h">
+      <Filter>Logger\Dumper</Filter>
+    </ClInclude>
+    <ClInclude Include="StringDumper.h">
+      <Filter>Logger\Dumper</Filter>
+    </ClInclude>
+    <ClInclude Include="SyncTextFileDumper.h">
+      <Filter>Logger\Dumper</Filter>
+    </ClInclude>
+    <ClInclude Include="TextFileDumper.h">
+      <Filter>Logger\Dumper</Filter>
+    </ClInclude>
+    <ClInclude Include="TextFileWorker.h">
+      <Filter>Logger\Dumper</Filter>
+    </ClInclude>
+    <ClInclude Include="LogHelpers.h">
+      <Filter>Logger\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="AxisBoxGeometry.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="BilinearSolver.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="BoundCalcer.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Bresenham.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Classify.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Decompose.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="EulTools.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="FastMath.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Geom.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="GeomMisc.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="GeomStreamers.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Math\ieeehalfprecision.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="MathTools.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="matrix43.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Placement.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="PlacementSpline.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="PlaneGeometry.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Polynomial.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Span.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Spline.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Transform.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Vec2_Base.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="FlashWindow.h">
+      <Filter>MainFrame</Filter>
+    </ClInclude>
+    <ClInclude Include="MainFrame.h">
+      <Filter>MainFrame</Filter>
+    </ClInclude>
+    <ClInclude Include="SplashScreen.h">
+      <Filter>MainFrame</Filter>
+    </ClInclude>
+    <ClInclude Include="Base64.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="Compatibility.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="hwbreak.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="noncopyable.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="ProfilingHelper.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="RTTI.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="SimpleSignalST.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="SyncProcessorState.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeHelpers.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="BitData.h">
+      <Filter>BitsTools</Filter>
+    </ClInclude>
+    <ClInclude Include="BitTools.h">
+      <Filter>BitsTools</Filter>
+    </ClInclude>
+    <ClInclude Include="Crc32Checksum.h">
+      <Filter>BitsTools</Filter>
+    </ClInclude>
+    <ClInclude Include="HPTimer.h">
+      <Filter>Timer</Filter>
+    </ClInclude>
+    <ClInclude Include="NiTimer.h">
+      <Filter>Timer</Filter>
+    </ClInclude>
+    <ClInclude Include="Time64.h">
+      <Filter>Timer</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeUtils.h">
+      <Filter>Timer</Filter>
+    </ClInclude>
+    <ClInclude Include="Commands.h">
+      <Filter>Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="ConfigFiles.h">
+      <Filter>Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="RandomGen.h">
+      <Filter>Random</Filter>
+    </ClInclude>
+    <ClInclude Include="RandomGenerator.h">
+      <Filter>Random</Filter>
+    </ClInclude>
+    <ClInclude Include="RandomInterface.h">
+      <Filter>Random</Filter>
+    </ClInclude>
+    <ClInclude Include="RandomInterfaceImpl.h">
+      <Filter>Random</Filter>
+    </ClInclude>
+    <ClInclude Include="Win32Random.h">
+      <Filter>Random</Filter>
+    </ClInclude>
+    <ClInclude Include="2Darray.h">
+      <Filter>Storage</Filter>
+    </ClInclude>
+    <ClInclude Include="2DArrayRLEWrapper.h">
+      <Filter>Storage</Filter>
+    </ClInclude>
+    <ClInclude Include="Array2DWrapper.h">
+      <Filter>Storage</Filter>
+    </ClInclude>
+    <ClInclude Include="BiMap.h">
+      <Filter>Storage</Filter>
+    </ClInclude>
+    <ClInclude Include="BiMultimap.h">
+      <Filter>Storage</Filter>
+    </ClInclude>
+    <ClInclude Include="Heap.h">
+      <Filter>Storage</Filter>
+    </ClInclude>
+    <ClInclude Include="OpenHashSet.h">
+      <Filter>Storage</Filter>
+    </ClInclude>
+    <ClInclude Include="Pool.h">
+      <Filter>Storage</Filter>
+    </ClInclude>
+    <ClInclude Include="PooledContainer.h">
+      <Filter>Storage</Filter>
+    </ClInclude>
+    <ClInclude Include="Ring.h">
+      <Filter>Storage</Filter>
+    </ClInclude>
+    <ClInclude Include="TSList.h">
+      <Filter>Storage</Filter>
+    </ClInclude>
+    <ClInclude Include="FileSystem\FilePath.h">
+      <Filter>FileUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="FileSystem\FileTime.h">
+      <Filter>FileUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="FileSystem\FileUtils.h">
+      <Filter>FileUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="BitStreams.h">
+      <Filter>Stream</Filter>
+    </ClInclude>
+    <ClInclude Include="DumpingStream.h">
+      <Filter>Stream</Filter>
+    </ClInclude>
+    <ClInclude Include="FileSystem\FileStream.h">
+      <Filter>Stream</Filter>
+    </ClInclude>
+    <ClInclude Include="FileSystem\FileStream_stdlib.h">
+      <Filter>Stream</Filter>
+    </ClInclude>
+    <ClInclude Include="FileSystem\FileWriteAsynchronousStream.h">
+      <Filter>Stream</Filter>
+    </ClInclude>
+    <ClInclude Include="FileSystem\FileWriteBufferedStream.h">
+      <Filter>Stream</Filter>
+    </ClInclude>
+    <ClInclude Include="FileSystem\FileWriteStream.h">
+      <Filter>Stream</Filter>
+    </ClInclude>
+    <ClInclude Include="FixedMemoryStream.h">
+      <Filter>Stream</Filter>
+    </ClInclude>
+    <ClInclude Include="MemoryStream.h">
+      <Filter>Stream</Filter>
+    </ClInclude>
+    <ClInclude Include="ProtectedStream.h">
+      <Filter>Stream</Filter>
+    </ClInclude>
+    <ClInclude Include="Stream.h">
+      <Filter>Stream</Filter>
+    </ClInclude>
+    <ClInclude Include="FileSystem\TinyFileWriteStream.h">
+      <Filter>Stream</Filter>
+    </ClInclude>
+    <ClInclude Include="StrConvert.h">
+      <Filter>StrUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="StrFormatter.h">
+      <Filter>StrUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="StrProc.h">
+      <Filter>StrUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="StrUtils.h">
+      <Filter>StrUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="CompileTimeAssert.h">
+      <Filter>MetaProg</Filter>
+    </ClInclude>
+    <ClInclude Include="MetaProg.h">
+      <Filter>MetaProg</Filter>
+    </ClInclude>
+    <ClInclude Include="TypeList.h">
+      <Filter>MetaProg</Filter>
+    </ClInclude>
+    <ClInclude Include="BinChunkLoaderImpl.h">
+      <Filter>Serialization</Filter>
+    </ClInclude>
+    <ClInclude Include="BinChunkSaverImpl.h">
+      <Filter>Serialization</Filter>
+    </ClInclude>
+    <ClInclude Include="BinChunkSerializer.h">
+      <Filter>Serialization</Filter>
+    </ClInclude>
+    <ClInclude Include="BinChunkSerializerBase.h">
+      <Filter>Serialization</Filter>
+    </ClInclude>
+    <ClInclude Include="BinSaver.h">
+      <Filter>Serialization</Filter>
+    </ClInclude>
+    <ClInclude Include="BinSaverStatsCollector.h">
+      <Filter>Serialization</Filter>
+    </ClInclude>
+    <ClInclude Include="ChunklessSaver.h">
+      <Filter>Serialization</Filter>
+    </ClInclude>
+    <ClInclude Include="PointersCollector.h">
+      <Filter>Serialization</Filter>
+    </ClInclude>
+    <ClInclude Include="TextDumpSerializer.h">
+      <Filter>Serialization</Filter>
+    </ClInclude>
+    <ClInclude Include="Basic.h">
+      <Filter>Basic</Filter>
+    </ClInclude>
+    <ClInclude Include="CreateHelper.h">
+      <Filter>Basic</Filter>
+    </ClInclude>
+    <ClInclude Include="DefaultTypes.h">
+      <Filter>Basic</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectFactory.h">
+      <Filter>Basic</Filter>
+    </ClInclude>
+    <ClInclude Include="SimpleObjectsFactory.h">
+      <Filter>Basic</Filter>
+    </ClInclude>
+    <ClInclude Include="FileSystem\CombinerFileSystem.h">
+      <Filter>FileSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="FileSystem\FileActivitySimpleMonitor.h">
+      <Filter>FileSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="FileSystem\FileExtensionStatisticsMonitor.h">
+      <Filter>FileSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="FileSystem\FilePileFormat.h">
+      <Filter>FileSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="FileSystem\FilePileLoader.h">
+      <Filter>FileSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="FileSystem\FilePileStream.h">
+      <Filter>FileSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="FileSystem\FileSystem.h">
+      <Filter>FileSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="FileSystem\FileSystemChangesProcessor.h">
+      <Filter>FileSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="FileSystem\FileSystemDebugMonitor.h">
+      <Filter>FileSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="FileSystem\PileFileSystem.h">
+      <Filter>FileSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="FileSystem\WinFileSystem.h">
+      <Filter>FileSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="FileSystem\WinFileSystemWatcher.h">
+      <Filter>FileSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="FileSystem\WinFileUnbuffered.h">
+      <Filter>FileSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadingProgress.h">
+      <Filter>Progress</Filter>
+    </ClInclude>
+    <ClInclude Include="Progress.h">
+      <Filter>Progress</Filter>
+    </ClInclude>
+    <ClInclude Include="Functor.h">
+      <Filter>Updates</Filter>
+    </ClInclude>
+    <ClInclude Include="Update.h">
+      <Filter>Updates</Filter>
+    </ClInclude>
+    <ClInclude Include="UpdateProcessor.h">
+      <Filter>Updates</Filter>
+    </ClInclude>
+    <ClInclude Include="Updater.h">
+      <Filter>Updates</Filter>
+    </ClInclude>
+    <ClInclude Include="ProfileManager.h">
+      <Filter>Profiles</Filter>
+    </ClInclude>
+    <ClInclude Include="CmdLine.h">
+      <Filter>CmdLine</Filter>
+    </ClInclude>
+    <ClInclude Include="CmdLineLite.h">
+      <Filter>CmdLine</Filter>
+    </ClInclude>
+    <ClInclude Include="Float16.h">
+      <Filter>RenderTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="Color.h">
+      <Filter>Image</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageDDS.h">
+      <Filter>Image</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageFormatDDS.h">
+      <Filter>Image</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageInternal.h">
+      <Filter>Image</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageTGA.h">
+      <Filter>Image</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageUnpackDXT.h">
+      <Filter>Image</Filter>
+    </ClInclude>
+    <ClInclude Include="dummyallocator.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="fixedString.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="fixedvector.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="meminfo.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="MemoryBlockPool.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="memorypool.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="ssememcopy.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="staticarray.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="StaticArray2D.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="staticstring.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="staticvector.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="ThreadLocal.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="Texts.h">
+      <Filter>Texts</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugVar.h">
+      <Filter>Performance</Filter>
+    </ClInclude>
+    <ClInclude Include="EventFileLogger.h">
+      <Filter>Performance</Filter>
+    </ClInclude>
+    <ClInclude Include="Events.h">
+      <Filter>Performance</Filter>
+    </ClInclude>
+    <ClInclude Include="AutoPtr.h">
+      <Filter>Smart Pointers</Filter>
+    </ClInclude>
+    <ClInclude Include="IntrusivePtr.h">
+      <Filter>Smart Pointers</Filter>
+    </ClInclude>
+    <ClInclude Include="RefCntObject.h">
+      <Filter>Smart Pointers</Filter>
+    </ClInclude>
+    <ClInclude Include="ScopedArray.h">
+      <Filter>Smart Pointers</Filter>
+    </ClInclude>
+    <ClInclude Include="ScopedPtr.h">
+      <Filter>Smart Pointers</Filter>
+    </ClInclude>
+    <ClInclude Include="Asserts.h">
+      <Filter>Assert</Filter>
+    </ClInclude>
+    <ClInclude Include="AssertDumper.h">
+      <Filter>AssertDumper</Filter>
+    </ClInclude>
+    <ClInclude Include="BSDialogFunctions.h">
+      <Filter>AssertDumper</Filter>
+    </ClInclude>
+    <ClInclude Include="BSResources.h">
+      <Filter>AssertDumper</Filter>
+    </ClInclude>
+    <ClInclude Include="BSUtil.h">
+      <Filter>AssertDumper</Filter>
+    </ClInclude>
+    <ClInclude Include="expreport.h">
+      <Filter>AssertDumper</Filter>
+    </ClInclude>
+    <ClInclude Include="LogFileName.h">
+      <Filter>LogFileName</Filter>
+    </ClInclude>
+    <ClInclude Include="NameMap.h">
+      <Filter>NameMap</Filter>
+    </ClInclude>
+    <ClInclude Include="NameMapImplementation.h">
+      <Filter>NameMap</Filter>
+    </ClInclude>
+    <ClInclude Include="DataExecutor.h">
+      <Filter>DataExecution</Filter>
+    </ClInclude>
+    <ClInclude Include="ExecutionMemoryManager.h">
+      <Filter>DataExecution</Filter>
+    </ClInclude>
+    <ClInclude Include="AppInstancesLimit.h">
+      <Filter>AppInstances</Filter>
+    </ClInclude>
+    <ClInclude Include="Crc32Calculator.h">
+      <Filter>Crc32</Filter>
+    </ClInclude>
+    <ClInclude Include="InlineProfiler.h">
+      <Filter>Profiler</Filter>
+    </ClInclude>
+    <ClInclude Include="WER.h">
+      <Filter>WER</Filter>
+    </ClInclude>
+    <ClInclude Include="AsyncInvoker.h">
+      <Filter>Threading</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomAtomics.h">
+      <Filter>Threading</Filter>
+    </ClInclude>
+    <ClInclude Include="JobThread.h">
+      <Filter>Threading</Filter>
+    </ClInclude>
+    <ClInclude Include="MultiReaderLock.h">
+      <Filter>Threading</Filter>
+    </ClInclude>
+    <ClInclude Include="SpinLock.h">
+      <Filter>Threading</Filter>
+    </ClInclude>
+    <ClInclude Include="SyncPrimitives.h">
+      <Filter>Threading</Filter>
+    </ClInclude>
+    <ClInclude Include="Thread.h">
+      <Filter>Threading</Filter>
+    </ClInclude>
+    <ClInclude Include="ThreadHelpers.h">
+      <Filter>Threading</Filter>
+    </ClInclude>
+    <ClInclude Include="ThreadNames.h">
+      <Filter>Threading</Filter>
+    </ClInclude>
+    <ClInclude Include="ThreadPool.h">
+      <Filter>Threading</Filter>
+    </ClInclude>
+    <ClInclude Include="TPJobIntf.h">
+      <Filter>Threading</Filter>
+    </ClInclude>
+    <ClInclude Include="Win32Helper.h">
+      <Filter>Threading</Filter>
+    </ClInclude>
+    <ClInclude Include="Pointers\BaseInterface.h">
+      <Filter>Pointers</Filter>
+    </ClInclude>
+    <ClInclude Include="Pointers\BaseObjectMT.h">
+      <Filter>Pointers</Filter>
+    </ClInclude>
+    <ClInclude Include="Pointers\BaseObjectST.h">
+      <Filter>Pointers</Filter>
+    </ClInclude>
+    <ClInclude Include="Pointers\BasicFactory.h">
+      <Filter>Pointers</Filter>
+    </ClInclude>
+    <ClInclude Include="Pointers\BasicType.h">
+      <Filter>Pointers</Filter>
+    </ClInclude>
+    <ClInclude Include="Pointers\Pointers.h">
+      <Filter>Pointers</Filter>
+    </ClInclude>
+    <ClInclude Include="Pointers\PointersDetail.h">
+      <Filter>Pointers</Filter>
+    </ClInclude>
+    <ClInclude Include="Pointers\PointersMacroses.h">
+      <Filter>Pointers</Filter>
+    </ClInclude>
+    <ClInclude Include="Pointers\Strong.h">
+      <Filter>Pointers</Filter>
+    </ClInclude>
+    <ClInclude Include="Pointers\Weak.h">
+      <Filter>Pointers</Filter>
+    </ClInclude>
+    <ClInclude Include="Pointers\WeakMT.h">
+      <Filter>Pointers</Filter>
+    </ClInclude>
+    <ClInclude Include="InlineProfiler3\InlineProfiler3.h">
+      <Filter>Profiler3</Filter>
+    </ClInclude>
+    <ClInclude Include="InlineProfiler3\InlineProfiler3CG.h">
+      <Filter>Profiler3</Filter>
+    </ClInclude>
+    <ClInclude Include="InlineProfiler3\InlineProfiler3Control.h">
+      <Filter>Profiler3</Filter>
+    </ClInclude>
+    <ClInclude Include="InlineProfiler3\InlineProfilerStorage.h">
+      <Filter>Profiler3</Filter>
+    </ClInclude>
+    <ClInclude Include="InlineProfiler3\InlineProfilerTLD.h">
+      <Filter>Profiler3</Filter>
+    </ClInclude>
+    <ClInclude Include="InlineProfiler3\Profiler3UI.h">
+      <Filter>Profiler3\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="InlineProfiler3\Profiler3UIData.h">
+      <Filter>Profiler3\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="InlineProfiler3\Profiler3UIMainDlg.h">
+      <Filter>Profiler3\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="InlineProfiler3\Profiler3UIResource.h">
+      <Filter>Profiler3\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="InlineProfiler3\Profiler3UITimeline.h">
+      <Filter>Profiler3\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="InlineProfiler3\Profiler3UIWTL.h">
+      <Filter>Profiler3\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="RegistryStorage.h">
+      <Filter>Registry Storage</Filter>
+    </ClInclude>
+    <ClInclude Include="CrashRptWrapper.h">
+      <Filter>CrashRptWrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="EnumToString.h">
+      <Filter>EnumToString</Filter>
+    </ClInclude>
+    <ClInclude Include="SafeTextFormat.h">
+      <Filter>SafeTextFormat</Filter>
+    </ClInclude>
+    <ClInclude Include="SafeTextFormatBuffers.h">
+      <Filter>SafeTextFormat</Filter>
+    </ClInclude>
+    <ClInclude Include="SafeTextFormatCyclicBuffer.h">
+      <Filter>SafeTextFormat</Filter>
+    </ClInclude>
+    <ClInclude Include="SafeTextFormatEx.h">
+      <Filter>SafeTextFormat</Filter>
+    </ClInclude>
+    <ClInclude Include="SafeTextFormatHistogram.h">
+      <Filter>SafeTextFormat</Filter>
+    </ClInclude>
+    <ClInclude Include="SafeTextFormatNstl.h">
+      <Filter>SafeTextFormat</Filter>
+    </ClInclude>
+    <ClInclude Include="SafeTextFormatStl.h">
+      <Filter>SafeTextFormat</Filter>
+    </ClInclude>
+    <ClInclude Include="StarForce\HiddenVars.h">
+      <Filter>StarForce</Filter>
+    </ClInclude>
+    <ClInclude Include="StarForce\StarForce.h">
+      <Filter>StarForce</Filter>
+    </ClInclude>
+    <ClInclude Include="StarForce\StarForce_test.h">
+      <Filter>StarForce</Filter>
+    </ClInclude>
+    <ClInclude Include="PersistEvents.h">
+      <Filter>PersistEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Vendor\MD4\global.h">
+      <Filter>MD5.Vendor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Vendor\MD4\md4.h">
+      <Filter>MD5.Vendor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Vendor\MD4\md5.h">
+      <Filter>MD5.Vendor</Filter>
+    </ClInclude>
+    <ClInclude Include="IniFiles.h">
+      <Filter>INI Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Math\MD4.h">
+      <Filter>MD4</Filter>
+    </ClInclude>
+    <ClInclude Include="Schedule.h">
+      <Filter>Schedule</Filter>
+    </ClInclude>
+    <ClInclude Include="DarkSide.h">
+      <Filter>DarkSide</Filter>
+    </ClInclude>
+    <ClInclude Include="Lifehacks.h">
+      <Filter>DarkSide</Filter>
+    </ClInclude>
+    <ClInclude Include="Histogram.h">
+      <Filter>Histogram</Filter>
+    </ClInclude>
+    <ClInclude Include="CyclicBuffer.h">
+      <Filter>CyclicBuffer</Filter>
+    </ClInclude>
+    <ClInclude Include="IDGenerator.h" />
+    <ClInclude Include="Reminder.h" />
+    <ClInclude Include="ScopeGuards.h" />
+    <ClInclude Include="Singleton.h" />
+    <ClInclude Include="Singleton4DLL.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="MiniDump.cpp">
+      <Filter>StackWalk</Filter>
+    </ClCompile>
+    <ClCompile Include="StackWalk.cpp">
+      <Filter>StackWalk</Filter>
+    </ClCompile>
+    <ClCompile Include="StackWalker.cpp">
+      <Filter>StackWalk</Filter>
+    </ClCompile>
+    <ClCompile Include="ntree.cpp">
+      <Filter>NSTL</Filter>
+    </ClCompile>
+    <ClCompile Include="SystemLog.cpp">
+      <Filter>Logger</Filter>
+    </ClCompile>
+    <ClCompile Include="ChannelLogger.cpp">
+      <Filter>Logger\Logger</Filter>
+    </ClCompile>
+    <ClCompile Include="Logger.cpp">
+      <Filter>Logger\Logger</Filter>
+    </ClCompile>
+    <ClCompile Include="LogStreamBuffer.cpp">
+      <Filter>Logger\Logger</Filter>
+    </ClCompile>
+    <ClCompile Include="LogStreamHolder.cpp">
+      <Filter>Logger\Logger</Filter>
+    </ClCompile>
+    <ClCompile Include="AsyncTextFileDumper.cpp">
+      <Filter>Logger\Dumper</Filter>
+    </ClCompile>
+    <ClCompile Include="DebugTraceDumper.cpp">
+      <Filter>Logger\Dumper</Filter>
+    </ClCompile>
+    <ClCompile Include="Dumper.cpp">
+      <Filter>Logger\Dumper</Filter>
+    </ClCompile>
+    <ClCompile Include="EditBoxDumper.cpp">
+      <Filter>Logger\Dumper</Filter>
+    </ClCompile>
+    <ClCompile Include="EventDumper.cpp">
+      <Filter>Logger\Dumper</Filter>
+    </ClCompile>
+    <ClCompile Include="FileStreamDumper.cpp">
+      <Filter>Logger\Dumper</Filter>
+    </ClCompile>
+    <ClCompile Include="StdOutDumper.cpp">
+      <Filter>Logger\Dumper</Filter>
+    </ClCompile>
+    <ClCompile Include="StringDumper.cpp">
+      <Filter>Logger\Dumper</Filter>
+    </ClCompile>
+    <ClCompile Include="SyncTextFileDumper.cpp">
+      <Filter>Logger\Dumper</Filter>
+    </ClCompile>
+    <ClCompile Include="TextFileDumper.cpp">
+      <Filter>Logger\Dumper</Filter>
+    </ClCompile>
+    <ClCompile Include="TextFileWorker.cpp">
+      <Filter>Logger\Dumper</Filter>
+    </ClCompile>
+    <ClCompile Include="LogHelpers.cpp">
+      <Filter>Logger\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="BilinearSolver.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Decompose.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="FastMath.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Geom.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\ieeehalfprecision.c">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="MathTools.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="PlacementSpline.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="PlaneGeometry.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Spline.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Transform.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="FlashWindow.cpp">
+      <Filter>MainFrame</Filter>
+    </ClCompile>
+    <ClCompile Include="MainFrame.cpp">
+      <Filter>MainFrame</Filter>
+    </ClCompile>
+    <ClCompile Include="SplashScreen.cpp">
+      <Filter>MainFrame</Filter>
+    </ClCompile>
+    <ClCompile Include="Base64.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="Compatibility.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="hwbreak.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="ProfilingHelper.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="RTTI.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="SyncProcessorState.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="ThreadLocal.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="Crc32Checksum.cpp">
+      <Filter>BitsTools</Filter>
+    </ClCompile>
+    <ClCompile Include="HPTimer.cpp">
+      <Filter>Timer</Filter>
+    </ClCompile>
+    <ClCompile Include="HPTimer_win.cpp">
+      <Filter>Timer</Filter>
+    </ClCompile>
+    <ClCompile Include="TimeUtils_win.cpp">
+      <Filter>Timer</Filter>
+    </ClCompile>
+    <ClCompile Include="Commands.cpp">
+      <Filter>Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="ConfigFiles.cpp">
+      <Filter>Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="RandomGen.cpp">
+      <Filter>Random</Filter>
+    </ClCompile>
+    <ClCompile Include="RandomGenerator.cpp">
+      <Filter>Random</Filter>
+    </ClCompile>
+    <ClCompile Include="RandomInterfaceImpl.cpp">
+      <Filter>Random</Filter>
+    </ClCompile>
+    <ClCompile Include="Win32Random.cpp">
+      <Filter>Random</Filter>
+    </ClCompile>
+    <ClCompile Include="FileSystem\FilePath.cpp">
+      <Filter>FileUtils</Filter>
+    </ClCompile>
+    <ClCompile Include="FileSystem\FileUtils.cpp">
+      <Filter>FileUtils</Filter>
+    </ClCompile>
+    <ClCompile Include="FileSystem\FileUtils_win.cpp">
+      <Filter>FileUtils</Filter>
+    </ClCompile>
+    <ClCompile Include="BitStreams.cpp">
+      <Filter>Stream</Filter>
+    </ClCompile>
+    <ClCompile Include="DumpingStream.cpp">
+      <Filter>Stream</Filter>
+    </ClCompile>
+    <ClCompile Include="FileSystem\FileStream_stdlib.cpp">
+      <Filter>Stream</Filter>
+    </ClCompile>
+    <ClCompile Include="FileSystem\FileStream_win.cpp">
+      <Filter>Stream</Filter>
+    </ClCompile>
+    <ClCompile Include="FileSystem\FileWriteAsynchronousStream_win.cpp">
+      <Filter>Stream</Filter>
+    </ClCompile>
+    <ClCompile Include="FileSystem\FileWriteBufferedStream.cpp">
+      <Filter>Stream</Filter>
+    </ClCompile>
+    <ClCompile Include="FileSystem\FileWriteStream.cpp">
+      <Filter>Stream</Filter>
+    </ClCompile>
+    <ClCompile Include="FixedMemoryStream.cpp">
+      <Filter>Stream</Filter>
+    </ClCompile>
+    <ClCompile Include="MemoryStream.cpp">
+      <Filter>Stream</Filter>
+    </ClCompile>
+    <ClCompile Include="ProtectedStream.cpp">
+      <Filter>Stream</Filter>
+    </ClCompile>
+    <ClCompile Include="Stream.cpp">
+      <Filter>Stream</Filter>
+    </ClCompile>
+    <ClCompile Include="FileSystem\TinyFileWriteStream.cpp">
+      <Filter>Stream</Filter>
+    </ClCompile>
+    <ClCompile Include="StrConvert.cpp">
+      <Filter>StrUtils</Filter>
+    </ClCompile>
+    <ClCompile Include="StrFormatter.cpp">
+      <Filter>StrUtils</Filter>
+    </ClCompile>
+    <ClCompile Include="StrProc.cpp">
+      <Filter>StrUtils</Filter>
+    </ClCompile>
+    <ClCompile Include="StrUtils_win.cpp">
+      <Filter>StrUtils</Filter>
+    </ClCompile>
+    <ClCompile Include="BinChunkLoaderImpl.cpp">
+      <Filter>Serialization</Filter>
+    </ClCompile>
+    <ClCompile Include="BinChunkSaverImpl.cpp">
+      <Filter>Serialization</Filter>
+    </ClCompile>
+    <ClCompile Include="BinChunkSerializer.cpp">
+      <Filter>Serialization</Filter>
+    </ClCompile>
+    <ClCompile Include="BinChunkSerializerBase.cpp">
+      <Filter>Serialization</Filter>
+    </ClCompile>
+    <ClCompile Include="BinSaverStatsCollector.cpp">
+      <Filter>Serialization</Filter>
+    </ClCompile>
+    <ClCompile Include="ChunklessSaver.cpp">
+      <Filter>Serialization</Filter>
+    </ClCompile>
+    <ClCompile Include="TextDumpSerializer.cpp">
+      <Filter>Serialization</Filter>
+    </ClCompile>
+    <ClCompile Include="Basic.cpp">
+      <Filter>Basic</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectFactory.cpp">
+      <Filter>Basic</Filter>
+    </ClCompile>
+    <ClCompile Include="FileSystem\CombinerFileSystem.cpp">
+      <Filter>FileSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="FileSystem\FileActivitySimpleMonitor.cpp">
+      <Filter>FileSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="FileSystem\FileExtensionStatisticsMonitor.cpp">
+      <Filter>FileSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="FileSystem\FilePileLoader.cpp">
+      <Filter>FileSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="FileSystem\FileSystem.cpp">
+      <Filter>FileSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="FileSystem\FileSystemChangesProcessor.cpp">
+      <Filter>FileSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="FileSystem\PileFileSystem.cpp">
+      <Filter>FileSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="FileSystem\WinFileSystem.cpp">
+      <Filter>FileSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="FileSystem\WinFileSystemWatcher.cpp">
+      <Filter>FileSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="FileSystem\WinFileUnbuffered.cpp">
+      <Filter>FileSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadingProgress.cpp">
+      <Filter>Progress</Filter>
+    </ClCompile>
+    <ClCompile Include="Progress.cpp">
+      <Filter>Progress</Filter>
+    </ClCompile>
+    <ClCompile Include="UpdateProcessor.cpp">
+      <Filter>Updates</Filter>
+    </ClCompile>
+    <ClCompile Include="Updater.cpp">
+      <Filter>Updates</Filter>
+    </ClCompile>
+    <ClCompile Include="UpdaterTest.cpp">
+      <Filter>Updates</Filter>
+    </ClCompile>
+    <ClCompile Include="ProfileManager.cpp">
+      <Filter>Profiles</Filter>
+    </ClCompile>
+    <ClCompile Include="CmdLine.cpp">
+      <Filter>CmdLine</Filter>
+    </ClCompile>
+    <ClCompile Include="CmdLineLite.cpp">
+      <Filter>CmdLine</Filter>
+    </ClCompile>
+    <ClCompile Include="Color.cpp">
+      <Filter>Image</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageDDS.cpp">
+      <Filter>Image</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageInternal.cpp">
+      <Filter>Image</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageTGA.cpp">
+      <Filter>Image</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageUnpackDXT.cpp">
+      <Filter>Image</Filter>
+    </ClCompile>
+    <ClCompile Include="dummyallocator.cpp">
+      <Filter>Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="meminfo.cpp">
+      <Filter>Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="MemoryBlockPool.cpp">
+      <Filter>Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="memorypool.cpp">
+      <Filter>Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="ssememcopy.cpp">
+      <Filter>Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="Texts.cpp">
+      <Filter>Texts</Filter>
+    </ClCompile>
+    <ClCompile Include="DebugVar.cpp">
+      <Filter>Performance</Filter>
+    </ClCompile>
+    <ClCompile Include="Events.cpp">
+      <Filter>Performance</Filter>
+    </ClCompile>
+    <ClCompile Include="Asserts.cpp">
+      <Filter>Assert</Filter>
+    </ClCompile>
+    <ClCompile Include="AssertDumper.cpp">
+      <Filter>AssertDumper</Filter>
+    </ClCompile>
+    <ClCompile Include="BSAssertDialog.cpp">
+      <Filter>AssertDumper</Filter>
+    </ClCompile>
+    <ClCompile Include="BSDialogFunctions.cpp">
+      <Filter>AssertDumper</Filter>
+    </ClCompile>
+    <ClCompile Include="BSExceptionDialog.cpp">
+      <Filter>AssertDumper</Filter>
+    </ClCompile>
+    <ClCompile Include="BSUtil.cpp">
+      <Filter>AssertDumper</Filter>
+    </ClCompile>
+    <ClCompile Include="expreport.cpp">
+      <Filter>AssertDumper</Filter>
+    </ClCompile>
+    <ClCompile Include="LogFileName.cpp">
+      <Filter>LogFileName</Filter>
+    </ClCompile>
+    <ClCompile Include="NameMap.cpp">
+      <Filter>NameMap</Filter>
+    </ClCompile>
+    <ClCompile Include="DataExecutor.cpp">
+      <Filter>DataExecution</Filter>
+    </ClCompile>
+    <ClCompile Include="ExecutionMemoryManager.cpp">
+      <Filter>DataExecution</Filter>
+    </ClCompile>
+    <ClCompile Include="AppInstancesLimit.cpp">
+      <Filter>AppInstances</Filter>
+    </ClCompile>
+    <ClCompile Include="WER.cpp">
+      <Filter>WER</Filter>
+    </ClCompile>
+    <ClCompile Include="JobThread.cpp">
+      <Filter>Threading</Filter>
+    </ClCompile>
+    <ClCompile Include="MultiReaderLock.cpp">
+      <Filter>Threading</Filter>
+    </ClCompile>
+    <ClCompile Include="SpinLock.cpp">
+      <Filter>Threading</Filter>
+    </ClCompile>
+    <ClCompile Include="SyncPrimitives.cpp">
+      <Filter>Threading</Filter>
+    </ClCompile>
+    <ClCompile Include="Thread.cpp">
+      <Filter>Threading</Filter>
+    </ClCompile>
+    <ClCompile Include="ThreadHelpers.cpp">
+      <Filter>Threading</Filter>
+    </ClCompile>
+    <ClCompile Include="ThreadNames.cpp">
+      <Filter>Threading</Filter>
+    </ClCompile>
+    <ClCompile Include="ThreadPool.cpp">
+      <Filter>Threading</Filter>
+    </ClCompile>
+    <ClCompile Include="Pointers\BaseObjectMT.cpp">
+      <Filter>Pointers</Filter>
+    </ClCompile>
+    <ClCompile Include="Pointers\BaseObjectST.cpp">
+      <Filter>Pointers</Filter>
+    </ClCompile>
+    <ClCompile Include="Pointers\BasicFactory.cpp">
+      <Filter>Pointers</Filter>
+    </ClCompile>
+    <ClCompile Include="Pointers\BasicType.cpp">
+      <Filter>Pointers</Filter>
+    </ClCompile>
+    <ClCompile Include="InlineProfiler3\InlineProfiler3.cpp">
+      <Filter>Profiler3</Filter>
+    </ClCompile>
+    <ClCompile Include="InlineProfiler3\InlineProfiler3CG.cpp">
+      <Filter>Profiler3</Filter>
+    </ClCompile>
+    <ClCompile Include="InlineProfiler3\InlineProfilerStorage.cpp">
+      <Filter>Profiler3</Filter>
+    </ClCompile>
+    <ClCompile Include="InlineProfiler3\Profiler3UI.cpp">
+      <Filter>Profiler3\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="InlineProfiler3\Profiler3UIData.cpp">
+      <Filter>Profiler3\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="InlineProfiler3\Profiler3UIMainDlg.cpp">
+      <Filter>Profiler3\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="InlineProfiler3\Profiler3UITimeline.cpp">
+      <Filter>Profiler3\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="RegistryStorage.cpp">
+      <Filter>Registry Storage</Filter>
+    </ClCompile>
+    <ClCompile Include="CrashRptWrapper.cpp">
+      <Filter>CrashRptWrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="SafeTextFormat.cpp">
+      <Filter>SafeTextFormat</Filter>
+    </ClCompile>
+    <ClCompile Include="StarForce\StarForce.cpp">
+      <Filter>StarForce</Filter>
+    </ClCompile>
+    <ClCompile Include="StarForce\StarForce_test.cpp">
+      <Filter>StarForce</Filter>
+    </ClCompile>
+    <ClCompile Include="PersistEvents.cpp">
+      <Filter>PersistEvents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Vendor\MD4\md4c.c">
+      <Filter>MD5.Vendor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Vendor\MD4\md5c.c">
+      <Filter>MD5.Vendor</Filter>
+    </ClCompile>
+    <ClCompile Include="IniFiles.cpp">
+      <Filter>INI Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\MD.cpp">
+      <Filter>MD4</Filter>
+    </ClCompile>
+    <ClCompile Include="Schedule.cpp">
+      <Filter>Schedule</Filter>
+    </ClCompile>
+    <ClCompile Include="Histogram.cpp">
+      <Filter>Histogram</Filter>
+    </ClCompile>
+    <ClCompile Include="IDGenerator.cpp" />
+    <ClCompile Include="Basic.test.h">
+      <Filter>Basic</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="StackWalk.component">
+      <Filter>StackWalk</Filter>
+    </None>
+    <None Include="NSTL.component">
+      <Filter>NSTL</Filter>
+    </None>
+    <None Include="Dumpers.component">
+      <Filter>Logger</Filter>
+    </None>
+    <None Include="Logging.component">
+      <Filter>Logger</Filter>
+    </None>
+    <None Include="SystemLog.component">
+      <Filter>Logger</Filter>
+    </None>
+    <None Include="CompositeSpline.inl">
+      <Filter>Math</Filter>
+    </None>
+    <None Include="Math\ieeehalfprecision.component">
+      <Filter>Math</Filter>
+    </None>
+    <None Include="Math.component">
+      <Filter>Math</Filter>
+    </None>
+    <None Include="MainFrame.component">
+      <Filter>MainFrame</Filter>
+    </None>
+    <None Include="ProfilingHelper.component">
+      <Filter>Misc</Filter>
+    </None>
+    <None Include="SyncProcessorState.component">
+      <Filter>Misc</Filter>
+    </None>
+    <None Include="Timer.component">
+      <Filter>Timer</Filter>
+    </None>
+    <None Include="Commands.component">
+      <Filter>Commands</Filter>
+    </None>
+    <None Include="ConfigFiles.component">
+      <Filter>Commands</Filter>
+    </None>
+    <None Include="Random.component">
+      <Filter>Random</Filter>
+    </None>
+    <None Include="RandomInterface.component">
+      <Filter>Random</Filter>
+    </None>
+    <None Include="FileSystem\FileUtils.component">
+      <Filter>FileUtils</Filter>
+    </None>
+    <None Include="Streams.component">
+      <Filter>Stream</Filter>
+    </None>
+    <None Include="StrUtils.component">
+      <Filter>StrUtils</Filter>
+    </None>
+    <None Include="Savers.component">
+      <Filter>Serialization</Filter>
+    </None>
+    <None Include="Ptr.component">
+      <Filter>Basic</Filter>
+    </None>
+    <None Include="FileSystem\FileSystem.component">
+      <Filter>FileSystem</Filter>
+    </None>
+    <None Include="FileSystem\FileSystemChangesProcessor.component">
+      <Filter>FileSystem</Filter>
+    </None>
+    <None Include="FileSystem\PileFileSystem.component">
+      <Filter>FileSystem</Filter>
+    </None>
+    <None Include="FileSystem\TestFileSystem.component">
+      <Filter>FileSystem</Filter>
+    </None>
+    <None Include="Progress.component">
+      <Filter>Progress</Filter>
+    </None>
+    <None Include="Updater.component">
+      <Filter>Updates</Filter>
+    </None>
+    <None Include="CmdLine.component">
+      <Filter>CmdLine</Filter>
+    </None>
+    <None Include="CmdLineLite.component">
+      <Filter>CmdLine</Filter>
+    </None>
+    <None Include="Image.component">
+      <Filter>Image</Filter>
+    </None>
+    <None Include="imageTGA.component">
+      <Filter>Image</Filter>
+    </None>
+    <None Include="Memory.component">
+      <Filter>Memory</Filter>
+    </None>
+    <None Include="MemoryBlockPool.component">
+      <Filter>Memory</Filter>
+    </None>
+    <None Include="MemoryPool.component">
+      <Filter>Memory</Filter>
+    </None>
+    <None Include="StaticContainers.component">
+      <Filter>Memory</Filter>
+    </None>
+    <None Include="StreamingContainers.component">
+      <Filter>Memory</Filter>
+    </None>
+    <None Include="Texts.component">
+      <Filter>Texts</Filter>
+    </None>
+    <None Include="DebugVar.component">
+      <Filter>Performance</Filter>
+    </None>
+    <None Include="EventFileLogger.component">
+      <Filter>Performance</Filter>
+    </None>
+    <None Include="Asserts.component">
+      <Filter>Assert</Filter>
+    </None>
+    <None Include="CrashHandler.component">
+      <Filter>AssertDumper</Filter>
+    </None>
+    <None Include="LogFileName.component">
+      <Filter>LogFileName</Filter>
+    </None>
+    <None Include="DataExecutor.component">
+      <Filter>DataExecution</Filter>
+    </None>
+    <None Include="Crc32Calculator.component">
+      <Filter>Crc32</Filter>
+    </None>
+    <None Include="Crc32Utils.component">
+      <Filter>Crc32</Filter>
+    </None>
+    <None Include="InlineProfiler.component">
+      <Filter>Profiler</Filter>
+    </None>
+    <None Include="InlineProfilerUI.component">
+      <Filter>Profiler</Filter>
+    </None>
+    <None Include="WER.component">
+      <Filter>WER</Filter>
+    </None>
+    <None Include="SyncPrimitives.component">
+      <Filter>Threading</Filter>
+    </None>
+    <None Include="Threading.component">
+      <Filter>Threading</Filter>
+    </None>
+    <None Include="ThreadNames.component">
+      <Filter>Threading</Filter>
+    </None>
+    <None Include="Pointers\Pointers.component">
+      <Filter>Pointers</Filter>
+    </None>
+    <None Include="InlineProfiler3\Analyzer.component">
+      <Filter>Profiler3</Filter>
+    </None>
+    <None Include="InlineProfiler3\InlineProfiler3TestApp.application">
+      <Filter>Profiler3</Filter>
+    </None>
+    <None Include="InlineProfiler3\InlineProfilerTLD.inl">
+      <Filter>Profiler3</Filter>
+    </None>
+    <None Include="InlineProfiler3\Sampler.component">
+      <Filter>Profiler3</Filter>
+    </None>
+    <None Include="InlineProfiler3\SamplerStub.component">
+      <Filter>Profiler3</Filter>
+    </None>
+    <None Include="InlineProfiler3\UI.component">
+      <Filter>Profiler3\UI</Filter>
+    </None>
+    <None Include="RegistryStorage.component">
+      <Filter>Registry Storage</Filter>
+    </None>
+    <None Include="CrashRptWrapper.component">
+      <Filter>CrashRptWrapper</Filter>
+    </None>
+    <None Include="EnumToString.component">
+      <Filter>EnumToString</Filter>
+    </None>
+    <None Include="SafeTextFormat.component">
+      <Filter>SafeTextFormat</Filter>
+    </None>
+    <None Include="..\..\Vendor\MD4\all.component">
+      <Filter>MD5.Vendor</Filter>
+    </None>
+    <None Include="Math\MD4.component">
+      <Filter>MD4</Filter>
+    </None>
+    <None Include="Schedule.component">
+      <Filter>Schedule</Filter>
+    </None>
+    <None Include="DarkSide.component">
+      <Filter>DarkSide</Filter>
+    </None>
+    <None Include="Histogram.component">
+      <Filter>Histogram</Filter>
+    </None>
+    <None Include="CyclicBuffer.component">
+      <Filter>CyclicBuffer</Filter>
+    </None>
+    <None Include="foundation.refs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="BSResources.rc">
+      <Filter>AssertDumper</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="InlineProfiler3\Profiler3UI.rc">
+      <Filter>Profiler3\UI</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="..\Version.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="error.ico">
+      <Filter>AssertDumper</Filter>
+    </Image>
+    <Image Include="exclamation.ico">
+      <Filter>AssertDumper</Filter>
+    </Image>
+    <Image Include="InlineProfiler3\Images.bmp">
+      <Filter>Profiler3\UI</Filter>
+    </Image>
+    <Image Include="InlineProfiler3\Profiler3UI.ico">
+      <Filter>Profiler3\UI</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Common">
+      <UniqueIdentifier>{82150334-4f44-4c4f-bfda-87c4d9f20d87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Checksum">
+      <UniqueIdentifier>{9fad177c-ee35-42b4-818b-7496896539d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Database">
+      <UniqueIdentifier>{90ea57c8-114c-41aa-ac72-ede646386427}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="XmlHelpers">
+      <UniqueIdentifier>{116c1eba-9bf1-4d4c-8dd7-e1fcad524da0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="XmlSerialization">
+      <UniqueIdentifier>{36d2395c-6a18-46ed-9515-9140cdb508bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Types">
+      <UniqueIdentifier>{c727cb01-b04e-4553-8763-06b276e43ddb}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="libdbStdAfx.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Specific.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Checksum.h">
+      <Filter>Checksum</Filter>
+    </ClInclude>
+    <ClInclude Include="ClonedPtr.h">
+      <Filter>Database</Filter>
+    </ClInclude>
+    <ClInclude Include="Db.h">
+      <Filter>Database</Filter>
+    </ClInclude>
+    <ClInclude Include="dbid.h">
+      <Filter>Database</Filter>
+    </ClInclude>
+    <ClInclude Include="DbResourceCache.h">
+      <Filter>Database</Filter>
+    </ClInclude>
+    <ClInclude Include="IDbTypesRegistrator.h">
+      <Filter>Database</Filter>
+    </ClInclude>
+    <ClInclude Include="LightXML.h">
+      <Filter>XmlHelpers</Filter>
+    </ClInclude>
+    <ClInclude Include="LightXMLUtils.h">
+      <Filter>XmlHelpers</Filter>
+    </ClInclude>
+    <ClInclude Include="XMLReader.h">
+      <Filter>XmlHelpers</Filter>
+    </ClInclude>
+    <ClInclude Include="XmlUtils.h">
+      <Filter>XmlHelpers</Filter>
+    </ClInclude>
+    <ClInclude Include="XmlChunkSaver.h">
+      <Filter>XmlSerialization</Filter>
+    </ClInclude>
+    <ClInclude Include="XmlSaver.h">
+      <Filter>XmlSerialization</Filter>
+    </ClInclude>
+    <ClInclude Include="Animated.h">
+      <Filter>Types</Filter>
+    </ClInclude>
+    <ClInclude Include="Animated2Spline.h">
+      <Filter>Types</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimatedAlgorithms.h">
+      <Filter>Types</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimatedWrapper.h">
+      <Filter>Types</Filter>
+    </ClInclude>
+    <ClInclude Include="Placement.h">
+      <Filter>Types</Filter>
+    </ClInclude>
+    <ClInclude Include="DBTestTypes.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Checksum.cpp">
+      <Filter>Checksum</Filter>
+    </ClCompile>
+    <ClCompile Include="DB.cpp">
+      <Filter>Database</Filter>
+    </ClCompile>
+    <ClCompile Include="dbid.cpp">
+      <Filter>Database</Filter>
+    </ClCompile>
+    <ClCompile Include="DbResourceCache.cpp">
+      <Filter>Database</Filter>
+    </ClCompile>
+    <ClCompile Include="DbResourceCacheDump.cpp">
+      <Filter>Database</Filter>
+    </ClCompile>
+    <ClCompile Include="DbTypesRegistrator.cpp">
+      <Filter>Database</Filter>
+    </ClCompile>
+    <ClCompile Include="LightXML.cpp">
+      <Filter>XmlHelpers</Filter>
+    </ClCompile>
+    <ClCompile Include="LightXMLUtils.cpp">
+      <Filter>XmlHelpers</Filter>
+    </ClCompile>
+    <ClCompile Include="XMLReader.cpp">
+      <Filter>XmlHelpers</Filter>
+    </ClCompile>
+    <ClCompile Include="XmlUtils.cpp">
+      <Filter>XmlHelpers</Filter>
+    </ClCompile>
+    <ClCompile Include="XmlChunkSaver.cpp">
+      <Filter>XmlSerialization</Filter>
+    </ClCompile>
+    <ClCompile Include="Placement.cpp">
+      <Filter>Types</Filter>
+    </ClCompile>
+    <ClCompile Include="DBTestTypes.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Checksum.component">
+      <Filter>Checksum</Filter>
+    </None>
+    <None Include="Database.component">
+      <Filter>Database</Filter>
+    </None>
+    <None Include="dbid.component">
+      <Filter>Database</Filter>
+    </None>
+    <None Include="DbPtr.inl">
+      <Filter>Database</Filter>
+    </None>
+    <None Include="XMLReader.component">
+      <Filter>XmlHelpers</Filter>
+    </None>
+    <None Include="XMLSaver.component">
+      <Filter>XmlSerialization</Filter>
+    </None>
+    <None Include="Types.component">
+      <Filter>Types</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\Version.rc" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="TransportLayer">
+      <UniqueIdentifier>{82781b61-b1cb-4fc4-ba18-97f2e0d7bc21}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ClientTransportSystem">
+      <UniqueIdentifier>{32be9104-c30f-4d7f-803b-7f935b74f8bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NetLayer">
+      <UniqueIdentifier>{96b3cf15-9af2-4418-af4c-1a54650d7121}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="transport\specific.h">
+      <Filter>TransportLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="transport\stdafx.h">
+      <Filter>TransportLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="transport\TLAddRecipientOp.h">
+      <Filter>TransportLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="transport\TLAddressResolver.h">
+      <Filter>TransportLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="transport\TLCfg.h">
+      <Filter>TransportLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="transport\TLChannel.h">
+      <Filter>TransportLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="transport\TLChannelBase.h">
+      <Filter>TransportLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="transport\TLChannelFactory.h">
+      <Filter>TransportLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="transport\TLChannelInt.h">
+      <Filter>TransportLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="transport\TLChannelListener.h">
+      <Filter>TransportLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="transport\TLChannelOp.h">
+      <Filter>TransportLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="transport\TLChannelWrapper.h">
+      <Filter>TransportLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="transport\TLCloseChannelOp.h">
+      <Filter>TransportLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="transport\TLConnection.h">
+      <Filter>TransportLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="transport\TLConnectionManager.h">
+      <Filter>TransportLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="transport\TLConnectionOutputOp.h">
+      <Filter>TransportLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="transport\TLDataHandler.h">
+      <Filter>TransportLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="transport\TLDefaultLogCallback.h">
+      <Filter>TransportLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="transport\TLGlobalCfg.h">
+      <Filter>TransportLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="transport\TLInPlaceMessageBlockFactory.h">
+      <Filter>TransportLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="transport\TLMulticastChannel.h">
+      <Filter>TransportLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="transport\TLOpenChannelOp.h">
+      <Filter>TransportLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="transport\TLOpsPtr.h">
+      <Filter>TransportLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="transport\TLPingChannelOp.h">
+      <Filter>TransportLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="transport\TLProtocolHandler.h">
+      <Filter>TransportLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="transport\TLProtocolHandlerFactory.h">
+      <Filter>TransportLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="transport\TLRemoveRecipientOp.h">
+      <Filter>TransportLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="transport\TLSendDataOp.h">
+      <Filter>TransportLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="transport\TLTransportModule.h">
+      <Filter>TransportLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="transport\TLTransportProtocol.h">
+      <Filter>TransportLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="transport\TLTypes.h">
+      <Filter>TransportLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Network\ClientTransportConfig.h">
+      <Filter>ClientTransportSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Network\ClientTransportSystem2.h">
+      <Filter>ClientTransportSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Network\ClientTransportSystem3.h">
+      <Filter>ClientTransportSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Network\ClientTransportSystemIntf.h">
+      <Filter>ClientTransportSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Network\SecondaryRelayCtx.h">
+      <Filter>ClientTransportSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="netlayer\NLNetworkHandler.h">
+      <Filter>NetLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="netlayer\specific.h">
+      <Filter>NetLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="netlayer\stdafx.h">
+      <Filter>NetLayer</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="transport\TLAddRecipientOp.cpp">
+      <Filter>TransportLayer</Filter>
+    </ClCompile>
+    <ClCompile Include="transport\TLCfg.cpp">
+      <Filter>TransportLayer</Filter>
+    </ClCompile>
+    <ClCompile Include="transport\TLChannel.cpp">
+      <Filter>TransportLayer</Filter>
+    </ClCompile>
+    <ClCompile Include="transport\TLChannelBase.cpp">
+      <Filter>TransportLayer</Filter>
+    </ClCompile>
+    <ClCompile Include="transport\TLChannelFactory.cpp">
+      <Filter>TransportLayer</Filter>
+    </ClCompile>
+    <ClCompile Include="transport\TLChannelInt.cpp">
+      <Filter>TransportLayer</Filter>
+    </ClCompile>
+    <ClCompile Include="transport\TLChannelListener.cpp">
+      <Filter>TransportLayer</Filter>
+    </ClCompile>
+    <ClCompile Include="transport\TLChannelOp.cpp">
+      <Filter>TransportLayer</Filter>
+    </ClCompile>
+    <ClCompile Include="transport\TLChannelWrapper.cpp">
+      <Filter>TransportLayer</Filter>
+    </ClCompile>
+    <ClCompile Include="transport\TLCloseChannelOp.cpp">
+      <Filter>TransportLayer</Filter>
+    </ClCompile>
+    <ClCompile Include="transport\TLConnection.cpp">
+      <Filter>TransportLayer</Filter>
+    </ClCompile>
+    <ClCompile Include="transport\TLConnectionManager.cpp">
+      <Filter>TransportLayer</Filter>
+    </ClCompile>
+    <ClCompile Include="transport\TLConnectionOutputOp.cpp">
+      <Filter>TransportLayer</Filter>
+    </ClCompile>
+    <ClCompile Include="transport\TLDataHandler.cpp">
+      <Filter>TransportLayer</Filter>
+    </ClCompile>
+    <ClCompile Include="transport\TLDefaultLogCallback.cpp">
+      <Filter>TransportLayer</Filter>
+    </ClCompile>
+    <ClCompile Include="transport\TLGlobalCfg.cpp">
+      <Filter>TransportLayer</Filter>
+    </ClCompile>
+    <ClCompile Include="transport\TLInPlaceMessageBlockFactory.cpp">
+      <Filter>TransportLayer</Filter>
+    </ClCompile>
+    <ClCompile Include="transport\TLMulticastChannel.cpp">
+      <Filter>TransportLayer</Filter>
+    </ClCompile>
+    <ClCompile Include="transport\TLOpenChannelOp.cpp">
+      <Filter>TransportLayer</Filter>
+    </ClCompile>
+    <ClCompile Include="transport\TLPingChannelOp.cpp">
+      <Filter>TransportLayer</Filter>
+    </ClCompile>
+    <ClCompile Include="transport\TLProtocolHandler.cpp">
+      <Filter>TransportLayer</Filter>
+    </ClCompile>
+    <ClCompile Include="transport\TLProtocolHandlerFactory.cpp">
+      <Filter>TransportLayer</Filter>
+    </ClCompile>
+    <ClCompile Include="transport\TLRemoveRecipientOp.cpp">
+      <Filter>TransportLayer</Filter>
+    </ClCompile>
+    <ClCompile Include="transport\TLSendDataOp.cpp">
+      <Filter>TransportLayer</Filter>
+    </ClCompile>
+    <ClCompile Include="transport\TLTransportModule.cpp">
+      <Filter>TransportLayer</Filter>
+    </ClCompile>
+    <ClCompile Include="transport\TLTransportProtocol.cpp">
+      <Filter>TransportLayer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Network\ClientTransportConfig.cpp">
+      <Filter>ClientTransportSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Network\ClientTransportSystem2.cpp">
+      <Filter>ClientTransportSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Network\ClientTransportSystem3.cpp">
+      <Filter>ClientTransportSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Network\SecondaryRelayCtx.cpp">
+      <Filter>ClientTransportSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="netlayer\NLNetworkHandler.cpp">
+      <Filter>NetLayer</Filter>
+    </ClCompile>
+    <ClCompile Include="netlayer\stdafx.cpp">
+      <Filter>NetLayer</Filter>
+    </ClCompile>
+    <ClCompile Include="transport\_stdafx.cpp">
+      <Filter>TransportLayer</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="transport\todo.txt">
+      <Filter>TransportLayer</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\Network\ClientTransportConfig.component">
+      <Filter>ClientTransportSystem</Filter>
+    </None>
+    <None Include="transport\transport.refs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\..\Version.rc" />
+  </ItemGroup>
+</Project>

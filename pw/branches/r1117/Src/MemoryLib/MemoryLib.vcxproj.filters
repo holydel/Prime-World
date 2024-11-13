@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Common">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="nedmalloc">
+      <UniqueIdentifier>{9d5bfd1b-9cac-4621-bcf2-19c88381b0d8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="nedmalloc.cpp">
+      <Filter>nedmalloc</Filter>
+    </ClCompile>
+    <ClCompile Include="newdelete.cpp" />
+    <ClCompile Include="NewHandler.cpp" />
+    <ClCompile Include="SymAccess.cpp" />
+    <ClCompile Include="UserMessage.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="malloc.c.h">
+      <Filter>nedmalloc</Filter>
+    </ClInclude>
+    <ClInclude Include="nedmalloc.h">
+      <Filter>nedmalloc</Filter>
+    </ClInclude>
+    <ClInclude Include="newdelete.h" />
+    <ClInclude Include="NewHandler.h" />
+    <ClInclude Include="NewHandlerDetails.h" />
+    <ClInclude Include="SymAccess.h" />
+    <ClInclude Include="UserMessage.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="memorylib.refs" />
+    <None Include="NewDelete.component" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\Version.rc" />
+  </ItemGroup>
+</Project>

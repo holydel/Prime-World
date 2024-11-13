@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Common">
+      <UniqueIdentifier>{976565e8-9165-4a06-b951-591a64dc85b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="multythread">
+      <UniqueIdentifier>{fb1dc0f9-58b0-4a82-920b-75aaed88cdf0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="crc_math.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="parse.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="multythread\mtworkerlite.cpp">
+      <Filter>multythread</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderCompiler.cpp" />
+    <ClCompile Include="UberShaderDesc.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="crc_math.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="parse.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="specific.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="multythread\mtworker.h">
+      <Filter>multythread</Filter>
+    </ClInclude>
+    <ClInclude Include="multythread\mtworkerlite.h">
+      <Filter>multythread</Filter>
+    </ClInclude>
+    <ClInclude Include="multythread\RTExpImp.hxx">
+      <Filter>multythread</Filter>
+    </ClInclude>
+    <ClInclude Include="multythread\RTOSDef.hxx">
+      <Filter>multythread</Filter>
+    </ClInclude>
+    <ClInclude Include="UberShaderDesc.h" />
+  </ItemGroup>
+</Project>

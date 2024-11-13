@@ -1,6 +1,8 @@
 #pragma once
 #define WIN32_LEAN_AND_MEAN
 #pragma warning( disable: 4005 )
+#pragma warning( disable: 4702 )
+#pragma warning( disable: 4477 )
 #define _WIN32_WINNT 0x600
 
 #include "../System/config.h"

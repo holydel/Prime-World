@@ -1,4 +1,5 @@
-﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">Win32</Platform>
@@ -8,6 +9,26 @@
     <RootNamespace>EditorPlugins</RootNamespace>
     <AssemblyName>EditorPlugins</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|Win32' ">
     <DebugSymbols>True</DebugSymbols>
@@ -493,9 +514,7 @@
     <Compile Include="Scene\Presets\PresetSaver.cs" />
     <Compile Include="Scene\Presets\ScenePreset.cs" />
     <Compile Include="Scene\Presets\StaticMeshPreset.cs" />
-    <Compile Include="Scene\SceneControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="Scene\SceneControl.cs" />
     <Compile Include="Scene\SceneSettings.cs" />
     <Compile Include="Scene\SimpleSceneControl.cs">
       <SubType>UserControl</SubType>
@@ -663,9 +682,7 @@
     <Compile Include="Templates\ResourceInstanceDescriptor.cs" />
     <Compile Include="Templates\Template.cs" />
     <Compile Include="TileMap.cs" />
-    <Compile Include="UIScene\Editor2DSceneControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="UIScene\Editor2DSceneControl.cs" />
     <Compile Include="Wizards\MayaConfigForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -693,7 +710,7 @@
       <Project>{AEB9B15A-6C51-4B9B-8838-7254064A4E98}</Project>
       <Name>EditorLib</Name>
     </ProjectReference>
-    <ProjectReference Include="..\EditorNative\EditorNative.vcproj">
+    <ProjectReference Include="..\EditorNative\EditorNative.vcxproj">
       <Project>{8661805A-1298-4D53-8666-1FB9922886AF}</Project>
       <Name>EditorNative</Name>
     </ProjectReference>
@@ -705,7 +722,7 @@
       <Project>{5DFA0790-582A-4A71-93AE-A5D31AA7864F}</Project>
       <Name>MayaExeInteraction</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PF_EditorNative\PF_EditorNative.vcproj">
+    <ProjectReference Include="..\PF_EditorNative\PF_EditorNative.vcxproj">
       <Project>{8661805A-1298-4D53-8666-1FB9922886AE}</Project>
       <Name>PF_EditorNative</Name>
     </ProjectReference>
@@ -1065,6 +1082,13 @@
     <None Include="Editors\AnimGraph\Resources\AnimLooped.png" />
     <None Include="Editors\AnimGraph\Resources\AnimComplex.png" />
     <None Include="Editors\AnimGraph\Resources\AnimPlayed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

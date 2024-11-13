@@ -26,6 +26,8 @@ Channel::Channel(  bool _isIncoming, const Address& _address, const TLoginData& 
 , recvQueueBytes_(0)
 , sendSeqNum_(0)
 , lastRecvSeqNum_(0)
+, recvMessages(0)
+, sendMessages(0)
 {
 }
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

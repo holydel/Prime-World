@@ -79,7 +79,7 @@ namespace Transport
     bool DequeueSendMsg(CObj<Stream> & msg);
 
   private:
-    Channel() {}
+	  Channel() = delete;
     Address address;
     ChannelAddr channelAddr;
 
@@ -92,8 +92,8 @@ namespace Transport
 
     Ping pingTime;
 
-    SPSCQueue<CObj<Stream>, Stream*> sendMessages;
-    SPSCQueue<CObj<Stream>, Stream*> recvMessages;
+	rigtorp::SPSCQueue<CObj<Stream>> sendMessages;
+	rigtorp::SPSCQueue<CObj<Stream>> recvMessages;
 
     Network::IStreamAllocator* pAlloc;
     MessageFactory* pMessageFactory;
@@ -129,9 +129,10 @@ namespace Transport
   inline
   bool Channel::DequeueRecvMsg(CObj<Stream> & msg)
   {
-    if ( !recvMessages.Dequeue( msg ) )
+	  msg = *recvMessages.Pick();
+    if (!msg)
       return false;
-
+	recvMessages.Dequeue();
     recvQueueBytes_ -= msg->GetSize();
     if (Transport::bTraceRecv)
     {
@@ -167,9 +168,10 @@ namespace Transport
   inline
   bool Channel::DequeueSendMsg(CObj<Stream> & msg)
   {
-    if (!sendMessages.Dequeue(msg))
+	msg = *sendMessages.Pick();
+    if (!msg)
       return false;
-
+	sendMessages.Dequeue();
     sendQueueBytes_ -= msg->GetSize();
     if (Transport::bTraceSend)
     {

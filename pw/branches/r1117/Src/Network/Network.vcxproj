@@ -1,0 +1,460 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseSingleExe|Win32">
+      <Configuration>ReleaseSingleExe</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ShippingSingleExe|Win32">
+      <Configuration>ShippingSingleExe</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Shipping|Win32">
+      <Configuration>Shipping</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{CFC43B79-911D-4869-83E9-C4D18DA40335}</ProjectGuid>
+    <RootNamespace>Network</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseSingleExe|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ShippingSingleExe|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseSingleExe|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ShippingSingleExe|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>14.0.25431.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(ProjectDir)..\_$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)..\_$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(ProjectDir)..\_$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)..\_$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'">
+    <OutDir>$(ProjectDir)..\_$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)..\_$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ShippingSingleExe|Win32'">
+    <OutDir>$(ProjectDir)..\_$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)..\_$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseSingleExe|Win32'">
+    <OutDir>$(ProjectDir)..\_$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)..\_$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <PreBuildEvent>
+      <Command />
+    </PreBuildEvent>
+    <ClCompile>
+      <AdditionalOptions>/MP %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../..;../../vendor\CxxTest\Include;../;../../vendor\zlib\include;../../;../../vendor\openSSL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;DLL;_DEBUG;_DO_ASSERT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling />
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <PreLinkEvent>
+      <Command>cd $(IntDir)
+..\..\..\vendor\BuildUtils\DefBuild.exe $(ProjectName).def
+if errorlevel 1 goto checklib
+:BuildImportLib
+lib /NOLOGO *.obj /def:$(ProjectName).def /MACHINE:X86 /out:"$(OutDir)$(ProjectName).lib"
+goto end
+:checklib
+if not exist "$(OutDir)$(ProjectName).lib" goto BuildImportLib
+:end
+dir&gt;nul
+</Command>
+    </PreLinkEvent>
+    <Link>
+      <AdditionalDependencies>ws2_32.lib;zdll.lib;ssleay32MT.lib;libeay32MT.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>../../vendor\zlib\lib;../../vendor\openSSL\lib\static;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ModuleDefinitionFile>$(IntDir)$(ProjectName).def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <LargeAddressAware>true</LargeAddressAware>
+      <OptimizeReferences />
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <PreBuildEvent>
+      <Command />
+    </PreBuildEvent>
+    <ClCompile>
+      <AdditionalOptions>/MP /D_SCL_SECURE_NO_WARNINGS /D_SECURE_SCL=0 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>../..;../../vendor\CxxTest\Include;../;../../vendor\zlib\include;../../;../../vendor\openSSL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;DLL;NDEBUG;_DO_ASSERT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling />
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <PreLinkEvent>
+      <Command>cd $(IntDir)
+..\..\..\vendor\BuildUtils\DefBuild.exe $(ProjectName).def
+if errorlevel 1 goto checklib
+:BuildImportLib
+lib /NOLOGO *.obj /def:$(ProjectName).def /MACHINE:X86 /out:"$(OutDir)$(ProjectName).lib"
+goto end
+:checklib
+if not exist "$(OutDir)$(ProjectName).lib" goto BuildImportLib
+:end
+dir&gt;nul
+</Command>
+    </PreLinkEvent>
+    <Link>
+      <AdditionalDependencies>ws2_32.lib;zdll.lib;ssleay32MT.lib;libeay32MT.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>../../vendor\zlib\lib;../../vendor\openSSL\lib\static;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ModuleDefinitionFile>$(IntDir)$(ProjectName).def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <LargeAddressAware>true</LargeAddressAware>
+      <OptimizeReferences />
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'">
+    <PreBuildEvent>
+      <Command />
+    </PreBuildEvent>
+    <ClCompile>
+      <AdditionalOptions>/MP /D_SCL_SECURE_NO_WARNINGS /D_SECURE_SCL=0 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>../..;../../vendor\CxxTest\Include;../;../../vendor\zlib\include;../../;../../vendor\openSSL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;DLL;NDEBUG;_SHIPPING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling />
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <PreLinkEvent>
+      <Command>cd $(IntDir)
+..\..\..\vendor\BuildUtils\DefBuild.exe $(ProjectName).def
+if errorlevel 1 goto checklib
+:BuildImportLib
+lib /NOLOGO *.obj /def:$(ProjectName).def /MACHINE:X86 /out:"$(OutDir)$(ProjectName).lib"
+goto end
+:checklib
+if not exist "$(OutDir)$(ProjectName).lib" goto BuildImportLib
+:end
+dir&gt;nul
+</Command>
+    </PreLinkEvent>
+    <Link>
+      <AdditionalDependencies>ws2_32.lib;zdll.lib;ssleay32MT.lib;libeay32MT.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>../../vendor\zlib\lib;../../vendor\openSSL\lib\static;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ModuleDefinitionFile>$(IntDir)$(ProjectName).def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <LargeAddressAware>true</LargeAddressAware>
+      <OptimizeReferences />
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ShippingSingleExe|Win32'">
+    <PreBuildEvent>
+      <Command />
+    </PreBuildEvent>
+    <ClCompile>
+      <AdditionalOptions>/MP /D_SCL_SECURE_NO_WARNINGS /D_SECURE_SCL=0 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <AdditionalIncludeDirectories>../..;../../vendor\CxxTest\Include;../;../../vendor\zlib\include;../../;../../vendor\openSSL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>__PLACEMENT_NEW_INLINE;WIN32;_WINDOWS;STATIC_LIB;NDEBUG;_SHIPPING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <PreLinkEvent>
+      <Command />
+    </PreLinkEvent>
+    <Lib>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseSingleExe|Win32'">
+    <PreBuildEvent>
+      <Command />
+    </PreBuildEvent>
+    <ClCompile>
+      <AdditionalOptions>/MP /D_SCL_SECURE_NO_WARNINGS /D_SECURE_SCL=0 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <AdditionalIncludeDirectories>../..;../../vendor\CxxTest\Include;../;../../vendor\zlib\include;../../;../../vendor\openSSL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;STATIC_LIB;NDEBUG;_DO_ASSERT;STARFORCE_PROTECTED;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling />
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <PreLinkEvent>
+      <Command />
+    </PreLinkEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Server\NewLogin\NewLoginTypes.cpp" />
+    <ClCompile Include="..\Server\RdpTransport\RdpTransportChannel.cpp" />
+    <ClCompile Include="..\Server\RdpTransport\RdpTransportMsg.cpp" />
+    <ClCompile Include="..\Server\RdpTransport\RdpTransportUtils.cpp" />
+    <ClCompile Include="Address.cpp" />
+    <ClCompile Include="ClusterConfiguration.cpp" />
+    <ClCompile Include="Connection.cpp" />
+    <ClCompile Include="ConnectionManager.cpp" />
+    <ClCompile Include="ConnectionsContainer.cpp" />
+    <ClCompile Include="ConnectionState.cpp" />
+    <ClCompile Include="Driver.cpp" />
+    <ClCompile Include="DriverSettings.cpp" />
+    <ClCompile Include="Errors.cpp" />
+    <ClCompile Include="FreePortsFinder.cpp" />
+    <ClCompile Include="Initializer.cpp" />
+    <ClCompile Include="LoginClient.cpp" />
+    <ClCompile Include="LoginTypes.cpp" />
+    <ClCompile Include="Message.cpp" />
+    <ClCompile Include="Network.cpp" />
+    <ClCompile Include="network.test.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSingleExe|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ShippingSingleExe|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="PacketDispatcher.cpp" />
+    <ClCompile Include="RdpClientTransport\RdpClientChannel.cpp" />
+    <ClCompile Include="RdpClientTransport\RdpClientTransport.cpp" />
+    <ClCompile Include="RdpClientTransport\RdpLoginClient.cpp" />
+    <ClCompile Include="RUDP\Rdp.cpp" />
+    <ClCompile Include="RUDP\RdpCongestionControl.cpp" />
+    <ClCompile Include="RUDP\RdpConnection.cpp" />
+    <ClCompile Include="RUDP\RdpEphMux.cpp" />
+    <ClCompile Include="RUDP\RdpHandshake.cpp" />
+    <ClCompile Include="RUDP\RdpInPktQueue.cpp" />
+    <ClCompile Include="RUDP\RdpListenContext.cpp" />
+    <ClCompile Include="RUDP\RdpLogic.cpp" />
+    <ClCompile Include="RUDP\RdpOutPktQueue.cpp" />
+    <ClCompile Include="RUDP\RdpPacket.cpp" />
+    <ClCompile Include="RUDP\RdpPacketPool.cpp" />
+    <ClCompile Include="RUDP\RdpPing.cpp" />
+    <ClCompile Include="RUDP\RdpProto.cpp" />
+    <ClCompile Include="RUDP\RdpWriter.cpp" />
+    <ClCompile Include="RUDP\SockSrvWinsockAsync.cpp" />
+    <ClCompile Include="RUDP\SockSrvWinsockBlocking.cpp" />
+    <ClCompile Include="RUDP\UdpAddr.cpp" />
+    <ClCompile Include="RUDP\UdpSocket.cpp" />
+    <ClCompile Include="SSLEncoder.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ReleaseSingleExe|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ShippingSingleExe|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="StreamAllocator.cpp" />
+    <ClCompile Include="TransportAddress.cpp" />
+    <ClCompile Include="TransportBase.cpp" />
+    <ClCompile Include="TransportChannel.cpp" />
+    <ClCompile Include="TransportChannelListener.cpp" />
+    <ClCompile Include="TransportChannelType.cpp" />
+    <ClCompile Include="TransportDefaults.cpp" />
+    <ClCompile Include="TransportError.cpp" />
+    <ClCompile Include="TransportMessages.cpp" />
+    <ClCompile Include="TransportMux.cpp" />
+    <ClCompile Include="TransportSystem.cpp" />
+    <ClCompile Include="TransportUtils.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Server\NewLogin\NewLoginTypes.h" />
+    <ClInclude Include="..\Server\RdpTransport\RdpSocketFactory.h" />
+    <ClInclude Include="..\Server\RdpTransport\RdpTransportChannel.h" />
+    <ClInclude Include="..\Server\RdpTransport\RdpTransportMsg.h" />
+    <ClInclude Include="..\Server\RdpTransport\RdpTransportUtils.h" />
+    <ClInclude Include="Address.h" />
+    <ClInclude Include="AddressTranslator.h" />
+    <CustomBuild Include="ClusterConfiguration.h" />
+    <ClInclude Include="Connection.h" />
+    <ClInclude Include="ConnectionManager.h" />
+    <ClInclude Include="ConnectionsContainer.h" />
+    <ClInclude Include="ConnectionState.h" />
+    <ClInclude Include="Driver.h" />
+    <ClInclude Include="DriverSettings.h" />
+    <ClInclude Include="Errors.h" />
+    <ClInclude Include="FreePortsFinder.h" />
+    <ClInclude Include="Initializer.h" />
+    <ClInclude Include="LoginClient.h" />
+    <ClInclude Include="LoginTypes.h" />
+    <ClInclude Include="Message.h" />
+    <ClInclude Include="Network.h" />
+    <ClInclude Include="NetworkBuffers.h" />
+    <ClInclude Include="PacketDispatcher.h" />
+    <ClInclude Include="RdpClientTransport\RdpClientChannel.h" />
+    <ClInclude Include="RdpClientTransport\RdpClientTransport.h" />
+    <ClInclude Include="RdpClientTransport\RdpLoginClient.h" />
+    <ClInclude Include="RUDP\IRdp.h" />
+    <ClInclude Include="RUDP\ISockSrv.h" />
+    <ClInclude Include="RUDP\Rdp.h" />
+    <ClInclude Include="RUDP\RdpCommon.h" />
+    <ClInclude Include="RUDP\RdpCongestionControl.h" />
+    <ClInclude Include="RUDP\RdpConnDescriptor.h" />
+    <ClInclude Include="RUDP\RdpConnection.h" />
+    <ClInclude Include="RUDP\RdpEphMux.h" />
+    <ClInclude Include="RUDP\RdpHandshake.h" />
+    <ClInclude Include="RUDP\RdpInPktQueue.h" />
+    <ClInclude Include="RUDP\RdpListenContext.h" />
+    <ClInclude Include="RUDP\RdpLogic.h" />
+    <ClInclude Include="RUDP\RdpOutPktQueue.h" />
+    <ClInclude Include="RUDP\RdpPacket.h" />
+    <ClInclude Include="RUDP\RdpPacketPool.h" />
+    <ClInclude Include="RUDP\RdpPing.h" />
+    <ClInclude Include="RUDP\RdpPktQueue.h" />
+    <ClInclude Include="RUDP\RdpProto.h" />
+    <ClInclude Include="RUDP\RdpStats.h" />
+    <ClInclude Include="RUDP\RdpWriter.h" />
+    <ClInclude Include="RUDP\SockSrvWinsockAsync.h" />
+    <ClInclude Include="RUDP\SockSrvWinsockBlocking.h" />
+    <ClInclude Include="RUDP\UdpAddr.h" />
+    <ClInclude Include="RUDP\UdpSocket.h" />
+    <ClInclude Include="specific.h" />
+    <ClInclude Include="SSLEncoder.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="StreamAllocator.h" />
+    <ClInclude Include="Transport.h" />
+    <ClInclude Include="TransportAddress.h" />
+    <ClInclude Include="TransportBase.h" />
+    <ClInclude Include="TransportChannel.h" />
+    <ClInclude Include="TransportChannelListener.h" />
+    <ClInclude Include="TransportChannelType.h" />
+    <ClInclude Include="TransportDefaults.h" />
+    <ClInclude Include="TransportError.h" />
+    <ClInclude Include="TransportInitializer.h" />
+    <ClInclude Include="TransportMessages.h" />
+    <ClInclude Include="TransportMulticastChannel.h" />
+    <ClInclude Include="TransportMux.h" />
+    <ClInclude Include="TransportSystem.h" />
+    <ClInclude Include="TransportUtils.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Server\NewLogin\NewLoginTypes.component" />
+    <None Include="..\Server\RdpTransport\RdpTransportChannel.component" />
+    <None Include="..\Server\RdpTransport\RdpTransportUtils.component" />
+    <None Include="all.component" />
+    <CustomBuild Include="ClusterConfiguration.component" />
+    <None Include="ConnectionState.component" />
+    <None Include="FreePortsFinder.component" />
+    <None Include="Interfaces.component" />
+    <None Include="LoginClient.component" />
+    <None Include="LoginTypes.component" />
+    <None Include="PacketDispatcher.component" />
+    <None Include="RdpClientTransport\RdpClientTransport.component" />
+    <None Include="RealDriver.component" />
+    <None Include="RUDP\Rdp.component" />
+    <None Include="RUDP\SockSrv.component" />
+    <None Include="RUDP\SockSrvWinsock.component" />
+    <None Include="RUDP\UdpSocket.component" />
+    <None Include="StreamAllocator.component" />
+    <None Include="Transport.component" />
+    <None Include="TransportInterface.component" />
+    <None Include="TransportMessages.component" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\Version.rc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSingleExe|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ShippingSingleExe|Win32'">true</ExcludedFromBuild>
+    </ResourceCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -69,3 +69,8 @@ pw/branches/r1117/Src/Ionic.Zip.dll
 PW_MicroUpdater/.vs/PW_MicroUpdater.csproj.dtbcache.json
 Client-Synchronizer-Server/pythonProject/sync_log.txt
 Client-Synchronizer-Server/pythonProject/api_key.txt
+*.ipch
+.vs
+*AssemblyAttributes.cs
+*.db
+*.opendb
