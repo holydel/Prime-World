@@ -682,7 +682,7 @@ void AdventureScreenLogic::UpdateErrorMessageTextByVariant( NDb::EErrorMessageTy
 
 void AdventureScreenLogic::UpdateConnectionAndSpeedWindows()
 {
-  bool isLocalGame = NGlobal::GetVar( "local_game" ).Get<bool>() ;
+  bool isLocalGame = false; //NGlobal::GetVar( "local_game" ).Get<bool>() ;
 
   if (noConnectWnd)
   {
