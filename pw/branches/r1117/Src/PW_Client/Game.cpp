@@ -1343,7 +1343,7 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
           }
           Sleep(1000);
           WebLauncherPostRequest waitSessionNameRequest(SERVER_IP_W, L"/api", SERVER_PORT_INT - 8, 0);
-          waitSessionNameRequest.GetGameNameForConnection(response.response.c_str());
+          waitSessionNameRequest.GetGameNameForConnection(protocolToken);
         }
 
         const char * mapId = CmdLineLite::Instance().GetStringKey( "mapId", "" );

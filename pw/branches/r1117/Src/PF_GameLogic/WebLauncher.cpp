@@ -1938,7 +1938,7 @@ void WebLauncherPostRequest::GetGameNameForConnection(const char* token)
   if (gameName.empty()) {
     return;
   }
-  g_sessionName = gameName.asString().c_str();
+  g_sessionName = Fix1251Encoding(gameName.asString()).c_str();
 
   return;
 }
