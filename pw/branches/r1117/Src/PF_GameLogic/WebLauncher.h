@@ -96,7 +96,7 @@ public:
   RegisterSessionRequest ReconnectInSession(const char* sessionToken, string& gameName);
   void LobbyCreatedRequest(const char* nickname, const char* sessionToken);
   bool CheckIsGameReady(const char* sessionToken);
-  bool CheckConnectionRequest();
+  bool CheckConnectionRequest(const char* playerToken);
   void ValidateInstallationRequest(const char* playerToken);
   void SendSessionResults(const vector<int>& playerUserIds, int winningTeam);
   void SendFinishGameRequest(const vector<int>& playerUserIds, int winningTeam);

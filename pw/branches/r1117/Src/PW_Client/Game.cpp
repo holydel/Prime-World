@@ -1225,6 +1225,16 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
       return 0;
     }
 
+    if (protocolMethod == "checkInstall") {
+      WebLauncherPostRequest syncCheckConnectionRequest(SERVER_IP_W, L"/api", SERVER_PORT_INT - 8, 0);
+      if (syncCheckConnectionRequest.CheckConnectionRequest(protocolToken)) {
+        systemLog( NLogg::LEVEL_MESSAGE ).Trace("Check install completed for %s", protocolToken);
+      } else {
+        ShowLocalizedErrorMB( L"Error", L"Sync-server connection failed - not valid response" );
+      }
+      return 0;
+    }
+
     WebLauncherPostRequest::WebLoginResponse response;
     if (protocolMethod == "runGame" || protocolMethod == "reconnect") {
       //WebLauncherPostRequest cprequest(SERVER_IP_W, L"/api", SERVER_PORT_INT - 8, 0);
@@ -1259,18 +1269,7 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
 
 
     if (response.retCode == WebLauncherPostRequest::LoginResponse_OK) {
-      if (protocolMethod == "checkInstall") {
-        WebLauncherPostRequest syncCheckConnectionRequest(SERVER_IP_W, L"/api", SERVER_PORT_INT - 8, 0);
-        if (syncCheckConnectionRequest.CheckConnectionRequest()) {
-          systemLog( NLogg::LEVEL_MESSAGE ).Trace("Check install completed for %s", response.response.c_str());
-
-          WebLauncherPostRequest validateInstallRequest;
-          validateInstallRequest.ValidateInstallationRequest(protocolToken);
-        } else {
-          ShowLocalizedErrorMB( L"Error", L"Sync-server connection failed - not valid response" );
-        }
-        return 0;
-      } else {
+      {
         // Old connection method
         if (allTokens.size() < 5) {
           ShowLocalizedErrorMB( L"Error", L"Not enough protocol parameters" );

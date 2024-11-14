@@ -1524,12 +1524,12 @@ bool WebLauncherPostRequest::CheckIsGameReady(const char* sessionToken)
   return data.asBool();
 }
 
-bool WebLauncherPostRequest::CheckConnectionRequest()
+bool WebLauncherPostRequest::CheckConnectionRequest(const char* playerToken)
 {
   char jsonBuff[1024];
   ZeroMemory(jsonBuff,1024);
 
-  sprintf(jsonBuff,"{\"method\": \"checkConnection\", \"data\": 0}");
+  sprintf(jsonBuff,"{\"method\": \"validateInstall\", \"data\": \"%s\"}", playerToken);
   const std::string jsonData = jsonBuff;
 
   std::string responseStream = SendPostRequest(jsonData);
@@ -1552,17 +1552,6 @@ bool WebLauncherPostRequest::CheckConnectionRequest()
   }
 
   return data.asBool();
-}
-
-void WebLauncherPostRequest::ValidateInstallationRequest(const char* playerToken)
-{
-  char jsonBuff[1024];
-  ZeroMemory(jsonBuff,1024);
-
-  sprintf(jsonBuff,"{\"method\": \"validateInstall\", \"data\": \"%s\"}", playerToken);
-  const std::string jsonData = jsonBuff;
-
-  std::string responseStream = SendPostRequest(jsonData);
 }
 
 
