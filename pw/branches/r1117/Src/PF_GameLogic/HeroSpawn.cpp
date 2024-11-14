@@ -519,16 +519,18 @@ namespace NWorld
 		if (players[it->playerId].playerType == NCore::EPlayerType::Human) {
       WebLauncherPostRequest::WebUserData userData;
 
-			if (!players[it->playerId].nickname.empty()) {
+      if (!players[it->playerId].nickname.empty()) {
+        std::wstring nick = players[it->playerId].nickname.c_str() + 1;
+        userData = usersData[nick];
+
         WebLauncherPostRequest::PlayerInfoByUserId pInfo;
         pInfo.nickname = players[it->playerId].nickname.c_str() + 1;
         pInfo.teamId = (int)players[it->playerId].teamID;
         pInfo.isLeaver = false;
+        pInfo.userId = userData.userId;
 
         userIdToNicknameMap[players[it->playerId].userID] = pInfo;
 
-        std::wstring nick = players[it->playerId].nickname.c_str() + 1;
-        userData = usersData[nick];
         heroSpawnDesc.playerInfo.heroRating = (int)userData.currentRating;
         heroSpawnDesc.playerInfo.ratingDeltaPrediction.onVictory = userData.victoryRating - userData.currentRating;
         heroSpawnDesc.playerInfo.ratingDeltaPrediction.onDefeat = userData.lossRating - userData.currentRating;

@@ -1582,7 +1582,6 @@ void WebLauncherPostRequest::SendSessionResults(const vector<int>& playerUserIds
   std::string responseStream = SendPostRequest(jsonReq);
 }
 
-
 void WebLauncherPostRequest::SendFinishGameRequest(const vector<int>& playerUserIds, int winningTeam)
 {
   char jsonBuff[2048];
@@ -1592,14 +1591,29 @@ void WebLauncherPostRequest::SendFinishGameRequest(const vector<int>& playerUser
   std::string jsonReq = jsonBuff;
 
   std::vector<int> leavers;
+
+  map<int, bool> activePlayers;
   // Prepare json request
   for (int pId = 0; pId < playerUserIds.size(); ++pId) {
     map<int, WebLauncherPostRequest::PlayerInfoByUserId>::iterator playerIt = userIdToNicknameMap.find(playerUserIds[pId]);
     if (!(playerIt == userIdToNicknameMap.end())) {
       WebLauncherPostRequest::PlayerInfoByUserId& playerInfoByUserId = (*playerIt).second;
+      activePlayers[playerInfoByUserId.userId] = true;
       if (playerInfoByUserId.isLeaver && s_userNicknameToUserIdMap.find(playerInfoByUserId.nickname.c_str()) != s_userNicknameToUserIdMap.end()) {
         leavers.push_back(s_userNicknameToUserIdMap[playerInfoByUserId.nickname.c_str()]);
       }
+    } else {
+      systemLog( NLogg::LEVEL_DEBUG ).Trace("Invalid player found! [%d]", playerUserIds[pId]);
+    }
+  }
+  
+  // Find not loaded players (bots)
+  std::map<std::wstring, WebLauncherPostRequest::WebUserData>::iterator playerIt = g_usersData.begin();
+  for (;playerIt != g_usersData.end(); ++playerIt) {
+    WebLauncherPostRequest::WebUserData& playerInfoByUserId = (*playerIt).second;
+    int userId = playerInfoByUserId.userId;
+    if (activePlayers.find(userId) == activePlayers.end()) {
+      leavers.push_back(userId);
     }
   }
 
@@ -1816,6 +1830,7 @@ WebLauncherPostRequest::WebLoginResponse WebLauncherPostRequest::GetSessionData(
     resData.victoryRating = rating.get("victory", Json::Value()).asFloat();
     resData.lossRating = rating.get("loss", Json::Value()).asFloat();
     resData.heroSkinID = curPlayer.get("skin", Json::Value()).asInt();
+    resData.userId = curPlayer.get("id", Json::Value()).asInt();
     
     resData.talents.resize(36);
 

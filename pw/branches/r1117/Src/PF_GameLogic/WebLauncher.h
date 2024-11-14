@@ -50,9 +50,10 @@ public:
   };
 
   struct WebUserData {
-    WebUserData(): heroSkinID(0), currentRating(1100), victoryRating(1100), lossRating(1100) {}
+    WebUserData(): heroSkinID(0), currentRating(1100), victoryRating(1100), lossRating(1100), userId(0) {}
     std::vector<TalentWebData> talents;
 	  int heroSkinID;
+    int userId;
     float currentRating;
     float victoryRating;
     float lossRating;
@@ -62,6 +63,7 @@ public:
     wstring nickname;
     int teamId;
     bool isLeaver;
+    int userId;
   };
 
   enum RegisterSessionRequest {
