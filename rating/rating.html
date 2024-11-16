@@ -1,0 +1,91 @@
+<html>
+<head>
+<script type="text/javascript">
+//function 
+const sample_RatingStart = 1100;
+const sample_RatingRange = 700;
+
+const const_MinRating = 1100; // RATING SHOULD NOT BE LOWER THAN 1100!
+const param_RatingDifferenceFactor = 2.5;
+const param_TeamRatingDifferenceFactor = 2.5;
+const param_WinMaxRating = 30;
+const param_LossMaxRating = 30;
+
+const const_DiffFactorMultiplier = 0.001;
+
+function loadPage() 
+{
+	players = [];
+	ratings = [1100,1253,1177,1258,1411, 1100,1100,1112,1100,1411]
+	
+	document.write("<h1>Player ratings</h1>");
+	for (i = 0; i < 10; ++i) {
+		players.push({userId: i, team: Math.floor(i/5) + 1, rating: ratings[i]});
+		document.write('Rating: ' + players[i].rating.toFixed(2) + '; Team: ' + players[i].team + "<br>");
+	}
+	document.write('<br>')
+	
+	outputData = processRatings(players);
+	document.write("<h1>Win/Loss ratings</h1>");
+	document.write(JSON.stringify(outputData))
+	/*
+	for (i = 0; i < 10; ++i) {
+		document.write( "Result if win: " + outputData[i].win.toFixed(2) + "; Result if lose: " + outputData[i].lose.toFixed(2) + "<br><br>");
+	}
+		*/
+}
+
+function processRatings(players) 
+{
+	outputData = [];
+	team_mean_rating = [1, 1];
+	
+	for (i = 0; i < players.length; ++i) {
+		team_mean_rating[players[i].team - 1] *= players[i].rating;
+	}
+	for (i = 0; i < team_mean_rating.length; ++i) {
+		team_mean_rating[i] = Math.pow(team_mean_rating[i], 1 / 5);
+		document.write('Team ' + i + ' mean rating is ' + team_mean_rating[i].toFixed(2) + '<br>')
+	}
+	team_rating_modifier = Math.tanh((team_mean_rating[1] - team_mean_rating[0]) * param_TeamRatingDifferenceFactor * const_DiffFactorMultiplier)
+	document.write('<br>Team 0 rating bonus = ' + team_rating_modifier.toFixed(3) + '<br>')
+	team_rating_modifier = [team_rating_modifier, -team_rating_modifier]
+	
+	var geomMean = geometricMean(players);
+	for (i = 0; i < players.length; ++i) {
+		var deltaWithGeomMean = players[i].rating - geomMean;
+		var normalizedRatingValue = normalizeRatingAffection(deltaWithGeomMean);
+		var winChangeRaw = param_WinMaxRating * (1 - normalizedRatingValue) / 2;
+		var lossChangeRaw = -param_LossMaxRating * (1 + normalizedRatingValue) / 2;
+		var winChange = winChangeRaw * (1 + team_rating_modifier[players[i].team - 1]);
+		var lossChange = lossChangeRaw * (1 - team_rating_modifier[players[i].team - 1]);
+		var resultWin = players[i].rating + winChange;
+		var resultLoss = Math.max(const_MinRating, players[i].rating + lossChange)
+		outputData.push({ userId: players[i].userId, team:players[i].team, rating: players[i].rating, win: winChange, lose: lossChange})
+	}
+	
+	
+	return outputData;
+}
+
+
+function geometricMean(players)
+{
+	var mean = 1;
+	for (i = 0; i < players.length; ++i) {
+		mean *= players[i].rating;
+	}
+	mean = Math.pow(mean, 1 / players.length);
+	return mean;
+}
+
+function normalizeRatingAffection(rating)
+{
+	return Math.tanh(rating * param_RatingDifferenceFactor * const_DiffFactorMultiplier);
+}
+
+</script>
+</head>
+<body onload="loadPage()">  
+</body>
+</html>
