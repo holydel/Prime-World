@@ -107,6 +107,6 @@ public:
   void NotifyGameStart(const char* nickname, const char* sessionToken);
 };
 
-extern std::string GetSkinByHeroPersistentId(const std::string& heroId, int someValue);
+extern std::string GetSkinByHeroPersistentId(const std::string& heroPersistentId, int skinId);
 extern std::string WideCharToMultiByteString(const wchar_t* wideCharString);
 extern std::string Fix1251Encoding(std::string utf8String);
