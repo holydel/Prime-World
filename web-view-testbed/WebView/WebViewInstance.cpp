@@ -27,6 +27,8 @@ WebViewInstance::WebViewInstance(HWND hwnd)
 		pimpl->HideWebView = (decltype(pimpl->HideWebView))GetProcAddress(pimpl->dll, "HideWebView");
 		pimpl->ShowWebView = (decltype(pimpl->ShowWebView))GetProcAddress(pimpl->dll, "ShowWebView");
 		pimpl->FreeWebView = (decltype(pimpl->FreeWebView))GetProcAddress(pimpl->dll, "FreeWebView");
+
+		pimpl->InitializeWebView(hwnd);
 	}
 }
 
