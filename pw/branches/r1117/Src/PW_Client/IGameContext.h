@@ -4,6 +4,7 @@
 #include "Server/LobbyPvx/CommonTypes.h"
 #include "PF_GameLogic/GameMaps.h"
 #include "Network/LoginTypes.h"
+#include "../PF/Client/LobbyPvx/LobbyClientBase.h"
 
 
 namespace StatisticService
@@ -35,6 +36,7 @@ _interface IGameContextUiInterface : public IBaseInterfaceMT
   virtual void          SetReady( lobby::EGameMemberReadiness::Enum readiness ) = 0;
 
   virtual void          SetDeveloperParty(int party) = 0;
+  virtual lobby::EClientStatus::Enum GetLobbyStatus() const = 0;
 };
 
 

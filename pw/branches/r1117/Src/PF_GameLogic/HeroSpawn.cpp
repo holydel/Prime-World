@@ -34,7 +34,11 @@
 #include <curl/curl.h>
 #include <PF_GameLogic/PFTalent.h>
 #include "WebLauncher.h"
+#include "../PW_Game/server_ip.h"
 //#pragma optimize("", off)
+
+map<int, WebLauncherPostRequest::PlayerInfoByUserId> userIdToNicknameMap;
+extern std::map<std::wstring, WebLauncherPostRequest::WebUserData> g_usersData;
 
 namespace 
 {
@@ -68,6 +72,16 @@ REGISTER_DEV_VAR( "valid_pets", g_validPets, STORAGE_NONE );
 namespace NWorld
 {
    
+  static const int TalentRarityToRefineRemap[] =
+  {
+    5,  //TALENTRARITY_CLASS = 0,
+    10, //TALENTRARITY_ORDINARY = 1,
+    10, //TALENTRARITY_GOOD = 2,
+    12, //TALENTRARITY_EXCELLENT = 3,
+    9,  //TALENTRARITY_MAGNIFICENT = 4,
+    7,  //TALENTRARITY_EXCLUSIVE = 5,
+    5,  //TALENTRARITY_OUTSTANDING = 6,
+  };
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #ifndef VISUAL_CUTTED
   void PreloadHero( NDb::Ptr<NDb::BaseHero> pHero, NWorld::PFWorld* pWorld, int teamID )
@@ -285,7 +299,6 @@ namespace NWorld
     return 1;
   }
 
-
   bool SpawnHeroes( NWorld::PFWorld * pWorld, const NDb::AdvMapDescription* advMapDescription, const NCore::TPlayersStartInfo & players, const bool isTutorial, 
         TSpawnInfo* pSpawnInfo, NScene::IScene * pScene, LoadingProgress * progress, const ::NWorld::PFResourcesCollection::TalentMap& talents )
   {
@@ -434,9 +447,12 @@ namespace NWorld
 
     for( TSpawnInfo::const_iterator team_it = pSpawnInfo->begin(), team_end = pSpawnInfo->end(); team_it != team_end; ++team_it )
     {
-      int inTeamId = 1; // yes, I know :( it`s pretty bad, but I need count heroes starting from 1
+      //int inTeamId = 1; // yes, I know :( it`s pretty bad, but I need count heroes starting from 1
       for( TTeamSpawnInfo::const_iterator it = team_it->begin(), end = team_it->end(); it != end; ++it )
       {
+        if( -1 == it->playerId )
+          break; // spawned all heroes for this team
+
         if (players[it->playerId].playerType == NCore::EPlayerType::Human) {
           const NDb::Hero * hero = FindHero( pHeroes, advMapDescription, it->playerInfo.heroId );
           
@@ -446,9 +462,10 @@ namespace NWorld
         }
       }
     }
-    WebLauncherPostRequest prequest;
+    WebLauncherPostRequest prequest(SERVER_IP_W, L"/api", SERVER_PORT_INT - 8, 0);
+    std::map<std::wstring, WebLauncherPostRequest::WebUserData> legacyUsersData = g_usersData.empty() ? prequest.GetUsersData(nickNames, heroNames) : prequest.GetLegacyUsersData(nickNames, heroNames);
 
-    std::map<std::wstring, WebLauncherPostRequest::WebUserData> usersData = prequest.GetUsersData(nickNames, heroNames);
+    std::map<std::wstring, WebLauncherPostRequest::WebUserData>& usersData = g_usersData.empty() ? legacyUsersData : g_usersData;
 
     // process spawn
     int heroesSpawned = 0;
@@ -499,14 +516,25 @@ namespace NWorld
 
 		//get tallent set by NickName and HeroID
 
-		if (players[it->playerId].playerType == NCore::EPlayerType::Human)
-		{
-			if (!players[it->playerId].nickname.empty()) {
-				WebLauncherPostRequest prequest;
+		if (players[it->playerId].playerType == NCore::EPlayerType::Human) {
+      WebLauncherPostRequest::WebUserData userData;
 
+      if (!players[it->playerId].nickname.empty()) {
         std::wstring nick = players[it->playerId].nickname.c_str() + 1;
-        std::vector<WebLauncherPostRequest::TalentWebData>& talentSet = usersData[nick].talents;
-        //prequest.GetTallentSet(players[it->playerId].nickname.c_str() + 1,heroSpawnDesc.pHero->persistentId.c_str());
+        userData = usersData[nick];
+
+        WebLauncherPostRequest::PlayerInfoByUserId pInfo;
+        pInfo.nickname = players[it->playerId].nickname.c_str() + 1;
+        pInfo.teamId = (int)players[it->playerId].teamID;
+        pInfo.isLeaver = false;
+        pInfo.userId = userData.userId;
+
+        userIdToNicknameMap[players[it->playerId].userID] = pInfo;
+
+        heroSpawnDesc.playerInfo.heroRating = (int)userData.currentRating;
+        heroSpawnDesc.playerInfo.ratingDeltaPrediction.onVictory = userData.victoryRating - userData.currentRating;
+        heroSpawnDesc.playerInfo.ratingDeltaPrediction.onDefeat = userData.lossRating - userData.currentRating;
+        std::vector<WebLauncherPostRequest::TalentWebData>& talentSet = userData.talents;
 			
 			if(talentSet.empty())
 			{
@@ -576,7 +604,7 @@ namespace NWorld
 								talentInfo.actionBarIdx = -1;
 							}
 
-              talentInfo.refineRate = NDb::TalentRarityToRefineRemap[talentPtr->rarity];
+              talentInfo.refineRate = TalentRarityToRefineRemap[talentPtr->rarity];
 				
               if(talentPtr->isUltimateTalent && talentPtr->rarity == NDb::TALENTRARITY_CLASS) {
 								numUltimates++;
@@ -591,8 +619,10 @@ namespace NWorld
 					heroSpawnDesc.usePlayerInfoTalentSet = false;
         }
 
-        heroSpawnDesc.playerInfo.heroSkin = GetSkinByHeroPersistentId(heroSpawnDesc.pHero->persistentId.c_str(), kindaRandomNumber).c_str() ; //"invisible_S41";
-        int ikas = 0;
+      	int heroSkinId = userData.heroSkinID;
+    	  if(heroSkinId > 0){
+    	  	heroSpawnDesc.playerInfo.heroSkin = GetSkinByHeroPersistentId(hero->persistentId.c_str(), heroSkinId - 1).c_str();
+			  }
 			}
 		}
 

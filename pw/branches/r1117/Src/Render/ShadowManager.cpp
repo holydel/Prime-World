@@ -14,6 +14,8 @@
 #include "BoundingPrimitives.h"
 #include "ConvertDirection.h"
 
+extern int g_playerTeamId;
+extern int g_fixedTeamCam;
 
 static float s_SizeScale = 1.0f;
 REGISTER_VAR("shadowMapScale", s_SizeScale, STORAGE_USER)
@@ -83,6 +85,8 @@ void Render::ShadowManager::Params::FromLightEnvironment(const NDb::LightEnviron
   if (!lenv)
     return;
 
+  float teamCorrectionYaw = (g_fixedTeamCam == 0 || g_fixedTeamCam - 1 == g_playerTeamId) ? 0.f : 180.f;
+
   fullSizeX = lenv->fullSizeX;
   fullSizeY = lenv->fullSizeY;
   fullSizeSAX = lenv->fullSizeSAX;
@@ -93,6 +97,7 @@ void Render::ShadowManager::Params::FromLightEnvironment(const NDb::LightEnviron
   biasSlope = lenv->biasSlope;
   shadowColor = lenv->shadowColor;
   shadowDirection = lenv->shadowDirection;
+  shadowDirection.Yaw += teamCorrectionYaw;
   shadowBlendMode = lenv->shadowBlendMode;
   shadowLength = lenv->shadowLength;
   shadowFar = lenv->shadowFar;
@@ -120,7 +125,8 @@ void Render::ShadowManager::Params::FromBlend(const Params& lhs, const Params& r
   shadowFarRange = Lerp(lhs.shadowFarRange, rhs.shadowFarRange, factor);
 
   // TODO: slerp?
-  shadowDirection.Yaw = Lerp(lhs.shadowDirection.Yaw, rhs.shadowDirection.Yaw, factor);
+  float teamCorrectionYaw = 0; //(g_fixedTeamCam == 0 || g_fixedTeamCam - 1 == g_playerTeamId) ? 0.f : 180.f;
+  shadowDirection.Yaw = Lerp(lhs.shadowDirection.Yaw + teamCorrectionYaw, rhs.shadowDirection.Yaw + teamCorrectionYaw, factor);
   shadowDirection.Pitch = Lerp(lhs.shadowDirection.Pitch, rhs.shadowDirection.Pitch, factor);
 }
 
@@ -539,7 +545,12 @@ namespace Render
       m_shadowFarRange = lenv->shadowFarRange;
 
       CVec3 lightDirWS;
-      ConvertDirection(lenv->shadowDirection, lightDirWS);
+      
+      float teamCorrectionYaw = (g_fixedTeamCam == 0 || g_fixedTeamCam - 1 == g_playerTeamId) ? 0.f : 180.f;
+      NDb::Direction smDir = lenv->shadowDirection;
+      smDir.Yaw += teamCorrectionYaw;
+
+      ConvertDirection(smDir, lightDirWS);
       m_lightDirWS = -lightDirWS;
 		}
 		else // remove this duplication [3/16/2010 smirnov]
@@ -582,7 +593,9 @@ namespace Render
     m_shadowFarRange = params.shadowFarRange;
 
     CVec3 lightDirWS;
-    ConvertDirection(params.shadowDirection, lightDirWS);
+    NDb::Direction smDir = params.shadowDirection;
+
+    ConvertDirection(smDir, lightDirWS);
     m_lightDirWS = -lightDirWS;
 
     const IConfigManager* const pConfigManager = GetIConfigManager();

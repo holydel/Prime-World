@@ -12,6 +12,9 @@
 
 //#include "DBStats.h"
 
+extern int g_playerTeamId;
+int g_fixedTeamCam = 0;
+REGISTER_VAR("fixedTeamCam", g_fixedTeamCam, STORAGE_USER)
 
 namespace NSoundScene
 {
@@ -90,7 +93,8 @@ namespace NGameX
         maxRod = cameraSettings->vertLengthTop;
 
         float deltaYaw = cameraSettings->horAngle;
-        centerYaw = ToRadian( cameraSettings->horCenterAngle );
+        float teamCorrectionYaw = (g_fixedTeamCam == 0 || g_fixedTeamCam - 1 == g_playerTeamId) ? 0.f : 180.f;
+        centerYaw = ToRadian( cameraSettings->horCenterAngle + teamCorrectionYaw);
         minYaw = ToRadian( -deltaYaw ) + centerYaw;
         maxYaw = ToRadian( +deltaYaw ) + centerYaw;
 

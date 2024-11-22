@@ -32,11 +32,6 @@ END_LUA_TYPEINFO( SelectHeroScreenLogic )
 
 void SelectHeroScreenLogic::SelectHero( const char * heroId )
 {
-  for (int i = 0; i < 10; ++i) {
-    if (g_selectedHeroes[i] == heroId) {
-      return;
-    }
-  }
   if ( StrongMT<Game::IGameContextUiInterface> locked = screen->GameCtx().Lock() )
     locked->ChangeCustomGameSettings( lobby::ETeam::None, lobby::ETeam::None, heroId );
 }
@@ -103,14 +98,13 @@ void SelectHeroScreenLogic::DebugDisplayPlayers ( const wstring & status )
     pDesc->SetCaptionTextW ( status.c_str() );
 }
 
-void SelectHeroScreenLogic::UpdateTimer(int seconds)
+void SelectHeroScreenLogic::UpdateTimer(int playerCount)
 {
   UI::ImageLabel * pDesc = UI::GetChildChecked < UI::ImageLabel > ( pBaseWindow, "Text_Timer", true );
   if ( pDesc )
   {
-	wchar_t buff[8];
-	int minutes = 0;
-	swprintf_s(buff,L"%d:%d",minutes, seconds);
+	wchar_t buff[256];
+  swprintf_s(buff, L"%sPlayers connected: %d</style>", playerCount == 10 ? L"<style:green>" : L"<style:money>", playerCount);
 
 	pDesc->SetCaptionTextW ( buff );
   }

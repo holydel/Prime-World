@@ -616,7 +616,7 @@ float PFTalentsSet::PreloadTalentsSetAndCalcForce(const NDb::AILogicParameters* 
 
   if (!usePlayerInfoTalentSet)
   {
-    PFTalentsSet::PreparePredefinedSet(pAIParams, pDBHero, "", talentsForceCalculator, info);
+    PFTalentsSet::PreparePredefinedSet(pAIParams, pDBHero, "", talentsForceCalculator, info, playerInfo.heroRating == 0);
   } 
   else
   {
@@ -635,7 +635,7 @@ float PFTalentsSet::PreloadTalentsSetAndCalcForce(const NDb::AILogicParameters* 
 //////////////////////////////////////////////////////////////////////////
 
 void PFTalentsSet::PreparePredefinedSet(const NDb::AILogicParameters* pAIParams, const NDb::BaseHero* pDBHero, string const& forceSetName, 
-                                        ITalentCalculator& calculator, SetInfo& info)
+                                        ITalentCalculator& calculator, SetInfo& info, bool isBot)
 {
   NDb::Ptr<NDb::TalentsSet> pDefaultSet;
 
@@ -688,7 +688,7 @@ void PFTalentsSet::PreparePredefinedSet(const NDb::AILogicParameters* pAIParams,
           NI_VERIFY( dbSlot.status == NDb::TALENTSLOTSTATUS_NORMAL, "Slot for talent is not available (talent skipped)!", continue; );
         NI_VERIFY( dbSlot.talent->minLevel == level, "Wrong talent level (talent skipped)!", continue; );
         slotInfo.pTalentDesc = dbSlot.talent;
-        slotInfo.refineRate = dbSlot.refineRate;
+        slotInfo.refineRate = isBot ? 10 : dbSlot.refineRate;
         slotInfo.aIPriority = dbSlot.aIPriority;
         //default value
         slotInfo.actionBarIndex = -1;

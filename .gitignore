@@ -57,6 +57,7 @@ pw_publish/branch/Client/PvP/Data
 pw_publish/branch/Client/PvP/Profiles
 pw_publish/branch/Client/PvP/Localization
 pw_publish/branch/Client/PvP/Bin
+pw_publish/branch/Client/PvP/Tools
 *.pile
 PW_MicroUpdater/.vs/PW_MicroUpdater/v17
 PW_MicroUpdater/bin
@@ -67,3 +68,8 @@ pw/branches/r1117/Src/PW_MicroUpdater.exe.config
 pw/branches/r1117/Src/PW_MicroUpdater.pdb
 pw/branches/r1117/Src/Ionic.Zip.dll
 PW_MicroUpdater/.vs/PW_MicroUpdater.csproj.dtbcache.json
+Client-Synchronizer-Server/pythonProject/sync_log.txt
+Client-Synchronizer-Server/pythonProject/api_key.txt
+rating/game_session.json
+rating/rating_json.txt
+Client-Synchronizer-Server/pythonProject/finish_game.py

@@ -108,6 +108,7 @@
 
 #include "RegistryToolbox.h"
 #include "../PF_GameLogic/WebLauncher.h"
+#include "../PW_Game/server_ip.h"
 
 static int    g_VideoFPS = 10;
 static float  g_RecordingTime = 10.0f;
@@ -132,7 +133,7 @@ REGISTER_DEV_VAR( "video_FPS", g_VideoFPS, STORAGE_NONE);
 REGISTER_DEV_VAR( "video_recording_time", g_RecordingTime, STORAGE_NONE);
 REGISTER_DEV_VAR( "nullrender", s_NullRender, STORAGE_NONE);
 REGISTER_DEV_VAR( "nullrender_no_log_box", g_NullRenderNoLogBox, STORAGE_NONE);
-REGISTER_DEV_VAR( "local_game", s_localGame, STORAGE_NONE);
+//REGISTER_DEV_VAR( "local_game", s_localGame, STORAGE_NONE);
 REGISTER_DEV_VAR( "skipFramesEnable", s_skipFrames, STORAGE_NONE);
 REGISTER_DEV_VAR( "skipFramesBarrier", s_skipFramesBarrier, STORAGE_NONE);
 
@@ -162,7 +163,7 @@ static NDebug::DebugVar<int> unfreeVirtualAllocs( "UnfreeVirtualAllocs", "", tru
 
 static NDebug::DebugVar<int> totalAllocsSize( "TotalAllocsSize", "", true );
 
-//#pragma optimize ("", off)
+#pragma optimize ("", off)
 //CRAP
 extern "C" INTERMODULE_EXPORT void TooSmartLinker();
 
@@ -713,6 +714,15 @@ void InitCensorDicts()
 }
 
 string g_devLogin;
+string g_sessionToken;
+string g_playerToken;
+
+string g_sessionName;
+WebLauncherPostRequest::RegisterSessionRequest g_sessionStatus;
+WebLauncherPostRequest::WebLoginResponse g_webLoginResponse;
+int g_playerTeamId;
+int g_playerHeroId;
+int g_playerPartyId;
 
 std::string GetDirectoryFromPath(const std::string& fullPath) {
     std::size_t found = fullPath.find_last_of("/\\");
@@ -765,11 +775,6 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
     std::string fullPath = buffer;
     size_t found = fullPath.find_last_of("\\");
     std::string executableName = fullPath.substr(found + 1);
-
-	if(NumProcessRunning(executableName.c_str()) > 1)
-	{
-		return -1;
-	}
 
   MainVars mainVars;
 
@@ -824,11 +829,13 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
   NDebug::SetProductNameAndVersion( NProfile::GetFullFolderPath(NProfile::FOLDER_PLAYER), PRODUCT_TITLE_SHORT, VERSION_LINE, VERSION_MAJOR, VERSION_MINOR, VERSION_PATCH, VERSION_REVISION );
 #endif //_SHIP_FALSE
 
-  if ( !instancesLimit.Lock( 3 ) )
+#ifdef _SHIPPING
+  if ( !instancesLimit.Lock( 1 ) )
   {
     mainVars.DeInit();
     return 0;
   }
+#endif
 
   string logsPath = GetFullFolderPath( NProfile::FOLDER_LOGS );
   if (!NFile::DoesFolderExist(logsPath))
@@ -1157,8 +1164,7 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
     return false;
   }
 
-#if 1
-//#ifdef _SHIPPING
+#ifdef _SHIPPING
   NGlobal::ExecuteConfig( "input_new.cfg", NProfile::FOLDER_USER, L"input" );
   NGlobal::ExecuteConfig( "smart_chat.cfg", NProfile::FOLDER_GLOBAL );
 #endif
@@ -1181,73 +1187,174 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
     context = new Game::GameContext(socialLaunchData.sessionId.c_str(), NULL, socialLaunchData.mapId.c_str(), socialServer, guildEmblem, false, true);
   }
 
-  {
-	  
+
 
   if(CmdLineLite::Instance().ArgsCount() < 2) {
-      ShowLocalizedErrorMB( L"StartViaLauncher", L"Please start the game via the web-launcher. https://playpw.fun" );
-    return 0xA000;
-    } else {
-		
-  const char* protocolLine = CmdLineLite::Instance().GetStringKey( "protocol", "" );
-	  const char* delimiter = "/";
+    ShowLocalizedErrorMB( L"StartViaLauncher", L"Invalid arguments! Please start the game via the web-launcher. https://playpw.fun" );
+    return 0;
+  } else {
+    const char* protocolLine = CmdLineLite::Instance().GetStringKey( "protocol", "" );
+    const char* delimiter = "/";
 
     char* token = strtok(const_cast<char*>(protocolLine), delimiter);
-	std::vector<std::string> allTokens;
-	allTokens.reserve(4);
+    std::vector<std::string> allTokens;
+    allTokens.reserve(4);
 
     while (token != 0) {
-		allTokens.push_back(token);
-        token = strtok(0, delimiter);
+      allTokens.push_back(token);
+      token = strtok(0, delimiter);
     }
 
-  if(allTokens.size() < 4) {
-    ShowLocalizedErrorMB( L"StartViaLauncher", L"Invalid protocol" );
-    return 0xA001;
-  }
+    if(allTokens.size() < 4) {
+      ShowLocalizedErrorMB( L"StartViaLauncher", L"Invalid protocol" );
+      return 0;
+    }
 
-	//int selectedHeroID = atoi(allTokens[2].c_str());
-	const char* versionStr = allTokens[3].c_str();
+    string protocolMethod = allTokens[1].c_str();
+    const char* protocolToken = allTokens[2].c_str();
+    const char* versionStr = allTokens[3].c_str();
 
-	int versionMajor = VERSION_MAJOR;
-	int versionMinor = VERSION_MINOR;
-	char versionStrBuff[64] = {};
+    int versionMajor = VERSION_MAJOR;
+    int versionMinor = VERSION_MINOR;
+    char versionStrBuff[64] = {};
 
-	sprintf_s(versionStrBuff,"%d.%d",versionMajor, versionMinor);
+    sprintf_s(versionStrBuff,"%d.%d",versionMajor, versionMinor);
 
-	if(strcmp(versionStrBuff, versionStr) != 0)
-  {
-    ShowLocalizedErrorMB( L"Update failed", L"Game update has failed! Try to run from web-launcher" );
-    return 0xA002;
-	}
-	  const char * webToken = allTokens[1].c_str();
-    WebLauncherPostRequest prequest;
-    WebLauncherPostRequest::WebLoginResponse response = prequest.GetNickName(webToken);
+    if(strcmp(versionStrBuff, versionStr) != 0) {
+      ShowLocalizedErrorMB( L"Update failed", L"Game update has failed! Try to run from web-launcher" );
+      return 0;
+    }
+
+    if (protocolMethod == "checkInstall") {
+      WebLauncherPostRequest syncCheckConnectionRequest(SERVER_IP_W, L"/api", SERVER_PORT_INT - 8, 0);
+      if (syncCheckConnectionRequest.CheckConnectionRequest(protocolToken)) {
+        systemLog( NLogg::LEVEL_MESSAGE ).Trace("Check install completed for %s", protocolToken);
+      } else {
+        ShowLocalizedErrorMB( L"Error", L"Sync-server connection failed - not valid response" );
+      }
+      return 0;
+    }
+
+    WebLauncherPostRequest::WebLoginResponse response;
+    if (protocolMethod == "runGame" || protocolMethod == "reconnect") {
+      //WebLauncherPostRequest cprequest(SERVER_IP_W, L"/api", SERVER_PORT_INT - 8, 0);
+      //cprequest.CreateDebugSession();
+      WebLauncherPostRequest rprequest(SERVER_IP_W, L"/api", SERVER_PORT_INT - 8, 0);
+      response = rprequest.GetSessionData(protocolToken);
+    } else {
+      WebLauncherPostRequest prequest;
+      response = prequest.GetNickName(protocolToken);
+    }
+
     if (response.retCode == WebLauncherPostRequest::LoginResponse_FAIL) {
       // Login failed
-      ShowLocalizedErrorMB( L"StartViaLauncher", L"Please start the game via the web-launcher. https://playpw.fun" );
-      return 0xA003;
+      ShowLocalizedErrorMB( L"StartViaLauncher", L"Login response failed! Please start the game via the web-launcher. https://playpw.fun" );
+      return 0;
+    }
+    if (response.retCode == WebLauncherPostRequest::LoginResponse_BLOCK) {
+      // Login failed
+      ShowLocalizedErrorMB( L"StartViaLauncher", L"Account is blocked!" );
+      return 0;
     }
     if (response.retCode == WebLauncherPostRequest::LoginResponse_OFFLINE) {
       // Web is offline
       ShowLocalizedErrorMB( L"WebOffline", L"Web-launcher is offline" );
-      return 0xA004;
+      return 0;
+    }
+    if (response.retCode == WebLauncherPostRequest::LoginResponse_WEB_FAIL) {
+      systemLog( NLogg::LEVEL_MESSAGE ).Trace("Failed connection with reason: %s", response.response.c_str());
+      ShowLocalizedErrorMB( L"Connection failed", L"Connection failed! Please start the game via the web-launcher" );
+      return 0;
     }
 
-    
+
     if (response.retCode == WebLauncherPostRequest::LoginResponse_OK) {
-      // Login success
-      currentLogin = std::string(" ") + response.response;
-      currentLogin[0] = 0x09;
-      g_devLogin = currentLogin.c_str();
+      {
+        // Old connection method
+        if (allTokens.size() < 5) {
+          ShowLocalizedErrorMB( L"Error", L"Not enough protocol parameters" );
+          return 0;
+        }
+        currentLogin = std::string(" ") + response.response;
+        currentLogin[0] = 0x09;
+        g_devLogin = currentLogin.c_str();
+        int selectedHeroID = atoi(allTokens[4].c_str());
+
+        WebLauncherPostRequest syncRegisterRequest(SERVER_IP_W, L"/api", SERVER_PORT_INT - 8, 0);
+
+        string gameName = "";
+        WebLauncherPostRequest::RegisterSessionRequest registerInSessionResponse;
+        if (protocolMethod == "reconnectCustom") {
+          registerInSessionResponse = syncRegisterRequest.ReconnectInSession("testSessionToken", gameName);
+        } else {
+          registerInSessionResponse = syncRegisterRequest.RegisterInSession(response.response.c_str(), selectedHeroID, "testSessionToken", gameName);
+        }
+
+        static const int REGISTER_IN_SESSION_MAX_RETRY_COUNT = 20;
+        int retryCount = 0;
+        while (registerInSessionResponse == WebLauncherPostRequest::RegisterInSessionRequest_Error) {
+          Sleep(1000);
+          registerInSessionResponse = syncRegisterRequest.RegisterInSession(response.response.c_str(), selectedHeroID, "testSessionToken", gameName);
+          retryCount++;
+          if (retryCount >= REGISTER_IN_SESSION_MAX_RETRY_COUNT) {
+            ShowLocalizedErrorMB( L"Error", L"Sync-server request failed - unable to join" );
+            return 0;
+          }
+        }
+
+        retryCount = 0;
+        while (registerInSessionResponse == WebLauncherPostRequest::RegisterInSessionRequest_Wait) {
+          Sleep(1000);
+          registerInSessionResponse = syncRegisterRequest.RegisterInSession(response.response.c_str(), selectedHeroID, "testSessionToken", gameName);
+          retryCount++;
+          if (retryCount >= REGISTER_IN_SESSION_MAX_RETRY_COUNT) {
+            ShowLocalizedErrorMB( L"Error", L"Sync-server connection failed - max retry count reached" );
+            return 0;
+          }
+        }
+
+
+        const char * mapId = CmdLineLite::Instance().GetStringKey( "mapId", "" );
+
+        context = new Game::GameContext(sessLogin, g_devLogin.c_str(), mapId, socialServer, guildEmblem, isSpectator, false );
+        context->Start();
+        g_sessionStatus = registerInSessionResponse;
+        g_sessionName = gameName.c_str();
+      }
     }
 
-    const char * mapId = CmdLineLite::Instance().GetStringKey( "mapId", "" );
-    context = new Game::GameContext( sessLogin, g_devLogin.c_str(), mapId, socialServer, guildEmblem, isSpectator, false );
+    if (response.retCode == WebLauncherPostRequest::LoginResponse_WEB_CREATE ||
+      response.retCode == WebLauncherPostRequest::LoginResponse_WEB_CONNECT ||
+      response.retCode == WebLauncherPostRequest::LoginResponse_WEB_RECONNECT) {
+        // Login success
+        currentLogin = std::string(" ") + response.response;
+        currentLogin[0] = 0x09;
+        g_devLogin = currentLogin.c_str();
+
+        static const int REGISTER_IN_SESSION_MAX_RETRY_COUNT = 20;
+        for (int rrc = 0; rrc < REGISTER_IN_SESSION_MAX_RETRY_COUNT; ++rrc) {
+          if (!g_sessionName.empty() || response.retCode == WebLauncherPostRequest::LoginResponse_WEB_CREATE) {
+            break;
+          }
+          if (rrc >= REGISTER_IN_SESSION_MAX_RETRY_COUNT - 1) {
+            ShowLocalizedErrorMB( L"Error", L"Sync-server connection failed - max retry count reached" );
+            return 0;
+          }
+          Sleep(1000);
+          WebLauncherPostRequest waitSessionNameRequest(SERVER_IP_W, L"/api", SERVER_PORT_INT - 8, 0);
+          waitSessionNameRequest.GetGameNameForConnection(protocolToken);
+        }
+
+        const char * mapId = CmdLineLite::Instance().GetStringKey( "mapId", "" );
+
+        context = new Game::GameContext(sessLogin, g_devLogin.c_str(), mapId, socialServer, guildEmblem, isSpectator, false );
+        context->Start();
+    } else {
+      ShowLocalizedErrorMB( L"Error", L"Unknown connection status" );
+      return 0;
     }
   }
 
-  context->Start();
   mainVars.initContext = true;
 
   //This config is mainly needed to enable custom lobby console commands
@@ -1594,8 +1701,7 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
 
 	if(!isReplay)
   {
-#if 1
-//#ifdef _SHIPPING
+#ifdef _SHIPPING
 		Input::SaveInputConfig( NProfile::GetFullFilePath( "input_new.cfg", NProfile::FOLDER_USER ), L"input" );
 #endif
     NGlobal::SaveConfig( NProfile::GetFullFilePath( "user.cfg", NProfile::FOLDER_USER ), STORAGE_USER );

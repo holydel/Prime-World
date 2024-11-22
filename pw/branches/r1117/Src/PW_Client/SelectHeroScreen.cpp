@@ -6,8 +6,13 @@
 #include "SelectHeroScreenLogic.h"
 #include "Client/MainTimer.h"
 #include "System/InlineProfiler.h"
+#include "../PF_GameLogic/WebLauncher.h"
+#include "../PW_Game/server_ip.h"
 
 extern string g_devLogin;
+extern WebLauncherPostRequest::RegisterSessionRequest g_sessionStatus;
+extern string g_sessionToken;
+extern int g_playersCount;
 
 namespace NGameX
 {  
@@ -50,25 +55,24 @@ void SelectHeroScreen::CommonStep( bool bAppActive )
 
   float dt = NMainLoop::GetTimeDelta();
 
-  const float kickoutTime = 30.0f;
-  // Temporary solution
-  if (!logic->IsPlayerReady() && debugPlayerIds.size() == 12) {
+  const float timeToReady = 60.0f;
+
+  // 4. SetReady with all players connected or 
+  if (g_sessionStatus == WebLauncherPostRequest::RegisterInSessionRequest_HeroSelected || g_sessionStatus == WebLauncherPostRequest::RegisterInSessionRequest_WebHeroSelected) {
     lobbyTimeout += dt;
-    if (lobbyTimeout > kickoutTime) {
-        canBeKicked = true;
-        
-        CloseThisScreen();
-        
-        if ( StrongMT<Game::IGameContextUiInterface> locked = GameCtx().Lock() ) {
-          //locked->SetReady(lobby::EGameMemberReadiness::NotReady); // trigger update
-          locked->ConnectToCluster( g_devLogin, "" );
+    if (!logic->IsPlayerReady() && (debugPlayerIds.size() == g_playersCount + 2 || lobbyTimeout > timeToReady)) {
+      g_sessionStatus = WebLauncherPostRequest::RegisterInSessionRequest_InReadyState;
+      logic->PlayerReady();
+      if ( StrongMT<Game::IGameContextUiInterface> locked = GameCtx().Lock() ) {
+        if (locked->GetLobbyStatus() == lobby::EClientStatus::InCustomLobby) {
+          locked->SetReady(lobby::EGameMemberReadiness::ReadyForAnything);
         }
-        
-        return;
+      }
     }
   } else {
-    lobbyTimeout = 0.f;
+    lobbyTimeout = 0;
   }
+
 
   bool update = false;
   for( map<int, float>::iterator it = debugHiliteTimes.begin(), next = it; it != debugHiliteTimes.end(); it = next )
@@ -90,7 +94,7 @@ void SelectHeroScreen::CommonStep( bool bAppActive )
     logic->DebugDisplayPlayers( debugPlayerStatus );
   }
 
-  logic->UpdateTimer((int)(kickoutTime - lobbyTimeout));
+  logic->UpdateTimer((int)(debugPlayerIds.size() - 2));
 }
 
 

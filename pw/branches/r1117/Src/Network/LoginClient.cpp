@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "LoginClient.h"
 #include "Network/Network.h"
+#include "../PW_Game/server_ip.h"
 
 
 namespace Login
@@ -84,6 +85,19 @@ ELoginResult::Enum LoginClient::Step()
   return ELoginResult::NoResult;
 }
 
+static Network::NetAddress ReplaceIpWithServerIp(Network::NetAddress& frontendAddress)
+{
+  const char* port = std::find(frontendAddress.begin(),frontendAddress.end(), ':');
+  int portSize = strlen(port);
+
+  const char whiteIp[] = SERVER_IP;
+  char newAddress[64];
+
+  memcpy((void*)newAddress, whiteIp, sizeof(whiteIp));
+  memcpy((void*)(newAddress + sizeof(whiteIp) - 1), (void*)port, portSize + 1);
+
+  return newAddress;
+}
 
 
 void LoginClient::GetConnectionData( Network::NetAddress* baseRelayAddress, Network::NetAddress* secondaryRelayAddress, 
@@ -91,9 +105,9 @@ void LoginClient::GetConnectionData( Network::NetAddress* baseRelayAddress, Netw
                                     bool* partialReconnectSupport, unsigned int * partialReconnectRetries, unsigned int * partialReconnectRetryTimeout )
 {
   if (baseRelayAddress)
-    *baseRelayAddress = resultMsg.relayAddress;
+    *baseRelayAddress = ReplaceIpWithServerIp(resultMsg.relayAddress);
   if (secondaryRelayAddress)
-    *secondaryRelayAddress = resultMsg.secondaryRelayAddress;
+    *secondaryRelayAddress = ReplaceIpWithServerIp(resultMsg.secondaryRelayAddress);
   if (userId)
     *userId = resultMsg.userId;
   if(sessionId)

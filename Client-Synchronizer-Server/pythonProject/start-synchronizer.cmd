@@ -1,0 +1,1 @@
+start python sync_server.py

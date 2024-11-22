@@ -246,8 +246,7 @@ void AdventureScreenLogic::UpdatePreferences()
     if(!m_owner->IsInReplayMode())
     {
       NGlobal::SaveConfig( NProfile::GetFullFilePath( "user.cfg", NProfile::FOLDER_USER ), STORAGE_USER );
-#if 1
-//#ifdef _SHIPPING
+#ifdef _SHIPPING
       Input::SaveInputConfig( NProfile::GetFullFilePath( "input_new.cfg", NProfile::FOLDER_USER ), L"input" );
 #endif
     }
@@ -261,8 +260,7 @@ void AdventurepreferencesProcessor::Apply()
   if(!NGameX::AdventureScreen::Instance()->IsInReplayMode())
   {
     NGlobal::SaveConfig( NProfile::GetFullFilePath( "user.cfg", NProfile::FOLDER_USER ), STORAGE_USER );
-#if 1
-//#ifdef _SHIPPING
+#ifdef _SHIPPING
     Input::SaveInputConfig( NProfile::GetFullFilePath( "input_new.cfg", NProfile::FOLDER_USER ), L"input" );
 #endif
   }
@@ -278,8 +276,7 @@ void AdventurepreferencesProcessor::Cancel()
   {
     NGlobal::SaveConfig( NProfile::GetFullFilePath( "user.cfg", NProfile::FOLDER_USER ), STORAGE_USER );
 
-#if 1
-//#ifdef _SHIPPING
+#ifdef _SHIPPING
     Input::SaveInputConfig( NProfile::GetFullFilePath( "input_new.cfg", NProfile::FOLDER_USER ), L"input" );
 #endif
   }
@@ -314,8 +311,7 @@ void AdventurepreferencesProcessor::ApplyShortcuts()
       }
     }
 
-#if 1
-//#ifdef _SHIPPING
+#ifdef _SHIPPING
     Input::SaveInputConfig( NProfile::GetFullFilePath( "input_new.cfg", NProfile::FOLDER_USER ), L"input" );
 #endif
   }
@@ -686,7 +682,7 @@ void AdventureScreenLogic::UpdateErrorMessageTextByVariant( NDb::EErrorMessageTy
 
 void AdventureScreenLogic::UpdateConnectionAndSpeedWindows()
 {
-  bool isLocalGame = NGlobal::GetVar( "local_game" ).Get<bool>() ;
+  bool isLocalGame = false; //NGlobal::GetVar( "local_game" ).Get<bool>() ;
 
   if (noConnectWnd)
   {

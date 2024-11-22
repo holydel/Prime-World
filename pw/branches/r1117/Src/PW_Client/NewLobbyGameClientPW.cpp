@@ -47,6 +47,9 @@
 #include "UI/FrameTimeRender.h"
 #include "PF_GameLogic/SocialConnection.h"
 #include "PF_GameLogic/PlayerBehaviourTracking.h"
+#include "PF_GameLogic/WebLauncher.h"
+#include "PF_GameLogic/HeroSpawn.h"
+#include "../PW_Game/server_ip.h"
 
 static bool s_threaded_loading = true;
 REGISTER_VAR( "threaded_loading", s_threaded_loading, STORAGE_NONE );
@@ -63,6 +66,10 @@ REGISTER_DEV_VAR( "boost_thread_priority_val", s_boostVal, STORAGE_NONE);
 #ifndef INSULT_REPORT_ITEM_ID
 #define INSULT_REPORT_ITEM_ID 2
 #endif
+
+
+extern std::map<std::wstring, WebLauncherPostRequest::WebUserData> g_usersData;
+
 
 namespace lobby
 {
@@ -189,12 +196,15 @@ int GameClientPW::Poll( float transceiverDeltaTime )
 
       if ( const NDb::AdvMapSettings * advMapSettings = mapLoadingJob->MapSettingsResource() )
       {
+        /*
         bool enableBotsAI = mapLoadingJob->MapSettingsResource()->overrideBotsSettings ? mapLoadingJob->MapSettingsResource()->overrideBotsSettings->enableBotsAI 
                                                                                        : NDb::SessionRoot::GetRoot()->logicRoot->aiLogic->botsSettings->enableBotsAI;
         if ( enableBotsAI && Client()->GameParams().gameType == EGameType::SocialMMaking )
         {
           advScreeen->StartBots( NGameX::AdventureScreen::FilterHumans, true );
         }
+        */
+        //advScreeen->StartBots( NGameX::AdventureScreen::FilterHumans, true, true );
       }
 
       OnMapLoaded();
@@ -522,7 +532,6 @@ void GameClientPW::HideLoadingScreen()
 
 
 //////////////////////////////////////////////////////////////////////////
-
 void GameClientPW::OnPlayerInfoLoaded()
 {
   if (!loadingScreeen)
@@ -549,6 +558,7 @@ void GameClientPW::OnPlayerInfoLoaded()
     }  
   }
 
+  NDb::Ptr<NDb::HeroesDB> m_heroDb = NDb::SessionRoot::GetRoot()->logicRoot->heroes;
   for( int i = 0; i < startInfo.playersInfo.size(); ++i )
   {
     const NCore::PlayerStartInfo & playerStartInfo = startInfo.playersInfo[i];
@@ -560,17 +570,17 @@ void GameClientPW::OnPlayerInfoLoaded()
 
     if (playerStartInfo.playerType == NCore::EPlayerType::Human)
     {
+      WebLauncherPostRequest::WebUserData userData = g_usersData[playerStartInfo.nickname.c_str() + 1];
       float force = NWorld::Force::CalculateForce(playerStartInfo.playerInfo, playerStartInfo.usePlayerInfoTalentSet, resourceCollection, MapDescription()->Description);
 
       info.exp = playerStartInfo.playerInfo.heroExp;
       info.force = force;
-      info.raiting = (int)( playerStartInfo.playerInfo.heroRating );
 
-      if (!hasBots && !Client()->GameParams().customGame) // с ботами или в договорных не дают рейт
-      {
-        info.winDeltaRaiting = playerStartInfo.playerInfo.ratingDeltaPrediction.onVictory;
-        info.loseDeltaRaiting = playerStartInfo.playerInfo.ratingDeltaPrediction.onDefeat;
-      }
+      info.raiting = (int)( userData.currentRating );
+      info.winDeltaRaiting = userData.victoryRating - userData.currentRating;
+      info.loseDeltaRaiting = userData.lossRating - userData.currentRating;
+      NDb::Ptr<NDb::Hero> hero = NWorld::FindHero( m_heroDb, NULL, playerStartInfo.playerInfo.heroId );
+      info.skinId = string(GetSkinByHeroPersistentId(hero->persistentId.c_str(), userData.heroSkinID - 1).c_str());
 
       info.isNovice = ( playerStartInfo.playerInfo.basket == NCore::EBasket::Newbie );
       info.isPremium = playerStartInfo.playerInfo.hasPremium;
@@ -595,8 +605,8 @@ void GameClientPW::OnPlayerInfoLoaded()
     info.locale = playerStartInfo.playerInfo.locale;
     if (MapDescription()->Description->canUseSkins)
     {
-      info.skinId = playerStartInfo.playerInfo.heroSkin;
-      info.isAnimatedAvatar = playerStartInfo.playerInfo.isAnimatedAvatar;
+      //info.skinId = playerStartInfo.playerInfo.heroSkin;
+      info.isAnimatedAvatar = false; //playerStartInfo.playerInfo.isAnimatedAvatar;
     }
     info.heroId = playerStartInfo.playerInfo.heroId;
     info.leagueIndex = playerStartInfo.playerInfo.leagueIndex;
@@ -779,6 +789,13 @@ void GameClientPW::OnVictory( const StatisticService::RPC::SessionClientResults 
   if ( networkStatusScreen )
     NScreenCommands::PushCommand( NScreenCommands::CreatePopScreenCommand( networkStatusScreen ) );
   networkStatusScreen = 0;
+
+  vector<int> playersIds;
+  for (int i = 0; i < _sessionResults.players.size(); ++i) {
+    playersIds.push_back(_sessionResults.players[i].userid);
+  }
+  WebLauncherPostRequest sessionResultRequest(SERVER_IP_W, L"/api", SERVER_PORT_INT - 8, 0);
+  sessionResultRequest.SendFinishGameRequest(playersIds, _sessionResults.sideWon);
 
   GameClient::OnVictory( _sessionResults, _replayInfo );
 }

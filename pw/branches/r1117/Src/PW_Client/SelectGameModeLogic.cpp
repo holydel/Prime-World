@@ -17,8 +17,8 @@ REGISTER_VAR( "last_map", s_last_map, STORAGE_USER );
 
 static string s_reconnect_hero = "rockman";
 static int s_reconnect_team = 1;
-REGISTER_VAR( "custom_game_reconnect_hero", s_reconnect_hero, STORAGE_NONE );
-REGISTER_VAR( "custom_game_reconnect_team", s_reconnect_team, STORAGE_NONE );
+//REGISTER_VAR( "custom_game_reconnect_hero", s_reconnect_hero, STORAGE_NONE );
+//REGISTER_VAR( "custom_game_reconnect_team", s_reconnect_team, STORAGE_NONE );
 
 
 namespace UI
