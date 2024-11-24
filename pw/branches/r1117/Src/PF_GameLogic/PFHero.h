@@ -203,6 +203,8 @@ public:
   PFBetweenSessionsData*      GetProfile()       { return pProfile; }
 
   virtual bool IsRecommended( int stat ) const;
+  virtual void SetRecommendedStats(int* profileStats);
+  nstl::vector<NDb::EStat> profileStats;
 
   void                    AttachToPlayer(CPtr<PFPlayer> const& pNewPlayer);
   void                    ClientAttachToPlayer();

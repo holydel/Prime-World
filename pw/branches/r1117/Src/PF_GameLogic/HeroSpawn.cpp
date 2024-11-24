@@ -516,8 +516,9 @@ namespace NWorld
 
 		//get tallent set by NickName and HeroID
 
+    WebLauncherPostRequest::WebUserData userData;
+    userData.userId = -1;
 		if (players[it->playerId].playerType == NCore::EPlayerType::Human) {
-      WebLauncherPostRequest::WebUserData userData;
 
       if (!players[it->playerId].nickname.empty()) {
         std::wstring nick = players[it->playerId].nickname.c_str() + 1;
@@ -629,7 +630,10 @@ namespace NWorld
 
       }
 
-        CreateHero( pWorld, heroSpawnDesc );
+        PFBaseHero* spawnedHero = CreateHero( pWorld, heroSpawnDesc );
+        if (userData.userId != -1) {
+          spawnedHero->SetRecommendedStats(userData.profileStats);
+        }
         DebugTrace( "SpawnHeroes:CreateHero:%d: %2.3f", heroSpawnDesc.playerId, NHPTimer::GetTimePassedAndUpdateTime( time ) );
 
         if ( players.size() )

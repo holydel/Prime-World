@@ -2182,6 +2182,12 @@ WebLauncherPostRequest::WebLoginResponse WebLauncherPostRequest::GetSessionData(
       }
     }
 
+    ZeroMemory(resData.profileStats, sizeof(resData.profileStats));
+    Json::Value profileStats = curPlayer.get("profileStats", Json::Value());
+    for (int i = 0; i < 9; ++i) {
+      resData.profileStats[i] = profileStats[i].asInt();
+    }
+
     g_usersData[wideCharString] = resData;
 
     g_playersCount++;
@@ -2199,7 +2205,7 @@ std::string WebLauncherPostRequest::CreateDebugSession()
   ZeroMemory(jsonBuff,4096);
 
   sprintf(jsonBuff,"{\"method\":\"registerSession\",\"key\":\"%s\",\"body\":{\"sessionToken\":\"%s\",\"players\":%s}}", API_KEY, SESSION_TOKEN,
-    "[{\"id\":20,\"nickname\":\"Rekongstor\",\"muteChat\":false,\"hero\":29,\"team\":1,\"party\":0,\"skin\":1,\"rating\":{\"current\":2001.01234567,\"victory\":2021.987654321,\"loss\":1995.456789123123456},\"build\":[689,634,413,576,415,377,687,632,370,510,426,723,686,631,605,508,677,676,-266,420,607,577,429,675,-263,-264,606,506,431,-265,-261,-262,406,507,564,-29],\"bar\":[-31,-32,30,19,8,0,0,0,0,0]}]"
+    "[{\"id\":131,\"nickname\":\"Rekongstor\",\"muteChat\":false,\"hero\":29,\"team\":1,\"party\":0,\"skin\":1,\"rating\":{\"current\":2001.01234567,\"victory\":2021.987654321,\"loss\":1995.456789123123456},\"build\":[689,634,413,576,415,377,687,632,370,510,426,723,686,631,605,508,677,676,-266,420,607,577,429,675,-263,-264,606,506,431,-265,-261,-262,406,507,609,-29],\"bar\":[-31,-32,30,19,8,0,0,0,0,0],\"profileStats\":[0,0,0,1,0,1,0,0,0]}]"
     );
   OutputDebugStringA(jsonBuff);
   const std::string jsonData = jsonBuff;

@@ -1505,10 +1505,50 @@ void PFBaseHero::OnMountSpecial( CPtr<NWorld::PFBaseMovingUnit> const& pMountUni
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 bool PFBaseHero::IsRecommended( int stat ) const
 {
-  const nstl::vector<NDb::EStat>& recommendedStats = pDbHero->recommendedStats;
+  const nstl::vector<NDb::EStat>& recommendedStats = profileStats.empty() ? pDbHero->recommendedStats : profileStats;
   return (recommendedStats.find(static_cast<NDb::EStat>(stat)) != recommendedStats.end());
 }
 
+
+void PFBaseHero::SetRecommendedStats(int* _profileStats)
+{
+  profileStats.clear();
+  for (int i = 0; i < 9; ++i) {
+    if (_profileStats[i]) {
+      switch (i) {
+        case 0:
+          profileStats.push_back(NDb::STAT_LIFE);
+          break;
+        case 1:
+          profileStats.push_back(NDb::STAT_ENERGY);
+          break;
+        case 2:
+          profileStats.push_back(NDb::STAT_MOVESPEED);
+          break;
+        case 3:
+          profileStats.push_back(NDb::STAT_STRENGTH);
+          break;
+        case 4:
+          profileStats.push_back(NDb::STAT_INTELLECT);
+          break;
+        case 5:
+          profileStats.push_back(NDb::STAT_ATTACKSPEED);
+          break;
+        case 6: 
+          profileStats.push_back(NDb::STAT_DEXTERITY);
+          break;
+        case 7:
+          profileStats.push_back(NDb::STAT_STAMINA);
+          break;
+        case 8:
+          profileStats.push_back(NDb::STAT_WILL);
+          break;
+        default:
+          break;
+      }
+    }
+  }
+}
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void PFBaseHero::OnUnmountSpecial()
