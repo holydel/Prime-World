@@ -44,7 +44,7 @@ def killOldSessions(sessionDict):
     for oldSessionToken in list(sessionDict.keys()):
         oldSession = sessionDict[oldSessionToken]
         targetTimeDifferenceToKill = timeToKillPublicSession
-        if oldSessionToken == 'ac91a8c6dfc5f86d634b783dd3bb819b':
+        if oldSessionToken == 'Tester00Tester00Tester00Tester00':
             targetTimeDifferenceToKill = timeToKillTestSession
         if (dt.now() - oldSession['timestamp']).total_seconds() > targetTimeDifferenceToKill:
             del sessionDict[oldSessionToken] # remove old sessions
