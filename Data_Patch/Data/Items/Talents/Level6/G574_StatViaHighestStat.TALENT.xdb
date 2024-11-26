@@ -202,9 +202,9 @@
 				<caption>Strength</caption>
 				<customApplyType>Maximize</customApplyType>
 				<enabled>
-					<compiledString>FQAAAAAAAAAAVYvsg+wMi0UIixCLTQiLgrgAAAD/0ItNCIsRi00Ii4LMAAAA3V34/9BR2Rwki00IixGLTQiLgsgAAAD/0FHZHCToQwAAAIPEBNkcJItNCIsRi00Ii4K8AAAA/9BR2Rwk6CQAAACDxAjcXfjf4PbEQXoJx0X0AQAAAOsHx0X0AAAAAIpF9IvlXcNVi+xR2UUI2UUM3tnf4PbEBXoI2UUI2V386wbZRQzZXfzZRfyL5V3D</compiledString>
+					<compiledString>FQAAAAAAAAAAVYvsg+xIi0UIixCLTQiLgrgAAAD/0GoPi00IixGLTQiLgiwBAADdXfj/0A+2yPfZG8mB4ecDAACJTfTbRfTcRfiLVQiLAotNCIuQzAAAAN1d7P/SahSLRQiLEItNCIuCLAEAAN1d5P/QD7bI99kbyYHh5wMAAIlN4NtF4NxF5Nld3NlF3FHZHCSLVQiLAotNCIuQyAAAAP/SahOLRQiLEItNCIuCLAEAAN1d1P/QD7bI99kbyYHh5wMAAIlN0NtF0NxF1NldzNlFzFHZHCTodAAAAIPEBNkcJItVCIsCi00Ii5C8AAAA/9JqEItFCIsQi00Ii4IsAQAA3V3E/9APtsj32RvJgeHnAwAAiU3A20XA3EXE2V282UW8UdkcJOgkAAAAg8QI3F3s3+D2xEF6CcdFuAEAAADrB8dFuAAAAACKRbiL5V3DVYvsUdlFCNlFDN7Z3+D2xAV6CNlFCNld/OsG2UUM2V382UX8i+Vdww==</compiledString>
 					<returnType>bool</returnType>
-					<sString>sBaseStrength &gt;= max(sBaseIntellect, max(sBaseStamina, sBaseWill))</sString>
+					<sString>sBaseStrength + (pFirst-&gt;IsRecommended(15) ? 999 : 0) &gt;= max(sBaseIntellect + (pFirst-&gt;IsRecommended(16) ? 999 : 0), max(sBaseStamina + (pFirst-&gt;IsRecommended(19) ? 999 : 0), sBaseWill + (pFirst-&gt;IsRecommended(20) ? 999 : 0)))</sString>
 				</enabled>
 				<formulaName></formulaName>
 				<LoggingEvent>-1</LoggingEvent>
@@ -232,9 +232,9 @@
 				<caption>Intellect</caption>
 				<customApplyType>Maximize</customApplyType>
 				<enabled>
-					<compiledString>FQAAAAAAAAAAVYvsg+wUi0UIixCLTQiLgrwAAAD/0ItNCIsRi00Ii4K4AAAA3V34/9DcXfjf4PbEBXpWi00IixGLTQiLgrwAAAD/0ItNCIsRi00Ii4LMAAAA3V3w/9BR2Rwki00IixGLTQiLgsgAAAD/0FHZHCToJAAAAIPECNxd8N/g9sRBegnHRewBAAAA6wfHRewAAAAAikXsi+Vdw1WL7FHZRQjZRQze2d/g9sQFegjZRQjZXfzrBtlFDNld/NlF/IvlXcM=</compiledString>
+					<compiledString>FQAAAAAAAAAAVYvsg+xYi0UIixCLTQiLgrwAAAD/0GoQi00IixGLTQiLgiwBAADdXfj/0A+2yPfZG8mB4ecDAACJTfTbRfTcRfiLVQiLAotNCIuQuAAAAN1d7P/Sag+LRQiLEItNCIuCLAEAAN1d5P/QD7bI99kbyYHh5wMAAIlN4NtF4NxF5Nxd7N/g9sQFD4rjAAAAi1UIiwKLTQiLkLwAAAD/0moQi0UIixCLTQiLgiwBAADdXdj/0A+2yPfZG8mB4ecDAACJTdTbRdTcRdiLVQiLAotNCIuQzAAAAN1dzP/SahSLRQiLEItNCIuCLAEAAN1dxP/QD7bI99kbyYHh5wMAAIlNwNtFwNxFxNldvNlFvFHZHCSLVQiLAotNCIuQyAAAAP/SahOLRQiLEItNCIuCLAEAAN1dtP/QD7bI99kbyYHh5wMAAIlNsNtFsNxFtNldrNlFrFHZHCToJAAAAIPECNxdzN/g9sRBegnHRagBAAAA6wfHRagAAAAAikWoi+Vdw1WL7FHZRQjZRQze2d/g9sQFegjZRQjZXfzrBtlFDNld/NlF/IvlXcM=</compiledString>
 					<returnType>bool</returnType>
-					<sString>sBaseIntellect &gt; sBaseStrength &amp;&amp; sBaseIntellect &gt;=  max(sBaseStamina, sBaseWill)</sString>
+					<sString>sBaseIntellect + (pFirst-&gt;IsRecommended(16) ? 999 : 0) &gt; sBaseStrength + (pFirst-&gt;IsRecommended(15) ? 999 : 0) &amp;&amp; sBaseIntellect + (pFirst-&gt;IsRecommended(16) ? 999 : 0) &gt;=  max(sBaseStamina + (pFirst-&gt;IsRecommended(19) ? 999 : 0), sBaseWill + (pFirst-&gt;IsRecommended(20) ? 999 : 0))</sString>
 				</enabled>
 				<formulaName></formulaName>
 				<LoggingEvent>-1</LoggingEvent>
@@ -262,9 +262,9 @@
 				<caption>Stamina</caption>
 				<customApplyType>Maximize</customApplyType>
 				<enabled>
-					<compiledString>FQAAAAAAAAAAVYvsg+wUi0UIixCLTQiLgsgAAAD/0ItNCIsRi00Ii4K8AAAA3V34/9BR2Rwki00IixGLTQiLgrgAAAD/0FHZHCToUQAAAIPECNxd+N/g9sQFejaLTQiLEYtNCIuCyAAAAP/Qi00IixGLTQiLgswAAADdXfD/0Nxd8N/g9sRBegnHRewBAAAA6wfHRewAAAAAikXsi+Vdw1WL7FHZRQjZRQze2d/g9sQFegjZRQjZXfzrBtlFDNld/NlF/IvlXcM=</compiledString>
+					<compiledString>FQAAAAAAAAAAVYvsg+xYi0UIixCLTQiLgsgAAAD/0GoTi00IixGLTQiLgiwBAADdXfj/0A+2yPfZG8mB4ecDAACJTfTbRfTcRfiLVQiLAotNCIuQvAAAAN1d7P/SahCLRQiLEItNCIuCLAEAAN1d5P/QD7bI99kbyYHh5wMAAIlN4NtF4NxF5Nld3NlF3FHZHCSLVQiLAotNCIuQuAAAAP/Sag+LRQiLEItNCIuCLAEAAN1d1P/QD7bI99kbyYHh5wMAAIlN0NtF0NxF1NldzNlFzFHZHCToqwAAAIPECNxd7N/g9sQFD4qMAAAAi1UIiwKLTQiLkMgAAAD/0moTi0UIixCLTQiLgiwBAADdXcT/0A+2yPfZG8mB4ecDAACJTcDbRcDcRcSLVQiLAotNCIuQzAAAAN1duP/SahSLRQiLEItNCIuCLAEAAN1dsP/QD7bI99kbyYHh5wMAAIlNrNtFrNxFsNxduN/g9sRBegnHRagBAAAA6wfHRagAAAAAikWoi+Vdw1WL7FHZRQjZRQze2d/g9sQFegjZRQjZXfzrBtlFDNld/NlF/IvlXcM=</compiledString>
 					<returnType>bool</returnType>
-					<sString>sBaseStamina &gt; max(sBaseStrength, sBaseIntellect) &amp;&amp; sBaseStamina &gt;= sBaseWill</sString>
+					<sString>sBaseStamina + (pFirst-&gt;IsRecommended(19) ? 999 : 0) &gt; max(sBaseStrength + (pFirst-&gt;IsRecommended(15) ? 999 : 0), sBaseIntellect + (pFirst-&gt;IsRecommended(16) ? 999 : 0)) &amp;&amp; sBaseStamina + (pFirst-&gt;IsRecommended(19) ? 999 : 0) &gt;= sBaseWill + (pFirst-&gt;IsRecommended(20) ? 999 : 0)</sString>
 				</enabled>
 				<formulaName></formulaName>
 				<LoggingEvent>-1</LoggingEvent>
@@ -292,9 +292,9 @@
 				<caption>Will</caption>
 				<customApplyType>Maximize</customApplyType>
 				<enabled>
-					<compiledString>FQAAAAAAAAAAVYvsg+wMi0UIixCLTQiLgswAAAD/0ItNCIsRi00Ii4LIAAAA3V34/9BR2Rwki00IixGLTQiLgrwAAAD/0FHZHCSLTQiLEYtNCIuCuAAAAP/QUdkcJOgvAAAAg8QE2Rwk6CQAAACDxAjcXfjf4PbEQXoJx0X0AQAAAOsHx0X0AAAAAIpF9IvlXcNVi+xR2UUI2UUM3tnf4PbEBXoI2UUI2V386wbZRQzZXfzZRfyL5V3D</compiledString>
+					<compiledString>FQAAAAAAAAAAVYvsg+xIi0UIixCLTQiLgswAAAD/0GoUi00IixGLTQiLgiwBAADdXfj/0A+2yPfZG8mB4ecDAACJTfTbRfTcRfiLVQiLAotNCIuQyAAAAN1d7P/SahOLRQiLEItNCIuCLAEAAN1d5P/QD7bI99kbyYHh5wMAAIlN4NtF4NxF5Nld3NlF3FHZHCSLVQiLAotNCIuQvAAAAP/SahCLRQiLEItNCIuCLAEAAN1d1P/QD7bI99kbyYHh5wMAAIlN0NtF0NxF1NldzNlFzFHZHCSLVQiLAotNCIuQuAAAAP/Sag+LRQiLEItNCIuCLAEAAN1dxP/QD7bI99kbyYHh5wMAAIlNwNtFwNxFxNldvNlFvFHZHCToLwAAAIPEBNkcJOgkAAAAg8QI3F3s3+D2xEF6CcdFuAEAAADrB8dFuAAAAACKRbiL5V3DVYvsUdlFCNlFDN7Z3+D2xAV6CNlFCNld/OsG2UUM2V382UX8i+Vdww==</compiledString>
 					<returnType>bool</returnType>
-					<sString>sBaseWill &gt;= max(max(sBaseStrength, sBaseIntellect), sBaseStamina)</sString>
+					<sString>sBaseWill + (pFirst-&gt;IsRecommended(20) ? 999 : 0) &gt;= max(max(sBaseStrength + (pFirst-&gt;IsRecommended(15) ? 999 : 0), sBaseIntellect + (pFirst-&gt;IsRecommended(16) ? 999 : 0)), sBaseStamina + (pFirst-&gt;IsRecommended(19) ? 999 : 0))</sString>
 				</enabled>
 				<formulaName></formulaName>
 				<LoggingEvent>-1</LoggingEvent>
