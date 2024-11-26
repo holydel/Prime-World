@@ -13,6 +13,8 @@
 // IMPORT: NWorld::FindHero
 #include "HeroSpawn.h"
 
+extern bool g_playerPwcChatMute;
+
 namespace
 {
   static bool g_chatVisible = true;
@@ -337,7 +339,7 @@ void ChatUiController::OnFSCommand( UI::FlashContainer2* _wnd, const char* liste
       if (message.empty())
         return;
 
-      if (isMuted || g_chatMuted)
+      if (isMuted || g_chatMuted || g_playerPwcChatMute)
       {
         DispatchMuteEvent(evAdminMuted);
         return;

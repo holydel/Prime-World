@@ -17,6 +17,8 @@ extern int g_playerTeamId;
 extern int g_playerHeroId;
 extern int g_playerPartyId;
 
+bool g_playerPwcChatMute = false;
+
 static std::map<std::wstring, int> s_userNicknameToUserIdMap;
 
 std::map<std::wstring, WebLauncherPostRequest::WebUserData> g_usersData;
@@ -2098,6 +2100,11 @@ WebLauncherPostRequest::WebLoginResponse WebLauncherPostRequest::GetSessionData(
   g_playerTeamId = team.asInt() - 1;
   g_playerPartyId = party.asInt();
 
+  Json::Value muteChat = playerInfo.get("muteChat", Json::Value(false));
+  if (muteChat.asBool()) {
+    g_playerPwcChatMute = true;
+  }
+
   if (method.asString() == "create") {
     res.retCode = LoginResponse_WEB_CREATE;
     g_sessionStatus = RegisterInSessionRequest_WebCreate;
@@ -2205,7 +2212,7 @@ std::string WebLauncherPostRequest::CreateDebugSession()
   ZeroMemory(jsonBuff,4096);
 
   sprintf(jsonBuff,"{\"method\":\"registerSession\",\"key\":\"%s\",\"body\":{\"sessionToken\":\"%s\",\"players\":%s}}", API_KEY, SESSION_TOKEN,
-    "[{\"id\":131,\"nickname\":\"Rekongstor\",\"muteChat\":false,\"hero\":29,\"team\":1,\"party\":0,\"skin\":1,\"rating\":{\"current\":2001.01234567,\"victory\":2021.987654321,\"loss\":1995.456789123123456},\"build\":[689,634,413,576,415,377,687,632,370,510,426,723,686,631,605,508,677,676,-266,420,607,577,429,675,-263,-264,606,506,431,-265,-261,-262,406,507,609,-29],\"bar\":[-31,-32,30,19,8,0,0,0,0,0],\"profileStats\":[0,0,0,1,0,1,0,0,0]}]"
+    "[{\"id\":131,\"nickname\":\"Rekongstor\",\"muteChat\":true,\"hero\":29,\"team\":1,\"party\":0,\"skin\":1,\"rating\":{\"current\":2001.01234567,\"victory\":2021.987654321,\"loss\":1995.456789123123456},\"build\":[689,634,413,576,415,377,687,632,370,510,426,723,686,631,605,508,677,676,-266,420,607,577,429,675,-263,-264,606,506,431,-265,-261,-262,406,507,609,-29],\"bar\":[-31,-32,30,19,8,0,0,0,0,0],\"profileStats\":[1,1,1,1,1,1,1,1,1]}]"
     );
   OutputDebugStringA(jsonBuff);
   const std::string jsonData = jsonBuff;
