@@ -237,9 +237,9 @@
 				<caption>StaOrWill</caption>
 				<customApplyType>Maximize</customApplyType>
 				<enabled>
-					<compiledString>FQAAAAAAAAAAVYvsg+wMi0UIixCLTQiLgsgAAAD/0ItNCIsRi00Ii4LMAAAA3V34/9DcXfjf4PbEQXoJx0X0AQAAAOsHx0X0AAAAAIpF9IvlXcM=</compiledString>
+					<compiledString>FQAAAAAAAAAAVYvsg+wUVmoTi0UIixCLTQiLgiwBAAD/0A+28GoUi00IixGLTQiLgiwBAAD/0A+2yDvxfgzHRfwBAAAA6YAAAABqE4tVCIsCi00Ii5AsAQAA/9IPtvBqFItFCIsQi00Ii4IsAQAA/9APtsg78X0Jx0X4AAAAAOtDi1UIiwKLTQiLkMgAAAD/0otFCIsQi00Ii4LMAAAA3V3w/9DcXfDf4PbEQXoJx0XsAQAAAOsHx0XsAAAAAItN7IlN+ItV+IlV/IpF/F6L5V3D</compiledString>
 					<returnType>bool</returnType>
-					<sString>sBaseStamina&gt;=sBaseWill</sString>
+					<sString>(pFirst-&gt;IsRecommended(19) &gt; pFirst-&gt;IsRecommended(20) ? 1 : pFirst-&gt;IsRecommended(19) &lt; pFirst-&gt;IsRecommended(20) ? 0 : sBaseStamina&gt;=sBaseWill)</sString>
 				</enabled>
 				<formulaName></formulaName>
 				<LoggingEvent>-1</LoggingEvent>
@@ -267,9 +267,9 @@
 				<caption>+ Add_Stamina</caption>
 				<customApplyType>Maximize</customApplyType>
 				<enabled>
-					<compiledString>FQAAAAAAAAAAVYvsg+wMi0UIixCLTQiLgsgAAAD/0ItNCIsRi00Ii4LMAAAA3V34/9DcXfjf4PbEQXoJx0X0AQAAAOsHx0X0AAAAAIpF9IvlXcM=</compiledString>
+					<compiledString>FQAAAAAAAAAAVYvsg+wUVmoTi0UIixCLTQiLgiwBAAD/0A+28GoUi00IixGLTQiLgiwBAAD/0A+2yDvxfgzHRfwBAAAA6YAAAABqE4tVCIsCi00Ii5AsAQAA/9IPtvBqFItFCIsQi00Ii4IsAQAA/9APtsg78X0Jx0X4AAAAAOtDi1UIiwKLTQiLkMgAAAD/0otFCIsQi00Ii4LMAAAA3V3w/9DcXfDf4PbEQXoJx0XsAQAAAOsHx0XsAAAAAItN7IlN+ItV+IlV/IpF/F6L5V3D</compiledString>
 					<returnType>bool</returnType>
-					<sString>sBaseStamina&gt;=sBaseWill</sString>
+					<sString>(pFirst-&gt;IsRecommended(19) &gt; pFirst-&gt;IsRecommended(20) ? 1 : pFirst-&gt;IsRecommended(19) &lt; pFirst-&gt;IsRecommended(20) ? 0 : sBaseStamina&gt;=sBaseWill)</sString>
 				</enabled>
 				<formulaName></formulaName>
 				<LoggingEvent>-1</LoggingEvent>
@@ -297,9 +297,9 @@
 				<caption>Add_Will</caption>
 				<customApplyType>Maximize</customApplyType>
 				<enabled>
-					<compiledString>FQAAAAAAAAAAVYvsg+wMi0UIixCLTQiLgsgAAAD/0ItNCIsRi00Ii4LMAAAA3V34/9DcXfjf4PbEQXUJx0X0AQAAAOsHx0X0AAAAAIpF9IvlXcM=</compiledString>
+					<compiledString>FQAAAAAAAAAAVYvsg+wUVmoTi0UIixCLTQiLgiwBAAD/0A+28GoUi00IixGLTQiLgiwBAAD/0A+2yDvxfgzHRfwBAAAA6YAAAABqE4tVCIsCi00Ii5AsAQAA/9IPtvBqFItFCIsQi00Ii4IsAQAA/9APtsg78X0Jx0X4AAAAAOtDi1UIiwKLTQiLkMgAAAD/0otFCIsQi00Ii4LMAAAA3V3w/9DcXfDf4PbEQXoJx0XsAQAAAOsHx0XsAAAAAItN7IlN+ItV+IlV/DPAg338AA+UwF6L5V3D</compiledString>
 					<returnType>bool</returnType>
-					<sString>sBaseStamina&lt;sBaseWill</sString>
+					<sString>!(pFirst-&gt;IsRecommended(19) &gt; pFirst-&gt;IsRecommended(20) ? 1 : pFirst-&gt;IsRecommended(19) &lt; pFirst-&gt;IsRecommended(20) ? 0 : sBaseStamina&gt;=sBaseWill)</sString>
 				</enabled>
 				<formulaName></formulaName>
 				<LoggingEvent>-1</LoggingEvent>

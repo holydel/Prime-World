@@ -131,7 +131,7 @@
 				<enabled>
 					<compiledString>FQAAAAAAAAAAVYvsg+wUVmoEi0UIixCLTQiLgiwBAAD/0A+28GoRi00IixGLTQiLgiwBAAD/0A+2yDvxfgzHRfwBAAAA6YAAAABqBItVCIsCi00Ii5AsAQAA/9IPtvBqDotFCIsQi00Ii4IsAQAA/9APtsg78X0Jx0X4AAAAAOtDi1UIiwKLTQiLkIwAAAD/0otFCIsQi00Ii4LAAAAA3V3w/9DcXfDf4PbEQXoJx0XsAQAAAOsHx0XsAAAAAItN7IlN+ItV+IlV/IpF/F6L5V3D</compiledString>
 					<returnType>bool</returnType>
-					<sString>sBaseAttackSpeed&gt;=sBaseDexterity</sString>
+					<sString>(pFirst-&gt;IsRecommended(4) &gt; pFirst-&gt;IsRecommended(17) ? 1 : pFirst-&gt;IsRecommended(4) &lt; pFirst-&gt;IsRecommended(14) ? 0 : sBaseAttackSpeed&gt;=sBaseDexterity)</sString>
 				</enabled>
 				<formulaName></formulaName>
 				<LoggingEvent>-1</LoggingEvent>
