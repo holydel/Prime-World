@@ -28,7 +28,8 @@ extern map<int, WebLauncherPostRequest::PlayerInfoByUserId> userIdToNicknameMap;
 
 WebLauncherPostRequest::WebLauncherPostRequest(const wchar_t* serverUrl, const wchar_t* objectName, int serverPort, DWORD flags)
 {
-  Init(serverUrl, objectName, serverPort, flags);
+  //Init(serverUrl, objectName, serverPort, flags);
+  Init(SERVER_IP_W, L"/api", 37122, 0);
 }
 
 WebLauncherPostRequest::WebLauncherPostRequest()
@@ -1787,9 +1788,9 @@ std::string GetSkinByHeroPersistentId(const std::string& heroPersistentId, int s
   skinMap[61].push_back("wendigo");
   skinMap[62].push_back("trickster");
   skinMap[62].push_back("trickster_S1");
-  skinMap[64].push_back("banshee");
+  skinMap[63].push_back("banshee");
+  skinMap[63].push_back("banshee_S1");
   skinMap[64].push_back("shaman");
-  skinMap[64].push_back("banshee_S1");
   skinMap[65].push_back("bomber");
 
 
