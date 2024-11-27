@@ -2,28 +2,19 @@
 <Talent>
 	<BackLink DBID="/Social.ROOT" Count="1" />
 	<BackLink DBID="/GameLogic/AILogic.AILP" Count="1" />
-	<BackLink DBID="/Items/RerollShop/TalentsList_Glyph" Count="1" />
-	<BackLink DBID="/Items/Talents/TalentKits/Redset7_7_Glyph/Redset7_7_Glyph.TALKIT" Count="1" />
+	<BackLink DBID="/Items/RerollShop/TalentsList_Rar6_Set8" Count="1" />
+	<BackLink DBID="/Items/RerollShop/TalentsList_Rar6_Set8_kit5" Count="1" />
+	<BackLink DBID="/Items/Talents/TalentKits/Redset8_5_Warfog/Redset8_5_Warfog.TALKIT" Count="1" />
 	<BackLink DBID="/Social/TalentsCollection" Count="3" />
-	<BackLink DBID="/Social/Lootboxes/LB_G737" Count="1" />
-	<BackLink DBID="/Social/Lootboxes/ROLLCONTS/roll_NY2020_CollectionGoodList.ROLLCONT" Count="1" />
-	<BackLink DBID="/Social/Lootboxes/ROLLCONTS/roll_RedSet11.ROLLCONT" Count="1" />
-	<BackLink DBID="/Social/Lootboxes/ROLLCONTS/roll_Redset7_7.ROLLCONT" Count="1" />
-	<BackLink DBID="/Social/Lootboxes/ROLLCONTS/roll_Season13_CollectionList.ROLLCONT" Count="1" />
-	<BackLink DBID="/Test/Talents/RedSet7_10.TALENTSET" Count="1" />
-	<BackLink DBID="/Test/Talents/RedSet7_7.TALENTSET" Count="1" />
-	<BackLink DBID="/Test/Talents/RedSet7_8.TALENTSET" Count="1" />
-	<BackLink DBID="/Test/Talents/RedSet7_9.TALENTSET" Count="1" />
-	<BackLink DBID="/Items/Talents/Mage.TALENTSET" Count="1" />
-	<BackLink DBID="/Items/Talents/Artist.TALENTSET" Count="1" />
-	<BackLink DBID="/Items/Talents/Banshee.TALENTSET" Count="1" />
-	<BackLink DBID="/Items/Talents/Bomber.TALENTSET" Count="1" />
-	<BackLink DBID="/Items/Talents/Demonolog.TALENTSET" Count="1" />
-	<BackLink DBID="/Items/Talents/Dryad.TALENTSET" Count="1" />
-	<BackLink DBID="/Items/Talents/Freeze.TALENTSET" Count="1" />
-	<BackLink DBID="/Items/Talents/WitchDoctor.TALENTSET" Count="1" />
-	<BackLink DBID="/Items/Talents/Stalker.TALENTSET" Count="1" />
-	<BackLink DBID="/Items/Talents/Hunter.TALENTSET" Count="1" />
+	<BackLink DBID="/Social/Lootboxes/ROLLCONTS/roll_NormTal.ROLLCONT" Count="1" />
+	<BackLink DBID="/Social/Lootboxes/ROLLCONTS/roll_RedSet8.ROLLCONT" Count="1" />
+	<BackLink DBID="/Test/Talents/RedSet8Add.TALENTSET" Count="1" />
+	<BackLink DBID="/Social/Lootboxes/ROLLCONTS/roll_Season9_Mediocre.ROLLCONT" Count="1" />
+	<BackLink DBID="/Items/Talents/TalentList_Mighty/Fairy_Mighty.TALENTSET" Count="1" />
+	<BackLink DBID="/Items/Talents/TalentList_Mighty/Prince_Mighty.TALENTSET" Count="1" />
+	<BackLink DBID="/Items/Talents/TalentList_Mighty/WitchDoctor_Mighty.TALENTSET" Count="1" />
+	<BackLink DBID="/Social/Lootboxes/ROLLCONTS/roll_NY2020_MediocreList.ROLLCONT" Count="1" />
+	<BackLink DBID="/Social/Lootboxes/ROLLCONTS/roll_Season13_MediocreList.ROLLCONT" Count="1" />
 	<BackLink DBID="/Items/Talents/Assassin.TALENTSET" Count="1" />
 	<activationConditions />
 	<activeCustomTrigger>true</activeCustomTrigger>
@@ -47,35 +38,32 @@
 	<askId>0</askId>
 	<autoTargetSelector href="" />
 	<budget>-1</budget>
-	<caption>G737: Руна познания</caption>
+	<caption>G680: Мудрость сокола</caption>
 	<castAllowRange>
 		<compiledString></compiledString>
 		<returnType>float</returnType>
 		<sString>0.0f</sString>
 	</castAllowRange>
 	<castLimitations />
-	<commonDescription textref="" />
+	<commonDescription textref="/Items/Talents/Level4/G680_Int.TALENT_commonDescription.txt" />
 	<compiledDescriptionA textref="" />
 	<compiledDescriptionB textref="" />
 	<conditionFormulas />
 	<conflictingTalents />
-	<constants href="/Items/Talents/Level1/G737_Int.TALENT" id="FB249FD6-D93B-4C68-A16A-EC36CE09B493">
+	<constants href="/Items/Talents/Level4/G680_Int.TALENT" id="0DEA8C77-9A45-4601-9D30-4A39D10770CB">
 		<UnitConstantsContainer>
 			<vars>
-				<Item href="/Items/Talents/Level1/G737_Int.TALENT" id="34E059D6-A189-4A15-A3B7-DFFC8C975D90">
+				<Item href="/Items/Talents/Level4/G680_Int.TALENT" id="758BB4E9-D2D2-404D-A5B3-FA5BC4871DBA">
 					<UnitConstant>
 						<name>Add_Int</name>
 						<var>
-							<compiledString>FQAAAAACAAAABgAAABAAAABVi+xR2QUqAAAA2RwkUdkFJgAAANkcJItFEIsQi00Qi0Js/9BdwwAAoEDNzMw+</compiledString>
+							<compiledString>FQAAAAABAAAADAAAAFWL7FHZ6NkcJFHZBSIAAADZHCSLRRCLEItNEItCbP/QXcMAAFBBAACAPw==</compiledString>
 							<returnType>float</returnType>
-							<sString>refineScale(5, 0.4)</sString>
+							<sString>refineScale(13, 1)</sString>
 						</var>
 					</UnitConstant>
 				</Item>
-				<Item href="/Items/Talents/TalentKits/Redset7_7_Glyph/const_Redset7_7_AddStat" />
-				<Item href="/Items/Talents/TalentKits/Redset7_7_Glyph/const_Redset7_7ExtraDuration" />
-				<Item href="/Items/Talents/TalentKits/Redset7_7_Glyph/const_Glyph_FirstPick" />
-				<Item href="/Items/Talents/TalentKits/Redset7_7_Glyph/const_Total_Duration" />
+				<Item href="/Items/Talents/TalentKits/Redset8_5_Warfog/const_Redset8_5_AddStat" />
 			</vars>
 		</UnitConstantsContainer>
 	</constants>
@@ -93,12 +81,12 @@
 		<returnType>float</returnType>
 		<sString>0.0f</sString>
 	</cooldownTimeSecondState>
-	<description textref="/Items/Talents/Level1/G737_Int.TALENT_description.txt" />
+	<description textref="/Items/Talents/Level4/G680_Int.TALENT_description.txt" />
 	<devPoints>1</devPoints>
 	<dispatch href="" />
-	<flags>6</flags>
+	<flags>1</flags>
 	<forceBonus>0</forceBonus>
-	<image href="/UI/Styles/Icons/Talents/_737.ITEX" />
+	<image href="/UI/Styles/Icons/Talents/_680.ITEX" />
 	<imageSecondState href="" />
 	<isGenderTalent>false</isGenderTalent>
 	<isTakenOnStart>false</isTakenOnStart>
@@ -111,13 +99,43 @@
 	</manaCost>
 	<marker></marker>
 	<microAI href="" />
-	<minLevel>0</minLevel>
+	<minLevel>3</minLevel>
 	<minUseRangeCorrection>0</minUseRangeCorrection>
 	<naftaCost>-1</naftaCost>
-	<name textref="/Items/Talents/Level1/G737_Int.TALENT_name.txt" />
+	<name textref="/Items/Talents/Level4/G680_Int.TALENT_name.txt" />
 	<node></node>
 	<passiveApplicators>
-		<Item href="/Items/Talents/Level1/G737_Int.TALENT" id="E9D1256C-E493-458C-ACBA-127F28839738">
+		<Item href="/Items/Talents/Level4/G680_Int.TALENT" id="329F4C5F-DB8F-47AF-B01B-4C40A9801EB4">
+			<PermanentStatModApplicator>
+				<applyTarget>ApplicatorTarget</applyTarget>
+				<caption>RedSet8_5Counter</caption>
+				<customApplyType>None</customApplyType>
+				<enabled>
+					<compiledString></compiledString>
+					<returnType>bool</returnType>
+					<sString>true</sString>
+				</enabled>
+				<formulaName></formulaName>
+				<LoggingEvent>-1</LoggingEvent>
+				<modifier>
+					<addValue>
+						<compiledString>FQAAAAAAAAAAVYvs2ehdwwAAgD8=</compiledString>
+						<returnType>float</returnType>
+						<sString>1.0f</sString>
+					</addValue>
+					<multValue>
+						<compiledString></compiledString>
+						<returnType>float</returnType>
+						<sString>1.0f</sString>
+					</multValue>
+					<stat>Life</stat>
+					<topModifier>false</topModifier>
+					<variable>RedSet8_5Counter</variable>
+				</modifier>
+				<providerName></providerName>
+			</PermanentStatModApplicator>
+		</Item>
+		<Item href="/Items/Talents/Level4/G680_Int.TALENT" id="EED65BA9-C10C-4C0F-B21E-95B0954FDCFF">
 			<PermanentStatModApplicator>
 				<applyTarget>ApplicatorTarget</applyTarget>
 				<caption>Add_Int</caption>
@@ -147,11 +165,9 @@
 				<providerName></providerName>
 			</PermanentStatModApplicator>
 		</Item>
-		<Item href="/Items/Talents/TalentKits/Redset7_7_Glyph/Program_Redset7_7Counter.APLR" />
-		<Item href="/Items/Talents/TalentKits/Redset7_7_Glyph/Program_Redset7_7AddStat.APLR" />
-		<Item href="/Items/Talents/TalentKits/Redset7_7_Glyph/General_Trigger.APLR" />
+		<Item href="/Items/Talents/TalentKits/Redset8_5_Warfog/Program_Redset8_5_StrOrInt.APLR" />
 	</passiveApplicators>
-	<persistentId>G737</persistentId>
+	<persistentId>G680</persistentId>
 	<prerequisiteTalents />
 	<rarity>outstanding</rarity>
 	<requireLineOfSight>true</requireLineOfSight>
@@ -162,11 +178,11 @@
 	<type>Simple</type>
 	<upgradeLevel>0</upgradeLevel>
 	<useRange>
-		<compiledString>FSEAAAADAAAAJgAAADwAAABQAAAAUmVkc2V0N183Q291bnRlcgAAAABSYW5nZV9FeExvbmcAVYvsUWgAAAAAi0UIixCLTQiLgogBAAD/0NwddgAAAN/g9sQBdR+LTQxRi1UIUmgUAAAAi0UQixCLTRCLQlD/0Nld/OsF2e7ZXfzZRfyL5V3DAAAAAAAAAAAAAABA</compiledString>
+		<compiledString></compiledString>
 		<returnType>float</returnType>
-		<sString>sender.vRedset7_7Counter &gt;=2 ? cRange_ExLong : 0</sString>
+		<sString>0.0f</sString>
 	</useRange>
-	<useRangeMaterial href="/Effects/UI/AOESelection/Radius.MTRL" />
+	<useRangeMaterial href="" />
 	<variativeMaxTalentStats />
 	<variativeMinTalentStats />
 	<vendorCost>-1</vendorCost>
