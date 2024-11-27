@@ -7,6 +7,7 @@
 	<BackLink DBID="/Social/Lootboxes/ROLLCONTS/roll_Redset7_13.ROLLCONT" Count="1" />
 	<BackLink DBID="/Social/Quests/TalentQuests/_Settings" Count="1" />
 	<BackLink DBID="/Test/Talents/RedSet7_9.TALENTSET" Count="1" />
+	<BackLink DBID="/Items/Talents/Assassin.TALENTSET" Count="1" />
 	<activationConditions />
 	<activeCustomTrigger>true</activeCustomTrigger>
 	<allowChase>

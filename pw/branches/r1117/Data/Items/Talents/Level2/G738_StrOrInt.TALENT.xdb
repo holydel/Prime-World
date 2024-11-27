@@ -13,6 +13,7 @@
 	<BackLink DBID="/Test/Talents/RedSet7_10.TALENTSET" Count="1" />
 	<BackLink DBID="/Test/Talents/RedSet7_7.TALENTSET" Count="1" />
 	<BackLink DBID="/Test/Talents/RedSet7_8.TALENTSET" Count="1" />
+	<BackLink DBID="/Items/Talents/Assassin.TALENTSET" Count="1" />
 	<activationConditions />
 	<activeCustomTrigger>true</activeCustomTrigger>
 	<allowChase>

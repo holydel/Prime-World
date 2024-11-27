@@ -35,6 +35,7 @@
 	<BackLink DBID="/Items/Talents/Alchemist.TALENTSET" Count="1" />
 	<BackLink DBID="/Items/Talents/Katana.TALENTSET" Count="1" />
 	<BackLink DBID="/Items/Talents/Stalker.TALENTSET" Count="1" />
+	<BackLink DBID="/Items/Talents/Assassin.TALENTSET" Count="1" />
 	<activationConditions />
 	<activeCustomTrigger>true</activeCustomTrigger>
 	<allowChase>
