@@ -189,6 +189,7 @@ namespace
     virtual int GetHeroAchievementCount( const char* achievId ) const { return pOwner->GetHeroAchievementCount( achievId ); }
 
     virtual bool  IsRecommended( int stat ) const { return pOwner->IsRecommended( stat ); }
+    virtual void SetRecommendedStats(int* recommendedStats) { pOwner->SetRecommendedStats(recommendedStats); }
     
     virtual bool  UnitCheck(UnitCheckID id) const { return pOwner->UnitCheck(id); }
 

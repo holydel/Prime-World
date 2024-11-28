@@ -79,6 +79,7 @@ public:
   virtual bool            IsFlying() const { return false; }
 
   virtual bool            IsRecommended( int stat ) const { return false; }
+  virtual void SetRecommendedStats(int* recommendedStats) {};
 
   virtual bool            CheckFlagType(NDb::EUnitFlagType/* type*/) const { return false; }
 
