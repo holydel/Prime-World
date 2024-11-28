@@ -17,9 +17,9 @@
 					<caption>Haloween_Str</caption>
 					<customApplyType>Maximize</customApplyType>
 					<enabled>
-						<compiledString>FRgAAAACAAAATAAAAGIAAABIYWxvd2Vlbl9Ub29sdGlwQ291bnRlcgBVi+yD7AyLRQiLEItNCIuCuAAAAP/Qi00IixGLTQiLgrwAAADdXfj/0Nxd+N/g9sRBeitoAAAAAItNCIsRi00Ii4KIAQAA/9DcHYQAAADf4PbERHoJx0X0AQAAAOsHx0X0AAAAAIpF9IvlXcMAAAAAAAAAQA==</compiledString>
+						<compiledString>FRgAAAACAAAA4AAAAPYAAABIYWxvd2Vlbl9Ub29sdGlwQ291bnRlcgBVi+yD7BhWag+LRQiLEItNCIuCLAEAAP/QD7bwahCLTQiLEYtNCIuCLAEAAP/QD7bIO/F+DMdF/AEAAADpgAAAAGoPi1UIiwKLTQiLkCwBAAD/0g+28GoQi0UIixCLTQiLgiwBAAD/0A+2yDvxfQnHRfgAAAAA60OLVQiLAotNCIuQuAAAAP/Si0UIixCLTQiLgrwAAADdXfD/0Nxd8N/g9sRBegnHRewBAAAA6wfHRewAAAAAi03siU34i1X4iVX8g338AHQraAAAAACLRQiLEItNCIuCiAEAAP/Q3B0ZAQAA3+D2xER6CcdF6AEAAADrB8dF6AAAAACKRehei+VdwwAAAAAAAABA</compiledString>
 						<returnType>bool</returnType>
-						<sString>sBaseStrength&gt;=sBaseIntellect &amp;&amp; sender.vHaloween_TooltipCounter == 2</sString>
+						<sString>(pFirst-&gt;IsRecommended(15) &gt; pFirst-&gt;IsRecommended(16) ? 1 : pFirst-&gt;IsRecommended(15) &lt; pFirst-&gt;IsRecommended(16) ? 0 : sBaseStrength&gt;=sBaseIntellect) &amp;&amp; sender.vHaloween_TooltipCounter == 2</sString>
 					</enabled>
 					<formulaName></formulaName>
 					<LoggingEvent>-1</LoggingEvent>
@@ -50,9 +50,9 @@
 					<caption>Haloween_Int</caption>
 					<customApplyType>Maximize</customApplyType>
 					<enabled>
-						<compiledString>FRgAAAACAAAATAAAAGIAAABIYWxvd2Vlbl9Ub29sdGlwQ291bnRlcgBVi+yD7AyLRQiLEItNCIuCuAAAAP/Qi00IixGLTQiLgrwAAADdXfj/0Nxd+N/g9sRBdStoAAAAAItNCIsRi00Ii4KIAQAA/9DcHYQAAADf4PbERHoJx0X0AQAAAOsHx0X0AAAAAIpF9IvlXcMAAAAAAAAAQA==</compiledString>
+						<compiledString>FRgAAAACAAAA4AAAAPYAAABIYWxvd2Vlbl9Ub29sdGlwQ291bnRlcgBVi+yD7BhWag+LRQiLEItNCIuCLAEAAP/QD7bwahCLTQiLEYtNCIuCLAEAAP/QD7bIO/F+DMdF/AEAAADpgAAAAGoPi1UIiwKLTQiLkCwBAAD/0g+28GoQi0UIixCLTQiLgiwBAAD/0A+2yDvxfQnHRfgAAAAA60OLVQiLAotNCIuQuAAAAP/Si0UIixCLTQiLgrwAAADdXfD/0Nxd8N/g9sRBegnHRewBAAAA6wfHRewAAAAAi03siU34i1X4iVX8g338AHUraAAAAACLRQiLEItNCIuCiAEAAP/Q3B0ZAQAA3+D2xER6CcdF6AEAAADrB8dF6AAAAACKRehei+VdwwAAAAAAAABA</compiledString>
 						<returnType>bool</returnType>
-						<sString>sBaseStrength&lt;sBaseIntellect &amp;&amp; sender.vHaloween_TooltipCounter == 2</sString>
+						<sString>!(pFirst-&gt;IsRecommended(15) &gt; pFirst-&gt;IsRecommended(16) ? 1 : pFirst-&gt;IsRecommended(15) &lt; pFirst-&gt;IsRecommended(16) ? 0 : sBaseStrength&gt;=sBaseIntellect) &amp;&amp; sender.vHaloween_TooltipCounter == 2</sString>
 					</enabled>
 					<formulaName></formulaName>
 					<LoggingEvent>-1</LoggingEvent>
@@ -83,9 +83,9 @@
 					<caption>Haloween_Atk</caption>
 					<customApplyType>Maximize</customApplyType>
 					<enabled>
-						<compiledString>FRgAAAACAAAATAAAAGIAAABIYWxvd2Vlbl9Ub29sdGlwQ291bnRlcgBVi+yD7AyLRQiLEItNCIuCjAAAAP/Qi00IixGLTQiLgsAAAADdXfj/0Nxd+N/g9sRBeitoAAAAAItNCIsRi00Ii4KIAQAA/9DcHYQAAADf4PbERHoJx0X0AQAAAOsHx0X0AAAAAIpF9IvlXcMAAAAAAAAIQA==</compiledString>
+						<compiledString>FRgAAAACAAAA4AAAAPYAAABIYWxvd2Vlbl9Ub29sdGlwQ291bnRlcgBVi+yD7BhWagSLRQiLEItNCIuCLAEAAP/QD7bwahGLTQiLEYtNCIuCLAEAAP/QD7bIO/F+DMdF/AEAAADpgAAAAGoEi1UIiwKLTQiLkCwBAAD/0g+28GoOi0UIixCLTQiLgiwBAAD/0A+2yDvxfQnHRfgAAAAA60OLVQiLAotNCIuQjAAAAP/Si0UIixCLTQiLgsAAAADdXfD/0Nxd8N/g9sRBegnHRewBAAAA6wfHRewAAAAAi03siU34i1X4iVX8g338AHQraAAAAACLRQiLEItNCIuCiAEAAP/Q3B0ZAQAA3+D2xER6CcdF6AEAAADrB8dF6AAAAACKRehei+VdwwAAAAAAAAhA</compiledString>
 						<returnType>bool</returnType>
-						<sString>sBaseAttackSpeed &gt;= sBaseDexterity &amp;&amp; sender.vHaloween_TooltipCounter == 3</sString>
+						<sString>(pFirst-&gt;IsRecommended(4) &gt; pFirst-&gt;IsRecommended(17) ? 1 : pFirst-&gt;IsRecommended(4) &lt; pFirst-&gt;IsRecommended(14) ? 0 : sBaseAttackSpeed&gt;=sBaseDexterity) &amp;&amp; sender.vHaloween_TooltipCounter == 3</sString>
 					</enabled>
 					<formulaName></formulaName>
 					<LoggingEvent>-1</LoggingEvent>
@@ -116,9 +116,9 @@
 					<caption>Haloween_Dex</caption>
 					<customApplyType>Maximize</customApplyType>
 					<enabled>
-						<compiledString>FRgAAAACAAAATAAAAGIAAABIYWxvd2Vlbl9Ub29sdGlwQ291bnRlcgBVi+yD7AyLRQiLEItNCIuCjAAAAP/Qi00IixGLTQiLgsAAAADdXfj/0Nxd+N/g9sRBdStoAAAAAItNCIsRi00Ii4KIAQAA/9DcHYQAAADf4PbERHoJx0X0AQAAAOsHx0X0AAAAAIpF9IvlXcMAAAAAAAAIQA==</compiledString>
+						<compiledString>FRgAAAACAAAA4AAAAPYAAABIYWxvd2Vlbl9Ub29sdGlwQ291bnRlcgBVi+yD7BhWagSLRQiLEItNCIuCLAEAAP/QD7bwahGLTQiLEYtNCIuCLAEAAP/QD7bIO/F+DMdF/AEAAADpgAAAAGoEi1UIiwKLTQiLkCwBAAD/0g+28GoOi0UIixCLTQiLgiwBAAD/0A+2yDvxfQnHRfgAAAAA60OLVQiLAotNCIuQjAAAAP/Si0UIixCLTQiLgsAAAADdXfD/0Nxd8N/g9sRBegnHRewBAAAA6wfHRewAAAAAi03siU34i1X4iVX8g338AHUraAAAAACLRQiLEItNCIuCiAEAAP/Q3B0ZAQAA3+D2xER6CcdF6AEAAADrB8dF6AAAAACKRehei+VdwwAAAAAAAAhA</compiledString>
 						<returnType>bool</returnType>
-						<sString>sBaseAttackSpeed &lt; sBaseDexterity &amp;&amp; sender.vHaloween_TooltipCounter == 3</sString>
+						<sString>!(pFirst-&gt;IsRecommended(4) &gt; pFirst-&gt;IsRecommended(17) ? 1 : pFirst-&gt;IsRecommended(4) &lt; pFirst-&gt;IsRecommended(14) ? 0 : sBaseAttackSpeed&gt;=sBaseDexterity) &amp;&amp; sender.vHaloween_TooltipCounter == 3</sString>
 					</enabled>
 					<formulaName></formulaName>
 					<LoggingEvent>-1</LoggingEvent>

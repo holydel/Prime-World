@@ -44,9 +44,9 @@
 				</modifier>
 				<providerName></providerName>
 				<startCondition>
-					<compiledString>FQwAAAACAAAAEwAAACkAAABHNzgwX0FjdGl2ZQBVi+yD7AxoAAAAAItFCIsQi00Ii4KIAQAA/9DcHXgAAADf4PbEQXU2i00IixGLTQiLgrgAAAD/0ItNCIsRi00Ii4K8AAAA3V34/9DcXfjf4PbEQXoJx0X0AQAAAOsHx0X0AAAAAIpF9IvlXcMAAAAAAAAAAA==</compiledString>
+					<compiledString>FQwAAAACAAAAFAAAACoAAABHNzgwX0FjdGl2ZQBVi+yD7BhWaAAAAACLRQiLEItNCIuCiAEAAP/Q3B0RAQAA3+D2xEEPhckAAABqD4tNCIsRi00Ii4IsAQAA/9APtvBqEItNCIsRi00Ii4IsAQAA/9APtsg78X4Mx0X8AQAAAOmAAAAAag+LVQiLAotNCIuQLAEAAP/SD7bwahCLRQiLEItNCIuCLAEAAP/QD7bIO/F9CcdF+AAAAADrQ4tVCIsCi00Ii5C4AAAA/9KLRQiLEItNCIuCvAAAAN1d8P/Q3F3w3+D2xEF6CcdF7AEAAADrB8dF7AAAAACLTeyJTfiLVfiJVfyDffwAdAnHRegBAAAA6wfHRegAAAAAikXoXovlXcMAAAAAAAAAAA==</compiledString>
 					<returnType>bool</returnType>
-					<sString>sender.vG780_Active &gt; 0 &amp;&amp; sBaseStrength &gt;= sBaseIntellect</sString>
+					<sString>sender.vG780_Active &gt; 0 &amp;&amp; (pFirst-&gt;IsRecommended(15) &gt; pFirst-&gt;IsRecommended(16) ? 1 : pFirst-&gt;IsRecommended(15) &lt; pFirst-&gt;IsRecommended(16) ? 0 : sBaseStrength&gt;=sBaseIntellect)</sString>
 				</startCondition>
 				<statModName></statModName>
 			</StatModApplicator>
@@ -91,9 +91,9 @@
 				</modifier>
 				<providerName></providerName>
 				<startCondition>
-					<compiledString>FQwAAAACAAAAEwAAACkAAABHNzgwX0FjdGl2ZQBVi+yD7AxoAAAAAItFCIsQi00Ii4KIAQAA/9DcHXgAAADf4PbEQXU2i00IixGLTQiLgrgAAAD/0ItNCIsRi00Ii4K8AAAA3V34/9DcXfjf4PbEQXUJx0X0AQAAAOsHx0X0AAAAAIpF9IvlXcMAAAAAAAAAAA==</compiledString>
+					<compiledString>FQwAAAACAAAAFAAAACoAAABHNzgwX0FjdGl2ZQBVi+yD7BhWaAAAAACLRQiLEItNCIuCiAEAAP/Q3B0RAQAA3+D2xEEPhckAAABqD4tNCIsRi00Ii4IsAQAA/9APtvBqEItNCIsRi00Ii4IsAQAA/9APtsg78X4Mx0X8AQAAAOmAAAAAag+LVQiLAotNCIuQLAEAAP/SD7bwahCLRQiLEItNCIuCLAEAAP/QD7bIO/F9CcdF+AAAAADrQ4tVCIsCi00Ii5C4AAAA/9KLRQiLEItNCIuCvAAAAN1d8P/Q3F3w3+D2xEF6CcdF7AEAAADrB8dF7AAAAACLTeyJTfiLVfiJVfyDffwAdQnHRegBAAAA6wfHRegAAAAAikXoXovlXcMAAAAAAAAAAA==</compiledString>
 					<returnType>bool</returnType>
-					<sString>sender.vG780_Active &gt; 0 &amp;&amp; sBaseStrength &lt; sBaseIntellect</sString>
+					<sString>sender.vG780_Active &gt; 0 &amp;&amp; !(pFirst-&gt;IsRecommended(15) &gt; pFirst-&gt;IsRecommended(16) ? 1 : pFirst-&gt;IsRecommended(15) &lt; pFirst-&gt;IsRecommended(16) ? 0 : sBaseStrength&gt;=sBaseIntellect)</sString>
 				</startCondition>
 				<statModName></statModName>
 			</StatModApplicator>
@@ -138,9 +138,9 @@
 				</modifier>
 				<providerName></providerName>
 				<startCondition>
-					<compiledString>FQwAAAACAAAAEwAAACkAAABHNzgxX0FjdGl2ZQBVi+yD7AxoAAAAAItFCIsQi00Ii4KIAQAA/9DcHXgAAADf4PbEQXU2i00IixGLTQiLgowAAAD/0ItNCIsRi00Ii4LAAAAA3V34/9DcXfjf4PbEQXoJx0X0AQAAAOsHx0X0AAAAAIpF9IvlXcMAAAAAAAAAAA==</compiledString>
+					<compiledString>FQwAAAACAAAAFAAAACoAAABHNzgxX0FjdGl2ZQBVi+yD7BhWaAAAAACLRQiLEItNCIuCiAEAAP/Q3B0RAQAA3+D2xEEPhckAAABqBItNCIsRi00Ii4IsAQAA/9APtvBqEYtNCIsRi00Ii4IsAQAA/9APtsg78X4Mx0X8AQAAAOmAAAAAagSLVQiLAotNCIuQLAEAAP/SD7bwag6LRQiLEItNCIuCLAEAAP/QD7bIO/F9CcdF+AAAAADrQ4tVCIsCi00Ii5CMAAAA/9KLRQiLEItNCIuCwAAAAN1d8P/Q3F3w3+D2xEF6CcdF7AEAAADrB8dF7AAAAACLTeyJTfiLVfiJVfyDffwAdAnHRegBAAAA6wfHRegAAAAAikXoXovlXcMAAAAAAAAAAA==</compiledString>
 					<returnType>bool</returnType>
-					<sString>sender.vG781_Active &gt; 0 &amp;&amp; sBaseAttackSpeed &gt;= sBaseDexterity</sString>
+					<sString>sender.vG781_Active &gt; 0 &amp;&amp; (pFirst-&gt;IsRecommended(4) &gt; pFirst-&gt;IsRecommended(17) ? 1 : pFirst-&gt;IsRecommended(4) &lt; pFirst-&gt;IsRecommended(14) ? 0 : sBaseAttackSpeed&gt;=sBaseDexterity)</sString>
 				</startCondition>
 				<statModName></statModName>
 			</StatModApplicator>
@@ -185,9 +185,9 @@
 				</modifier>
 				<providerName></providerName>
 				<startCondition>
-					<compiledString>FQwAAAACAAAAEwAAACkAAABHNzgxX0FjdGl2ZQBVi+yD7AxoAAAAAItFCIsQi00Ii4KIAQAA/9DcHXgAAADf4PbEQXU2i00IixGLTQiLgowAAAD/0ItNCIsRi00Ii4LAAAAA3V34/9DcXfjf4PbEQXUJx0X0AQAAAOsHx0X0AAAAAIpF9IvlXcMAAAAAAAAAAA==</compiledString>
+					<compiledString>FQwAAAACAAAAFAAAACoAAABHNzgxX0FjdGl2ZQBVi+yD7BhWaAAAAACLRQiLEItNCIuCiAEAAP/Q3B0RAQAA3+D2xEEPhckAAABqBItNCIsRi00Ii4IsAQAA/9APtvBqEYtNCIsRi00Ii4IsAQAA/9APtsg78X4Mx0X8AQAAAOmAAAAAagSLVQiLAotNCIuQLAEAAP/SD7bwag6LRQiLEItNCIuCLAEAAP/QD7bIO/F9CcdF+AAAAADrQ4tVCIsCi00Ii5CMAAAA/9KLRQiLEItNCIuCwAAAAN1d8P/Q3F3w3+D2xEF6CcdF7AEAAADrB8dF7AAAAACLTeyJTfiLVfiJVfyDffwAdQnHRegBAAAA6wfHRegAAAAAikXoXovlXcMAAAAAAAAAAA==</compiledString>
 					<returnType>bool</returnType>
-					<sString>sender.vG781_Active &gt; 0 &amp;&amp; sBaseAttackSpeed &lt; sBaseDexterity</sString>
+					<sString>sender.vG781_Active &gt; 0 &amp;&amp; !(pFirst-&gt;IsRecommended(4) &gt; pFirst-&gt;IsRecommended(17) ? 1 : pFirst-&gt;IsRecommended(4) &lt; pFirst-&gt;IsRecommended(14) ? 0 : sBaseAttackSpeed&gt;=sBaseDexterity)</sString>
 				</startCondition>
 				<statModName></statModName>
 			</StatModApplicator>

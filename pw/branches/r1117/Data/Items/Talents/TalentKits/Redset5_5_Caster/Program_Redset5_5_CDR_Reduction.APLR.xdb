@@ -61,9 +61,9 @@
 					<caption>StrOrInt</caption>
 					<customApplyType>Maximize</customApplyType>
 					<enabled>
-						<compiledString>FR4AAAACAAAAUgAAAGgAAABBZGRfU3RyT3JJbnRfUmVkc2V0NV81Q291bnRlcgBVi+yD7AyLRQiLEItNCIuCuAAAAP/Qi00IixGLTQiLgrwAAADdXfj/0Nxd+N/g9sRBeitoAAAAAItNCIsRi00Ii4KIAQAA/9DcHYoAAADf4PbERHoJx0X0AQAAAOsHx0X0AAAAAIpF9IvlXcMAAAAAAAAIQA==</compiledString>
+						<compiledString>FR4AAAACAAAA5gAAAPwAAABBZGRfU3RyT3JJbnRfUmVkc2V0NV81Q291bnRlcgBVi+yD7BhWag+LRQiLEItNCIuCLAEAAP/QD7bwahCLTQiLEYtNCIuCLAEAAP/QD7bIO/F+DMdF/AEAAADpgAAAAGoPi1UIiwKLTQiLkCwBAAD/0g+28GoQi0UIixCLTQiLgiwBAAD/0A+2yDvxfQnHRfgAAAAA60OLVQiLAotNCIuQuAAAAP/Si0UIixCLTQiLgrwAAADdXfD/0Nxd8N/g9sRBegnHRewBAAAA6wfHRewAAAAAi03siU34i1X4iVX8g338AHQraAAAAACLRQiLEItNCIuCiAEAAP/Q3B0fAQAA3+D2xER6CcdF6AEAAADrB8dF6AAAAACKRehei+VdwwAAAAAAAAhA</compiledString>
 						<returnType>bool</returnType>
-						<sString>(sBaseStrength&gt;=sBaseIntellect) &amp;&amp; (sender.vAdd_StrOrInt_Redset5_5Counter == 3)</sString>
+						<sString>(pFirst-&gt;IsRecommended(15) &gt; pFirst-&gt;IsRecommended(16) ? 1 : pFirst-&gt;IsRecommended(15) &lt; pFirst-&gt;IsRecommended(16) ? 0 : sBaseStrength&gt;=sBaseIntellect) &amp;&amp; (sender.vAdd_StrOrInt_Redset5_5Counter == 3)</sString>
 					</enabled>
 					<formulaName></formulaName>
 					<LoggingEvent>-1</LoggingEvent>
@@ -110,9 +110,9 @@
 					<caption>Add_Strength</caption>
 					<customApplyType>Maximize</customApplyType>
 					<enabled>
-						<compiledString>FR4AAAACAAAAUgAAAGgAAABBZGRfU3RyT3JJbnRfUmVkc2V0NV81Q291bnRlcgBVi+yD7AyLRQiLEItNCIuCuAAAAP/Qi00IixGLTQiLgrwAAADdXfj/0Nxd+N/g9sRBeitoAAAAAItNCIsRi00Ii4KIAQAA/9DcHYoAAADf4PbERHoJx0X0AQAAAOsHx0X0AAAAAIpF9IvlXcMAAAAAAAAIQA==</compiledString>
+						<compiledString>FR4AAAACAAAA5gAAAPwAAABBZGRfU3RyT3JJbnRfUmVkc2V0NV81Q291bnRlcgBVi+yD7BhWag+LRQiLEItNCIuCLAEAAP/QD7bwahCLTQiLEYtNCIuCLAEAAP/QD7bIO/F+DMdF/AEAAADpgAAAAGoPi1UIiwKLTQiLkCwBAAD/0g+28GoQi0UIixCLTQiLgiwBAAD/0A+2yDvxfQnHRfgAAAAA60OLVQiLAotNCIuQuAAAAP/Si0UIixCLTQiLgrwAAADdXfD/0Nxd8N/g9sRBegnHRewBAAAA6wfHRewAAAAAi03siU34i1X4iVX8g338AHQraAAAAACLRQiLEItNCIuCiAEAAP/Q3B0fAQAA3+D2xER6CcdF6AEAAADrB8dF6AAAAACKRehei+VdwwAAAAAAAAhA</compiledString>
 						<returnType>bool</returnType>
-						<sString>(sBaseStrength&gt;=sBaseIntellect) &amp;&amp; (sender.vAdd_StrOrInt_Redset5_5Counter == 3)</sString>
+						<sString>(pFirst-&gt;IsRecommended(15) &gt; pFirst-&gt;IsRecommended(16) ? 1 : pFirst-&gt;IsRecommended(15) &lt; pFirst-&gt;IsRecommended(16) ? 0 : sBaseStrength&gt;=sBaseIntellect) &amp;&amp; (sender.vAdd_StrOrInt_Redset5_5Counter == 3)</sString>
 					</enabled>
 					<formulaName></formulaName>
 					<LoggingEvent>-1</LoggingEvent>
@@ -159,9 +159,9 @@
 					<caption>Add_Intellect</caption>
 					<customApplyType>Maximize</customApplyType>
 					<enabled>
-						<compiledString>FR4AAAACAAAAUgAAAGgAAABBZGRfU3RyT3JJbnRfUmVkc2V0NV81Q291bnRlcgBVi+yD7AyLRQiLEItNCIuCuAAAAP/Qi00IixGLTQiLgrwAAADdXfj/0Nxd+N/g9sRBdStoAAAAAItNCIsRi00Ii4KIAQAA/9DcHYoAAADf4PbERHoJx0X0AQAAAOsHx0X0AAAAAIpF9IvlXcMAAAAAAAAIQA==</compiledString>
+						<compiledString>FR4AAAACAAAA5gAAAPwAAABBZGRfU3RyT3JJbnRfUmVkc2V0NV81Q291bnRlcgBVi+yD7BhWag+LRQiLEItNCIuCLAEAAP/QD7bwahCLTQiLEYtNCIuCLAEAAP/QD7bIO/F+DMdF/AEAAADpgAAAAGoPi1UIiwKLTQiLkCwBAAD/0g+28GoQi0UIixCLTQiLgiwBAAD/0A+2yDvxfQnHRfgAAAAA60OLVQiLAotNCIuQuAAAAP/Si0UIixCLTQiLgrwAAADdXfD/0Nxd8N/g9sRBegnHRewBAAAA6wfHRewAAAAAi03siU34i1X4iVX8g338AHUraAAAAACLRQiLEItNCIuCiAEAAP/Q3B0fAQAA3+D2xER6CcdF6AEAAADrB8dF6AAAAACKRehei+VdwwAAAAAAAAhA</compiledString>
 						<returnType>bool</returnType>
-						<sString>(sBaseStrength&lt;sBaseIntellect) &amp;&amp; (sender.vAdd_StrOrInt_Redset5_5Counter == 3)</sString>
+						<sString>!(pFirst-&gt;IsRecommended(15) &gt; pFirst-&gt;IsRecommended(16) ? 1 : pFirst-&gt;IsRecommended(15) &lt; pFirst-&gt;IsRecommended(16) ? 0 : sBaseStrength&gt;=sBaseIntellect) &amp;&amp; (sender.vAdd_StrOrInt_Redset5_5Counter == 3)</sString>
 					</enabled>
 					<formulaName></formulaName>
 					<LoggingEvent>-1</LoggingEvent>
