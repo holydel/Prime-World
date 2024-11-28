@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VariableProxyApplicator>
+	<BackLink DBID="/Items/Talents/Level6/G620_Int.TALENT" Count="1" />
+	<BackLink DBID="/Items/Talents/Level6/G618_Str.TALENT" Count="1" />
+	<BackLink DBID="/Items/Talents/Level5/G619_StaOrWill.TALENT" Count="1" />
+	<BackLink DBID="/Items/Talents/Level4/G621_Dex.TALENT" Count="1" />
+	<BackLink DBID="/Items/Talents/Level4/G622_AtSpd.TALENT" Count="1" />
+	<applicators>
+		<Item>
+			<applicator href="/Items/Talents/TalentKits/Halloween_Event/statModHaloween.APLR" />
+			<variableNames />
+		</Item>
+		<Item>
+			<applicator href="/Items/Talents/TalentKits/Halloween_Event/SetBonusProxy.APLR" id="797288D2-27B3-4455-B359-431E712B1FD3">
+				<PermanentStatModApplicator>
+					<applyTarget>ApplicatorTarget</applyTarget>
+					<caption>Haloween_Str</caption>
+					<customApplyType>Maximize</customApplyType>
+					<enabled>
+						<compiledString>FRgAAAACAAAA4AAAAPYAAABIYWxvd2Vlbl9Ub29sdGlwQ291bnRlcgBVi+yD7BhWag+LRQiLEItNCIuCLAEAAP/QD7bwahCLTQiLEYtNCIuCLAEAAP/QD7bIO/F+DMdF/AEAAADpgAAAAGoPi1UIiwKLTQiLkCwBAAD/0g+28GoQi0UIixCLTQiLgiwBAAD/0A+2yDvxfQnHRfgAAAAA60OLVQiLAotNCIuQuAAAAP/Si0UIixCLTQiLgrwAAADdXfD/0Nxd8N/g9sRBegnHRewBAAAA6wfHRewAAAAAi03siU34i1X4iVX8g338AHQraAAAAACLRQiLEItNCIuCiAEAAP/Q3B0ZAQAA3+D2xER6CcdF6AEAAADrB8dF6AAAAACKRehei+VdwwAAAAAAAABA</compiledString>
+						<returnType>bool</returnType>
+						<sString>(pFirst-&gt;IsRecommended(15) &gt; pFirst-&gt;IsRecommended(16) ? 1 : pFirst-&gt;IsRecommended(15) &lt; pFirst-&gt;IsRecommended(16) ? 0 : sBaseStrength&gt;=sBaseIntellect) &amp;&amp; sender.vHaloween_TooltipCounter == 2</sString>
+					</enabled>
+					<formulaName></formulaName>
+					<LoggingEvent>-1</LoggingEvent>
+					<modifier>
+						<addValue>
+							<compiledString>FQ0AAAABAAAAGQAAAEFkZF9TdGF0X1NldABVi+yLRQxQi00IUWgAAAAAi1UQiwKLTRCLUFD/0l3D</compiledString>
+							<returnType>float</returnType>
+							<sString>cAdd_Stat_Set</sString>
+						</addValue>
+						<multValue>
+							<compiledString></compiledString>
+							<returnType>float</returnType>
+							<sString>1.0f</sString>
+						</multValue>
+						<stat>Strength</stat>
+						<topModifier>false</topModifier>
+						<variable></variable>
+					</modifier>
+					<providerName></providerName>
+				</PermanentStatModApplicator>
+			</applicator>
+			<variableNames />
+		</Item>
+		<Item>
+			<applicator href="/Items/Talents/TalentKits/Halloween_Event/SetBonusProxy.APLR" id="9079B3EF-92E1-40E4-B68B-FDBBE164D0D1">
+				<PermanentStatModApplicator>
+					<applyTarget>ApplicatorTarget</applyTarget>
+					<caption>Haloween_Int</caption>
+					<customApplyType>Maximize</customApplyType>
+					<enabled>
+						<compiledString>FRgAAAACAAAA4AAAAPYAAABIYWxvd2Vlbl9Ub29sdGlwQ291bnRlcgBVi+yD7BhWag+LRQiLEItNCIuCLAEAAP/QD7bwahCLTQiLEYtNCIuCLAEAAP/QD7bIO/F+DMdF/AEAAADpgAAAAGoPi1UIiwKLTQiLkCwBAAD/0g+28GoQi0UIixCLTQiLgiwBAAD/0A+2yDvxfQnHRfgAAAAA60OLVQiLAotNCIuQuAAAAP/Si0UIixCLTQiLgrwAAADdXfD/0Nxd8N/g9sRBegnHRewBAAAA6wfHRewAAAAAi03siU34i1X4iVX8g338AHUraAAAAACLRQiLEItNCIuCiAEAAP/Q3B0ZAQAA3+D2xER6CcdF6AEAAADrB8dF6AAAAACKRehei+VdwwAAAAAAAABA</compiledString>
+						<returnType>bool</returnType>
+						<sString>!(pFirst-&gt;IsRecommended(15) &gt; pFirst-&gt;IsRecommended(16) ? 1 : pFirst-&gt;IsRecommended(15) &lt; pFirst-&gt;IsRecommended(16) ? 0 : sBaseStrength&gt;=sBaseIntellect) &amp;&amp; sender.vHaloween_TooltipCounter == 2</sString>
+					</enabled>
+					<formulaName></formulaName>
+					<LoggingEvent>-1</LoggingEvent>
+					<modifier>
+						<addValue>
+							<compiledString>FQ0AAAABAAAAGQAAAEFkZF9TdGF0X1NldABVi+yLRQxQi00IUWgAAAAAi1UQiwKLTRCLUFD/0l3D</compiledString>
+							<returnType>float</returnType>
+							<sString>cAdd_Stat_Set</sString>
+						</addValue>
+						<multValue>
+							<compiledString></compiledString>
+							<returnType>float</returnType>
+							<sString>1.0f</sString>
+						</multValue>
+						<stat>Intellect</stat>
+						<topModifier>false</topModifier>
+						<variable></variable>
+					</modifier>
+					<providerName></providerName>
+				</PermanentStatModApplicator>
+			</applicator>
+			<variableNames />
+		</Item>
+		<Item>
+			<applicator href="/Items/Talents/TalentKits/Halloween_Event/SetBonusProxy.APLR" id="D48B693A-CEAD-4594-951C-AD396500DC4F">
+				<PermanentStatModApplicator>
+					<applyTarget>ApplicatorTarget</applyTarget>
+					<caption>Haloween_Atk</caption>
+					<customApplyType>Maximize</customApplyType>
+					<enabled>
+						<compiledString>FRgAAAACAAAA4AAAAPYAAABIYWxvd2Vlbl9Ub29sdGlwQ291bnRlcgBVi+yD7BhWagSLRQiLEItNCIuCLAEAAP/QD7bwahGLTQiLEYtNCIuCLAEAAP/QD7bIO/F+DMdF/AEAAADpgAAAAGoEi1UIiwKLTQiLkCwBAAD/0g+28GoOi0UIixCLTQiLgiwBAAD/0A+2yDvxfQnHRfgAAAAA60OLVQiLAotNCIuQjAAAAP/Si0UIixCLTQiLgsAAAADdXfD/0Nxd8N/g9sRBegnHRewBAAAA6wfHRewAAAAAi03siU34i1X4iVX8g338AHQraAAAAACLRQiLEItNCIuCiAEAAP/Q3B0ZAQAA3+D2xER6CcdF6AEAAADrB8dF6AAAAACKRehei+VdwwAAAAAAAAhA</compiledString>
+						<returnType>bool</returnType>
+						<sString>(pFirst-&gt;IsRecommended(4) &gt; pFirst-&gt;IsRecommended(17) ? 1 : pFirst-&gt;IsRecommended(4) &lt; pFirst-&gt;IsRecommended(14) ? 0 : sBaseAttackSpeed&gt;=sBaseDexterity) &amp;&amp; sender.vHaloween_TooltipCounter == 3</sString>
+					</enabled>
+					<formulaName></formulaName>
+					<LoggingEvent>-1</LoggingEvent>
+					<modifier>
+						<addValue>
+							<compiledString>FQ0AAAABAAAAGQAAAEFkZF9TdGF0X1NldABVi+yLRQxQi00IUWgAAAAAi1UQiwKLTRCLUFD/0l3D</compiledString>
+							<returnType>float</returnType>
+							<sString>cAdd_Stat_Set</sString>
+						</addValue>
+						<multValue>
+							<compiledString></compiledString>
+							<returnType>float</returnType>
+							<sString>1.0f</sString>
+						</multValue>
+						<stat>AttackSpeed</stat>
+						<topModifier>false</topModifier>
+						<variable></variable>
+					</modifier>
+					<providerName></providerName>
+				</PermanentStatModApplicator>
+			</applicator>
+			<variableNames />
+		</Item>
+		<Item>
+			<applicator href="/Items/Talents/TalentKits/Halloween_Event/SetBonusProxy.APLR" id="7042C447-11ED-4777-95A2-D1167DB84375">
+				<PermanentStatModApplicator>
+					<applyTarget>ApplicatorTarget</applyTarget>
+					<caption>Haloween_Dex</caption>
+					<customApplyType>Maximize</customApplyType>
+					<enabled>
+						<compiledString>FRgAAAACAAAA4AAAAPYAAABIYWxvd2Vlbl9Ub29sdGlwQ291bnRlcgBVi+yD7BhWagSLRQiLEItNCIuCLAEAAP/QD7bwahGLTQiLEYtNCIuCLAEAAP/QD7bIO/F+DMdF/AEAAADpgAAAAGoEi1UIiwKLTQiLkCwBAAD/0g+28GoOi0UIixCLTQiLgiwBAAD/0A+2yDvxfQnHRfgAAAAA60OLVQiLAotNCIuQjAAAAP/Si0UIixCLTQiLgsAAAADdXfD/0Nxd8N/g9sRBegnHRewBAAAA6wfHRewAAAAAi03siU34i1X4iVX8g338AHUraAAAAACLRQiLEItNCIuCiAEAAP/Q3B0ZAQAA3+D2xER6CcdF6AEAAADrB8dF6AAAAACKRehei+VdwwAAAAAAAAhA</compiledString>
+						<returnType>bool</returnType>
+						<sString>!(pFirst-&gt;IsRecommended(4) &gt; pFirst-&gt;IsRecommended(17) ? 1 : pFirst-&gt;IsRecommended(4) &lt; pFirst-&gt;IsRecommended(14) ? 0 : sBaseAttackSpeed&gt;=sBaseDexterity) &amp;&amp; sender.vHaloween_TooltipCounter == 3</sString>
+					</enabled>
+					<formulaName></formulaName>
+					<LoggingEvent>-1</LoggingEvent>
+					<modifier>
+						<addValue>
+							<compiledString>FQ0AAAABAAAAGQAAAEFkZF9TdGF0X1NldABVi+yLRQxQi00IUWgAAAAAi1UQiwKLTRCLUFD/0l3D</compiledString>
+							<returnType>float</returnType>
+							<sString>cAdd_Stat_Set</sString>
+						</addValue>
+						<multValue>
+							<compiledString></compiledString>
+							<returnType>float</returnType>
+							<sString>1.0f</sString>
+						</multValue>
+						<stat>Dexterity</stat>
+						<topModifier>false</topModifier>
+						<variable></variable>
+					</modifier>
+					<providerName></providerName>
+				</PermanentStatModApplicator>
+			</applicator>
+			<variableNames />
+		</Item>
+	</applicators>
+	<applyTarget>ApplicatorTarget</applyTarget>
+	<caption>Сетовые прибавки, обернутые чтобы не ломалось отображение в гармошке замка</caption>
+	<enabled>
+		<compiledString></compiledString>
+		<returnType>bool</returnType>
+		<sString>true</sString>
+	</enabled>
+	<formulaName></formulaName>
+	<LoggingEvent>-1</LoggingEvent>
+	<providerName></providerName>
+</VariableProxyApplicator>

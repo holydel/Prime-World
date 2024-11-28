@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ProgramApplicator>
-	<BackLink DBID="/Items/Talents/Level4/G586_Life.TALENT" Count="1" />
-	<BackLink DBID="/Items/Talents/Level4/G587_StaOrWill.TALENT" Count="1" />
-	<BackLink DBID="/Items/Talents/Level5/G588_StrOrInt.TALENT" Count="1" />
-	<BackLink DBID="/Items/Talents/Level5/G589_LifeStaOrWill.TALENT" Count="1" />
+	<BackLink DBID="/Items/Talents/Level3/G644_StrOrInt_Life.TALENT" Count="1" />
+	<BackLink DBID="/Items/Talents/Level4/G645_Str.TALENT" Count="1" />
+	<BackLink DBID="/Items/Talents/Level4/G646_Int.TALENT" Count="1" />
+	<BackLink DBID="/Items/Talents/Level5/G647_SpdOrDex_Life.TALENT" Count="1" />
 	<applicators>
 		<Item>
-			<applicator href="/Items/Talents/TalentKits/Redset5_2_Defence/Program_Redset5_2_AddStaOrWill.APLR" id="43855E48-24A3-4E49-BA5E-47DA2CF5EA3D">
+			<applicator href="/Items/Talents/TalentKits/Redset6_5_TowerDisable/Program_Redset6_5_StrOrInt.APLR" id="4381D678-DA1A-4FD7-825C-9D6437C9D6C1">
 				<PermanentStatModApplicator>
 					<applyTarget>ApplicatorTarget</applyTarget>
-					<caption>Redset5_2_StaOrWillCounter</caption>
+					<caption>Add_StrOrInt_Redset6_5Counter</caption>
 					<customApplyType>None</customApplyType>
 					<enabled>
 						<compiledString>FQAAAAAAAAAAVYvssAFdww==</compiledString>
@@ -31,7 +31,7 @@
 						</multValue>
 						<stat>Life</stat>
 						<topModifier>false</topModifier>
-						<variable>Redset5_2_StaOrWillCounter</variable>
+						<variable>Add_StrOrInt_Redset6_5Counter</variable>
 					</modifier>
 					<providerName></providerName>
 				</PermanentStatModApplicator>
@@ -55,15 +55,15 @@
 			<stopEvents>0</stopEvents>
 		</Item>
 		<Item>
-			<applicator href="/Items/Talents/TalentKits/Redset5_2_Defence/Program_Redset5_2_AddStaOrWill.APLR" id="177368CD-44CE-4D82-A9B8-9816166F1FAD">
+			<applicator href="/Items/Talents/TalentKits/Redset6_5_TowerDisable/Program_Redset6_5_StrOrInt.APLR" id="2C40BE04-EAB1-43F1-A659-C48B24D837F3">
 				<PermanentStatModApplicator>
 					<applyTarget>ApplicatorTarget</applyTarget>
-					<caption>StaOrWill</caption>
+					<caption>StrOrInt</caption>
 					<customApplyType>Maximize</customApplyType>
 					<enabled>
-						<compiledString>FQAAAAAAAAAAVYvsg+wUVmoTi0UIixCLTQiLgiwBAAD/0A+28GoUi00IixGLTQiLgiwBAAD/0A+2yDvxfgzHRfwBAAAA6YAAAABqE4tVCIsCi00Ii5AsAQAA/9IPtvBqFItFCIsQi00Ii4IsAQAA/9APtsg78X0Jx0X4AAAAAOtDi1UIiwKLTQiLkMgAAAD/0otFCIsQi00Ii4LMAAAA3V3w/9DcXfDf4PbEQXoJx0XsAQAAAOsHx0XsAAAAAItN7IlN+ItV+IlV/IpF/F6L5V3D</compiledString>
+						<compiledString>FR4AAAACAAAA5gAAAPwAAABBZGRfU3RyT3JJbnRfUmVkc2V0Nl81Q291bnRlcgBVi+yD7BhWag+LRQiLEItNCIuCLAEAAP/QD7bwahCLTQiLEYtNCIuCLAEAAP/QD7bIO/F+DMdF/AEAAADpgAAAAGoPi1UIiwKLTQiLkCwBAAD/0g+28GoQi0UIixCLTQiLgiwBAAD/0A+2yDvxfQnHRfgAAAAA60OLVQiLAotNCIuQuAAAAP/Si0UIixCLTQiLgrwAAADdXfD/0Nxd8N/g9sRBegnHRewBAAAA6wfHRewAAAAAi03siU34i1X4iVX8g338AHQraAAAAACLRQiLEItNCIuCiAEAAP/Q3B0fAQAA3+D2xER6CcdF6AEAAADrB8dF6AAAAACKRehei+VdwwAAAAAAAABA</compiledString>
 						<returnType>bool</returnType>
-						<sString>(pFirst-&gt;IsRecommended(19) &gt; pFirst-&gt;IsRecommended(20) ? 1 : pFirst-&gt;IsRecommended(19) &lt; pFirst-&gt;IsRecommended(20) ? 0 : sBaseStamina&gt;=sBaseWill)</sString>
+						<sString>(pFirst-&gt;IsRecommended(15) &gt; pFirst-&gt;IsRecommended(16) ? 1 : pFirst-&gt;IsRecommended(15) &lt; pFirst-&gt;IsRecommended(16) ? 0 : sBaseStrength&gt;=sBaseIntellect) &amp;&amp; sender.vAdd_StrOrInt_Redset6_5Counter == 2</sString>
 					</enabled>
 					<formulaName></formulaName>
 					<LoggingEvent>-1</LoggingEvent>
@@ -80,7 +80,7 @@
 						</multValue>
 						<stat>Life</stat>
 						<topModifier>false</topModifier>
-						<variable>Redset5_2_StaOrWill</variable>
+						<variable>RedSet6_5_StrOrInt</variable>
 					</modifier>
 					<providerName></providerName>
 				</PermanentStatModApplicator>
@@ -104,30 +104,30 @@
 			<stopEvents>0</stopEvents>
 		</Item>
 		<Item>
-			<applicator href="/Items/Talents/TalentKits/Redset5_2_Defence/Program_Redset5_2_AddStaOrWill.APLR" id="F0649FBE-9832-4D5A-A40C-016B26CEAC86">
+			<applicator href="/Items/Talents/TalentKits/Redset6_5_TowerDisable/Program_Redset6_5_StrOrInt.APLR" id="497A04E6-F770-4C9B-99B3-5917A824E8F1">
 				<PermanentStatModApplicator>
 					<applyTarget>ApplicatorTarget</applyTarget>
-					<caption>Add_Will</caption>
+					<caption>Add_Strength</caption>
 					<customApplyType>Maximize</customApplyType>
 					<enabled>
-						<compiledString>FRsAAAACAAAA4wAAAPkAAABSZWRzZXQ1XzJfU3RhT3JXaWxsQ291bnRlcgBVi+yD7BhWahOLRQiLEItNCIuCLAEAAP/QD7bwahSLTQiLEYtNCIuCLAEAAP/QD7bIO/F+DMdF/AEAAADpgAAAAGoTi1UIiwKLTQiLkCwBAAD/0g+28GoUi0UIixCLTQiLgiwBAAD/0A+2yDvxfQnHRfgAAAAA60OLVQiLAotNCIuQyAAAAP/Si0UIixCLTQiLgswAAADdXfD/0Nxd8N/g9sRBegnHRewBAAAA6wfHRewAAAAAi03siU34i1X4iVX8g338AHUraAAAAACLRQiLEItNCIuCiAEAAP/Q3B0cAQAA3+D2xER6CcdF6AEAAADrB8dF6AAAAACKRehei+VdwwAAAAAAAABA</compiledString>
+						<compiledString>FR4AAAACAAAA5gAAAPwAAABBZGRfU3RyT3JJbnRfUmVkc2V0Nl81Q291bnRlcgBVi+yD7BhWag+LRQiLEItNCIuCLAEAAP/QD7bwahCLTQiLEYtNCIuCLAEAAP/QD7bIO/F+DMdF/AEAAADpgAAAAGoPi1UIiwKLTQiLkCwBAAD/0g+28GoQi0UIixCLTQiLgiwBAAD/0A+2yDvxfQnHRfgAAAAA60OLVQiLAotNCIuQuAAAAP/Si0UIixCLTQiLgrwAAADdXfD/0Nxd8N/g9sRBegnHRewBAAAA6wfHRewAAAAAi03siU34i1X4iVX8g338AHQraAAAAACLRQiLEItNCIuCiAEAAP/Q3B0fAQAA3+D2xER6CcdF6AEAAADrB8dF6AAAAACKRehei+VdwwAAAAAAAABA</compiledString>
 						<returnType>bool</returnType>
-						<sString>!(pFirst-&gt;IsRecommended(19) &gt; pFirst-&gt;IsRecommended(20) ? 1 : pFirst-&gt;IsRecommended(19) &lt; pFirst-&gt;IsRecommended(20) ? 0 : sBaseStamina&gt;=sBaseWill) &amp;&amp; (sender.vRedset5_2_StaOrWillCounter == 2)</sString>
+						<sString>(pFirst-&gt;IsRecommended(15) &gt; pFirst-&gt;IsRecommended(16) ? 1 : pFirst-&gt;IsRecommended(15) &lt; pFirst-&gt;IsRecommended(16) ? 0 : sBaseStrength&gt;=sBaseIntellect) &amp;&amp; sender.vAdd_StrOrInt_Redset6_5Counter == 2</sString>
 					</enabled>
 					<formulaName></formulaName>
 					<LoggingEvent>-1</LoggingEvent>
 					<modifier>
 						<addValue>
-							<compiledString>FRQAAAABAAAAIAAAAEFkZF9TdGF0X1JlZHNldF81XzIAVYvsi0UMUItNCFFoAAAAAItVEIsCi00Qi1BQ/9Jdww==</compiledString>
+							<compiledString>FRAAAAABAAAAHAAAAEFkZF9TdGF0X1JlZFNldABVi+yLRQxQi00IUWgAAAAAi1UQiwKLTRCLUFD/0l3D</compiledString>
 							<returnType>float</returnType>
-							<sString>cAdd_Stat_Redset_5_2</sString>
+							<sString>cAdd_Stat_RedSet</sString>
 						</addValue>
 						<multValue>
 							<compiledString></compiledString>
 							<returnType>float</returnType>
 							<sString>1.0f</sString>
 						</multValue>
-						<stat>Will</stat>
+						<stat>Strength</stat>
 						<topModifier>false</topModifier>
 						<variable></variable>
 					</modifier>
@@ -153,30 +153,30 @@
 			<stopEvents>0</stopEvents>
 		</Item>
 		<Item>
-			<applicator href="/Items/Talents/TalentKits/Redset5_2_Defence/Program_Redset5_2_AddStaOrWill.APLR" id="EB64D45A-E752-4BD4-AFF0-47A43169F56C">
+			<applicator href="/Items/Talents/TalentKits/Redset6_5_TowerDisable/Program_Redset6_5_StrOrInt.APLR" id="02CC3284-C7E9-4693-8DB2-07B022AC24AD">
 				<PermanentStatModApplicator>
 					<applyTarget>ApplicatorTarget</applyTarget>
-					<caption>Add_Stamina</caption>
+					<caption>Add_Intellect</caption>
 					<customApplyType>Maximize</customApplyType>
 					<enabled>
-						<compiledString>FRsAAAACAAAA4wAAAPkAAABSZWRzZXQ1XzJfU3RhT3JXaWxsQ291bnRlcgBVi+yD7BhWahOLRQiLEItNCIuCLAEAAP/QD7bwahSLTQiLEYtNCIuCLAEAAP/QD7bIO/F+DMdF/AEAAADpgAAAAGoTi1UIiwKLTQiLkCwBAAD/0g+28GoUi0UIixCLTQiLgiwBAAD/0A+2yDvxfQnHRfgAAAAA60OLVQiLAotNCIuQyAAAAP/Si0UIixCLTQiLgswAAADdXfD/0Nxd8N/g9sRBegnHRewBAAAA6wfHRewAAAAAi03siU34i1X4iVX8g338AHQraAAAAACLRQiLEItNCIuCiAEAAP/Q3B0cAQAA3+D2xER6CcdF6AEAAADrB8dF6AAAAACKRehei+VdwwAAAAAAAABA</compiledString>
+						<compiledString>FR4AAAACAAAA5gAAAPwAAABBZGRfU3RyT3JJbnRfUmVkc2V0Nl81Q291bnRlcgBVi+yD7BhWag+LRQiLEItNCIuCLAEAAP/QD7bwahCLTQiLEYtNCIuCLAEAAP/QD7bIO/F+DMdF/AEAAADpgAAAAGoPi1UIiwKLTQiLkCwBAAD/0g+28GoQi0UIixCLTQiLgiwBAAD/0A+2yDvxfQnHRfgAAAAA60OLVQiLAotNCIuQuAAAAP/Si0UIixCLTQiLgrwAAADdXfD/0Nxd8N/g9sRBegnHRewBAAAA6wfHRewAAAAAi03siU34i1X4iVX8g338AHUraAAAAACLRQiLEItNCIuCiAEAAP/Q3B0fAQAA3+D2xER6CcdF6AEAAADrB8dF6AAAAACKRehei+VdwwAAAAAAAABA</compiledString>
 						<returnType>bool</returnType>
-						<sString>(pFirst-&gt;IsRecommended(19) &gt; pFirst-&gt;IsRecommended(20) ? 1 : pFirst-&gt;IsRecommended(19) &lt; pFirst-&gt;IsRecommended(20) ? 0 : sBaseStamina&gt;=sBaseWill) &amp;&amp; (sender.vRedset5_2_StaOrWillCounter == 2)</sString>
+						<sString>!(pFirst-&gt;IsRecommended(15) &gt; pFirst-&gt;IsRecommended(16) ? 1 : pFirst-&gt;IsRecommended(15) &lt; pFirst-&gt;IsRecommended(16) ? 0 : sBaseStrength&gt;=sBaseIntellect) &amp;&amp; sender.vAdd_StrOrInt_Redset6_5Counter == 2</sString>
 					</enabled>
 					<formulaName></formulaName>
 					<LoggingEvent>-1</LoggingEvent>
 					<modifier>
 						<addValue>
-							<compiledString>FRQAAAABAAAAIAAAAEFkZF9TdGF0X1JlZHNldF81XzIAVYvsi0UMUItNCFFoAAAAAItVEIsCi00Qi1BQ/9Jdww==</compiledString>
+							<compiledString>FRAAAAABAAAAHAAAAEFkZF9TdGF0X1JlZFNldABVi+yLRQxQi00IUWgAAAAAi1UQiwKLTRCLUFD/0l3D</compiledString>
 							<returnType>float</returnType>
-							<sString>cAdd_Stat_Redset_5_2</sString>
+							<sString>cAdd_Stat_RedSet</sString>
 						</addValue>
 						<multValue>
 							<compiledString></compiledString>
 							<returnType>float</returnType>
 							<sString>1.0f</sString>
 						</multValue>
-						<stat>Stamina</stat>
+						<stat>Intellect</stat>
 						<topModifier>false</topModifier>
 						<variable></variable>
 					</modifier>
@@ -204,15 +204,15 @@
 	</applicators>
 	<applyTarget>ApplicatorTarget</applyTarget>
 	<behaviorFlags>0</behaviorFlags>
-	<caption>Add_StaOrWill</caption>
+	<caption>Redset6_5_StrOrInt</caption>
 	<effect>
 		<Item href="" />
 		<Item href="" />
 	</effect>
 	<enabled>
-		<compiledString>FQAAAAAAAAAAVYvssAFdww==</compiledString>
+		<compiledString>FR4AAAACAAAAIwAAADkAAABBZGRfU3RyT3JJbnRfUmVkc2V0Nl81Q291bnRlcgBVi+xRaAAAAACLRQiLEItNCIuCiAEAAP/Q3B1bAAAA3+D2xAV6CcdF/AEAAADrB8dF/AAAAACKRfyL5V3DAAAAAAAAAEA=</compiledString>
 		<returnType>bool</returnType>
-		<sString>true</sString>
+		<sString>sender.vAdd_StrOrInt_Redset6_5Counter &lt; 2</sString>
 	</enabled>
 	<formulaName></formulaName>
 	<lifeTime>
@@ -223,7 +223,7 @@
 	<LoggingEvent>-1</LoggingEvent>
 	<providerName></providerName>
 	<startCondition>
-		<compiledString>FQAAAAAAAAAAVYvssAFdww==</compiledString>
+		<compiledString></compiledString>
 		<returnType>bool</returnType>
 		<sString>true</sString>
 	</startCondition>

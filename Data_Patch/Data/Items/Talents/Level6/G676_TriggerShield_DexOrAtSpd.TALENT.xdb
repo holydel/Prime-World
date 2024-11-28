@@ -167,7 +167,7 @@
 					<returnType>bool</returnType>
 					<sString>true</sString>
 				</enabled>
-				<formulaName>sBaseAttackSpeed&gt;=sBaseDexterity</formulaName>
+				<formulaName>(pFirst-&gt;IsRecommended(4) &gt; pFirst-&gt;IsRecommended(17) ? 1 : pFirst-&gt;IsRecommended(4) &lt; pFirst-&gt;IsRecommended(14) ? 0 : sBaseAttackSpeed&gt;=sBaseDexterity)</formulaName>
 				<LoggingEvent>-1</LoggingEvent>
 				<modifier>
 					<addValue>
