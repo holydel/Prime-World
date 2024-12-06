@@ -103,7 +103,7 @@
 	</ReflectionMap>
 	<reflectivity>1</reflectivity>
 	<ReflectivityPinValue>ReflectivityOff</ReflectivityPinValue>
-	<renderFlags>7</renderFlags>
+	<renderFlags>2</renderFlags>
 	<renderState>
 		<alphaTest>On</alphaTest>
 		<alphaTestRef>127</alphaTestRef>
