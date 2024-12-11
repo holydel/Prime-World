@@ -1,21 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.IO;
-using System.Net;
-using System.Runtime.InteropServices;
-using System.Data;
 using System.Diagnostics;
-using System.Windows.Forms;
 using System.Threading;
+using System.Security.Principal;
+using LibGit2Sharp;
+using System.Text;
+using System.Runtime.InteropServices;
+using System.Net;
 
 namespace PW_MicroUpdater
 {
 
    class Program
    {
-      const string serverURL = "https://rekongstor.github.io/update/client/";
-      const string binariesPath = "..\\Bin";
+      static string repoPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\\Game\\");
+      static string targetBranch = @"main";
+      static string remoteRepoUrl = "https://github.com/rekongstor/PWCGitUpdates.git";
+      static bool IS_ADMIN_MANIFEST = false;
+      static string releaseUrl = @"https://github.com/ip7z/7zip/archive/refs/tags";
+      static string releaseFileName = @"24.09.zip";
 
       [DllImport("wininet.dll", SetLastError = true)]
       public static extern IntPtr InternetOpen(string lpszAgent, int dwAccessType, string lpszProxyName, string lpszProxyBypass, int dwFlags);
@@ -29,204 +32,244 @@ namespace PW_MicroUpdater
       [DllImport("wininet.dll", SetLastError = true)]
       public static extern bool InternetCloseHandle(IntPtr hInternet);
 
-      [DllImport("shell32.dll", CharSet = CharSet.Unicode)]
-      public static extern int SHFileOperation(ref SHFILEOPSTRUCT FileOp);
-
-      [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
-      public struct SHFILEOPSTRUCT
-      {
-         public IntPtr hwnd;
-         public uint wFunc;
-         public string pFrom;
-         public string pTo;
-         public ushort fFlags;
-         public int fAnyOperationsAborted;
-         public IntPtr hNameMappings;
-         public string lpszProgressTitle;
-      }
-
-      [DllImport("Lz32.dll", CharSet = CharSet.Auto)]
-      public static extern IntPtr LZOpenFile(string lpFileName, ref OFSTRUCT lpReOpenBuf, uint wStyle);
-
-      [DllImport("Lz32.dll", CharSet = CharSet.Auto)]
-      public static extern int LZRead(IntPtr hFile, byte[] lpBuffer, int cbRead);
-
-      [DllImport("Lz32.dll", CharSet = CharSet.Auto)]
-      public static extern int LZClose(IntPtr hFile);
-
-      [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Auto)]
-      public struct OFSTRUCT
-      {
-         public byte cBytes;
-         public byte fFixedDisk;
-         public ushort nErrCode;
-         public ushort Reserved1;
-         public ushort Reserved2;
-         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 128)]
-         public string szPathName;
-      }
-
-      [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Auto)]
-      public struct PROCESSENTRY32
-      {
-         public uint dwSize;
-         public uint cntUsage;
-         public uint th32ProcessID;
-         public IntPtr th32DefaultHeapID;
-         public uint th32ModuleID;
-         public uint cntThreads;
-         public uint th32ParentProcessID;
-         public int pcPriClassBase;
-         public uint dwFlags;
-         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 260)]
-         public char[] szExeFile;
-      }
-
-      [DllImport("kernel32.dll", SetLastError = true)]
-      public static extern IntPtr CreateToolhelp32Snapshot(uint dwFlags, uint th32ProcessID);
-
       [DllImport("kernel32.dll")]
-      public static extern bool Process32First(IntPtr hSnapshot, ref PROCESSENTRY32 lppe);
+      static extern IntPtr GetConsoleWindow();
 
-      [DllImport("kernel32.dll")]
-      public static extern bool Process32Next(IntPtr hSnapshot, ref PROCESSENTRY32 lppe);
+      [DllImport("user32.dll")]
+      static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
 
-      public const uint TH32CS_SNAPPROCESS = 0x00000002;
+      const int SW_HIDE = 0;
 
-      static bool DownloadUpdate(string filename, string zipName)
+      static int GetReleaseSize(string fileUrl)
       {
-         string url = serverURL + "/" + zipName;
-         StringBuilder sb = new StringBuilder();
-
-         IntPtr hInternet = InternetOpen("PWClassic", 0, null, null, 0);
-         if (hInternet != IntPtr.Zero)
+         var currentSecurityProtocol = ServicePointManager.SecurityProtocol;
+         ServicePointManager.SecurityProtocol = (SecurityProtocolType)(0x00000C00);
+         string fileSize = "0";
+         try
          {
-            IntPtr hUrl = InternetOpenUrl(hInternet, url, null, 0, 0, 0);
-            if (hUrl != IntPtr.Zero)
-            {
-               byte[] buffer = new byte[4096];
-               int bytesRead;
 
-               using (FileStream fs = new FileStream(filename, FileMode.Create))
+            // Создание запроса к URL файла
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(fileUrl);
+            request.Method = "HEAD"; // Иользуем метод HEAD, чтобы не скачивать содержимое
+
+            using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+            {
+               // Проверяем, есть ли заголовок Content-Length
+               if (response.Headers["Content-Length"] != null)
                {
-                  while (InternetReadFile(hUrl, buffer, buffer.Length, out bytesRead) && bytesRead > 0)
-                  {
-                     fs.Write(buffer, 0, bytesRead);
+                  fileSize = response.Headers["Content-Length"];
+               }
+               else
+               {
+                  Console.WriteLine("File size request failed");
+               }
+            }
+         }
+         catch (Exception ex)
+         {
+            Console.WriteLine("Filed to get file size: " + ex.Message);
+         }
+         ServicePointManager.SecurityProtocol = currentSecurityProtocol;
+         return Int32.Parse(fileSize);
+      }
+
+      static void DownloadRelease()
+      {
+         try
+         {
+            string filename = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, releaseFileName);
+
+            string url = releaseUrl + "/" + releaseFileName;
+            StringBuilder sb = new StringBuilder();
+
+            IntPtr hInternet = InternetOpen("PWClassic", 0, null, null, 0);
+            if (hInternet != IntPtr.Zero)
+            {
+               IntPtr hUrl = InternetOpenUrl(hInternet, url, null, 0, 0, 0);
+               if (hUrl != IntPtr.Zero)
+               {
+                  int fileSize = GetReleaseSize(url);
+                  int totalBytesRead = 0;
+
+                  byte[] buffer = new byte[4096];
+                  int bytesRead;
+
+                  using (FileStream fs = new FileStream(filename, FileMode.Create))
+                  { 
+                     while (InternetReadFile(hUrl, buffer, buffer.Length, out bytesRead) && bytesRead > 0)
+                     {
+                        totalBytesRead += bytesRead;
+                        double totalProgress = (float)totalBytesRead / (float)fileSize * 100.0;
+                        Console.WriteLine($"{totalProgress:f1}%");
+                        fs.Write(buffer, 0, bytesRead);
+                     }
                   }
+
+                  InternetCloseHandle(hUrl);
                }
 
-               InternetCloseHandle(hUrl);
+               InternetCloseHandle(hInternet);
             }
-
-            InternetCloseHandle(hInternet);
          }
+         catch (Exception e)
+         {
+            Console.WriteLine("Release download failed: " + e.Message);
+         }
+      }
 
+      static void UnzipRelease()
+      {
+
+      }
+
+      static bool IsDirectoryWritable(bool throwIfFails = false)
+      {
+         try
+         {
+            FileStream fs = File.Create(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, 
+               Path.GetRandomFileName()), 1, FileOptions.DeleteOnClose);
+            return true;
+         }
+         catch
+         {
+            if (throwIfFails)
+               throw;
+            else
+               return false;
+         }
+      }
+
+      public static bool Pull(string repositoryPath)
+      {
+         Repository localRepo = new Repository(repositoryPath);
+         PullOptions pullOptions = new PullOptions();
+         pullOptions.FetchOptions = new FetchOptions();
+         
+         Commands.Pull(localRepo, new Signature("username", "<your email>", new DateTimeOffset(DateTime.Now)), pullOptions);
          return true;
       }
 
-      static bool UnpackUpdate(string currentVerision)
+      static void UpdateGame()
       {
-         string fullPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "7za.exe");
-         string zipPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..\\" + currentVerision + ".zip");
-
-         if (!File.Exists(fullPath))
+         try
          {
-            return false;
+            var repo = new Repository(repoPath);
          }
-
-         ProcessStartInfo startInfo = new ProcessStartInfo
+         catch
          {
-            FileName = fullPath,
-            Arguments = "x -y " + currentVerision + ".zip",
-            UseShellExecute = false,
-            WorkingDirectory = AppDomain.CurrentDomain.BaseDirectory + "..\\",
-         };
-         var process = Process.Start(startInfo);
-         process.WaitForExit();
-         System.IO.File.Delete(zipPath);
-         return true;
-      }
-
-      static bool LaunchPWGame(string args)
-      {
-         string fullPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, binariesPath + "\\PW_Game.exe");
-
-         if (!File.Exists(fullPath))
-         {
-            return false;
+            try
+            {
+               if (System.IO.Directory.Exists(repoPath))
+               {
+                  System.IO.Directory.Delete(repoPath, true);
+               }
+               var result = Repository.Clone(remoteRepoUrl, repoPath);
+            }
+            catch (Exception e2)
+            {
+               Console.WriteLine("Clone failed: " + e2.Message);
+            }
          }
-
-         ProcessStartInfo startInfo = new ProcessStartInfo
+         try
          {
-            FileName = fullPath,
-            Arguments = "protocol " + args,
-            UseShellExecute = true,
-            WorkingDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, binariesPath)
-         };
-         Process.Start(startInfo);
+            using (var repo = new Repository(repoPath))
+            {
+               try
+               {
+                  Commands.Stage(repo, "*");
+               }
+               catch (Exception e)
+               {
+                  Console.WriteLine("Stage failed: " + e.Message);
+               }
+               try
+               {
+                  //var trackedBranch = repo.Head.TrackedBranch;
+                  //Commit originHeadCommit = repo.ObjectDatabase.FindMergeBase(repo.Branches[targetBranch].Tip, repo.Head.Tip);
+                  repo.Reset(LibGit2Sharp.ResetMode.Hard, repo.Branches[targetBranch].Tip);
 
-         return true;
-      }
+               }
+               catch (Exception e)
+               {
+                  Console.WriteLine("Reset failed: " + e.Message);
+               }
 
-      static bool IsProcessRunning(string processName)
-      {
-         // Получаем все процессы с именем processName
-         var processes = Process.GetProcessesByName(processName);
+               try
+               {
+                  LibGit2Sharp.Commands.Checkout(repo, targetBranch);
+               }
+               catch (Exception e)
+               {
+                  Console.WriteLine("Checkout failed: " + e.Message);
+               }
 
-         // Проверяем, если ли такие процессы
-         return processes.Length > 0;
-      }
+               try
+               {
+                  Pull(repoPath);
+               }
+               catch (Exception e)
+               {
+                  Console.WriteLine("Pull failed: " + e.Message);
+               }
 
-      static void KillPwGame()
-      {
-         while (IsProcessRunning("PW_Game.exe"))
+               /*
+               File.WriteAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "update.ini"),
+                  repo.Branches[targetBranch].Tip.Id.Sha);
+               */
+               DownloadRelease();
+               //return;
+            }
+         }
+         catch (Exception e)
          {
-            var processes = Process.GetProcessesByName("PW_Game.exe");
-            processes[0].Kill();
+            Console.WriteLine("Everything failed: " + e.Message);
          }
       }
 
       static void Main(string[] args)
       {
-         if (args.Length != 1)
+         var handle = GetConsoleWindow();
+
+         // Hide
+         ShowWindow(handle, SW_HIDE);
+
+         if (IsDirectoryWritable())
          {
-            MessageBox.Show("Запустите игру через веб-лаунчер! https://playpw.fun");
-            return;
-         }
-
-         var pwGamePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, binariesPath + "\\PW_Game.exe");
-         string clientVersion = "0.0";
-         if (File.Exists(pwGamePath))
+            UpdateGame();
+         } else
          {
-            var exeVersion = FileVersionInfo.GetVersionInfo(pwGamePath);
-            clientVersion = exeVersion.FileMajorPart + "." + exeVersion.FileMinorPart;
-         }
-
-         string actualVersion = args[0].Split('/')[4];
-         if (clientVersion != actualVersion)
-         { // Update game
-            string updateFileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory + "..\\", actualVersion + ".zip");
-
-            if (!DownloadUpdate(updateFileName, actualVersion + ".zip"))
+            if (IS_ADMIN_MANIFEST)
             {
-               MessageBox.Show("Не удалось загрузить обновление");
-               return;
-            }
-
-            KillPwGame();
-
-            if (!UnpackUpdate(actualVersion))
-            {
-               MessageBox.Show("Не удалось обновить игру");
-               return;
+               try
+               {
+                  IsDirectoryWritable(true);
+               }
+               catch (Exception e)
+               {
+                  WindowsPrincipal myPrincipal = (WindowsPrincipal)Thread.CurrentPrincipal;
+                  if (myPrincipal.IsInRole(WindowsBuiltInRole.Administrator))
+                  {
+                     Console.WriteLine("Ошибка обновления! Обратитесь в поддержку PWClassic https://t.me/primeworldclassic/8232 \n" + e.Message);
+                     return;
+                  }
+                  else
+                  {
+                     Console.WriteLine("Запустите приложение от имени администратора!");
+                     return;
+                  }
+               }
+            } else {
+               ProcessStartInfo startInfo = new ProcessStartInfo
+               {
+                  FileName = AppDomain.CurrentDomain.BaseDirectory + "PW_MicroUpdaterA.exe",
+                  Arguments = "",
+                  UseShellExecute = true,
+                  WorkingDirectory = AppDomain.CurrentDomain.BaseDirectory
+               };
+               Process.Start(startInfo);
             }
          }
 
-         if (!LaunchPWGame(args[0]))
-         {
-            MessageBox.Show("Не удалось запустить игру"); // файла не существует
-            return;
-         }
       }
    }
 }
