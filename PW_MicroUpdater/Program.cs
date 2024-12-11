@@ -7,18 +7,31 @@ using LibGit2Sharp;
 using System.Text;
 using System.Runtime.InteropServices;
 using System.Net;
+using System.Security.Cryptography;
+using System.Linq;
 
 namespace PW_MicroUpdater
 {
 
    class Program
    {
-      static string repoPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\\Game\\");
-      static string targetBranch = @"main";
-      static string remoteRepoUrl = "https://github.com/rekongstor/PWCGitUpdates.git";
+      static string repoPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..\\Game\\");
+      static string pileFilesPath = Path.Combine(repoPath, "Packs\\");
+      static string targetBranch = "main";
+      static string remoteRepoUrl = "https://github.com/Prime-World-Classic/PWCGitUpdates.git";
+      static string releaseUrl = "https://github.com/Prime-World-Classic/Prime-World/releases/download/1.9";
+      static string[] releaseFileNames = {
+         "data01.pile",
+         "data02.pile",
+         "data03.pile",
+         "data04.pile",
+         "data05.pile",
+         "data06.pile",
+      };
+
+
       static bool IS_ADMIN_MANIFEST = false;
-      static string releaseUrl = @"https://github.com/ip7z/7zip/archive/refs/tags";
-      static string releaseFileName = @"24.09.zip";
+      static bool COMPUTE_HASH = false;
 
       [DllImport("wininet.dll", SetLastError = true)]
       public static extern IntPtr InternetOpen(string lpszAgent, int dwAccessType, string lpszProxyName, string lpszProxyBypass, int dwFlags);
@@ -73,11 +86,56 @@ namespace PW_MicroUpdater
          return Int32.Parse(fileSize);
       }
 
-      static void DownloadRelease()
+      private static bool CheckFileMD5Hash(string filename, string md5FileName)
+      {
+         if (File.Exists(filename))
+         {
+            using (var md5 = MD5.Create())
+            {
+               using (var stream = File.OpenRead(filename))
+               {
+                  var hash = md5.ComputeHash(stream);
+                  var validHash = System.IO.File.ReadAllBytes(md5FileName);
+
+                  return hash.SequenceEqual(validHash);
+               }
+            }
+         }
+         return false;
+      }
+
+      private static void GenerateFileMD5Hash(string filename, string md5FileName)
+      {
+         using (var md5 = MD5.Create())
+         {
+            using (var stream = File.OpenRead(filename))
+            {
+               var hash = md5.ComputeHash(stream);
+               System.IO.File.WriteAllBytes(md5FileName, hash);
+               return;
+            }
+         }
+      }
+
+      static void DownloadRelease(string releaseFileName)
       {
          try
          {
-            string filename = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, releaseFileName);
+
+            string filename = Path.Combine(pileFilesPath, releaseFileName);
+            string md5FileName = Path.Combine(pileFilesPath, "..\\Hashes\\" + releaseFileName + ".md5");
+
+            if (COMPUTE_HASH)
+            {
+               GenerateFileMD5Hash(filename, md5FileName);
+               return;
+            } else
+            {
+               if (CheckFileMD5Hash(filename, md5FileName))
+               {
+                  return;
+               }
+            }
 
             string url = releaseUrl + "/" + releaseFileName;
             StringBuilder sb = new StringBuilder();
@@ -95,7 +153,7 @@ namespace PW_MicroUpdater
                   int bytesRead;
 
                   using (FileStream fs = new FileStream(filename, FileMode.Create))
-                  { 
+                  {
                      while (InternetReadFile(hUrl, buffer, buffer.Length, out bytesRead) && bytesRead > 0)
                      {
                         totalBytesRead += bytesRead;
@@ -110,6 +168,11 @@ namespace PW_MicroUpdater
 
                InternetCloseHandle(hInternet);
             }
+
+            if (CheckFileMD5Hash(filename, md5FileName))
+            {
+               Console.WriteLine("Failed to update: " + releaseFileName);
+            }
          }
          catch (Exception e)
          {
@@ -117,16 +180,11 @@ namespace PW_MicroUpdater
          }
       }
 
-      static void UnzipRelease()
-      {
-
-      }
-
       static bool IsDirectoryWritable(bool throwIfFails = false)
       {
          try
          {
-            FileStream fs = File.Create(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, 
+            FileStream fs = File.Create(Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
                Path.GetRandomFileName()), 1, FileOptions.DeleteOnClose);
             return true;
          }
@@ -144,12 +202,12 @@ namespace PW_MicroUpdater
          Repository localRepo = new Repository(repositoryPath);
          PullOptions pullOptions = new PullOptions();
          pullOptions.FetchOptions = new FetchOptions();
-         
+
          Commands.Pull(localRepo, new Signature("username", "<your email>", new DateTimeOffset(DateTime.Now)), pullOptions);
          return true;
       }
 
-      static void UpdateGame()
+      static void UpdateGame(bool skipReleaseDownload)
       {
          try
          {
@@ -212,12 +270,13 @@ namespace PW_MicroUpdater
                   Console.WriteLine("Pull failed: " + e.Message);
                }
 
-               /*
-               File.WriteAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "update.ini"),
-                  repo.Branches[targetBranch].Tip.Id.Sha);
-               */
-               DownloadRelease();
-               //return;
+               if (!skipReleaseDownload)
+               {
+                  foreach (string releaseFileName in releaseFileNames)
+                  {
+                     DownloadRelease(releaseFileName);
+                  }
+               }
             }
          }
          catch (Exception e)
@@ -230,13 +289,26 @@ namespace PW_MicroUpdater
       {
          var handle = GetConsoleWindow();
 
+         bool skipReleaseDownload = false;
+         if (args.Length > 0)
+         {
+            foreach (string arg in args)
+            {
+               if (arg == "skip_release")
+               {
+                  skipReleaseDownload = true; break;
+               }
+            }
+         }
+
          // Hide
          ShowWindow(handle, SW_HIDE);
 
          if (IsDirectoryWritable())
          {
-            UpdateGame();
-         } else
+            UpdateGame(skipReleaseDownload);
+         }
+         else
          {
             if (IS_ADMIN_MANIFEST)
             {
@@ -258,7 +330,9 @@ namespace PW_MicroUpdater
                      return;
                   }
                }
-            } else {
+            }
+            else
+            {
                ProcessStartInfo startInfo = new ProcessStartInfo
                {
                   FileName = AppDomain.CurrentDomain.BaseDirectory + "PW_MicroUpdaterA.exe",
@@ -270,6 +344,7 @@ namespace PW_MicroUpdater
             }
          }
 
+         //Console.ReadKey();
       }
    }
 }
