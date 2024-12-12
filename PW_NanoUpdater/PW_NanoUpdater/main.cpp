@@ -71,15 +71,58 @@ void CheckError(const char* stage)
    }
 }
 
+// This is a callback that could be used to print fetch head information
+int fetchhead_callback(const char* ref_name, const char* remote_url, const git_oid* oid, unsigned int is_merge, void* payload) {
+   memcpy(payload, oid, sizeof(git_oid));
+   return 0; // return-zero to stop iterating
+}
+// Вспомогательная функция для создания коммиталияния
+int create_merge_commit(git_repository* repo, git_oid* merge_commit_oid, git_annotated_commit* fetched_commit) {
+   git_signature* sig;
+   error = git_signature_now(&sig, "Your Name", "your_email@example.com"); // Здесь используйте свои имя и email
+   CheckError("Create signature");
+
+   git_index* index;
+   error = git_repository_index(&index, repo);
+   CheckError("Get index");
+
+   git_oid tree_oid;
+   error = git_index_write_tree(&tree_oid, index);
+   CheckError("Write tree from index");
+
+   git_tree* tree;
+   error = git_tree_lookup(&tree, repo, &tree_oid);
+   CheckError("Lookup tree");
+
+   error = git_commit_create_v(
+      merge_commit_oid, repo, "HEAD", sig, sig, NULL,
+      "Merge remote branch 'origin/main'", tree,
+      1, git_annotated_commit_id(fetched_commit)
+   );
+   CheckError("Create commit");
+
+   // Очистка
+   git_signature_free(sig);
+   git_index_free(index);
+   git_tree_free(tree);
+
+   return error; // Возвращаем код ошибки операции
+}
+int fetch_progress(const git_transfer_progress* stats, void* payload) {
+   std::cout << "Received: " << stats->received_objects << "/" << stats->total_objects << " objects" << std::endl;
+   std::cout << "Received: " << stats->received_bytes << "/" << stats->total_objects << " bytes" << std::endl;
+   return 0;
+}
+
 void UpdateRepo(const char* branch) {
    git_repository* repo = nullptr;
+   std::wstring_convert<std::codecvt_utf8_utf16<wchar_t>> converter;
+   std::wstring wRepoPath = converter.from_bytes(repoPath);
 
    // Try to open the repository
    error = git_repository_open(&repo, repoPath);
    if (error) {
       // If opening the repository failed, delete the target directory
-      std::wstring_convert<std::codecvt_utf8_utf16<wchar_t>> converter;
-      std::wstring wRepoPath = converter.from_bytes(repoPath);
 
       // Assuming gh_fs_rm is a function that recursively deletes a directory.
       error = gh_fs_rm(wRepoPath);
@@ -87,7 +130,8 @@ void UpdateRepo(const char* branch) {
 
       // Clone
       git_clone_options cloneOpts = GIT_CLONE_OPTIONS_INIT;
-      cloneOpts.fetch_opts.depth = 1;
+      //cloneOpts.fetch_opts.depth = 1;
+      cloneOpts.fetch_opts.callbacks.transfer_progress = fetch_progress;
       
       error = git_clone(&repo, remoteRepoUrl, repoPath, &cloneOpts);
       CheckError("Clone");
@@ -108,7 +152,6 @@ void UpdateRepo(const char* branch) {
       git_status_options statusopt = GIT_STATUS_OPTIONS_INIT;
       statusopt.show = GIT_STATUS_SHOW_INDEX_AND_WORKDIR;
       statusopt.flags = GIT_STATUS_OPT_INCLUDE_UNTRACKED | GIT_STATUS_OPT_RECURSE_UNTRACKED_DIRS;
-
 
       git_status_list* status;
       error = git_status_list_new(&status, repo, &statusopt);
@@ -139,8 +182,38 @@ void UpdateRepo(const char* branch) {
       CheckError("Remote lookup");
 
       git_fetch_options fetch_opts = GIT_FETCH_OPTIONS_INIT;
+      fetch_opts.callbacks.transfer_progress = fetch_progress;
       error = git_remote_fetch(remote, nullptr, &fetch_opts, nullptr);
       CheckError("Remote fetch");
+
+      // Verify if we actually fetched any new data
+      git_oid fetch_head_oid;
+      error = git_repository_fetchhead_foreach(repo, fetchhead_callback, &fetch_head_oid);
+      CheckError("Fetching FETCH_HEAD");
+
+      git_annotated_commit* fetched_commit = NULL;
+      error = git_annotated_commit_from_fetchhead(&fetched_commit, repo, "main", remoteRepoUrl, &fetch_head_oid);
+      CheckError("Get annotated commit from FETCH_HEAD");
+
+      git_merge_options merge_opts = GIT_MERGE_OPTIONS_INIT;
+      git_checkout_options checkout_opts = GIT_CHECKOUT_OPTIONS_INIT;
+
+      const git_annotated_commit* cmt[] = { fetched_commit };
+      error = git_merge(repo, cmt, 1, &merge_opts, &checkout_opts);
+      git_annotated_commit_free(fetched_commit);
+      CheckError("Merge");
+
+      if (git_repository_state(repo) == GIT_REPOSITORY_STATE_NONE) {
+         git_oid merge_commit_oid;
+         error = create_merge_commit(repo, &merge_commit_oid, fetched_commit);
+         CheckError("Create merge commit");
+      } else {
+         /*
+         gh_fs_rm(wRepoPath);
+         error = -1;
+         CheckError("Failed to merge");
+         */
+      }
 
       // Cleanup
       git_remote_free(remote);
