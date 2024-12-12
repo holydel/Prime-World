@@ -73,3 +73,5 @@ Client-Synchronizer-Server/pythonProject/api_key.txt
 rating/game_session.json
 rating/rating_json.txt
 Client-Synchronizer-Server/pythonProject/finish_game.py
+PW_NanoUpdater/PW_NanoUpdater/x64/*
+PW_NanoUpdater/PW_NanoUpdater/.vs/PW_NanoUpdater/v17/*

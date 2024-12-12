@@ -197,16 +197,6 @@ namespace PW_MicroUpdater
          }
       }
 
-      public static bool Pull(string repositoryPath)
-      {
-         Repository localRepo = new Repository(repositoryPath);
-         PullOptions pullOptions = new PullOptions();
-         pullOptions.FetchOptions = new FetchOptions();
-
-         Commands.Pull(localRepo, new Signature("username", "<your email>", new DateTimeOffset(DateTime.Now)), pullOptions);
-         return true;
-      }
-
       static void UpdateGame(bool skipReleaseDownload)
       {
          try
@@ -263,7 +253,11 @@ namespace PW_MicroUpdater
 
                try
                {
-                  Pull(repoPath);
+                  Repository localRepo = new Repository(repoPath);
+                  PullOptions pullOptions = new PullOptions();
+                  pullOptions.FetchOptions = new FetchOptions();
+
+                  Commands.Pull(localRepo, new Signature("username", "<your email>", new DateTimeOffset(DateTime.Now)), pullOptions);
                }
                catch (Exception e)
                {
