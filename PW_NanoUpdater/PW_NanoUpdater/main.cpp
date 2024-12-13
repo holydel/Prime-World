@@ -13,9 +13,19 @@
 #include <io.h>
 #include <thread>
 #include <fstream>
+#include <functional>
 
+class admin_rights_exception : std::exception {
+
+};
 
 static int error;
+
+static bool isAdminRightsRequired = false;
+
+int SocketListen(std::atomic<bool>& doWork);
+int SocketTrancieve(const char* argv, std::atomic<bool>& doWork);
+void TransmitMessage(char const* strbuf, std::streamsize strSize);
 
 bool gh_fs_rm(const std::string& path) {
    WIN32_FIND_DATA findFileData;
@@ -123,7 +133,10 @@ int create_merge_commit(git_repository* repo, git_oid* merge_commit_oid, git_ann
 
 
 int fetch_progress(const git_transfer_progress* stats, void* payload) {
-   std::cout << max(0.f, min(100.f, (float)stats->received_objects / (float)stats->total_objects * 100.f)) << std::endl;
+   int progress = max(0.f, min(100.f, (float)stats->received_objects / (float)stats->total_objects * 100.f));
+   //std::cout <<  << std::endl;
+   std::string pr = std::format("{}\n", progress);
+   TransmitMessage(pr.c_str(), pr.size());
 
    return 0;
 }
@@ -273,7 +286,7 @@ int LaunchAdminNanoUpdater(std::string& cmdLine) {
    ShExecInfo.lpFile = "..\\Tools\\PW_NanoUpdaterAdm.exe";
    ShExecInfo.lpParameters = cmdLine.c_str();
    ShExecInfo.lpDirectory = cwd.string().c_str();
-   ShExecInfo.nShow = SW_HIDE;
+   ShExecInfo.nShow = SW_SHOW;
    ShExecInfo.hInstApp = NULL;
 
    if (ShellExecuteEx(&ShExecInfo)) {
@@ -316,18 +329,24 @@ int LaunchAdminNanoUpdater(std::string& cmdLine) {
          }
          });
          */
-         
+
+      std::atomic<bool> doWork;
+      doWork.store(true);
+
+      std::thread readStdErr([&doWork]() {
+         SocketListen(doWork);
+         });
+
       HANDLE hProcess = ShExecInfo.hProcess;
       DWORD exitCode = STILL_ACTIVE;
       while (exitCode == STILL_ACTIVE) {
          GetExitCodeProcess(hProcess, &exitCode);
          Sleep(1000);
       }
-      /*
-      stopThreads.store(true);
-      readStdOut.join();
+      
+      doWork.store(false);
       readStdErr.join();
-      */
+      
       CloseHandle(ShExecInfo.hProcess);
    }
    else {
@@ -352,6 +371,14 @@ bool IsAdminRequired() {
 }
 
 
+int RunWithAdminRights(const char* repoPath, const char* remoteRepoUrl, const char* branchName)
+{
+   if (isAdminRightsRequired) {
+      std::string cmdLine = std::format("{} {} {}", repoPath, remoteRepoUrl, branchName);
+      return LaunchAdminNanoUpdater(cmdLine);
+   }
+}
+
 int Update(const char* repoPath, const char* remoteRepoUrl, const char* branchName) {
 
    // Initialize the library
@@ -362,10 +389,8 @@ int Update(const char* repoPath, const char* remoteRepoUrl, const char* branchNa
    }
 
 #ifndef ADMIN_MANIFEST
-   if (IsAdminRequired()) {
-      std::string cmdLine = std::format("{} {} {}", repoPath, remoteRepoUrl, branchName);
-      return LaunchAdminNanoUpdater(cmdLine);
-   }
+   isAdminRightsRequired = IsAdminRequired();
+   return RunWithAdminRights(repoPath, remoteRepoUrl, branchName);
 #endif
 
    try {
@@ -385,9 +410,12 @@ int Update(const char* repoPath, const char* remoteRepoUrl, const char* branchNa
    return 0;
 }
 
-
+#if 1
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
    PSTR lpCmdLine, int nCmdShow) {
+#else
+int main() {
+#endif
    char* winCmd = GetCommandLine();
    std::vector<char*> argVector;
    int index = 0;
@@ -409,6 +437,32 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
       OutputPipe("stderr", strStreamErr, stopThreads);
       });
       */
+   /*
+   class callback_streambuf : public std::streambuf {
+   public:
+      callback_streambuf(std::function<void(char const*, std::streamsize)> callback) : callback(callback) {}
+
+   protected:
+      std::streamsize xsputn(char_type const* s, std::streamsize count) {
+         callback(s, count);
+         return count;
+      }
+
+   private:
+      std::function<void(char const*, std::streamsize)> callback;
+   };
+
+   auto buf = callback_streambuf(TransmitMessage);
+   auto pold_buffer = std::cout.rdbuf(&buf);
+   */
+
+   std::atomic<bool> doWork;
+   doWork.store(true);
+
+   std::thread writeStdOut([&doWork]() {
+      SocketTrancieve("127.0.0.1", doWork);
+      });
+
 #endif
 
    // walk over the command line and convert it to argv
@@ -430,11 +484,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 
    if (argVector.size() < 4) {
 #ifdef ADMIN_MANIFEST
-      /*
-      stopThreads.store(true);
+      doWork.store(false);
       writeStdOut.join();
-      writeStdErr.join();
-      */
 #endif
       return 1;
    }
@@ -446,11 +497,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
    int result = Update(repoPath, remoteRepoUrl, branchName);
 
 #ifdef ADMIN_MANIFEST
-   /*
-   stopThreads.store(true);
+   doWork.store(false);
    writeStdOut.join();
-   writeStdErr.join();
-   */
 #endif
    return result;
 }
