@@ -12,6 +12,7 @@
 	<BackLink DBID="/Items/Scrolls/status_Burn.APLR" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/Katana/status_FX_A0_SUP_Burn.APLR" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/Plane/spell_A1_DoT.APLR" Count="1" />
+	<BackLink DBID="/Creeps/Minions/Minion3/PVP_FIRE.CREEP" Count="1" />
 	<attachFlags>1</attachFlags>
 	<attachType>Body</attachType>
 	<component href="/Effects/Debuffs/Burn/_TRS.PRXY" />

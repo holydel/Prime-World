@@ -361,6 +361,7 @@ struct IUnitFormulaPars
 	virtual float GetEnergyDrain()    const = 0;
 
 	// Misc information
+	virtual int   GetHeroClassId()           const = 0;
 	virtual float GetSummonCnt()             const = 0;
 	virtual bool  IsMoving()                 const = 0;
 	virtual float GetTimeStanding()          const = 0;

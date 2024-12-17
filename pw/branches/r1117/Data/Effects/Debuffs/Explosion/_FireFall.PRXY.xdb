@@ -3,6 +3,7 @@
 	<BackLink DBID="/Effects/Debuffs/Explosion/_FireMedium.PRXY" Count="1" />
 	<BackLink DBID="/Effects/Debuffs/Explosion/_FireShort.PRXY" Count="1" />
 	<BackLink DBID="/Effects/Debuffs/Meteor/_FireShort.PRXY" Count="1" />
+	<BackLink DBID="/Effects/Debuffs/Explosion/_FireShort_1.PRXY" Count="1" />
 	<attached>
 		<Item>
 			<attachFlags>15</attachFlags>

@@ -2,6 +2,7 @@
 <BasicMaterial>
 	<BackLink DBID="/Critters/Dragon/_.SOBJ" Count="1" />
 	<BackLink DBID="/Pets/Dragon/_.ANSC" Count="1" />
+	<BackLink DBID="/Creeps/Minions/Minion3/_Elite.SOBJ" Count="1" />
 	<caption></caption>
 	<diffuseColor>
 		<A>1</A>

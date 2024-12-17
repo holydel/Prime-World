@@ -13,6 +13,8 @@
 	<BackLink DBID="/Creeps/Normals/Normal7/CTF_S11.CREEP" Count="1" />
 	<BackLink DBID="/Creeps/Normals/Normal8/CTF_S8.CREEP" Count="1" />
 	<BackLink DBID="/Creeps/Normals/Normal9/CTF_12.CREEP" Count="1" />
+	<BackLink DBID="/Creeps/Normals/Normal3/PVP.CREEP" Count="1" />
+	<BackLink DBID="/Creeps/Normals/Normal6/PVP.CREEP" Count="1" />
 	<activeCustomTrigger>true</activeCustomTrigger>
 	<allowChase>
 		<compiledString></compiledString>

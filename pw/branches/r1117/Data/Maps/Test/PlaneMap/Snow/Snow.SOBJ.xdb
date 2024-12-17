@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DBSceneObject>
+	<BackLink DBID="/Maps/Test/PlaneMap/Snow/_Snow.SMPL" Count="1" />
+	<attached>
+		<Item>
+			<attachFlags>15</attachFlags>
+			<component href="/Maps/Test/PlaneMap/Snow/Snow.PRXY" />
+			<events href="" />
+			<id></id>
+			<locatorName></locatorName>
+			<placement>
+				<pos>
+					<x>0</x>
+					<y>0</y>
+					<z>0</z>
+				</pos>
+				<rot>
+					<w>1</w>
+					<x>0</x>
+					<y>0</y>
+					<z>0</z>
+				</rot>
+				<scale>
+					<x>1</x>
+					<y>1</y>
+					<z>1</z>
+				</scale>
+			</placement>
+			<timeController href="/Maps/Test/PlaneMap/Snow/Snow.SOBJ" id="E4FF48F4-5D3A-420C-84E5-42421762161F">
+				<TimeController>
+					<cycleCount>0</cycleCount>
+					<cycleLength>8.333333</cycleLength>
+					<fadein>0</fadein>
+					<fadeout>0</fadeout>
+					<firstCycleOffset>0</firstCycleOffset>
+					<firstCycleOffsetDelta>0</firstCycleOffsetDelta>
+					<speed>1</speed>
+					<startDelay>0</startDelay>
+				</TimeController>
+			</timeController>
+		</Item>
+	</attached>
+	<collisionGeometry href="" />
+	<ignoreAttachesToNonDefaultLocators>false</ignoreAttachesToNonDefaultLocators>
+	<tracksList href="" />
+</DBSceneObject>

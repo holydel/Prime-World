@@ -779,7 +779,7 @@ function UnitMoveTo( creatureName, targetName, distance)
 		x, y = targetName.x, targetName.y
 	end
 	--LuaDebugTrace( "DEBUG: ƒистанци€ ="..tostring( distance) )
-	LuaCreatureMoveTo( creatureName, x, y , 1 )
+	LuaCreatureMoveTo( creatureName, x, y ,1 )
 	if ( distance > 0 ) then
 		while true do
 			--LuaDebugTrace( "Debug: ∆дем юнита в нужной нам координате" )
@@ -801,7 +801,7 @@ end
 	elseif ( type( targetName ) == "table" ) then
 		x, y = targetName.x, targetName.y
 	end
-	if ( distance <= 0 ) then distance =1 end
+	if ( distance <= 0 ) then distance =0.1 end
 	LuaCreatureMoveTo( creatureName, x, y , distance )	
 	LuaDebugTrace( "DEBUG: вейт‘орћув, дистанци€ ="..tostring( distance) )
 	local state = function ( x, y )

@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <DBSceneComponent>
 	<BackLink DBID="/Creeps/Champions/Champion2/_.SOBJ" Count="1" />
+	<BackLink DBID="/Creeps/Champions/Champion2/_Big.SOBJ" Count="1" />
 	<attached>
 		<Item>
 			<attachFlags>15</attachFlags>

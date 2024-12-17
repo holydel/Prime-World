@@ -2,8 +2,7 @@
 <LightningEffect>
 	<BackLink DBID="/Effects/Shots/Lightning/_LinkBody.EFFT" Count="3" />
 	<BackLink DBID="/Items/Talents/Class/ThunderGod/TestLightning.APLR" Count="1" />
-	<BackLink DBID="/Heroes/Trickster/appl_Bouncing_Attack.APLR" Count="1" />
-	<BackLink DBID="/Heroes/Trickster2/appl_Bouncing_Attack.APLR" Count="1" />
+	<BackLink DBID="/Items/Talents/Class/ThunderGod/Ability4_3.TALENT" Count="2" />
 	<component href="/Effects/Shots/Lightning/_LinkBody.LGSC" />
 	<controlledVisibility>false</controlledVisibility>
 	<deathType>Time</deathType>

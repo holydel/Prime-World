@@ -9,6 +9,8 @@
 	<BackLink DBID="/Maps/Multiplayer/MOBA/Spawners/Neutral_Elite_1.NCSPN" Count="2" />
 	<BackLink DBID="/Maps/Multiplayer/MOBA/Spawners/Neutral_Normal.NCSPN" Count="4" />
 	<BackLink DBID="/Maps/Multiplayer/MOBA/Spawners/Neutral_TopBot.NCSPN" Count="2" />
+	<BackLink DBID="/Maps/Multiplayer/MOBA/Spawners/Neutral_Assid.NCSPN" Count="2" />
+	<BackLink DBID="/Creeps/Minions/Minion1/PVP_Rogatik.CREEP" Count="1" />
 	<stats>
 		<Item>
 			<calcIncrement>0</calcIncrement>

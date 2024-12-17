@@ -12,6 +12,9 @@
 	<BackLink DBID="/Creeps/Minions/Minion3/PvE_Coop1_Killer2.CREEP" Count="1" />
 	<BackLink DBID="/Creeps/Minions/Minion3/PvE_R1.CREEP" Count="1" />
 	<BackLink DBID="/Creeps/Minions/Minion3/PvE_R5.CREEP" Count="1" />
+	<BackLink DBID="/Creeps/Minions/Minion3/PVP_BLUE.CREEP" Count="3" />
+	<BackLink DBID="/Creeps/Minions/Minion3/PVP_FIRE.CREEP" Count="3" />
+	<BackLink DBID="/Creeps/Minions/Minion3/PVP_Elite.CREEP" Count="3" />
 	<activeCustomTrigger>true</activeCustomTrigger>
 	<allowChase>
 		<compiledString></compiledString>

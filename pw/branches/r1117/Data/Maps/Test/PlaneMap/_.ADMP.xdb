@@ -10,8 +10,8 @@
 	</ambienceMap>
 	<bakedLighting>
 		<dynObjBakedLighting>/Maps/Test/PlaneMap/_.shgrid</dynObjBakedLighting>
-		<dynObjLightingGridResX>10</dynObjLightingGridResX>
-		<dynObjLightingGridResY>10</dynObjLightingGridResY>
+		<dynObjLightingGridResX>40</dynObjLightingGridResX>
+		<dynObjLightingGridResY>40</dynObjLightingGridResY>
 		<renderedEnvironmentEffect>0.5</renderedEnvironmentEffect>
 		<renderedEnvironmentRange>10</renderedEnvironmentRange>
 		<vertexColorsFileName>/Maps/Test/PlaneMap/_.vtxcolor</vertexColorsFileName>
@@ -416,8 +416,8 @@
 				<scaleX>1</scaleX>
 				<scaleY>1</scaleY>
 				<scaleZ>1</scaleZ>
-				<translateX>9.207256</translateX>
-				<translateY>55.37602</translateY>
+				<translateX>5.090084</translateX>
+				<translateY>57.40176</translateY>
 				<translateZ>0</translateZ>
 			</offset>
 			<player>None</player>
@@ -434,8 +434,8 @@
 				<scaleX>1</scaleX>
 				<scaleY>1</scaleY>
 				<scaleZ>1</scaleZ>
-				<translateX>33.00874</translateX>
-				<translateY>33.94402</translateY>
+				<translateX>25.86195</translateX>
+				<translateY>24.58846</translateY>
 				<translateZ>0</translateZ>
 			</offset>
 			<player>None</player>
@@ -452,8 +452,8 @@
 				<scaleX>1</scaleX>
 				<scaleY>1</scaleY>
 				<scaleZ>1</scaleZ>
-				<translateX>20.05291</translateX>
-				<translateY>10.50163</translateY>
+				<translateX>18.43124</translateX>
+				<translateY>12.27959</translateY>
 				<translateZ>0</translateZ>
 			</offset>
 			<player>None</player>
@@ -1084,6 +1084,186 @@
 				<scaleZ>1</scaleZ>
 				<translateX>63.16374</translateX>
 				<translateY>54.67936</translateY>
+				<translateZ>0</translateZ>
+			</offset>
+			<player>None</player>
+			<scriptGroupName></scriptGroupName>
+			<scriptName></scriptName>
+		</Item>
+		<Item>
+			<gameObject href="/Maps/Test/PlaneMap/Portal/portal1.USBL" />
+			<lockMap>true</lockMap>
+			<offset>
+				<rotationX>0</rotationX>
+				<rotationY>0</rotationY>
+				<rotationZ>0</rotationZ>
+				<scaleX>1</scaleX>
+				<scaleY>1</scaleY>
+				<scaleZ>1</scaleZ>
+				<translateX>29.33268</translateX>
+				<translateY>33.19435</translateY>
+				<translateZ>0</translateZ>
+			</offset>
+			<player>None</player>
+			<scriptGroupName></scriptGroupName>
+			<scriptName></scriptName>
+		</Item>
+		<Item>
+			<gameObject href="/Maps/Test/PlaneMap/Portal/portal2.USBL" />
+			<lockMap>true</lockMap>
+			<offset>
+				<rotationX>0</rotationX>
+				<rotationY>0</rotationY>
+				<rotationZ>0</rotationZ>
+				<scaleX>1</scaleX>
+				<scaleY>1</scaleY>
+				<scaleZ>1</scaleZ>
+				<translateX>31.45702</translateX>
+				<translateY>33.44352</translateY>
+				<translateZ>0</translateZ>
+			</offset>
+			<player>None</player>
+			<scriptGroupName></scriptGroupName>
+			<scriptName></scriptName>
+		</Item>
+		<Item>
+			<gameObject href="/Buildings/N/Bridge/_.USBL" />
+			<lockMap>true</lockMap>
+			<offset>
+				<rotationX>0</rotationX>
+				<rotationY>0</rotationY>
+				<rotationZ>0</rotationZ>
+				<scaleX>1</scaleX>
+				<scaleY>1</scaleY>
+				<scaleZ>1</scaleZ>
+				<translateX>41.83974</translateX>
+				<translateY>45.34751</translateY>
+				<translateZ>0</translateZ>
+			</offset>
+			<player>None</player>
+			<scriptGroupName></scriptGroupName>
+			<scriptName></scriptName>
+		</Item>
+		<Item>
+			<gameObject href="/Summons/Portal/_.SUMMONED" />
+			<lockMap>true</lockMap>
+			<offset>
+				<rotationX>0</rotationX>
+				<rotationY>0</rotationY>
+				<rotationZ>0</rotationZ>
+				<scaleX>1</scaleX>
+				<scaleY>1</scaleY>
+				<scaleZ>1</scaleZ>
+				<translateX>4.575377</translateX>
+				<translateY>43.03483</translateY>
+				<translateZ>0</translateZ>
+			</offset>
+			<player>None</player>
+			<scriptGroupName></scriptGroupName>
+			<scriptName></scriptName>
+		</Item>
+		<Item>
+			<gameObject href="/Terrain/Huts/_04.MSO" />
+			<lockMap>true</lockMap>
+			<offset>
+				<rotationX>0</rotationX>
+				<rotationY>0</rotationY>
+				<rotationZ>0</rotationZ>
+				<scaleX>1</scaleX>
+				<scaleY>1</scaleY>
+				<scaleZ>1</scaleZ>
+				<translateX>13.79691</translateX>
+				<translateY>26.22298</translateY>
+				<translateZ>0</translateZ>
+			</offset>
+			<player>None</player>
+			<scriptGroupName></scriptGroupName>
+			<scriptName></scriptName>
+		</Item>
+		<Item>
+			<gameObject href="/Buildings/N/Bridge/Button.USBL" />
+			<lockMap>true</lockMap>
+			<offset>
+				<rotationX>0</rotationX>
+				<rotationY>0</rotationY>
+				<rotationZ>0</rotationZ>
+				<scaleX>1</scaleX>
+				<scaleY>1</scaleY>
+				<scaleZ>1</scaleZ>
+				<translateX>23.66269</translateX>
+				<translateY>46.29564</translateY>
+				<translateZ>0</translateZ>
+			</offset>
+			<player>None</player>
+			<scriptGroupName></scriptGroupName>
+			<scriptName></scriptName>
+		</Item>
+		<Item>
+			<gameObject href="/Maps/Test/PlaneMap/Gift/Gift.USBL" />
+			<lockMap>true</lockMap>
+			<offset>
+				<rotationX>0</rotationX>
+				<rotationY>0</rotationY>
+				<rotationZ>57.22739</rotationZ>
+				<scaleX>1</scaleX>
+				<scaleY>1</scaleY>
+				<scaleZ>1</scaleZ>
+				<translateX>28.44261</translateX>
+				<translateY>39.30741</translateY>
+				<translateZ>0.4383477</translateZ>
+			</offset>
+			<player>None</player>
+			<scriptGroupName></scriptGroupName>
+			<scriptName></scriptName>
+		</Item>
+		<Item>
+			<gameObject href="/Maps/Test/PlaneMap/GiftGlyph/giftspawner.GLSPN" />
+			<lockMap>true</lockMap>
+			<offset>
+				<rotationX>0</rotationX>
+				<rotationY>0</rotationY>
+				<rotationZ>0</rotationZ>
+				<scaleX>1</scaleX>
+				<scaleY>1</scaleY>
+				<scaleZ>1</scaleZ>
+				<translateX>29.80342</translateX>
+				<translateY>44.33068</translateY>
+				<translateZ>0</translateZ>
+			</offset>
+			<player>None</player>
+			<scriptGroupName></scriptGroupName>
+			<scriptName></scriptName>
+		</Item>
+		<Item>
+			<gameObject href="/Maps/Test/PlaneMap/GiftGlyph/PrimeRune_1.SSO" />
+			<lockMap>true</lockMap>
+			<offset>
+				<rotationX>0</rotationX>
+				<rotationY>0</rotationY>
+				<rotationZ>0</rotationZ>
+				<scaleX>1</scaleX>
+				<scaleY>1</scaleY>
+				<scaleZ>1</scaleZ>
+				<translateX>16.07538</translateX>
+				<translateY>48.50766</translateY>
+				<translateZ>0</translateZ>
+			</offset>
+			<player>None</player>
+			<scriptGroupName></scriptGroupName>
+			<scriptName></scriptName>
+		</Item>
+		<Item>
+			<gameObject href="/Maps/Test/PlaneMap/GiftGlyph/Place/PrimeRune.SSO" />
+			<lockMap>true</lockMap>
+			<offset>
+				<rotationX>0</rotationX>
+				<rotationY>0</rotationY>
+				<rotationZ>0</rotationZ>
+				<scaleX>0.5</scaleX>
+				<scaleY>0.5</scaleY>
+				<scaleZ>0.5</scaleZ>
+				<translateX>16.07538</translateX>
+				<translateY>48.50766</translateY>
 				<translateZ>0</translateZ>
 			</offset>
 			<player>None</player>

@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BasicEffectStandalone>
 	<BackLink DBID="/Summons/Turret/_.SUMMONED" Count="1" />
+	<BackLink DBID="/Items/Talents/Class/Inventor/Ability_A1.TALENT" Count="1" />
 	<component href="/Effects/Shots/Lightning/_Turret.PRXY" />
 	<deathType>Manual</deathType>
 	<enableCondition href="" />

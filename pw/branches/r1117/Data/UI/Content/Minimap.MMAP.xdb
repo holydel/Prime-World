@@ -41,7 +41,7 @@
 		<Item href="/UI/Styles/Icons/MinimapIco/glyph.ITEX" />
 		<Item href="/UI/Styles/Icons/MinimapIco/danger.ITEX" />
 		<Item href="/UI/Styles/Icons/MinimapIco/neutrals_strong.ITEX" />
-		<Item href="/UI/Styles/Icons/Heroes/Healer/Sign_PvE.ITEX" />
+		<Item href="/UI/Styles/Icons/MinimapIco/Portal.ITEX" />
 		<Item href="/UI/Styles/Icons/MinimapIco/none.ITEX" />
 	</icons>
 	<localHeroFrame href="/UI/Styles/Icons/MinimapIco/frame_self.ITEX" />

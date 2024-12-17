@@ -5,6 +5,7 @@
 	<BackLink DBID="/Maps/PvE/Series/Coop1/_.ADMP" Count="1" />
 	<BackLink DBID="/Maps/PvE/Series/Episode1/pilot.ADMP" Count="1" />
 	<BackLink DBID="/Maps/Tutorial/_.ADMP" Count="1" />
+	<BackLink DBID="/Maps/Multiplayer/MOBA/_.ADMP" Count="2" />
 	<collision>
 		<x1>-4</x1>
 		<x2>4</x2>

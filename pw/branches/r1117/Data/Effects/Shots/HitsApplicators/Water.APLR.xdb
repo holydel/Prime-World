@@ -5,6 +5,7 @@
 	<BackLink DBID="/Creeps/Normals/Normal6/PvE_Coop1_chernomor.CREEP" Count="1" />
 	<BackLink DBID="/Creeps/Normals/Normal6/PvE_Coop1_fish.CREEP" Count="1" />
 	<BackLink DBID="/Creeps/Normals/Normal6/PvE_Ep1.CREEP" Count="1" />
+	<BackLink DBID="/Creeps/Normals/Normal6/PVP.CREEP" Count="1" />
 	<activeSpellIndex>
 		<compiledString>FQAAAAAAAAAAVYvsUdno2RwkUdnu2RwkagGLRQyLEItNDItCWP/QD7bIUegYAAAAg8QI2Rwk6C4AAACDxARdwwAAAAAAAIA/VYvsUQ+2RQiFwHQI2UUM2V386wbZRRDZXfzZRfyL5V3DuAEAAAAPovfCAAAABHQH8w8sRCQEw+kAAAAAVYvsg+wM2UUI2X38D7dF/A0ADAAAiUX42W3421302W38i0X0i+Vdww==</compiledString>
 		<returnType>int</returnType>

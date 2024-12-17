@@ -5,6 +5,7 @@
 	<BackLink DBID="/Creeps/Normals/Normal3/DummyTest_2.CREEP" Count="1" />
 	<BackLink DBID="/Creeps/Normals/Normal3/PvE_Coop1_Ordinary.CREEP" Count="1" />
 	<BackLink DBID="/Creeps/Normals/Normal3/PvE_Ep1.CREEP" Count="1" />
+	<BackLink DBID="/Creeps/Normals/Normal3/PVP.CREEP" Count="3" />
 	<activeCustomTrigger>true</activeCustomTrigger>
 	<allowChase>
 		<compiledString></compiledString>

@@ -537,6 +537,32 @@
 							</placement>
 							<timeController href="" />
 						</Item>
+						<Item>
+							<attachFlags>15</attachFlags>
+							<component href="/Terrain/Events/NewYear/Hat.PRXY" />
+							<events href="" />
+							<id></id>
+							<locatorName>Hat</locatorName>
+							<placement>
+								<pos>
+									<x>0</x>
+									<y>0</y>
+									<z>0</z>
+								</pos>
+								<rot>
+									<w>1</w>
+									<x>0</x>
+									<y>0</y>
+									<z>0</z>
+								</rot>
+								<scale>
+									<x>1</x>
+									<y>1</y>
+									<z>1</z>
+								</scale>
+							</placement>
+							<timeController href="" />
+						</Item>
 					</attached>
 					<caption></caption>
 					<faceFXAnims />
@@ -583,9 +609,9 @@
 					<z>0</z>
 				</rot>
 				<scale>
-					<x>1</x>
-					<y>1</y>
-					<z>1</z>
+					<x>1.5</x>
+					<y>1.5</y>
+					<z>1.5</z>
 				</scale>
 			</placement>
 			<timeController href="" />

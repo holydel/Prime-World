@@ -6,6 +6,7 @@
 	<BackLink DBID="/Items/Talents/Class/Mage/Ability4.TALENT" Count="2" />
 	<BackLink DBID="/Items/Talents/Class/Mage/Channeling.APLR" Count="2" />
 	<BackLink DBID="/Items/Talents/Class/Shaman/Ability_A4_2.TALENT" Count="2" />
+	<BackLink DBID="/Items/Talents/Class/Mage/Ability4_3.TALENT" Count="10" />
 	<allowCdIncrease>false</allowCdIncrease>
 	<applyTarget>ApplicatorTarget</applyTarget>
 	<caption>Сбрасываем КД текущей абилки если цель стала невосприимчива к спелу</caption>

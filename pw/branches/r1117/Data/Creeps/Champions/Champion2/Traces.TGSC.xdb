@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TraceGenSceneComponent>
 	<BackLink DBID="/Creeps/Champions/Champion2/_.SOBJ" Count="1" />
+	<BackLink DBID="/Creeps/Champions/Champion2/_Big.SOBJ" Count="1" />
 	<attached />
 	<caption>Traces</caption>
 	<defaultLocatorName>Ground</defaultLocatorName>

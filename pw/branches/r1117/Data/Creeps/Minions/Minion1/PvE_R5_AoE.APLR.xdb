@@ -4,6 +4,7 @@
 	<BackLink DBID="/Creeps/Minions/Minion1/Kamikazi_1.ABLT" Count="1" />
 	<BackLink DBID="/Creeps/Minions/Minion3/CTF_S5.CREEP" Count="1" />
 	<BackLink DBID="/Creeps/Minions/Minion3/PvE_R5.CREEP" Count="1" />
+	<BackLink DBID="/Creeps/Minions/Minion3/PVP_FIRE.CREEP" Count="1" />
 	<applyTarget>AbilityOwner</applyTarget>
 	<caption>аое дамаг</caption>
 	<enabled>

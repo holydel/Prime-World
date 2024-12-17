@@ -5,6 +5,7 @@
 	<BackLink DBID="/Creeps/Normals/Normal6/PvE_Coop1_chernomor.CREEP" Count="1" />
 	<BackLink DBID="/Creeps/Normals/Normal6/PvE_Coop1_fish.CREEP" Count="1" />
 	<BackLink DBID="/Creeps/Normals/Normal6/PvE_Ep1.CREEP" Count="1" />
+	<BackLink DBID="/Creeps/Normals/Normal6/PVP.CREEP" Count="1" />
 	<component href="/Effects/Shots/Water/_TRS.PRXY" />
 	<deathType>Manual</deathType>
 	<enableCondition href="" />

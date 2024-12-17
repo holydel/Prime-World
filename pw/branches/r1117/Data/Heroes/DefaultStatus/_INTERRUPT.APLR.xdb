@@ -21,6 +21,7 @@
 	<BackLink DBID="/Items/Talents/Level6/G317_K_Life_AttackSpeed.TALENT" Count="1" />
 	<BackLink DBID="/Items/Talents/Level6/G455_Life_StrOrInt.TALENT" Count="1" />
 	<BackLink DBID="/Maps/Tutorial/Talents/Tutorial_ThunderGod.TALENT" Count="1" />
+	<BackLink DBID="/Items/Talents/Class/MagicGirl/Ability_A4_3.TALENT" Count="1" />
 	<applyTarget>ApplicatorTarget</applyTarget>
 	<behaviorFlags>144</behaviorFlags>
 	<caption>-- Standart Interrupt</caption>

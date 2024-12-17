@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UsableBuilding>
+	<BackLink DBID="/Maps/Test/PlaneMap/_.ADMP" Count="7" />
+	<abilities>
+		<Item href="" />
+		<Item href="" />
+		<Item href="" />
+		<Item href="" />
+		<Item href="" />
+	</abilities>
+	<attackAbility href="" />
+	<collision>
+		<x1>-0.5</x1>
+		<x2>0.5</x2>
+		<y1>-0.5</y1>
+		<y2>0.5</y2>
+	</collision>
+	<deathParameters href="" />
+	<description textref="/Maps/Test/PlaneMap/Gift/Gift.USBL_description.txt" />
+	<faction>Neutral</faction>
+	<heightObject>false</heightObject>
+	<image href="/UI/Styles/Icons/Artifacts/_Test.ITEX" />
+	<interaction href="/Maps/Test/PlaneMap/Gift/Gift.USBL" id="BEFF10B6-4268-4F0A-8B63-910784E73480">
+		<Interaction>
+			<allowedFactions>8</allowedFactions>
+			<externalAbility href="/Maps/Test/PlaneMap/Gift/Gift.USBL" id="9D4FB404-BFCA-48A6-A188-B635A3D54468">
+				<Ability>
+					<activeCustomTrigger>true</activeCustomTrigger>
+					<allowChase>
+						<compiledString></compiledString>
+						<returnType>bool</returnType>
+						<sString>true</sString>
+					</allowChase>
+					<alternativeTargets />
+					<aoeDisplayOnMinimap>false</aoeDisplayOnMinimap>
+					<aoeHeight>0</aoeHeight>
+					<aoeMaterial href="" />
+					<aoePassabilityCheckMode>0</aoePassabilityCheckMode>
+					<aoeSize>
+						<compiledString></compiledString>
+						<returnType>float</returnType>
+						<sString>0.0f</sString>
+					</aoeSize>
+					<aoeType>None</aoeType>
+					<applicators />
+					<autoTargetSelector href="" />
+					<caption></caption>
+					<castAllowRange>
+						<compiledString></compiledString>
+						<returnType>float</returnType>
+						<sString>0.0f</sString>
+					</castAllowRange>
+					<castLimitations />
+					<commonDescription textref="" />
+					<compiledDescriptionA textref="" />
+					<compiledDescriptionB textref="" />
+					<conditionFormulas />
+					<constants href="" />
+					<cooldownTime>
+						<compiledString></compiledString>
+						<returnType>float</returnType>
+						<sString>0.0f</sString>
+					</cooldownTime>
+					<cooldownTimeSecondState>
+						<compiledString></compiledString>
+						<returnType>float</returnType>
+						<sString>0.0f</sString>
+					</cooldownTimeSecondState>
+					<description textref="" />
+					<dispatch href="" />
+					<flags>1</flags>
+					<image href="" />
+					<imageSecondState href="" />
+					<isUnitFreeAfterCast>true</isUnitFreeAfterCast>
+					<manaCost>
+						<compiledString></compiledString>
+						<returnType>float</returnType>
+						<sString>0.0f</sString>
+					</manaCost>
+					<marker></marker>
+					<microAI href="" />
+					<minUseRangeCorrection>0</minUseRangeCorrection>
+					<name textref="" />
+					<node></node>
+					<passiveApplicators />
+					<requireLineOfSight>true</requireLineOfSight>
+					<shortDescription textref="" />
+					<targetType>136258047</targetType>
+					<type>Passive</type>
+					<useRange>
+						<compiledString></compiledString>
+						<returnType>float</returnType>
+						<sString>0.0f</sString>
+					</useRange>
+					<useRangeMaterial href="" />
+					<warFogRemoveRadius>0</warFogRemoveRadius>
+					<warFogRemoveTime>0</warFogRemoveTime>
+				</Ability>
+			</externalAbility>
+		</Interaction>
+	</interaction>
+	<isDecoration>false</isDecoration>
+	<levelUpInterval>0</levelUpInterval>
+	<lockMask>
+		<mask>
+			<Item>
+				<x>0</x>
+				<y>0</y>
+			</Item>
+		</mask>
+		<tileSize>0.5</tileSize>
+	</lockMask>
+	<minimapIcon>Default</minimapIcon>
+	<minimapIconOffset>
+		<x>0</x>
+		<y>0</y>
+	</minimapIconOffset>
+	<minLockScale>0</minLockScale>
+	<nativeAttack>Material</nativeAttack>
+	<nativeDefence>Material</nativeDefence>
+	<normalLevelling>0</normalLevelling>
+	<onDamageFragEffect href="" />
+	<onDestructionEffect href="" />
+	<overtipBarsWidth>0</overtipBarsWidth>
+	<overtipVerticalOffset>0</overtipVerticalOffset>
+	<pathFindingSteps>1</pathFindingSteps>
+	<rounded>false</rounded>
+	<routeID>Unassigned</routeID>
+	<routeLevel>0</routeLevel>
+	<ruinLocator>Crash</ruinLocator>
+	<ruinSceneObject href="" />
+	<sceneObject href="/Maps/Test/PlaneMap/Gift/_gift01.SOBJ" />
+	<selectionAoe>
+		<Item href="" />
+		<Item href="" />
+	</selectionAoe>
+	<showRuinDelay>0</showRuinDelay>
+	<size>1</size>
+	<sizeDynamic>-1</sizeDynamic>
+	<stats href="/Maps/Test/PlaneMap/Gift/Gift.USBL" id="5F4C3F51-9989-479D-AFA0-C899031A5819">
+		<StatsContainer>
+			<stats>
+				<Item>
+					<calcIncrement>0</calcIncrement>
+					<calcValue>0</calcValue>
+					<increment>
+						<compiledString></compiledString>
+						<returnType>float</returnType>
+						<sString>0.0f</sString>
+					</increment>
+					<levelUpgrades />
+					<statId>Life</statId>
+					<value>
+						<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAADIQg==</compiledString>
+						<returnType>float</returnType>
+						<sString>100</sString>
+					</value>
+				</Item>
+			</stats>
+		</StatsContainer>
+	</stats>
+	<targetingParams href="" />
+	<updateUnderWarfog>true</updateUnderWarfog>
+</UsableBuilding>

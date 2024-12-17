@@ -10,6 +10,7 @@
 	<BackLink DBID="/Items/Talents/Class/Alchemist/status_A3_IsTeleporting.APLR" Count="1" />
 	<BackLink DBID="/Maps/Tutorial/Tutorial2Teleport.ARCT" Count="1" />
 	<BackLink DBID="/Items/Consumables/_Teleport_to_friendly_hero.APLR" Count="1" />
+	<BackLink DBID="/Maps/Test/PlaneMap/Portal/G291_TeleportBackToCaster.ABLT" Count="1" />
 	<deathType>Manual</deathType>
 	<effectOnInvisible href="/Effects/General/Teleport/_CastRed.EFFT" />
 	<effectOnVisible href="/Effects/General/Teleport/_Cast.EFFT" />

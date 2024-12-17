@@ -23,6 +23,14 @@
 	<BackLink DBID="/Maps/Multiplayer/MOBA/Spawners/Neutral_TopBot.NCSPN" Count="2" />
 	<BackLink DBID="/Maps/Test/BalanseTest/Spawners/Duel_CSpawn.NCSPN" Count="3" />
 	<BackLink DBID="/Maps/Test/PlaneMap/spawners/Test_Neutral.NCSPN" Count="3" />
+	<BackLink DBID="/Maps/Multiplayer/MOBA/Spawners/Neutral_Assid.NCSPN" Count="5" />
+	<BackLink DBID="/Creeps/Minions/Minion3/PVP_BLUE.CREEP" Count="1" />
+	<BackLink DBID="/Creeps/Minions/Minion3/PVP_FIRE.CREEP" Count="1" />
+	<BackLink DBID="/Creeps/Minions/Minion3/PVP_Elite.CREEP" Count="1" />
+	<BackLink DBID="/Creeps/Normals/Normal3/PVP.CREEP" Count="1" />
+	<BackLink DBID="/Creeps/Minions/Minion1/PVP_Rogatik.CREEP" Count="1" />
+	<BackLink DBID="/Creeps/Champions/Champion2/PVP_1.CREEP" Count="1" />
+	<BackLink DBID="/Creeps/Champions/Champion2/PVP_2.CREEP" Count="1" />
 	<activeCustomTrigger>true</activeCustomTrigger>
 	<allowChase>
 		<compiledString></compiledString>

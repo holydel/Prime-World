@@ -3,6 +3,7 @@
 	<BackLink DBID="/Effects/Debuffs/Explosion/_FireMedium.PRXY" Count="1" />
 	<BackLink DBID="/Effects/Debuffs/Explosion/_FireShort.PRXY" Count="1" />
 	<BackLink DBID="/Effects/Debuffs/Meteor/_FireShort.PRXY" Count="1" />
+	<BackLink DBID="/Effects/Debuffs/Explosion/_FireShort_1.PRXY" Count="1" />
 	<attached>
 		<Item>
 			<attachFlags>15</attachFlags>
@@ -1701,7 +1702,7 @@
 						<Item>
 							<Key>1.366667</Key>
 							<Value>
-								<w>0.963472</w>
+								<w>0.9634719</w>
 								<x>0</x>
 								<y>0</y>
 								<z>-0.2678092</z>
@@ -1731,7 +1732,7 @@
 								<w>0.9451453</w>
 								<x>0</x>
 								<y>0</y>
-								<z>-0.3266503</z>
+								<z>-0.3266502</z>
 							</Value>
 						</Item>
 						<Item>
@@ -1758,7 +1759,7 @@
 								<w>0.9381914</w>
 								<x>0</x>
 								<y>0</y>
-								<z>-0.346117</z>
+								<z>-0.3461171</z>
 							</Value>
 						</Item>
 					</Values>

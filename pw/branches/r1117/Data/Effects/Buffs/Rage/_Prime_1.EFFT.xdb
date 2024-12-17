@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BasicEffectAttached>
+	<BackLink DBID="/Effects/Buffs/Rage/_Prime_1.EFFT" Count="3" />
+	<attachFlags>1</attachFlags>
+	<attachType>Ground</attachType>
+	<component href="/Effects/Buffs/Rage/_Prime.PRXY" />
+	<deathType>Manual</deathType>
+	<enableCondition href="" />
+	<fadeIn>0.5</fadeIn>
+	<fadeOut>0.5</fadeOut>
+	<groupFlags>0</groupFlags>
+	<lifeTime>0</lifeTime>
+	<__states>
+		<state name="trickster_S1">
+			<component href="/Effects/Buffs/Rage/_Dark.PRXY" />
+		</state>
+	</__states>
+</BasicEffectAttached>

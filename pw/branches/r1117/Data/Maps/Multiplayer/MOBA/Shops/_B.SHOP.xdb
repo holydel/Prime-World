@@ -9,7 +9,7 @@
 	<BackLink DBID="/Maps/PvE/Dungeon2/_.ADMP" Count="1" />
 	<BackLink DBID="/Maps/PvE/Map1/_.ADMP" Count="1" />
 	<BackLink DBID="/Maps/PvE/Test1/_.ADMP" Count="1" />
-	<BackLink DBID="/Maps/Test/PlaneMap/_.ADMP" Count="1" />
+	<BackLink DBID="/Maps/Test/PlaneMap/_.ADMP" Count="2" />
 	<shop href="/Buildings/DefaultStats/Basic.CNSH" />
 	<stats href="/Buildings/DefaultStats/Shop.STCN" />
 </Shop>

@@ -19,6 +19,7 @@
 	<BackLink DBID="/Maps/PvE/Series/Episode1/Talents/witcher/Ability1.TALENT" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/Wendigo/Ability1.TALENT" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/Banshee/Ability_A3.TALENT" Count="1" />
+	<BackLink DBID="/Items/Talents/Class/Frogenglut/Ability_A4.TALENT" Count="1" />
 	<applyTarget>AbilityOwner</applyTarget>
 	<caption>флаг Isolated без ForbidTakeDamage</caption>
 	<flag>1919</flag>

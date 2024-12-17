@@ -5,6 +5,8 @@
 	<BackLink DBID="/Items/Talents/Class/Angel/A4_TeleportChanneling.APLR" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/Wendigo/Ability5.TALENT" Count="1" />
 	<BackLink DBID="/Items/Talents/Level6/G291_TeleportBackToCaster.ABLT" Count="1" />
+	<BackLink DBID="/Maps/Test/PlaneMap/Portal/G291_TeleportBackToCaster.ABLT" Count="1" />
+	<BackLink DBID="/Maps/Test/PlaneMap/Portal/G291_TeleportBackToCaster_1.ABLT" Count="1" />
 	<applyTarget>ApplicatorTarget</applyTarget>
 	<caption>teleport pets</caption>
 	<enabled>

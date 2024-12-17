@@ -1,0 +1,420 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DBSceneComponent>
+	<BackLink DBID="/Effects/Buffs/Defence/_PobornikTRS.PRXY" Count="1" />
+	<attached>
+		<Item>
+			<attachFlags>15</attachFlags>
+			<component href="/Effects/Buffs/Defence/_Pobornik.PRXY" id="19C68E25-0BC4-4DC8-BC5D-DAE243067897">
+				<DBAnimatedSceneComponent>
+					<aabb>
+						<maxX>2.398493</maxX>
+						<maxY>2.398494</maxY>
+						<maxZ>2.281103</maxZ>
+						<minX>-2.398494</minX>
+						<minY>-2.398494</minY>
+						<minZ>-2.281103</minZ>
+					</aabb>
+					<additionalGraph href="" />
+					<animations>
+						<Item>
+							<animationFileName>/Effects/Buffs/Defence/_Red_autoClip.anim</animationFileName>
+							<animkeys />
+							<compression>0</compression>
+							<mayaFileName>/Effects/Buffs/Defence/_Red_autoClip.mayaAnim</mayaFileName>
+							<name>_Red_autoClip</name>
+							<srcFileName crc="0">/Effects/Buffs/Defence/_Red_autoClip.ma</srcFileName>
+						</Item>
+					</animations>
+					<animGraph href="" />
+					<anims />
+					<attached />
+					<caption>Ice</caption>
+					<faceFXAnims />
+					<groupFlags>0</groupFlags>
+					<keys />
+					<locatorList href="" />
+					<mayaFileName>/Effects/Buffs/Defence/_Redroot.mayaSkel</mayaFileName>
+					<orientation>Default</orientation>
+					<selection>root</selection>
+					<skeletonFileName>/Effects/Buffs/Defence/_Redroot.skel</skeletonFileName>
+					<skinOn />
+					<skins>
+						<Item>
+							<events href="" />
+							<geometryFileName>/Effects/Buffs/Defence/_RedIce.skin</geometryFileName>
+							<jointsCountPerVertex>4</jointsCountPerVertex>
+							<materialsReferences>
+								<Item href="/Effects/Buffs/Defence/_Pobornik.PRXY" id="F17B8886-0D9A-4EE9-98A5-829B96884394">
+									<BasicFXMaterial>
+										<caption>IceBall_1Material</caption>
+										<DiffuseAdd>
+											<A>0</A>
+											<B>0</B>
+											<G>0</G>
+											<R>0</R>
+										</DiffuseAdd>
+										<DiffuseMap>
+											<samplerState>
+												<addressU>Wrap</addressU>
+												<addressV>Wrap</addressV>
+												<addressW>Wrap</addressW>
+												<magFilter>Linear</magFilter>
+												<minFilter>Linear</minFilter>
+												<mipFilter>Linear</mipFilter>
+											</samplerState>
+											<texture href="/GFX_Textures/IceBall2Black.TXTR" />
+										</DiffuseMap>
+										<DiffuseMul>
+											<A>2</A>
+											<B>1</B>
+											<G>1</G>
+											<R>1</R>
+										</DiffuseMul>
+										<distortion>1</distortion>
+										<DistortionPinValue>DistortNone</DistortionPinValue>
+										<emissive>0</emissive>
+										<ignoreRenderState>false</ignoreRenderState>
+										<MultiplyVertexColorPinValue>None</MultiplyVertexColorPinValue>
+										<opacity Animated="True">
+											<Tracks>
+												<Item>
+													<Item>
+														<Key>0</Key>
+														<Value>0</Value>
+													</Item>
+													<Item>
+														<Key>0.1</Key>
+														<Value>0</Value>
+													</Item>
+													<Item>
+														<Key>0.4333333</Key>
+														<Value>1</Value>
+													</Item>
+												</Item>
+											</Tracks>
+											<Type>Clamp</Type>
+											<Values>
+												<Item>
+													<Key>0</Key>
+													<Value>0</Value>
+												</Item>
+												<Item>
+													<Key>0.1</Key>
+													<Value>0</Value>
+												</Item>
+												<Item>
+													<Key>0.4333333</Key>
+													<Value>1</Value>
+												</Item>
+											</Values>
+										</opacity>
+										<OpacityAndEmissiveModePinValue>BlendOpacity</OpacityAndEmissiveModePinValue>
+										<renderState>
+											<alphaTest>Off</alphaTest>
+											<alphaTestRef>127</alphaTestRef>
+											<blendMode>AddColorMulAlpha</blendMode>
+											<culling>On</culling>
+										</renderState>
+										<SkeletalMeshPinValue>Present</SkeletalMeshPinValue>
+										<SubPriority>0</SubPriority>
+										<uOffset>0</uOffset>
+										<vOffset>0</vOffset>
+									</BasicFXMaterial>
+								</Item>
+							</materialsReferences>
+							<mayaFileName>/Effects/Buffs/Defence/_RedIce.mayaSkin</mayaFileName>
+							<selection>Ice</selection>
+							<skinPartName>Ice</skinPartName>
+							<srcFileName crc="0">/Effects/Buffs/Defence/_Red.mb</srcFileName>
+							<uvSetCount>1</uvSetCount>
+						</Item>
+					</skins>
+					<splitBoneName></splitBoneName>
+					<srcFileName crc="0">/Effects/Buffs/Defence/_Red.mb</srcFileName>
+				</DBAnimatedSceneComponent>
+			</component>
+			<events href="" />
+			<id></id>
+			<locatorName></locatorName>
+			<placement>
+				<pos>
+					<x>0</x>
+					<y>0</y>
+					<z>0</z>
+				</pos>
+				<rot>
+					<w>1</w>
+					<x>0</x>
+					<y>0</y>
+					<z>0</z>
+				</rot>
+				<scale>
+					<x>1</x>
+					<y>1</y>
+					<z>1</z>
+				</scale>
+			</placement>
+			<timeController href="" />
+		</Item>
+		<Item>
+			<attachFlags>15</attachFlags>
+			<component href="/Effects/Buffs/Defence/_Pobornik.PRXY" id="974CEB30-D291-42B7-B0F2-FCE664834A85">
+				<DBParticleSceneComponent>
+					<aabb>
+						<maxX>2.398494</maxX>
+						<maxY>1.226293</maxY>
+						<maxZ>2.281103</maxZ>
+						<minX>-2.398494</minX>
+						<minY>-1.226293</minY>
+						<minZ>-2.281103</minZ>
+					</aabb>
+					<attached />
+					<camoffset>0</camoffset>
+					<caption>Sparks</caption>
+					<compression>2</compression>
+					<deathFadeOutTime>0.5</deathFadeOutTime>
+					<fxFileName>/Effects/Buffs/Defence/_RedSparks.part</fxFileName>
+					<groupFlags>0</groupFlags>
+					<leaveParticlesWhereStarted>false</leaveParticlesWhereStarted>
+					<locatorList href="" />
+					<material href="/Effects/Buffs/Defence/_Pobornik.PRXY" id="0EF34D5C-4D7F-4C68-B412-533D0715D7BA">
+						<ParticleFXMaterial>
+							<caption></caption>
+							<DiffuseMap>
+								<Add>
+									<A>0</A>
+									<B>0</B>
+									<G>0</G>
+									<R>0</R>
+								</Add>
+								<Multiplier>
+									<A>1</A>
+									<B>1</B>
+									<G>1</G>
+									<R>1</R>
+								</Multiplier>
+								<samplerState>
+									<addressU>Wrap</addressU>
+									<addressV>Wrap</addressV>
+									<addressW>Wrap</addressW>
+									<magFilter>Linear</magFilter>
+									<minFilter>Linear</minFilter>
+									<mipFilter>Linear</mipFilter>
+								</samplerState>
+								<texture href="/GFX_Textures/Atlases/atlas_0.TXTR" />
+							</DiffuseMap>
+							<distortion>1</distortion>
+							<DistortionPinValue>None</DistortionPinValue>
+							<ignoreRenderState>false</ignoreRenderState>
+							<opacity>1</opacity>
+							<OpacityAndEmissiveModePinValue>Simple</OpacityAndEmissiveModePinValue>
+							<renderState>
+								<alphaTest>Off</alphaTest>
+								<alphaTestRef>127</alphaTestRef>
+								<blendMode>AddColorMulAlpha</blendMode>
+								<culling>On</culling>
+							</renderState>
+							<scale>0</scale>
+							<SubPriority>0</SubPriority>
+							<uvSpeed>
+								<x>0</x>
+								<y>0</y>
+							</uvSpeed>
+						</ParticleFXMaterial>
+					</material>
+					<mayaFileName>/Effects/Buffs/Defence/_RedSparks.mayaPart</mayaFileName>
+					<normaltextures />
+					<orient>None</orient>
+					<orientation>Default</orientation>
+					<pivot>
+						<x>0</x>
+						<y>0</y>
+					</pivot>
+					<selection>Sparks</selection>
+					<speculartextures />
+					<srcFileName crc="0">/Effects/Buffs/Defence/_Red.mb</srcFileName>
+					<textures>
+						<Item crc="0">/PFX_Textures/Spark05Red.tga</Item>
+					</textures>
+					<uvPairs>
+						<Item>
+							<uvBottomRight>
+								<x>0.1640625</x>
+								<y>0.08203125</y>
+							</uvBottomRight>
+							<uvTopLeft>
+								<x>0.15625</x>
+								<y>0.06640625</y>
+							</uvTopLeft>
+						</Item>
+					</uvPairs>
+				</DBParticleSceneComponent>
+			</component>
+			<events href="" />
+			<id></id>
+			<locatorName></locatorName>
+			<placement>
+				<pos>
+					<x>0</x>
+					<y>0</y>
+					<z>0</z>
+				</pos>
+				<rot>
+					<w>1</w>
+					<x>0</x>
+					<y>0</y>
+					<z>0</z>
+				</rot>
+				<scale>
+					<x>1</x>
+					<y>1</y>
+					<z>1</z>
+				</scale>
+			</placement>
+			<timeController href="/Effects/Buffs/Defence/_Pobornik.PRXY" id="E364D786-7BC7-4EAA-B336-AD2959ED43A4">
+				<TimeController>
+					<cycleCount>0</cycleCount>
+					<cycleLength>4</cycleLength>
+					<fadein>0</fadein>
+					<fadeout>0</fadeout>
+					<firstCycleOffset>0</firstCycleOffset>
+					<firstCycleOffsetDelta>0</firstCycleOffsetDelta>
+					<speed>1</speed>
+					<startDelay>0</startDelay>
+				</TimeController>
+			</timeController>
+		</Item>
+		<Item>
+			<attachFlags>15</attachFlags>
+			<component href="/Effects/Buffs/Defence/_Pobornik.PRXY" id="ECCA8527-4384-4B64-842A-573BCAB68388">
+				<DBParticleSceneComponent>
+					<aabb>
+						<maxX>2.398494</maxX>
+						<maxY>1.226293</maxY>
+						<maxZ>2.281103</maxZ>
+						<minX>-2.398494</minX>
+						<minY>-1.226293</minY>
+						<minZ>-2.281103</minZ>
+					</aabb>
+					<attached />
+					<camoffset>0</camoffset>
+					<caption>Glow_R</caption>
+					<compression>2</compression>
+					<deathFadeOutTime>0.5</deathFadeOutTime>
+					<fxFileName>/Effects/Buffs/Defence/_RedGlow_R.part</fxFileName>
+					<groupFlags>0</groupFlags>
+					<leaveParticlesWhereStarted>false</leaveParticlesWhereStarted>
+					<locatorList href="" />
+					<material href="/Effects/Buffs/Defence/_Pobornik.PRXY" id="3172C17A-D9B4-4E9A-8378-84F79DF89DE9">
+						<ParticleFXMaterial>
+							<caption></caption>
+							<DiffuseMap>
+								<Add>
+									<A>0</A>
+									<B>0</B>
+									<G>0</G>
+									<R>0</R>
+								</Add>
+								<Multiplier>
+									<A>2</A>
+									<B>1</B>
+									<G>1</G>
+									<R>1</R>
+								</Multiplier>
+								<samplerState>
+									<addressU>Wrap</addressU>
+									<addressV>Wrap</addressV>
+									<addressW>Wrap</addressW>
+									<magFilter>Linear</magFilter>
+									<minFilter>Linear</minFilter>
+									<mipFilter>Linear</mipFilter>
+								</samplerState>
+								<texture href="/GFX_Textures/Atlases/atlas_0.TXTR" />
+							</DiffuseMap>
+							<distortion>1</distortion>
+							<DistortionPinValue>None</DistortionPinValue>
+							<ignoreRenderState>false</ignoreRenderState>
+							<opacity>1</opacity>
+							<OpacityAndEmissiveModePinValue>Simple</OpacityAndEmissiveModePinValue>
+							<renderState>
+								<alphaTest>Off</alphaTest>
+								<alphaTestRef>127</alphaTestRef>
+								<blendMode>AddColorMulAlpha</blendMode>
+								<culling>On</culling>
+							</renderState>
+							<scale>0</scale>
+							<SubPriority>0</SubPriority>
+							<uvSpeed>
+								<x>0</x>
+								<y>0</y>
+							</uvSpeed>
+						</ParticleFXMaterial>
+					</material>
+					<mayaFileName>/Effects/Buffs/Defence/_RedGlow_R.mayaPart</mayaFileName>
+					<normaltextures />
+					<orient>None</orient>
+					<orientation>Default</orientation>
+					<pivot>
+						<x>0</x>
+						<y>0</y>
+					</pivot>
+					<selection>Glow_R</selection>
+					<speculartextures />
+					<srcFileName crc="0">/Effects/Buffs/Defence/_Red.mb</srcFileName>
+					<textures>
+						<Item crc="0">/PFX_Textures/Glow05Gold.tga</Item>
+					</textures>
+					<uvPairs>
+						<Item>
+							<uvBottomRight>
+								<x>0.953125</x>
+								<y>0.3046875</y>
+							</uvBottomRight>
+							<uvTopLeft>
+								<x>0.9375</x>
+								<y>0.2734375</y>
+							</uvTopLeft>
+						</Item>
+					</uvPairs>
+				</DBParticleSceneComponent>
+			</component>
+			<events href="" />
+			<id></id>
+			<locatorName></locatorName>
+			<placement>
+				<pos>
+					<x>0</x>
+					<y>0</y>
+					<z>0</z>
+				</pos>
+				<rot>
+					<w>1</w>
+					<x>0</x>
+					<y>0</y>
+					<z>0</z>
+				</rot>
+				<scale>
+					<x>1</x>
+					<y>1</y>
+					<z>1</z>
+				</scale>
+			</placement>
+			<timeController href="/Effects/Buffs/Defence/_Pobornik.PRXY" id="6D53B470-07A1-4ADE-AE3C-495BC1CF1777">
+				<TimeController>
+					<cycleCount>0</cycleCount>
+					<cycleLength>0</cycleLength>
+					<fadein>0</fadein>
+					<fadeout>0</fadeout>
+					<firstCycleOffset>0</firstCycleOffset>
+					<firstCycleOffsetDelta>0</firstCycleOffsetDelta>
+					<speed>1</speed>
+					<startDelay>0</startDelay>
+				</TimeController>
+			</timeController>
+		</Item>
+	</attached>
+	<caption></caption>
+	<groupFlags>0</groupFlags>
+	<locatorList href="" />
+	<orientation>Default</orientation>
+</DBSceneComponent>

@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BasicEffectStandalone>
-	<BackLink DBID="/Items/Talents/Class/Mage/A1Spell.SPLL" Count="1" />
+	<BackLink DBID="/Items/Talents/Class/Mage/A1Spell.SPLL" Count="4" />
+	<BackLink DBID="/Items/Talents/Class/Mage/A4_3Spell.SPLL" Count="7" />
+	<BackLink DBID="/Items/Talents/Class/Mage/Ability4_3.TALENT" Count="2" />
 	<component href="/Effects/Debuffs/Explosion/_FireRingEnemyTRS.PRXY" />
 	<deathType>Manual</deathType>
 	<enableCondition href="" />
