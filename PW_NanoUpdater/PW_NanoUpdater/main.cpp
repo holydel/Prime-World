@@ -554,14 +554,14 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
    }
 
    const char* releaseFileUrls[] = {
-         "https://github.com/Prime-World-Classic/Prime-World/releases/download/1.9/data01.pile",
-         "https://github.com/Prime-World-Classic/Prime-World/releases/download/1.9/data02.pile",
-         "https://github.com/Prime-World-Classic/Prime-World/releases/download/1.9/data03.pile",
-         "https://github.com/Prime-World-Classic/Prime-World/releases/download/1.9/data04.pile",
-         "https://github.com/Prime-World-Classic/Prime-World/releases/download/1.9/data05.pile",
-         "https://github.com/Prime-World-Classic/Prime-World/releases/download/1.9/data06.pile",
-         "https://github.com/Prime-World-Classic/Prime-World/releases/download/1.9/Asks_RU.fsb",
-         "https://github.com/Prime-World-Classic/Prime-World/releases/download/1.9/Music.fsb",
+         "https://github.com/Prime-World-Classic/Prime-World/releases/download/2.0/data01.pile",
+         "https://github.com/Prime-World-Classic/Prime-World/releases/download/2.0/data02.pile",
+         "https://github.com/Prime-World-Classic/Prime-World/releases/download/2.0/data03.pile",
+         "https://github.com/Prime-World-Classic/Prime-World/releases/download/2.0/data04.pile",
+         "https://github.com/Prime-World-Classic/Prime-World/releases/download/2.0/data05.pile",
+         "https://github.com/Prime-World-Classic/Prime-World/releases/download/2.0/data06.pile",
+         "https://github.com/Prime-World-Classic/Prime-World/releases/download/2.0/Asks_RU.fsb",
+         "https://github.com/Prime-World-Classic/Prime-World/releases/download/2.0/Music.fsb",
    };
 
    const char* releaseFilePaths[] = {
