@@ -6,7 +6,7 @@
 
 ##### Настройки #####
 # Путь к корневой директории игры
-$gamePath = "D:\Projects\Prime-World\pw\branches\r1117"
+$gamePath = "C:\Users\rekon\source\repos\Prime-World-holydel\pw\branches\r1117"
 
 # Путь к Python 2.7
 $pythonPath = "C:\Python27\python.exe"
