@@ -1252,23 +1252,32 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
     }
 
     if (response.retCode == WebLauncherPostRequest::LoginResponse_FAIL) {
+      systemLog( NLogg::LEVEL_MESSAGE ).Trace("Failed to connect to game server: %s", response.response.c_str());
+      ShowLocalizedErrorMB( L"ConnectionError", L"Failed to connect to game server!" );
+      return 0;
+    }
+
+    if (response.retCode == WebLauncherPostRequest::LoginResponse_FAIL) {
       // Login failed
-      ShowLocalizedErrorMB( L"StartViaLauncher", L"Login response failed! Please start the game via the web-launcher. https://playpw.fun" );
+      systemLog( NLogg::LEVEL_MESSAGE ).Trace("Login response failed: %s", response.response.c_str());
+      ShowLocalizedErrorMB( L"StartViaLauncher", L"Login response failed!" );
       return 0;
     }
     if (response.retCode == WebLauncherPostRequest::LoginResponse_BLOCK) {
       // Login failed
+      systemLog( NLogg::LEVEL_MESSAGE ).Trace("Account is blocked: %s", response.response.c_str());
       ShowLocalizedErrorMB( L"StartViaLauncher", L"Account is blocked!" );
       return 0;
     }
     if (response.retCode == WebLauncherPostRequest::LoginResponse_OFFLINE) {
       // Web is offline
+      systemLog( NLogg::LEVEL_MESSAGE ).Trace("Web-launcher is offline: %s", response.response.c_str());
       ShowLocalizedErrorMB( L"WebOffline", L"Web-launcher is offline" );
       return 0;
     }
     if (response.retCode == WebLauncherPostRequest::LoginResponse_WEB_FAIL) {
       systemLog( NLogg::LEVEL_MESSAGE ).Trace("Failed connection with reason: %s", response.response.c_str());
-      ShowLocalizedErrorMB( L"Connection failed", L"Connection failed! Please start the game via the web-launcher" );
+      ShowLocalizedErrorMB( L"Connection failed", L"Connection failed!" );
       return 0;
     }
 
@@ -1313,7 +1322,7 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
           registerInSessionResponse = syncRegisterRequest.RegisterInSession(response.response.c_str(), selectedHeroID, "testSessionToken", gameName);
           retryCount++;
           if (retryCount >= REGISTER_IN_SESSION_MAX_RETRY_COUNT) {
-            ShowLocalizedErrorMB( L"Error", L"Sync-server connection failed - max retry count reached" );
+            ShowLocalizedErrorMB( L"Error", L"Sync-server connection failed - max retry count reached! Please report to PWClassic support" );
             return 0;
           }
         }
@@ -1342,7 +1351,7 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
             break;
           }
           if (rrc >= REGISTER_IN_SESSION_MAX_RETRY_COUNT - 1) {
-            ShowLocalizedErrorMB( L"Error", L"Sync-server connection failed - max retry count reached" );
+            ShowLocalizedErrorMB( L"Error", L"Sync-server connection failed - max retry count reached. Please report to PWClassic support" );
             return 0;
           }
           Sleep(1000);
