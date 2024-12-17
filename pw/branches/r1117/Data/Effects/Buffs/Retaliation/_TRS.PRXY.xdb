@@ -34,7 +34,7 @@
 					<fadeout>0</fadeout>
 					<firstCycleOffset>0</firstCycleOffset>
 					<firstCycleOffsetDelta>0</firstCycleOffsetDelta>
-					<speed>2</speed>
+					<speed>0.6</speed>
 					<startDelay>0</startDelay>
 				</TimeController>
 			</timeController>

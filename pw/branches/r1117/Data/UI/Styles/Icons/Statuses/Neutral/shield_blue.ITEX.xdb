@@ -2,6 +2,8 @@
 <UITexture>
 	<BackLink DBID="/Creeps/Champions/Champion2/AntiAoE_Aura_Channel.ABLT" Count="1" />
 	<BackLink DBID="/Creeps/Normals/Normal2/AntiAoe_Aura.ABLT" Count="1" />
+	<BackLink DBID="/Maps/Test/PlaneMap/Portal/G291_TeleportBackToCaster.ABLT" Count="1" />
+	<BackLink DBID="/Maps/Test/PlaneMap/Portal/G291_TeleportBackToCaster_1.ABLT" Count="1" />
 	<generatedFileName></generatedFileName>
 	<importOnlyShape>false</importOnlyShape>
 	<mipLevels>0</mipLevels>

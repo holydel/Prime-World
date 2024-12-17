@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <AdvMapNeutralCreepSpawner>
-	<BackLink DBID="/Maps/Multiplayer/MOBA/_.ADMP" Count="4" />
+	<BackLink DBID="/Maps/Multiplayer/MOBA/_.ADMP" Count="5" />
 	<BackLink DBID="/Maps/Multiplayer/MOBA/Map2/_.ADMP" Count="4" />
 	<BackLink DBID="/Maps/Multiplayer/MOBA/Mod2/_.ADMP" Count="4" />
 	<BackLink DBID="/Maps/Multiplayer/MOBA/Mod9/_.ADMP" Count="4" />
@@ -126,6 +126,85 @@
 						<location>
 							<x>-1.5</x>
 							<y>-3</y>
+							<z>0</z>
+						</location>
+						<rotation>
+							<w>1</w>
+							<x>0</x>
+							<y>0</y>
+							<z>0</z>
+						</rotation>
+						<scale>
+							<x>1</x>
+							<y>1</y>
+							<z>1</z>
+						</scale>
+					</offset>
+					<specialAwarding>false</specialAwarding>
+					<useSpawnerWalkLimit>true</useSpawnerWalkLimit>
+					<waveDelayToAppear>0</waveDelayToAppear>
+				</Item>
+			</creeps>
+		</Item>
+		<Item>
+			<creeps>
+				<Item>
+					<creep href="/Creeps/Minions/Minion3/PVP_BLUE.CREEP" />
+					<limitWalkDistance>-1</limitWalkDistance>
+					<offset>
+						<location>
+							<x>3</x>
+							<y>-2</y>
+							<z>0</z>
+						</location>
+						<rotation>
+							<w>1</w>
+							<x>0</x>
+							<y>0</y>
+							<z>0</z>
+						</rotation>
+						<scale>
+							<x>1</x>
+							<y>1</y>
+							<z>1</z>
+						</scale>
+					</offset>
+					<specialAwarding>false</specialAwarding>
+					<useSpawnerWalkLimit>true</useSpawnerWalkLimit>
+					<waveDelayToAppear>0</waveDelayToAppear>
+				</Item>
+				<Item>
+					<creep href="/Creeps/Minions/Minion3/PVP_FIRE.CREEP" />
+					<limitWalkDistance>-1</limitWalkDistance>
+					<offset>
+						<location>
+							<x>1</x>
+							<y>0</y>
+							<z>0</z>
+						</location>
+						<rotation>
+							<w>1</w>
+							<x>0</x>
+							<y>0</y>
+							<z>0</z>
+						</rotation>
+						<scale>
+							<x>1</x>
+							<y>1</y>
+							<z>1</z>
+						</scale>
+					</offset>
+					<specialAwarding>false</specialAwarding>
+					<useSpawnerWalkLimit>true</useSpawnerWalkLimit>
+					<waveDelayToAppear>0</waveDelayToAppear>
+				</Item>
+				<Item>
+					<creep href="/Creeps/Minions/Minion3/PVP_BLUE.CREEP" />
+					<limitWalkDistance>-1</limitWalkDistance>
+					<offset>
+						<location>
+							<x>-1</x>
+							<y>-2</y>
 							<z>0</z>
 						</location>
 						<rotation>

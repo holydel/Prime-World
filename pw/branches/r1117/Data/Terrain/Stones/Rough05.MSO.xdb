@@ -2,7 +2,7 @@
 <MultiStateObject>
 	<BackLink DBID="/Maps/Multiplayer/CTE/_.ADMP" Count="190" />
 	<BackLink DBID="/Maps/Multiplayer/MidOnly/_.ADMP" Count="76" />
-	<BackLink DBID="/Maps/Multiplayer/MOBA/_.ADMP" Count="122" />
+	<BackLink DBID="/Maps/Multiplayer/MOBA/_.ADMP" Count="136" />
 	<BackLink DBID="/Maps/Multiplayer/MOBA/Mod2/_.ADMP" Count="122" />
 	<BackLink DBID="/Maps/Multiplayer/MOBA/Mod9/_.ADMP" Count="121" />
 	<BackLink DBID="/Maps/Multiplayer/MOBA/NewYear/_.ADMP" Count="122" />

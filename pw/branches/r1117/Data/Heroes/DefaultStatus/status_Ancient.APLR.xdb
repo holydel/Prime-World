@@ -90,6 +90,14 @@
 	<BackLink DBID="/Summons/Rat/PvE_Coop1_A.CREEP" Count="1" />
 	<BackLink DBID="/Summons/Rat/PvE_Coop1_B.CREEP" Count="1" />
 	<BackLink DBID="/Summons/Whisper/PvE_Coop1.CREEP" Count="2" />
+	<BackLink DBID="/Creeps/Normals/Normal3/PVP.CREEP" Count="2" />
+	<BackLink DBID="/Creeps/Minions/Minion3/PVP_FIRE.CREEP" Count="1" />
+	<BackLink DBID="/Maps/Multiplayer/MOBA/Spawners/Neutral_Assid.NCSPN" Count="1" />
+	<BackLink DBID="/Creeps/Normals/Normal6/PVP.CREEP" Count="1" />
+	<BackLink DBID="/Creeps/Normals/Normal5/PVP.CREEP" Count="1" />
+	<BackLink DBID="/Creeps/Champions/Champion2/PVP_2.CREEP" Count="1" />
+	<BackLink DBID="/Creeps/Champions/Champion2/PVP_1.CREEP" Count="2" />
+	<BackLink DBID="/Creeps/Minions/Minion3/PVP_Elite.CREEP" Count="1" />
 	<applicators>
 		<Item href="/Heroes/DefaultStatus/status_Ancient.APLR" id="7C914188-0453-4F02-A3E3-4C8B52355694">
 			<PermanentStatModApplicator>

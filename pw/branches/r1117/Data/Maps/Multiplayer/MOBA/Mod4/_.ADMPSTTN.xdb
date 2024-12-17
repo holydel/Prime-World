@@ -77,7 +77,7 @@
 		<naftaForKill>-1</naftaForKill>
 		<naftaSpecForKill>-1</naftaSpecForKill>
 		<neutralKillExperienceModifier href="" />
-		<startPrimePerTeam>45000</startPrimePerTeam>
+		<startPrimePerTeam>200000</startPrimePerTeam>
 		<teamNaftaForPresence>-1</teamNaftaForPresence>
 	</primeSettings>
 	<questsCollection href="" />

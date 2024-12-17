@@ -6,6 +6,7 @@
 	<BackLink DBID="/Maps/Multiplayer/MOBA/Spawners/Neutral_Elite.NCSPN" Count="4" />
 	<BackLink DBID="/Maps/Multiplayer/MOBA/Spawners/Neutral_Elite_1.NCSPN" Count="2" />
 	<BackLink DBID="/Maps/Multiplayer/MOBA/Spawners/Neutral_Normal.NCSPN" Count="4" />
+	<BackLink DBID="/Maps/Multiplayer/MOBA/Spawners/Neutral_Assid.NCSPN" Count="10" />
 	<abilities>
 		<Item skip="1" />
 		<Item skip="1" />
@@ -220,9 +221,9 @@
 						<sString>0</sString>
 					</increment>
 					<value>
-						<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAAAAQQ==</compiledString>
+						<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAABAQQ==</compiledString>
 						<returnType>float</returnType>
-						<sString>8</sString>
+						<sString>12</sString>
 					</value>
 				</Item>
 				<Item skip="1" />
@@ -259,9 +260,9 @@
 					<levelUpgrades />
 					<statId>TeamNaftaForPresence</statId>
 					<value>
-						<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAADAQA==</compiledString>
+						<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAAAgQQ==</compiledString>
 						<returnType>float</returnType>
-						<sString>6</sString>
+						<sString>10</sString>
 					</value>
 				</Item>
 			</stats>

@@ -10,6 +10,8 @@
 	<BackLink DBID="/Maps/Multiplayer/MOBA/Spawners/Neutral_Normal.NCSPN" Count="3" />
 	<BackLink DBID="/Maps/Test/BalanseTest/Spawners/Duel_CSpawn.NCSPN" Count="1" />
 	<BackLink DBID="/Maps/Test/PlaneMap/spawners/Test_Neutral.NCSPN" Count="1" />
+	<BackLink DBID="/Creeps/Champions/Champion2/PVP_1.CREEP" Count="1" />
+	<BackLink DBID="/Creeps/Champions/Champion2/PVP_2.CREEP" Count="1" />
 	<activeCustomTrigger>true</activeCustomTrigger>
 	<allowChase>
 		<compiledString></compiledString>

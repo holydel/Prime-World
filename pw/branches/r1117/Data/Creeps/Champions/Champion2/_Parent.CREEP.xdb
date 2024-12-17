@@ -9,6 +9,8 @@
 	<BackLink DBID="/Creeps/Champions/Champion2/PvE_R6.CREEP" Count="1" />
 	<BackLink DBID="/Creeps/Champions/Champion2/PvE5_R14.CREEP" Count="1" />
 	<BackLink DBID="/Creeps/Champions/Champion2/PVP.CREEP" Count="1" />
+	<BackLink DBID="/Creeps/Champions/Champion2/PVP_1.CREEP" Count="5" />
+	<BackLink DBID="/Creeps/Champions/Champion2/PVP_2.CREEP" Count="5" />
 	<abilities>
 		<Item href="" />
 		<Item href="" />

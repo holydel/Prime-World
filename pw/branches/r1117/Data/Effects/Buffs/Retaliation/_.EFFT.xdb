@@ -2,6 +2,8 @@
 <BasicEffectAttached>
 	<BackLink DBID="/Items/Talents/Class/GhostLord/status_A4u_DamageBuff.APLR" Count="1" />
 	<BackLink DBID="/Items/Talents/TalentKits/Redset9_4_Summon/status_Redset9_4_SummonBuff.APLR" Count="1" />
+	<BackLink DBID="/Items/Talents/Class/Prince/status_A4_1_curse.APLR" Count="1" />
+	<BackLink DBID="/Items/Talents/Class/Prince/status_A4_1_self1.APLR" Count="1" />
 	<attachFlags>1</attachFlags>
 	<attachType>Above</attachType>
 	<component href="/Effects/Buffs/Retaliation/_TRS.PRXY" />

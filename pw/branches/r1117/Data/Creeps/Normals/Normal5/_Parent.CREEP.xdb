@@ -2,6 +2,7 @@
 <AdvMapCreep>
 	<BackLink DBID="/Creeps/Normals/Normal5/CTF_S14.CREEP" Count="1" />
 	<BackLink DBID="/Creeps/Normals/Normal5/PvE_Coop1.CREEP" Count="1" />
+	<BackLink DBID="/Creeps/Normals/Normal5/PVP.CREEP" Count="5" />
 	<abilities>
 		<Item href="" />
 		<Item href="" />

@@ -2,7 +2,7 @@
 <TerrainMaterial>
 	<BackLink DBID="/Maps/Multiplayer/CTE/_.TERN" Count="367" />
 	<BackLink DBID="/Maps/Multiplayer/MidOnly/_.TERN" Count="56" />
-	<BackLink DBID="/Maps/Multiplayer/MOBA/_.TERN" Count="169" />
+	<BackLink DBID="/Maps/Multiplayer/MOBA/_.TERN" Count="185" />
 	<BackLink DBID="/Maps/Multiplayer/MOBA/Map2/_.TERN" Count="78" />
 	<BackLink DBID="/Maps/Multiplayer/MOBA/Mod2/_.TERN" Count="169" />
 	<BackLink DBID="/Maps/Multiplayer/MOBA/Mod9/_.TERN" Count="169" />
@@ -18,7 +18,7 @@
 	<BackLink DBID="/Maps/PvE/Test1/_.TERN" Count="72" />
 	<BackLink DBID="/Maps/Test/DesignArtTest/_.TERN" Count="23" />
 	<BackLink DBID="/Maps/Test/Duel/_.TERN" Count="32" />
-	<BackLink DBID="/Maps/Test/PlaneMap/_.TERN" Count="6" />
+	<BackLink DBID="/Maps/Test/PlaneMap/_.TERN" Count="12" />
 	<BackLink DBID="/Maps/Tutorial/_.TERN" Count="56" />
 	<BackLink DBID="/Terrain/Elements/Terrace_S4_A.STAT" Count="1" />
 	<BackLink DBID="/Terrain/Elements/Terrace_S4_B.STAT" Count="1" />

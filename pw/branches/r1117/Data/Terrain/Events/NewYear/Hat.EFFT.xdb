@@ -3,6 +3,7 @@
 	<BackLink DBID="/Creeps/Normals/Normal4/PvP_NY.CREEP" Count="1" />
 	<BackLink DBID="/Maps/Multiplayer/MOBA/NewYear/PVP_NY.CREEP" Count="1" />
 	<BackLink DBID="/Creeps/Bosses/Boss1/PVP_Walked_NY.CREEP" Count="1" />
+	<BackLink DBID="/Creeps/Champions/Champion2/PVP_1.CREEP" Count="1" />
 	<attachFlags>3</attachFlags>
 	<attachType>Hat</attachType>
 	<component href="/Terrain/Events/NewYear/Hat.PRXY" />

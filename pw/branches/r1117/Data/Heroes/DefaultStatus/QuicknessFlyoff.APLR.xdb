@@ -8,6 +8,7 @@
 	<BackLink DBID="/Items/Talents/Class/Mowgli/Ability4.TALENT" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/Mowgli/RecastSupport.APLR" Count="1" />
 	<BackLink DBID="/Items/Talents/TalentKits/Redset7_7_Glyph/status_Quickness.APLR" Count="1" />
+	<BackLink DBID="/Maps/Test/PlaneMap/GiftGlyph/PrimeRune.GLPH" Count="1" />
 	<applyTarget>ApplicatorTarget</applyTarget>
 	<caption> - FlyOff Message</caption>
 	<enabled>

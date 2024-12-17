@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BasicEffectStandalone>
-	<BackLink DBID="/Items/Talents/Class/Vampire/Ability_A3.TALENT" Count="1" />
 	<component href="/Effects/Debuffs/Bats/_AllyTRS.PRXY" />
 	<deathType>Manual</deathType>
 	<enableCondition href="" />

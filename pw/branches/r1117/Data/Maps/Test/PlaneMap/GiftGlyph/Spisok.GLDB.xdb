@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GlyphsDB>
+	<BackLink DBID="/Maps/Test/PlaneMap/GiftGlyph/giftspawner.GLSPN" Count="1" />
+	<glyphs>
+		<Item>
+			<glyph href="/Maps/Test/PlaneMap/GiftGlyph/PrimeRune.GLPH" />
+			<weight>1</weight>
+		</Item>
+	</glyphs>
+</GlyphsDB>

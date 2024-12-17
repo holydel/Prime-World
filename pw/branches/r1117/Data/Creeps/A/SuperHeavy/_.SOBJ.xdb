@@ -2,6 +2,7 @@
 <DBSceneObject>
 	<BackLink DBID="/Creeps/A/SuperHeavy/_Parent.CREEP" Count="1" />
 	<BackLink DBID="/Creeps/A/SuperHeavy/MidOnly.CREEP" Count="1" />
+	<BackLink DBID="/Items/Talents/Class/Inventor/Ability4_1.TALENT" Count="1" />
 	<attached>
 		<Item>
 			<attachFlags>15</attachFlags>

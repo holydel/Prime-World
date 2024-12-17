@@ -267,6 +267,16 @@
 	<BackLink DBID="/Summons/Wolf/_B.SUMMONED" Count="1" />
 	<BackLink DBID="/Summons/Wolf/_B2.SUMMONED" Count="1" />
 	<BackLink DBID="/Summons/Wolf/PvE_Coop1.CREEP" Count="1" />
+	<BackLink DBID="/Creeps/Normals/Normal3/PVP.CREEP" Count="1" />
+	<BackLink DBID="/Creeps/Minions/Minion3/PVP_BLUE.CREEP" Count="1" />
+	<BackLink DBID="/Creeps/Minions/Minion3/PVP_FIRE.CREEP" Count="1" />
+	<BackLink DBID="/Maps/Multiplayer/MOBA/Spawners/Neutral_Assid.NCSPN" Count="5" />
+	<BackLink DBID="/Creeps/Minions/Minion3/PVP_Elite.CREEP" Count="1" />
+	<BackLink DBID="/Creeps/Minions/Minion1/PVP_Rogatik.CREEP" Count="1" />
+	<BackLink DBID="/Creeps/Normals/Normal6/PVP.CREEP" Count="1" />
+	<BackLink DBID="/Creeps/Normals/Normal5/PVP.CREEP" Count="1" />
+	<BackLink DBID="/Creeps/Champions/Champion2/PVP_1.CREEP" Count="1" />
+	<BackLink DBID="/Creeps/Champions/Champion2/PVP_2.CREEP" Count="1" />
 	<deathTime>5</deathTime>
 	<effect href="/Effects/General/Death/_.EFFT" />
 	<effectOffset>0</effectOffset>

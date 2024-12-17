@@ -5,6 +5,7 @@
 	<BackLink DBID="/Glyphs/EggTriggerDragon.APLR" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/ThunderGod/Ability4.TALENT" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/ThunderGod/Ability4_2.TALENT" Count="1" />
+	<BackLink DBID="/Items/Talents/Class/ThunderGod/Ability4_3.TALENT" Count="1" />
 	<component href="/Effects/Debuffs/Discharge/_.PRXY" />
 	<deathType>Anim</deathType>
 	<enableCondition href="" />

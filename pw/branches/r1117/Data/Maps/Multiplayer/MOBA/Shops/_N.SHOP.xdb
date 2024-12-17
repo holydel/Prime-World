@@ -12,7 +12,7 @@
 	<BackLink DBID="/Maps/Test/BalanseTest/_.ADMP" Count="1" />
 	<BackLink DBID="/Maps/Test/CoopCreaturesTest/_.ADMP" Count="1" />
 	<BackLink DBID="/Maps/Test/Duel/_.ADMP" Count="2" />
-	<BackLink DBID="/Maps/Test/PlaneMap/_.ADMP" Count="1" />
+	<BackLink DBID="/Maps/Test/PlaneMap/_.ADMP" Count="2" />
 	<shop href="/Buildings/DefaultStats/Secret.CNSH" />
 	<stats href="/Buildings/DefaultStats/Shop.STCN" />
 </Shop>

@@ -4,6 +4,7 @@
 	<BackLink DBID="/Creeps/Minions/Minion3/CTF_S5.CREEP" Count="1" />
 	<BackLink DBID="/Creeps/Minions/Minion3/DummyTestDps.CREEP" Count="1" />
 	<BackLink DBID="/Creeps/Minions/Minion3/PvE_Coop1_Killer.CREEP" Count="1" />
+	<BackLink DBID="/Creeps/Minions/Minion3/PVP_FIRE.CREEP" Count="5" />
 	<abilities>
 		<Item href="" />
 		<Item href="" />

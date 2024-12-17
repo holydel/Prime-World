@@ -48,7 +48,6 @@
 	<BackLink DBID="/Items/Talents/Class/Prince/A4_SpellSlow.APLR" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/Prince/ProgrammA4_StunSilence.APLR" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/Ratcatcher/Ability1.TALENT" Count="1" />
-	<BackLink DBID="/Items/Talents/Class/Ratcatcher/RatMainProgram.APLR" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/Rifleman/Summon_Trap_SUP.APLR" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/Rockman/Ability2.TALENT" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/Rockman/Ability4.TALENT" Count="1" />
@@ -86,7 +85,9 @@
 	<BackLink DBID="/Maps/Tutorial/Talents/Tutorial_ThunderGod.TALENT" Count="1" />
 	<BackLink DBID="/Summons/Turret/_.SUMMONED" Count="1" />
 	<BackLink DBID="/Summons/Wolf/Slowdown.APLR" Count="1" />
-	<BackLink DBID="/Items/Talents/Level1/G295_LifeDrain.TALENT" Count="1" />
+	<BackLink DBID="/Items/Talents/Level1/G295_LifeDrain.TALENT" Count="2" />
+	<BackLink DBID="/Items/Talents/Class/Inventor/Ability_A1.TALENT" Count="4" />
+	<BackLink DBID="/Items/Talents/Class/MagicGirl/Ability_A4_3.TALENT" Count="1" />
 	<applicators>
 		<Item href="/Heroes/DefaultStatus/_SLOW_MOVE.APLR" id="BD7263A6-11FD-4EAA-A701-C57196049889">
 			<StatModApplicator>

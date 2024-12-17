@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <DBSceneComponent>
 	<BackLink DBID="/Effects/Buffs/Rage/_Prime.EFFT" Count="1" />
+	<BackLink DBID="/Effects/Buffs/Rage/_Prime_1.EFFT" Count="1" />
 	<attached>
 		<Item>
 			<attachFlags>15</attachFlags>

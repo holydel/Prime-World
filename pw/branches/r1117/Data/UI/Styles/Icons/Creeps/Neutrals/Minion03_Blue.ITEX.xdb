@@ -12,6 +12,8 @@
 	<BackLink DBID="/Maps/Test/BalanseTest/Spawners/DummyTest_11.NCSPN" Count="1" />
 	<BackLink DBID="/Maps/Test/BalanseTest/Spawners/DummyTest_7.NCSPN" Count="1" />
 	<BackLink DBID="/Maps/Test/BalanseTest/Spawners/DummyTest_8.NCSPN" Count="1" />
+	<BackLink DBID="/Creeps/Minions/Minion3/PVP_BLUE.CREEP" Count="1" />
+	<BackLink DBID="/Creeps/Minions/Minion3/PVP_Elite.CREEP" Count="1" />
 	<generatedFileName></generatedFileName>
 	<importOnlyShape>false</importOnlyShape>
 	<mipLevels>0</mipLevels>

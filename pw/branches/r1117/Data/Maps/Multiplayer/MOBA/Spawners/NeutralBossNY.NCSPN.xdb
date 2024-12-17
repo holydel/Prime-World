@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <AdvMapNeutralCreepSpawner>
+	<BackLink DBID="/Maps/Multiplayer/MOBA/_.ADMP" Count="6" />
 	<baseLevel>0</baseLevel>
 	<collision>
 		<x1>0</x1>
@@ -13,7 +14,7 @@
 		<waitForEvadeTime>3</waitForEvadeTime>
 		<waitForNextTargetTime>3</waitForNextTargetTime>
 	</evadeParams>
-	<firstSpawnTimeOffset>360</firstSpawnTimeOffset>
+	<firstSpawnTimeOffset>420</firstSpawnTimeOffset>
 	<groups>
 		<Item>
 			<creeps>
@@ -50,7 +51,7 @@
 	<levelUpInfo>
 		<increment>1</increment>
 		<interval>120</interval>
-		<lifetimeLevelUp>true</lifetimeLevelUp>
+		<lifetimeLevelUp>false</lifetimeLevelUp>
 		<spawnLevelUpIncrement>0</spawnLevelUpIncrement>
 		<spawnLevelUpInterval>0</spawnLevelUpInterval>
 	</levelUpInfo>

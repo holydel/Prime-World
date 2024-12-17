@@ -6,6 +6,7 @@
 	<BackLink DBID="/Items/Talents/Class/Alchemist/Ability_A4_2.TALENT" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/Inventor/A1_TurretSummon.APLR" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/Inventor/A2_SummonDispenser.APLR" Count="1" />
+	<BackLink DBID="/Items/Talents/Class/Inventor/A1_TurretSummonBomb.APLR" Count="2" />
 	<comment>common behaviour - default ranged</comment>
 	<lashRange>
 		<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAAAAQQ==</compiledString>

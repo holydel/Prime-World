@@ -2,6 +2,7 @@
 <BasicEffectStandalone>
 	<BackLink DBID="/Items/Talents/Class/Alchemist/Ability_A1.TALENT" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/Witch/Ability_A4_2.TALENT" Count="1" />
+	<BackLink DBID="/Items/Talents/Class/MagicGirl/Ability_A4_3.TALENT" Count="1" />
 	<component href="/Effects/Shots/Bottle/_3FXTRS.PRXY" />
 	<deathType>Manual</deathType>
 	<enableCondition href="" />

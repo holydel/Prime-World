@@ -5,6 +5,7 @@
 	<BackLink DBID="/Maps/Multiplayer/MOBA/Spawners/Neutral_Elite.NCSPN" Count="2" />
 	<BackLink DBID="/Maps/Multiplayer/MOBA/Spawners/Neutral_Elite_1.NCSPN" Count="2" />
 	<BackLink DBID="/Maps/Multiplayer/MOBA/Spawners/Neutral_Normal.NCSPN" Count="2" />
+	<BackLink DBID="/Maps/Multiplayer/MOBA/Spawners/Neutral_Assid.NCSPN" Count="10" />
 	<abilities>
 		<Item href="/Creeps/Minions/Minion2/A0.ABLT" />
 		<Item href="/Maps/Multiplayer/MOBA/Spawners/NeutralMark.ABLT" />

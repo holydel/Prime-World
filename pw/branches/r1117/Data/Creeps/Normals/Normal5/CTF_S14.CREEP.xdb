@@ -534,7 +534,7 @@
 				<warFogRemoveTime>0</warFogRemoveTime>
 			</Ability>
 		</Item>
-		<Item skip="1" />
+		<Item href="/Glyphs/GlyphWardSpawnerAbility.ABLT" />
 	</abilities>
 	<attackAbility href="/Creeps/Normals/Normal5/AttackAbility.ATCK" />
 	<creepType>NeutralChampion</creepType>

@@ -2,6 +2,7 @@
 <DBSceneComponent>
 	<BackLink DBID="/Effects/Debuffs/Explosion/_FireCastAllyMedium.EFFT" Count="1" />
 	<BackLink DBID="/Effects/Debuffs/Explosion/_FireCastAllyShort.PRXY" Count="1" />
+	<BackLink DBID="/Effects/Debuffs/Explosion/_FireCastAllyMedium_1.EFFT" Count="1" />
 	<attached>
 		<Item>
 			<attachFlags>15</attachFlags>

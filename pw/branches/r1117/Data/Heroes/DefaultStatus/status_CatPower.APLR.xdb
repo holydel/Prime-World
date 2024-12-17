@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StatusApplicator>
-	<BackLink DBID="/Buildings/DefaultStats/CheckCatKill.ABLT" Count="1" />
+	<BackLink DBID="/Buildings/DefaultStats/CheckCatKill.ABLT" Count="2" />
 	<BackLink DBID="/Heroes/DefaultStatus/status_CatPower.APLR" Count="1" />
+	<BackLink DBID="/Maps/Test/PlaneMap/GiftGlyph/PrimeRune.GLPH" Count="1" />
 	<applicators>
 		<Item href="/Heroes/DefaultStatus/status_CatPower.APLR" id="CBBFE035-1799-4E36-A657-8F78AF015049">
 			<StatModApplicator>

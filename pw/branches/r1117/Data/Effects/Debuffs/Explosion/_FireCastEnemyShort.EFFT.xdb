@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BasicEffectStandalone>
 	<BackLink DBID="/Items/Talents/Class/Mage/A1Cast.DSCH" Count="1" />
+	<BackLink DBID="/Items/Talents/Class/Mage/A4_3Cast.DSCH" Count="1" />
 	<component href="/Effects/Debuffs/Explosion/_FireCastEnemyShort.PRXY" />
 	<deathType>Manual</deathType>
 	<enableCondition href="" />

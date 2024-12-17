@@ -40,6 +40,7 @@
 	<BackLink DBID="/Maps/Test/BalanseTest/Spawners/DummyTest_4.NCSPN" Count="1" />
 	<BackLink DBID="/Maps/PvE/Series/Coop1/Abilities/ivaCommingDeadEvent.APLR" Count="2" />
 	<BackLink DBID="/Maps/Multiplayer/CTE/Spawners/Neutral_Elite_CTE.NCSPN" Count="1" />
+	<BackLink DBID="/Maps/Multiplayer/MOBA/Spawners/Neutral_Assid.NCSPN" Count="1" />
 	<generatedFileName></generatedFileName>
 	<importOnlyShape>false</importOnlyShape>
 	<mipLevels>0</mipLevels>
