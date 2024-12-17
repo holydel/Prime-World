@@ -19,6 +19,8 @@ extern int g_playerPartyId;
 
 bool g_playerPwcChatMute = false;
 
+bool useMirrorServer = false;
+
 static std::map<std::wstring, int> s_userNicknameToUserIdMap;
 
 std::map<std::wstring, WebLauncherPostRequest::WebUserData> g_usersData;
@@ -26,15 +28,10 @@ int g_playersCount;
 
 extern map<int, WebLauncherPostRequest::PlayerInfoByUserId> userIdToNicknameMap;
 
-WebLauncherPostRequest::WebLauncherPostRequest(const wchar_t* serverUrl, const wchar_t* objectName, int serverPort, DWORD flags)
-{
-  //Init(serverUrl, objectName, serverPort, flags);
-  Init(SERVER_IP_W, L"/api", 37122, 0);
-}
 
 WebLauncherPostRequest::WebLauncherPostRequest()
 {
-  Init(L"playpw.fun", L"/api/launcher/", INTERNET_DEFAULT_HTTPS_PORT, INTERNET_FLAG_SECURE);
+  Init(useMirrorServer ? MIRROR_SERVER_IP_W : SERVER_IP_W, L"/api", SYNCHRONIZER_PORT, 0);
 }
 
 void WebLauncherPostRequest::Init(const wchar_t* serverUrl, const wchar_t* objectName, int serverPort, DWORD flags)
@@ -2029,7 +2026,7 @@ WebLauncherPostRequest::WebLoginResponse WebLauncherPostRequest::GetSessionData(
 {
   WebLoginResponse res;
   res.response = "";
-  res.retCode = LoginResponse_WEB_FAIL;
+  res.retCode = LoginResponse_WEB_FAILED_CONNECTION;
 
   char jsonBuff[4096];
   ZeroMemory(jsonBuff,4096);
@@ -2053,7 +2050,7 @@ WebLauncherPostRequest::WebLoginResponse WebLauncherPostRequest::GetSessionData(
   Json::Value parsedJson = ParseJson(responseStream.c_str());
   if (parsedJson.empty()) {
     res.response = responseStream.c_str();
-    res.retCode = LoginResponse_WEB_FAIL;
+    res.retCode = LoginResponse_WEB_FAILED_CONNECTION;
     return res; // Failed json
   }
 

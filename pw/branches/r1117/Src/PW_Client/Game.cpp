@@ -1226,7 +1226,7 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
     }
 
     if (protocolMethod == "checkInstall") {
-      WebLauncherPostRequest syncCheckConnectionRequest(SERVER_IP_W, L"/api", SERVER_PORT_INT - 8, 0);
+      WebLauncherPostRequest syncCheckConnectionRequest;
       if (syncCheckConnectionRequest.CheckConnectionRequest(protocolToken)) {
         systemLog( NLogg::LEVEL_MESSAGE ).Trace("Check install completed for %s", protocolToken);
       } else {
@@ -1237,10 +1237,15 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
 
     WebLauncherPostRequest::WebLoginResponse response;
     if (protocolMethod == "runGame" || protocolMethod == "reconnect") {
-      //WebLauncherPostRequest cprequest(SERVER_IP_W, L"/api", SERVER_PORT_INT - 8, 0);
+      //WebLauncherPostRequest cprequest;
       //cprequest.CreateDebugSession();
-      WebLauncherPostRequest rprequest(SERVER_IP_W, L"/api", SERVER_PORT_INT - 8, 0);
+      WebLauncherPostRequest rprequest;
       response = rprequest.GetSessionData(protocolToken);
+      if (response.retCode == WebLauncherPostRequest::LoginResponse_WEB_FAILED_CONNECTION) {
+        useMirrorServer = true;
+        WebLauncherPostRequest mirror_rprequest;
+        response = mirror_rprequest.GetSessionData(protocolToken);
+      }
     } else {
       WebLauncherPostRequest prequest;
       response = prequest.GetNickName(protocolToken);
@@ -1280,7 +1285,7 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
         g_devLogin = currentLogin.c_str();
         int selectedHeroID = atoi(allTokens[4].c_str());
 
-        WebLauncherPostRequest syncRegisterRequest(SERVER_IP_W, L"/api", SERVER_PORT_INT - 8, 0);
+        WebLauncherPostRequest syncRegisterRequest;
 
         string gameName = "";
         WebLauncherPostRequest::RegisterSessionRequest registerInSessionResponse;
@@ -1341,7 +1346,7 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
             return 0;
           }
           Sleep(1000);
-          WebLauncherPostRequest waitSessionNameRequest(SERVER_IP_W, L"/api", SERVER_PORT_INT - 8, 0);
+          WebLauncherPostRequest waitSessionNameRequest;
           waitSessionNameRequest.GetGameNameForConnection(protocolToken);
         }
 

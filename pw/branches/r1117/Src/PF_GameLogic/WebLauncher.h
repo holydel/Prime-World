@@ -17,7 +17,6 @@ class WebLauncherPostRequest
 	std::vector<int> keysClassTalent;
 public:
   WebLauncherPostRequest();
-	WebLauncherPostRequest(const wchar_t* serverUrl, const wchar_t* objectName, int serverPort, DWORD flags);
 
   void Init(const wchar_t* serverUrl, const wchar_t* objectName, int serverPort, DWORD flags);
 
@@ -36,6 +35,7 @@ public:
     LoginResponse_WEB_CONNECT,
     LoginResponse_WEB_RECONNECT,
     LoginResponse_WEB_FAIL,
+    LoginResponse_WEB_FAILED_CONNECTION,
   };
 
   struct WebLoginResponse {

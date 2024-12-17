@@ -794,7 +794,7 @@ void GameClientPW::OnVictory( const StatisticService::RPC::SessionClientResults 
   for (int i = 0; i < _sessionResults.players.size(); ++i) {
     playersIds.push_back(_sessionResults.players[i].userid);
   }
-  WebLauncherPostRequest sessionResultRequest(SERVER_IP_W, L"/api", SERVER_PORT_INT - 8, 0);
+  WebLauncherPostRequest sessionResultRequest;
   sessionResultRequest.SendFinishGameRequest(playersIds, _sessionResults.sideWon);
 
   GameClient::OnVictory( _sessionResults, _replayInfo );
