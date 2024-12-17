@@ -1,4 +1,5 @@
 #include <windows.h>
+#include <CommCtrl.h>
 #include <iostream>
 #include <git2.h>
 
@@ -23,9 +24,14 @@ static int error;
 
 static bool isAdminRightsRequired = false;
 
+static bool isRunningAdm = false;
+
+static LPSTR progressBarHandle = nullptr;
+
 int SocketListen(std::atomic<bool>& doWork);
 int SocketTrancieve(const char* argv, std::atomic<bool>& doWork);
 void TransmitMessage(char const* strbuf, std::streamsize strSize);
+void DownloadRelease(const std::string& fileUrl, const std::string& filePath, const std::string& md5Path);
 
 bool gh_fs_rm(const std::string& path) {
    WIN32_FIND_DATA findFileData;
@@ -87,8 +93,13 @@ bool gh_fs_rm(const std::string& path) {
 void CheckError(const char* stage)
 {
    if (error < 0) {
-      std::cerr << stage << " failed: " << git_error_last()->message << std::endl;
-      throw std::exception();
+      if (isAdminRightsRequired) {
+         std::string errorLast = git_error_last()->message;
+         throw admin_rights_exception();
+      } else {
+         std::cerr << stage << " failed: " << git_error_last()->message << std::endl;
+         throw std::exception();
+      }
    }
 }
 
@@ -133,10 +144,23 @@ int create_merge_commit(git_repository* repo, git_oid* merge_commit_oid, git_ann
 
 
 int fetch_progress(const git_transfer_progress* stats, void* payload) {
-   int progress = max(0.f, min(100.f, (float)stats->received_objects / (float)stats->total_objects * 100.f));
-   //std::cout <<  << std::endl;
-   std::string pr = std::format("{}\n", progress);
-   TransmitMessage(pr.c_str(), pr.size());
+   int progress = (int)max(0.f, min(100.f, (float)stats->received_objects / (float)stats->total_objects * 100.f));
+
+   if (isRunningAdm) {
+      std::string pr = std::format("{}\n", progress);
+      TransmitMessage(pr.c_str(), pr.size());
+   }
+   else {
+      if (progressBarHandle) {
+         HWND hwndProgressBar = (HWND)atoi(progressBarHandle);
+         int result = PostMessage(hwndProgressBar, PBM_SETRANGE, 0, 100);
+         result = PostMessage(hwndProgressBar, PBM_SETPOS, progress, 0);
+         auto errrr = GetLastError();
+         int a = 101;
+      }
+      // "name": "shader_pos"
+      std::cout << "#{\"type\":\"bar\", \"data\":\"" << progress << "\"}" << std::endl;
+   }
 
    return 0;
 }
@@ -144,6 +168,9 @@ int fetch_progress(const git_transfer_progress* stats, void* payload) {
 
 void CleanAndClone(const char* repoPath, git_repository* repo, const char* remoteRepoUrl)
 {
+   if (isAdminRightsRequired) {
+      throw admin_rights_exception();
+   }
    // If opening the repository failed, delete the target directory
 
    // Assuming gh_fs_rm is a function that recursively deletes a directory.
@@ -160,18 +187,75 @@ void CleanAndClone(const char* repoPath, git_repository* repo, const char* remot
 }
 
 
-void RemoteFetch(git_repository* repo)
+void RemoteFetch(git_repository* repo, const char* remoteRepoUrl, const char* branchName)
 {
+   git_reference* head = nullptr;
+   error = git_repository_head(&head, repo);
+   CheckError("Get HEAD");
+   const git_oid* local_commit = git_reference_target(head);
+
    git_remote* remote = nullptr;
    error = git_remote_lookup(&remote, repo, "origin");
    CheckError("Remote lookup");
+
+   git_remote_callbacks callbacks = GIT_REMOTE_CALLBACKS_INIT;
+   error = git_remote_connect(remote, GIT_DIRECTION_FETCH, &callbacks, NULL, NULL);
+   CheckError("Connect");
+
+   const git_remote_head** refs;
+   size_t size;
+   error = git_remote_ls(&refs, &size, remote);
+   CheckError("Remote ls");
+
+   int cmmm = git_oid_cmp(local_commit, &refs[0]->oid);
+
+   char oid[GIT_OID_SHA1_HEXSIZE + 1] = { 0 };
+   git_oid_fmt(oid, &refs[1]->oid);
+
+   char oidLocal[GIT_OID_SHA1_HEXSIZE + 1] = { 0 };
+   git_oid_fmt(oidLocal, local_commit);
+
+   if (git_oid_cmp(local_commit, &refs[0]->oid) == 0) {
+      return;
+   }
+
+   if (isAdminRightsRequired) {
+      throw admin_rights_exception();
+   }
 
    git_fetch_options fetch_opts = GIT_FETCH_OPTIONS_INIT;
    fetch_opts.callbacks.transfer_progress = fetch_progress;
    error = git_remote_fetch(remote, nullptr, &fetch_opts, nullptr);
    CheckError("Remote fetch");
 
+   const git_oid* remote_commit = git_reference_target(head);
+
+
    git_remote_free(remote);
+
+
+   // Verify if we actually fetched any new data
+   git_oid fetch_head_oid;
+   error = git_repository_fetchhead_foreach(repo, fetchhead_callback, &fetch_head_oid);
+   CheckError("Fetching FETCH_HEAD");
+
+   git_annotated_commit* fetched_commit = NULL;
+   error = git_annotated_commit_from_fetchhead(&fetched_commit, repo, branchName, remoteRepoUrl, &fetch_head_oid);
+   CheckError("Get annotated commit from FETCH_HEAD");
+
+   git_merge_options merge_opts = GIT_MERGE_OPTIONS_INIT;
+   git_checkout_options checkout_opts = GIT_CHECKOUT_OPTIONS_INIT;
+
+   const git_annotated_commit* cmt[] = { fetched_commit };
+   error = git_merge(repo, cmt, 1, &merge_opts, &checkout_opts);
+   git_annotated_commit_free(fetched_commit);
+   CheckError("Merge");
+
+   if (git_repository_state(repo) == GIT_REPOSITORY_STATE_NONE) {
+      git_oid merge_commit_oid;
+      error = create_merge_commit(repo, &merge_commit_oid, fetched_commit);
+      CheckError("Create merge commit");
+   }
 }
 
 
@@ -187,16 +271,7 @@ void UpdateRepo(const char* repoPath, const char* remoteRepoUrl, const char* bra
    // Once the repository is cloned or opened, perform the rest of the
    if (repo) {
       try {
-         // Reset
-         git_object* head_obj = nullptr;
-         error = git_revparse_single(&head_obj, repo, "HEAD");
-         CheckError("Get Head");
-
-         error = git_reset(repo, head_obj, GIT_RESET_HARD, nullptr);
-         git_object_free(head_obj);
-         CheckError("Reset");
-
-         // Identify unversioned files
+         bool anyChanges = false;
          git_status_options statusopt = GIT_STATUS_OPTIONS_INIT;
          statusopt.show = GIT_STATUS_SHOW_INDEX_AND_WORKDIR;
          statusopt.flags = GIT_STATUS_OPT_INCLUDE_UNTRACKED | GIT_STATUS_OPT_RECURSE_UNTRACKED_DIRS;
@@ -204,58 +279,66 @@ void UpdateRepo(const char* repoPath, const char* remoteRepoUrl, const char* bra
          git_status_list* status;
          error = git_status_list_new(&status, repo, &statusopt);
          CheckError("Status List");
-         char long_path[4096];
-         size_t repoPathLength = strlen(repoPath);
-         memcpy(long_path, repoPath, repoPathLength + 1);
-         long_path[repoPathLength] = '\\';
 
          size_t status_count = git_status_list_entrycount(status);
          for (size_t i = 0; i < status_count; ++i) {
             const git_status_entry* s = git_status_byindex(status, i);
-            if (s->status == GIT_STATUS_WT_NEW) {
-               // This is an untracked file
-               const char* path = s->index_to_workdir->old_file.path;
-
-               memcpy(long_path + repoPathLength + 1, path, strlen(path) + 1);
-               // Removing the file
-               if (remove(long_path) == -1) {
-                  std::cerr << "Failed to remove untracked file:" << path << std::endl;
+            if (s->status == GIT_STATUS_WT_NEW || s->status == GIT_STATUS_WT_MODIFIED ||
+               s->status == GIT_STATUS_WT_DELETED || s->status == GIT_STATUS_WT_TYPECHANGE ||
+               s->status == GIT_STATUS_WT_RENAMED || s->status == GIT_STATUS_WT_UNREADABLE) {
+               if (isAdminRightsRequired) {
+                  throw admin_rights_exception();
+               } else {
+                  anyChanges = true;
+                  break;
                }
             }
          }
-         git_status_list_free(status);
 
-         RemoteFetch(repo);
+         if (anyChanges) {
+            // Reset
+            git_object* head_obj = nullptr;
+            error = git_revparse_single(&head_obj, repo, "HEAD");
+            CheckError("Get Head");
 
-         // Verify if we actually fetched any new data
-         git_oid fetch_head_oid;
-         error = git_repository_fetchhead_foreach(repo, fetchhead_callback, &fetch_head_oid);
-         CheckError("Fetching FETCH_HEAD");
+            error = git_reset(repo, head_obj, GIT_RESET_HARD, nullptr);
+            git_object_free(head_obj);
+            CheckError("Test reset");
 
-         git_annotated_commit* fetched_commit = NULL;
-         error = git_annotated_commit_from_fetchhead(&fetched_commit, repo, branchName, remoteRepoUrl, &fetch_head_oid);
-         CheckError("Get annotated commit from FETCH_HEAD");
+            // Identify unversioned files
+            git_status_options statusopt = GIT_STATUS_OPTIONS_INIT;
+            statusopt.show = GIT_STATUS_SHOW_INDEX_AND_WORKDIR;
+            statusopt.flags = GIT_STATUS_OPT_INCLUDE_UNTRACKED | GIT_STATUS_OPT_RECURSE_UNTRACKED_DIRS;
 
-         git_merge_options merge_opts = GIT_MERGE_OPTIONS_INIT;
-         git_checkout_options checkout_opts = GIT_CHECKOUT_OPTIONS_INIT;
+            git_status_list* status;
+            error = git_status_list_new(&status, repo, &statusopt);
+            CheckError("Status List");
+            char long_path[4096];
+            size_t repoPathLength = strlen(repoPath);
+            memcpy(long_path, repoPath, repoPathLength + 1);
+            long_path[repoPathLength] = '\\';
 
-         const git_annotated_commit* cmt[] = { fetched_commit };
-         error = git_merge(repo, cmt, 1, &merge_opts, &checkout_opts);
-         git_annotated_commit_free(fetched_commit);
-         CheckError("Merge");
+            size_t status_count = git_status_list_entrycount(status);
+            for (size_t i = 0; i < status_count; ++i) {
+               const git_status_entry* s = git_status_byindex(status, i);
+               if (s->status == GIT_STATUS_WT_NEW) {
+                  // This is an untracked file
+                  const char* path = s->index_to_workdir->old_file.path;
 
-         if (git_repository_state(repo) == GIT_REPOSITORY_STATE_NONE) {
-            git_oid merge_commit_oid;
-            error = create_merge_commit(repo, &merge_commit_oid, fetched_commit);
-            CheckError("Create merge commit");
+                  memcpy(long_path + repoPathLength + 1, path, strlen(path) + 1);
+                  // Removing the file
+                  if (remove(long_path) == -1) {
+                     std::cerr << "Failed to remove untracked file:" << path << std::endl;
+                  }
+               }
+            }
+            git_status_list_free(status);
          }
-         else {
-            /*
-            gh_fs_rm(wRepoPath);
-            error = -1;
-            CheckError("Failed to merge");
-            */
-         }
+
+         RemoteFetch(repo, remoteRepoUrl, branchName);
+      }
+      catch (admin_rights_exception ex) {
+         throw ex;
       }
       catch (std::exception ex) {
          if (recursion == 0) {
@@ -290,45 +373,6 @@ int LaunchAdminNanoUpdater(std::string& cmdLine) {
    ShExecInfo.hInstApp = NULL;
 
    if (ShellExecuteEx(&ShExecInfo)) {
-      //WaitForSingleObject(ShExecInfo.hProcess, INFINITE);
-
-      /*
-      std::atomic<bool> stopThreads;
-      stopThreads.store(false);
-      
-      std::thread readStdOut([&stopThreads]() {
-         std::ifstream stdOut;
-         do {
-            stdOut.open("stdout", std::ifstream::in);
-         } while (!stopThreads.load() && !stdOut.is_open());
-
-         std::string line;
-         while (!stopThreads.load()) {
-            std::getline(stdOut, line);
-            if (!line.empty()) {
-               std::cout << line << std::endl;
-            }
-            if (line == "100") {
-               break;
-            }
-         }
-         });
-
-      std::thread readStdErr([&]() {
-         std::ifstream stdOut;
-         do {
-            stdOut.open("stderr", std::ifstream::in);
-         } while (!stopThreads.load() && !stdOut.is_open());
-
-         std::string line;
-         while (!stopThreads.load()) {
-            std::getline(stdOut, line);
-            if (!line.empty()) {
-               std::cerr << line << std::endl;
-            }
-         }
-         });
-         */
 
       std::atomic<bool> doWork;
       doWork.store(true);
@@ -359,25 +403,26 @@ int LaunchAdminNanoUpdater(std::string& cmdLine) {
 
 
 bool IsAdminRequired() {
-   if ((_access("..\\Tools\\PW_NanoUpdaterAdm.exe", 0)) != -1)
-   {
-      if ((_access("crt_ACCESS.C", 2)) == -1) {
-         return true;
-      } else {
-         return false;
-      }
+
+   std::ofstream srrr("..\\Tools\\test");
+   if (!srrr.fail()) {
+      remove("..\\Tools\\test");
    }
-   return true;
+   return srrr.fail();
 }
 
 
 int RunWithAdminRights(const char* repoPath, const char* remoteRepoUrl, const char* branchName)
 {
-   if (isAdminRightsRequired) {
+   static bool isAlreadyInvokedAdmin = false;
+   if (isAdminRightsRequired && !isAlreadyInvokedAdmin) {
+      isAlreadyInvokedAdmin = true;
       std::string cmdLine = std::format("{} {} {}", repoPath, remoteRepoUrl, branchName);
       return LaunchAdminNanoUpdater(cmdLine);
    }
+   return 1;
 }
+
 
 int Update(const char* repoPath, const char* remoteRepoUrl, const char* branchName) {
 
@@ -389,12 +434,26 @@ int Update(const char* repoPath, const char* remoteRepoUrl, const char* branchNa
    }
 
 #ifndef ADMIN_MANIFEST
+   _error = git_libgit2_opts(GIT_OPT_SET_OWNER_VALIDATION, false);
+   if (_error < 0) {
+      std::cerr << "Failed to set non-admin opts for libgit2!";
+      return 1;
+   }
+#endif
+
+#ifndef ADMIN_MANIFEST
    isAdminRightsRequired = IsAdminRequired();
-   return RunWithAdminRights(repoPath, remoteRepoUrl, branchName);
 #endif
 
    try {
       UpdateRepo(repoPath, remoteRepoUrl, branchName);
+   }
+   catch (admin_rights_exception) {
+#ifndef ADMIN_MANIFEST
+      //std::cout << "Need admin rights" << std::endl;
+      return RunWithAdminRights(repoPath, remoteRepoUrl, branchName);
+#endif
+      return 1;
    }
    catch (std::exception ex) {
       std::cerr << "Exception: " << ex.what();
@@ -410,60 +469,15 @@ int Update(const char* repoPath, const char* remoteRepoUrl, const char* branchNa
    return 0;
 }
 
-#if 1
+#if 0
+int main(int argc, char* argv[]) {
+#else
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
    PSTR lpCmdLine, int nCmdShow) {
-#else
-int main() {
-#endif
    char* winCmd = GetCommandLine();
    std::vector<char*> argVector;
    int index = 0;
    bool newOption = true;
-
-#ifdef ADMIN_MANIFEST
-   /*
-   std::cout.rdbuf(strStreamOut.rdbuf());
-   std::cerr.rdbuf(strStreamErr.rdbuf());
-
-   std::atomic<bool> stopThreads;
-   stopThreads.store(false);
-
-   std::thread writeStdOut([&stopThreads]() {
-      OutputPipe("stdout", strStreamOut, stopThreads);
-      });
-
-   std::thread writeStdErr([&]() {
-      OutputPipe("stderr", strStreamErr, stopThreads);
-      });
-      */
-   /*
-   class callback_streambuf : public std::streambuf {
-   public:
-      callback_streambuf(std::function<void(char const*, std::streamsize)> callback) : callback(callback) {}
-
-   protected:
-      std::streamsize xsputn(char_type const* s, std::streamsize count) {
-         callback(s, count);
-         return count;
-      }
-
-   private:
-      std::function<void(char const*, std::streamsize)> callback;
-   };
-
-   auto buf = callback_streambuf(TransmitMessage);
-   auto pold_buffer = std::cout.rdbuf(&buf);
-   */
-
-   std::atomic<bool> doWork;
-   doWork.store(true);
-
-   std::thread writeStdOut([&doWork]() {
-      SocketTrancieve("127.0.0.1", doWork);
-      });
-
-#endif
 
    // walk over the command line and convert it to argv
    while (winCmd[index] != 0) {
@@ -476,25 +490,110 @@ int main() {
       else {
          if (newOption) {
             argVector.push_back(&winCmd[index]);
-         }
+}
          newOption = false;
       }
       index++;
    }
-
-   if (argVector.size() < 4) {
-#ifdef ADMIN_MANIFEST
-      doWork.store(false);
-      writeStdOut.join();
+   int argc = argVector.size();
+   char** argv = argVector.data();
 #endif
-      return 1;
+   bool skipRelease = false;
+   for (int a = 0; a < argc; ++a) {
+      if (std::string(argv[a]) == "inno") {
+         skipRelease = true;
+         if (a + 1 < argc) {
+            progressBarHandle = argv[a + 1];
+            HWND hwndProgressBar = (HWND)atoi(progressBarHandle);
+            int result = PostMessage(hwndProgressBar, PBM_SETRANGE, 0, 100);
+         }
+         break;
+      }
    }
 
-   const char* repoPath = argVector[argVector.size() - 3];// "..\\Game";
-   const char* remoteRepoUrl = argVector[argVector.size() - 2];//"https://github.com/Prime-World-Classic/PWCGitUpdates.git";
-   const char* branchName = argVector[argVector.size() - 1];//"main";
+#ifdef ADMIN_MANIFEST
+   isRunningAdm = true;
+   std::atomic<bool> doWork;
+   doWork.store(true);
 
-   int result = Update(repoPath, remoteRepoUrl, branchName);
+   std::thread writeStdOut([&doWork]() {
+      SocketTrancieve("127.0.0.1", doWork);
+      });
+
+   const char szUniqueNamedMutex[] = "pwclassic_nano_updater_adm";
+#else
+   const char szUniqueNamedMutex[] = "pwclassic_nano_updater";
+#endif
+   HANDLE hHandle = CreateMutex(NULL, TRUE, szUniqueNamedMutex);
+   if (ERROR_ALREADY_EXISTS == GetLastError())
+   {
+      CloseHandle(hHandle);
+      return(1); // Exit program
+   }
+
+   const char* repoPath[] = {
+      "..\\Game",
+      "..\\Launcher\\content"
+   };
+
+   const char* repoLabels[] = {
+      "game",
+      "content"
+   };
+
+   const char* remoteRepoUrl[] = { 
+      "https://github.com/Prime-World-Classic/PWCGitUpdates.git",
+      "https://github.com/Prime-World-Classic/content.git"
+   };
+   const char* branchName = "main";
+
+   int result = 0;
+   for (int i = 0; i < _countof(repoPath); ++i) {
+      std::cout << "#{\"type\":\"label\", \"data\":\"" << repoLabels[i] << "\"}" << std::endl;
+      result += Update(repoPath[i], remoteRepoUrl[i], branchName);
+   }
+
+   const char* releaseFileUrls[] = {
+         "https://github.com/Prime-World-Classic/Prime-World/releases/download/1.9/data01.pile",
+         "https://github.com/Prime-World-Classic/Prime-World/releases/download/1.9/data02.pile",
+         "https://github.com/Prime-World-Classic/Prime-World/releases/download/1.9/data03.pile",
+         "https://github.com/Prime-World-Classic/Prime-World/releases/download/1.9/data04.pile",
+         "https://github.com/Prime-World-Classic/Prime-World/releases/download/1.9/data05.pile",
+         "https://github.com/Prime-World-Classic/Prime-World/releases/download/1.9/data06.pile",
+         "https://github.com/Prime-World-Classic/Prime-World/releases/download/1.9/Asks_RU.fsb",
+         "https://github.com/Prime-World-Classic/Prime-World/releases/download/1.9/Music.fsb",
+   };
+
+   const char* releaseFilePaths[] = {
+      "..\\Game\\Packs\\data01.pile",
+      "..\\Game\\Packs\\data02.pile",
+      "..\\Game\\Packs\\data03.pile",
+      "..\\Game\\Packs\\data04.pile",
+      "..\\Game\\Packs\\data05.pile",
+      "..\\Game\\Packs\\data06.pile",
+      "..\\Game\\Data\\Audio\\Asks_RU.fsb",
+      "..\\Game\\Data\\Audio\\Music.fsb"
+   };
+
+   const char* releaseFileHashes[] = {
+      "..\\Game\\Hashes\\data01.pile.md5",
+      "..\\Game\\Hashes\\data02.pile.md5",
+      "..\\Game\\Hashes\\data03.pile.md5",
+      "..\\Game\\Hashes\\data04.pile.md5",
+      "..\\Game\\Hashes\\data05.pile.md5",
+      "..\\Game\\Hashes\\data06.pile.md5",
+      "..\\Game\\Hashes\\Asks_RU.fsb.md5",
+      "..\\Game\\Hashes\\Music.fsb.md5"
+   };
+
+   if (!skipRelease) {
+      std::cout << "#{\"type\":\"label\", \"data\":\"" << "game_data" << "\"}" << std::endl;
+      for (int r = 0; r < _countof(releaseFileUrls); ++r) {
+         DownloadRelease(releaseFileUrls[r], releaseFilePaths[r], releaseFileHashes[r]);
+      }
+   }
+
+   int iad = 0;
 
 #ifdef ADMIN_MANIFEST
    doWork.store(false);

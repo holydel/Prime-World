@@ -15,17 +15,17 @@
 #pragma comment (lib, "AdvApi32.lib")
 
 static SOCKET ConnectSocket = INVALID_SOCKET;
-bool socketIsActive = true;
+std::atomic<bool> socketIsActive = false;
 
 #define DEFAULT_BUFLEN 512
 #define DEFAULT_PORT "34991"
 
 void TransmitMessage(char const* strbuf, std::streamsize strSize) {
-   if (socketIsActive) {
+   if (socketIsActive.load()) {
       int iResult = send(ConnectSocket, strbuf, strSize, 0);
       if (iResult == SOCKET_ERROR) {
          socketIsActive = false;
-         fprintf(stderr, "send failed with error: %d\n", WSAGetLastError());
+         fprintf(stdout, "send failed with error: %d\n", WSAGetLastError());
          closesocket(ConnectSocket);
          WSACleanup();
       }
@@ -51,7 +51,7 @@ int SocketTrancieve(const char* argv, std::atomic<bool>& doWork)
    // Initialize Winsock
    iResult = WSAStartup(MAKEWORD(2, 2), &wsaData);
    if (iResult != 0) {
-      fprintf(stderr, "WSAStartup failed with error: %d\n", iResult);
+      fprintf(stdout, "WSAStartup failed with error: %d\n", iResult);
       return 1;
    }
 
@@ -63,7 +63,7 @@ int SocketTrancieve(const char* argv, std::atomic<bool>& doWork)
    // Resolve the server address and port
    iResult = getaddrinfo(argv, DEFAULT_PORT, &hints, &result);
    if (iResult != 0) {
-      fprintf(stderr, "getaddrinfo failed with error: %d\n", iResult);
+      fprintf(stdout, "getaddrinfo failed with error: %d\n", iResult);
       WSACleanup();
       return 1;
    }
@@ -75,7 +75,7 @@ int SocketTrancieve(const char* argv, std::atomic<bool>& doWork)
       ConnectSocket = socket(ptr->ai_family, ptr->ai_socktype,
          ptr->ai_protocol);
       if (ConnectSocket == INVALID_SOCKET) {
-         fprintf(stderr, "socket failed with error: %ld\n", WSAGetLastError());
+         fprintf(stdout, "socket failed with error: %ld\n", WSAGetLastError());
          WSACleanup();
          return 1;
       }
@@ -93,22 +93,24 @@ int SocketTrancieve(const char* argv, std::atomic<bool>& doWork)
    freeaddrinfo(result);
 
    if (ConnectSocket == INVALID_SOCKET) {
-      fprintf(stderr, "Unable to connect to server!\n");
+      fprintf(stdout, "Unable to connect to server!\n");
       WSACleanup();
       return 1;
    }
 
    socketIsActive = true;
+   /*
    if (false) { //////////////////////////////////////////////////////////
       // Send an initial buffer
       iResult = send(ConnectSocket, sendbuf, (int)strlen(sendbuf), 0);
       if (iResult == SOCKET_ERROR) {
-         fprintf(stderr, "send failed with error: %d\n", WSAGetLastError());
+         fprintf(stdout, "send failed with error: %d\n", WSAGetLastError());
          closesocket(ConnectSocket);
          WSACleanup();
          return 1;
       }
    } //////////////////////////////////////////////////////////
+   */
    do {
       /*
       iResult = recv(ConnectSocket, recvbuf, recvbuflen, 0);
@@ -121,12 +123,12 @@ int SocketTrancieve(const char* argv, std::atomic<bool>& doWork)
          */
    } while (doWork.load());
 
-   fprintf(stderr, "Bytes Sent: %ld\n", iResult);
+   fprintf(stdout, "Bytes Sent: %ld\n", iResult);
 
    // shutdown the connection since no more data will be sent
    iResult = shutdown(ConnectSocket, SD_SEND);
    if (iResult == SOCKET_ERROR) {
-      fprintf(stderr, "shutdown failed with error: %d\n", WSAGetLastError());
+      fprintf(stdout, "shutdown failed with error: %d\n", WSAGetLastError());
       closesocket(ConnectSocket);
       WSACleanup();
       return 1;

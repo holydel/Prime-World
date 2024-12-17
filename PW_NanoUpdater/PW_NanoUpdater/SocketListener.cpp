@@ -111,7 +111,7 @@ int SocketListen(std::atomic<bool>& doWork)
          printf("Bytes sent: %d\n", iSendResult);
          */
          std::string recievedData(recvbuf, iResult);
-         std::cout << recievedData << std::endl;
+         std::cerr << recievedData << std::endl;
       }
       else if (iResult == 0) {}
       else {
