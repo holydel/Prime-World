@@ -87,6 +87,7 @@ bool CheckFileMD5Hash(const std::string& filename, const std::string& md5FileNam
                isValid = hashData == validHash;
             }
 #ifndef NDEBUG
+            md5File.close();
             std::ofstream md5FileOut(md5FileName, std::ios::binary);
             md5FileOut.write(reinterpret_cast<char*>(hashData.data()), hashData.size());
             return true;

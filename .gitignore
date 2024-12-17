@@ -75,9 +75,5 @@ rating/rating_json.txt
 Client-Synchronizer-Server/pythonProject/finish_game.py
 PW_NanoUpdater/PW_NanoUpdater/x64/*
 PW_NanoUpdater/PW_NanoUpdater/.vs/PW_NanoUpdater/v17/*
-PW_NanoUpdater/PW_NanoUpdater/Tools/test
-PW_NanoUpdater/PW_NanoUpdater/Tools/Game
-PW_NanoUpdater/PW_NanoUpdater/Tools/PW_NanoUpdater.exe
-PW_NanoUpdater/PW_NanoUpdater/Tools/PW_NanoUpdaterAdm.exe
 PW_PackData/FilePileCompiler/ccl.txt
-PW_NanoUpdater/PW_NanoUpdater/Tools/PW_NanoUpdater.exe
+PW_NanoUpdater/PW_NanoUpdater/Tools/*
