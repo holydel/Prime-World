@@ -406,6 +406,7 @@ bool IsAdminRequired() {
 
    std::ofstream srrr("..\\Tools\\test");
    if (!srrr.fail()) {
+      srrr.close();
       remove("..\\Tools\\test");
    }
    return srrr.fail();
