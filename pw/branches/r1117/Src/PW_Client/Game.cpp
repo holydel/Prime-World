@@ -1216,9 +1216,10 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
 
     int versionMajor = VERSION_MAJOR;
     int versionMinor = VERSION_MINOR;
+    int versionPatch = VERSION_PATCH;
     char versionStrBuff[64] = {};
 
-    sprintf_s(versionStrBuff,"%d.%d",versionMajor, versionMinor);
+    sprintf_s(versionStrBuff,"%d.%d.%d",versionMajor, versionMinor, versionPatch);
 
     if(strcmp(versionStrBuff, versionStr) != 0) {
       ShowLocalizedErrorMB( L"Update failed", L"Game update has failed! Try to run from web-launcher" );

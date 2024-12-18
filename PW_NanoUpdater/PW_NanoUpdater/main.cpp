@@ -24,7 +24,7 @@ static int error;
 
 static bool isAdminRightsRequired = false;
 
-static bool isRunningAdm = false;
+bool isRunningAdm = false;
 
 static LPSTR progressBarHandle = nullptr;
 
@@ -147,8 +147,10 @@ int fetch_progress(const git_transfer_progress* stats, void* payload) {
    int progress = (int)max(0.f, min(100.f, (float)stats->received_objects / (float)stats->total_objects * 100.f));
 
    if (isRunningAdm) {
-      std::string pr = std::format("{}\n", progress);
-      TransmitMessage(pr.c_str(), pr.size());
+      std::stringstream strStream;
+      strStream << "#{\"type\":\"bar\", \"data\":\"" << progress << "\"}" << std::endl;
+      //std::string pr = std::format("{}\n", progress);
+      TransmitMessage(strStream.str().c_str(), strStream.str().size());
    }
    else {
       if (progressBarHandle) {
@@ -442,16 +444,11 @@ int Update(const char* repoPath, const char* remoteRepoUrl, const char* branchNa
    }
 #endif
 
-#ifndef ADMIN_MANIFEST
-   isAdminRightsRequired = IsAdminRequired();
-#endif
-
    try {
       UpdateRepo(repoPath, remoteRepoUrl, branchName);
    }
    catch (admin_rights_exception) {
 #ifndef ADMIN_MANIFEST
-      //std::cout << "Need admin rights" << std::endl;
       return RunWithAdminRights(repoPath, remoteRepoUrl, branchName);
 #endif
       return 1;
@@ -534,24 +531,56 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 
    const char* repoPath[] = {
       "..\\Game",
-      "..\\Launcher\\content"
+      "..\\Game",
+      "..\\Launcher\\content",
+      "..\\Launcher\\content",
    };
 
    const char* repoLabels[] = {
       "game",
-      "content"
+      "game",
+      "content",
+      "content",
    };
 
-   const char* remoteRepoUrl[] = { 
+   const char* remoteRepoUrl[] = {
+      "https://gitlab.com/Rekongstor/PWCGitUpdates.git",
       "https://github.com/Prime-World-Classic/PWCGitUpdates.git",
-      "https://github.com/Prime-World-Classic/content.git"
+      "https://gitlab.com/Rekongstor/content.git",
+      "https://github.com/Prime-World-Classic/content.git",
    };
    const char* branchName = "main";
 
+   isAdminRightsRequired = IsAdminRequired();
+   std::ofstream errLogs;
+   if (!isAdminRightsRequired) {
+      errLogs.open("upd_errors.txt");
+      std::cerr.rdbuf(errLogs.rdbuf());
+   }
+
    int result = 0;
    for (int i = 0; i < _countof(repoPath); ++i) {
-      std::cout << "#{\"type\":\"label\", \"data\":\"" << repoLabels[i] << "\"}" << std::endl;
-      result += Update(repoPath[i], remoteRepoUrl[i], branchName);
+      if (isRunningAdm) {
+         std::stringstream strStream;
+         strStream << "#{\"type\":\"label\", \"data\":\"" << repoLabels[i] << "\"}" << std::endl;
+         TransmitMessage(strStream.str().c_str(), strStream.str().size());
+      } else {
+         std::cout << "#{\"type\":\"label\", \"data\":\"" << repoLabels[i] << "\"}" << std::endl;
+      }
+
+      int localError = Update(repoPath[i], remoteRepoUrl[i], branchName);
+
+      if (localError) {
+         if (isRunningAdm) {
+            std::stringstream strStream;
+            strStream << "#{\"type\":\"error\", \"data\":\"" << repoPath[i] << "\"}" << std::endl;
+            TransmitMessage(strStream.str().c_str(), strStream.str().size());
+         }
+         else {
+            std::cout << "#{\"type\":\"error\", \"data\":\"" << repoPath[i] << "\"}" << std::endl;
+         }
+      }
+      result += localError;
    }
 
    const char* releaseFileUrls[] = {
@@ -588,8 +617,14 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
    };
 
    if (!skipRelease) {
-      std::cout << "#{\"type\":\"label\", \"data\":\"" << "game_data" << "\"}" << std::endl;
       for (int r = 0; r < _countof(releaseFileUrls); ++r) {
+         if (isRunningAdm) {
+            std::stringstream strStream;
+            strStream << "#{\"type\":\"label\", \"data\":\"" << "game_data" << r << "\"}" << std::endl;
+            TransmitMessage(strStream.str().c_str(), strStream.str().size());
+         } else {
+            std::cout << "#{\"type\":\"label\", \"data\":\"" << "game_data" << r << "\"}" << std::endl;
+         }
          DownloadRelease(releaseFileUrls[r], releaseFilePaths[r], releaseFileHashes[r]);
       }
    }

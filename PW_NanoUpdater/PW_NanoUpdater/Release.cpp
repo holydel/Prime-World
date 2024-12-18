@@ -4,8 +4,17 @@
 #include <string>
 #include <fstream>
 #include <vector>
+#include <strstream>
+#include <iostream>
+#include <format>
+
+#include <filesystem>
 
 #pragma comment(lib, "Wininet.lib")
+
+extern bool isRunningAdm;
+
+void TransmitMessage(char const* strbuf, std::streamsize strSize);
 
 int GetReleaseSize(const std::string& fileUrl)
 {
@@ -128,8 +137,14 @@ void DownloadRelease(const std::string& fileUrl, const std::string& filePath, co
                while (InternetReadFile(hUrl, buffer, sizeof(buffer), &bytesRead) && bytesRead > 0)
                {
                   totalBytesRead += bytesRead;
-                  int progress = min(100, max(0, (int)((float)totalBytesRead / (float)fileSize * 100.0)));
-                  std::cout << "#{\"type\":\"bar\", \"data\":\"" << progress << "\"}" << std::endl;
+                  int progress = min(100, max(0, (int)((float)totalBytesRead / (float)fileSize * 100.0)));         
+                  if (isRunningAdm) {
+                     std::stringstream strStream;
+                     strStream << "#{\"type\":\"bar\", \"data\":\"" << progress << "\"}" << std::endl;
+                     TransmitMessage(strStream.str().c_str(), strStream.str().size());
+                  } else {
+                     std::cout << "#{\"type\":\"bar\", \"data\":\"" << progress << "\"}" << std::endl;
+                  }
                   fs.write(reinterpret_cast<char*>(buffer), bytesRead);
                }
                fs.close();
@@ -142,6 +157,13 @@ void DownloadRelease(const std::string& fileUrl, const std::string& filePath, co
       }
 
       if (CheckFileMD5Hash(filename, md5Path)) {
+         if (isRunningAdm) {
+            std::stringstream strStream;
+            strStream << "#{\"type\":\"error\", \"data\":\"" << filePath << "\"}" << std::endl;
+            TransmitMessage(strStream.str().c_str(), strStream.str().size());
+         } else {
+            std::cout << "#{\"type\":\"error\", \"data\":\"" << filePath << "\"}" << std::endl;
+         }
          std::cerr << "Failed to update: " << filename << std::endl;
       }
    }
