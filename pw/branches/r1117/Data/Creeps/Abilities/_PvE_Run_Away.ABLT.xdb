@@ -12,7 +12,6 @@
 	<BackLink DBID="/Creeps/Normals/Normal6/PvE_Coop1_Support.CREEP" Count="1" />
 	<BackLink DBID="/Creeps/Normals/Normal6/PvE_Ep1.CREEP" Count="1" />
 	<BackLink DBID="/Maps/PvE/Dungeon2/Spawners/room8.NCSPN" Count="8" />
-	<BackLink DBID="/Creeps/Normals/Normal6/PVP.CREEP" Count="1" />
 	<activeCustomTrigger>true</activeCustomTrigger>
 	<allowChase>
 		<compiledString></compiledString>

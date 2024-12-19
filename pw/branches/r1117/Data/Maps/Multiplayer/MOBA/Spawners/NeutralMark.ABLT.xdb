@@ -31,6 +31,7 @@
 	<BackLink DBID="/Creeps/Minions/Minion1/PVP_Rogatik.CREEP" Count="1" />
 	<BackLink DBID="/Creeps/Champions/Champion2/PVP_1.CREEP" Count="1" />
 	<BackLink DBID="/Creeps/Champions/Champion2/PVP_2.CREEP" Count="1" />
+	<BackLink DBID="/Creeps/Normals/Normal6/PVP.CREEP" Count="1" />
 	<activeCustomTrigger>true</activeCustomTrigger>
 	<allowChase>
 		<compiledString></compiledString>

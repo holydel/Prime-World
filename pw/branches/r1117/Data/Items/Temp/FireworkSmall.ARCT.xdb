@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Consumable>
+	<BackLink DBID="/Buildings/DefaultStats/Basic.CNSH" Count="1" />
 	<activeCustomTrigger>true</activeCustomTrigger>
 	<allowChase>
 		<compiledString></compiledString>
@@ -32,9 +33,9 @@
 	<conditionFormulas />
 	<constants href="" />
 	<cooldownTime>
-		<compiledString></compiledString>
+		<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAABwQQ==</compiledString>
 		<returnType>float</returnType>
-		<sString>0.0f</sString>
+		<sString>15</sString>
 	</cooldownTime>
 	<cooldownTimeSecondState>
 		<compiledString></compiledString>
@@ -63,7 +64,7 @@
 	</dispatch>
 	<flags>1</flags>
 	<gameObject href="" />
-	<image href="/UI/Styles/Icons/Artifacts/_Test.ITEX" />
+	<image href="/UI/Styles/Icons/Artifacts/FireWork.ITEX" />
 	<imageSecondState href="" />
 	<isPotion>false</isPotion>
 	<isUnitFreeAfterCast>true</isUnitFreeAfterCast>
@@ -76,13 +77,13 @@
 	<maxQuantity>100</maxQuantity>
 	<microAI href="" />
 	<minUseRangeCorrection>0</minUseRangeCorrection>
-	<naftaCost>1</naftaCost>
+	<naftaCost>50</naftaCost>
 	<name textref="/Items/Temp/FireworkSmall.ARCT_name.txt" />
 	<node></node>
 	<passiveApplicators />
 	<persistentId></persistentId>
 	<requireLineOfSight>true</requireLineOfSight>
-	<shortDescription textref="" />
+	<shortDescription textref="/Items/Temp/FireworkSmall.ARCT_shortDescription.txt" />
 	<targetType>0</targetType>
 	<type>Active</type>
 	<useRange>

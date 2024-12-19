@@ -4,8 +4,8 @@
 	<BackLink DBID="/Items/Talents/Level6/G571_CasterDexStaWill.TALENT" Count="1" />
 	<name>G571_Percent</name>
 	<var>
-		<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DmpmZPw==</compiledString>
+		<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DZmZmPw==</compiledString>
 		<returnType>float</returnType>
-		<sString>1.2f</sString>
+		<sString>0.9f</sString>
 	</var>
 </UnitConstant>
