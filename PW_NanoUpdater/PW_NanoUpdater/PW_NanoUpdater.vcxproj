@@ -214,6 +214,16 @@
     <ClCompile Include="SocketListener.cpp" />
     <ClCompile Include="SocketTransceiver.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="PW_NanoUpdater.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\PW_MicroUpdater\App.ico" />
+    <Image Include="icon1.ico" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

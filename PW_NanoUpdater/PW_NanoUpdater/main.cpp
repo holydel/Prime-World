@@ -423,7 +423,7 @@ int RunWithAdminRights(const char* repoPath, const char* remoteRepoUrl, const ch
       std::string cmdLine = std::format("{} {} {}", repoPath, remoteRepoUrl, branchName);
       return LaunchAdminNanoUpdater(cmdLine);
    }
-   return 1;
+   return 0;
 }
 
 
@@ -451,7 +451,7 @@ int Update(const char* repoPath, const char* remoteRepoUrl, const char* branchNa
 #ifndef ADMIN_MANIFEST
       return RunWithAdminRights(repoPath, remoteRepoUrl, branchName);
 #endif
-      return 1;
+      return 100;
    }
    catch (std::exception ex) {
       std::cerr << "Exception: " << ex.what();
@@ -554,7 +554,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
    isAdminRightsRequired = IsAdminRequired();
    std::ofstream errLogs;
    if (!isAdminRightsRequired) {
-      errLogs.open("upd_errors.txt");
+      errLogs.open(isRunningAdm ? "adm_upd_errors.txt" : "upd_errors.txt");
       std::cerr.rdbuf(errLogs.rdbuf());
    }
 
