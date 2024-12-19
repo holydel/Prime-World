@@ -1426,7 +1426,7 @@
 				</Item>
 				<Item>
 					<name>workTime1</name>
-					<virtPar>0.3333333</virtPar>
+					<virtPar>0.2222222</virtPar>
 				</Item>
 			</markers>
 			<nextNode>idle</nextNode>
@@ -1739,7 +1739,7 @@
 			</simpleTransactions>
 			<speed>
 				<coeffs />
-				<value>1</value>
+				<value>1.5</value>
 			</speed>
 			<startPar>
 				<coeffs />
@@ -5054,7 +5054,7 @@
 				</Item>
 				<Item>
 					<name>workTime2</name>
-					<virtPar>0.5</virtPar>
+					<virtPar>0.3333333</virtPar>
 				</Item>
 			</markers>
 			<nextNode>idle</nextNode>
@@ -5367,7 +5367,7 @@
 			</simpleTransactions>
 			<speed>
 				<coeffs />
-				<value>1</value>
+				<value>1.5</value>
 			</speed>
 			<startPar>
 				<coeffs />
@@ -6108,7 +6108,7 @@
 				</Item>
 				<Item>
 					<name>workTime3</name>
-					<virtPar>0.5</virtPar>
+					<virtPar>0.3333333</virtPar>
 				</Item>
 			</markers>
 			<nextNode>idle</nextNode>
@@ -6421,7 +6421,7 @@
 			</simpleTransactions>
 			<speed>
 				<coeffs />
-				<value>1</value>
+				<value>1.5</value>
 			</speed>
 			<startPar>
 				<coeffs />
@@ -6442,7 +6442,7 @@
 				</Item>
 				<Item>
 					<name>workTime4</name>
-					<virtPar>0.5</virtPar>
+					<virtPar>0.3333333</virtPar>
 				</Item>
 			</markers>
 			<nextNode>idle</nextNode>

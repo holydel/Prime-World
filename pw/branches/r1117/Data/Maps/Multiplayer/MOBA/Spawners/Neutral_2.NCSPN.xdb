@@ -33,7 +33,7 @@
 								<Item skip="1" />
 								<Item skip="1" />
 								<Item skip="1" />
-								<Item href="/Glyphs/GlyphWardSpawnerAbility.ABLT" />
+								<Item href="" />
 							</abilities>
 						</AdvMapCreep>
 					</creep>
