@@ -5,9 +5,9 @@
 	<stats>
 		<Item>
 			<increment>
-				<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAIC7RA==</compiledString>
+				<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAACWQw==</compiledString>
 				<returnType>float</returnType>
-				<sString>1500</sString>
+				<sString>300</sString>
 			</increment>
 			<value>
 				<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAGDqRQ==</compiledString>
@@ -43,9 +43,9 @@
 		</Item>
 		<Item>
 			<increment>
-				<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAAAgQQ==</compiledString>
+				<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAAAAQA==</compiledString>
 				<returnType>float</returnType>
-				<sString>10</sString>
+				<sString>2</sString>
 			</increment>
 		</Item>
 		<Item skip="1" />
@@ -64,9 +64,9 @@
 		</Item>
 		<Item>
 			<increment>
-				<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAABwQQ==</compiledString>
+				<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAABAQA==</compiledString>
 				<returnType>float</returnType>
-				<sString>15</sString>
+				<sString>3</sString>
 			</increment>
 			<value>
 				<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAABoQg==</compiledString>
@@ -93,9 +93,9 @@
 		<Item skip="1" />
 		<Item>
 			<increment>
-				<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAACgQA==</compiledString>
+				<compiledString>FQAAAAAAAAAAVYvs2ehdwwAAgD8=</compiledString>
 				<returnType>float</returnType>
-				<sString>5</sString>
+				<sString>1</sString>
 			</increment>
 		</Item>
 	</stats>
