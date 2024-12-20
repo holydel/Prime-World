@@ -1310,27 +1310,11 @@
 						<sString>0</sString>
 					</increment>
 					<levelUpgrades />
-					<statId>NaftaForKill</statId>
-					<value>
-						<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAABIQw==</compiledString>
-						<returnType>float</returnType>
-						<sString>200</sString>
-					</value>
-				</Item>
-				<Item>
-					<calcIncrement>0</calcIncrement>
-					<calcValue>0</calcValue>
-					<increment>
-						<compiledString>FQAAAAAAAAAAVYvs2e5dwwAAAAA=</compiledString>
-						<returnType>float</returnType>
-						<sString>0</sString>
-					</increment>
-					<levelUpgrades />
 					<statId>TeamNaftaForKill</statId>
 					<value>
-						<compiledString>FQAAAAAAAAAAVYvs2e5dwwAAAAA=</compiledString>
+						<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAACWQw==</compiledString>
 						<returnType>float</returnType>
-						<sString>0</sString>
+						<sString>300</sString>
 					</value>
 				</Item>
 				<Item>
@@ -1360,9 +1344,9 @@
 					<levelUpgrades />
 					<statId>Range</statId>
 					<value>
-						<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAADAQA==</compiledString>
+						<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAACIQQ==</compiledString>
 						<returnType>float</returnType>
-						<sString>6</sString>
+						<sString>17</sString>
 					</value>
 				</Item>
 				<Item>
@@ -1469,16 +1453,16 @@
 					<calcIncrement>0</calcIncrement>
 					<calcValue>0</calcValue>
 					<increment>
-						<compiledString></compiledString>
+						<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAADgQA==</compiledString>
 						<returnType>float</returnType>
-						<sString>0.0f</sString>
+						<sString>7.0f</sString>
 					</increment>
 					<levelUpgrades />
 					<statId>Dexterity</statId>
 					<value>
-						<compiledString>FQAAAAAAAAAAVYvs2e5dwwAAAAA=</compiledString>
+						<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAABIQg==</compiledString>
 						<returnType>float</returnType>
-						<sString>0</sString>
+						<sString>50</sString>
 					</value>
 				</Item>
 				<Item>
@@ -1490,11 +1474,27 @@
 						<sString>0.0f</sString>
 					</increment>
 					<levelUpgrades />
-					<statId>NaftaForAssist</statId>
+					<statId>Energy</statId>
 					<value>
-						<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAAAWQw==</compiledString>
+						<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAIC7RA==</compiledString>
 						<returnType>float</returnType>
-						<sString>150</sString>
+						<sString>1500</sString>
+					</value>
+				</Item>
+				<Item>
+					<calcIncrement>0</calcIncrement>
+					<calcValue>0</calcValue>
+					<increment>
+						<compiledString></compiledString>
+						<returnType>float</returnType>
+						<sString>0.0f</sString>
+					</increment>
+					<levelUpgrades />
+					<statId>VisibilityRange</statId>
+					<value>
+						<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAACgQQ==</compiledString>
+						<returnType>float</returnType>
+						<sString>20</sString>
 					</value>
 				</Item>
 			</stats>
