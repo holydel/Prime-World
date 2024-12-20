@@ -1505,7 +1505,7 @@ void PFBaseHero::OnMountSpecial( CPtr<NWorld::PFBaseMovingUnit> const& pMountUni
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 bool PFBaseHero::IsRecommended( int stat ) const
 {
-  const nstl::vector<NDb::EStat>& recommendedStats = profileStats.empty() ? pDbHero->recommendedStats : profileStats;
+  const nstl::vector<NDb::EStat>& recommendedStats = profileStats;
   return (recommendedStats.find(static_cast<NDb::EStat>(stat)) != recommendedStats.end());
 }
 
