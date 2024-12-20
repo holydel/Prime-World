@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Talent>
-	<BackLink DBID="/Items/Talents/TalentKits/Redset9_3_SpellBlock/Redset9_3_Crit.TALKIT" Count="1" />
-	<BackLink DBID="/Test/Talents/RedSet9.TALENTSET" Count="1" />
-	<BackLink DBID="/Social/TalentsCollection" Count="5" />
-	<BackLink DBID="/Social/Lootboxes/ROLLCONTS/roll_RedSet9.ROLLCONT" Count="1" />
-	<BackLink DBID="/GameLogic/AILogic.AILP" Count="1" />
-	<BackLink DBID="/Items/RerollShop/TalentsList_Rar6_Set9_kit3" Count="1" />
-	<BackLink DBID="/Test/Talents/RedSet9Add.TALENTSET" Count="1" />
-	<BackLink DBID="/Social/Lootboxes/ROLLCONTS/roll_Season9_Mediocre.ROLLCONT" Count="1" />
-	<BackLink DBID="/Social/Lootboxes/ROLLCONTS/roll_NY2020_MediocreList.ROLLCONT" Count="1" />
 	<BackLink DBID="/Social.ROOT" Count="1" />
-	<BackLink DBID="/Social/Lootboxes/ROLLCONTS/roll_Season13_BadList.ROLLCONT" Count="1" />
+	<BackLink DBID="/GameLogic/AILogic.AILP" Count="1" />
+	<BackLink DBID="/Items/RerollShop/TalentsList_Dejavu" Count="1" />
+	<BackLink DBID="/Items/Talents/TalentKits/Redset7_8_Dejavu/Redset7_8_Dejavu.TALKIT" Count="1" />
+	<BackLink DBID="/Social/TalentsCollection" Count="5" />
+	<BackLink DBID="/Social/Lootboxes/LB_G748" Count="1" />
+	<BackLink DBID="/Social/Lootboxes/ROLLCONTS/roll_NY2020_CollectionGoodList.ROLLCONT" Count="1" />
+	<BackLink DBID="/Social/Lootboxes/ROLLCONTS/roll_RedSet11.ROLLCONT" Count="1" />
+	<BackLink DBID="/Social/Lootboxes/ROLLCONTS/roll_Redset7_8.ROLLCONT" Count="1" />
+	<BackLink DBID="/Social/Lootboxes/ROLLCONTS/roll_Season13_CollectionList.ROLLCONT" Count="1" />
+	<BackLink DBID="/Test/Talents/RedSet7_8.TALENTSET" Count="1" />
 	<activationConditions />
 	<activeCustomTrigger>true</activeCustomTrigger>
 	<allowChase>
@@ -33,60 +33,54 @@
 	<askId>0</askId>
 	<autoTargetSelector href="" />
 	<budget>-1</budget>
-	<caption>G709: Небесный хранитель</caption>
+	<caption>G748: Образ могущества</caption>
 	<castAllowRange>
 		<compiledString></compiledString>
 		<returnType>float</returnType>
 		<sString>0.0f</sString>
 	</castAllowRange>
 	<castLimitations />
-	<commonDescription textref="" />
+	<commonDescription textref="/Items/Talents/Level6/G748_Str_DexOrAtSpd.TALENT_commonDescription.txt" />
 	<compiledDescriptionA textref="" />
 	<compiledDescriptionB textref="" />
 	<conditionFormulas>
-		<Item href="/Items/Talents/Level4/G709_DexOrAtSpd_Life.TALENT" id="79B394D7-7EDC-4AC0-8B8A-3A0BA5E1B8AD">
+		<Item href="/Items/Talents/Level6/G748_Str_DexOrAtSpd.TALENT" id="406A1BF5-848D-4263-89D4-DF51C8112DC1">
 			<ConditionFormula>
 				<condition>
-					<compiledString>FQkAAAACAAAADgAAACQAAABTcGRPckRleABVi+xRaAAAAACLRQiLEItNCIuCiAEAAP/Q3B1GAAAA3+D2xER6CcdF/AEAAADrB8dF/AAAAACKRfyL5V3DAAAAAAAA8D8=</compiledString>
+					<compiledString>FQ4AAAACAAAAEwAAACkAAABHNzQ4X1NwZE9yRGV4AFWL7FFoAAAAAItFCIsQi00Ii4KIAQAA/9DcHUsAAADf4PbERHoJx0X8AQAAAOsHx0X8AAAAAIpF/IvlXcMAAAAAAADwPw==</compiledString>
 					<returnType>bool</returnType>
-					<sString>sender.vSpdOrDex==1</sString>
+					<sString>sender.vG748_SpdOrDex == 1</sString>
 				</condition>
 				<name>SpdOrDex</name>
 			</ConditionFormula>
 		</Item>
 	</conditionFormulas>
 	<conflictingTalents />
-	<constants href="/Items/Talents/Level4/G709_DexOrAtSpd_Life.TALENT" id="FA3F2C5A-75A6-4682-94E7-A9CB9E715F0F">
+	<constants href="/Items/Talents/Level6/G748_Str_DexOrAtSpd.TALENT" id="F7F5744B-15B9-4894-8B30-664890FD56B8">
 		<UnitConstantsContainer>
 			<vars>
-				<Item href="/Items/Talents/Level4/G709_DexOrAtSpd_Life.TALENT" id="50DC08F8-99D8-4737-AD81-A14FE67520B5">
+				<Item href="/Items/Talents/Level6/G748_Str_DexOrAtSpd.TALENT" id="C3D02361-258D-4DD6-8E00-172EA10C0609">
 					<UnitConstant>
-						<name>Add_Stat</name>
+						<name>Add_Str</name>
 						<var>
-							<compiledString>FQAAAAACAAAABgAAABAAAABVi+xR2QUqAAAA2RwkUdkFJgAAANkcJItFEIsQi00Qi0Js/9BdwwAAIEHNzEw/</compiledString>
+							<compiledString>FQAAAAACAAAABgAAABAAAABVi+xR2QUqAAAA2RwkUdkFJgAAANkcJItFEIsQi00Qi0Js/9BdwwAAqEHNzMw/</compiledString>
 							<returnType>float</returnType>
-							<sString>refineScale(10, 0.8)</sString>
+							<sString>refineScale(21,1.6f)</sString>
 						</var>
 					</UnitConstant>
 				</Item>
-				<Item href="/Items/Talents/Level4/G709_DexOrAtSpd_Life.TALENT" id="5375C161-79A3-4424-BBFB-CEE9AAA2B567">
+				<Item href="/Items/Talents/Level6/G748_Str_DexOrAtSpd.TALENT" id="D19A9268-12FD-49D7-A636-A2B2EAB0644A">
 					<UnitConstant>
-						<name>Add_Life</name>
+						<name>Add_DexSpd</name>
 						<var>
-							<compiledString>FQsAAAADAAAAFAAAAB4AAAA7AAAATGlmZUJ1ZGdldABVi+yD7AxR2QVgAAAA2RwkUdkFXAAAANkcJItFEIsQi00Qi0Js/9CLTQxRi1UIUmgAAAAAi0UQixCLTRCLQlDdXfj/0NxN+Nld9NlF9IvlXcMAAEBAzcxMPg==</compiledString>
+							<compiledString>FQAAAAACAAAABgAAABAAAABVi+xR2QUqAAAA2RwkUdkFJgAAANkcJItFEIsQi00Qi0Js/9BdwwAAwEDNzMw+</compiledString>
 							<returnType>float</returnType>
-							<sString>refineScale(3,0.2)*cLifeBudget</sString>
+							<sString>refineScale(6,0.4f)</sString>
 						</var>
 					</UnitConstant>
 				</Item>
-				<Item href="/Items/Talents/TalentKits/Redset9_3_SpellBlock/const_Redset9_3_SpellDef" />
-				<Item href="/Items/Talents/TalentKits/Redset9_3_SpellBlock/const_Redset9_3_SpellDef_TT" />
-				<Item href="/Items/Talents/TalentKits/Redset9_3_SpellBlock/const_Redset9_3_SpellBlock" />
-				<Item href="/Items/Talents/TalentKits/Redset9_3_SpellBlock/const_Redset9_3_SpellBlockAmount" />
-				<Item href="/Items/Talents/TalentKits/Redset9_3_SpellBlock/const_Redset9_3_SpellBlockCooldown" />
-				<Item href="/Items/Talents/TalentKits/Redset9_3_SpellBlock/const_Redset9_3_SpellBlockDuration" />
-				<Item href="/Items/Talents/TalentKits/Redset9_3_SpellBlock/const_Redset9_3_SpellBlock_Percentage" />
-				<Item href="/Items/Talents/TalentKits/Redset9_3_SpellBlock/const_Redset9_3_SpellBlock_Percentage_TT" />
+				<Item href="/Items/Talents/TalentKits/Redset7_8_Dejavu/const_Redset7_8_IncreaseShieldAndPeriod" />
+				<Item href="/Items/Talents/TalentKits/Redset7_8_Dejavu/const_Redset7_8_MoveSpeed" />
 			</vars>
 		</UnitConstantsContainer>
 	</constants>
@@ -104,12 +98,12 @@
 		<returnType>float</returnType>
 		<sString>0.0f</sString>
 	</cooldownTimeSecondState>
-	<description textref="/Items/Talents/Level4/G709_DexOrAtSpd_Life.TALENT_description.txt" />
+	<description textref="/Items/Talents/Level6/G748_Str_DexOrAtSpd.TALENT_description.txt" />
 	<devPoints>1</devPoints>
 	<dispatch href="" />
-	<flags>1</flags>
+	<flags>6</flags>
 	<forceBonus>0</forceBonus>
-	<image href="/UI/Styles/Icons/Talents/_709.ITEX" />
+	<image href="/UI/Styles/Icons/Talents/_748.ITEX" />
 	<imageSecondState href="" />
 	<isGenderTalent>false</isGenderTalent>
 	<isTakenOnStart>false</isTakenOnStart>
@@ -122,16 +116,16 @@
 	</manaCost>
 	<marker></marker>
 	<microAI href="" />
-	<minLevel>3</minLevel>
+	<minLevel>5</minLevel>
 	<minUseRangeCorrection>0</minUseRangeCorrection>
 	<naftaCost>-1</naftaCost>
-	<name textref="/Items/Talents/Level4/G709_DexOrAtSpd_Life.TALENT_name.txt" />
+	<name textref="/Items/Talents/Level6/G748_Str_DexOrAtSpd.TALENT_name.txt" />
 	<node></node>
 	<passiveApplicators>
-		<Item href="/Items/Talents/Level4/G709_DexOrAtSpd_Life.TALENT" id="4E8CB51F-9DA6-46D2-956F-77FA1BCA6E8B">
+		<Item href="/Items/Talents/Level6/G748_Str_DexOrAtSpd.TALENT" id="5C554E73-51B2-4CF0-B4F7-54098A8B60C6">
 			<PermanentStatModApplicator>
 				<applyTarget>ApplicatorTarget</applyTarget>
-				<caption>Add_Dexterity</caption>
+				<caption>Add_Dex</caption>
 				<customApplyType>Maximize</customApplyType>
 				<enabled>
 					<compiledString>FQAAAAAAAAAAVYvsg+wUVmoEi0UIixCLTQiLgiwBAAD/0A+28GoRi00IixGLTQiLgiwBAAD/0A+2yDvxfgzHRfwBAAAA6YAAAABqBItVCIsCi00Ii5AsAQAA/9IPtvBqEYtFCIsQi00Ii4IsAQAA/9APtsg78X0Jx0X4AAAAAOtDi1UIiwKLTQiLkIwAAAD/0otFCIsQi00Ii4LAAAAA3V3w/9DcXfDf4PbEQXoJx0XsAQAAAOsHx0XsAAAAAItN7IlN+ItV+IlV/DPAg338AA+UwF6L5V3D</compiledString>
@@ -142,9 +136,9 @@
 				<LoggingEvent>-1</LoggingEvent>
 				<modifier>
 					<addValue>
-						<compiledString>FQkAAAABAAAAFQAAAEFkZF9TdGF0AFWL7ItFDFCLTQhRaAAAAACLVRCLAotNEItQUP/SXcM=</compiledString>
+						<compiledString>FQsAAAABAAAAFwAAAEFkZF9EZXhTcGQAVYvsi0UMUItNCFFoAAAAAItVEIsCi00Qi1BQ/9Jdww==</compiledString>
 						<returnType>float</returnType>
-						<sString>cAdd_Stat</sString>
+						<sString>cAdd_DexSpd</sString>
 					</addValue>
 					<multValue>
 						<compiledString></compiledString>
@@ -158,10 +152,10 @@
 				<providerName></providerName>
 			</PermanentStatModApplicator>
 		</Item>
-		<Item href="/Items/Talents/Level4/G709_DexOrAtSpd_Life.TALENT" id="8BA6940D-421A-4165-A590-FF2EE25FD7FB">
+		<Item href="/Items/Talents/Level6/G748_Str_DexOrAtSpd.TALENT" id="50786B7D-1080-4F5C-A9BB-11311210FFFF">
 			<PermanentStatModApplicator>
 				<applyTarget>ApplicatorTarget</applyTarget>
-				<caption>Add_AttackSpeed</caption>
+				<caption>Add_Spd</caption>
 				<customApplyType>Maximize</customApplyType>
 				<enabled>
 					<compiledString>FQAAAAAAAAAAVYvsg+wUVmoEi0UIixCLTQiLgiwBAAD/0A+28GoRi00IixGLTQiLgiwBAAD/0A+2yDvxfgzHRfwBAAAA6YAAAABqBItVCIsCi00Ii5AsAQAA/9IPtvBqEYtFCIsQi00Ii4IsAQAA/9APtsg78X0Jx0X4AAAAAOtDi1UIiwKLTQiLkIwAAAD/0otFCIsQi00Ii4LAAAAA3V3w/9DcXfDf4PbEQXoJx0XsAQAAAOsHx0XsAAAAAItN7IlN+ItV+IlV/IpF/F6L5V3D</compiledString>
@@ -172,9 +166,9 @@
 				<LoggingEvent>-1</LoggingEvent>
 				<modifier>
 					<addValue>
-						<compiledString>FQkAAAABAAAAFQAAAEFkZF9TdGF0AFWL7ItFDFCLTQhRaAAAAACLVRCLAotNEItQUP/SXcM=</compiledString>
+						<compiledString>FQsAAAABAAAAFwAAAEFkZF9EZXhTcGQAVYvsi0UMUItNCFFoAAAAAItVEIsCi00Qi1BQ/9Jdww==</compiledString>
 						<returnType>float</returnType>
-						<sString>cAdd_Stat</sString>
+						<sString>cAdd_DexSpd</sString>
 					</addValue>
 					<multValue>
 						<compiledString></compiledString>
@@ -188,23 +182,23 @@
 				<providerName></providerName>
 			</PermanentStatModApplicator>
 		</Item>
-		<Item href="/Items/Talents/Level4/G709_DexOrAtSpd_Life.TALENT" id="73BAD8D3-92B1-41B8-B458-F38266A97E6F">
+		<Item href="/Items/Talents/Level6/G748_Str_DexOrAtSpd.TALENT" id="82C68F36-9912-489D-82B6-5A2B84C46AB6">
 			<PermanentStatModApplicator>
 				<applyTarget>ApplicatorTarget</applyTarget>
-				<caption>Add_Life</caption>
-				<customApplyType>None</customApplyType>
+				<caption>G748_SpdOrDex</caption>
+				<customApplyType>Maximize</customApplyType>
 				<enabled>
-					<compiledString></compiledString>
+					<compiledString>FQAAAAAAAAAAVYvsg+wUVmoEi0UIixCLTQiLgiwBAAD/0A+28GoRi00IixGLTQiLgiwBAAD/0A+2yDvxfgzHRfwBAAAA6YAAAABqBItVCIsCi00Ii5AsAQAA/9IPtvBqEYtFCIsQi00Ii4IsAQAA/9APtsg78X0Jx0X4AAAAAOtDi1UIiwKLTQiLkIwAAAD/0otFCIsQi00Ii4LAAAAA3V3w/9DcXfDf4PbEQXoJx0XsAQAAAOsHx0XsAAAAAItN7IlN+ItV+IlV/DPAg338AA+UwF6L5V3D</compiledString>
 					<returnType>bool</returnType>
-					<sString>true</sString>
+					<sString>!(pFirst-&gt;IsRecommended(4) &gt; pFirst-&gt;IsRecommended(17) ? 1 : pFirst-&gt;IsRecommended(4) &lt; pFirst-&gt;IsRecommended(17) ? 0 : sBaseAttackSpeed&gt;=sBaseDexterity)</sString>
 				</enabled>
 				<formulaName></formulaName>
 				<LoggingEvent>-1</LoggingEvent>
 				<modifier>
 					<addValue>
-						<compiledString>FQkAAAABAAAAFQAAAEFkZF9MaWZlAFWL7ItFDFCLTQhRaAAAAACLVRCLAotNEItQUP/SXcM=</compiledString>
+						<compiledString>FQAAAAAAAAAAVYvs2ehdwwAAgD8=</compiledString>
 						<returnType>float</returnType>
-						<sString>cAdd_Life</sString>
+						<sString>1</sString>
 					</addValue>
 					<multValue>
 						<compiledString></compiledString>
@@ -213,23 +207,53 @@
 					</multValue>
 					<stat>Life</stat>
 					<topModifier>false</topModifier>
+					<variable>G748_SpdOrDex</variable>
+				</modifier>
+				<providerName></providerName>
+			</PermanentStatModApplicator>
+		</Item>
+		<Item href="/Items/Talents/Level6/G748_Str_DexOrAtSpd.TALENT" id="A3BDE835-E76A-4519-8FDB-CDEA84B14C53">
+			<PermanentStatModApplicator>
+				<applyTarget>ApplicatorTarget</applyTarget>
+				<caption>Add_Str</caption>
+				<customApplyType>None</customApplyType>
+				<enabled>
+					<compiledString>FQAAAAAAAAAAVYvssAFdww==</compiledString>
+					<returnType>bool</returnType>
+					<sString>true</sString>
+				</enabled>
+				<formulaName></formulaName>
+				<LoggingEvent>-1</LoggingEvent>
+				<modifier>
+					<addValue>
+						<compiledString>FQgAAAABAAAAFAAAAEFkZF9TdHIAVYvsi0UMUItNCFFoAAAAAItVEIsCi00Qi1BQ/9Jdww==</compiledString>
+						<returnType>float</returnType>
+						<sString>cAdd_Str</sString>
+					</addValue>
+					<multValue>
+						<compiledString></compiledString>
+						<returnType>float</returnType>
+						<sString>1.0f</sString>
+					</multValue>
+					<stat>Strength</stat>
+					<topModifier>false</topModifier>
 					<variable></variable>
 				</modifier>
 				<providerName></providerName>
 			</PermanentStatModApplicator>
 		</Item>
-		<Item href="/Items/Talents/TalentKits/Redset9_3_SpellBlock/Programm_Redset9_3_SpellDef.APLR" />
-		<Item href="/Items/Talents/TalentKits/Redset9_3_SpellBlock/Programm_Redset9_3_SpellBlock.APLR" />
+		<Item href="/Items/Talents/TalentKits/Redset7_8_Dejavu/Redset7_8_Counter.APLR" />
+		<Item href="/Items/Talents/TalentKits/Redset7_8_Dejavu/appl_Redset7_8_MoveSpeed.APLR" />
 	</passiveApplicators>
-	<persistentId>G709</persistentId>
+	<persistentId>G748</persistentId>
 	<prerequisiteTalents />
 	<rarity>outstanding</rarity>
-	<requireLineOfSight>true</requireLineOfSight>
+	<requireLineOfSight>false</requireLineOfSight>
 	<shortDescription textref="" />
 	<talentRollGroups>16</talentRollGroups>
 	<talentStats />
-	<targetType>136258047</targetType>
-	<type>Simple</type>
+	<targetType>2040319</targetType>
+	<type>Passive</type>
 	<upgradeLevel>0</upgradeLevel>
 	<useRange>
 		<compiledString></compiledString>
