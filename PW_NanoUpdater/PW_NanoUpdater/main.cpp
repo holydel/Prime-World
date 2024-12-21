@@ -43,62 +43,6 @@ int SocketTrancieve(const char* argv, std::atomic<bool>& doWork);
 void TransmitMessage(char const* strbuf, std::streamsize strSize);
 void DownloadRelease(const std::string& fileUrl, const std::string& filePath, const std::string& md5Path);
 
-bool gh_fs_rm(const std::string& path) {
-   WIN32_FIND_DATA findFileData;
-   HANDLE hFind = INVALID_HANDLE_VALUE;
-
-   // ��������� � ���� "\\*" ��� ������ ���� ������
-   std::string strPath = path + "\\*";
-
-   hFind = FindFirstFile(strPath.c_str(), &findFileData);
-   if (hFind == INVALID_HANDLE_VALUE) {
-      return false;
-   }
-
-   do {
-      const std::string fileName = findFileData.cFileName;
-      const std::string fullPath = path + "\\" + fileName;
-
-      if (findFileData.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY) {
-         // �� ������� ������� (".") � ������������ ("..")���������
-         if (fileName != "." && fileName != "..") {
-            // ���������� ������� ��������� ����������
-            if (!gh_fs_rm(fullPath)) {
-               FindClose(hFind);
-               return false;
-            }
-         }
-      }
-      else {
-         if (findFileData.dwFileAttributes & FILE_ATTRIBUTE_READONLY ||
-            findFileData.dwFileAttributes & FILE_ATTRIBUTE_HIDDEN ||
-            findFileData.dwFileAttributes & FILE_ATTRIBUTE_SYSTEM) {
-
-            // ������� ��������, ������� ����� ������ �������� �����
-            SetFileAttributes(fullPath.c_str(), FILE_ATTRIBUTE_NORMAL);
-         }
-
-         // ������� ����
-         if (!DeleteFile(fullPath.c_str())) {
-            DWORD err = GetLastError();
-            std::cerr << "Error in DeleteFile: " << GetLastError() << std::endl << fullPath.c_str() << std::endl;
-            FindClose(hFind);
-            continue;
-         }
-      }
-   } while (FindNextFile(hFind, &findFileData) != 0);
-
-   FindClose(hFind);
-
-   // �������, ������� �������� ����������
-   if (!RemoveDirectory(path.c_str())) {
-      std::cerr << "Error in RemoveDirectory: " << GetLastError() << std::endl;
-      return false;
-   }
-
-   return true;
-}
-
 
 void ThrowIfNotWithAdminRights() {
 #ifndef ADMIN_MANIFEST
@@ -128,12 +72,6 @@ int fetchhead_callback(const char* ref_name, const char* remote_url, const git_o
    memcpy(payload, oid, sizeof(git_oid));
 
    refName = ref_name;
-
-   char oidLocal[GIT_OID_SHA1_HEXSIZE + 1] = { 0 };
-   git_oid_fmt(oidLocal, oid);
-
-   std::cout << refName << std::endl;
-   std::cout << oidLocal << std::endl;
 
    return 0; // return-zero to stop iterating
 }
@@ -169,72 +107,19 @@ void InitRepo(git_repository** repo, git_remote** remote, const char* repoPath, 
    ThrowIfNotWithAdminRights();
 
    error = git_repository_init(repo, repoPath, false);
-   CheckError("Init");
+   if (error) {
+      std::string path = repoPath;
+      path += "\\.git";
+      std::filesystem::remove_all(path);
+      error = git_repository_init(repo, repoPath, false);
+      CheckError("Init");
+   }
 
    error = git_remote_lookup(remote, *repo, "origin");
    if (error < 0) {
       error = git_remote_create(remote, *repo, "origin", remoteRepoUrl);
       CheckError("Add remote");
    }
-}
-
-
-int lg2_commit(git_repository* repo)
-{
-   const char* opt = "";
-   const char* comment = "Merge remote branch 'origin/main'";
-   int error;
-
-   git_oid commit_oid, tree_oid;
-   git_tree* tree;
-   git_index* index;
-   git_object* parent = NULL;
-   git_reference* fetchHeadRef = NULL;
-   git_signature* author_signature;
-
-   error = git_revparse_ext(&parent, &fetchHeadRef, repo, "HEAD");
-   if (error == GIT_ENOTFOUND) {
-      printf("HEAD not found. Creating first commit\n");
-      error = 0;
-   }
-   else if (error != 0) {
-      const git_error* err = git_error_last();
-      if (err) printf("ERROR %d: %s\n", err->klass, err->message);
-      else printf("ERROR %d: no detailed info\n", error);
-   }
-
-   error = git_repository_index(&index, repo);
-   CheckError("Could not open repository index");
-   error = git_index_write_tree(&tree_oid, index);
-   CheckError("Could not write tree");
-   error = git_index_write(index);
-   CheckError("Could not write index");
-
-   error = git_tree_lookup(&tree, repo, &tree_oid);
-   CheckError("Error looking up tree");
-
-   error = git_signature_now(&author_signature, "Your Name", "your_email@example.com"); // ����� ����������� ���� ��� � email
-   CheckError("Create signature");
-
-   error = git_commit_create_v(
-      &commit_oid,
-      repo,
-      "HEAD",
-      author_signature,
-      author_signature,
-      NULL,
-      comment,
-      tree,
-      parent ? 1 : 0, parent);
-   CheckError("Error creating commit");
-
-   git_index_free(index);
-   git_signature_free(author_signature);
-   git_tree_free(tree);
-   git_object_free(parent);
-   git_reference_free(fetchHeadRef);
-
-   return error;
 }
 
 
@@ -297,6 +182,7 @@ void RemoteFetch(git_repository* repo, git_remote* remote, const char* remoteRep
    git_fetch_options fetchOpts = GIT_FETCH_OPTIONS_INIT;
    fetchOpts.callbacks.transfer_progress = fetch_progress;
    fetchOpts.depth = 1;
+   //fetchOpts.prune = GIT_FETCH_PRUNE;
    //error = git_remote_fetch(remote, nullptr, &fetchOpts, nullptr);
    if (true) {
       git_remote_callbacks remoteCallbacks = GIT_REMOTE_CALLBACKS_INIT;
