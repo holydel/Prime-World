@@ -396,7 +396,7 @@ bool IsAdminRequired() {
 
 
 
-#if 1
+#if 0
 int main(int argc, char* argv[]) {
 #else
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
@@ -470,17 +470,17 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 
    const char* repoPath[] = {
       "..\\Launcher\\content",
-      //"..\\Game",
+      "..\\Game",
    };
 
    const char* repoLabels[] = {
       "content",
-      //"game",
+      "game",
    };
 
    const char* remoteRepoUrl[] = {
       "https://gitlab.com/Rekongstor/content.git",
-      //"https://gitlab.com/Rekongstor/PWCGitUpdates.git",
+      "https://gitlab.com/Rekongstor/PWCGitUpdates.git",
    };
    const char* branchName = "main";
 
@@ -531,7 +531,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
       std::cerr << "Failed to shutdown libgit2 library!";
    }
 
-   return 0;
 
    const char* releaseFileUrls[] = {
       "https://github.com/Prime-World-Classic/Prime-World/releases/download/2.0/data01.pile",
