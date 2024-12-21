@@ -156,14 +156,7 @@ void DownloadRelease(const std::string& fileUrl, const std::string& filePath, co
          InternetCloseHandle(hInternet);
       }
 
-      if (CheckFileMD5Hash(filename, md5Path)) {
-         if (isRunningAdm) {
-            std::stringstream strStream;
-            strStream << "#{\"type\":\"error\", \"data\":\"" << filePath << "\"}" << std::endl;
-            TransmitMessage(strStream.str().c_str(), strStream.str().size());
-         } else {
-            std::cout << "#{\"type\":\"error\", \"data\":\"" << filePath << "\"}" << std::endl;
-         }
+      if (!CheckFileMD5Hash(filename, md5Path)) {
          std::cerr << "Failed to update: " << filename << std::endl;
       }
    }
