@@ -47,7 +47,7 @@ bool gh_fs_rm(const std::string& path) {
    WIN32_FIND_DATA findFileData;
    HANDLE hFind = INVALID_HANDLE_VALUE;
 
-   // Добавляем к пути "\\*" для поиска всех файлов
+   // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ "\\*" пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
    std::string strPath = path + "\\*";
 
    hFind = FindFirstFile(strPath.c_str(), &findFileData);
@@ -60,9 +60,9 @@ bool gh_fs_rm(const std::string& path) {
       const std::string fullPath = path + "\\" + fileName;
 
       if (findFileData.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY) {
-         // Не удаляем текущую (".") и родительскую ("..")иректории
+         // пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ (".") пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ ("..")пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
          if (fileName != "." && fileName != "..") {
-            // Рекурсивно удаляем вложенные директории
+            // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
             if (!gh_fs_rm(fullPath)) {
                FindClose(hFind);
                return false;
@@ -74,11 +74,11 @@ bool gh_fs_rm(const std::string& path) {
             findFileData.dwFileAttributes & FILE_ATTRIBUTE_HIDDEN ||
             findFileData.dwFileAttributes & FILE_ATTRIBUTE_SYSTEM) {
 
-            // Снимаем атрибуты, которые могут мешать удалению файла
+            // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
             SetFileAttributes(fullPath.c_str(), FILE_ATTRIBUTE_NORMAL);
          }
 
-         // Удаляем файл
+         // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
          if (!DeleteFile(fullPath.c_str())) {
             DWORD err = GetLastError();
             std::cerr << "Error in DeleteFile: " << GetLastError() << std::endl << fullPath.c_str() << std::endl;
@@ -90,7 +90,7 @@ bool gh_fs_rm(const std::string& path) {
 
    FindClose(hFind);
 
-   // Наконец, удаляем корневую директорию
+   // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
    if (!RemoveDirectory(path.c_str())) {
       std::cerr << "Error in RemoveDirectory: " << GetLastError() << std::endl;
       return false;
@@ -102,7 +102,9 @@ bool gh_fs_rm(const std::string& path) {
 
 void ThrowIfNotWithAdminRights() {
 #ifndef ADMIN_MANIFEST
-   throw admin_rights_exception();
+   if (isAdminRightsRequired) {
+      throw admin_rights_exception();
+   }
 #endif
 }
 
@@ -126,6 +128,12 @@ int fetchhead_callback(const char* ref_name, const char* remote_url, const git_o
    memcpy(payload, oid, sizeof(git_oid));
 
    refName = ref_name;
+
+   char oidLocal[GIT_OID_SHA1_HEXSIZE + 1] = { 0 };
+   git_oid_fmt(oidLocal, oid);
+
+   std::cout << refName << std::endl;
+   std::cout << oidLocal << std::endl;
 
    return 0; // return-zero to stop iterating
 }
@@ -171,7 +179,66 @@ void InitRepo(git_repository** repo, git_remote** remote, const char* repoPath, 
 }
 
 
-void RemoteFetch(git_repository* repo, git_remote* remote, const char* remoteRepoUrl, const char* branchName)
+int lg2_commit(git_repository* repo)
+{
+   const char* opt = "";
+   const char* comment = "Merge remote branch 'origin/main'";
+   int error;
+
+   git_oid commit_oid, tree_oid;
+   git_tree* tree;
+   git_index* index;
+   git_object* parent = NULL;
+   git_reference* fetchHeadRef = NULL;
+   git_signature* author_signature;
+
+   error = git_revparse_ext(&parent, &fetchHeadRef, repo, "HEAD");
+   if (error == GIT_ENOTFOUND) {
+      printf("HEAD not found. Creating first commit\n");
+      error = 0;
+   }
+   else if (error != 0) {
+      const git_error* err = git_error_last();
+      if (err) printf("ERROR %d: %s\n", err->klass, err->message);
+      else printf("ERROR %d: no detailed info\n", error);
+   }
+
+   error = git_repository_index(&index, repo);
+   CheckError("Could not open repository index");
+   error = git_index_write_tree(&tree_oid, index);
+   CheckError("Could not write tree");
+   error = git_index_write(index);
+   CheckError("Could not write index");
+
+   error = git_tree_lookup(&tree, repo, &tree_oid);
+   CheckError("Error looking up tree");
+
+   error = git_signature_now(&author_signature, "Your Name", "your_email@example.com"); // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅ email
+   CheckError("Create signature");
+
+   error = git_commit_create_v(
+      &commit_oid,
+      repo,
+      "HEAD",
+      author_signature,
+      author_signature,
+      NULL,
+      comment,
+      tree,
+      parent ? 1 : 0, parent);
+   CheckError("Error creating commit");
+
+   git_index_free(index);
+   git_signature_free(author_signature);
+   git_tree_free(tree);
+   git_object_free(parent);
+   git_reference_free(fetchHeadRef);
+
+   return error;
+}
+
+
+bool NeedUpdate(git_repository* repo)
 {
    // Check if any refs exist
    git_oid fetch_head_oidTest;
@@ -208,9 +275,18 @@ void RemoteFetch(git_repository* repo, git_remote* remote, const char* remoteRep
       git_oid_fmt(oidLocal, local_commit);
 
       if (git_oid_cmp(local_commit, &refs[0]->oid) == 0) {
-         return;
+         return false;
       }
-      ThrowIfNotWithAdminRights();
+   }
+   ThrowIfNotWithAdminRights();
+   return true;
+}
+
+
+void RemoteFetch(git_repository* repo, git_remote* remote, const char* remoteRepoUrl, const char* branchName)
+{
+   if (!NeedUpdate(repo)) {
+      return;
    }
 
    // Search for remotes
@@ -221,48 +297,66 @@ void RemoteFetch(git_repository* repo, git_remote* remote, const char* remoteRep
    git_fetch_options fetchOpts = GIT_FETCH_OPTIONS_INIT;
    fetchOpts.callbacks.transfer_progress = fetch_progress;
    fetchOpts.depth = 1;
-   fetchOpts.prune = GIT_FETCH_PRUNE;
-   error = git_remote_fetch(remote, nullptr, &fetchOpts, nullptr);
-   if (error != GIT_ENOTFOUND && !refName.empty()) {
-      // This error is valid only when first repo init
-      CheckError("Remote fetch");
+   //error = git_remote_fetch(remote, nullptr, &fetchOpts, nullptr);
+   if (true) {
+      git_remote_callbacks remoteCallbacks = GIT_REMOTE_CALLBACKS_INIT;
+      error = git_remote_connect(remote, GIT_DIRECTION_FETCH, &remoteCallbacks, nullptr, nullptr);
+      CheckError("Fetch connect");
+      
+      error = git_remote_download(remote, nullptr, &fetchOpts);
+      CheckError("Fetch download");
+
+      error = git_remote_disconnect(remote);
+      CheckError("Remote disconnect");
+
+      error = git_remote_update_tips(remote, &remoteCallbacks, fetchOpts.update_fetchhead, fetchOpts.download_tags, nullptr);
+      CheckError("Remote disconnect");
    }
 
    // Search for heads
    git_oid fetch_head_oid;
    error = git_repository_fetchhead_foreach(repo, fetchhead_callback, &fetch_head_oid);
-   CheckError("Fetch head for each");
+
+   // Delete main branch first
+   git_reference* mainBranch;
+   error = git_repository_head(&mainBranch, repo);
+   if (!error) {
+      error = git_repository_set_head(repo, "refs/heads/tmp");
+      CheckError("Unset head");
+
+      error = git_branch_delete(mainBranch);
+      CheckError("Branch delete");
+
+      git_reference_free(mainBranch);
+   }
+
+   error = git_repository_set_head(repo, refName.c_str());
+   CheckError("Set head");
 
    // Checkout current head FORCE
    git_checkout_options checkoutOpts = GIT_CHECKOUT_OPTIONS_INIT;
    checkoutOpts.checkout_strategy = GIT_CHECKOUT_FORCE;
-   error = git_checkout_head(repo, &checkoutOpts);
-   // No head yet
-   if (error == GIT_EUNBORNBRANCH) {
-      // Get commit from fetched origin
-      git_commit* commit;
-      error = git_commit_lookup(&commit, repo, &fetch_head_oid);
-      CheckError("Commit lookup");
 
-      // Create branch from it
-      git_reference* branch;
-      error = git_branch_create(&branch, repo, "main", commit, true);
-      CheckError("Create main brach");
+   // Get commit from fetched origin
+   git_commit* commit;
+   error = git_commit_lookup(&commit, repo, &fetch_head_oid);
+   CheckError("Commit lookup");
 
-      // Set head to it
-      error = git_repository_set_head(repo, refName.c_str());
-      CheckError("Set head new");
+   // Create branch from it
+   git_reference* branch;
+   error = git_branch_create(&branch, repo, branchName, commit, true);
+   CheckError("Create main brach");
 
-      git_reference_free(branch);
-      git_commit_free(commit);
-
-      // Checkout head to id
-      error = git_checkout_head(repo, &checkoutOpts);
-   }
-   CheckError("Checkout head");
-
+   // Set head to it
    error = git_repository_set_head(repo, refName.c_str());
    CheckError("Set head");
+
+   git_reference_free(branch);
+   git_commit_free(commit);
+
+   // Checkout head to id
+   error = git_checkout_head(repo, &checkoutOpts);
+   CheckError("Checkout head");
 
    git_remote_free(remote);
 }
