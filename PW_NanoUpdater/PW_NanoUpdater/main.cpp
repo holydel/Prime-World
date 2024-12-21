@@ -15,9 +15,19 @@
 #include <thread>
 #include <fstream>
 #include <functional>
-
+#pragma optimize("", off)
 class admin_rights_exception : std::exception {
 
+};
+struct null_streambuf : public std::streambuf
+{
+   using int_type = std::streambuf::int_type;
+   using traits = std::streambuf::traits_type;
+
+   virtual int_type overflow(int_type value) override
+   {
+      return value;
+   }
 };
 
 static int error;
@@ -90,66 +100,46 @@ bool gh_fs_rm(const std::string& path) {
 }
 
 
+void ThrowIfNotWithAdminRights() {
+#ifndef ADMIN_MANIFEST
+   throw admin_rights_exception();
+#endif
+}
+
+
 void CheckError(const char* stage)
 {
    if (error < 0) {
+      std::string errorLast = git_error_last()->message;
+      std::cerr << stage << " failed: " << errorLast << std::endl;
       if (isAdminRightsRequired) {
-         std::string errorLast = git_error_last()->message;
-         throw admin_rights_exception();
+         throw admin_rights_exception(); // Try with admin rights just in case
       } else {
-         std::cerr << stage << " failed: " << git_error_last()->message << std::endl;
          throw std::exception();
       }
    }
 }
 
 
+static std::string refName;
 int fetchhead_callback(const char* ref_name, const char* remote_url, const git_oid* oid, unsigned int is_merge, void* payload) {
    memcpy(payload, oid, sizeof(git_oid));
+
+   refName = ref_name;
+
    return 0; // return-zero to stop iterating
 }
 
 
-int create_merge_commit(git_repository* repo, git_oid* merge_commit_oid, git_annotated_commit* fetched_commit) {
-   git_signature* sig;
-   error = git_signature_now(&sig, "Your Name", "your_email@example.com"); // Здесь используйте свои имя и email
-   CheckError("Create signature");
-
-   git_index* index;
-   error = git_repository_index(&index, repo);
-   CheckError("Get index");
-
-   git_oid tree_oid;
-   error = git_index_write_tree(&tree_oid, index);
-   CheckError("Write tree from index");
-
-   git_tree* tree;
-   error = git_tree_lookup(&tree, repo, &tree_oid);
-   CheckError("Lookup tree");
-
-   error = git_commit_create_v(
-      merge_commit_oid, repo, "HEAD", sig, sig, NULL,
-      "Merge remote branch 'origin/main'", tree,
-      1, git_annotated_commit_id(fetched_commit)
-   );
-   CheckError("Create commit");
-
-   // Очистка
-   git_signature_free(sig);
-   git_index_free(index);
-   git_tree_free(tree);
-
-   return error; // Возвращаем код ошибки операции
-}
-
-
 int fetch_progress(const git_transfer_progress* stats, void* payload) {
+   if (stats->total_objects == 0) {
+      return 0;
+   }
    int progress = (int)max(0.f, min(100.f, (float)stats->received_objects / (float)stats->total_objects * 100.f));
 
    if (isRunningAdm) {
       std::stringstream strStream;
       strStream << "#{\"type\":\"bar\", \"data\":\"" << progress << "\"}" << std::endl;
-      //std::string pr = std::format("{}\n", progress);
       TransmitMessage(strStream.str().c_str(), strStream.str().size());
    }
    else {
@@ -157,8 +147,6 @@ int fetch_progress(const git_transfer_progress* stats, void* payload) {
          HWND hwndProgressBar = (HWND)atoi(progressBarHandle);
          int result = PostMessage(hwndProgressBar, PBM_SETRANGE, 0, 100);
          result = PostMessage(hwndProgressBar, PBM_SETPOS, progress, 0);
-         auto errrr = GetLastError();
-         int a = 101;
       }
       // "name": "shader_pos"
       std::cout << "#{\"type\":\"bar\", \"data\":\"" << progress << "\"}" << std::endl;
@@ -168,199 +156,214 @@ int fetch_progress(const git_transfer_progress* stats, void* payload) {
 }
 
 
-void CleanAndClone(const char* repoPath, git_repository* repo, const char* remoteRepoUrl)
+void InitRepo(git_repository** repo, git_remote** remote, const char* repoPath, const char* remoteRepoUrl)
 {
-   if (isAdminRightsRequired) {
-      throw admin_rights_exception();
+   ThrowIfNotWithAdminRights();
+
+   error = git_repository_init(repo, repoPath, false);
+   CheckError("Init");
+
+   error = git_remote_lookup(remote, *repo, "origin");
+   if (error < 0) {
+      error = git_remote_create(remote, *repo, "origin", remoteRepoUrl);
+      CheckError("Add remote");
    }
-   // If opening the repository failed, delete the target directory
-
-   // Assuming gh_fs_rm is a function that recursively deletes a directory.
-   error = gh_fs_rm(repoPath);
-   CheckError("Directory deletion");
-
-   // Clone
-   git_clone_options cloneOpts = GIT_CLONE_OPTIONS_INIT;
-   //cloneOpts.fetch_opts.depth = 1;
-   cloneOpts.fetch_opts.callbacks.transfer_progress = fetch_progress;
-
-   error = git_clone(&repo, remoteRepoUrl, repoPath, &cloneOpts);
-   CheckError("Clone");
 }
 
 
-void RemoteFetch(git_repository* repo, const char* remoteRepoUrl, const char* branchName)
+void RemoteFetch(git_repository* repo, git_remote* remote, const char* remoteRepoUrl, const char* branchName)
 {
-   git_reference* head = nullptr;
-   error = git_repository_head(&head, repo);
-   CheckError("Get HEAD");
-   const git_oid* local_commit = git_reference_target(head);
+   // Check if any refs exist
+   git_oid fetch_head_oidTest;
+   error = git_repository_fetchhead_foreach(repo, fetchhead_callback, &fetch_head_oidTest);
 
-   git_remote* remote = nullptr;
+   // Test if fetch is needed (only if not 'clone')
+   if (!refName.empty()) {
+      git_reference* head = nullptr;
+      error = git_repository_head(&head, repo);
+      CheckError("Get HEAD");
+      const git_oid* local_commit = git_reference_target(head);
+
+      git_remote* remote = nullptr;
+      error = git_remote_lookup(&remote, repo, "origin");
+      CheckError("Remote lookup");
+
+      git_remote_callbacks callbacks = GIT_REMOTE_CALLBACKS_INIT;
+      error = git_remote_connect(remote, GIT_DIRECTION_FETCH, &callbacks, NULL, NULL);
+      CheckError("Connect");
+
+      const git_remote_head** refs;
+      size_t size;
+      error = git_remote_ls(&refs, &size, remote);
+      CheckError("Remote ls");
+
+      error = git_remote_disconnect(remote);
+
+      int cmmm = git_oid_cmp(local_commit, &refs[0]->oid);
+
+      char oid[GIT_OID_SHA1_HEXSIZE + 1] = { 0 };
+      git_oid_fmt(oid, &refs[1]->oid);
+
+      char oidLocal[GIT_OID_SHA1_HEXSIZE + 1] = { 0 };
+      git_oid_fmt(oidLocal, local_commit);
+
+      if (git_oid_cmp(local_commit, &refs[0]->oid) == 0) {
+         return;
+      }
+      ThrowIfNotWithAdminRights();
+   }
+
+   // Search for remotes
    error = git_remote_lookup(&remote, repo, "origin");
-   CheckError("Remote lookup");
+   CheckError("Remote is invalid");
 
-   git_remote_callbacks callbacks = GIT_REMOTE_CALLBACKS_INIT;
-   error = git_remote_connect(remote, GIT_DIRECTION_FETCH, &callbacks, NULL, NULL);
-   CheckError("Connect");
-
-   const git_remote_head** refs;
-   size_t size;
-   error = git_remote_ls(&refs, &size, remote);
-   CheckError("Remote ls");
-
-   int cmmm = git_oid_cmp(local_commit, &refs[0]->oid);
-
-   char oid[GIT_OID_SHA1_HEXSIZE + 1] = { 0 };
-   git_oid_fmt(oid, &refs[1]->oid);
-
-   char oidLocal[GIT_OID_SHA1_HEXSIZE + 1] = { 0 };
-   git_oid_fmt(oidLocal, local_commit);
-
-   if (git_oid_cmp(local_commit, &refs[0]->oid) == 0) {
-      return;
+   // Fetch from remotes
+   git_fetch_options fetchOpts = GIT_FETCH_OPTIONS_INIT;
+   fetchOpts.callbacks.transfer_progress = fetch_progress;
+   fetchOpts.depth = 1;
+   fetchOpts.prune = GIT_FETCH_PRUNE;
+   error = git_remote_fetch(remote, nullptr, &fetchOpts, nullptr);
+   if (error != GIT_ENOTFOUND && !refName.empty()) {
+      // This error is valid only when first repo init
+      CheckError("Remote fetch");
    }
 
-   if (isAdminRightsRequired) {
-      throw admin_rights_exception();
-   }
-
-   git_fetch_options fetch_opts = GIT_FETCH_OPTIONS_INIT;
-   fetch_opts.callbacks.transfer_progress = fetch_progress;
-   error = git_remote_fetch(remote, nullptr, &fetch_opts, nullptr);
-   CheckError("Remote fetch");
-
-   const git_oid* remote_commit = git_reference_target(head);
-
-
-   git_remote_free(remote);
-
-
-   // Verify if we actually fetched any new data
+   // Search for heads
    git_oid fetch_head_oid;
    error = git_repository_fetchhead_foreach(repo, fetchhead_callback, &fetch_head_oid);
-   CheckError("Fetching FETCH_HEAD");
+   CheckError("Fetch head for each");
 
-   git_annotated_commit* fetched_commit = NULL;
-   error = git_annotated_commit_from_fetchhead(&fetched_commit, repo, branchName, remoteRepoUrl, &fetch_head_oid);
-   CheckError("Get annotated commit from FETCH_HEAD");
+   // Checkout current head FORCE
+   git_checkout_options checkoutOpts = GIT_CHECKOUT_OPTIONS_INIT;
+   checkoutOpts.checkout_strategy = GIT_CHECKOUT_FORCE;
+   error = git_checkout_head(repo, &checkoutOpts);
+   // No head yet
+   if (error == GIT_EUNBORNBRANCH) {
+      // Get commit from fetched origin
+      git_commit* commit;
+      error = git_commit_lookup(&commit, repo, &fetch_head_oid);
+      CheckError("Commit lookup");
 
-   git_merge_options merge_opts = GIT_MERGE_OPTIONS_INIT;
-   git_checkout_options checkout_opts = GIT_CHECKOUT_OPTIONS_INIT;
+      // Create branch from it
+      git_reference* branch;
+      error = git_branch_create(&branch, repo, "main", commit, true);
+      CheckError("Create main brach");
 
-   const git_annotated_commit* cmt[] = { fetched_commit };
-   error = git_merge(repo, cmt, 1, &merge_opts, &checkout_opts);
-   git_annotated_commit_free(fetched_commit);
-   CheckError("Merge");
+      // Set head to it
+      error = git_repository_set_head(repo, refName.c_str());
+      CheckError("Set head new");
 
-   if (git_repository_state(repo) == GIT_REPOSITORY_STATE_NONE) {
-      git_oid merge_commit_oid;
-      error = create_merge_commit(repo, &merge_commit_oid, fetched_commit);
-      CheckError("Create merge commit");
+      git_reference_free(branch);
+      git_commit_free(commit);
+
+      // Checkout head to id
+      error = git_checkout_head(repo, &checkoutOpts);
+   }
+   CheckError("Checkout head");
+
+   error = git_repository_set_head(repo, refName.c_str());
+   CheckError("Set head");
+
+   git_remote_free(remote);
+}
+
+
+void ResetRepo(git_repository* repo, const char* repoPath)
+{
+   bool anyChanges = false;
+   git_status_options statusopt = GIT_STATUS_OPTIONS_INIT;
+   statusopt.show = GIT_STATUS_SHOW_INDEX_AND_WORKDIR;
+   statusopt.flags = GIT_STATUS_OPT_INCLUDE_UNTRACKED;
+
+   git_status_list* status;
+   error = git_status_list_new(&status, repo, &statusopt);
+   CheckError("Status List");
+
+   size_t status_count = git_status_list_entrycount(status);
+   for (size_t i = 0; i < status_count; ++i) {
+      const git_status_entry* s = git_status_byindex(status, i);
+
+      // Collect more states because remote fetch skipped checkout 
+      if (s->status & (
+         GIT_STATUS_WT_NEW | GIT_STATUS_WT_MODIFIED | GIT_STATUS_WT_DELETED |
+         GIT_STATUS_WT_TYPECHANGE | GIT_STATUS_WT_RENAMED | GIT_STATUS_WT_UNREADABLE
+         )) {
+         ThrowIfNotWithAdminRights();
+         anyChanges = true;
+         break;
+      }
+   }
+
+   git_status_list_free(status);
+
+   if (anyChanges) {
+      // Reset because RemoteFetch now skips force checkout
+      git_object* head_obj = nullptr;
+      error = git_revparse_single(&head_obj, repo, "HEAD");
+      CheckError("Get Head");
+
+      error = git_reset(repo, head_obj, GIT_RESET_HARD, nullptr);
+      git_object_free(head_obj);
+      CheckError("Reset");
+
+      // Remove unversioned files
+      error = git_status_list_new(&status, repo, &statusopt);
+      CheckError("Status List");
+
+      char long_path[4096];
+      size_t repoPathLength = strlen(repoPath);
+      memcpy(long_path, repoPath, repoPathLength + 1);
+      long_path[repoPathLength] = '\\';
+
+      status_count = git_status_list_entrycount(status);
+      for (size_t i = 0; i < status_count; ++i) {
+         const git_status_entry* s = git_status_byindex(status, i);
+         if (s->status & GIT_STATUS_WT_NEW) {
+            // This is an untracked file
+            const char* path = s->index_to_workdir->old_file.path;
+
+            memcpy(long_path + repoPathLength + 1, path, strlen(path) + 1);
+            // Removing the file
+            if (remove(long_path) == -1) {
+               std::cerr << "Failed to remove untracked file:" << path << std::endl;
+            }
+         }
+      }
+
+      git_status_list_free(status);
    }
 }
 
 
-void UpdateRepo(const char* repoPath, const char* remoteRepoUrl, const char* branchName, int recursion = 0) {
+void UpdateRepo(const char* repoPath, const char* remoteRepoUrl, const char* branchName) {
    git_repository* repo = nullptr;
+   git_remote* remote = nullptr;
 
    // Try to open the repository
    error = git_repository_open(&repo, repoPath);
-   if (error) {
-      CleanAndClone(repoPath, repo, remoteRepoUrl);
+   if (error < 0) {
+      InitRepo(&repo, &remote, repoPath, remoteRepoUrl);
    }
 
    // Once the repository is cloned or opened, perform the rest of the
    if (repo) {
       try {
-         bool anyChanges = false;
-         git_status_options statusopt = GIT_STATUS_OPTIONS_INIT;
-         statusopt.show = GIT_STATUS_SHOW_INDEX_AND_WORKDIR;
-         statusopt.flags = GIT_STATUS_OPT_INCLUDE_UNTRACKED | GIT_STATUS_OPT_RECURSE_UNTRACKED_DIRS;
-
-         git_status_list* status;
-         error = git_status_list_new(&status, repo, &statusopt);
-         CheckError("Status List");
-
-         size_t status_count = git_status_list_entrycount(status);
-         for (size_t i = 0; i < status_count; ++i) {
-            const git_status_entry* s = git_status_byindex(status, i);
-            if (s->status == GIT_STATUS_WT_NEW || s->status == GIT_STATUS_WT_MODIFIED ||
-               s->status == GIT_STATUS_WT_DELETED || s->status == GIT_STATUS_WT_TYPECHANGE ||
-               s->status == GIT_STATUS_WT_RENAMED || s->status == GIT_STATUS_WT_UNREADABLE) {
-               if (isAdminRightsRequired) {
-                  throw admin_rights_exception();
-               } else {
-                  anyChanges = true;
-                  break;
-               }
-            }
-         }
-
-         if (anyChanges) {
-            // Reset
-            git_object* head_obj = nullptr;
-            error = git_revparse_single(&head_obj, repo, "HEAD");
-            CheckError("Get Head");
-
-            error = git_reset(repo, head_obj, GIT_RESET_HARD, nullptr);
-            git_object_free(head_obj);
-            CheckError("Test reset");
-
-            // Identify unversioned files
-            git_status_options statusopt = GIT_STATUS_OPTIONS_INIT;
-            statusopt.show = GIT_STATUS_SHOW_INDEX_AND_WORKDIR;
-            statusopt.flags = GIT_STATUS_OPT_INCLUDE_UNTRACKED | GIT_STATUS_OPT_RECURSE_UNTRACKED_DIRS;
-
-            git_status_list* status;
-            error = git_status_list_new(&status, repo, &statusopt);
-            CheckError("Status List");
-            char long_path[4096];
-            size_t repoPathLength = strlen(repoPath);
-            memcpy(long_path, repoPath, repoPathLength + 1);
-            long_path[repoPathLength] = '\\';
-
-            size_t status_count = git_status_list_entrycount(status);
-            for (size_t i = 0; i < status_count; ++i) {
-               const git_status_entry* s = git_status_byindex(status, i);
-               if (s->status == GIT_STATUS_WT_NEW) {
-                  // This is an untracked file
-                  const char* path = s->index_to_workdir->old_file.path;
-
-                  memcpy(long_path + repoPathLength + 1, path, strlen(path) + 1);
-                  // Removing the file
-                  if (remove(long_path) == -1) {
-                     std::cerr << "Failed to remove untracked file:" << path << std::endl;
-                  }
-               }
-            }
-            git_status_list_free(status);
-         }
-
-         RemoteFetch(repo, remoteRepoUrl, branchName);
+         RemoteFetch(repo, remote, remoteRepoUrl, branchName);
+         
+         ResetRepo(repo, repoPath);
       }
       catch (admin_rights_exception ex) {
+         if (repo) {
+            git_repository_free(repo);
+         }
          throw ex;
-      }
-      catch (std::exception ex) {
-         if (recursion == 0) {
-            if (repo) {
-               git_repository_free(repo);
-            }
-            CleanAndClone(repoPath, repo, remoteRepoUrl);
-            UpdateRepo(repoPath, remoteRepoUrl, branchName, 2);
-         }
-         if (recursion == 1) {
-            std::cerr << "Failed to fix repository. Reinstall the game\n";
-            throw std::exception();
-         }
       }
       git_repository_free(repo);
    }
 }
 
 
-int LaunchAdminNanoUpdater(std::string& cmdLine) {
+void LaunchAdminNanoUpdater() {
    std::filesystem::path cwd = std::filesystem::current_path();
 
    SHELLEXECUTEINFO ShExecInfo = { 0 };
@@ -369,7 +372,7 @@ int LaunchAdminNanoUpdater(std::string& cmdLine) {
    ShExecInfo.hwnd = NULL;
    ShExecInfo.lpVerb = "open";
    ShExecInfo.lpFile = "..\\Tools\\PW_NanoUpdaterAdm.exe";
-   ShExecInfo.lpParameters = cmdLine.c_str();
+   ShExecInfo.lpParameters = "";
    ShExecInfo.lpDirectory = cwd.string().c_str();
    ShExecInfo.nShow = SW_SHOW;
    ShExecInfo.hInstApp = NULL;
@@ -397,10 +400,7 @@ int LaunchAdminNanoUpdater(std::string& cmdLine) {
    }
    else {
       std::cerr << "Failed to execute command." << std::endl;
-      return 1;
    }
-
-   return 0;
 }
 
 
@@ -415,59 +415,8 @@ bool IsAdminRequired() {
 }
 
 
-int RunWithAdminRights(const char* repoPath, const char* remoteRepoUrl, const char* branchName)
-{
-   static bool isAlreadyInvokedAdmin = false;
-   if (isAdminRightsRequired && !isAlreadyInvokedAdmin) {
-      isAlreadyInvokedAdmin = true;
-      std::string cmdLine = std::format("{} {} {}", repoPath, remoteRepoUrl, branchName);
-      return LaunchAdminNanoUpdater(cmdLine);
-   }
-   return 0;
-}
 
-
-int Update(const char* repoPath, const char* remoteRepoUrl, const char* branchName) {
-
-   // Initialize the library
-   int _error = git_libgit2_init();
-   if (_error < 0) {
-      std::cerr << "Failed to init libgit2 library!";
-      return 1;
-   }
-
-#ifndef ADMIN_MANIFEST
-   _error = git_libgit2_opts(GIT_OPT_SET_OWNER_VALIDATION, false);
-   if (_error < 0) {
-      std::cerr << "Failed to set non-admin opts for libgit2!";
-      return 1;
-   }
-#endif
-
-   try {
-      UpdateRepo(repoPath, remoteRepoUrl, branchName);
-   }
-   catch (admin_rights_exception) {
-#ifndef ADMIN_MANIFEST
-      return RunWithAdminRights(repoPath, remoteRepoUrl, branchName);
-#endif
-      return 100;
-   }
-   catch (std::exception ex) {
-      std::cerr << "Exception: " << ex.what();
-      _error = git_libgit2_shutdown();
-      return 1;
-   }
-
-   _error = git_libgit2_shutdown();
-   if (_error < 0) {
-      std::cerr << "Failed to shutdown libgit2 library!";
-      return 1;
-   }
-   return 0;
-}
-
-#if 0
+#if 1
 int main(int argc, char* argv[]) {
 #else
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
@@ -476,6 +425,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
    std::vector<char*> argVector;
    int index = 0;
    bool newOption = true;
+
 
    // walk over the command line and convert it to argv
    while (winCmd[index] != 0) {
@@ -526,72 +476,92 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
    if (ERROR_ALREADY_EXISTS == GetLastError())
    {
       CloseHandle(hHandle);
-      return(1); // Exit program
+      return 1; // Exit program
    }
-
-   const char* repoPath[] = {
-      "..\\Game",
-      "..\\Game",
-      "..\\Launcher\\content",
-      "..\\Launcher\\content",
-   };
-
-   const char* repoLabels[] = {
-      "game",
-      "game",
-      "content",
-      "content",
-   };
-
-   const char* remoteRepoUrl[] = {
-      "https://gitlab.com/Rekongstor/PWCGitUpdates.git",
-      "https://github.com/Prime-World-Classic/PWCGitUpdates.git",
-      "https://gitlab.com/Rekongstor/content.git",
-      "https://github.com/Prime-World-Classic/content.git",
-   };
-   const char* branchName = "main";
 
    isAdminRightsRequired = IsAdminRequired();
    std::ofstream errLogs;
    if (!isAdminRightsRequired) {
       errLogs.open(isRunningAdm ? "adm_upd_errors.txt" : "upd_errors.txt");
       std::cerr.rdbuf(errLogs.rdbuf());
+   } else {
+      std::cerr.rdbuf(new null_streambuf);
    }
 
-   int result = 0;
-   for (int i = 0; i < _countof(repoPath); ++i) {
-      if (isRunningAdm) {
-         std::stringstream strStream;
-         strStream << "#{\"type\":\"label\", \"data\":\"" << repoLabels[i] << "\"}" << std::endl;
-         TransmitMessage(strStream.str().c_str(), strStream.str().size());
-      } else {
-         std::cout << "#{\"type\":\"label\", \"data\":\"" << repoLabels[i] << "\"}" << std::endl;
-      }
+   const char* repoPath[] = {
+      "..\\Launcher\\content",
+      //"..\\Game",
+   };
 
-      int localError = Update(repoPath[i], remoteRepoUrl[i], branchName);
+   const char* repoLabels[] = {
+      "content",
+      //"game",
+   };
 
-      if (localError) {
+   const char* remoteRepoUrl[] = {
+      "https://gitlab.com/Rekongstor/content.git",
+      //"https://gitlab.com/Rekongstor/PWCGitUpdates.git",
+   };
+   const char* branchName = "main";
+
+
+   // Initialize the library
+   int _error = git_libgit2_init();
+   if (_error < 0) {
+      std::cerr << "Failed to init libgit2 library!";
+      return 0;
+   }
+
+#ifndef ADMIN_MANIFEST
+   _error = git_libgit2_opts(GIT_OPT_SET_OWNER_VALIDATION, false);
+   if (_error < 0) {
+      std::cerr << "Failed to set non-admin opts for libgit2!";
+      return 0;
+   }
+#endif
+
+   try {
+      for (int i = 0; i < _countof(repoPath); ++i) {
          if (isRunningAdm) {
             std::stringstream strStream;
-            strStream << "#{\"type\":\"error\", \"data\":\"" << repoPath[i] << "\"}" << std::endl;
+            strStream << "#{\"type\":\"label\", \"data\":\"" << repoLabels[i] << "\"}" << std::endl;
             TransmitMessage(strStream.str().c_str(), strStream.str().size());
          }
          else {
-            std::cout << "#{\"type\":\"error\", \"data\":\"" << repoPath[i] << "\"}" << std::endl;
+            std::cout << "#{\"type\":\"label\", \"data\":\"" << repoLabels[i] << "\"}" << std::endl;
          }
+
+         UpdateRepo(repoPath[i], remoteRepoUrl[i], branchName);
       }
-      result += localError;
+   }
+   catch (admin_rights_exception) {
+#ifndef ADMIN_MANIFEST
+      _error = git_libgit2_shutdown();
+      LaunchAdminNanoUpdater();
+      return 0;
+#endif
+   }
+   catch (std::exception ex) {
+      std::cerr << "Exception: " << ex.what();
+      return 0;
    }
 
+   _error = git_libgit2_shutdown();
+   if (_error < 0) {
+      std::cerr << "Failed to shutdown libgit2 library!";
+   }
+
+   return 0;
+
    const char* releaseFileUrls[] = {
-         "https://github.com/Prime-World-Classic/Prime-World/releases/download/2.0/data01.pile",
-         "https://github.com/Prime-World-Classic/Prime-World/releases/download/2.0/data02.pile",
-         "https://github.com/Prime-World-Classic/Prime-World/releases/download/2.0/data03.pile",
-         "https://github.com/Prime-World-Classic/Prime-World/releases/download/2.0/data04.pile",
-         "https://github.com/Prime-World-Classic/Prime-World/releases/download/2.0/data05.pile",
-         "https://github.com/Prime-World-Classic/Prime-World/releases/download/2.0/data06.pile",
-         "https://github.com/Prime-World-Classic/Prime-World/releases/download/2.0/Asks_RU.fsb",
-         "https://github.com/Prime-World-Classic/Prime-World/releases/download/2.0/Music.fsb",
+      "https://github.com/Prime-World-Classic/Prime-World/releases/download/2.0/data01.pile",
+      "https://github.com/Prime-World-Classic/Prime-World/releases/download/2.0/data02.pile",
+      "https://github.com/Prime-World-Classic/Prime-World/releases/download/2.0/data03.pile",
+      "https://github.com/Prime-World-Classic/Prime-World/releases/download/2.0/data04.pile",
+      "https://github.com/Prime-World-Classic/Prime-World/releases/download/2.0/data05.pile",
+      "https://github.com/Prime-World-Classic/Prime-World/releases/download/2.0/data06.pile",
+      "https://github.com/Prime-World-Classic/Prime-World/releases/download/2.0/Asks_RU.fsb",
+      "https://github.com/Prime-World-Classic/Prime-World/releases/download/2.0/Music.fsb",
    };
 
    const char* releaseFilePaths[] = {
@@ -616,24 +586,21 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
       "..\\Game\\Hashes\\Music.fsb.md5"
    };
 
-   if (!skipRelease) {
-      for (int r = 0; r < _countof(releaseFileUrls); ++r) {
-         if (isRunningAdm) {
-            std::stringstream strStream;
-            strStream << "#{\"type\":\"label\", \"data\":\"" << "game_data" << r << "\"}" << std::endl;
-            TransmitMessage(strStream.str().c_str(), strStream.str().size());
-         } else {
-            std::cout << "#{\"type\":\"label\", \"data\":\"" << "game_data" << r << "\"}" << std::endl;
-         }
-         DownloadRelease(releaseFileUrls[r], releaseFilePaths[r], releaseFileHashes[r]);
+   for (int r = 0; r < _countof(releaseFileUrls); ++r) {
+      if (isRunningAdm) {
+         std::stringstream strStream;
+         strStream << "#{\"type\":\"label\", \"data\":\"" << "game_data" << r << "\"}" << std::endl;
+         TransmitMessage(strStream.str().c_str(), strStream.str().size());
       }
+      else {
+         std::cout << "#{\"type\":\"label\", \"data\":\"" << "game_data" << r << "\"}" << std::endl;
+      }
+      DownloadRelease(releaseFileUrls[r], releaseFilePaths[r], releaseFileHashes[r]);
    }
-
-   int iad = 0;
 
 #ifdef ADMIN_MANIFEST
    doWork.store(false);
    writeStdOut.join();
 #endif
-   return result;
+   return 0;
 }

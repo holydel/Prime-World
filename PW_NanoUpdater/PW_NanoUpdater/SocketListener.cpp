@@ -97,25 +97,12 @@ int SocketListen(std::atomic<bool>& doWork)
 
       iResult = recv(ClientSocket, recvbuf, recvbuflen, 0);
       if (iResult > 0) {
-         //printf("Bytes received: %d\n", iResult);
-
-         // Echo the buffer back to the sender
-         /*
-         iSendResult = send(ClientSocket, recvbuf, iResult, 0);
-         if (iSendResult == SOCKET_ERROR) {
-            printf("send failed with error: %d\n", WSAGetLastError());
-            closesocket(ClientSocket);
-            WSACleanup();
-            return 1;
-         }
-         printf("Bytes sent: %d\n", iSendResult);
-         */
          std::string recievedData(recvbuf, iResult);
          std::cout << recievedData << std::endl;
       }
       else if (iResult == 0) {}
       else {
-         fprintf(stderr, "recv failed with error: %d\n", WSAGetLastError());
+         std::cerr << "recv failed with error: %d\n" << WSAGetLastError() << std::endl;
          closesocket(ClientSocket);
          WSACleanup();
          return 1;
@@ -126,7 +113,7 @@ int SocketListen(std::atomic<bool>& doWork)
    // shutdown the connection since we're done
    iResult = shutdown(ClientSocket, SD_SEND);
    if (iResult == SOCKET_ERROR) {
-      fprintf(stderr, "shutdown failed with error: %d\n", WSAGetLastError());
+      std::cerr << "shutdown failed with error: %d\n" << WSAGetLastError() << std::endl;
       closesocket(ClientSocket);
       WSACleanup();
       return 1;
