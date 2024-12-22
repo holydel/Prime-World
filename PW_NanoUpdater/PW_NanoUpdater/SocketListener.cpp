@@ -102,7 +102,7 @@ int SocketListen(std::atomic<bool>& doWork)
       }
       else if (iResult == 0) {}
       else {
-         std::cerr << "recv failed with error: %d\n" << WSAGetLastError() << std::endl;
+         std::cerr << "recv failed with error: " << WSAGetLastError() << std::endl;
          closesocket(ClientSocket);
          WSACleanup();
          return 1;
@@ -113,7 +113,7 @@ int SocketListen(std::atomic<bool>& doWork)
    // shutdown the connection since we're done
    iResult = shutdown(ClientSocket, SD_SEND);
    if (iResult == SOCKET_ERROR) {
-      std::cerr << "shutdown failed with error: %d\n" << WSAGetLastError() << std::endl;
+      std::cerr << "shutdown failed with error: " << WSAGetLastError() << std::endl;
       closesocket(ClientSocket);
       WSACleanup();
       return 1;

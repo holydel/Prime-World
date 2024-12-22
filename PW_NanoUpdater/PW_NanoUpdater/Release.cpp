@@ -12,9 +12,16 @@
 
 #pragma comment(lib, "Wininet.lib")
 
+#pragma optimize("", off)
+
 extern bool isRunningAdm;
 
+void ThrowIfNotWithAdminRights();
+void TestKillAdminProcess();
+
+
 void TransmitMessage(char const* strbuf, std::streamsize strSize);
+
 
 int GetReleaseSize(const std::string& fileUrl)
 {
@@ -60,20 +67,17 @@ bool CheckFileMD5Hash(const std::string& filename, const std::string& md5FileNam
       return true;
    }
 #endif
-   if (fileStream.is_open())
-   {
+   if (fileStream.is_open()) {
       HCRYPTPROV hProv;
       HCRYPTHASH hHash;
 
-      if (CryptAcquireContext(&hProv, NULL, NULL, PROV_RSA_FULL, CRYPT_VERIFYCONTEXT))
-      {
+      if (CryptAcquireContext(&hProv, NULL, NULL, PROV_RSA_FULL, CRYPT_VERIFYCONTEXT)) {
          if (CryptCreateHash(hProv, CALG_MD5, 0, 0, &hHash)) {
             const DWORD BufferSize = 4096;
             std::vector<BYTE> buffer(BufferSize);
             DWORD bytesRead = 0;
 
-            while (fileStream.read(reinterpret_cast<char*>(buffer.data()), BufferSize) && fileStream.gcount() > 0)
-            {
+            while (fileStream.read(reinterpret_cast<char*>(buffer.data()), BufferSize) && fileStream.gcount() > 0) {
                CryptHashData(hHash, buffer.data(), fileStream.gcount(), 0);
             }
 
@@ -110,7 +114,7 @@ bool CheckFileMD5Hash(const std::string& filename, const std::string& md5FileNam
 }
 
 
-void DownloadRelease(const std::string& fileUrl, const std::string& filePath, const std::string& md5Path)
+void DownloadRelease(const std::string& fileUrl, const std::string& filePath, const std::string& md5Path, int r)
 {
    try
    {
@@ -118,6 +122,17 @@ void DownloadRelease(const std::string& fileUrl, const std::string& filePath, co
 
       if (CheckFileMD5Hash(filePath, md5Path)) {
          return;
+      }
+
+      ThrowIfNotWithAdminRights();
+
+      if (isRunningAdm) {
+         std::stringstream strStream;
+         strStream << "#{\"type\":\"label\", \"data\":\"" << "game_data" << r << "\"}" << std::endl;
+         TransmitMessage(strStream.str().c_str(), strStream.str().size());
+      }
+      else {
+         std::cout << "#{\"type\":\"label\", \"data\":\"" << "game_data" << r << "\"}" << std::endl;
       }
 
       HINTERNET hInternet = InternetOpen("PWClassic", 0, NULL, NULL, 0);
@@ -136,6 +151,7 @@ void DownloadRelease(const std::string& fileUrl, const std::string& filePath, co
             {
                while (InternetReadFile(hUrl, buffer, sizeof(buffer), &bytesRead) && bytesRead > 0)
                {
+                  TestKillAdminProcess();
                   totalBytesRead += bytesRead;
                   int progress = min(100, max(0, (int)((float)totalBytesRead / (float)fileSize * 100.0)));         
                   if (isRunningAdm) {

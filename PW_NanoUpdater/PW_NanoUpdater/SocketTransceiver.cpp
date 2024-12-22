@@ -25,7 +25,7 @@ void TransmitMessage(char const* strbuf, std::streamsize strSize) {
       int iResult = send(ConnectSocket, strbuf, strSize, 0);
       if (iResult == SOCKET_ERROR) {
          socketIsActive = false;
-         std::cerr << "send failed with error: %d\n" << WSAGetLastError() << std::endl;
+         std::cerr << "send failed with error: " << WSAGetLastError() << std::endl;
          closesocket(ConnectSocket);
          WSACleanup();
       }
@@ -51,7 +51,7 @@ int SocketTrancieve(const char* argv, std::atomic<bool>& doWork)
    // Initialize Winsock
    iResult = WSAStartup(MAKEWORD(2, 2), &wsaData);
    if (iResult != 0) {
-      std::cerr << "WSAStartup failed with error: %d\n" << iResult << std::endl;
+      std::cerr << "WSAStartup failed with error: " << iResult << std::endl;
       return 1;
    }
 
@@ -63,7 +63,7 @@ int SocketTrancieve(const char* argv, std::atomic<bool>& doWork)
    // Resolve the server address and port
    iResult = getaddrinfo(argv, DEFAULT_PORT, &hints, &result);
    if (iResult != 0) {
-      std::cerr << "getaddrinfo failed with error: %d\n" << iResult << std::endl;
+      std::cerr << "getaddrinfo failed with error: " << iResult << std::endl;
       WSACleanup();
       return 1;
    }
@@ -104,7 +104,7 @@ int SocketTrancieve(const char* argv, std::atomic<bool>& doWork)
    // shutdown the connection since no more data will be sent
    iResult = shutdown(ConnectSocket, SD_SEND);
    if (iResult == SOCKET_ERROR) {
-      std::cerr << "shutdown failed with error: %d\n" << WSAGetLastError() << std::endl;
+      std::cerr << "shutdown failed with error: " << WSAGetLastError() << std::endl;
       closesocket(ConnectSocket);
       WSACleanup();
       return 1;

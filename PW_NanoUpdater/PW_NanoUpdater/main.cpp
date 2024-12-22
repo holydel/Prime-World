@@ -15,10 +15,8 @@
 #include <thread>
 #include <fstream>
 #include <functional>
-#pragma optimize("", off)
-class admin_rights_exception : std::exception {
 
-};
+class admin_rights_exception : std::exception {};
 struct null_streambuf : public std::streambuf
 {
    using int_type = std::streambuf::int_type;
@@ -36,18 +34,32 @@ static bool isAdminRightsRequired = false;
 
 bool isRunningAdm = false;
 
+#ifdef ADMIN_MANIFEST
+class kill_admin_process_exception : std::exception {};
+static std::atomic<bool> killAdminProcess;
+#endif
+
 static LPSTR progressBarHandle = nullptr;
 
 int SocketListen(std::atomic<bool>& doWork);
 int SocketTrancieve(const char* argv, std::atomic<bool>& doWork);
 void TransmitMessage(char const* strbuf, std::streamsize strSize);
-void DownloadRelease(const std::string& fileUrl, const std::string& filePath, const std::string& md5Path);
+void DownloadRelease(const std::string& fileUrl, const std::string& filePath, const std::string& md5Path, int r);
 
 
 void ThrowIfNotWithAdminRights() {
 #ifndef ADMIN_MANIFEST
    if (isAdminRightsRequired) {
       throw admin_rights_exception();
+   }
+#endif
+}
+
+
+void TestKillAdminProcess() {
+#ifdef ADMIN_MANIFEST
+   if (killAdminProcess.load()) {
+      throw kill_admin_process_exception();
    }
 #endif
 }
@@ -78,6 +90,7 @@ int fetchhead_callback(const char* ref_name, const char* remote_url, const git_o
 
 
 int fetch_progress(const git_transfer_progress* stats, void* payload) {
+   TestKillAdminProcess();
    if (stats->total_objects == 0) {
       return 0;
    }
@@ -327,17 +340,10 @@ void UpdateRepo(const char* repoPath, const char* remoteRepoUrl, const char* bra
 
    // Once the repository is cloned or opened, perform the rest of the
    if (repo) {
-      try {
-         RemoteFetch(repo, remote, remoteRepoUrl, branchName);
+      RemoteFetch(repo, remote, remoteRepoUrl, branchName);
          
-         ResetRepo(repo, repoPath);
-      }
-      catch (admin_rights_exception ex) {
-         if (repo) {
-            git_repository_free(repo);
-         }
-         throw ex;
-      }
+      ResetRepo(repo, repoPath);
+
       git_repository_free(repo);
    }
 }
@@ -418,7 +424,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
       else {
          if (newOption) {
             argVector.push_back(&winCmd[index]);
-}
+         }
          newOption = false;
       }
       index++;
@@ -443,6 +449,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
    isRunningAdm = true;
    std::atomic<bool> doWork;
    doWork.store(true);
+   killAdminProcess.store(false);
 
    std::thread writeStdOut([&doWork]() {
       SocketTrancieve("127.0.0.1", doWork);
@@ -458,6 +465,22 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
       CloseHandle(hHandle);
       return 1; // Exit program
    }
+#ifdef ADMIN_MANIFEST
+   std::thread mainProcessChecker([&doWork]() {
+      while (doWork.load()) {
+         // Check if PW_NanoUpdater.exe is still open
+         HANDLE hHandle = CreateMutex(NULL, TRUE, "pwclassic_nano_updater");
+         if (ERROR_ALREADY_EXISTS == GetLastError()) {
+            CloseHandle(hHandle);
+         } else {
+            CloseHandle(hHandle);
+            killAdminProcess.store(true);
+            return;
+         }
+         Sleep(1000);
+      }
+      });
+#endif
 
    isAdminRightsRequired = IsAdminRequired();
    std::ofstream errLogs;
@@ -510,7 +533,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
          else {
             std::cout << "#{\"type\":\"label\", \"data\":\"" << repoLabels[i] << "\"}" << std::endl;
          }
-
+         refName = "";
          UpdateRepo(repoPath[i], remoteRepoUrl[i], branchName);
       }
    }
@@ -521,6 +544,12 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
       return 0;
 #endif
    }
+#ifdef ADMIN_MANIFEST
+   catch (kill_admin_process_exception) {
+      mainProcessChecker.join();
+      exit(0);
+   }
+#endif
    catch (std::exception ex) {
       std::cerr << "Exception: " << ex.what();
       return 0;
@@ -565,21 +594,28 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
       "..\\Game\\Hashes\\Music.fsb.md5"
    };
 
-   for (int r = 0; r < _countof(releaseFileUrls); ++r) {
-      if (isRunningAdm) {
-         std::stringstream strStream;
-         strStream << "#{\"type\":\"label\", \"data\":\"" << "game_data" << r << "\"}" << std::endl;
-         TransmitMessage(strStream.str().c_str(), strStream.str().size());
+   try {
+      for (int r = 0; r < _countof(releaseFileUrls); ++r) {
+         DownloadRelease(releaseFileUrls[r], releaseFilePaths[r], releaseFileHashes[r], r);
       }
-      else {
-         std::cout << "#{\"type\":\"label\", \"data\":\"" << "game_data" << r << "\"}" << std::endl;
-      }
-      DownloadRelease(releaseFileUrls[r], releaseFilePaths[r], releaseFileHashes[r]);
    }
+   catch (admin_rights_exception) {
+#ifndef ADMIN_MANIFEST
+      LaunchAdminNanoUpdater();
+      return 0;
+#endif
+   }
+#ifdef ADMIN_MANIFEST
+   catch (kill_admin_process_exception) {
+      mainProcessChecker.join();
+      exit(0);
+   }
+#endif
 
 #ifdef ADMIN_MANIFEST
    doWork.store(false);
    writeStdOut.join();
+   mainProcessChecker.join();
 #endif
    return 0;
 }
