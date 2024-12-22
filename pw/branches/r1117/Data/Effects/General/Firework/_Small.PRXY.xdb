@@ -779,7 +779,7 @@
 					<desc>
 						<eventName>Blitzkrieg</eventName>
 						<groupName>SFX</groupName>
-						<projectName></projectName>
+						<projectName>PF</projectName>
 					</desc>
 					<groupFlags>0</groupFlags>
 					<locatorList href="" />

@@ -162,34 +162,15 @@
 			</placement>
 			<timeController href="" />
 		</Item>
-		<Item>
-			<attachFlags>15</attachFlags>
-			<component href="/Terrain/Events/NewYear/_FXTRS.PRXY" />
-			<events href="" />
-			<id></id>
-			<locatorName></locatorName>
-			<placement>
-				<pos>
-					<x>0</x>
-					<y>0</y>
-					<z>0</z>
-				</pos>
-				<rot>
-					<w>1</w>
-					<x>0</x>
-					<y>0</y>
-					<z>0</z>
-				</rot>
-				<scale>
-					<x>1</x>
-					<y>1</y>
-					<z>1</z>
-				</scale>
-			</placement>
-			<timeController href="" />
-		</Item>
 	</attached>
-	<collisionGeometry href="" />
+	<collisionGeometry href="/Terrain/Events/NewYear/_.SOBJ" id="0ED858E7-E34F-42F7-BC8A-AFEF5347E682">
+		<CollisionGeometry>
+			<fileName>/Terrain/Events/NewYear/_.coll</fileName>
+			<mayaFileName>/Terrain/Events/NewYear/_.mayaColl</mayaFileName>
+			<selection></selection>
+			<srcFileName crc="0">/Terrain/Events/NewYear/_.mb</srcFileName>
+		</CollisionGeometry>
+	</collisionGeometry>
 	<ignoreAttachesToNonDefaultLocators>false</ignoreAttachesToNonDefaultLocators>
 	<tracksList href="" />
 </DBSceneObject>

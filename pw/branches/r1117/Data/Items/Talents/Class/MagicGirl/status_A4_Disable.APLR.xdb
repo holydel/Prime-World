@@ -48,7 +48,7 @@
 				</enabled>
 				<formulaName></formulaName>
 				<LoggingEvent>-1</LoggingEvent>
-				<message textref="/Items/Talents/Class/MagicGirl/status_A4_Disable.APLR_c59e06540bea4271ad43fbbb4828f503_message.txt" />
+				<message textref="" />
 				<providerName></providerName>
 				<uiEvent href="/UI/Events/CommonEvents/EventCustomFlyoff.UIEV" />
 				<value>
