@@ -169,6 +169,16 @@
 				<name>G477IsBought</name>
 			</ConditionFormula>
 		</Item>
+		<Item href="/Items/Talents/Level5/G480_Vamp_AttackSpeed.TALENT" id="D46A6CE8-D924-4F36-B4AC-CB9AFB84E0FA">
+			<ConditionFormula>
+				<condition>
+					<compiledString>FQ4AAAACAAAAEwAAACkAAABHNDgwX1NwZE9yRGV4AFWL7FFoAAAAAItFCIsQi00Ii4KIAQAA/9DcHUsAAADf4PbERHoJx0X8AQAAAOsHx0X8AAAAAIpF/IvlXcMAAAAAAADwPw==</compiledString>
+					<returnType>bool</returnType>
+					<sString>sender.vG480_SpdOrDex==1</sString>
+				</condition>
+				<name>SpdOrDex</name>
+			</ConditionFormula>
+		</Item>
 	</conditionFormulas>
 	<conflictingTalents />
 	<constants href="/Items/Talents/Level5/G480_Vamp_AttackSpeed.TALENT" id="D2D4BD1E-9503-47EB-846C-2B65EF2ACFEA">
@@ -371,7 +381,7 @@
 					</multValue>
 					<stat>Life</stat>
 					<topModifier>false</topModifier>
-					<variable>G727_SpdOrDex</variable>
+					<variable>G480_SpdOrDex</variable>
 				</modifier>
 				<providerName></providerName>
 			</PermanentStatModApplicator>
