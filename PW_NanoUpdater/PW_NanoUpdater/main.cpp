@@ -502,8 +502,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
    };
 
    const char* remoteRepoUrl[] = {
-      "https://gitlab.com/Rekongstor/content.git",
-      "https://gitlab.com/Rekongstor/PWCGitUpdates.git",
+      "https://gitlab.com/prime-world-classic/content.git",
+      "https://gitlab.com/prime-world-classic/PWCGitUpdates.git",
    };
    const char* branchName = "main";
 
