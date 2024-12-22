@@ -19,5 +19,9 @@
 			<glyph href="/Glyphs/Invisibler.GLPH" />
 			<weight>1</weight>
 		</Item>
+		<Item>
+			<glyph href="/Maps/Test/PlaneMap/GiftGlyph/PrimeRune.GLPH" />
+			<weight>1</weight>
+		</Item>
 	</glyphs>
 </GlyphsDB>
