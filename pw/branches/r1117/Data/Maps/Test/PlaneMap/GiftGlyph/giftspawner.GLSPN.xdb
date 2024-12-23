@@ -8,7 +8,16 @@
 		<y1>0</y1>
 		<y2>0</y2>
 	</collision>
-	<glyphs href="/Maps/Test/PlaneMap/GiftGlyph/Spisok.GLDB" />
+	<glyphs href="/Maps/Test/PlaneMap/GiftGlyph/giftspawner.GLSPN" id="AACAEA89-A4A2-4F3E-8024-68CD20B092DD">
+		<GlyphsDB>
+			<glyphs>
+				<Item>
+					<glyph href="/Maps/Test/PlaneMap/GiftGlyph/PrimeRune.GLPH" />
+					<weight>1</weight>
+				</Item>
+			</glyphs>
+		</GlyphsDB>
+	</glyphs>
 	<heightObject>false</heightObject>
 	<lockMask>
 		<mask />
