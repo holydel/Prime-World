@@ -425,30 +425,6 @@
 													<spell href="/Items/Talents/Class/MagicGirl/A4_2_SummonBall.APLR" id="23479CFB-BB0A-4E75-923D-10F782CB3DC5">
 														<Spell>
 															<applicators>
-																<Item href="/Items/Talents/Class/MagicGirl/A4_2_SummonBall.APLR" id="0D7A9F1C-70DF-46F0-8F61-395CC1F59B63">
-																	<DamageApplicator>
-																		<applyTarget>ApplicatorTarget</applyTarget>
-																		<cancelInvisibility>false</cancelInvisibility>
-																		<caption>Урон цели</caption>
-																		<damage>
-																			<compiledString>FRAAAAABAAAAHAAAAEE0XzJfSGVyb0RhbWFnZQBVi+yLRQxQi00IUWgAAAAAi1UQiwKLTRCLUFD/0l3D</compiledString>
-																			<returnType>float</returnType>
-																			<sString>cA4_2_HeroDamage</sString>
-																		</damage>
-																		<damageMode>4</damageMode>
-																		<damageType>Material</damageType>
-																		<enabled>
-																			<compiledString>FQAAAAAAAAAAVYvssAFdww==</compiledString>
-																			<returnType>bool</returnType>
-																			<sString>true</sString>
-																		</enabled>
-																		<formulaName></formulaName>
-																		<LoggingEvent>-1</LoggingEvent>
-																		<providerName></providerName>
-																		<timeLimiter>-1</timeLimiter>
-																		<uiEvent href="/UI/Events/CommonEvents/EventDamageDealed_Material.UIEV" />
-																	</DamageApplicator>
-																</Item>
 																<Item href="/Items/Talents/Class/MagicGirl/A4_2_SummonBall.APLR" id="1ADDABC4-0C7E-426B-98BF-4655116B5D8C">
 																	<SpellApplicator>
 																		<applyTarget>ApplicatorTarget</applyTarget>
@@ -529,6 +505,30 @@
 																			</AreaTargetSelector>
 																		</targetSelector>
 																	</SpellApplicator>
+																</Item>
+																<Item href="/Items/Talents/Class/MagicGirl/A4_2_SummonBall.APLR" id="0D7A9F1C-70DF-46F0-8F61-395CC1F59B63">
+																	<DamageApplicator>
+																		<applyTarget>ApplicatorTarget</applyTarget>
+																		<cancelInvisibility>false</cancelInvisibility>
+																		<caption>Урон цели</caption>
+																		<damage>
+																			<compiledString>FRAAAAABAAAAHAAAAEE0XzJfSGVyb0RhbWFnZQBVi+yLRQxQi00IUWgAAAAAi1UQiwKLTRCLUFD/0l3D</compiledString>
+																			<returnType>float</returnType>
+																			<sString>cA4_2_HeroDamage</sString>
+																		</damage>
+																		<damageMode>4</damageMode>
+																		<damageType>Material</damageType>
+																		<enabled>
+																			<compiledString>FQAAAAAAAAAAVYvssAFdww==</compiledString>
+																			<returnType>bool</returnType>
+																			<sString>true</sString>
+																		</enabled>
+																		<formulaName></formulaName>
+																		<LoggingEvent>-1</LoggingEvent>
+																		<providerName></providerName>
+																		<timeLimiter>-1</timeLimiter>
+																		<uiEvent href="/UI/Events/CommonEvents/EventDamageDealed_Material.UIEV" />
+																	</DamageApplicator>
 																</Item>
 															</applicators>
 															<dispatch href="/Items/Talents/Class/MagicGirl/A4_2_SummonBall.APLR" id="759BD6B9-62E3-437A-BF92-5E0E14BFE8C5">
