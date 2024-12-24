@@ -5,9 +5,9 @@
 	<stats>
 		<Item>
 			<increment>
-				<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAACWQw==</compiledString>
+				<compiledString>FQAAAAAAAAAAVYvs2e5dwwAAAAA=</compiledString>
 				<returnType>float</returnType>
-				<sString>300</sString>
+				<sString>0</sString>
 			</increment>
 			<value>
 				<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAGDqRQ==</compiledString>
@@ -41,13 +41,7 @@
 				<sString>cRange_Medium + 3</sString>
 			</value>
 		</Item>
-		<Item>
-			<increment>
-				<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAAAAQA==</compiledString>
-				<returnType>float</returnType>
-				<sString>2</sString>
-			</increment>
-		</Item>
+		<Item skip="1" />
 		<Item skip="1" />
 		<Item skip="1" />
 		<Item>
@@ -64,9 +58,9 @@
 		</Item>
 		<Item>
 			<increment>
-				<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAABAQA==</compiledString>
+				<compiledString>FQAAAAAAAAAAVYvs2e5dwwAAAAA=</compiledString>
 				<returnType>float</returnType>
-				<sString>3</sString>
+				<sString>0</sString>
 			</increment>
 			<value>
 				<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAABoQg==</compiledString>
@@ -75,13 +69,7 @@
 			</value>
 		</Item>
 		<Item skip="1" />
-		<Item>
-			<value>
-				<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAIDUQw==</compiledString>
-				<returnType>float</returnType>
-				<sString>425</sString>
-			</value>
-		</Item>
+		<Item skip="1" />
 		<Item>
 			<value>
 				<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAADIQQ==</compiledString>
@@ -93,9 +81,9 @@
 		<Item skip="1" />
 		<Item>
 			<increment>
-				<compiledString>FQAAAAAAAAAAVYvs2ehdwwAAgD8=</compiledString>
+				<compiledString>FQAAAAAAAAAAVYvs2e5dwwAAAAA=</compiledString>
 				<returnType>float</returnType>
-				<sString>1</sString>
+				<sString>0</sString>
 			</increment>
 		</Item>
 	</stats>
