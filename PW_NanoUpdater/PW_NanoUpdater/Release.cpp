@@ -15,6 +15,7 @@
 #pragma optimize("", off)
 
 extern bool isRunningAdm;
+class admin_rights_exception : std::exception {};
 
 void ThrowIfNotWithAdminRights();
 void TestKillAdminProcess();
@@ -173,8 +174,12 @@ void DownloadRelease(const std::string& fileUrl, const std::string& filePath, co
       }
 
       if (!CheckFileMD5Hash(filename, md5Path)) {
+         throw admin_rights_exception();
          std::cerr << "Failed to update: " << filename << std::endl;
       }
+   }
+   catch (admin_rights_exception ex) {
+      throw ex;
    }
    catch (const std::exception& e) {
       std::cerr << "Release download failed: " << e.what() << std::endl;
