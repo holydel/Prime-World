@@ -35,6 +35,51 @@ static bool isAdminRightsRequired = false;
 
 bool isRunningAdm = false;
 
+
+static const char* releaseFileUrls[] = {
+   "https://gitflic.ru/project/prime-world-classic/prime-world-classic-game/release/c24c9dd1-ac10-4045-8773-7083e4a70d80/b7a8d56f-9f7d-4dbf-87b0-7c939ecd7194/download",
+   "https://gitflic.ru/project/prime-world-classic/prime-world-classic-game/release/c24c9dd1-ac10-4045-8773-7083e4a70d80/a7112311-ed44-4c1d-9c63-95dbc92b9bdd/download",
+   "https://gitflic.ru/project/prime-world-classic/prime-world-classic-game/release/c24c9dd1-ac10-4045-8773-7083e4a70d80/b793de95-0abd-426e-95a6-7757d549dc8e/download",
+   "https://gitflic.ru/project/prime-world-classic/prime-world-classic-game/release/c24c9dd1-ac10-4045-8773-7083e4a70d80/bd03c1c1-def1-4e56-be61-72b59e5dad96/download",
+   "https://gitflic.ru/project/prime-world-classic/prime-world-classic-game/release/c24c9dd1-ac10-4045-8773-7083e4a70d80/0631bf93-ede4-4bb5-8f22-0b21cae989cd/download",
+   "https://gitflic.ru/project/prime-world-classic/prime-world-classic-game/release/c24c9dd1-ac10-4045-8773-7083e4a70d80/80251363-41b4-403b-9690-7e36c4752698/download",
+   "https://gitflic.ru/project/prime-world-classic/prime-world-classic-game/release/c24c9dd1-ac10-4045-8773-7083e4a70d80/c2c8a6a0-4ca2-46c9-9e44-8844e9a937ef/download",
+   "https://gitflic.ru/project/prime-world-classic/prime-world-classic-game/release/c24c9dd1-ac10-4045-8773-7083e4a70d80/8c0b504f-e2b0-458d-a48a-0754c3c38135/download",
+   };
+
+static const char* releaseFileUrlsMirrors[] = {
+   "https://github.com/Prime-World-Classic/Prime-World/releases/download/2.0/data01.pile",
+   "https://github.com/Prime-World-Classic/Prime-World/releases/download/2.0/data02.pile",
+   "https://github.com/Prime-World-Classic/Prime-World/releases/download/2.0/data03.pile",
+   "https://github.com/Prime-World-Classic/Prime-World/releases/download/2.0/data04.pile",
+   "https://github.com/Prime-World-Classic/Prime-World/releases/download/2.0/data05.pile",
+   "https://github.com/Prime-World-Classic/Prime-World/releases/download/2.0/data06.pile",
+   "https://github.com/Prime-World-Classic/Prime-World/releases/download/2.0/Asks_RU.fsb",
+   "https://github.com/Prime-World-Classic/Prime-World/releases/download/2.0/Music.fsb",
+};
+
+static const char* releaseFilePaths[] = {
+   "..\\Game\\Packs\\data01.pile",
+   "..\\Game\\Packs\\data02.pile",
+   "..\\Game\\Packs\\data03.pile",
+   "..\\Game\\Packs\\data04.pile",
+   "..\\Game\\Packs\\data05.pile",
+   "..\\Game\\Packs\\data06.pile",
+   "..\\Game\\Data\\Audio\\Asks_RU.fsb",
+   "..\\Game\\Data\\Audio\\Music.fsb"
+};
+
+static const char* releaseFileHashes[] = {
+   "..\\Game\\Hashes\\data01.pile.md5",
+   "..\\Game\\Hashes\\data02.pile.md5",
+   "..\\Game\\Hashes\\data03.pile.md5",
+   "..\\Game\\Hashes\\data04.pile.md5",
+   "..\\Game\\Hashes\\data05.pile.md5",
+   "..\\Game\\Hashes\\data06.pile.md5",
+   "..\\Game\\Hashes\\Asks_RU.fsb.md5",
+   "..\\Game\\Hashes\\Music.fsb.md5"
+};
+
 #ifdef ADMIN_MANIFEST
 class kill_admin_process_exception : std::exception {};
 static std::atomic<bool> killAdminProcess;
@@ -46,6 +91,7 @@ int SocketListen(std::atomic<bool>& doWork);
 int SocketTrancieve(const char* argv, std::atomic<bool>& doWork);
 void TransmitMessage(char const* strbuf, std::streamsize strSize);
 void DownloadRelease(const std::string& fileUrl, const std::string& filePath, const std::string& md5Path, int r);
+bool CheckFileMD5Hash(const std::string& filename, const std::string& md5FileName);
 
 
 void ThrowIfNotWithAdminRights() {
@@ -435,6 +481,15 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
    char** argv = argVector.data();
 #endif
 
+#ifdef TEST_HASHES
+   for (int r = 0; r < _countof(releaseFileUrls); ++r) {
+      if (!CheckFileMD5Hash(releaseFilePaths[r], releaseFileHashes[r])) {
+         return 201;
+      }
+   }
+   return 0;
+#endif
+
    bool skipRelease = false;
    for (int a = 0; a < argc; ++a) {
       if (std::string(argv[a]) == "inno") {
@@ -589,51 +644,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
    if (_error < 0) {
       std::cerr << "Failed to shutdown libgit2 library!";
    }
-
-
-   const char* releaseFileUrls[] = {
-      "https://gitflic.ru/project/prime-world-classic/prime-world-classic-game/release/c24c9dd1-ac10-4045-8773-7083e4a70d80/b7a8d56f-9f7d-4dbf-87b0-7c939ecd7194/download",
-      "https://gitflic.ru/project/prime-world-classic/prime-world-classic-game/release/c24c9dd1-ac10-4045-8773-7083e4a70d80/a7112311-ed44-4c1d-9c63-95dbc92b9bdd/download",
-      "https://gitflic.ru/project/prime-world-classic/prime-world-classic-game/release/c24c9dd1-ac10-4045-8773-7083e4a70d80/b793de95-0abd-426e-95a6-7757d549dc8e/download",
-      "https://gitflic.ru/project/prime-world-classic/prime-world-classic-game/release/c24c9dd1-ac10-4045-8773-7083e4a70d80/bd03c1c1-def1-4e56-be61-72b59e5dad96/download",
-      "https://gitflic.ru/project/prime-world-classic/prime-world-classic-game/release/c24c9dd1-ac10-4045-8773-7083e4a70d80/0631bf93-ede4-4bb5-8f22-0b21cae989cd/download",
-      "https://gitflic.ru/project/prime-world-classic/prime-world-classic-game/release/c24c9dd1-ac10-4045-8773-7083e4a70d80/80251363-41b4-403b-9690-7e36c4752698/download",
-      "https://gitflic.ru/project/prime-world-classic/prime-world-classic-game/release/c24c9dd1-ac10-4045-8773-7083e4a70d80/c2c8a6a0-4ca2-46c9-9e44-8844e9a937ef/download",
-      "https://gitflic.ru/project/prime-world-classic/prime-world-classic-game/release/c24c9dd1-ac10-4045-8773-7083e4a70d80/8c0b504f-e2b0-458d-a48a-0754c3c38135/download",
-   };
-
-   const char* releaseFileUrlsMirrors[] = {
-      "https://github.com/Prime-World-Classic/Prime-World/releases/download/2.0/data01.pile",
-      "https://github.com/Prime-World-Classic/Prime-World/releases/download/2.0/data02.pile",
-      "https://github.com/Prime-World-Classic/Prime-World/releases/download/2.0/data03.pile",
-      "https://github.com/Prime-World-Classic/Prime-World/releases/download/2.0/data04.pile",
-      "https://github.com/Prime-World-Classic/Prime-World/releases/download/2.0/data05.pile",
-      "https://github.com/Prime-World-Classic/Prime-World/releases/download/2.0/data06.pile",
-      "https://github.com/Prime-World-Classic/Prime-World/releases/download/2.0/Asks_RU.fsb",
-      "https://github.com/Prime-World-Classic/Prime-World/releases/download/2.0/Music.fsb",
-   };
-
-   const char* releaseFilePaths[] = {
-      "..\\Game\\Packs\\data01.pile",
-      "..\\Game\\Packs\\data02.pile",
-      "..\\Game\\Packs\\data03.pile",
-      "..\\Game\\Packs\\data04.pile",
-      "..\\Game\\Packs\\data05.pile",
-      "..\\Game\\Packs\\data06.pile",
-      "..\\Game\\Data\\Audio\\Asks_RU.fsb",
-      "..\\Game\\Data\\Audio\\Music.fsb"
-   };
-
-   const char* releaseFileHashes[] = {
-      "..\\Game\\Hashes\\data01.pile.md5",
-      "..\\Game\\Hashes\\data02.pile.md5",
-      "..\\Game\\Hashes\\data03.pile.md5",
-      "..\\Game\\Hashes\\data04.pile.md5",
-      "..\\Game\\Hashes\\data05.pile.md5",
-      "..\\Game\\Hashes\\data06.pile.md5",
-      "..\\Game\\Hashes\\Asks_RU.fsb.md5",
-      "..\\Game\\Hashes\\Music.fsb.md5"
-   };
 
    try {
       for (int r = 0; r < _countof(releaseFileUrls); ++r) {

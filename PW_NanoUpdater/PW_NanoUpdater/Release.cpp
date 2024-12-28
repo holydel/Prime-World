@@ -65,7 +65,11 @@ bool CheckFileMD5Hash(const std::string& filename, const std::string& md5FileNam
 #ifdef NDEBUG
    if (md5File.fail()) {
       std::cerr << "Hash failed" << std::endl;
+#ifdef TEST_HASHES
+      return false;
+#else
       return true;
+#endif
    }
 #endif
    if (fileStream.is_open()) {
