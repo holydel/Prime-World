@@ -1,0 +1,3 @@
+
+set(SOURCES_Src_Network_TransportInterface TransportMulticastChannel.h TransportError.cpp TransportError.h TransportTypes.h TransportAddress.h TransportAddress.cpp Transport.h TransportDefaults.cpp TransportDefaults.h TransportBase.h TransportBase.cpp AddressTranslator.h)
+set(LIBRARIES_Src_Network_TransportInterface )

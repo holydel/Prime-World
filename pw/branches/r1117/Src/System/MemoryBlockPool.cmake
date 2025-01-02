@@ -1,0 +1,3 @@
+
+set(SOURCES_Src_System_MemoryBlockPool MemoryBlockPool.cpp MemoryBlockPool.h)
+set(LIBRARIES_Src_System_MemoryBlockPool )

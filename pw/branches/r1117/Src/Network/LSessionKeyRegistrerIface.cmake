@@ -1,0 +1,3 @@
+
+set(SOURCES_Src_Network_LSessionKeyRegistrerIface SessionKeyRegisterIface.h)
+set(LIBRARIES_Src_Network_LSessionKeyRegistrerIface )

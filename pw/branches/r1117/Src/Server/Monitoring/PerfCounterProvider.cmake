@@ -1,0 +1,3 @@
+
+set(SOURCES_Src_Server_Monitoring_PerfCounterProvider PerfCounterProvider/PerfCounterProvider.cpp PerfCounterProvider/PerfCounterProvider.h PerfCounterProvider/PerfCounterProviderIface.h PerfCounterProvider/PerfCounter.cpp PerfCounterProvider/PerfCounter.h PerfCounterProvider/stdafx.cpp PerfCounterProvider/stdafx.h)
+set(LIBRARIES_Src_Server_Monitoring_PerfCounterProvider )

@@ -1,0 +1,3 @@
+
+set(SOURCES_Src_Server_MatchMaking_MatchMakingClientR )
+set(LIBRARIES_Src_Server_MatchMaking_MatchMakingClientR )

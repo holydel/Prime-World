@@ -1,0 +1,3 @@
+
+set(SOURCES_Src_Network_ConnectionState ConnectionState.h ConnectionState.cpp)
+set(LIBRARIES_Src_Network_ConnectionState )

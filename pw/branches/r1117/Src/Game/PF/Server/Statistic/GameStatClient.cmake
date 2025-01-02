@@ -1,0 +1,3 @@
+
+set(SOURCES_Src_Game_PF_Server_Statistic_GameStatClient GameStatClient.h GameStatClient.cpp)
+set(LIBRARIES_Src_Game_PF_Server_Statistic_GameStatClient )

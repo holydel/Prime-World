@@ -1,0 +1,3 @@
+
+set(SOURCES_Src_Network_LoginServerAsync LoginServerBase.h LoginServerBase.cpp LoginServerAsync.h LoginServerAsync.cpp LoginCompatibleClientVersion.h)
+set(LIBRARIES_Src_Network_LoginServerAsync )

@@ -1,0 +1,3 @@
+
+set(SOURCES_Src_Server_DebugVarUpdate_Report DebugVarReporter.cpp DebugVarReporter.h stdafx.h)
+set(LIBRARIES_Src_Server_DebugVarUpdate_Report )

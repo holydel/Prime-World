@@ -1,0 +1,3 @@
+
+set(SOURCES_Src_Server_LogMonitorAgent_LogMonitorAgent LogMonitorAgent.h LogMonitorAgent.cpp LogMonitorBuffer.h LogMonitorBuffer.cpp LogMonitorConfig.h LogMonitorConfig.cpp)
+set(LIBRARIES_Src_Server_LogMonitorAgent_LogMonitorAgent )

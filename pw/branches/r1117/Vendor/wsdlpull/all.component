@@ -1,0 +1,11 @@
+includePaths = [ 'src' ]
+if platform == 'win32' :
+  libDependencies = [ 'zdll.lib' ]
+else :
+  libDependencies = [ 'zdll.so' ]
+
+if configuration == 'debug':
+  libPaths = [ 'lib/Debug' ]
+else:
+  libPaths = [ 'lib/Release' ]
+

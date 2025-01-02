@@ -1,0 +1,3 @@
+
+set(SOURCES_Src_Network_RUDP_SockSrvWinsock SockSrvWinsockAsync.h SockSrvWinsockAsync.cpp SockSrvWinsockBlocking.h SockSrvWinsockBlocking.cpp)
+set(LIBRARIES_Src_Network_RUDP_SockSrvWinsock )

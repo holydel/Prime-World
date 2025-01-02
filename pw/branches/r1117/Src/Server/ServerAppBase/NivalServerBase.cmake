@@ -1,0 +1,3 @@
+
+set(SOURCES_Src_Server_ServerAppBase_NivalServerBase NivalServerBase.h NivalServerBase.cpp ServerRunner.h)
+set(LIBRARIES_Src_Server_ServerAppBase_NivalServerBase )

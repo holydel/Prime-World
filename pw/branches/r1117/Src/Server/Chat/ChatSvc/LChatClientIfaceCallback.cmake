@@ -1,0 +1,3 @@
+
+set(SOURCES_Src_Server_Chat_ChatSvc_LChatClientIfaceCallback )
+set(LIBRARIES_Src_Server_Chat_ChatSvc_LChatClientIfaceCallback )

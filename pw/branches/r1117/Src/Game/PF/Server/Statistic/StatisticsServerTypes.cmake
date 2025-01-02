@@ -1,0 +1,3 @@
+
+set(SOURCES_Src_Game_PF_Server_Statistic_StatisticsServerTypes StatisticsServerTypes.cpp StatisticsServerTypes.h StatisticsCommonTypes.cpp StatisticsCommonTypes.h)
+set(LIBRARIES_Src_Game_PF_Server_Statistic_StatisticsServerTypes )

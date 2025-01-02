@@ -1,0 +1,3 @@
+
+set(SOURCES_Src_System_CrashRptWrapper CrashRptWrapper.h)
+set(LIBRARIES_Src_System_CrashRptWrapper )
