@@ -32,6 +32,8 @@ api_key = open('api_key.txt').readline()
 timeToKillPublicSession = 7200 # 2 hours
 timeToKillTestSession = 30 # test session - 30 seconds
 
+timeToKillRottenSession = 70 # 1 minute + 10 seconds
+
 lastTimeCheck = dt.now()
 
 activeSessionTokens = {}
@@ -133,6 +135,7 @@ def api():
             # critical section for specific session!
             with webSessions[sessionToken]['lock']:
                 method = ''
+                tryRotten = False
                 if not webSessions[sessionToken]['gameName']:
                     webSessions[sessionToken]['gameName'] = webSessions[sessionToken]['players'][playerKey]['nickname']
                     method = 'create'
@@ -141,6 +144,21 @@ def api():
                         method = 'reconnect'
                     else:
                         method = 'connect'
+                        tryRotten = True
+                     
+                # Test rotten sessions
+                if tryRotten:
+                    rotSession = webSessions[sessionToken]
+                    targetTimeDifferenceToKill = timeToKillRottenSession
+                    if (dt.now() - rotSession['timestamp']).total_seconds() > targetTimeDifferenceToKill:
+                        rotKillerData = {"sessionToken":sessionToken,"win":0,"afk":[]}
+                        killerResponse = requests.post('https://playpw.fun/api/launcher/', json={'method': 'finishGame', 'data': rotKillerData})
+                        response = {
+                            'error': 'Rotten session'
+                        }
+                        logger.info('Response!!!      ' + str(json.dumps(response)))
+                        return jsonify(response)
+                    
                 gameName = ''
                 if webSessions[sessionToken]['gameCreated']:
                     gameName = webSessions[sessionToken]['gameName']
