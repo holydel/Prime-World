@@ -482,10 +482,23 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 #endif
 
 #ifdef TEST_HASHES
+   std::atomic<bool> hashesValid = true;
+   std::thread tests[_countof(releaseFileUrls)];
+
    for (int r = 0; r < _countof(releaseFileUrls); ++r) {
-      if (!CheckFileMD5Hash(releaseFilePaths[r], releaseFileHashes[r])) {
-         return 201;
-      }
+      tests[r] = std::thread([r, &hashesValid]() {
+         if (!CheckFileMD5Hash(releaseFilePaths[r], releaseFileHashes[r])) {
+            hashesValid.store(false);
+         }
+         });
+   }
+
+   for (int r = 0; r < _countof(releaseFileUrls); ++r) {
+      tests[r].join();
+   }
+
+   if (!hashesValid.load()) {
+      return 201;
    }
    return 0;
 #endif
@@ -592,6 +605,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 #endif
 
    for (int i = 0; i < _countof(repoPath); ++i) {
+#ifndef NDEBUG
+      break;
+#endif
       try {
          if (isRunningAdm) {
             std::stringstream strStream;

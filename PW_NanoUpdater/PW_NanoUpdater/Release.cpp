@@ -12,8 +12,6 @@
 
 #pragma comment(lib, "Wininet.lib")
 
-#pragma optimize("", off)
-
 extern bool isRunningAdm;
 class admin_rights_exception : std::exception {};
 class unhandled_error : std::exception {};
