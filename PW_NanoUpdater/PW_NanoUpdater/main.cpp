@@ -661,6 +661,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
       return 0;
 #endif
    }
+   catch (unhandled_error) {
+      return 0;
+   }
 #ifdef ADMIN_MANIFEST
    catch (kill_admin_process_exception) {
       mainProcessChecker.join();
