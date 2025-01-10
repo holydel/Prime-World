@@ -72,6 +72,26 @@ typedef boost::int16_t    int16_t;
 typedef boost::uint16_t  uint16_t;
 typedef boost::int8_t      int8_t;
 typedef boost::uint8_t    uint8_t;
+
+#ifndef INT16_MAX
+# define INT16_MAX 0x7fff
+#endif
+#ifndef INT16_MIN
+# define INT16_MIN INT16_C(0x8000)
+#endif
+#ifndef INT32_MAX
+# define INT32_MAX (0x7fffffffL)
+#endif
+#ifndef INT32_MIN
+# define INT32_MIN INT32_C(0x80000000)
+#endif
+#if !defined (INT64_MAX) && defined (INT64_C)
+# define INT64_MAX INT64_C (9223372036854775807)
+#endif
+#if !defined (INT64_MIN) && defined (INT64_C)
+# define INT64_MIN INT64_C (-9223372036854775808)
+#endif
+
 #endif
 
 #include <thrift/transport/PlatformSocket.h>
