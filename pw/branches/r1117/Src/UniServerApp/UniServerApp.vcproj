@@ -153,7 +153,7 @@
 				InlineFunctionExpansion="2"
 				EnableIntrinsicFunctions="true"
 				FavorSizeOrSpeed="1"
-				AdditionalIncludeDirectories="..\..\..\..\..\Vendor\wsdlpull\src;..\..\Server;..\..\..\..\..\Vendor\libcurl\include;..\..\..\..\Server\Chat;..\..\Server\Censorship;..\..\..\..\Server\LogMonitorAgent;..\..\..\..\..\Vendor\zlib;..\..\..\..\Server\WebServer;..\..\Server\GameSession;&quot;..\..\..\..\..\Vendor\pthreads\Pre-built.2\include&quot;;..\..\..\..\..\Vendor\zlib\include;..\..\..\..\Server\Monitoring\MonitoringSvc;..\..\Server\LiveMMaking;..\..\Server\LobbySocial;..\..\..\..\Server\Monitoring\PerfCounterProvider;..\..\..\..\Server\UserManager;..\..\..\..\System\InlineProfiler3;..\..\..\..\..\Vendor\Thrift;..\..\..\..\..\Vendor\wsdlpull;..\..\..\..\System\Node;..\..\..\..\..\Vendor\pthreads;..\..\..\..\System\FileSystem;..\..\..\..\Server\Coordinator;..\..\..\..\Server\ClusterAdmin;..\..\Server\GameChatController;..\..\..\..\PF_GameLogic;&quot;..\..\..\..\..\Vendor\Thrift\thrift-0.9.1\lib\cpp\src&quot;;..\..\..\..\..\Vendor\tinyxml\src;..\..\..\..\Server\UserManager\UserManagerSvc;&quot;..\..\..\..\..\Vendor\Thrift\thrift-0.9.1&quot;;..\..\..\..\Server\Chat\ChatSvc;..\..\..\..;..\..\..\..\..\Vendor\Terabit\app;..\..\Server\Roll;..\..\..\..\Server\NewLogin;..\..\Client\LobbyPvx;..\..\..\..\Server;..\..\Server\TourneyCfg;..\..\Server\Statistic;..\..\..\..\Server\ServerAppBase;..\..\..\..\libdb;..\..\..\..\..\Vendor\boost\boost\tr1;..\..\..\..\Network;..\..\..\..\Server\Relay\RelayBalancer;..\..\..\..\Server\DebugVarUpdate;..\..;..\..\..\..\System\BlockData;..\..\..\..\..\Vendor\tinyxml;..\..\..\..\Server\RdpTransport;..\..\..\..\..\Vendor\UnixEnv\include;..\..\..\..\Server\Relay;..\..\..\..\Server\WebClient;..\..\..\..\..\Vendor\OpenSSL\include;..\..\..\..\MemoryLib;..\..\..\..\Server\ZZima;..\..\..\..\Server\ClientControl;..\..\Server\HttpGateway;..\..\Server\Accounting;..\..\..\..\Server\ClusterTypes;..\..\..\..\Server\NetworkAIO;..\..\HybridServer;..\..\..\..\Core;..\..\..\..\..\Tools;..\..\..\..\Server\AppFramework;..\..\..\..\..\Vendor\JsonCpp;..\..\..\..\System\Math;..\..\..\..\..\Vendor\OpenSSL;..\..\..\..\..\Vendor\Terabit;..\..\..\..\..\Vendor\JsonCpp\include;..\..\..\..\System;..\..\Server\LobbyPvx;..;..\..\..\..\..\Vendor\MD4;..\..\..\..\Network\RUDP;..\..\..\..\..;..\..\..\..\..\Vendor\ACE_wrappers;..\..\..\..\..\Vendor\mongoose;..\..\..\..\..\Vendor\libcurl;..\..\..\..\..\Vendor\Libc;..\..\..\..\Server\MatchMaking;..\..\..\..\..\Vendor\UnixEnv;..\..\..\..\Server\Monitoring;..\..\..\..\..\Vendor\boost;..\..\..\..\Server\Db;..\..\..\..\Server\RPC;..\..\..\..\System\Pointers;../..;../../vendor\zlib\include;../../vendor\CxxTest\Include;../;..\Server;..\Game\PF;..\..\Vendor\boost;..\System;..\..\Vendor\ACE_wrappers;..\Server\Chat;..\Server\GameSession;..\..\Vendor\JsonCpp\include;..\..\Vendor\libcurl\include;..\Server\GameSession\GameBalancer;..\Game\PF\Server;..\..\Vendor\Terabit\app;..\Server\NetworkAIO;..\..\Vendor\mongoose;..\Server\Monitoring;..\..\Vendor\OpenSSL\include;..\PW_Game;..\..\Vendor\Terabit;..\Server\UserManager;..\Server\Relay;&quot;..\..\Vendor\Thrift\thrift-0.9.1\lib\cpp\src&quot;;..\..\Vendor\wsdlpull\src;..\..\Vendor\tinyxml\src;..\Game\PF\Server\GameSession"
+				AdditionalIncludeDirectories="..\..\..\..\..\Vendor\wsdlpull\src;..\..\Server;..\..\..\..\..\Vendor\libcurl\include;..\..\..\..\Server\Chat;..\..\Server\Censorship;..\..\..\..\Server\LogMonitorAgent;..\..\..\..\..\Vendor\zlib;..\..\..\..\Server\WebServer;..\..\Server\GameSession;&quot;..\..\..\..\..\Vendor\pthreads\Pre-built.2\include&quot;;..\..\..\..\..\Vendor\zlib\include;..\..\..\..\Server\Monitoring\MonitoringSvc;..\..\Server\LiveMMaking;..\..\Server\LobbySocial;..\..\..\..\Server\Monitoring\PerfCounterProvider;..\..\..\..\Server\UserManager;..\..\..\..\System\InlineProfiler3;..\..\..\..\..\Vendor\Thrift;..\..\..\..\..\Vendor\wsdlpull;..\..\..\..\System\Node;..\..\..\..\..\Vendor\pthreads;..\..\..\..\System\FileSystem;..\..\..\..\Server\Coordinator;..\..\..\..\Server\ClusterAdmin;..\..\Server\GameChatController;..\..\..\..\PF_GameLogic;&quot;..\..\..\..\..\Vendor\Thrift\thrift-0.9.1\lib\cpp\src&quot;;..\..\..\..\..\Vendor\tinyxml\src;..\..\..\..\Server\UserManager\UserManagerSvc;&quot;..\..\..\..\..\Vendor\Thrift\thrift-0.9.1&quot;;..\..\..\..\Server\Chat\ChatSvc;..\..\..\..;..\..\..\..\..\Vendor\Terabit\app;..\..\Server\Roll;..\..\..\..\Server\NewLogin;..\..\Client\LobbyPvx;..\..\..\..\Server;..\..\Server\TourneyCfg;..\..\Server\Statistic;..\..\..\..\Server\ServerAppBase;..\..\..\..\libdb;..\..\..\..\..\Vendor\boost\boost\tr1;..\..\..\..\Network;..\..\..\..\Server\Relay\RelayBalancer;..\..\..\..\Server\DebugVarUpdate;..\..;..\..\..\..\System\BlockData;..\..\..\..\..\Vendor\tinyxml;..\..\..\..\Server\RdpTransport;..\..\..\..\..\Vendor\UnixEnv\include;..\..\..\..\Server\Relay;..\..\..\..\Server\WebClient;..\..\..\..\..\Vendor\OpenSSL\include;..\..\..\..\MemoryLib;..\..\..\..\Server\ZZima;..\..\..\..\Server\ClientControl;..\..\Server\HttpGateway;..\..\Server\Accounting;..\..\..\..\Server\ClusterTypes;..\..\..\..\Server\NetworkAIO;..\..\HybridServer;..\..\..\..\Core;..\..\..\..\..\Tools;..\..\..\..\Server\AppFramework;..\..\..\..\..\Vendor\JsonCpp;..\..\..\..\System\Math;..\..\..\..\..\Vendor\OpenSSL;..\..\..\..\..\Vendor\Terabit;..\..\..\..\..\Vendor\JsonCpp\include;..\..\..\..\System;..\..\Server\LobbyPvx;..;..\..\..\..\..\Vendor\MD4;..\..\..\..\Network\RUDP;..\..\..\..\..;..\..\..\..\..\Vendor\ACE_wrappers;..\..\..\..\..\Vendor\mongoose;..\..\..\..\..\Vendor\libcurl;..\..\..\..\..\Vendor\Libc;..\..\..\..\Server\MatchMaking;..\..\..\..\..\Vendor\UnixEnv;..\..\..\..\Server\Monitoring;..\..\..\..\..\Vendor\boost;..\..\..\..\Server\Db;..\..\..\..\Server\RPC;..\..\..\..\System\Pointers;../..;../../vendor\zlib\include;../../vendor\CxxTest\Include;../;..\Server;..\Game\PF;..\..\Vendor\boost;..\System;..\..\Vendor\ACE_wrappers;..\Server\Chat;..\Server\GameSession;..\..\Vendor\JsonCpp\include;..\..\Vendor\libcurl\include;..\Server\GameSession\GameBalancer;..\Game\PF\Server;..\..\Vendor\Terabit\app;..\Server\NetworkAIO;..\..\Vendor\mongoose;..\Server\Monitoring;..\..\Vendor\OpenSSL\include;..\PW_Game;..\..\Vendor\Terabit;..\Server\UserManager;..\Server\Relay;&quot;..\..\Vendor\Thrift\thrift-0.9.1\lib\cpp\src&quot;;..\..\Vendor\wsdlpull\src;..\..\Vendor\tinyxml\src;..\Game\PF\Server\GameSession;..\..\Vendor\CrashRpt\thirdparty\wtl"
 				PreprocessorDefinitions="WIN32;_WINDOWS;DLL;NDEBUG;_DO_ASSERT"
 				ExceptionHandling="1"
 				RuntimeLibrary="2"
@@ -182,11 +182,11 @@
 			<Tool
 				Name="VCLinkerTool"
 				LinkLibraryDependencies="false"
-				AdditionalDependencies="$(NOINHERIT) kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib "
+				AdditionalDependencies="ACE.lib IOTerabit.lib TProactor.lib ws2_32.lib zdll.lib ssleay32MT.lib libeay32MT.lib comctl32.lib winmm.lib Rpcrt4.lib steam_api.lib libcurl.lib CensorDll.lib CxxTest.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib $(NOINHERIT)"
 				OutputFile="C:\Users\rekon\source\repos\Prime-World-2022\pw\branches\r1117\Src\UniServerApp\Release\UniServerApp.exe"
 				Version="0.0"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories=""
+				AdditionalLibraryDirectories="../../vendor/ACE_wrappers/lib;../../vendor/Terabit/lib;../../Vendor/Steam/1.23a/redistributable_bin;../../vendor\zlib\lib;../../vendor\openSSL\lib\static;../../vendor\DirectShow\Lib;../../vendor/libcurl/lib/Release;../../Tools/Censor/lib/Release;../../vendor\CxxTest\lib;..\..\Vendor\boost\stage\lib;..\..\Vendor\AdditionalLibraries"
 				ProgramDatabaseFile="C:\Users\rekon\source\repos\Prime-World-2022\pw\branches\r1117\Src\UniServerApp\Release/UniServerApp.pdb"
 				SubSystem="1"
 				ImportLibrary="C:\Users\rekon\source\repos\Prime-World-2022\pw\branches\r1117\Src\UniServerApp\Release\UniServerApp.lib"
@@ -5733,6 +5733,34 @@
 				<Filter
 					Name="InlineProfiler3"
 					>
+					<File
+						RelativePath="..\System\InlineProfiler3\InlineProfiler3.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\System\InlineProfiler3\InlineProfiler3CG.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\System\InlineProfiler3\Profiler3UI.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\System\InlineProfiler3\Profiler3UIData.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\System\InlineProfiler3\Profiler3UIMainDlg.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\System\InlineProfiler3\Profiler3UITimeline.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\System\InlineProfiler3\stdafx.cpp"
+						>
+					</File>
 					<Filter
 						Name="SamplerStub"
 						>

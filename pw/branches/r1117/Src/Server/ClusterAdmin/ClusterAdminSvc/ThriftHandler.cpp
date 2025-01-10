@@ -1,3 +1,4 @@
+#include "stdafx.h"
 #include "ThriftHandler.h"
 #include "ClusterAdminImpl.h"
 
