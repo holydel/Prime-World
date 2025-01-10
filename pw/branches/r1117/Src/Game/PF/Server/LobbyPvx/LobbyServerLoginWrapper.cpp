@@ -1,4 +1,6 @@
 #include "stdafx.h"
+#include <Network/TransportTypes.h>
+#include <ClusterTypes/ClusterTypes.h>
 #include "LobbyServerLoginWrapper.h"
 #include "RPC/GateKeeper.h"
 #include "Network/RSessionKeyRegisterIface.auto.h"
