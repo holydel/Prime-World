@@ -1,4 +1,4 @@
-#include "stdafx.h"
+#include "ChatSvc/stdafx.h"
 #include "GameStatClient.h"
 #include "SpecialStatisticTypes.h"
 #include "System/AddressOf.h"

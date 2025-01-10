@@ -1,4 +1,5 @@
 #include "stdafx.h"
+#include "ChatSvc/stdafx.h"
 #include "StatClientDiskDispatcher.h"
 #include "system/math/md4.h"
 

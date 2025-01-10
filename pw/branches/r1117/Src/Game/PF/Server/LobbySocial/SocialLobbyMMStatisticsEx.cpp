@@ -1,3 +1,4 @@
+#include "stdafx.h"
 #include "SocialLobbyMMStatisticsEx.h"
 #include "Server/LiveMMaking/LiveMMakingTypes.h"
 #include "Db/DBServer.auto.h"
