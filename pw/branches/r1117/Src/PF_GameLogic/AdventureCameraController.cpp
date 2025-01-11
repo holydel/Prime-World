@@ -13,7 +13,7 @@
 //#include "DBStats.h"
 
 extern int g_playerTeamId;
-int g_fixedTeamCam = 0;
+extern int g_fixedTeamCam;
 REGISTER_VAR("fixedTeamCam", g_fixedTeamCam, STORAGE_USER)
 
 namespace NSoundScene

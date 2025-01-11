@@ -713,16 +713,16 @@ void InitCensorDicts()
   LoadCensorDict("custom_whitelist.txt", true);
 }
 
-string g_devLogin;
-string g_sessionToken;
-string g_playerToken;
+extern string g_devLogin;
+extern string g_sessionToken;
+extern string g_playerToken;
 
-string g_sessionName;
-WebLauncherPostRequest::RegisterSessionRequest g_sessionStatus;
-WebLauncherPostRequest::WebLoginResponse g_webLoginResponse;
-int g_playerTeamId;
-int g_playerHeroId;
-int g_playerPartyId;
+extern string g_sessionName;
+extern WebLauncherPostRequest::RegisterSessionRequest g_sessionStatus;
+extern WebLauncherPostRequest::WebLoginResponse g_webLoginResponse;
+extern int g_playerTeamId;
+extern int g_playerHeroId;
+extern int g_playerPartyId;
 
 std::string GetDirectoryFromPath(const std::string& fullPath) {
     std::size_t found = fullPath.find_last_of("/\\");

@@ -161,9 +161,9 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="comsuppw.lib Winmm.lib gtrtst32.lib zdll.lib dxguid.lib d3d9.lib d3dx9.lib dxerr.lib DbgHelp.lib version.lib wbemuuid.lib"
+				AdditionalDependencies="Shared.lib comsuppw.lib Winmm.lib gtrtst32.lib zdll.lib dxguid.lib d3d9.lib d3dx9.lib dxerr.lib DbgHelp.lib version.lib wbemuuid.lib"
 				OutputFile="$(OutDir)\$(ProjectName).dll"
-				AdditionalLibraryDirectories="../../vendor\DirectShow\lib;../../vendor\zlib\lib;../../vendor\DirectX\Lib\x86"
+				AdditionalLibraryDirectories="../../vendor\DirectShow\lib;../../vendor\zlib\lib;../../vendor\DirectX\Lib\x86;../../src/release"
 				ModuleDefinitionFile="$(IntDir)\$(ProjectName).def"
 				GenerateDebugInformation="true"
 				SubSystem="0"

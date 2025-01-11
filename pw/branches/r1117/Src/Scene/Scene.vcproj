@@ -160,9 +160,9 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="zdll.lib CxxTest.lib dxguid.lib d3d9.lib d3dx9.lib dxerr.lib"
+				AdditionalDependencies="Shared.lib zdll.lib CxxTest.lib dxguid.lib d3d9.lib d3dx9.lib dxerr.lib"
 				OutputFile="$(OutDir)\$(ProjectName).dll"
-				AdditionalLibraryDirectories="../../vendor\zlib\lib;../../vendor\CxxTest\lib;../../vendor\DirectX\Lib\x86"
+				AdditionalLibraryDirectories="../../vendor\zlib\lib;../../vendor\CxxTest\lib;../../vendor\DirectX\Lib\x86;../../src/release"
 				ModuleDefinitionFile="$(IntDir)\$(ProjectName).def"
 				GenerateDebugInformation="true"
 				SubSystem="0"

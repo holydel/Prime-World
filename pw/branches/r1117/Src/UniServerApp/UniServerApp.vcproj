@@ -8283,6 +8283,26 @@
 					>
 				</File>
 			</Filter>
+			<Filter
+				Name="_other"
+				>
+				<File
+					RelativePath="..\Server\ClusterAdmin\ClusterAdminSvc\gen-cpp\ClusterManagement.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\Server\ClusterAdmin\ClusterAdminSvc\gen-cpp\ClusterManagementAPI_types.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\Server\Monitoring\MonitorConsole\gen-cpp\Monitoring.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\Server\Monitoring\MonitoringSvc\gen-cpp\Monitoring_types.cpp"
+					>
+				</File>
+			</Filter>
 		</Filter>
 		<File
 			RelativePath="C:\Users\rekon\source\repos\Prime-World-2022\pw\branches\r1117\Src\Game\PF\UniServer\UniServerApp.auto\CMakeLists.txt"
