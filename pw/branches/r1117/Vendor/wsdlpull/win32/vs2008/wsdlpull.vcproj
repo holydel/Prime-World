@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="Windows-1252"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9.00"
+	Version="9,00"
 	Name="wsdlpull"
 	ProjectGUID="{535DB641-C867-4DD0-97F8-4883166E1DAD}"
 	RootNamespace="wsdlpull"
@@ -44,9 +44,10 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
+				AdditionalIncludeDirectories="..\..\src\,..\"
 				PreprocessorDefinitions="WIN32;NDEBUG;_LIB"
 				StringPooling="true"
-				RuntimeLibrary="0"
+				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="true"
 				PrecompiledHeaderFile=".\Release/wsdlpull.pch"
 				AssemblerListingLocation=".\Release/"
@@ -54,6 +55,7 @@
 				ProgramDataBaseFileName=".\Release/"
 				WarningLevel="3"
 				SuppressStartupBanner="true"
+				CallingConvention="0"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -639,6 +641,14 @@
 			</File>
 			<File
 				RelativePath="..\w3c.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\src\xmlpull\XmlDoc.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\src\xmlpull\XmlDoc.h"
 				>
 			</File>
 			<File

@@ -182,11 +182,11 @@
 			<Tool
 				Name="VCLinkerTool"
 				LinkLibraryDependencies="false"
-				AdditionalDependencies="ACE.lib IOTerabit.lib TProactor.lib ws2_32.lib zdll.lib ssleay32MT.lib libeay32MT.lib comctl32.lib winmm.lib Rpcrt4.lib steam_api.lib libcurl.lib CensorDll.lib CxxTest.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib $(NOINHERIT)"
+				AdditionalDependencies="GameChatClient.lib PF_GameLogic.lib RpcBase.lib Foundation.lib wsdlpull.lib ACE.lib IOTerabit.lib TProactor.lib ws2_32.lib zdll.lib DbgHelp.lib Psapi.lib detours.lib detoured.lib ssleay32MT.lib libeay32MT.lib comctl32.lib winmm.lib Rpcrt4.lib steam_api.lib libcurl.lib CensorDll.lib CxxTest.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib msvcprt.lib JsonCpp.lib dxguid.lib d3d9.lib d3dx9.lib dxerr.lib fmodex_vc.lib fmod_event.lib Ws2_32.lib Iphlpapi.lib $(NOINHERIT)"
 				OutputFile="C:\Users\rekon\source\repos\Prime-World-2022\pw\branches\r1117\Src\UniServerApp\Release\UniServerApp.exe"
 				Version="0.0"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories="../../vendor/ACE_wrappers/lib;../../vendor/Terabit/lib;../../Vendor/Steam/1.23a/redistributable_bin;../../vendor\zlib\lib;../../vendor\openSSL\lib\static;../../vendor\DirectShow\Lib;../../vendor/libcurl/lib/Release;../../Tools/Censor/lib/Release;../../vendor\CxxTest\lib;..\..\Vendor\boost\stage\lib;..\..\Vendor\AdditionalLibraries"
+				AdditionalLibraryDirectories="../../vendor\zlib\lib;../../vendor\DirectX\Lib\x86;../../vendor\fmod\api\lib;../../vendor\fmod\fmoddesignerapi\api\lib;../../vendor/libcurl/lib/Release;../../Tools/Censor/lib/Release;../../vendor/JsonCpp/lib/Release;../../vendor/ACE_wrappers/lib;../../vendor/Terabit/lib;../../Vendor/Steam/1.23a/redistributable_bin;../../vendor\zlib\lib;../../vendor\openSSL\lib\static;../../vendor\DirectShow\Lib;../../vendor/libcurl/lib/Release;../../Tools/Censor/lib/Release;../../vendor\CxxTest\lib;..\..\Vendor\boost\stage\lib;..\..\Vendor\AdditionalLibraries;..\..\Vendor\wsdlpull\win32\vs2008\Release;..\..\Src\_Release;../../vendor/Detour/lib"
 				ProgramDatabaseFile="C:\Users\rekon\source\repos\Prime-World-2022\pw\branches\r1117\Src\UniServerApp\Release/UniServerApp.pdb"
 				SubSystem="1"
 				ImportLibrary="C:\Users\rekon\source\repos\Prime-World-2022\pw\branches\r1117\Src\UniServerApp\Release\UniServerApp.lib"
@@ -693,6 +693,142 @@
 							</File>
 							<File
 								RelativePath="C:\Users\rekon\source\repos\Prime-World-2022\pw\branches\r1117\Src\Game\PF\HybridServer\WorldSnapshot.h"
+								>
+							</File>
+						</Filter>
+						<Filter
+							Name="Extra"
+							>
+							<File
+								RelativePath="..\Server\Chat\ChatSvc\LChatClientIface.auto.cpp"
+								>
+							</File>
+							<File
+								RelativePath="..\Server\Chat\ChatSvc\LChatClientIfaceCallback.auto.cpp"
+								>
+							</File>
+							<File
+								RelativePath="..\..\..\..\..\..\..\..\..\..\PW\PrimeWorldTestRed\Src\Server\Chat\ChatSvc\LChatManagementIface.auto.cpp"
+								>
+							</File>
+							<File
+								RelativePath="..\Server\ClientControl\LClientControlInterface.auto.cpp"
+								>
+							</File>
+							<File
+								RelativePath="..\Server\ClientControl\LClientControlRemote.auto.cpp"
+								>
+							</File>
+							<File
+								RelativePath="..\Server\Coordinator\LCoordinatorClientIface.auto.cpp"
+								>
+							</File>
+							<File
+								RelativePath="..\Game\PF\HybridServer\LGameServerAllocatorIface.auto.cpp"
+								>
+							</File>
+							<File
+								RelativePath="..\..\..\..\..\..\..\..\..\..\PW\PrimeWorldTestRed\Src\Game\PF\HybridServer\LGameServerDispenserIface.auto.cpp"
+								>
+							</File>
+							<File
+								RelativePath="..\Game\PF\Server\LiveMMaking\LILiveMMakingClient.auto.cpp"
+								>
+							</File>
+							<File
+								RelativePath="..\Game\PF\Server\LobbySocial\LISocialLobbyPvxAck.auto.cpp"
+								>
+							</File>
+							<File
+								RelativePath="..\Game\PF\Server\LobbySocial\LISocialLobbyPvxSvc.auto.cpp"
+								>
+							</File>
+							<File
+								RelativePath="..\Game\PF\Client\LobbyPvx\LLobbyClientInterface.auto.cpp"
+								>
+							</File>
+							<File
+								RelativePath="..\Server\MatchMaking\LMatchMakingClient.auto.cpp"
+								>
+							</File>
+							<File
+								RelativePath="..\Game\PF\HybridServer\LPeered.auto.cpp"
+								>
+							</File>
+							<File
+								RelativePath="..\Server\Relay\RelayBalancer\LRelayBalancerClientNotifyIface.auto.cpp"
+								>
+							</File>
+							<File
+								RelativePath="..\Game\PF\Server\Roll\LRollClient.auto.cpp"
+								>
+							</File>
+							<File
+								RelativePath="..\Server\Chat\ChatSvc\RChatClientIface.auto.cpp"
+								>
+							</File>
+							<File
+								RelativePath="..\Server\Chat\ChatSvc\RChatClientIfaceCallback.auto.cpp"
+								>
+							</File>
+							<File
+								RelativePath="..\Server\ClientControl\RClientControlInterface.auto.cpp"
+								>
+							</File>
+							<File
+								RelativePath="..\Server\ClientControl\RClientControlRemote.auto.cpp"
+								>
+							</File>
+							<File
+								RelativePath="..\Server\Coordinator\RCoordinatorClientIface.auto.cpp"
+								>
+							</File>
+							<File
+								RelativePath="..\Game\PF\HybridServer\RGameServerAllocatorIface.auto.cpp"
+								>
+							</File>
+							<File
+								RelativePath="..\Game\PF\Server\LiveMMaking\RILiveMMakingClient.auto.cpp"
+								>
+							</File>
+							<File
+								RelativePath="..\Game\PF\Server\LobbySocial\RISocialLobbyPvxAck.auto.cpp"
+								>
+							</File>
+							<File
+								RelativePath="..\Game\PF\Server\LobbySocial\RISocialLobbyPvxSvc.auto.cpp"
+								>
+							</File>
+							<File
+								RelativePath="..\Game\PF\Client\LobbyPvx\RLobbyClientInterface.auto.cpp"
+								>
+							</File>
+							<File
+								RelativePath="..\Server\MatchMaking\RMatchMakingClient.auto.cpp"
+								>
+							</File>
+							<File
+								RelativePath="..\Server\NetworkAIO\tests\multicast.client\RMulticastClientIface.auto.cpp"
+								>
+							</File>
+							<File
+								RelativePath="..\Game\PF\HybridServer\RPeered.auto.cpp"
+								>
+							</File>
+							<File
+								RelativePath="..\Server\Relay\RelayBalancer\RRelayBalancerClientNotifyIface.auto.cpp"
+								>
+							</File>
+							<File
+								RelativePath="..\Game\PF\Server\Roll\RRollBalancer.auto.cpp"
+								>
+							</File>
+							<File
+								RelativePath="..\Game\PF\Server\Roll\RRollClient.auto.cpp"
+								>
+							</File>
+							<File
+								RelativePath="..\Game\PF\HybridServer\stdafx.cpp"
 								>
 							</File>
 						</Filter>
@@ -5742,6 +5878,10 @@
 						>
 					</File>
 					<File
+						RelativePath="..\System\InlineProfiler3\InlineProfilerStorage.cpp"
+						>
+					</File>
+					<File
 						RelativePath="..\System\InlineProfiler3\Profiler3UI.cpp"
 						>
 					</File>
@@ -7858,6 +7998,114 @@
 						>
 					</File>
 				</Filter>
+			</Filter>
+		</Filter>
+		<Filter
+			Name="Extra"
+			>
+			<Filter
+				Name="Social Lobby"
+				>
+				<File
+					RelativePath="..\Game\PF\Server\LobbySocial\LISocialLobby.auto.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\Game\PF\Server\LobbySocial\LISocialLobbyNotify.auto.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\Game\PF\Server\LobbySocial\LISocialLobbyUserCtx.auto.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\Game\PF\Server\LobbySocial\RISocialLobby.auto.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\Game\PF\Server\LobbySocial\RISocialLobbyNotify.auto.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\Game\PF\Server\LobbySocial\RISocialLobbyUserCtx.auto.cpp"
+					>
+				</File>
+			</Filter>
+			<Filter
+				Name="Roll"
+				>
+				<File
+					RelativePath="..\Game\PF\Server\Roll\LRollBalancer.auto.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\Game\PF\Server\Roll\LRollInstance.auto.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\Game\PF\Server\Roll\RRollInstance.auto.cpp"
+					>
+				</File>
+			</Filter>
+			<Filter
+				Name="MMaking"
+				>
+				<File
+					RelativePath="..\Game\PF\Server\LiveMMaking\LILiveMMaking.auto.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\Game\PF\Server\LiveMMaking\RILiveMMaking.auto.cpp"
+					>
+				</File>
+			</Filter>
+			<Filter
+				Name="Lobby"
+				>
+				<File
+					RelativePath="..\Game\PF\Server\Accounting\LLobbyAccounting.auto.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\Game\PF\Server\LobbyPvx\LLobbyIEntrance.auto.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\Game\PF\Server\LobbyPvx\LLobbyIServerInstance.auto.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\Game\PF\Server\Accounting\RLobbyAccounting.auto.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\Game\PF\Server\LobbyPvx\RLobbyIEntrance.auto.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\Game\PF\Server\LobbyPvx\RLobbyIServerInstance.auto.cpp"
+					>
+				</File>
+			</Filter>
+			<Filter
+				Name="Match"
+				>
+				<File
+					RelativePath="..\Server\MatchMaking\LMatchMakingManager.auto.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\Server\MatchMaking\LMatchMakingSessionIface.auto.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\Server\MatchMaking\RMatchMakingManager.auto.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\Server\MatchMaking\RMatchMakingSessionIface.auto.cpp"
+					>
+				</File>
 			</Filter>
 		</Filter>
 		<File
