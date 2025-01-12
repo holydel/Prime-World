@@ -12,9 +12,11 @@ namespace
   string frontendIPAddr = "localhost";
   string backendIPAddr = "localhost";
 
+  static string loginAddrDefault;
+  static string firstServerPortDefault;
   REGISTER_VAR( "coordinator_address", coordinatorAddr, STORAGE_GLOBAL );
-  //REGISTER_VAR( "login_address", loginAddr, STORAGE_GLOBAL );
-  //REGISTER_VAR( "first_server_port", firstServerPort, STORAGE_GLOBAL );
+  REGISTER_VAR( "login_address", loginAddrDefault, STORAGE_GLOBAL );
+  REGISTER_VAR( "first_server_port", firstServerPortDefault, STORAGE_GLOBAL );
   REGISTER_VAR( "frontend_ip_addr", frontendIPAddr, STORAGE_GLOBAL);
   REGISTER_VAR( "backend_ip_addr", backendIPAddr, STORAGE_GLOBAL);
 }
@@ -29,7 +31,7 @@ const string & GetCoordinatorAddress()
 
 const string & GetLoginServerAddress()
 {
-  return loginAddr;
+  return firstServerPortDefault;
 }
 
 int GetFirstServerPort()
