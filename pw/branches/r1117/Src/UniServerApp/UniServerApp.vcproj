@@ -4,6 +4,7 @@
 	Version="9,00"
 	Name="UniServerApp"
 	ProjectGUID="{217FC5A9-DD85-3211-B1A4-670D94DE0B7E}"
+	RootNamespace="UniServerApp"
 	Keyword="Win32Proj"
 	TargetFrameworkVersion="0"
 	>
@@ -154,7 +155,7 @@
 				EnableIntrinsicFunctions="true"
 				FavorSizeOrSpeed="1"
 				AdditionalIncludeDirectories="..\..\..\..\..\Vendor\wsdlpull\src;..\..\Server;..\..\..\..\..\Vendor\libcurl\include;..\..\..\..\Server\Chat;..\..\Server\Censorship;..\..\..\..\Server\LogMonitorAgent;..\..\..\..\..\Vendor\zlib;..\..\..\..\Server\WebServer;..\..\Server\GameSession;&quot;..\..\..\..\..\Vendor\pthreads\Pre-built.2\include&quot;;..\..\..\..\..\Vendor\zlib\include;..\..\..\..\Server\Monitoring\MonitoringSvc;..\..\Server\LiveMMaking;..\..\Server\LobbySocial;..\..\..\..\Server\Monitoring\PerfCounterProvider;..\..\..\..\Server\UserManager;..\..\..\..\System\InlineProfiler3;..\..\..\..\..\Vendor\Thrift;..\..\..\..\..\Vendor\wsdlpull;..\..\..\..\System\Node;..\..\..\..\..\Vendor\pthreads;..\..\..\..\System\FileSystem;..\..\..\..\Server\Coordinator;..\..\..\..\Server\ClusterAdmin;..\..\Server\GameChatController;..\..\..\..\PF_GameLogic;&quot;..\..\..\..\..\Vendor\Thrift\thrift-0.9.1\lib\cpp\src&quot;;..\..\..\..\..\Vendor\tinyxml\src;..\..\..\..\Server\UserManager\UserManagerSvc;&quot;..\..\..\..\..\Vendor\Thrift\thrift-0.9.1&quot;;..\..\..\..\Server\Chat\ChatSvc;..\..\..\..;..\..\..\..\..\Vendor\Terabit\app;..\..\Server\Roll;..\..\..\..\Server\NewLogin;..\..\Client\LobbyPvx;..\..\..\..\Server;..\..\Server\TourneyCfg;..\..\Server\Statistic;..\..\..\..\Server\ServerAppBase;..\..\..\..\libdb;..\..\..\..\..\Vendor\boost\boost\tr1;..\..\..\..\Network;..\..\..\..\Server\Relay\RelayBalancer;..\..\..\..\Server\DebugVarUpdate;..\..;..\..\..\..\System\BlockData;..\..\..\..\..\Vendor\tinyxml;..\..\..\..\Server\RdpTransport;..\..\..\..\..\Vendor\UnixEnv\include;..\..\..\..\Server\Relay;..\..\..\..\Server\WebClient;..\..\..\..\..\Vendor\OpenSSL\include;..\..\..\..\MemoryLib;..\..\..\..\Server\ZZima;..\..\..\..\Server\ClientControl;..\..\Server\HttpGateway;..\..\Server\Accounting;..\..\..\..\Server\ClusterTypes;..\..\..\..\Server\NetworkAIO;..\..\HybridServer;..\..\..\..\Core;..\..\..\..\..\Tools;..\..\..\..\Server\AppFramework;..\..\..\..\..\Vendor\JsonCpp;..\..\..\..\System\Math;..\..\..\..\..\Vendor\OpenSSL;..\..\..\..\..\Vendor\Terabit;..\..\..\..\..\Vendor\JsonCpp\include;..\..\..\..\System;..\..\Server\LobbyPvx;..;..\..\..\..\..\Vendor\MD4;..\..\..\..\Network\RUDP;..\..\..\..\..;..\..\..\..\..\Vendor\ACE_wrappers;..\..\..\..\..\Vendor\mongoose;..\..\..\..\..\Vendor\libcurl;..\..\..\..\..\Vendor\Libc;..\..\..\..\Server\MatchMaking;..\..\..\..\..\Vendor\UnixEnv;..\..\..\..\Server\Monitoring;..\..\..\..\..\Vendor\boost;..\..\..\..\Server\Db;..\..\..\..\Server\RPC;..\..\..\..\System\Pointers;../..;../../vendor\zlib\include;../../vendor\CxxTest\Include;../;..\Server;..\Game\PF;..\..\Vendor\boost;..\System;..\..\Vendor\ACE_wrappers;..\Server\Chat;..\Server\GameSession;..\..\Vendor\JsonCpp\include;..\..\Vendor\libcurl\include;..\Server\GameSession\GameBalancer;..\Game\PF\Server;..\..\Vendor\Terabit\app;..\Server\NetworkAIO;..\..\Vendor\mongoose;..\Server\Monitoring;..\..\Vendor\OpenSSL\include;..\PW_Game;..\..\Vendor\Terabit;..\Server\UserManager;..\Server\Relay;&quot;..\..\Vendor\Thrift\thrift-0.9.1\lib\cpp\src&quot;;..\..\Vendor\wsdlpull\src;..\..\Vendor\tinyxml\src;..\Game\PF\Server\GameSession;..\..\Vendor\CrashRpt\thirdparty\wtl"
-				PreprocessorDefinitions="DO_NOT_USE_DLLMAIN;CURL_STATICLIB;WIN32;_WINDOWS;DLL;NDEBUG;_DO_ASSERT"
+				PreprocessorDefinitions="_SHIPPING;DO_NOT_USE_DLLMAIN;CURL_STATICLIB;WIN32;_WINDOWS;DLL;NDEBUG;_DO_ASSERT"
 				ExceptionHandling="1"
 				RuntimeLibrary="2"
 				BufferSecurityCheck="false"
@@ -183,10 +184,11 @@
 				Name="VCLinkerTool"
 				LinkLibraryDependencies="false"
 				AdditionalDependencies="GameChatClient.lib PF_GameLogic.lib RpcBase.lib Foundation.lib wsdlpull.lib ACE.lib IOTerabit.lib TProactor.lib ws2_32.lib zdll.lib DbgHelp.lib Psapi.lib detours.lib detoured.lib ssleay32MT.lib libeay32MT.lib comctl32.lib winmm.lib Rpcrt4.lib steam_api.lib libcurl.lib CensorDll.lib CxxTest.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib msvcprt.lib JsonCpp.lib dxguid.lib d3d9.lib d3dx9.lib dxerr.lib fmodex_vc.lib fmod_event.lib Ws2_32.lib Iphlpapi.lib $(NOINHERIT)"
-				OutputFile="C:\Users\rekon\source\repos\Prime-World-2022\pw\branches\r1117\Src\UniServerApp\Release\UniServerApp.exe"
+				OutputFile="C:\PW\UltraServer\Bin\UniServerApp.exe"
 				Version="0.0"
 				LinkIncremental="1"
 				AdditionalLibraryDirectories="../../vendor\zlib\lib;../../vendor\DirectX\Lib\x86;../../vendor\fmod\api\lib;../../vendor\fmod\fmoddesignerapi\api\lib;../../vendor/libcurl/lib/Release;../../Tools/Censor/lib/Release;../../vendor/JsonCpp/lib/Release;../../vendor/ACE_wrappers/lib;../../vendor/Terabit/lib;../../Vendor/Steam/1.23a/redistributable_bin;../../vendor\zlib\lib;../../vendor\openSSL\lib\static;../../vendor\DirectShow\Lib;../../vendor/libcurl/lib/Release;../../Tools/Censor/lib/Release;../../vendor\CxxTest\lib;..\..\Vendor\boost\stage\lib;..\..\Vendor\AdditionalLibraries;..\..\Vendor\wsdlpull\win32\vs2008\Release;..\..\Src\_Release;../../vendor/Detour/lib"
+				GenerateDebugInformation="true"
 				ProgramDatabaseFile="C:\Users\rekon\source\repos\Prime-World-2022\pw\branches\r1117\Src\UniServerApp\Release/UniServerApp.pdb"
 				SubSystem="1"
 				ImportLibrary="C:\Users\rekon\source\repos\Prime-World-2022\pw\branches\r1117\Src\UniServerApp\Release\UniServerApp.lib"
@@ -8292,6 +8294,10 @@
 				</File>
 				<File
 					RelativePath="..\Server\ClusterAdmin\ClusterAdminSvc\gen-cpp\ClusterManagementAPI_types.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\..\..\..\..\..\..\..\PW\PrimeWorldTestRed\Src\Server\Db\DBServer.auto.cpp"
 					>
 				</File>
 				<File

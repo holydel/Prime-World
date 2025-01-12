@@ -411,6 +411,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UniServer", "UniServer", "{F1D1FBE2-4FF9-461D-B71F-5F98B1C5742F}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UniServerApp", "UniServerApp\UniServerApp.vcproj", "{217FC5A9-DD85-3211-B1A4-670D94DE0B7E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6426D44C-08D7-4AFA-8682-14128B0FCB33} = {6426D44C-08D7-4AFA-8682-14128B0FCB33}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PWClassicSandbox", "PWClassic_Sandbox\PWClassicSandbox\PWClassicSandbox.vcproj", "{E9DCD16E-3067-400B-90BE-B8AC5117E978}"
 EndProject

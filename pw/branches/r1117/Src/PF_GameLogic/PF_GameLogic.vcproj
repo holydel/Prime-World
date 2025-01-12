@@ -163,7 +163,7 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="Shared.lib JsonCpp.lib zdll.lib dxguid.lib d3d9.lib d3dx9.lib dxerr.lib fmodex_vc.lib fmod_event.lib Ws2_32.lib Iphlpapi.lib libcurl.lib CensorDll.lib"
-				OutputFile="$(OutDir)\PF_GameLogic.dll"
+				OutputFile="C:\PW\UltraServer\Bin\PF_GameLogic.dll"
 				AdditionalLibraryDirectories="../../vendor\zlib\lib;../../vendor\DirectX\Lib\x86;../../vendor\fmod\api\lib;../../vendor\fmod\fmoddesignerapi\api\lib;../../vendor/libcurl/lib/Release;../../Tools/Censor/lib/Release;../../vendor/JsonCpp/lib/Release;../../src/release"
 				ModuleDefinitionFile="$(IntDir)\$(ProjectName).def"
 				GenerateDebugInformation="true"
