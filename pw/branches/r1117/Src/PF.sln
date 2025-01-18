@@ -412,6 +412,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UniServer", "UniServer", "{
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UniServerApp", "UniServerApp\UniServerApp.vcproj", "{217FC5A9-DD85-3211-B1A4-670D94DE0B7E}"
 	ProjectSection(ProjectDependencies) = postProject
+		{39AE0307-9E9E-4A5E-B962-25DE686C7CC2} = {39AE0307-9E9E-4A5E-B962-25DE686C7CC2}
 		{6426D44C-08D7-4AFA-8682-14128B0FCB33} = {6426D44C-08D7-4AFA-8682-14128B0FCB33}
 	EndProjectSection
 EndProject
@@ -1575,8 +1576,8 @@ Global
 		{217FC5A9-DD85-3211-B1A4-670D94DE0B7E}.ShippingSingleExe|Any CPU.ActiveCfg = Release|Win32
 		{217FC5A9-DD85-3211-B1A4-670D94DE0B7E}.ShippingSingleExe|Mixed Platforms.ActiveCfg = Release|Win32
 		{217FC5A9-DD85-3211-B1A4-670D94DE0B7E}.ShippingSingleExe|Mixed Platforms.Build.0 = Release|Win32
-		{217FC5A9-DD85-3211-B1A4-670D94DE0B7E}.ShippingSingleExe|Win32.ActiveCfg = Release|Win32
-		{217FC5A9-DD85-3211-B1A4-670D94DE0B7E}.ShippingSingleExe|Win32.Build.0 = Release|Win32
+		{217FC5A9-DD85-3211-B1A4-670D94DE0B7E}.ShippingSingleExe|Win32.ActiveCfg = ShippingSingleExe|Win32
+		{217FC5A9-DD85-3211-B1A4-670D94DE0B7E}.ShippingSingleExe|Win32.Build.0 = ShippingSingleExe|Win32
 		{E9DCD16E-3067-400B-90BE-B8AC5117E978}.Debug|Any CPU.ActiveCfg = Debug|Win32
 		{E9DCD16E-3067-400B-90BE-B8AC5117E978}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
 		{E9DCD16E-3067-400B-90BE-B8AC5117E978}.Debug|Mixed Platforms.Build.0 = Debug|Win32
@@ -1650,8 +1651,8 @@ Global
 		{9F6DA5F1-1CFE-41FF-89EA-9834862A52B6}.ShippingSingleExe|Any CPU.ActiveCfg = Release|Win32
 		{9F6DA5F1-1CFE-41FF-89EA-9834862A52B6}.ShippingSingleExe|Mixed Platforms.ActiveCfg = Release|Win32
 		{9F6DA5F1-1CFE-41FF-89EA-9834862A52B6}.ShippingSingleExe|Mixed Platforms.Build.0 = Release|Win32
-		{9F6DA5F1-1CFE-41FF-89EA-9834862A52B6}.ShippingSingleExe|Win32.ActiveCfg = Release|Win32
-		{9F6DA5F1-1CFE-41FF-89EA-9834862A52B6}.ShippingSingleExe|Win32.Build.0 = Release|Win32
+		{9F6DA5F1-1CFE-41FF-89EA-9834862A52B6}.ShippingSingleExe|Win32.ActiveCfg = ShippingSingleExe|Win32
+		{9F6DA5F1-1CFE-41FF-89EA-9834862A52B6}.ShippingSingleExe|Win32.Build.0 = ShippingSingleExe|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

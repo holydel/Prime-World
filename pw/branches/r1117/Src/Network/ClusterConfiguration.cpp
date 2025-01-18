@@ -6,17 +6,15 @@
 
 namespace 
 {
-  string coordinatorAddr = string(SERVER_IP) + ":" + SERVER_PORT;
-  string loginAddr = string(SERVER_IP) + ":" + LOGIN_PORT + "@10";
-  int firstServerPort = SERVER_PORT_INT;
+  string coordinatorAddr = "localhost:35000";
+  string loginAddr = "35001";
+  int firstServerPort = 35010;
   string frontendIPAddr = "localhost";
   string backendIPAddr = "localhost";
 
-  static string loginAddrDefault;
-  static string firstServerPortDefault;
   REGISTER_VAR( "coordinator_address", coordinatorAddr, STORAGE_GLOBAL );
-  REGISTER_VAR( "login_address", loginAddrDefault, STORAGE_GLOBAL );
-  REGISTER_VAR( "first_server_port", firstServerPortDefault, STORAGE_GLOBAL );
+  REGISTER_VAR( "login_address", loginAddr, STORAGE_GLOBAL );
+  REGISTER_VAR( "first_server_port", firstServerPort, STORAGE_GLOBAL );
   REGISTER_VAR( "frontend_ip_addr", frontendIPAddr, STORAGE_GLOBAL);
   REGISTER_VAR( "backend_ip_addr", backendIPAddr, STORAGE_GLOBAL);
 }
@@ -31,7 +29,7 @@ const string & GetCoordinatorAddress()
 
 const string & GetLoginServerAddress()
 {
-  return firstServerPortDefault;
+  return loginAddr;
 }
 
 int GetFirstServerPort()

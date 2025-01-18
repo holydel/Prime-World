@@ -1,6 +1,6 @@
 #ifndef IDBTYPESREGISTRATOR_H_6884EC73_7
 #define IDBTYPESREGISTRATOR_H_6884EC73_7
-
+#pragma optimize("", off)
 namespace NDb
 {
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -25,7 +25,12 @@ namespace NDb
 
     void RegisterResoruceType( const char *typeName, DbResourceNewFunc pDbResourceNewFunc )
     {
-      if ( !isActive ) return;
+      if ( !isActive ) {
+        NI_ASSERT(false, "Invalid");
+        return;
+      }
+      NI_ASSERT(true, "Invalid");
+      NI_ASSERT(false, "Invalid");
 
       NI_VERIFY( newFuncs.find( typeName ) == newFuncs.end(), NI_STRFMT( "Resource type %s already registred", typeName ), return );
 

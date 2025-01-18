@@ -62,7 +62,7 @@ struct SessionSettings
     : trustGap(0)
     , afkStepsCount(0)
     , afkStepsDisconnectCount(0)
-    , simulationStep(100)
+    , simulationStep(10)
     , dumpStepsMaxCount(2000)
     , disconnectionGap(0)
     , disconnectionWaterline(0)
