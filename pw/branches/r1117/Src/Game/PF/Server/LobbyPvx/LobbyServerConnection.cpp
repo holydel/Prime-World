@@ -317,4 +317,9 @@ EOperationResult::Enum ServerConnection::JoinSocialGame()
   return EOperationResult::InternalError;
 }
 
+lobby::EOperationResult::Enum ServerConnection::ConnectToWebLobby(const string & token)
+{
+  return EOperationResult::GameNotFound;
+}
+
 } //namespace lobby

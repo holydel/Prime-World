@@ -11,6 +11,7 @@ namespace lobby
 	typedef EOperationResult::Enum (lobby::IServerInstance::*TReconnectToCustomGame)( int gameId, int team, const string * heroId);
 	typedef EOperationResult::Enum (lobby::IServerInstance::*TCreateCustomGame)( int maxPlayers, int maxPlayersPerTeam, const string * mapId, int autostartPlayers);
 	typedef void (lobby::IServerInstance::*TChangeCustomGameSettings)( int team, int faction, const string * heroId);
+	typedef EOperationResult::Enum (lobby::IServerInstance::*TConnectToWebLobby)( const string * token);
 
 
     bool LIServerInstance::vcall( byte method_id, rpc::MethodCall& call, rpc::MethodCallStack& stack )
@@ -51,6 +52,12 @@ namespace lobby
 			{
 				EOperationResult::Enum result = rpc::VCall( stack, localObject.Get(), &lobby::IServerInstance::JoinSocialGame, popResult); 
 				call.Prepare(9).PushByValue(result);
+			}
+			} break;
+			case 10: { NI_PROFILE_BLOCK("lobby::IServerInstance::ConnectToWebLobby/10");
+			{
+				EOperationResult::Enum result = rpc::VCall( stack, localObject.Get(), TConnectToWebLobby(&lobby::IServerInstance::ConnectToWebLobby), popResult); 
+				call.Prepare(10).PushByValue(result);
 			}
 			} break;
 

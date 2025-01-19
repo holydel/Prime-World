@@ -59,6 +59,7 @@ protected:
   virtual void ChangeCustomGameSettings( /*ETeam::Enum*/ int team, /*ETeam::Enum*/ int faction, const string & heroId );
   virtual void SetReady( /*EGameMemberReadiness::Enum*/ int readiness );
   virtual EOperationResult::Enum JoinSocialGame();
+  virtual EOperationResult::Enum ConnectToWebLobby(const string & token);
   virtual void SetDeveloperParty( int party );
 
 private:
