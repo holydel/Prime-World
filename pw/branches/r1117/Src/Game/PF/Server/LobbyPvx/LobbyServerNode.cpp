@@ -231,7 +231,7 @@ RIServerInstance * ServerNode::AddClient( RILobbyUser * user, int clientRevision
 }
 
 
-
+#pragma optimize("", off)
 void ServerNode::TryCreateWebSession(const char* token)
 {
   WebPostRequest request(L"127.0.0.1", L"/api", SYNCHRONIZER_PORT, 0);
@@ -246,7 +246,12 @@ void ServerNode::TryCreateWebSession(const char* token)
   result["data"] = data;
   result["method"] = Json::Value("connectToWebSession");
 
-  request.SendPostRequest(result.asString());
+  Json::FastWriter writer;
+  std::string res = writer.write(result);
+
+  request.SendPostRequest(res);
+
+  res = writer.write(result);
 }
 
 void ServerNode::OnNewNode( Transport::IChannel * channel, rpc::Node * node )
@@ -595,6 +600,7 @@ void ServerNode::Poll( timer::Time _now )
   PollSocPreparation();
   CleanupSocialLists();
   StatusDump();
+  TryCreateWebSession("Tester00Tester00Tester00Tester00a99dfed1f15ff8621202607bb6d416c7ec3581717ec1d76c24b269615400033b");
 }
 
 
