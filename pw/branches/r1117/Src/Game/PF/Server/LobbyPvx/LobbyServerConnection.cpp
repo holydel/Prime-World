@@ -319,6 +319,11 @@ EOperationResult::Enum ServerConnection::JoinSocialGame()
 
 lobby::EOperationResult::Enum ServerConnection::ConnectToWebLobby(const string & token)
 {
+  StrongMT<ServerNode> locked = server.Lock();
+  if ( locked ) {
+    locked->TryCreateWebSession(token.c_str());
+  }
+
   return EOperationResult::GameNotFound;
 }
 

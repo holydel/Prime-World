@@ -169,6 +169,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				EnableIntrinsicFunctions="true"
+				AdditionalIncludeDirectories="..\..\Vendor\JsonCpp\include"
 				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="true"
 				WarningLevel="3"
@@ -215,12 +216,20 @@
 				RelativePath=".\shared_data.cpp"
 				>
 			</File>
+			<File
+				RelativePath=".\WebRequests.cpp"
+				>
+			</File>
 		</Filter>
 		<Filter
 			Name="Header Files"
 			Filter="h;hpp;hxx;hm;inl;inc;xsd"
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
+			<File
+				RelativePath=".\WebRequests.h"
+				>
+			</File>
 		</Filter>
 		<Filter
 			Name="Resource Files"

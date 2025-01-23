@@ -2,9 +2,6 @@
 #include "WebLauncher.h"
 #include <iostream>
 #include <map>
-#include <set>
-#include <json/json.h>
-#include "../PW_Game/server_ip.h"
 
 #pragma comment(lib, "wininet.lib")
 
@@ -1007,34 +1004,7 @@ WebLauncherPostRequest::~WebLauncherPostRequest()
 	InternetCloseHandle(hInternet);
 }
 
-std::string WideCharToMultiByteString(const wchar_t* wideCharString) {
-    int size_needed = WideCharToMultiByte(CP_UTF8, 0, wideCharString, -1, NULL, 0, NULL, NULL);
-    std::string result(size_needed, 0);
-    WideCharToMultiByte(CP_UTF8, 0, wideCharString, -1, &result[0], size_needed, NULL, NULL);
-    return result;
-}
-std::string Fix1251Encoding(std::string utf8String)
-{
-  int utf8Length = static_cast<int>(utf8String.length());
-  int wideCharLength = MultiByteToWideChar(CP_UTF8, 0, utf8String.c_str(), utf8Length, NULL, 0);
 
-  wchar_t* wideCharString = new wchar_t[wideCharLength + 1];
-  MultiByteToWideChar(CP_UTF8, 0, utf8String.c_str(), utf8Length, wideCharString, wideCharLength);
-  wideCharString[wideCharLength] = L'\0';
-
-  int win1251Length = WideCharToMultiByte(1251, 0, wideCharString, -1, NULL, 0, NULL, NULL);
-  char* win1251String = new char[win1251Length];
-  WideCharToMultiByte(1251, 0, wideCharString, -1, win1251String, win1251Length, NULL, NULL);
-
-  return win1251String;
-}
-
-static Json::Value ParseJson(const char* json) {
-  Json::Reader jsonReader;
-  Json::Value root;
-  bool isOk = jsonReader.parse(json, root, false);
-  return isOk ? root : Json::Value();
-}
 
 
 std::string WebLauncherPostRequest::SendPostRequest(const std::string& jsonData) {
@@ -1710,7 +1680,7 @@ static bool CheckPlayerInfo(const Json::Value& playerInfo)
   return true;
 }
 
-WebLauncherPostRequest::WebLoginResponse WebLauncherPostRequest::GetSessionData(const char* token)
+WebLauncherPostRequest::WebLoginResponse WebLauncherPostRequest::GetSessionData(const char* token, const char* apiKey)
 {
   WebLoginResponse res;
   res.response = "";
@@ -1725,7 +1695,7 @@ WebLauncherPostRequest::WebLoginResponse WebLauncherPostRequest::GetSessionData(
   g_sessionToken = sessionToken.c_str();
   g_playerToken = playerKey.c_str();
 
-  sprintf(jsonBuff,"{\"method\":\"connectToWebSession\",\"data\":{\"sessionToken\":\"%s\",\"playerKey\":\"%s\"}}", sessionToken.c_str(), playerKey.c_str());
+  sprintf(jsonBuff,"{\"method\":\"connectToWebSession\",\"data\":{\"sessionToken\":\"%s\",\"playerKey\":\"%s\",\"apiKey\":\"%s\"}}", sessionToken.c_str(), playerKey.c_str());
   OutputDebugStringA(jsonBuff);
   const std::string jsonData = jsonBuff;
 

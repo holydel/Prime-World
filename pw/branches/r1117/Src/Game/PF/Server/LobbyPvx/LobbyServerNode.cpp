@@ -41,6 +41,7 @@
 
 #include "System/InlineProfiler.h"
 #include "LobbyLog.h"
+#include <Shared/WebRequests.h>
 
 
 
@@ -231,6 +232,23 @@ RIServerInstance * ServerNode::AddClient( RILobbyUser * user, int clientRevision
 
 
 
+void ServerNode::TryCreateWebSession(const char* token)
+{
+  WebPostRequest request(L"127.0.0.1", L"/api", SYNCHRONIZER_PORT, 0);
+  //sprintf(jsonBuff,"{\"method\":\"connectToWebSession\",\"data\":{\"sessionToken\":\"%s\",\"playerKey\":\"%s\",\"apiKey\":\"%s\"}}", sessionToken.c_str(), playerKey.c_str());
+
+  Json::Value data;
+  data["sessionToken"] = Json::Value (std::string(token, 32));
+  data["playerKey"] = Json::Value (std::string(token + 32));
+  data["apiKey"] = Json::Value (API_KEY);
+
+  Json::Value result;
+  result["data"] = data;
+  result["method"] = Json::Value("connectToWebSession");
+
+  request.SendPostRequest(result.asString());
+}
+
 void ServerNode::OnNewNode( Transport::IChannel * channel, rpc::Node * node )
 {
   NI_PROFILE_FUNCTION;
@@ -417,13 +435,17 @@ void ServerNode::GetClientUsername( Transport::TClientId userId, wstring & usern
 
 
 
-StrongMT<ServerConnection> ServerNode::NewConnection( Transport::TClientId clientId )
+StrongMT<ServerConnection> ServerNode::NewConnection( Transport::TClientId clientId, wstring & username )
 {
   StrongMT<ServerConnection> conn = new ServerConnection( config, this, clientId );
 
   SUserInfo info;
   info.userId = clientId;
-  GetClientUsername( clientId, info.nickname );
+  if (username.empty()) {
+    GetClientUsername( clientId, info.nickname );
+  } else {
+    info.nickname = username;
+  }
   info.zzimaSex = ESex::Male;
 
   conn->SetUserInfo( info );
