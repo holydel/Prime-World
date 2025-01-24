@@ -1270,6 +1270,42 @@
 			<scriptGroupName></scriptGroupName>
 			<scriptName></scriptName>
 		</Item>
+		<Item>
+			<gameObject href="/Maps/Test/PlaneMap/Portal/portal1.USBL" />
+			<lockMap>true</lockMap>
+			<offset>
+				<rotationX>0</rotationX>
+				<rotationY>0</rotationY>
+				<rotationZ>0</rotationZ>
+				<scaleX>1</scaleX>
+				<scaleY>1</scaleY>
+				<scaleZ>1</scaleZ>
+				<translateX>27.28778</translateX>
+				<translateY>32.76778</translateY>
+				<translateZ>0</translateZ>
+			</offset>
+			<player>None</player>
+			<scriptGroupName></scriptGroupName>
+			<scriptName></scriptName>
+		</Item>
+		<Item>
+			<gameObject href="/Maps/Test/PlaneMap/GiftGlyph/PrimeRune.SSO" />
+			<lockMap>true</lockMap>
+			<offset>
+				<rotationX>0</rotationX>
+				<rotationY>0</rotationY>
+				<rotationZ>0</rotationZ>
+				<scaleX>1</scaleX>
+				<scaleY>1</scaleY>
+				<scaleZ>1</scaleZ>
+				<translateX>25.74884</translateX>
+				<translateY>41.75327</translateY>
+				<translateZ>0</translateZ>
+			</offset>
+			<player>None</player>
+			<scriptGroupName></scriptGroupName>
+			<scriptName></scriptName>
+		</Item>
 	</objects>
 	<ObjectsLayerFileName>/Maps/Test/PlaneMap/_.objectheight</ObjectsLayerFileName>
 	<pointLights>
