@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EffectSwitcher>
+	<BackLink DBID="/Items/Talents/Level6/G291_TeleportBackToCaster.ABLT" Count="1" />
+	<BackLink DBID="/Maps/Test/PlaneMap/Portal/G291_TeleportBackToCaster.ABLT" Count="2" />
+	<BackLink DBID="/Maps/Test/PlaneMap/Portal/G291_TeleportBackToCaster_1.ABLT" Count="2" />
+	<deathType>Manual</deathType>
+	<effectOnInvisible href="/Effects/Environment/TerrainPortal/EntryAlly/_EntryEnemy.EFFT" />
+	<effectOnVisible href="/Effects/Environment/TerrainPortal/EntryAlly/_EntryAlly.EFFT" />
+	<enableCondition href="" />
+	<isVisibleUnderWarfog>false</isVisibleUnderWarfog>
+	<lifeTime>0</lifeTime>
+	<logic>FactionVisibility</logic>
+</EffectSwitcher>

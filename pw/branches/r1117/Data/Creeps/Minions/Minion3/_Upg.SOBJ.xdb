@@ -13,6 +13,7 @@
 	<BackLink DBID="/Maps/Test/BalanseTest/Spawners/DummyTest_5.NCSPN" Count="1" />
 	<BackLink DBID="/Maps/Test/BalanseTest/Spawners/DummyTest_6.NCSPN" Count="1" />
 	<BackLink DBID="/Maps/Test/BalanseTest/Spawners/DummyTest_9.NCSPN" Count="1" />
+	<BackLink DBID="/Creeps/Minions/Minion3/PVP_FIRE.CREEP" Count="1" />
 	<attached>
 		<Item>
 			<attachFlags>15</attachFlags>

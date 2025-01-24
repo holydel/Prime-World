@@ -133,7 +133,7 @@ REGISTER_DEV_VAR( "video_FPS", g_VideoFPS, STORAGE_NONE);
 REGISTER_DEV_VAR( "video_recording_time", g_RecordingTime, STORAGE_NONE);
 REGISTER_DEV_VAR( "nullrender", s_NullRender, STORAGE_NONE);
 REGISTER_DEV_VAR( "nullrender_no_log_box", g_NullRenderNoLogBox, STORAGE_NONE);
-REGISTER_DEV_VAR( "local_game", s_localGame, STORAGE_NONE);
+//REGISTER_DEV_VAR( "local_game", s_localGame, STORAGE_NONE);
 REGISTER_DEV_VAR( "skipFramesEnable", s_skipFrames, STORAGE_NONE);
 REGISTER_DEV_VAR( "skipFramesBarrier", s_skipFramesBarrier, STORAGE_NONE);
 
@@ -1220,7 +1220,6 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
     int versionMajor = VERSION_MAJOR;
     int versionMinor = VERSION_MINOR;
     int versionPatch = VERSION_PATCH;
-    
     char versionStrBuff[64] = {};
 
     sprintf_s(versionStrBuff,"%d.%d.%d",versionMajor, versionMinor, versionPatch);
@@ -1230,52 +1229,65 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
       return 0;
     }
 
+    if (protocolMethod == "checkInstall") {
+      WebLauncherPostRequest syncCheckConnectionRequest;
+      if (syncCheckConnectionRequest.CheckConnectionRequest(protocolToken)) {
+        systemLog( NLogg::LEVEL_MESSAGE ).Trace("Check install completed for %s", protocolToken);
+      } else {
+        ShowLocalizedErrorMB( L"Error", L"Sync-server connection failed - not valid response" );
+      }
+      return 0;
+    }
+
     WebLauncherPostRequest::WebLoginResponse response;
     if (protocolMethod == "runGame" || protocolMethod == "reconnect") {
-      WebLauncherPostRequest cprequest(L"127.0.0.1", L"/api", SYNCHRONIZER_PORT, 0);
+      WebLauncherPostRequest cprequest();
       cprequest.CreateDebugSession();
-      WebLauncherPostRequest rprequest(L"127.0.0.1", L"/api", SYNCHRONIZER_PORT, 0);
+      WebLauncherPostRequest rprequest();
       response = rprequest.GetSessionData(protocolToken);
+      if (response.retCode == WebLauncherPostRequest::LoginResponse_WEB_FAILED_CONNECTION) {
+        useMirrorServer = true;
+        WebLauncherPostRequest mirror_rprequest;
+        response = mirror_rprequest.GetSessionData(protocolToken);
+      }
     } else {
       WebLauncherPostRequest prequest;
       response = prequest.GetNickName(protocolToken);
     }
 
     if (response.retCode == WebLauncherPostRequest::LoginResponse_FAIL) {
+      systemLog( NLogg::LEVEL_MESSAGE ).Trace("Failed to connect to game server: %s", response.response.c_str());
+      ShowLocalizedErrorMB( L"ConnectionError", L"Failed to connect to game server!" );
+      return 0;
+    }
+
+    if (response.retCode == WebLauncherPostRequest::LoginResponse_FAIL) {
       // Login failed
-      ShowLocalizedErrorMB( L"StartViaLauncher", L"Login response failed! Please start the game via the web-launcher. https://playpw.fun" );
+      systemLog( NLogg::LEVEL_MESSAGE ).Trace("Login response failed: %s", response.response.c_str());
+      ShowLocalizedErrorMB( L"StartViaLauncher", L"Login response failed!" );
       return 0;
     }
     if (response.retCode == WebLauncherPostRequest::LoginResponse_BLOCK) {
       // Login failed
+      systemLog( NLogg::LEVEL_MESSAGE ).Trace("Account is blocked: %s", response.response.c_str());
       ShowLocalizedErrorMB( L"StartViaLauncher", L"Account is blocked!" );
       return 0;
     }
     if (response.retCode == WebLauncherPostRequest::LoginResponse_OFFLINE) {
       // Web is offline
+      systemLog( NLogg::LEVEL_MESSAGE ).Trace("Web-launcher is offline: %s", response.response.c_str());
       ShowLocalizedErrorMB( L"WebOffline", L"Web-launcher is offline" );
       return 0;
     }
     if (response.retCode == WebLauncherPostRequest::LoginResponse_WEB_FAIL) {
       systemLog( NLogg::LEVEL_MESSAGE ).Trace("Failed connection with reason: %s", response.response.c_str());
-      ShowLocalizedErrorMB( L"Connection failed", L"Connection failed! Please start the game via the web-launcher" );
+      ShowLocalizedErrorMB( L"Connection failed", L"Connection failed!" );
       return 0;
     }
 
 
     if (response.retCode == WebLauncherPostRequest::LoginResponse_OK) {
-      if (protocolMethod == "checkInstall") {
-        WebLauncherPostRequest syncCheckConnectionRequest(SERVER_IP_W, L"/api", SERVER_PORT_INT - 8, 0);
-        if (syncCheckConnectionRequest.CheckConnectionRequest()) {
-          systemLog( NLogg::LEVEL_MESSAGE ).Trace("Check install completed for %s", response.response.c_str());
-
-          WebLauncherPostRequest validateInstallRequest;
-          validateInstallRequest.ValidateInstallationRequest(protocolToken);
-        } else {
-          ShowLocalizedErrorMB( L"Error", L"Sync-server connection failed - not valid response" );
-        }
-        return 0;
-      } else {
+      {
         // Old connection method
         if (allTokens.size() < 5) {
           ShowLocalizedErrorMB( L"Error", L"Not enough protocol parameters" );
@@ -1286,7 +1298,7 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
         g_devLogin = currentLogin.c_str();
         int selectedHeroID = atoi(allTokens[4].c_str());
 
-        WebLauncherPostRequest syncRegisterRequest(SERVER_IP_W, L"/api", SERVER_PORT_INT - 8, 0);
+        WebLauncherPostRequest syncRegisterRequest;
 
         string gameName = "";
         WebLauncherPostRequest::RegisterSessionRequest registerInSessionResponse;
@@ -1314,7 +1326,7 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
           registerInSessionResponse = syncRegisterRequest.RegisterInSession(response.response.c_str(), selectedHeroID, "testSessionToken", gameName);
           retryCount++;
           if (retryCount >= REGISTER_IN_SESSION_MAX_RETRY_COUNT) {
-            ShowLocalizedErrorMB( L"Error", L"Sync-server connection failed - max retry count reached" );
+            ShowLocalizedErrorMB( L"Error", L"Sync-server connection failed - max retry count reached! Please report to PWClassic support" );
             return 0;
           }
         }
@@ -1345,12 +1357,12 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
             break;
           }
           if (rrc >= REGISTER_IN_SESSION_MAX_RETRY_COUNT - 1) {
-            ShowLocalizedErrorMB( L"Error", L"Sync-server connection failed - max retry count reached" );
+            ShowLocalizedErrorMB( L"Error", L"Sync-server connection failed - max retry count reached. Please report to PWClassic support" );
             return 0;
           }
           Sleep(1000);
-          WebLauncherPostRequest waitSessionNameRequest(SERVER_IP_W, L"/api", SERVER_PORT_INT - 8, 0);
-          waitSessionNameRequest.GetGameNameForConnection(response.response.c_str());
+          WebLauncherPostRequest waitSessionNameRequest;
+          waitSessionNameRequest.GetGameNameForConnection(protocolToken);
         }
 
         const char * mapId = CmdLineLite::Instance().GetStringKey( "mapId", "" );

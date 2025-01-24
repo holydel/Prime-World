@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BasicEffectStandalone>
 	<BackLink DBID="/Items/Talents/Class/Gunner/appl_A4_SendRocket.APLR" Count="1" />
+	<BackLink DBID="/Items/Talents/Class/Mage/appl_A4_SendRocket.APLR" Count="1" />
 	<component href="/Effects/Debuffs/RocketLaunch/_RocketHitUpTRS.PRXY" />
 	<deathType>Anim</deathType>
 	<enableCondition href="" />

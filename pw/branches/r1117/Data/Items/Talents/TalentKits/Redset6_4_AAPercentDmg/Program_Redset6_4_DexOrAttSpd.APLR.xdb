@@ -61,9 +61,9 @@
 					<caption>DexOrAttSpd</caption>
 					<customApplyType>Maximize</customApplyType>
 					<enabled>
-						<compiledString>FSEAAAACAAAAVQAAAGsAAABBZGRfRGV4T3JBdHRTcGRfUmVkc2V0Nl80Q291bnRlcgBVi+yD7AyLRQiLEItNCIuCjAAAAP/Qi00IixGLTQiLgsAAAADdXfj/0Nxd+N/g9sRBeitoAAAAAItNCIsRi00Ii4KIAQAA/9DcHY0AAADf4PbERHoJx0X0AQAAAOsHx0X0AAAAAIpF9IvlXcMAAAAAAAAAQA==</compiledString>
+						<compiledString>FSEAAAACAAAA6QAAAP8AAABBZGRfRGV4T3JBdHRTcGRfUmVkc2V0Nl80Q291bnRlcgBVi+yD7BhWagSLRQiLEItNCIuCLAEAAP/QD7bwahGLTQiLEYtNCIuCLAEAAP/QD7bIO/F+DMdF/AEAAADpgAAAAGoEi1UIiwKLTQiLkCwBAAD/0g+28GoOi0UIixCLTQiLgiwBAAD/0A+2yDvxfQnHRfgAAAAA60OLVQiLAotNCIuQjAAAAP/Si0UIixCLTQiLgsAAAADdXfD/0Nxd8N/g9sRBegnHRewBAAAA6wfHRewAAAAAi03siU34i1X4iVX8g338AHQraAAAAACLRQiLEItNCIuCiAEAAP/Q3B0iAQAA3+D2xER6CcdF6AEAAADrB8dF6AAAAACKRehei+VdwwAAAAAAAABA</compiledString>
 						<returnType>bool</returnType>
-						<sString>sBaseAttackSpeed&gt;=sBaseDexterity &amp;&amp; sender.vAdd_DexOrAttSpd_Redset6_4Counter == 2</sString>
+						<sString>(pFirst-&gt;IsRecommended(4) &gt; pFirst-&gt;IsRecommended(17) ? 1 : pFirst-&gt;IsRecommended(4) &lt; pFirst-&gt;IsRecommended(14) ? 0 : sBaseAttackSpeed&gt;=sBaseDexterity) &amp;&amp; sender.vAdd_DexOrAttSpd_Redset6_4Counter == 2</sString>
 					</enabled>
 					<formulaName></formulaName>
 					<LoggingEvent>-1</LoggingEvent>
@@ -110,9 +110,9 @@
 					<caption>Add_Dex</caption>
 					<customApplyType>Maximize</customApplyType>
 					<enabled>
-						<compiledString>FSEAAAACAAAAVQAAAGsAAABBZGRfRGV4T3JBdHRTcGRfUmVkc2V0Nl80Q291bnRlcgBVi+yD7AyLRQiLEItNCIuCjAAAAP/Qi00IixGLTQiLgsAAAADdXfj/0Nxd+N/g9sRBdStoAAAAAItNCIsRi00Ii4KIAQAA/9DcHY0AAADf4PbERHoJx0X0AQAAAOsHx0X0AAAAAIpF9IvlXcMAAAAAAAAAQA==</compiledString>
+						<compiledString>FSEAAAACAAAA6QAAAP8AAABBZGRfRGV4T3JBdHRTcGRfUmVkc2V0Nl80Q291bnRlcgBVi+yD7BhWagSLRQiLEItNCIuCLAEAAP/QD7bwahGLTQiLEYtNCIuCLAEAAP/QD7bIO/F+DMdF/AEAAADpgAAAAGoEi1UIiwKLTQiLkCwBAAD/0g+28GoOi0UIixCLTQiLgiwBAAD/0A+2yDvxfQnHRfgAAAAA60OLVQiLAotNCIuQjAAAAP/Si0UIixCLTQiLgsAAAADdXfD/0Nxd8N/g9sRBegnHRewBAAAA6wfHRewAAAAAi03siU34i1X4iVX8g338AHUraAAAAACLRQiLEItNCIuCiAEAAP/Q3B0iAQAA3+D2xER6CcdF6AEAAADrB8dF6AAAAACKRehei+VdwwAAAAAAAABA</compiledString>
 						<returnType>bool</returnType>
-						<sString>sBaseAttackSpeed &lt; sBaseDexterity &amp;&amp; sender.vAdd_DexOrAttSpd_Redset6_4Counter == 2</sString>
+						<sString>!(pFirst-&gt;IsRecommended(4) &gt; pFirst-&gt;IsRecommended(17) ? 1 : pFirst-&gt;IsRecommended(4) &lt; pFirst-&gt;IsRecommended(14) ? 0 : sBaseAttackSpeed&gt;=sBaseDexterity) &amp;&amp; sender.vAdd_DexOrAttSpd_Redset6_4Counter == 2</sString>
 					</enabled>
 					<formulaName></formulaName>
 					<LoggingEvent>-1</LoggingEvent>
@@ -159,9 +159,9 @@
 					<caption>+ Add_AttackSpeed</caption>
 					<customApplyType>Maximize</customApplyType>
 					<enabled>
-						<compiledString>FSEAAAACAAAAVQAAAGsAAABBZGRfRGV4T3JBdHRTcGRfUmVkc2V0Nl80Q291bnRlcgBVi+yD7AyLRQiLEItNCIuCjAAAAP/Qi00IixGLTQiLgsAAAADdXfj/0Nxd+N/g9sRBeitoAAAAAItNCIsRi00Ii4KIAQAA/9DcHY0AAADf4PbERHoJx0X0AQAAAOsHx0X0AAAAAIpF9IvlXcMAAAAAAAAAQA==</compiledString>
+						<compiledString>FSEAAAACAAAA6QAAAP8AAABBZGRfRGV4T3JBdHRTcGRfUmVkc2V0Nl80Q291bnRlcgBVi+yD7BhWagSLRQiLEItNCIuCLAEAAP/QD7bwahGLTQiLEYtNCIuCLAEAAP/QD7bIO/F+DMdF/AEAAADpgAAAAGoEi1UIiwKLTQiLkCwBAAD/0g+28GoOi0UIixCLTQiLgiwBAAD/0A+2yDvxfQnHRfgAAAAA60OLVQiLAotNCIuQjAAAAP/Si0UIixCLTQiLgsAAAADdXfD/0Nxd8N/g9sRBegnHRewBAAAA6wfHRewAAAAAi03siU34i1X4iVX8g338AHQraAAAAACLRQiLEItNCIuCiAEAAP/Q3B0iAQAA3+D2xER6CcdF6AEAAADrB8dF6AAAAACKRehei+VdwwAAAAAAAABA</compiledString>
 						<returnType>bool</returnType>
-						<sString>sBaseAttackSpeed &gt;= sBaseDexterity &amp;&amp; sender.vAdd_DexOrAttSpd_Redset6_4Counter == 2</sString>
+						<sString>(pFirst-&gt;IsRecommended(4) &gt; pFirst-&gt;IsRecommended(17) ? 1 : pFirst-&gt;IsRecommended(4) &lt; pFirst-&gt;IsRecommended(14) ? 0 : sBaseAttackSpeed&gt;=sBaseDexterity) &amp;&amp; sender.vAdd_DexOrAttSpd_Redset6_4Counter == 2</sString>
 					</enabled>
 					<formulaName></formulaName>
 					<LoggingEvent>-1</LoggingEvent>

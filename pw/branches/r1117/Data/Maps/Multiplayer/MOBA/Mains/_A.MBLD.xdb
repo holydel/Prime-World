@@ -11,7 +11,7 @@
 	<BackLink DBID="/Maps/Test/BalanseTest/_.ADMP" Count="1" />
 	<BackLink DBID="/Maps/Test/CoopCreaturesTest/_.ADMP" Count="1" />
 	<BackLink DBID="/Maps/Test/Duel/_.ADMP" Count="1" />
-	<BackLink DBID="/Maps/Test/PlaneMap/_.ADMP" Count="1" />
+	<BackLink DBID="/Maps/Test/PlaneMap/_.ADMP" Count="2" />
 	<BackLink DBID="/Maps/Test/Splines/_.ADMP" Count="1" />
 	<BackLink DBID="/Maps/Test/Test5x5/_.ADMP" Count="1" />
 	<abilities>

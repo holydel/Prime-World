@@ -16,7 +16,7 @@
 		<sString>true</sString>
 	</enabled>
 	<flag>0</flag>
-	<formulaName></formulaName>
+	<formulaName>AssassinStopMark</formulaName>
 	<lifeTime>
 		<compiledString>FQUAAAABAAAAEgAAAFNURVAAVYvsUYtFDFCLTQhRaAAAAACLVRCLAotNEItQUP/S3MDZXfzZRfyL5V3D</compiledString>
 		<returnType>float</returnType>

@@ -6,9 +6,13 @@
 
 namespace 
 {
-  string coordinatorAddr = "localhost:35000";
-  string loginAddr = "35001";
-  int firstServerPort = 35010;
+  string coordinatorAddr = string(SERVER_IP) + ":" + SERVER_PORT;
+  string loginAddr = string(SERVER_IP) + ":" + LOGIN_PORT + "@10";
+  int firstServerPort = SERVER_PORT_INT;
+
+  string mirror_coordinatorAddr = string(MIRROR_SERVER_IP) + ":" + SERVER_PORT;
+  string mirror_loginAddr = string(MIRROR_SERVER_IP) + ":" + LOGIN_PORT + "@10";
+
   string frontendIPAddr = "localhost";
   string backendIPAddr = "localhost";
 
@@ -24,12 +28,12 @@ namespace Network
 
 const string & GetCoordinatorAddress()
 {
-  return coordinatorAddr;
+  return useMirrorServer ? mirror_coordinatorAddr : coordinatorAddr;
 }
 
 const string & GetLoginServerAddress()
 {
-  return loginAddr;
+  return useMirrorServer ? mirror_loginAddr : loginAddr;
 }
 
 int GetFirstServerPort()

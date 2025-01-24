@@ -50,6 +50,8 @@
 	<BackLink DBID="/Summons/Tiger/_Parent.SUMMONED" Count="1" />
 	<BackLink DBID="/Summons/Turret/_.SUMMONED" Count="1" />
 	<BackLink DBID="/Summons/Wolf/PvE_Coop1.CREEP" Count="2" />
+	<BackLink DBID="/Items/Talents/Class/Prince/status_A4_1_curse.APLR" Count="1" />
+	<BackLink DBID="/Items/Talents/Class/Inventor/Ability_A1.TALENT" Count="3" />
 	<applyTarget>ApplicatorTarget</applyTarget>
 	<cancelInvisibility>false</cancelInvisibility>
 	<caption> -- Base Attack Damage (Hero)</caption>
@@ -59,7 +61,7 @@
 		<sString>random ( f2l(sDamageMin), f2l(sDamageMax))</sString>
 	</damage>
 	<damageMode>11</damageMode>
-	<damageType>Native</damageType>
+	<damageType>Energy</damageType>
 	<enabled>
 		<compiledString>FQAAAAAAAAAAVYvssAFdww==</compiledString>
 		<returnType>bool</returnType>

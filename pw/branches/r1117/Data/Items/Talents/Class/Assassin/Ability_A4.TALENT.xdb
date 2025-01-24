@@ -15,7 +15,6 @@
 	<BackLink DBID="/Test/Talents/Assassin/Elite_Int.TALENTSET" Count="1" />
 	<BackLink DBID="/Test/Talents/Assassin/Epic_Int.TALENTSET" Count="1" />
 	<BackLink DBID="/Test/Talents/Assassin/Epic_Str.TALENTSET" Count="1" />
-	<BackLink DBID="/Items/Talents/Class/Assassin/Ability_A4_1.TALENT" Count="2" />
 	<BackLink DBID="/Items/Talents/Assassin.TALENTSET" Count="1" />
 	<activationConditions />
 	<activeCustomTrigger>true</activeCustomTrigger>
@@ -916,9 +915,9 @@
 					<UnitConstant>
 						<name>Haste_StartCondition</name>
 						<var>
-							<compiledString>FWQAAAAGAAAAawAAAIQAAAC+AAAA1wAAAA0BAAAoAQAAQXNzYXNzaW5fQTNfMnUAAEFzc2Fzc2luX0EzXzJ1AABBc3Nhc3Npbl9BM3UAAAAAQXNzYXNzaW5fQTN1AAAAAEFiaWxpdHlUYXJnZXQAAABBc3Nhc3Npbl9NYXJrT2ZQcmV5AFWL7IPsGGgAAAAAi0UIixCLTQiLgqgBAAD/0IXAdCpoEAAAAItNCIsRi00Ii4KoAQAA/9CJRfyLTfyLEYtN/ItCBP/QiEX76wTGRfsAD7ZN+4XJD4WNAAAAaCAAAACLVQiLAotNCIuQqAEAAP/ShcB0KmgwAAAAi0UIixCLTQiLgqgBAAD/0IlF9ItN9IsRi030i0IE/9CIRfPrBMZF8wAPtk3zhcl0NWhAAAAAi1UQiwKLTRCLUEz/0olF7GoAi0UQUGhQAAAAi03sixGLTeyLgpwBAAD/0DtFEHUJx0XoAAAAAOsHx0XoAQAAANtF6IvlXcM=</compiledString>
+							<compiledString>FWQAAAAGAAAAawAAAIQAAAC6AAAA0wAAAAkBAAAkAQAAQXNzYXNzaW5fQTNfMnUAAEFzc2Fzc2luX0EzXzJ1AABBc3Nhc3Npbl9BM3UAAAAAQXNzYXNzaW5fQTN1AAAAAEFiaWxpdHlUYXJnZXQAAABBc3Nhc3Npbl9NYXJrT2ZQcmV5AFWL7IPsGGgAAAAAi0UIixCLTQiLgqgBAAD/0IXAdCpoEAAAAItNCIsRi00Ii4KoAQAA/9CJRfyLTfyLEYtN/ItCBP/QiEX76wTGRfsAD7ZN+4XJdU9oIAAAAItVCIsCi00Ii5CoAQAA/9KFwHQqaDAAAACLRQiLEItNCIuCqAEAAP/QiUX0i030ixGLTfSLQgT/0IhF8+sExkXzAA+2TfOFyXQ+aEAAAACLVRCLAotNEItQTP/SiUXsagCLRRBQaFAAAACLTeyLEYtN7IuCnAEAAP/QO0UQdAnHRegBAAAA6wfHRegAAAAA20Xoi+Vdww==</compiledString>
 							<returnType>float</returnType>
-							<sString>tal("Assassin_A3_2u")||tal("Assassin_A3u") &amp;&amp; appl.oAbilityTarget.applAssassin_MarkOfPrey(GLOBAL) != pMisc</sString>
+							<sString>(tal("Assassin_A3_2u")||tal("Assassin_A3u")) &amp;&amp; appl.oAbilityTarget.applAssassin_MarkOfPrey(GLOBAL) != pMisc</sString>
 						</var>
 					</UnitConstant>
 				</Item>

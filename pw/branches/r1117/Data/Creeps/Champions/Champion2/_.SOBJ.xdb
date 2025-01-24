@@ -20,6 +20,8 @@
 	<BackLink DBID="/Maps/PvE/Dungeon2/Spawners/room14.NCSPN" Count="1" />
 	<BackLink DBID="/Maps/Test/BalanseTest/Spawners/Duel_CSpawn.NCSPN" Count="2" />
 	<BackLink DBID="/Maps/Test/PlaneMap/spawners/Test_Neutral.NCSPN" Count="1" />
+	<BackLink DBID="/Creeps/Champions/Champion2/PVP_1.CREEP" Count="1" />
+	<BackLink DBID="/Creeps/Champions/Champion2/PVP_2.CREEP" Count="1" />
 	<attached>
 		<Item>
 			<attachFlags>15</attachFlags>

@@ -199,7 +199,7 @@
 	<description textref="/Items/Talents/Level3/G477_AOE_DMG.TALENT_description.txt" />
 	<devPoints>1</devPoints>
 	<dispatch href="" />
-	<flags>1</flags>
+	<flags>3</flags>
 	<forceBonus>0</forceBonus>
 	<image href="/UI/Styles/Icons/Talents/_477.ITEX" />
 	<imageSecondState href="" />

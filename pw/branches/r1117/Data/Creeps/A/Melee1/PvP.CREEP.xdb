@@ -5,7 +5,7 @@
 	<BackLink DBID="/Maps/Multiplayer/MOBA/Spawners/ADown.CSPN" Count="3" />
 	<BackLink DBID="/Maps/Multiplayer/MOBA/Spawners/AUp.CSPN" Count="3" />
 	<BackLink DBID="/Maps/Test/BalanseTest/Spawners/A_Test.CSPN" Count="1" />
-	<BackLink DBID="/Maps/Test/PlaneMap/_.ADMP" Count="1" />
+	<BackLink DBID="/Maps/Test/PlaneMap/_.ADMP" Count="2" />
 	<BackLink DBID="/Maps/Test/Splines/_.ADMP" Count="2" />
 	<BackLink DBID="/Maps/Test/Test5x5/_.ADMP" Count="6" />
 	<BackLink DBID="/Maps/Tutorial/Spawners/AT.CSPN" Count="3" />

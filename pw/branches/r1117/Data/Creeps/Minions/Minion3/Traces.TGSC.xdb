@@ -2,6 +2,7 @@
 <TraceGenSceneComponent>
 	<BackLink DBID="/Creeps/Minions/Minion3/_.SOBJ" Count="1" />
 	<BackLink DBID="/Creeps/Minions/Minion3/_Upg.SOBJ" Count="1" />
+	<BackLink DBID="/Creeps/Minions/Minion3/_Elite.SOBJ" Count="1" />
 	<attached />
 	<caption>Traces</caption>
 	<defaultLocatorName>Ground</defaultLocatorName>

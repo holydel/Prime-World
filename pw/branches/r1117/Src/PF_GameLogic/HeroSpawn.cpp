@@ -462,7 +462,7 @@ namespace NWorld
         }
       }
     }
-    WebLauncherPostRequest prequest(SERVER_IP_W, L"/api", SERVER_PORT_INT - 8, 0);
+    WebLauncherPostRequest prequest;
     std::map<std::wstring, WebLauncherPostRequest::WebUserData> legacyUsersData = g_usersData.empty() ? prequest.GetUsersData(nickNames, heroNames) : prequest.GetLegacyUsersData(nickNames, heroNames);
 
     std::map<std::wstring, WebLauncherPostRequest::WebUserData>& usersData = g_usersData.empty() ? legacyUsersData : g_usersData;
@@ -516,19 +516,22 @@ namespace NWorld
 
 		//get tallent set by NickName and HeroID
 
+    WebLauncherPostRequest::WebUserData userData;
+    userData.userId = -1;
 		if (players[it->playerId].playerType == NCore::EPlayerType::Human) {
-      WebLauncherPostRequest::WebUserData userData;
 
-			if (!players[it->playerId].nickname.empty()) {
+      if (!players[it->playerId].nickname.empty()) {
+        std::wstring nick = players[it->playerId].nickname.c_str() + 1;
+        userData = usersData[nick];
+
         WebLauncherPostRequest::PlayerInfoByUserId pInfo;
         pInfo.nickname = players[it->playerId].nickname.c_str() + 1;
         pInfo.teamId = (int)players[it->playerId].teamID;
         pInfo.isLeaver = false;
+        pInfo.userId = userData.userId;
 
         userIdToNicknameMap[players[it->playerId].userID] = pInfo;
 
-        std::wstring nick = players[it->playerId].nickname.c_str() + 1;
-        userData = usersData[nick];
         heroSpawnDesc.playerInfo.heroRating = (int)userData.currentRating;
         heroSpawnDesc.playerInfo.ratingDeltaPrediction.onVictory = userData.victoryRating - userData.currentRating;
         heroSpawnDesc.playerInfo.ratingDeltaPrediction.onDefeat = userData.lossRating - userData.currentRating;
@@ -627,7 +630,10 @@ namespace NWorld
 
       }
 
-        CreateHero( pWorld, heroSpawnDesc );
+        PFBaseHero* spawnedHero = CreateHero( pWorld, heroSpawnDesc );
+        if (userData.userId != -1) {
+          spawnedHero->SetRecommendedStats(userData.profileStats);
+        }
         DebugTrace( "SpawnHeroes:CreateHero:%d: %2.3f", heroSpawnDesc.playerId, NHPTimer::GetTimePassedAndUpdateTime( time ) );
 
         if ( players.size() )

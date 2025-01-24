@@ -11,6 +11,7 @@
 	<BackLink DBID="/Creeps/Normals/Normal3/PvE_Ep1.CREEP" Count="1" />
 	<BackLink DBID="/Maps/Test/BalanseTest/Spawners/DummyTest_Burst744.CREEP" Count="1" />
 	<BackLink DBID="/Maps/Test/BalanseTest/Spawners/DummyTest_DPS744.CREEP" Count="1" />
+	<BackLink DBID="/Creeps/Normals/Normal3/PVP.CREEP" Count="1" />
 	<attached>
 		<Item>
 			<attachFlags>15</attachFlags>

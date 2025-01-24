@@ -7,6 +7,7 @@
 	<BackLink DBID="/Creeps/Normals/Normal3/PvE_Coop1_Ordinary.CREEP" Count="1" />
 	<BackLink DBID="/Creeps/Normals/Normal3/PvE_Coop1_Poisoner.CREEP" Count="1" />
 	<BackLink DBID="/Creeps/Normals/Normal3/PvE_Coop1_shrinker.CREEP" Count="1" />
+	<BackLink DBID="/Creeps/Normals/Normal3/PVP.CREEP" Count="5" />
 	<abilities>
 		<Item href="" />
 		<Item href="" />

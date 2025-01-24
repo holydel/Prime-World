@@ -2,6 +2,7 @@
 <BasicEffectStandalone>
 	<BackLink DBID="/Items/Talents/Class/Highlander/LastHitTrigger.APLR" Count="1" />
 	<BackLink DBID="/Items/Talents/Level3/G040-AoEbyStr.TALENT" Count="1" />
+	<BackLink DBID="/Items/Talents/Class/Highlander/Ability4.TALENT" Count="2" />
 	<component href="/Effects/Debuffs/ShockWave/_TRS.PRXY" />
 	<deathType>Anim</deathType>
 	<enableCondition href="" />

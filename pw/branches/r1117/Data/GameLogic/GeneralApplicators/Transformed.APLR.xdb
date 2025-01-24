@@ -14,6 +14,7 @@
 	<BackLink DBID="/Items/Talents/Class/Werewolf/status_A4_curse.APLR" Count="1" />
 	<BackLink DBID="/Items/Talents/Level6/Status_G455Dragon.APLR" Count="1" />
 	<BackLink DBID="/Summons/Whisper/PvE_Coop1.CREEP" Count="1" />
+	<BackLink DBID="/Items/Talents/Class/Inventor/Ability4_1.TALENT" Count="1" />
 	<applyTarget>AbilityOwner</applyTarget>
 	<behaviorFlags>0</behaviorFlags>
 	<caption>setup variable "Transformed"</caption>

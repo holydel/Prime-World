@@ -7,6 +7,8 @@
 	<BackLink DBID="/Creeps/Minions/Minion3/PvE_Coop1_Killer2.CREEP" Count="1" />
 	<BackLink DBID="/Creeps/Minions/Minion3/PvE_R1.CREEP" Count="1" />
 	<BackLink DBID="/Creeps/Minions/Minion3/PvE_R5.CREEP" Count="1" />
+	<BackLink DBID="/Creeps/Minions/Minion3/PVP_BLUE.CREEP" Count="5" />
+	<BackLink DBID="/Creeps/Minions/Minion3/PVP_Elite.CREEP" Count="5" />
 	<abilities>
 		<Item href="" />
 		<Item href="" />

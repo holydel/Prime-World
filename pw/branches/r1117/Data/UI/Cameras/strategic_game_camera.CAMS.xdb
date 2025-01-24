@@ -27,8 +27,8 @@
 	<horAngle>80</horAngle>
 	<horCenterAngle>-30</horCenterAngle>
 	<horTime>0.5</horTime>
-	<limitRadiusHor>178</limitRadiusHor>
-	<limitRadiusVert>155</limitRadiusVert>
+	<limitRadiusHor>188</limitRadiusHor>
+	<limitRadiusVert>175</limitRadiusVert>
 	<lockCenterOffset>
 		<x>0</x>
 		<y>-2</y>

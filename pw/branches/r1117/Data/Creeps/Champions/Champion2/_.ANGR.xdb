@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <AnimGraphCreator>
 	<BackLink DBID="/Creeps/Champions/Champion2/_.SOBJ" Count="1" />
+	<BackLink DBID="/Creeps/Champions/Champion2/_Big.SOBJ" Count="1" />
 	<defaultNode>idle</defaultNode>
 	<macroNodes>
 		<Item>

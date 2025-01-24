@@ -13,7 +13,7 @@
 		<waitForEvadeTime>2</waitForEvadeTime>
 		<waitForNextTargetTime>2</waitForNextTargetTime>
 	</evadeParams>
-	<firstSpawnTimeOffset>13</firstSpawnTimeOffset>
+	<firstSpawnTimeOffset>33</firstSpawnTimeOffset>
 	<groups>
 		<Item>
 			<creeps>

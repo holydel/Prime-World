@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <DBSceneComponent>
 	<BackLink DBID="/Effects/General/Portal/_Ally.EFFT" Count="1" />
+	<BackLink DBID="/Maps/Test/PlaneMap/Gift/_.ANSC" Count="1" />
 	<attached>
 		<Item>
 			<attachFlags>15</attachFlags>

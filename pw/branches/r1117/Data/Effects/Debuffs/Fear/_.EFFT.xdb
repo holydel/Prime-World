@@ -5,6 +5,7 @@
 	<BackLink DBID="/Items/Talents/Class/GhostLord/status_A4u_2_DeathSpectre.APLR" Count="1" />
 	<BackLink DBID="/Items/Talents/TalentKits/Redset4_3_Fire/status_G557_Mark.APLR" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/Werewolf/status_Fear_A4.APLR" Count="1" />
+	<BackLink DBID="/Items/Talents/Class/ThunderGod/Ability4_3.TALENT" Count="1" />
 	<attachFlags>1</attachFlags>
 	<attachType>Above</attachType>
 	<component href="/Effects/Debuffs/Fear/_TRS.PRXY" />

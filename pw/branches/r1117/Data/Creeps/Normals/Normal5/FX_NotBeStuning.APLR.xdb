@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <FlagsApplicator>
 	<BackLink DBID="/Creeps/Normals/Normal5/CTF_S14.CREEP" Count="1" />
+	<BackLink DBID="/Creeps/Normals/Normal5/PVP.CREEP" Count="1" />
 	<applyTarget>AbilityOwner</applyTarget>
 	<behaviorFlags>0</behaviorFlags>
 	<caption>FX мы не будем станить</caption>

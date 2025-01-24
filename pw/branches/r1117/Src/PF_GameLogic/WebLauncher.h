@@ -20,7 +20,6 @@ class WebLauncherPostRequest
 	std::vector<int> keysClassTalent;
 public:
   WebLauncherPostRequest();
-	WebLauncherPostRequest(const wchar_t* serverUrl, const wchar_t* objectName, int serverPort, DWORD flags);
 
   void Init(const wchar_t* serverUrl, const wchar_t* objectName, int serverPort, DWORD flags);
 
@@ -41,6 +40,7 @@ public:
     LoginResponse_WEB_FAIL,
 
     LoginResponse_WEB_JOIN,
+    LoginResponse_WEB_FAILED_CONNECTION,
   };
 
   struct WebLoginResponse {
@@ -55,8 +55,9 @@ public:
   };
 
   struct WebUserData {
-    WebUserData(): heroSkinID(0), currentRating(1100), victoryRating(1100), lossRating(1100) {}
+    WebUserData(): heroSkinID(0), currentRating(1100), victoryRating(1100), lossRating(1100), userId(0) {}
     std::vector<TalentWebData> talents;
+    int profileStats[9];
 	  int heroSkinID;
     int userId;
     float currentRating;
@@ -73,6 +74,7 @@ public:
     wstring nickname;
     int teamId;
     bool isLeaver;
+    int userId;
   };
 
   enum RegisterSessionRequest {
@@ -110,7 +112,7 @@ public:
   RegisterSessionRequest ReconnectInSession(const char* sessionToken, string& gameName);
   void LobbyCreatedRequest(const char* nickname, const char* sessionToken);
   bool CheckIsGameReady(const char* sessionToken);
-  bool CheckConnectionRequest();
+  bool CheckConnectionRequest(const char* playerToken);
   void ValidateInstallationRequest(const char* playerToken);
   void SendSessionResults(const vector<int>& playerUserIds, int winningTeam);
   void SendFinishGameRequest(const vector<int>& playerUserIds, int winningTeam);
@@ -206,15 +208,19 @@ static bool CheckPlayerInfo(const Json::Value& playerInfo)
     }
   }
   Json::Value build = playerInfo.get("build", Json::Value());
-  if (build.empty() || !build.isArray()) {
+  if (!build.isArray()) {
     OutputDebugStringA("Invalid build");
     return false;
   }
   Json::Value bar = playerInfo.get("bar", Json::Value());
-  if (bar.empty() || !bar.isArray()) {
+  if (!bar.isArray()) {
     OutputDebugStringA("Invalid bar");
     return false;
   }
 
   return true;
 }
+
+extern std::string GetSkinByHeroPersistentId(const std::string& heroPersistentId, int skinId);
+extern std::string WideCharToMultiByteString(const wchar_t* wideCharString);
+extern std::string Fix1251Encoding(std::string utf8String);

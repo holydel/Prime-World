@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <UsableBuilding>
 	<BackLink DBID="/Maps/Multiplayer/CTE/Altars/_A.USBL" Count="1" />
+	<BackLink DBID="/Maps/Test/PlaneMap/_.ADMP" Count="1" />
 	<abilities>
 		<Item href="" />
 		<Item href="" />

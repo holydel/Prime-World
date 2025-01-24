@@ -47,6 +47,7 @@
 	<BackLink DBID="/Summons/Panther/_B.SUMMONED" Count="1" />
 	<BackLink DBID="/Summons/Panther/_Parent.SUMMONED" Count="1" />
 	<BackLink DBID="/Test/Talents/Feya_A1.ARCT" Count="1" />
+	<BackLink DBID="/Items/Talents/Class/Assassin/Ability_A4_1.TALENT" Count="1" />
 	<applyTarget>ApplicatorTarget</applyTarget>
 	<cancelInvisibility>false</cancelInvisibility>
 	<caption>урон</caption>

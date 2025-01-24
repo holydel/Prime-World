@@ -4,6 +4,7 @@
 	<BackLink DBID="/Heroes/PlagueDoctor/_.HROB" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/PlagueDoctor/Ability_A4.TALENT" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/PlagueDoctor/PlagueDoctorDot.APLR" Count="1" />
+	<BackLink DBID="/Items/Talents/Class/ThunderGod/Ability4_3.TALENT" Count="1" />
 	<attachFlags>1</attachFlags>
 	<attachType>Body</attachType>
 	<component href="/Creeps/Normals/Normal1/FXPlague.PRXY" />

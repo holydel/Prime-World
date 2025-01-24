@@ -12,6 +12,7 @@
 	<BackLink DBID="/Maps/PvE/Series/Episode1/dialogs/actors/borovik" Count="1" />
 	<BackLink DBID="/Maps/Test/BalanseTest/Spawners/DummyTest_Burst744.CREEP" Count="1" />
 	<BackLink DBID="/Maps/Test/BalanseTest/Spawners/DummyTest_DPS744.CREEP" Count="1" />
+	<BackLink DBID="/Creeps/Normals/Normal3/PVP.CREEP" Count="1" />
 	<generatedFileName></generatedFileName>
 	<importOnlyShape>false</importOnlyShape>
 	<mipLevels>0</mipLevels>

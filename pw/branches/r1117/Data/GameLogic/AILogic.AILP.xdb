@@ -1774,7 +1774,7 @@
 			</StatsEnhancersContainer>
 		</statsEnhancers>
 	</expoModeParams>
-	<followRange>4</followRange>
+	<followRange>1</followRange>
 	<forceParameters href="/GameLogic/AILogic.AILP" id="6EBD4EF4-3FEB-431D-B040-45A29D88A088">
 		<ForceParameters>
 			<baseHeroForce>0</baseHeroForce>
@@ -2977,10 +2977,70 @@
 						</var>
 					</UnitConstant>
 				</Item>
+				<Item href="/GameLogic/AILogic.AILP" id="9F1F2CE6-F35D-46A3-8309-9B5DC9B20107">
+					<UnitConstant>
+						<name>CastRange_Melee</name>
+						<var>
+							<compiledString>FR0AAAADAAAAIgAAADgAAAA+AAAAUmVkc2V0X0Nhc3RSYW5nZV9Gb3JtQ291bnRlcgBVi+xRaAAAAACLRQiLEItNCIuCiAEAAP/Q3A1UAAAA3AVMAAAA2V382UX8i+VdwwAAAAAAABBAmpmZmZmZyT8=</compiledString>
+							<returnType>float</returnType>
+							<sString>4 + (4*0.05*sender.vRedset_CastRange_FormCounter)</sString>
+						</var>
+					</UnitConstant>
+				</Item>
+				<Item href="/GameLogic/AILogic.AILP" id="15E16ACC-B0FF-4164-98D9-83D89F830DA4">
+					<UnitConstant>
+						<name>CastRange_Short</name>
+						<var>
+							<compiledString>FR0AAAADAAAAIgAAADgAAAA+AAAAUmVkc2V0X0Nhc3RSYW5nZV9Gb3JtQ291bnRlcgBVi+xRaAAAAACLRQiLEItNCIuCiAEAAP/Q3A1UAAAA3AVMAAAA2V382UX8i+VdwwAAAAAAABxAZ2ZmZmZm1j8=</compiledString>
+							<returnType>float</returnType>
+							<sString>7 + (7*0.05*sender.vRedset_CastRange_FormCounter)</sString>
+						</var>
+					</UnitConstant>
+				</Item>
+				<Item href="/GameLogic/AILogic.AILP" id="B51D7CEC-3213-4B40-9FD0-7E59966AD6CB">
+					<UnitConstant>
+						<name>CastRange_Medium</name>
+						<var>
+							<compiledString>FR0AAAADAAAAIgAAADgAAAA+AAAAUmVkc2V0X0Nhc3RSYW5nZV9Gb3JtQ291bnRlcgBVi+xRaAAAAACLRQiLEItNCIuCiAEAAP/Q3A1UAAAA3AVMAAAA2V382UX8i+VdwwAAAAAAAChANDMzMzMz4z8=</compiledString>
+							<returnType>float</returnType>
+							<sString>12 + (12*0.05*sender.vRedset_CastRange_FormCounter)</sString>
+						</var>
+					</UnitConstant>
+				</Item>
+				<Item href="/GameLogic/AILogic.AILP" id="7469E520-A917-42E2-9396-E7662DC1FD46">
+					<UnitConstant>
+						<name>CastRange_Long</name>
+						<var>
+							<compiledString>FR0AAAADAAAAIgAAADgAAAA+AAAAUmVkc2V0X0Nhc3RSYW5nZV9Gb3JtQ291bnRlcgBVi+xRaAAAAACLRQiLEItNCIuCiAEAAP/Q3A1UAAAA3AVMAAAA2V382UX8i+VdwwAAAAAAACxAZ2ZmZmZm5j8=</compiledString>
+							<returnType>float</returnType>
+							<sString>14 + (14*0.05*sender.vRedset_CastRange_FormCounter)</sString>
+						</var>
+					</UnitConstant>
+				</Item>
+				<Item href="/GameLogic/AILogic.AILP" id="22C6D6A3-A3BD-47DE-99B5-3CCAFC2C7A18">
+					<UnitConstant>
+						<name>CastRange_ExLong</name>
+						<var>
+							<compiledString>FR0AAAADAAAAIgAAADgAAAA+AAAAUmVkc2V0X0Nhc3RSYW5nZV9Gb3JtQ291bnRlcgBVi+xRaAAAAACLRQiLEItNCIuCiAEAAP/Q3A1UAAAA3AVMAAAA2V382UX8i+VdwwAAAAAAADVAzczMzMzM8D8=</compiledString>
+							<returnType>float</returnType>
+							<sString>21 + (21*0.05*sender.vRedset_CastRange_FormCounter)</sString>
+						</var>
+					</UnitConstant>
+				</Item>
+				<Item href="/GameLogic/AILogic.AILP" id="B7467FDC-0462-4F76-9F3F-F55412B21764">
+					<UnitConstant>
+						<name>CastRange</name>
+						<var>
+							<compiledString>FR0AAAACAAAAIgAAADgAAABSZWRzZXRfQ2FzdFJhbmdlX0Zvcm1Db3VudGVyAFWL7FFoAAAAAItFCIsQi00Ii4KIAQAA/9DcDUYAAADZXfzZRfyL5V3DmpmZmZmZqT8=</compiledString>
+							<returnType>float</returnType>
+							<sString>(0.05*sender.vRedset_CastRange_FormCounter)</sString>
+						</var>
+					</UnitConstant>
+				</Item>
 			</vars>
 		</UnitConstantsContainer>
 	</globalConstants>
-	<globalCooldownTime>0.2</globalCooldownTime>
+	<globalCooldownTime>0</globalCooldownTime>
 	<glyphSettings>
 		<maxAfterPickupSpawnDelay>240</maxAfterPickupSpawnDelay>
 		<maxInstances>2</maxInstances>
@@ -3663,6 +3723,7 @@
 				<Item href="/Items/Talents/TalentKits/Redset7_11_MiniRefresher/Redset7_11_MiniRefresher.TALKIT" />
 				<Item href="/Items/Talents/TalentKits/Redset7_12_SuperMove/Redset7_12_SuperMove.TALKIT" />
 				<Item href="/Items/Talents/TalentKits/Redset_RessurectTime/Redset_RessurectTime.TALKIT" />
+				<Item href="/Items/Talents/TalentKits/Redset_CastRange/Redset_CastRange.TALKIT" />
 			</kits>
 		</TalentKitList>
 	</talentKits>

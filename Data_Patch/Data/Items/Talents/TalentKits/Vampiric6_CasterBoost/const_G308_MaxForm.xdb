@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<UnitConstant>
-	<name>G308_MaxForm</name>
-	<var>
-		<compiledString></compiledString>
-		<returnType>float</returnType>
-		<sString>2</sString>
-	</var>
-</UnitConstant>

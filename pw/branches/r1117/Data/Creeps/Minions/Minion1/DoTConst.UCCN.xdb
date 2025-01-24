@@ -8,6 +8,8 @@
 	<BackLink DBID="/Maps/Multiplayer/MOBA/Spawners/Neutral_Elite_1.NCSPN" Count="2" />
 	<BackLink DBID="/Maps/Multiplayer/MOBA/Spawners/Neutral_Normal.NCSPN" Count="4" />
 	<BackLink DBID="/Maps/Multiplayer/MOBA/Spawners/Neutral_TopBot.NCSPN" Count="2" />
+	<BackLink DBID="/Maps/Multiplayer/MOBA/Spawners/Neutral_Assid.NCSPN" Count="2" />
+	<BackLink DBID="/Creeps/Minions/Minion1/PVP_Rogatik.CREEP" Count="1" />
 	<vars>
 		<Item href="/Creeps/Minions/Minion1/DoTConst.UCCN" id="C68B5639-5005-4E4A-83A3-74C9853E9CB1">
 			<UnitConstant>

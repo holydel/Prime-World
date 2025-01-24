@@ -2,6 +2,7 @@
 <UsableBuilding>
 	<BackLink DBID="/Maps/Multiplayer/CTE/_.ADMP" Count="2" />
 	<BackLink DBID="/Maps/PvE/Series/Coop1/Buildings/Button.USBL" Count="1" />
+	<BackLink DBID="/Maps/Test/PlaneMap/_.ADMP" Count="2" />
 	<abilities>
 		<Item href="/Buildings/N/Bridge/Button.USBL" id="99AE4FBC-48DB-44ED-BE64-B1E856200E42">
 			<Ability>
@@ -141,132 +142,8 @@
 				<warFogRemoveTime>0</warFogRemoveTime>
 			</Ability>
 		</Item>
-		<Item href="/Buildings/N/Bridge/Button.USBL" id="04774ADA-1FF6-449B-B327-F81CE2EA5EBE">
-			<Ability>
-				<activeCustomTrigger>true</activeCustomTrigger>
-				<allowChase>
-					<compiledString></compiledString>
-					<returnType>bool</returnType>
-					<sString>true</sString>
-				</allowChase>
-				<alternativeTargets />
-				<aoeDisplayOnMinimap>false</aoeDisplayOnMinimap>
-				<aoeHeight>0</aoeHeight>
-				<aoeMaterial href="" />
-				<aoePassabilityCheckMode>0</aoePassabilityCheckMode>
-				<aoeSize>
-					<compiledString></compiledString>
-					<returnType>float</returnType>
-					<sString>0.0f</sString>
-				</aoeSize>
-				<aoeType>None</aoeType>
-				<applicators />
-				<autoTargetSelector href="" />
-				<caption></caption>
-				<castAllowRange>
-					<compiledString></compiledString>
-					<returnType>float</returnType>
-					<sString>0.0f</sString>
-				</castAllowRange>
-				<castLimitations />
-				<commonDescription textref="" />
-				<compiledDescriptionA textref="" />
-				<compiledDescriptionB textref="" />
-				<conditionFormulas />
-				<constants href="/Buildings/N/Bridge/ButtonConstants.UCCN" />
-				<cooldownTime>
-					<compiledString></compiledString>
-					<returnType>float</returnType>
-					<sString>0.0f</sString>
-				</cooldownTime>
-				<cooldownTimeSecondState>
-					<compiledString></compiledString>
-					<returnType>float</returnType>
-					<sString>0.0f</sString>
-				</cooldownTimeSecondState>
-				<description textref="" />
-				<dispatch href="" />
-				<flags>1</flags>
-				<image href="" />
-				<imageSecondState href="" />
-				<isUnitFreeAfterCast>true</isUnitFreeAfterCast>
-				<manaCost>
-					<compiledString></compiledString>
-					<returnType>float</returnType>
-					<sString>0.0f</sString>
-				</manaCost>
-				<marker></marker>
-				<microAI href="" />
-				<minUseRangeCorrection>0</minUseRangeCorrection>
-				<name textref="" />
-				<node></node>
-				<passiveApplicators>
-					<Item href="/Buildings/N/Bridge/Button.USBL" id="59E10987-84D5-413B-9AC2-B84201FBA619">
-						<TriggerApplicator>
-							<actionsCount>
-								<compiledString></compiledString>
-								<returnType>int</returnType>
-								<sString>1</sString>
-							</actionsCount>
-							<applyTarget>ApplicatorTarget</applyTarget>
-							<behaviorFlags>0</behaviorFlags>
-							<caption></caption>
-							<effect>
-								<Item href="" />
-								<Item href="" />
-							</effect>
-							<enabled>
-								<compiledString></compiledString>
-								<returnType>bool</returnType>
-								<sString>true</sString>
-							</enabled>
-							<formulaName></formulaName>
-							<lifeTime>
-								<compiledString></compiledString>
-								<returnType>float</returnType>
-								<sString>-1.0</sString>
-							</lifeTime>
-							<LoggingEvent>-1</LoggingEvent>
-							<playAck>false</playAck>
-							<processor href="/Buildings/N/Bridge/Button.USBL" id="03DC4CDF-99B4-451B-8173-F527779E4C62">
-								<EventProcessorCondition>
-									<applyTarget>ApplicatorTarget</applyTarget>
-									<condition>
-										<compiledString>FQ0AAAACAAAAEgAAACgAAABCdXR0b25UdXJuT24AVYvsUWgAAAAAi0UIixCLTQiLgogBAAD/0NwdSgAAAN/g9sRBdQnHRfwBAAAA6wfHRfwAAAAAikX8i+VdwwAAAAAAAAAA</compiledString>
-										<returnType>bool</returnType>
-										<sString>sender.vButtonTurnOn &gt;0</sString>
-									</condition>
-									<events>8192</events>
-									<onlyParent>false</onlyParent>
-									<spell href="/Buildings/N/Bridge/PushTheButton.ABLT" />
-								</EventProcessorCondition>
-							</processor>
-							<providerName></providerName>
-							<startCondition>
-								<compiledString></compiledString>
-								<returnType>bool</returnType>
-								<sString>true</sString>
-							</startCondition>
-							<useAbilityCooldown>false</useAbilityCooldown>
-							<useAbilityOwnerMana>false</useAbilityOwnerMana>
-						</TriggerApplicator>
-					</Item>
-				</passiveApplicators>
-				<requireLineOfSight>true</requireLineOfSight>
-				<shortDescription textref="" />
-				<targetType>136258047</targetType>
-				<type>Passive</type>
-				<useRange>
-					<compiledString></compiledString>
-					<returnType>float</returnType>
-					<sString>0.0f</sString>
-				</useRange>
-				<useRangeMaterial href="" />
-				<warFogRemoveRadius>0</warFogRemoveRadius>
-				<warFogRemoveTime>0</warFogRemoveTime>
-			</Ability>
-		</Item>
 		<Item href="" />
+		<Item href="/Buildings/N/Bridge/PushTheButton.ABLT" />
 		<Item href="" />
 		<Item href="" />
 	</abilities>

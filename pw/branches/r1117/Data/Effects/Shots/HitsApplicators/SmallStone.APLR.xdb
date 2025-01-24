@@ -21,6 +21,7 @@
 	<BackLink DBID="/Maps/PvE/Dungeon2/Spawners/room1.NCSPN" Count="11" />
 	<BackLink DBID="/Maps/PvE/Dungeon2/Spawners/room12.NCSPN" Count="7" />
 	<BackLink DBID="/Maps/PvE/Dungeon2/Spawners/room2.NCSPN" Count="5" />
+	<BackLink DBID="/Maps/Multiplayer/MOBA/Spawners/Neutral_Assid.NCSPN" Count="2" />
 	<activeSpellIndex>
 		<compiledString>FQAAAAAAAAAAVYvsUdno2RwkUdnu2RwkagGLRQyLEItNDItCWP/QD7bIUegYAAAAg8QI2Rwk6C4AAACDxARdwwAAAAAAAIA/VYvsUQ+2RQiFwHQI2UUM2V386wbZRRDZXfzZRfyL5V3DuAEAAAAPovfCAAAABHQH8w8sRCQEw+kAAAAAVYvsg+wM2UUI2X38D7dF/A0ADAAAiUX42W3421302W38i0X0i+Vdww==</compiledString>
 		<returnType>int</returnType>

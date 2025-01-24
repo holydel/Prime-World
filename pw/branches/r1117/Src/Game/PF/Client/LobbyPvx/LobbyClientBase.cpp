@@ -405,7 +405,7 @@ void ClientBase::StartSession( TGameId _sessionId, const SGameParameters & _para
 {
   MessageTrace( "Starting game session. map='%s', players=%d, gameid=%s, custom=%i, gs_svcid=%s, gs_instid=%s", _params.mapId, _gameLineUp.size(), FmtGameId( _sessionId ), _params.customGame, _gsInstId.serviceId, _gsInstId.instanceId );
 
-  WebLauncherPostRequest lobbyCreatedRequest(SERVER_IP_W, L"/api", SERVER_PORT_INT - 8, 0);
+  WebLauncherPostRequest lobbyCreatedRequest;
   lobbyCreatedRequest.NotifyGameStart(g_devLogin.c_str(), g_sessionToken.c_str());
 
   for ( int i = 0; i < _gameLineUp.size(); ++i )
@@ -573,7 +573,7 @@ void ClientBase::CreateGame( const char * mapId, int maxPlayers, int maxPlayersP
 
   lastLobbyOperationResult = EOperationResult::InProgress;
 
-  WebLauncherPostRequest lobbyCreatedRequest(SERVER_IP_W, L"/api", SERVER_PORT_INT - 8, 0);
+  WebLauncherPostRequest lobbyCreatedRequest;
   lobbyCreatedRequest.LobbyCreatedRequest(g_devLogin.c_str(), g_sessionToken.c_str());
 }
 

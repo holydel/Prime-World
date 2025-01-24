@@ -304,7 +304,6 @@
 	<node></node>
 	<passiveApplicators>
 		<Item href="/Heroes/DefaultStatus/status_Ancient.APLR" />
-		<Item href="/Glyphs/HealTriggerCreeps.APLR" />
 	</passiveApplicators>
 	<requireLineOfSight>false</requireLineOfSight>
 	<shortDescription textref="" />

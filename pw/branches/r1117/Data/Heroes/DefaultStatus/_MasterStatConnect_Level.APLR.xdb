@@ -22,6 +22,7 @@
 	<BackLink DBID="/Items/Talents/TalentKits/Vampiric5_CloneWall/CreateCloneFromWall.APLR" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/Demonolog/Ability3.TALENT" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/PinkGirl/Ability_A4_2.TALENT" Count="1" />
+	<BackLink DBID="/Items/Talents/Class/Inventor/A1_TurretSummonBomb.APLR" Count="1" />
 	<applyTarget>ApplicatorTarget</applyTarget>
 	<behaviorFlags>152</behaviorFlags>
 	<caption>- Уровень Саммона = Уровню Хозяина</caption>

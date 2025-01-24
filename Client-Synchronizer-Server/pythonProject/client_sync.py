@@ -9,6 +9,7 @@ import logging
 import sys
 
 from requests import session
+from transliterate import translit
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
@@ -31,6 +32,8 @@ api_key = open('api_key.txt').readline()
 timeToKillPublicSession = 7200 # 2 hours
 timeToKillTestSession = 30 # test session - 30 seconds
 
+timeToKillRottenSession = 70 # 1 minute + 10 seconds
+
 lastTimeCheck = dt.now()
 
 activeSessionTokens = {}
@@ -43,7 +46,7 @@ def killOldSessions(sessionDict):
     for oldSessionToken in list(sessionDict.keys()):
         oldSession = sessionDict[oldSessionToken]
         targetTimeDifferenceToKill = timeToKillPublicSession
-        if oldSessionToken == 'testSessionToken':
+        if oldSessionToken == 'Tester00Tester00Tester00Tester00':
             targetTimeDifferenceToKill = timeToKillTestSession
         if (dt.now() - oldSession['timestamp']).total_seconds() > targetTimeDifferenceToKill:
             del sessionDict[oldSessionToken] # remove old sessions
@@ -52,7 +55,8 @@ def killOldSessions(sessionDict):
 def api():
     print(request.data)
     logger.info(request.data)
-    reqData = request.data.decode(encoding='cp1251', errors='replace')
+    #reqData = request.data.decode(encoding='cp1251', errors='ignore')
+    reqData = request.data.decode(encoding='utf-8', errors='ignore')
     if request.method == 'POST':
         reqJson = json.loads(reqData, strict=False)
         method = str(reqJson['method'])
@@ -85,7 +89,7 @@ def api():
                 }
                 return jsonify(response)
 
-            webSessions[data['sessionToken']] = {'players': {}, 'lock': threading.Lock(), 'timestamp': dt.now(), 'gameName': '', 'gameStarted': False, 'gameFinished': False }
+            webSessions[data['sessionToken']] = {'players': {}, 'lock': threading.Lock(), 'timestamp': dt.now(), 'gameName': '', 'gameStarted': False, 'gameFinished': False, 'gameCreated': False }
 
             # generate player keys, fill player data
             for player in data['players']:
@@ -94,7 +98,8 @@ def api():
                         'error': 'Invalid player detected (no id) in session ' + data['sessionToken']
                     }
                     return jsonify(response)
-
+                
+                #player['nickname'] = translit(player['nickname'], 'ru', reversed=True).replace("'", "")
                 m = hashlib.sha256((str(player['id']) + data['sessionToken'] + api_key).encode('utf-8'))
                 webSessions[data['sessionToken']]['players'][m.hexdigest()] = player
                 logger.info(m.hexdigest())
@@ -130,21 +135,42 @@ def api():
             # critical section for specific session!
             with webSessions[sessionToken]['lock']:
                 method = ''
+                tryRotten = False
                 if not webSessions[sessionToken]['gameName']:
+                    webSessions[sessionToken]['gameName'] = webSessions[sessionToken]['players'][playerKey]['nickname']
                     method = 'create'
                 else:
                     if webSessions[sessionToken]['gameStarted']:
                         method = 'reconnect'
                     else:
                         method = 'connect'
+                        tryRotten = True
+                     
+                # Test rotten sessions
+                if tryRotten:
+                    rotSession = webSessions[sessionToken]
+                    targetTimeDifferenceToKill = timeToKillRottenSession
+                    if (dt.now() - rotSession['timestamp']).total_seconds() > targetTimeDifferenceToKill:
+                        rotKillerData = {"sessionToken":sessionToken,"win":0,"afk":[]}
+                        killerResponse = requests.post('https://playpw.fun/api/launcher/', json={'method': 'finishGame', 'data': rotKillerData})
+                        response = {
+                            'error': 'Rotten session'
+                        }
+                        logger.info('Response!!!      ' + str(json.dumps(response)))
+                        return jsonify(response)
+                    
+                gameName = ''
+                if webSessions[sessionToken]['gameCreated']:
+                    gameName = webSessions[sessionToken]['gameName']
 
                 response = {
                     'error': '',
                     'method': method,
                     'playerInfo': webSessions[sessionToken]['players'][playerKey],
                     'usersData': list(webSessions[sessionToken]['players'].values()),
-                    'gameName': webSessions[sessionToken]['gameName']
+                    'gameName': gameName
                 }
+                logger.info('Response!!!      ' + str(json.dumps(response)))
                 return jsonify(response)
 
         # Notify game start event
@@ -166,10 +192,21 @@ def api():
         if method == 'notifyGameFinish':
             if 'sessionToken' not in data:
                 response = {
-                    'error': 'Invalid request'
+                    'error': 'Invalid request',
                 }
                 return jsonify(response)
+                
             sessionToken = data['sessionToken']
+            
+            if sessionToken not in webSessions:
+                # synchronizer restarted, just send results
+                webSessions[sessionToken] = {'players': {}, 'lock': threading.Lock(), 'timestamp': dt.now(), 'gameName': '', 'gameStarted': False, 'gameFinished': True, 'gameCreated': False }
+                with webSessions[sessionToken]['lock']:
+                    requests.post('https://playpw.fun/api/launcher/', json={'method': 'finishGame', 'data': data})
+                    response = {
+                        'error': '',
+                    }
+                    return jsonify(response)
 
             with webSessions[sessionToken]['lock']:
                 if webSessions[sessionToken]['gameFinished']:
@@ -185,6 +222,15 @@ def api():
                     }
                     return jsonify(response)
 
+        if method == 'validateInstall':
+            checkInstallResp = requests.post('https://playpw.fun/api/launcher/', json={'method': 'validateInstall', 'data': data})
+            logger.info('Response!!!      ' + str(checkInstallResp.content))
+            response = {
+                'error': '',
+                'data': True
+            }
+            return jsonify(response)
+
         # Get game name if is in connection process
         if method == 'getGameNameForConnection':
             if 'sessionToken' not in data:
@@ -198,13 +244,20 @@ def api():
                 if webSessions[sessionToken]['gameStarted']:
                     response = {
                         'error': 'reconnect',
-                        'gameName': webSessions[sessionToken]['gameName']
+                        'data': {'gameName': webSessions[sessionToken]['gameName']}
                     }
+                    logger.info('Response!!!      ' + str(json.dumps(response)))
                     return jsonify(response)
+                    
+                gameName = ''
+                if webSessions[sessionToken]['gameCreated']:
+                    gameName = webSessions[sessionToken]['gameName']
+                    
                 response = {
                     'error': '',
-                    'gameName': webSessions[sessionToken]['gameName']
+                    'data': {'gameName': gameName}
                 }
+                logger.info('Response!!!      ' + str(json.dumps(response)))
                 return jsonify(response)
 
         # Web-Lobby created by player
@@ -217,10 +270,10 @@ def api():
             sessionToken = data['sessionToken']
             if sessionToken in webSessions:
                 with webSessions[sessionToken]['lock']:
+                    webSessions[sessionToken]['gameCreated'] = True
                     webSession = webSessions[sessionToken]
-
-                    if webSession['gameName'] == '':  # save gameId
-                        webSessions[sessionToken]['gameName'] = data['nickname']
+                    
+                    if webSession['gameName'] == data['nickname']:  # save gameId
                         response = {
                             'error': ''
                         }

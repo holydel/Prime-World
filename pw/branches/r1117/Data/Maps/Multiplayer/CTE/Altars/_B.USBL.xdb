@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <UsableBuilding parent="/Buildings/B/Altar/_Parent.USBL">
 	<BackLink DBID="/Maps/Multiplayer/CTE/_.ADMP" Count="1" />
+	<BackLink DBID="/Maps/Test/PlaneMap/_.ADMP" Count="1" />
 	<abilities>
 		<Item skip="1" />
 		<Item href="/Maps/Multiplayer/CTE/Altars/_B.USBL" id="82F022DC-981B-440F-975C-52553D0A3321">

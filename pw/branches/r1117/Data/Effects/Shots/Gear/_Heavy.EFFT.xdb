@@ -2,6 +2,7 @@
 <BasicEffectStandalone>
 	<BackLink DBID="/Creeps/A/SuperHeavy/AttackAbility.ATCK" Count="1" />
 	<BackLink DBID="/Creeps/A/SuperHeavy/InventorSummon.CREEP" Count="1" />
+	<BackLink DBID="/Items/Talents/Class/Inventor/status_A4_1_InventorForm.APLR" Count="1" />
 	<component href="/Effects/Shots/Gear/_HeavyTRS.PRXY" />
 	<deathType>Manual</deathType>
 	<enableCondition href="" />

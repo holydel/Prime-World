@@ -89,6 +89,60 @@
 				</Item>
 			</creeps>
 		</Item>
+		<Item>
+			<creeps>
+				<Item>
+					<creep href="/Creeps/Champions/Champion2/PVP_1.CREEP" />
+					<limitWalkDistance>-1</limitWalkDistance>
+					<offset>
+						<location>
+							<x>-2</x>
+							<y>0</y>
+							<z>0</z>
+						</location>
+						<rotation>
+							<w>1</w>
+							<x>0</x>
+							<y>0</y>
+							<z>0</z>
+						</rotation>
+						<scale>
+							<x>1</x>
+							<y>1</y>
+							<z>1</z>
+						</scale>
+					</offset>
+					<specialAwarding>false</specialAwarding>
+					<useSpawnerWalkLimit>true</useSpawnerWalkLimit>
+					<waveDelayToAppear>0</waveDelayToAppear>
+				</Item>
+				<Item>
+					<creep href="/Creeps/Champions/Champion2/PVP_2.CREEP" />
+					<limitWalkDistance>-1</limitWalkDistance>
+					<offset>
+						<location>
+							<x>2</x>
+							<y>0</y>
+							<z>0</z>
+						</location>
+						<rotation>
+							<w>1</w>
+							<x>0</x>
+							<y>0</y>
+							<z>0</z>
+						</rotation>
+						<scale>
+							<x>1</x>
+							<y>1</y>
+							<z>1</z>
+						</scale>
+					</offset>
+					<specialAwarding>false</specialAwarding>
+					<useSpawnerWalkLimit>true</useSpawnerWalkLimit>
+					<waveDelayToAppear>0</waveDelayToAppear>
+				</Item>
+			</creeps>
+		</Item>
 	</groups>
 	<heightObject>false</heightObject>
 	<isAggressive>false</isAggressive>
@@ -111,7 +165,7 @@
 	<path />
 	<rounded>false</rounded>
 	<showMinimapIcon>true</showMinimapIcon>
-	<spawnDelay>300</spawnDelay>
+	<spawnDelay>240</spawnDelay>
 	<useEvade>true</useEvade>
 	<waveCount>0</waveCount>
 </AdvMapNeutralCreepSpawner>
