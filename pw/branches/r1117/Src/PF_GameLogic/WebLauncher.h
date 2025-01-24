@@ -62,6 +62,10 @@ public:
     float currentRating;
     float victoryRating;
     float lossRating;
+
+    int heroId;
+    int teamId;
+    int partyId;
   };
 
 

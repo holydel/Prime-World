@@ -154,7 +154,7 @@ EOperationResult::Enum CustomGame::AddPlayerToCustomLobby( ServerConnection * pl
         SGameMember memb( players[i].player->UserInfo(), players[i].context );
         player->RemoteUser()->AddCustomGameMember( memb );
       }
-
+/*
   if ( players.size() >= params.slotsCount )
   {
     LOBBY_LOG_MSG( "Custom game %016x AUTO-started with player %i", id, player->ClientId() );
@@ -166,7 +166,7 @@ EOperationResult::Enum CustomGame::AddPlayerToCustomLobby( ServerConnection * pl
 
     StartGame();
   }
-
+*/
   return EOperationResult::Ok;
 }
 

@@ -287,6 +287,13 @@ static WebUsersDataMap GetUsersData(Json::Value usersData) {
       }
     }
 
+    Json::Value hero = curPlayer.get("hero", Json::Value());
+    Json::Value team = curPlayer.get("team", Json::Value());
+    Json::Value party = curPlayer.get("party", Json::Value());
+    resData.heroId = hero.asInt();
+    resData.teamId = team.asInt() - 1;
+    resData.partyId = party.asInt();
+
     resultMap[wideCharString] = resData;
 
     playersCount++;
@@ -295,6 +302,73 @@ static WebUsersDataMap GetUsersData(Json::Value usersData) {
   return resultMap;
 }
 
+static const char* heroes [] = {
+  "prince",
+  "snowqueen",
+  "faceless",
+  "warlord",
+  "thundergod",
+  "invisible",
+  "mowgly",
+  "inventor",
+  "artist",
+  "highlander",
+  "marine",
+  "firefox",
+  "healer",
+  "night",
+  "rockman",
+  "assassin",
+  "unicorn",
+  "hunter",
+  "ghostlord",
+  "ratcatcher",
+  "archeress",
+  "werewolf",
+  "frogenglut",
+  "witchdoctor",
+  "manawyrm",
+  "bard",
+  "naga",
+  "mage",
+  "fairy",
+  "witcher",
+  "alchemist",
+  "demonolog",
+  "vampire",
+  "witch",
+  "crusader_A",
+  "crusader_B",
+  "monster",
+  "angel",
+  "freeze",
+  "gunslinger",
+  "reaper",
+  "fluffy",
+  "rifleman",
+  "magicgirl",
+  "pinkgirl",
+  "ironknight",
+  "fallenangel",
+  "bladedancer",
+  "ent",
+  "plaguedoctor",
+  "katana",
+  "plane",
+  "zealot",
+  "wraithking",
+  "dryad",
+  "stalker",
+  "gunner",
+  "chronicle",
+  "brewer",
+  "shadow",
+  "wendigo",
+  "trickster",
+  "banshee",
+  "shaman",
+  "bomber"
+};
 
 nstl::map<nstl::string, StrongMT<CustomGame>> g_games;
 nstl::map<nstl::wstring, int> playerNicknameToWebUserIdMap;
@@ -348,15 +422,28 @@ lobby::EOperationResult::Enum ServerNode::TryCreateWebSession(const char* token)
 
   for (WebUsersDataMap::iterator it = usersDataMap.begin(); it != usersDataMap.end(); ++it) {
     std::wstring nickname = it->first;
+
+    std::wstring currentLogin = std::wstring(L" ") + nickname;
+    currentLogin[0] = 0x09;
+
     WebLauncherPostRequest::WebUserData userData = it->second;
-    playerNicknameToWebUserIdMap[nickname.c_str()] = userData.userId;
-    StrongMT<lobby::ServerConnection> fakeConnection = NewConnection(userData.userId, nickname.c_str());
+    playerNicknameToWebUserIdMap[currentLogin.c_str()] = userData.userId;
+    StrongMT<lobby::ServerConnection> fakeConnection = NewConnection(userData.userId, currentLogin.c_str());
     EOperationResult::Enum result = game->SetupCustom( fakeConnection.Get() );
+
+    int heroId = std::min(std::max((size_t)(userData.heroId - 1), 0u), _countof(heroes) - 1u);
+    lobby::ETeam::Enum teamId = lobby::ETeam::Enum(userData.teamId);
+
+    const char* heroPersistentId = heroes[heroId];
+
+    game->ChangeCustomGameSettings(fakeConnection.Get(), teamId, teamId, heroPersistentId);
+    game->SetDeveloperParty(fakeConnection.Get(), userData.partyId);
     if ( result != EOperationResult::Ok ) {
       LOBBY_LOG_ERR( "Error occurred during session creation: Failed to add NewConnection %s", token );
       return EOperationResult::RestrictedAccess;
     }
   }
+  game->StartGame();
 
   InsertCustomGame( game );
   //StartCustomGame( game );

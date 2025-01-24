@@ -81,6 +81,7 @@ public:
   void SetupGameStartInfo( vector<Peered::ClientInfo> & _gameServerData, TGameLineUp & _lineup );
 
   void SetDeveloperParty( ServerConnection * player, int party );
+  void StartGame();
 
 private:
   const TGameId                   id;
@@ -98,7 +99,6 @@ private:
   void FindOutNewPlayerInfo( string & heroId, ETeam::Enum & teamId, int teamSizes[2] );
   void ComplementWithLegacyAi( TGameLineUp & _lineup );
   void BalanceCustomGame();
-  void StartGame();
 
   void BroadcastPlayerSettings( size_t playerIndex );
   void BroadcastPlayerLeaveCustom( Transport::TClientId playerClientId );

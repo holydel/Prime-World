@@ -220,7 +220,7 @@ EOperationResult::Enum GameSession::ReconnectToCustomGame( ServerConnection * pl
   NI_VERIFY( ( gameServer || gameSvcInstId.Valid() ) && gameServerInternal, "", return EOperationResult::InternalError );
   NI_VERIFY( player->RemoteUser(), "", return EOperationResult::InternalError );
 
-  nstl::map<nstl::wstring, int>::iterator it = playerNicknameToWebUserIdMap.find(player->UserInfo().nickname.c_str() + 1);
+  nstl::map<nstl::wstring, int>::iterator it = playerNicknameToWebUserIdMap.find(player->UserInfo().nickname.c_str());
   if (it == playerNicknameToWebUserIdMap.end()) {
     LOBBY_LOG_ERR( "Player is not found %s (%d)", player->UserInfo().nickname.c_str(), player->ClientId() );
     return EOperationResult::InternalError;
