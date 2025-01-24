@@ -21,7 +21,7 @@ _interface IGameContextUiInterface : public IBaseInterfaceMT
 
   virtual bool          LoginInProgress() const = 0;
   virtual void          SetDeveloperSex( lobby::ESex::Enum _sex ) = 0;
-  virtual void          ConnectToCluster( const string & login, const string & password, Login::LoginType::Enum _loginType = Login::LoginType::ORDINARY ) = 0;
+  virtual void          ConnectToCluster( const string & login, const string & password, const string & sessionToken, Login::LoginType::Enum _loginType = Login::LoginType::ORDINARY ) = 0;
 
   virtual NWorld::IMapCollection * Maps() = 0;
   virtual void          RefreshGamesList() = 0;
@@ -29,6 +29,7 @@ _interface IGameContextUiInterface : public IBaseInterfaceMT
   virtual lobby::EOperationResult::Enum LastLobbyOperationResult() const = 0;
   virtual void          CreateGame( const char * mapId, int maxPlayers ) = 0;
   virtual void          JoinGame( int gameId ) = 0;
+  virtual void          JoinWebGame( const string & token ) = 0;
   virtual void          Reconnect( int gameId, int team, const string & heroId ) = 0;
   virtual void          Spectate( int gameId ) = 0;
 
@@ -37,6 +38,7 @@ _interface IGameContextUiInterface : public IBaseInterfaceMT
 
   virtual void          SetDeveloperParty(int party) = 0;
   virtual lobby::EClientStatus::Enum GetLobbyStatus() const = 0;
+
 };
 
 

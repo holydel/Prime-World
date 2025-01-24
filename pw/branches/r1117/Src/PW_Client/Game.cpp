@@ -163,6 +163,8 @@ static NDebug::DebugVar<int> unfreeVirtualAllocs( "UnfreeVirtualAllocs", "", tru
 
 static NDebug::DebugVar<int> totalAllocsSize( "TotalAllocsSize", "", true );
 
+std::string g_protocolToken;
+
 #pragma optimize ("", off)
 //CRAP
 extern "C" INTERMODULE_EXPORT void TooSmartLinker();
@@ -1212,13 +1214,16 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
 
     string protocolMethod = allTokens[1].c_str();
     const char* protocolToken = allTokens[2].c_str();
+    g_protocolToken = protocolToken;
     const char* versionStr = allTokens[3].c_str();
 
     int versionMajor = VERSION_MAJOR;
     int versionMinor = VERSION_MINOR;
+    int versionPatch = VERSION_PATCH;
+    
     char versionStrBuff[64] = {};
 
-    sprintf_s(versionStrBuff,"%d.%d",versionMajor, versionMinor);
+    sprintf_s(versionStrBuff,"%d.%d.%d",versionMajor, versionMinor, versionPatch);
 
     if(strcmp(versionStrBuff, versionStr) != 0) {
       ShowLocalizedErrorMB( L"Update failed", L"Game update has failed! Try to run from web-launcher" );
@@ -1227,9 +1232,9 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
 
     WebLauncherPostRequest::WebLoginResponse response;
     if (protocolMethod == "runGame" || protocolMethod == "reconnect") {
-      //WebLauncherPostRequest cprequest(SERVER_IP_W, L"/api", SERVER_PORT_INT - 8, 0);
-      //cprequest.CreateDebugSession();
-      WebLauncherPostRequest rprequest(SERVER_IP_W, L"/api", SERVER_PORT_INT - 8, 0);
+      WebLauncherPostRequest cprequest(L"127.0.0.1", L"/api", SYNCHRONIZER_PORT, 0);
+      cprequest.CreateDebugSession();
+      WebLauncherPostRequest rprequest(L"127.0.0.1", L"/api", SYNCHRONIZER_PORT, 0);
       response = rprequest.GetSessionData(protocolToken);
     } else {
       WebLauncherPostRequest prequest;
@@ -1317,7 +1322,7 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
 
         const char * mapId = CmdLineLite::Instance().GetStringKey( "mapId", "" );
 
-        context = new Game::GameContext(sessLogin, g_devLogin.c_str(), mapId, socialServer, guildEmblem, isSpectator, false );
+        context = new Game::GameContext(g_sessionToken.c_str(), g_devLogin.c_str(), mapId, socialServer, guildEmblem, isSpectator, false );
         context->Start();
         g_sessionStatus = registerInSessionResponse;
         g_sessionName = gameName.c_str();
@@ -1326,7 +1331,9 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
 
     if (response.retCode == WebLauncherPostRequest::LoginResponse_WEB_CREATE ||
       response.retCode == WebLauncherPostRequest::LoginResponse_WEB_CONNECT ||
-      response.retCode == WebLauncherPostRequest::LoginResponse_WEB_RECONNECT) {
+      response.retCode == WebLauncherPostRequest::LoginResponse_WEB_RECONNECT ||
+      response.retCode == WebLauncherPostRequest::LoginResponse_WEB_JOIN
+      ) {
         // Login success
         currentLogin = std::string(" ") + response.response;
         currentLogin[0] = 0x09;
@@ -1334,7 +1341,7 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
 
         static const int REGISTER_IN_SESSION_MAX_RETRY_COUNT = 20;
         for (int rrc = 0; rrc < REGISTER_IN_SESSION_MAX_RETRY_COUNT; ++rrc) {
-          if (!g_sessionName.empty() || response.retCode == WebLauncherPostRequest::LoginResponse_WEB_CREATE) {
+          if (!g_sessionName.empty() || response.retCode == WebLauncherPostRequest::LoginResponse_WEB_CREATE || response.retCode == WebLauncherPostRequest::LoginResponse_WEB_JOIN) {
             break;
           }
           if (rrc >= REGISTER_IN_SESSION_MAX_RETRY_COUNT - 1) {
@@ -1348,7 +1355,7 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
 
         const char * mapId = CmdLineLite::Instance().GetStringKey( "mapId", "" );
 
-        context = new Game::GameContext(sessLogin, g_devLogin.c_str(), mapId, socialServer, guildEmblem, isSpectator, false );
+        context = new Game::GameContext(g_sessionToken.c_str(), g_devLogin.c_str(), mapId, socialServer, guildEmblem, isSpectator, false );
         context->Start();
     } else {
       ShowLocalizedErrorMB( L"Error", L"Unknown connection status" );

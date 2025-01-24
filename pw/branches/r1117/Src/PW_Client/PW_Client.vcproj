@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9.00"
+	Version="9,00"
 	Name="PW_Client"
 	ProjectGUID="{823E5818-3782-491B-B7A3-83080E55A40C}"
 	RootNamespace="PW_Client"
@@ -313,7 +313,7 @@
 				InlineFunctionExpansion="2"
 				EnableIntrinsicFunctions="true"
 				FavorSizeOrSpeed="1"
-				AdditionalIncludeDirectories="../..;../../vendor\zlib\include;../;../Server\;../Game\PF\;../../vendor/DirectShow/Include;../Server/NetworkAIO;../../vendor/ACE_wrappers;../../vendor/libcurl/include;../Server/Chat;../../Vendor/Steam/1.23a/public;..\..\Vendor\boost"
+				AdditionalIncludeDirectories="../..;../../vendor\zlib\include;../;../Server\;../Game\PF\;../../vendor/DirectShow/Include;../Server/NetworkAIO;../../vendor/ACE_wrappers;../../vendor/libcurl/include;../Server/Chat;../../Vendor/Steam/1.23a/public;..\..\Vendor\boost;..\..\Vendor\JsonCpp\include"
 				PreprocessorDefinitions="WIN32;_WINDOWS;STATIC_LIB;NDEBUG;_SHIPPING;CURL_STATICLIB;_CRT_SECURE_NO_WARNINGS"
 				ExceptionHandling="0"
 				BasicRuntimeChecks="0"

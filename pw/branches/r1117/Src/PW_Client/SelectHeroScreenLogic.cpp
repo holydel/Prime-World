@@ -54,7 +54,7 @@ void SelectHeroScreenLogic::LeaveLobby()
 
     NScreenCommands::PushCommand( NScreenCommands::CreatePopScreenCommand( screen.Get() ) );
     locked->SetReady( lobby::EGameMemberReadiness::NotReady );
-    locked->ConnectToCluster( g_devLogin, "" );
+    locked->ConnectToCluster( g_devLogin, "", "" );
   }
 }
 

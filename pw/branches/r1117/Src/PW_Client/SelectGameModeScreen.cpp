@@ -15,6 +15,7 @@ extern int g_playerTeamId;
 extern int g_playerHeroId;
 extern int g_playerPartyId;
 extern int g_playersCount;
+extern std::string g_protocolToken;
 
 static string s_reconnect_hero = "rockman";
 static int s_reconnect_team = 1;
@@ -57,10 +58,10 @@ bool SelectGameModeScreen::Init( UI::User * uiUser )
     for ( int i = 0; i < pMapList->maps.size(); ++i )
       logic->AddMapEntry( i, maps->CustomDescId( i ), maps->CustomTitle( i ), maps->CustomDescription( i ) );
   }
-
+/*
   if ( StrongMT<Game::IGameContextUiInterface> cl = gameCtx.Lock() )
     cl->RefreshGamesList();
-
+*/
   return true; 
 } 
 
@@ -131,12 +132,33 @@ static const char* heroes [] = {
 "shaman",
 "bomber"
 };
-
+#pragma optimize("", off)
 void SelectGameModeScreen::Step( bool bAppActive )
 {
   StrongMT<Game::IGameContextUiInterface> locked = gameCtx.Lock();
   if ( !locked || !logic )
     return;
+
+  lobby::EOperationResult::Enum joinResult = locked->LastLobbyOperationResult();
+  if (g_sessionStatus == WebLauncherPostRequest::RegisterInSessionRequest_WebJoinRetry) {
+    if (joinResult == lobby::EOperationResult::InternalError) {
+      locked->JoinWebGame(g_protocolToken.c_str());
+      joinResult = lobby::EOperationResult::InProgress;
+    }
+    if (joinResult == lobby::EOperationResult::Ok) {
+      g_sessionStatus = WebLauncherPostRequest::RegisterInSessionRequest_Error;
+    }
+  }
+  if (g_sessionStatus == WebLauncherPostRequest::RegisterInSessionRequest_WebJoin) {
+    if (joinResult == lobby::EOperationResult::InternalError) {
+      locked->JoinWebGame(g_protocolToken.c_str());
+      joinResult = lobby::EOperationResult::InProgress;
+    }
+    if (joinResult == lobby::EOperationResult::Ok) {
+      locked->JoinWebGame(g_protocolToken.c_str());
+      g_sessionStatus = WebLauncherPostRequest::RegisterInSessionRequest_WebJoinRetry;
+    }
+  }
 
   // 3. Select hero
   if (locked->GetLobbyStatus() == lobby::EClientStatus::InCustomLobby && g_sessionStatus == WebLauncherPostRequest::RegisterInSessionRequest_Joined) {
@@ -152,7 +174,7 @@ void SelectGameModeScreen::Step( bool bAppActive )
   }
 
   lobby::TDevGamesList infos;
-  locked->PopGameList( infos );
+  //locked->PopGameList( infos );
 
   // 1. Create game for others
   if (g_sessionStatus == WebLauncherPostRequest::RegisterInSessionRequest_Create) {
@@ -231,7 +253,7 @@ void SelectGameModeScreen::Step( bool bAppActive )
   }
 
 
-  lobby::EOperationResult::Enum joinResult = locked->LastLobbyOperationResult();
+  joinResult = locked->LastLobbyOperationResult();
   if ( joinResult != lobby::EOperationResult::InProgress )
     logic->UpdateJoinResult( joinResult );
 

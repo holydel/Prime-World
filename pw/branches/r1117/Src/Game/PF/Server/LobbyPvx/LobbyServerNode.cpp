@@ -42,6 +42,7 @@
 #include "System/InlineProfiler.h"
 #include "LobbyLog.h"
 #include <Shared/WebRequests.h>
+#include <PF_GameLogic/WebLauncher.h>
 
 
 
@@ -232,26 +233,135 @@ RIServerInstance * ServerNode::AddClient( RILobbyUser * user, int clientRevision
 
 
 #pragma optimize("", off)
-void ServerNode::TryCreateWebSession(const char* token)
+
+static WebUsersDataMap GetUsersData(Json::Value usersData) {
+  WebUsersDataMap resultMap;
+  // Get users data
+  int playersCount = 0;
+  Json::Value curPlayer = usersData[playersCount];
+  while (!curPlayer.empty()) {
+    if (!CheckPlayerInfo(curPlayer)) {
+      WebUsersDataMap emptyMap;
+      return emptyMap;
+    }
+
+    std::string curNickname = Fix1251Encoding(curPlayer.get("nickname", Json::Value()).asString());
+    int utf8Length = static_cast<int>(curNickname.length());
+    int wideCharLength = MultiByteToWideChar(CP_UTF8, 0, curNickname.c_str(), utf8Length, NULL, 0);
+
+    wchar_t* wideCharString = new wchar_t[wideCharLength + 1];
+    MultiByteToWideChar(CP_UTF8, 0, curNickname.c_str(), utf8Length, wideCharString, wideCharLength);
+    wideCharString[wideCharLength] = L'\0';
+
+    WebLauncherPostRequest::WebUserData resData;
+    Json::Value rating = curPlayer.get("rating", Json::Value());
+    resData.currentRating = rating.get("current", Json::Value()).asFloat();
+    resData.victoryRating = rating.get("victory", Json::Value()).asFloat();
+    resData.lossRating = rating.get("loss", Json::Value()).asFloat();
+    resData.heroSkinID = curPlayer.get("skin", Json::Value()).asInt();
+    resData.userId = curPlayer.get("id", Json::Value()).asInt();
+
+    resData.talents.resize(36);
+
+    Json::Value dataTalents = curPlayer.get("build", Json::Value());
+    for (int i = 0; i < 36; ++i) {
+      if (dataTalents[i].empty() || dataTalents[i].asInt() == 0) {
+        resData.talents.clear();
+        break; // empty slot in build
+      }
+      resData.talents[i].webTalentId = dataTalents[i].asInt();
+    }
+    if (!resData.talents.empty()) {
+      Json::Value dataActives = curPlayer.get("bar", Json::Value());
+      for (int a = 0; a < 10; ++a) {
+        if (!dataActives[a].empty()) {
+          int activeRaw = dataActives[a].asInt();
+          if (activeRaw != 0) {
+            int activeRef = abs(activeRaw) - 1;
+            bool isSmartCast = activeRaw < 0;
+
+            resData.talents[activeRef].activeSlot = a;
+            resData.talents[activeRef].isSmartCast = isSmartCast;
+          }
+        }
+      }
+    }
+
+    resultMap[wideCharString] = resData;
+
+    playersCount++;
+    curPlayer = usersData[playersCount];
+  }
+  return resultMap;
+}
+
+
+nstl::map<nstl::string, StrongMT<CustomGame>> g_games;
+nstl::map<nstl::wstring, int> playerNicknameToWebUserIdMap;
+lobby::EOperationResult::Enum ServerNode::TryCreateWebSession(const char* token)
 {
-  WebPostRequest request(L"127.0.0.1", L"/api", SYNCHRONIZER_PORT, 0);
-  //sprintf(jsonBuff,"{\"method\":\"connectToWebSession\",\"data\":{\"sessionToken\":\"%s\",\"playerKey\":\"%s\",\"apiKey\":\"%s\"}}", sessionToken.c_str(), playerKey.c_str());
+  std::string response = GetSessionData(token);
 
-  Json::Value data;
-  data["sessionToken"] = Json::Value (std::string(token, 32));
-  data["playerKey"] = Json::Value (std::string(token + 32));
-  data["apiKey"] = Json::Value (API_KEY);
+  Json::Value parsedValue = ParseJson(response.c_str());
 
-  Json::Value result;
-  result["data"] = data;
-  result["method"] = Json::Value("connectToWebSession");
+  if (parsedValue.empty()) {
+    LOBBY_LOG_ERR( "Failed to get info from the synchronizer %s", token );
+    return EOperationResult::RestrictedAccess;
+  }
+  Json::Value errorSet = parsedValue.get("error", "ERROR");
+  if (!errorSet.asString().empty()) {
+    LOBBY_LOG_ERR( "Error occurred during session creation: %s (%s)", errorSet.asString().c_str(), token );
+    return EOperationResult::RestrictedAccess;
+  }
 
-  Json::FastWriter writer;
-  std::string res = writer.write(result);
+  Json::Value mapId = parsedValue.get("mapId", Json::Value());
+  if (mapId.empty() || !mapId.isString()) {
+    LOBBY_LOG_ERR( "Error occurred during session creation: Invalid mapId %s", token );
+    return EOperationResult::RestrictedAccess;
+  }
 
-  request.SendPostRequest(res);
+  Json::Value usersData = parsedValue.get("usersData", Json::Value());
+  if (usersData.empty() || !usersData.isArray()) {
+    LOBBY_LOG_ERR( "Error occurred during session creation: Empty usersData %s", token );
+    return EOperationResult::RestrictedAccess;
+  }
 
-  res = writer.write(result);
+  WebUsersDataMap usersDataMap = GetUsersData(usersData);
+  if (usersDataMap.empty()) {
+    LOBBY_LOG_ERR( "Error occurred during session creation: Invalid usersData %s", token );
+    return EOperationResult::RestrictedAccess;
+  }
+
+  SGameParameters params;
+  params.gameType = EGameType::Custom;
+  params.name = L"";
+  params.mapId = mapId.asString().c_str();
+  params.slotsCount = usersDataMap.size();
+  params.maxPlayersPerTeam = usersDataMap.size() / 2;
+  params.randomSeed = GetGameRandom();
+  params.manoeuvresFaction = lobby::ETeam::None;
+
+  StrongMT<lobby::CustomGame>& game = g_games[token];
+  game = CreateCustomGame( params, 0 );
+  NI_VERIFY( game, "Custom game was NOT created", return EOperationResult::RestrictedAccess );
+
+
+  for (WebUsersDataMap::iterator it = usersDataMap.begin(); it != usersDataMap.end(); ++it) {
+    std::wstring nickname = it->first;
+    WebLauncherPostRequest::WebUserData userData = it->second;
+    playerNicknameToWebUserIdMap[nickname.c_str()] = userData.userId;
+    StrongMT<lobby::ServerConnection> fakeConnection = NewConnection(userData.userId, nickname.c_str());
+    EOperationResult::Enum result = game->SetupCustom( fakeConnection.Get() );
+    if ( result != EOperationResult::Ok ) {
+      LOBBY_LOG_ERR( "Error occurred during session creation: Failed to add NewConnection %s", token );
+      return EOperationResult::RestrictedAccess;
+    }
+  }
+
+  InsertCustomGame( game );
+  //StartCustomGame( game );
+
+  return EOperationResult::Ok;
 }
 
 void ServerNode::OnNewNode( Transport::IChannel * channel, rpc::Node * node )
@@ -440,7 +550,7 @@ void ServerNode::GetClientUsername( Transport::TClientId userId, wstring & usern
 
 
 
-StrongMT<ServerConnection> ServerNode::NewConnection( Transport::TClientId clientId, wstring & username )
+StrongMT<ServerConnection> ServerNode::NewConnection( Transport::TClientId clientId, const wstring & username )
 {
   StrongMT<ServerConnection> conn = new ServerConnection( config, this, clientId );
 
@@ -600,7 +710,6 @@ void ServerNode::Poll( timer::Time _now )
   PollSocPreparation();
   CleanupSocialLists();
   StatusDump();
-  TryCreateWebSession("Tester00Tester00Tester00Tester00a99dfed1f15ff8621202607bb6d416c7ec3581717ec1d76c24b269615400033b");
 }
 
 
@@ -626,7 +735,7 @@ void ServerNode::PollGames()
   }
 }
 
-
+#pragma optimize("", off)
 
 void ServerNode::PollCustomGames()
 {

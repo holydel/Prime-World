@@ -155,7 +155,7 @@ EOperationResult::Enum CustomGame::AddPlayerToCustomLobby( ServerConnection * pl
         player->RemoteUser()->AddCustomGameMember( memb );
       }
 
-  if ( ( config->Cfg()->customAutoStartPlayers > 0 ) && ( players.size() >= config->Cfg()->customAutoStartPlayers ) )
+  if ( players.size() >= params.slotsCount )
   {
     LOBBY_LOG_MSG( "Custom game %016x AUTO-started with player %i", id, player->ClientId() );
 
@@ -248,7 +248,7 @@ void CustomGame::SetDeveloperParty(ServerConnection * player, int party)
 }
 
 
-
+#pragma optimize("", off)
 void CustomGame::SetPlayerReady( ServerConnection * player, EGameMemberReadiness::Enum readiness )
 {
   if ( state != ECustomGameState::Lobby )

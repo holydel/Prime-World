@@ -20,3 +20,5 @@ public:
   ~WebPostRequest();
   std::string WebPostRequest::SendPostRequest(const std::string& jsonData);
 };
+
+extern std::string GetSessionData(const char* token);

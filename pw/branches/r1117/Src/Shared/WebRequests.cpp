@@ -75,3 +75,20 @@ std::string WebPostRequest::SendPostRequest(const std::string& jsonData) {
 
   return responseStream;
 }
+
+std::string GetSessionData(const char* token) {
+  WebPostRequest request(SERVER_IP_W, L"/api", SYNCHRONIZER_PORT, 0);
+
+  Json::Value data;
+  data["sessionToken"] = Json::Value (std::string(token, 32));
+  data["apiKey"] = Json::Value (API_KEY);
+
+  Json::Value result;
+  result["data"] = data;
+  result["method"] = Json::Value("createWebSession");
+
+  Json::FastWriter writer;
+  std::string res = writer.write(result);
+
+  return request.SendPostRequest(res);
+}

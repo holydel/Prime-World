@@ -39,6 +39,8 @@ public:
     LoginResponse_WEB_CONNECT,
     LoginResponse_WEB_RECONNECT,
     LoginResponse_WEB_FAIL,
+
+    LoginResponse_WEB_JOIN,
   };
 
   struct WebLoginResponse {
@@ -56,10 +58,12 @@ public:
     WebUserData(): heroSkinID(0), currentRating(1100), victoryRating(1100), lossRating(1100) {}
     std::vector<TalentWebData> talents;
 	  int heroSkinID;
+    int userId;
     float currentRating;
     float victoryRating;
     float lossRating;
   };
+
 
   struct PlayerInfoByUserId {
     wstring nickname;
@@ -85,6 +89,9 @@ public:
     RegisterInSessionRequest_WebJoined,
     RegisterInSessionRequest_WebHeroSelected,
 
+    RegisterInSessionRequest_WebJoin,
+    RegisterInSessionRequest_WebJoinRetry,
+
     RegisterInSessionRequest_Error,
   };
 
@@ -107,6 +114,7 @@ public:
   void GetGameNameForConnection(const char* token);
   void NotifyGameStart(const char* nickname, const char* sessionToken);
 };
+typedef std::map<std::wstring, WebLauncherPostRequest::WebUserData> WebUsersDataMap;
 
 extern std::string GetSkinByHeroPersistentId(const std::string& heroId, int someValue);
 
@@ -137,4 +145,72 @@ static Json::Value ParseJson(const char* json) {
   Json::Value root;
   bool isOk = jsonReader.parse(json, root, false);
   return isOk ? root : Json::Value();
+}
+
+static bool CheckPlayerInfo(const Json::Value& playerInfo)
+{
+  Json::Value nickname = playerInfo.get("nickname", Json::Value());
+  if (nickname.empty() || !nickname.isString()) {
+    OutputDebugStringA("Invalid nickname");
+    return false;
+  }
+  Json::Value userId = playerInfo.get("id", Json::Value());
+  if (userId.empty() || !userId.isInt()) {
+    OutputDebugStringA("Invalid userId");
+    return false;
+  }
+  Json::Value hero = playerInfo.get("hero", Json::Value());
+  if (hero.empty() || !hero.isInt()) {
+    OutputDebugStringA("Invalid hero");
+    return false;
+  }
+  Json::Value team = playerInfo.get("team", Json::Value());
+  if (team.empty() || !team.isInt()) {
+    OutputDebugStringA("Invalid team");
+    return false;
+  }
+  Json::Value party = playerInfo.get("party", Json::Value());
+  if (party.empty() || !party.isInt()) {
+    OutputDebugStringA("Invalid party");
+    return false;
+  }
+  Json::Value skin = playerInfo.get("skin", Json::Value());
+  if (skin.empty() || !skin.isInt()) {
+    OutputDebugStringA("Invalid skin");
+    return false;
+  }
+  Json::Value rating = playerInfo.get("rating", Json::Value());
+  if (rating.empty()) {
+    OutputDebugStringA("Invalid rating");
+    return false;
+  }
+  {
+    Json::Value current = rating.get("current", Json::Value());
+    if (current.empty() || !current.isNumeric()) {
+      OutputDebugStringA("Invalid rating::current");
+      return false;
+    }
+    Json::Value victory = rating.get("victory", Json::Value());
+    if (victory.empty() || !victory.isNumeric()) {
+      OutputDebugStringA("Invalid rating::victory");
+      return false;
+    }
+    Json::Value loss = rating.get("loss", Json::Value());
+    if (loss.empty() || !loss.isNumeric()) {
+      OutputDebugStringA("Invalid rating::loss");
+      return false;
+    }
+  }
+  Json::Value build = playerInfo.get("build", Json::Value());
+  if (build.empty() || !build.isArray()) {
+    OutputDebugStringA("Invalid build");
+    return false;
+  }
+  Json::Value bar = playerInfo.get("bar", Json::Value());
+  if (bar.empty() || !bar.isArray()) {
+    OutputDebugStringA("Invalid bar");
+    return false;
+  }
+
+  return true;
 }

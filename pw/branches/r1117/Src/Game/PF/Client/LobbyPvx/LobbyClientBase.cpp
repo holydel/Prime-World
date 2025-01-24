@@ -58,7 +58,7 @@ ClientBase::ClientBase( Transport::TClientId _clientId, bool _inSocialMode ) :
 inSocialMode( _inSocialMode ),
 status( EClientStatus::Initial ),
 errorCode( EClientError::NoError ),
-lastLobbyOperationResult( EOperationResult::Ok ),
+lastLobbyOperationResult( EOperationResult::InternalError ),
 clientId( _clientId ),
 now( 0 ),
 statusTimeLimit( -1 ),
@@ -589,6 +589,16 @@ void ClientBase::JoinGame( int gameId )
 }
 
 
+
+void ClientBase::JoinWebGame(const string & token)
+{
+  NI_VERIFY( status == EClientStatus::Connected, "", return );
+  NI_VERIFY( serverInst, "", return );
+
+  serverInst->ConnectToWebLobby( token, this, &ClientBase::OnOperatioResult );
+  lastLobbyOperationResult = EOperationResult::InProgress;
+
+}
 
 void ClientBase::ReconnectGame( int gameId, int team, const string& heroId )
 {

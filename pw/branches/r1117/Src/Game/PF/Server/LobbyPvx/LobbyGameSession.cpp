@@ -59,7 +59,7 @@ GameSession::~GameSession()
 }
 
 
-
+#pragma optimize("", off)
 void GameSession::Poll( NHPTimer::FTime now )
 {
   NI_PROFILE_FUNCTION;
@@ -205,7 +205,8 @@ void GameSession::SetupFromCustomGame( CustomGame * _customGame )
 }
 
 
-
+#pragma optimize("", off)
+extern nstl::map<nstl::wstring, int> playerNicknameToWebUserIdMap;
 EOperationResult::Enum GameSession::ReconnectToCustomGame( ServerConnection * player )
 {
   LOBBY_LOG_MSG( "Trying to rejoin player %d to custom game %s...", player->ClientId(), strGameId );
@@ -219,7 +220,13 @@ EOperationResult::Enum GameSession::ReconnectToCustomGame( ServerConnection * pl
   NI_VERIFY( ( gameServer || gameSvcInstId.Valid() ) && gameServerInternal, "", return EOperationResult::InternalError );
   NI_VERIFY( player->RemoteUser(), "", return EOperationResult::InternalError );
 
-  gameServerInternal->OnRejoinClient( player->ClientId(), this, &GameSession::OnRejoinClientAnswer );
+  nstl::map<nstl::wstring, int>::iterator it = playerNicknameToWebUserIdMap.find(player->UserInfo().nickname.c_str() + 1);
+  if (it == playerNicknameToWebUserIdMap.end()) {
+    LOBBY_LOG_ERR( "Player is not found %s (%d)", player->UserInfo().nickname.c_str(), player->ClientId() );
+    return EOperationResult::InternalError;
+  }
+
+  gameServerInternal->OnRejoinClient( it->second, this, &GameSession::OnRejoinClientAnswer );
 
   player->RemoteUser()->StartSession( gameId, params, lineup, gameServer, gameSvcInstId, (unsigned)Timestamp() );
   return EOperationResult::Ok;

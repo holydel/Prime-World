@@ -1612,73 +1612,6 @@ void WebLauncherPostRequest::SendFinishGameRequest(const vector<int>& playerUser
   std::string responseStream = SendPostRequest(jsonReq);
 }
 
-static bool CheckPlayerInfo(const Json::Value& playerInfo)
-{
-  Json::Value nickname = playerInfo.get("nickname", Json::Value());
-  if (nickname.empty() || !nickname.isString()) {
-    OutputDebugStringA("Invalid nickname");
-    return false;
-  }
-  Json::Value userId = playerInfo.get("id", Json::Value());
-  if (userId.empty() || !userId.isInt()) {
-    OutputDebugStringA("Invalid userId");
-    return false;
-  }
-  Json::Value hero = playerInfo.get("hero", Json::Value());
-  if (hero.empty() || !hero.isInt()) {
-    OutputDebugStringA("Invalid hero");
-    return false;
-  }
-  Json::Value team = playerInfo.get("team", Json::Value());
-  if (team.empty() || !team.isInt()) {
-    OutputDebugStringA("Invalid team");
-    return false;
-  }
-  Json::Value party = playerInfo.get("party", Json::Value());
-  if (party.empty() || !party.isInt()) {
-    OutputDebugStringA("Invalid party");
-    return false;
-  }
-  Json::Value skin = playerInfo.get("skin", Json::Value());
-  if (skin.empty() || !skin.isInt()) {
-    OutputDebugStringA("Invalid skin");
-    return false;
-  }
-  Json::Value rating = playerInfo.get("rating", Json::Value());
-  if (rating.empty()) {
-    OutputDebugStringA("Invalid rating");
-    return false;
-  }
-  {
-    Json::Value current = rating.get("current", Json::Value());
-    if (current.empty() || !current.isNumeric()) {
-      OutputDebugStringA("Invalid rating::current");
-      return false;
-    }
-    Json::Value victory = rating.get("victory", Json::Value());
-    if (victory.empty() || !victory.isNumeric()) {
-      OutputDebugStringA("Invalid rating::victory");
-      return false;
-    }
-    Json::Value loss = rating.get("loss", Json::Value());
-    if (loss.empty() || !loss.isNumeric()) {
-      OutputDebugStringA("Invalid rating::loss");
-      return false;
-    }
-  }
-  Json::Value build = playerInfo.get("build", Json::Value());
-  if (build.empty() || !build.isArray()) {
-    OutputDebugStringA("Invalid build");
-    return false;
-  }
-  Json::Value bar = playerInfo.get("bar", Json::Value());
-  if (bar.empty() || !bar.isArray()) {
-    OutputDebugStringA("Invalid bar");
-    return false;
-  }
-
-  return true;
-}
 
 WebLauncherPostRequest::WebLoginResponse WebLauncherPostRequest::GetSessionData(const char* token, const char* apiKey)
 {
@@ -1757,12 +1690,20 @@ WebLauncherPostRequest::WebLoginResponse WebLauncherPostRequest::GetSessionData(
   g_playerPartyId = party.asInt();
 
   if (method.asString() == "create") {
+    res.retCode = LoginResponse_WEB_JOIN;
+    g_sessionStatus = RegisterInSessionRequest_WebJoin;
+    /*
     res.retCode = LoginResponse_WEB_CREATE;
     g_sessionStatus = RegisterInSessionRequest_WebCreate;
+    */
   }
   if (method.asString() == "connect") {
+    /*
     res.retCode = LoginResponse_WEB_CONNECT;
     g_sessionStatus = RegisterInSessionRequest_WebConnect;
+    */
+    res.retCode = LoginResponse_WEB_JOIN;
+    g_sessionStatus = RegisterInSessionRequest_WebJoin;
 
     Json::Value gameName = parsedJson.get("gameName", Json::Value());
     if (gameName.empty()) {
@@ -1773,8 +1714,12 @@ WebLauncherPostRequest::WebLoginResponse WebLauncherPostRequest::GetSessionData(
     g_sessionName = Fix1251Encoding(gameName.asString()).c_str();
   }
   if (method.asString() == "reconnect") {
+    /*
     res.retCode = LoginResponse_WEB_RECONNECT;
     g_sessionStatus = RegisterInSessionRequest_WebReconnect;
+    */
+    res.retCode = LoginResponse_WEB_JOIN;
+    g_sessionStatus = RegisterInSessionRequest_WebJoin;
 
     Json::Value gameName = parsedJson.get("gameName", Json::Value());
     if (gameName.empty() || gameName.asString().empty()) {
@@ -1857,7 +1802,7 @@ std::string WebLauncherPostRequest::CreateDebugSession()
 
   sprintf(jsonBuff,"{\"method\":\"registerSession\",\"key\":\"%s\",\"body\":{\"sessionToken\":\"%s\",\"players\":%s}}", API_KEY, SESSION_TOKEN,
     "[{\"id\":1,\"nickname\":\"Rekongstor\",\"muteChat\":false,\"hero\":29,\"team\":2,\"party\":0,\"skin\":1,\"rating\":{\"current\":2001.01234567,\"victory\":2021.987654321,\"loss\":1995.456789123123456},\"build\":[689,634,413,576,415,377,687,632,370,510,426,723,686,631,605,508,677,676,-266,420,607,577,429,675,-263,-264,606,506,431,-265,-261,-262,406,507,564,-29],\"bar\":[-31,-32,30,19,8,0,0,0,0,0]},\
-      {\"id\":2,\"nickname\":\"����������\",\"muteChat\":false,\"hero\":29,\"team\":1,\"party\":0,\"skin\":2,\"rating\":{\"current\":2021.01234567,\"victory\":2041.987654321,\"loss\":1975.456789123123456},\"build\":[689,634,413,576,415,377,687,632,370,510,426,723,686,631,605,508,677,676,-266,420,607,577,429,675,-263,-264,606,506,431,-265,-261,-262,406,507,564,-29],\"bar\":[-31,-32,30,19,8,0,0,0,0,0]}]"
+      {\"id\":2,\"nickname\":\"DOK\",\"muteChat\":false,\"hero\":29,\"team\":1,\"party\":0,\"skin\":2,\"rating\":{\"current\":2021.01234567,\"victory\":2041.987654321,\"loss\":1975.456789123123456},\"build\":[689,634,413,576,415,377,687,632,370,510,426,723,686,631,605,508,677,676,-266,420,607,577,429,675,-263,-264,606,506,431,-265,-261,-262,406,507,564,-29],\"bar\":[-31,-32,30,19,8,0,0,0,0,0]}]"
     );
   OutputDebugStringA(jsonBuff);
   const std::string jsonData = jsonBuff;

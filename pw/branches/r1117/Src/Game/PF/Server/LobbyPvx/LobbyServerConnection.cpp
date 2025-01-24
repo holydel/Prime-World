@@ -172,7 +172,7 @@ EOperationResult::Enum ServerConnection::JoinGame( int gameId )
 
 
 
-
+#pragma optimize("", off)
 EOperationResult::Enum ServerConnection::ReconnectToCustomGame( int gameId, /*ETeam::Enum*/ int team, const string & heroId )
 {
   if ( !config->Cfg()->enableDevMode )
@@ -317,14 +317,27 @@ EOperationResult::Enum ServerConnection::JoinSocialGame()
   return EOperationResult::InternalError;
 }
 
-lobby::EOperationResult::Enum ServerConnection::ConnectToWebLobby(const string & token)
+extern nstl::map<nstl::string, StrongMT<CustomGame>> g_games;
+lobby::EOperationResult::Enum ServerConnection::ConnectToWebLobby(const nstl::string & token)
 {
-  StrongMT<ServerNode> locked = server.Lock();
-  if ( locked ) {
-    locked->TryCreateWebSession(token.c_str());
+  if (token.length() < 32) {
+    return EOperationResult::RestrictedAccess;
   }
 
-  return EOperationResult::GameNotFound;
+  map<nstl::string, StrongMT<CustomGame>>::iterator it;
+  nstl::string sessionToken = nstl::string(token.c_str(), 32);
+  it = g_games.find(sessionToken);
+
+  if (it == g_games.end()) {
+    StrongMT<ServerNode> locked = server.Lock();
+    if ( locked ) {
+      return locked->TryCreateWebSession(sessionToken.c_str());
+    }
+    return EOperationResult::InternalError;
+  }
+  StrongMT<CustomGame>& game = it->second;
+  int gameId = game->Id();
+  return ReconnectToCustomGame(gameId, 0, "");
 }
 
 } //namespace lobby
