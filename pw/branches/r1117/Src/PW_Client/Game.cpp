@@ -1241,9 +1241,9 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
 
     WebLauncherPostRequest::WebLoginResponse response;
     if (protocolMethod == "runGame" || protocolMethod == "reconnect") {
-      WebLauncherPostRequest cprequest();
+      WebLauncherPostRequest cprequest;
       cprequest.CreateDebugSession();
-      WebLauncherPostRequest rprequest();
+      WebLauncherPostRequest rprequest;
       response = rprequest.GetSessionData(protocolToken);
       if (response.retCode == WebLauncherPostRequest::LoginResponse_WEB_FAILED_CONNECTION) {
         useMirrorServer = true;

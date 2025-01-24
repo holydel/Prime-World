@@ -4,6 +4,7 @@
 #include "Network/FreePortsFinder.h"
 #include "PW_Game/server_ip.h"
 
+
 namespace 
 {
   string coordinatorAddr = string(SERVER_IP) + ":" + SERVER_PORT;

@@ -1,6 +1,8 @@
 
 #include "WebRequests.h"
 
+bool useMirrorServer = false;
+
 #pragma comment(lib, "wininet.lib")
 
 

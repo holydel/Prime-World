@@ -17,8 +17,6 @@ extern int g_playerPartyId;
 
 bool g_playerPwcChatMute = false;
 
-bool useMirrorServer = false;
-
 string g_devLogin;
 string g_sessionToken;
 string g_playerToken;

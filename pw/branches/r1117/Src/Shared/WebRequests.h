@@ -22,3 +22,5 @@ public:
 };
 
 extern std::string GetSessionData(const char* token);
+
+extern bool useMirrorServer;
