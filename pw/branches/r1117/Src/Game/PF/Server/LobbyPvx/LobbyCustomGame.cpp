@@ -248,7 +248,6 @@ void CustomGame::SetDeveloperParty(ServerConnection * player, int party)
 }
 
 
-#pragma optimize("", off)
 void CustomGame::SetPlayerReady( ServerConnection * player, EGameMemberReadiness::Enum readiness )
 {
   if ( state != ECustomGameState::Lobby )

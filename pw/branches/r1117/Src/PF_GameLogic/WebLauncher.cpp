@@ -1280,20 +1280,7 @@ WebLauncherPostRequest::WebLoginResponse WebLauncherPostRequest::GetNickName(con
   Json::Value nickname = data.get("nickname", "");
   std::string utf8String = nickname.asString();
   
-  // Fix 1251 encoding
-	int utf8Length = static_cast<int>(utf8String.length());
-  int wideCharLength = MultiByteToWideChar(CP_UTF8, 0, utf8String.c_str(), utf8Length, NULL, 0);
-
-  wchar_t* wideCharString = new wchar_t[wideCharLength + 1];
-  MultiByteToWideChar(CP_UTF8, 0, utf8String.c_str(), utf8Length, wideCharString, wideCharLength);
-  wideCharString[wideCharLength] = L'\0';
-
-  int win1251Length = WideCharToMultiByte(1251, 0, wideCharString, -1, NULL, 0, NULL, NULL);
-  char* win1251String = new char[win1251Length];
-  WideCharToMultiByte(1251, 0, wideCharString, -1, win1251String, win1251Length, NULL, NULL);
-
-
-  res.response = win1251String;
+  res.response = Fix1251Encoding(utf8String);
   res.retCode = res.response.empty() ?  WebLauncherPostRequest::LoginResponse_FAIL : WebLauncherPostRequest::LoginResponse_OK;
 
   return res;
@@ -2019,45 +2006,9 @@ WebLauncherPostRequest::WebLoginResponse WebLauncherPostRequest::GetSessionData(
     g_playerPwcChatMute = true;
   }
 
-  if (method.asString() == "create") {
+  if (method.asString() == "create" || method.asString() == "connect" || method.asString() == "reconnect") {
     res.retCode = LoginResponse_WEB_JOIN;
     g_sessionStatus = RegisterInSessionRequest_WebJoin;
-    /*
-    res.retCode = LoginResponse_WEB_CREATE;
-    g_sessionStatus = RegisterInSessionRequest_WebCreate;
-    */
-  }
-  if (method.asString() == "connect") {
-    /*
-    res.retCode = LoginResponse_WEB_CONNECT;
-    g_sessionStatus = RegisterInSessionRequest_WebConnect;
-    */
-    res.retCode = LoginResponse_WEB_JOIN;
-    g_sessionStatus = RegisterInSessionRequest_WebJoin;
-
-    Json::Value gameName = parsedJson.get("gameName", Json::Value());
-    if (gameName.empty()) {
-      res.response = "gameName section is empty";
-      res.retCode = LoginResponse_WEB_FAIL;
-      return res;
-    }
-    g_sessionName = gameName.asString().c_str();
-  }
-  if (method.asString() == "reconnect") {
-    /*
-    res.retCode = LoginResponse_WEB_RECONNECT;
-    g_sessionStatus = RegisterInSessionRequest_WebReconnect;
-    */
-    res.retCode = LoginResponse_WEB_JOIN;
-    g_sessionStatus = RegisterInSessionRequest_WebJoin;
-
-    Json::Value gameName = parsedJson.get("gameName", Json::Value());
-    if (gameName.empty() || gameName.asString().empty()) {
-      res.response = "gameName section is empty";
-      res.retCode = LoginResponse_WEB_FAIL;
-      return res;
-    }
-    g_sessionName = gameName.asString().c_str();
   }
 
   // Get users data
@@ -2071,12 +2022,8 @@ WebLauncherPostRequest::WebLoginResponse WebLauncherPostRequest::GetSessionData(
     }
 
     std::string curNickname = curPlayer.get("nickname", Json::Value()).asString();
-    int utf8Length = static_cast<int>(curNickname.length());
-    int wideCharLength = MultiByteToWideChar(CP_UTF8, 0, curNickname.c_str(), utf8Length, NULL, 0);
 
-    wchar_t* wideCharString = new wchar_t[wideCharLength + 1];
-    MultiByteToWideChar(CP_UTF8, 0, curNickname.c_str(), utf8Length, wideCharString, wideCharLength);
-    wideCharString[wideCharLength] = L'\0';
+    std::wstring wideCharString = Fix1251EncodingW(curNickname);
 
     Json::Value userId = curPlayer.get("id", Json::Value());
     s_userNicknameToUserIdMap[wideCharString] = userId.asInt();

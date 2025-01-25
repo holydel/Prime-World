@@ -59,7 +59,6 @@ GameSession::~GameSession()
 }
 
 
-#pragma optimize("", off)
 void GameSession::Poll( NHPTimer::FTime now )
 {
   NI_PROFILE_FUNCTION;
@@ -205,7 +204,6 @@ void GameSession::SetupFromCustomGame( CustomGame * _customGame )
 }
 
 
-#pragma optimize("", off)
 extern nstl::map<nstl::wstring, int> playerNicknameToWebUserIdMap;
 EOperationResult::Enum GameSession::ReconnectToCustomGame( ServerConnection * player )
 {

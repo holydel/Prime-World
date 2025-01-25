@@ -132,7 +132,7 @@ static const char* heroes [] = {
 "shaman",
 "bomber"
 };
-#pragma optimize("", off)
+
 void SelectGameModeScreen::Step( bool bAppActive )
 {
   StrongMT<Game::IGameContextUiInterface> locked = gameCtx.Lock();
@@ -190,15 +190,7 @@ void SelectGameModeScreen::Step( bool bAppActive )
   if (g_sessionStatus == WebLauncherPostRequest::RegisterInSessionRequest_Reconnect || g_sessionStatus == WebLauncherPostRequest::RegisterInSessionRequest_WebReconnect) {
     int requiredGameId = -1;
 
-    // Fix 1251 encoding
-    int utf8Length = static_cast<int>(g_sessionName.length());
-    int wideCharLength = MultiByteToWideChar(CP_UTF8, 0, g_sessionName.c_str(), utf8Length, NULL, 0);
-
-    wchar_t* wideCharString = new wchar_t[wideCharLength + 1];
-    MultiByteToWideChar(CP_UTF8, 0, g_sessionName.c_str(), utf8Length, wideCharString, wideCharLength);
-    wideCharString[wideCharLength] = L'\0';
-
-    wstring nameTofind = wideCharString;
+    wstring nameTofind = Fix1251EncodingW(g_sessionName.c_str()).c_str();
     nameTofind += L"'s game";
 
     for( lobby::TDevGamesList::iterator it = infos.begin(); it != infos.end(); ++it ) {
@@ -225,15 +217,7 @@ void SelectGameModeScreen::Step( bool bAppActive )
   if (g_sessionStatus == WebLauncherPostRequest::RegisterInSessionRequest_Connect || g_sessionStatus == WebLauncherPostRequest::RegisterInSessionRequest_WebConnect) {
     int requiredGameId = -1;
 
-    // Fix 1251 encoding
-    int utf8Length = static_cast<int>(g_sessionName.length());
-    int wideCharLength = MultiByteToWideChar(CP_UTF8, 0, g_sessionName.c_str(), utf8Length, NULL, 0);
-
-    wchar_t* wideCharString = new wchar_t[wideCharLength + 1];
-    MultiByteToWideChar(CP_UTF8, 0, g_sessionName.c_str(), utf8Length, wideCharString, wideCharLength);
-    wideCharString[wideCharLength] = L'\0';
-
-    wstring nameTofind = wideCharString;
+    wstring nameTofind = Fix1251EncodingW(g_sessionName.c_str()).c_str();
     nameTofind += L"'s game";
 
     for( lobby::TDevGamesList::iterator it = infos.begin(); it != infos.end(); ++it ) {

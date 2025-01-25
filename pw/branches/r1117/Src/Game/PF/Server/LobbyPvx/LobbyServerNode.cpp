@@ -232,7 +232,6 @@ RIServerInstance * ServerNode::AddClient( RILobbyUser * user, int clientRevision
 }
 
 
-#pragma optimize("", off)
 
 static WebUsersDataMap GetUsersData(Json::Value usersData) {
   WebUsersDataMap resultMap;
@@ -245,13 +244,9 @@ static WebUsersDataMap GetUsersData(Json::Value usersData) {
       return emptyMap;
     }
 
-    std::string curNickname = Fix1251Encoding(curPlayer.get("nickname", Json::Value()).asString());
-    int utf8Length = static_cast<int>(curNickname.length());
-    int wideCharLength = MultiByteToWideChar(CP_UTF8, 0, curNickname.c_str(), utf8Length, NULL, 0);
+    std::string curNickname = curPlayer.get("nickname", Json::Value()).asString();
 
-    wchar_t* wideCharString = new wchar_t[wideCharLength + 1];
-    MultiByteToWideChar(CP_UTF8, 0, curNickname.c_str(), utf8Length, wideCharString, wideCharLength);
-    wideCharString[wideCharLength] = L'\0';
+    std::wstring wideCharString = Fix1251EncodingW(curNickname);
 
     WebLauncherPostRequest::WebUserData resData;
     Json::Value rating = curPlayer.get("rating", Json::Value());
@@ -822,7 +817,6 @@ void ServerNode::PollGames()
   }
 }
 
-#pragma optimize("", off)
 
 void ServerNode::PollCustomGames()
 {

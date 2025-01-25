@@ -122,7 +122,6 @@ void LoginServerBase::SendReply( SLoginContext * context )
 }
 
 
-#pragma optimize("", off)
 bool LoginServerBase::ProcessPacket(Stream* stream, Network::IConnection *conn)
 {
   AutoPerfCounterRate( "users_inc_login", 1 );

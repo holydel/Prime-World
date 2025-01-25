@@ -130,18 +130,24 @@ static std::string WideCharToMultiByteString(const wchar_t* wideCharString) {
   WideCharToMultiByte(CP_UTF8, 0, wideCharString, -1, &result[0], size_needed, NULL, NULL);
   return result;
 }
-static std::string Fix1251Encoding(std::string utf8String)
-{
+static std::wstring Fix1251EncodingW(std::string utf8String) {
   int utf8Length = static_cast<int>(utf8String.length());
   int wideCharLength = MultiByteToWideChar(CP_UTF8, 0, utf8String.c_str(), utf8Length, NULL, 0);
 
-  wchar_t* wideCharString = new wchar_t[wideCharLength + 1];
-  MultiByteToWideChar(CP_UTF8, 0, utf8String.c_str(), utf8Length, wideCharString, wideCharLength);
+  std::wstring wideCharString;
+  wideCharString.resize(wideCharLength + 1);
+  MultiByteToWideChar(CP_UTF8, 0, utf8String.c_str(), utf8Length, &wideCharString[0], wideCharLength);
   wideCharString[wideCharLength] = L'\0';
+  return wideCharString;
+}
+static std::string Fix1251Encoding(std::string utf8String)
+{
+  std::wstring wideCharString = Fix1251EncodingW(utf8String);
 
-  int win1251Length = WideCharToMultiByte(1251, 0, wideCharString, -1, NULL, 0, NULL, NULL);
-  char* win1251String = new char[win1251Length];
-  WideCharToMultiByte(1251, 0, wideCharString, -1, win1251String, win1251Length, NULL, NULL);
+  int win1251Length = WideCharToMultiByte(1251, 0, &wideCharString[0], -1, NULL, 0, NULL, NULL);
+  std::string win1251String;
+  win1251String.resize(win1251Length, ' ');
+  WideCharToMultiByte(1251, 0, &wideCharString[0], -1, &win1251String[0], win1251Length, NULL, NULL);
 
   return win1251String;
 }

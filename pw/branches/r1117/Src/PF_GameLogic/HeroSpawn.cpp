@@ -35,7 +35,6 @@
 #include <PF_GameLogic/PFTalent.h>
 #include "WebLauncher.h"
 #include "../PW_Game/server_ip.h"
-//#pragma optimize("", off)
 
 map<int, WebLauncherPostRequest::PlayerInfoByUserId> userIdToNicknameMap;
 extern std::map<std::wstring, WebLauncherPostRequest::WebUserData> g_usersData;

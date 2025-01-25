@@ -172,7 +172,6 @@ EOperationResult::Enum ServerConnection::JoinGame( int gameId )
 
 
 
-#pragma optimize("", off)
 EOperationResult::Enum ServerConnection::ReconnectToCustomGame( int gameId, /*ETeam::Enum*/ int team, const string & heroId )
 {
   if ( !config->Cfg()->enableDevMode )
