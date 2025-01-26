@@ -148,6 +148,9 @@ public:
 
   NDb::EMapType GetMMGameType() { return socialGameData.mapType; }
 
+  void SetSessionToken(const char* _sessionToken) { sessionToken = _sessionToken; }
+  const char* GetSessionToken() { return sessionToken.c_str(); }
+
 private:
   void PollGSConnection( NHPTimer::FTime now );
   void ServeGameServer( const char * _balancerSvcPath );
@@ -219,6 +222,7 @@ private:
   };
 
   vector<SBotInfo>                botsToAdd;
+  nstl::string                    sessionToken;
 };
 
 } //namespace lobby

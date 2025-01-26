@@ -438,6 +438,7 @@ lobby::EOperationResult::Enum ServerNode::TryCreateWebSession(const char* token)
       return EOperationResult::RestrictedAccess;
     }
   }
+  game->SetSessionToken(token);
   game->StartGame();
 
   InsertCustomGame( game );
@@ -511,6 +512,39 @@ Network::NetAddress ServerNode::GetSvcAddress( const Transport::TServiceId & _se
 }
 
 
+static void SendFinishGameRequest(const char* sessionToken, const StatisticService::RPC::SessionClientResults & _finishInfo, const nstl::vector<Peered::SClientStatistics> & _clientsStatistics)
+{
+  if (!sessionToken) { 
+    return; 
+  }
+  WebPostRequest request(SERVER_IP_W, L"/api", SYNCHRONIZER_PORT, 0);
+
+  Json::Value data;
+  data["sessionToken"] = Json::Value (sessionToken);
+  data["apiKey"] = Json::Value (API_KEY);
+  data["win"] = Json::Value ((int)_finishInfo.sideWon + 1);
+  Json::Value afk;
+
+  if (_finishInfo.sideWon != -1) {
+    for (int pId = 0; pId < _clientsStatistics.size(); ++pId) {
+      const Peered::SClientStatistics& clientStat = _clientsStatistics[pId];
+      if (clientStat.clientState != Peered::EGameFinishClientState::FinishedGame) {
+        afk.append(Json::Value((int)clientStat.clientId));
+      }
+    }
+  }
+  data["afk"] = afk;
+
+  Json::Value result;
+  result["data"] = data;
+  result["method"] = Json::Value("notifyGameFinish");
+
+  Json::FastWriter writer;
+  std::string res = writer.write(result);
+
+  request.SendPostRequest(res);
+}
+
 
 void ServerNode::OnGameFinish( Peered::TSessionId _sessionId, EGameResult::Enum _gameResult, const StatisticService::RPC::SessionClientResults & _info, const nstl::vector<Peered::SClientStatistics> & _clientsStatistics )
 {
@@ -521,9 +555,10 @@ void ServerNode::OnGameFinish( Peered::TSessionId _sessionId, EGameResult::Enum 
   LogGameFinish( _sessionId, _gameResult, _info, _clientsStatistics );
 
   GameSession * game = FindGame( _sessionId );
-  if ( game )
+  if ( game ) {
+    SendFinishGameRequest(game->GetSessionToken(), _info, _clientsStatistics);
     game->OnGameFinish( _gameResult, _info, _clientsStatistics );
-  else {
+  } else {
     LOBBY_LOG_ERR( "Game sessionId=%d not found on finish", FmtGameId( _sessionId ) );
     return;
   }
@@ -987,6 +1022,7 @@ GameSession * ServerNode::NewGameSession( TGameId id, const SGameParameters & pa
 void ServerNode::StartCustomGame( CustomGame * game )
 {
   StrongMT<GameSession> gameSess = NewGameSession( game->Id(), game->Params() );
+  gameSess->SetSessionToken(game->GetSessionToken());
   if ( !gameSess )
     return;
   gameSess->SetupFromCustomGame( game );

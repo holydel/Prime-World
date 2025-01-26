@@ -83,6 +83,9 @@ public:
   void SetDeveloperParty( ServerConnection * player, int party );
   void StartGame();
 
+  void SetSessionToken(const char* _sessionToken) { sessionToken = _sessionToken; }
+  const char* GetSessionToken() { return sessionToken.c_str(); }
+
 private:
   const TGameId                   id;
   StrongMT<IConfigProvider>       config;
@@ -92,6 +95,7 @@ private:
   StrongMT<mmaking::IHeroesTable> heroes;
   int                             autostartPlayers;
   bool                            eliseevHackForPve;
+  nstl::string                    sessionToken;
 
   void ChangeState( ECustomGameState::Enum _st ) { state = _st; }
   int FindPlayer( ServerConnection * player );
