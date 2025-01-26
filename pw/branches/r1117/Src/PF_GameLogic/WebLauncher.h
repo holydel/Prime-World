@@ -135,9 +135,8 @@ static std::wstring Fix1251EncodingW(std::string utf8String) {
   int wideCharLength = MultiByteToWideChar(CP_UTF8, 0, utf8String.c_str(), utf8Length, NULL, 0);
 
   std::wstring wideCharString;
-  wideCharString.resize(wideCharLength + 1);
+  wideCharString.resize(wideCharLength);
   MultiByteToWideChar(CP_UTF8, 0, utf8String.c_str(), utf8Length, &wideCharString[0], wideCharLength);
-  wideCharString[wideCharLength] = L'\0';
   return wideCharString;
 }
 static std::string Fix1251Encoding(std::string utf8String)
