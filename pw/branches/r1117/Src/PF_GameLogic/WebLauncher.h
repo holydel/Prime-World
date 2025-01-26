@@ -29,14 +29,6 @@ public:
   ~WebLauncherPostRequest();
 
   enum LoginResponse {
-    LoginResponse_OK,
-    LoginResponse_FAIL,
-    LoginResponse_BLOCK,
-    LoginResponse_OFFLINE, // Not safe
-
-    LoginResponse_WEB_CREATE,
-    LoginResponse_WEB_CONNECT,
-    LoginResponse_WEB_RECONNECT,
     LoginResponse_WEB_FAIL,
 
     LoginResponse_WEB_JOIN,
@@ -101,23 +93,10 @@ public:
     RegisterInSessionRequest_Error,
   };
 
-	std::vector<TalentWebData> GetTallentSet(const wchar_t* nickName, const char* heroName);
-  std::map<std::wstring, WebUserData> WebLauncherPostRequest::GetUsersData(const std::vector<std::wstring>& nickNames, const std::vector<std::string>& heroNames);
-  std::map<std::wstring, WebUserData> WebLauncherPostRequest::GetLegacyUsersData(const std::vector<std::wstring>& nickNames, const std::vector<std::string>& heroNames);
   std::string ConvertFromClassID(int id);
   WebLoginResponse GetSessionData(const char* token, const char* apiKey = "");
-  WebLoginResponse GetNickName(const char* token);
   std::string WebLauncherPostRequest::SendPostRequest(const std::string& jsonData);
-  RegisterSessionRequest RegisterInSession(const char* nickname, int heroId, const char* sessionToken, string& gameName);
-  RegisterSessionRequest ReconnectInSession(const char* sessionToken, string& gameName);
-  void LobbyCreatedRequest(const char* nickname, const char* sessionToken);
-  bool CheckIsGameReady(const char* sessionToken);
-  bool CheckConnectionRequest(const char* playerToken);
-  void ValidateInstallationRequest(const char* playerToken);
-  void SendSessionResults(const vector<int>& playerUserIds, int winningTeam);
-  void SendFinishGameRequest(const vector<int>& playerUserIds, int winningTeam);
   std::string CreateDebugSession();
-  void GetGameNameForConnection(const char* token);
   void NotifyGameStart(const char* nickname, const char* sessionToken);
 };
 typedef std::map<std::wstring, WebLauncherPostRequest::WebUserData> WebUsersDataMap;

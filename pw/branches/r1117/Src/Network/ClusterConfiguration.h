@@ -5,7 +5,8 @@ namespace Network
 
 const string & GetCoordinatorAddress();
 const string & GetLoginServerAddress();
-int GetFirstServerPort();
+int GetFirstServerPortBack();
+int GetFirstServerPortFront();
 
 string const & GetFrontendIPAddr();
 string const & GetBackendIPAddr();

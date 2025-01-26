@@ -572,9 +572,6 @@ void ClientBase::CreateGame( const char * mapId, int maxPlayers, int maxPlayersP
   serverInst->CreateCustomGame( maxPlayers, maxPlayersPerTeam, mapId, autostartPlayers, this, &ClientBase::OnOperatioResult );
 
   lastLobbyOperationResult = EOperationResult::InProgress;
-
-  WebLauncherPostRequest lobbyCreatedRequest;
-  lobbyCreatedRequest.LobbyCreatedRequest(g_devLogin.c_str(), g_sessionToken.c_str());
 }
 
 

@@ -1172,7 +1172,7 @@ void ServerNode::CreateExtClusterTransport()
   extClusterAddrTranslator = new Coordinator::AddressTranslator( "ext_cluster", classRoutes );
 
   TL::Cfg cfg;
-  cfg.firstServerPort = Network::GetFirstServerPort();
+  cfg.firstServerPort = Network::GetFirstServerPortBack();
   cfg.mf_ = Transport::GetGlobalMessageFactory();
   cfg.at_ = extClusterAddrTranslator;
   cfg.threads_ = TL::GlobalCfg::GetThreads();

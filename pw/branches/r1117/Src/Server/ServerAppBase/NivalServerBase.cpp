@@ -104,12 +104,12 @@ bool NivalServerBase::StartTransport( const TStartList & _startList, const TServ
 
     StrongMT<Coordinator::ICoordinatorClient> coordClient = coordinatorClientRunner->GetClient()->GetInterface();
 
-    ni_udp::NetAddr backendAddr( Network::GetBackendIPAddr().c_str(), Network::GetFirstServerPort() );
+    ni_udp::NetAddr backendAddr( Network::GetBackendIPAddr().c_str(), Network::GetFirstServerPortBack() );
     backendTransport = new rdp_transport::BackendTransport( Transport::GetGlobalMessageFactory(), coordClient->GetBackendAddressTranslator(), backendAddr, "backend" );
 
     if ( hadExternalServices )
     {
-      ni_udp::NetAddr frontendAddr( Network::GetFrontendIPAddr().c_str(), Network::GetFirstServerPort() );
+      ni_udp::NetAddr frontendAddr( Network::GetFrontendIPAddr().c_str(), Network::GetFirstServerPortFront() );
       frontendTransport = new rdp_transport::PrimaryFrontend( Transport::GetGlobalMessageFactory(), coordClient->GetFrontendAddressTranslator(), frontendAddr );
     }
   }
@@ -119,7 +119,7 @@ bool NivalServerBase::StartTransport( const TStartList & _startList, const TServ
     MessageTrace( "Starting TCP/IP transport" );
 
     TL::Cfg cfg;
-    cfg.firstServerPort = Network::GetFirstServerPort();
+    cfg.firstServerPort = Network::GetFirstServerPortBack();
     cfg.mf_ = Transport::GetGlobalMessageFactory();
     cfg.at_ = coordinatorClientRunner->GetClient()->GetInterface()->GetBackendAddressTranslator();
     cfg.threads_ = TL::GlobalCfg::GetThreads();
