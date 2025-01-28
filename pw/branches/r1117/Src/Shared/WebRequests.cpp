@@ -94,3 +94,65 @@ std::string GetSessionData(const char* token) {
 
   return request.SendPostRequest(res);
 }
+
+static void FormatJsonValue(Json::Value value, std::string& stream) {
+  if (value.isObject()) {
+    stream += "{";
+    for (Json::Value::iterator it = value.begin(); it != value.end(); ++it) {
+      if (it != value.begin()) {
+        stream += ",";
+      }
+      stream += "\"";
+      stream += it.memberName();
+      stream += "\":";
+      FormatJsonValue(it.operator *(), stream);
+    }
+    stream += "}";
+    return;
+  }
+  if (value.isArray()) {
+    stream += "[";
+    int it = 0;
+    Json::Value curValue = value[it];
+    while (!curValue.empty()) {
+      if (it != 0) {
+        stream += ",";
+      }
+      FormatJsonValue(curValue, stream);
+      ++it;
+      curValue = value[it];
+    }
+    stream += "]";
+    return;
+  }
+  if (value.isString()) {
+    stream += "\"";
+    stream += value.asString().c_str();
+    stream += "\"";
+    return;
+  }
+  if (value.isInt()) {
+    char output[256];
+    _snprintf_s(output, _countof(output), "%d", value.asInt());
+    stream += output;
+    return;
+  }
+  if (value.isDouble()) {
+    char output[256];
+    _snprintf_s(output, _countof(output), "%f", value.asDouble());
+    stream += output;
+    return;
+  }
+  if (value.isBool()) {
+    stream += value.asBool() ? "true" : "false";
+    return;
+  }
+  int i = 0;
+}
+
+std::string GetFormattedJson(Json::Value value) {
+  std::string sStream;
+  sStream.reserve(65536);
+  FormatJsonValue(value, sStream);
+  return sStream;
+}

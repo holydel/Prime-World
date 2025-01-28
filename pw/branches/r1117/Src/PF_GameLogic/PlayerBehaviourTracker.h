@@ -58,6 +58,8 @@ namespace NWorld
         case BadPlayer:
         case BadZumaPlayer:
         case ToxicPlayer:
+        case ToxicPlayerReported:
+          return true;
         default:
           return false;
         }
@@ -197,16 +199,7 @@ namespace NWorld
       };
     };
 
-    bool IsArmed() const
-    {
-      switch (state)
-      {
-      case EState::Armed:
-        return true;
-      default:
-        return false;
-      }
-    }
+    bool IsArmed() const;
 
     bool IsDisabled() const
     {
@@ -220,28 +213,9 @@ namespace NWorld
       }
     }
 
-    bool HasMark(const EMark::Enum mark) const
-    {
-      if (!EMark::IsValid(mark))
-        return false;
+    bool HasMark(const EMark::Enum mark) const;
 
-      const unsigned bits = 1U << static_cast<unsigned>(mark);
-
-      return ((marks & bits) != 0U);
-    }
-
-    bool HasTracking(const EMark::Enum mark) const
-    {
-      if (!IsArmed())
-        return false;
-
-      if (!EMark::IsValid(mark))
-        return false;
-
-      const unsigned bits = 1U << static_cast<unsigned>(mark);
-
-      return ((marks & bits) == 0U) && ((tracking & bits) != 0U);
-    }
+    bool HasTracking(const EMark::Enum mark) const;
 
     void AddMark(const EMark::Enum mark);
     void AddTracking(const EMark::Enum mark);

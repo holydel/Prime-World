@@ -24,3 +24,5 @@ public:
 extern std::string GetSessionData(const char* token);
 
 extern bool useMirrorServer;
+
+std::string GetFormattedJson(Json::Value value);

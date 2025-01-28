@@ -788,24 +788,19 @@ void GameClientPW::OnCombatScreenStarted( NCore::IWorldBase * _world, const NGam
 
 static void SendFinishGameRequest(const StatisticService::RPC::SessionClientResults & _sessionResults, const NGameX::ReplayInfo & _replayInfo)
 {
-  WebPostRequest request(SERVER_IP_W, L"/api", SYNCHRONIZER_PORT, 0);
-
-  Json::Value data;
+  Json::Value data(Json::objectValue);
   data["sessionToken"] = Json::Value (g_sessionToken.c_str());
   data["sideWon"] = Json::Value (_sessionResults.sideWon);
 
   data["isWon"] = Json::Value (_replayInfo.isWon);
 
-  Json::Value result;
-  result["data"] = data;
-  result["method"] = Json::Value("notifyGameFinishLegacy");
-
-  Json::Value playersInfo;
+  Json::Value playersInfo(Json::arrayValue);
+  nstl::vector<Json::Value> playerInfosValues(_sessionResults.players.size());
   for (int pId = 0; pId < _sessionResults.players.size(); ++pId) {
     const StatisticService::RPC::SessionClientResultsPlayer& infoFromPlayer = _sessionResults.players[pId];
-    Json::Value playerInfo;
+    Json::Value& playerInfo = playerInfosValues[pId];
 
-    playerInfo["uid"] = infoFromPlayer.userid; 
+    playerInfo["uid"] = Json::Value (infoFromPlayer.userid); 
     playerInfo["kills"] = Json::Value (infoFromPlayer.scoring.kills);
     playerInfo["deaths"] = Json::Value (infoFromPlayer.scoring.deaths);
     playerInfo["assists"] = Json::Value (infoFromPlayer.scoring.assists);
@@ -817,10 +812,14 @@ static void SendFinishGameRequest(const StatisticService::RPC::SessionClientResu
     playerInfo["badBehaviourReported"] = Json::Value(infoFromPlayer.extra.badBehaviourReported);
     playersInfo.append(playerInfo);
   }
+  data["playersInfo"] = playersInfo;
 
-  Json::FastWriter writer;
-  std::string res = writer.write(result);
+  Json::Value sessionResultsJson = Json::objectValue;
+  sessionResultsJson["data"] = data;
+  sessionResultsJson["method"] = Json::Value("notifyGameFinishLegacy");
 
+  std::string res = GetFormattedJson(sessionResultsJson);
+  WebPostRequest request(SERVER_IP_W, L"/api", SYNCHRONIZER_PORT, 0);
   request.SendPostRequest(res);
 }
 
@@ -831,13 +830,9 @@ void GameClientPW::OnVictory( const StatisticService::RPC::SessionClientResults 
     NScreenCommands::PushCommand( NScreenCommands::CreatePopScreenCommand( networkStatusScreen ) );
   networkStatusScreen = 0;
 
-  vector<int> playersIds;
-  for (int i = 0; i < _sessionResults.players.size(); ++i) {
-    playersIds.push_back(_sessionResults.players[i].userid);
-  }
-  SendFinishGameRequest(_sessionResults, _replayInfo);
-
   GameClient::OnVictory( _sessionResults, _replayInfo );
+
+  SendFinishGameRequest(_sessionResults, _replayInfo);
 }
 
 

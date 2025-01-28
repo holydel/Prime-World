@@ -523,7 +523,7 @@ static void SendFinishGameRequest(const char* sessionToken, const StatisticServi
   data["sessionToken"] = Json::Value (sessionToken);
   data["apiKey"] = Json::Value (API_KEY);
   data["win"] = Json::Value ((int)_finishInfo.sideWon + 1);
-  Json::Value afk;
+  Json::Value afk = Json::arrayValue;
 
   if (_finishInfo.sideWon != -1) {
     for (int pId = 0; pId < _clientsStatistics.size(); ++pId) {
