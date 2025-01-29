@@ -558,6 +558,24 @@ void ServerNode::OnGameFinish( Peered::TSessionId _sessionId, EGameResult::Enum 
   if ( game ) {
     SendFinishGameRequest(game->GetSessionToken(), _info, _clientsStatistics);
     game->OnGameFinish( _gameResult, _info, _clientsStatistics );
+
+    StatisticService::RPC::SessionResultEvent info;
+    for(int i = 0; i < _clientsStatistics.size(); ++i) {
+      const Peered::SClientStatistics& clientStat = _clientsStatistics[i];
+      StatisticService::RPC::SessionClientResultsPlayer player;
+      player.userid = clientStat.clientId;
+      info.clientData.players.push_back(player);
+
+      StatisticService::RPC::SessionServerResultsPlayer svPlr;
+      svPlr.userid = clientStat.clientId;
+      svPlr.finishStatus = Peered::EGameFinishClientState::FinishedGame;
+      info.serverPlayersInfo.push_back( svPlr );
+    }
+    info.result = 1;
+    info.sessionid = _sessionId;
+    info.clientData.sideWon = _info.sideWon;
+
+    statistics->Message( info );
   } else {
     LOBBY_LOG_ERR( "Game sessionId=%d not found on finish", FmtGameId( _sessionId ) );
     return;

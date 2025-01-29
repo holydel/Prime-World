@@ -59,7 +59,7 @@ void AwardsRequester::FillPreGameData(const nstl::vector<ClientInfo> & _clientsI
 
   if ( _auxData.lobbyGameType == lobby::EGameType::Custom )
   {
-    preGameData.mode = roll::EMode::Train;
+    preGameData.mode = roll::EMode::PvP;
   }
   else if ( _auxData.lobbyGameType == lobby::EGameType::SocialMMaking )
   {

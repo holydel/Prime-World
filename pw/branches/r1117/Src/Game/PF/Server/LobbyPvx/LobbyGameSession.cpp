@@ -198,6 +198,24 @@ void GameSession::SetupFromCustomGame( CustomGame * _customGame )
 {
   customGame = _customGame;
 
+  socialGameData.mapType = NDb::MAPTYPE_PVP;
+  socialGameData.mapId = customGame->Params().mapId;
+
+  int playersCount = customGame->Players().size();
+  socialGameDetails.playerDetails.reserve(playersCount);
+
+  for (int p = 0; p < playersCount; ++p) {
+    const StrongMT<ServerConnection>& player = customGame->Players()[p].player;
+    socialLobby::PlayerDetails& playerDetails = socialGameDetails.playerDetails.push_back();
+    playerDetails.uid = player->UserInfo().userId;
+    playerDetails.nick = player->UserInfo().nickname;
+    playerDetails.gameData.heroRating = (int)2022;
+    playerDetails.gameData.ratingDeltaPrediction.onVictory = 20;
+    playerDetails.gameData.ratingDeltaPrediction.onDefeat = 15;
+    
+    
+  }
+
   customGame->SetupGameStartInfo( gameServerData, lineup );
 
   ServeGameServer( HostServer::Cfg::GetSvcPath().c_str() ); 
@@ -365,6 +383,13 @@ void GameSession::SetupAuxGameServerData( Peered::SAuxData & gsAuxData )
   }
 
   gsAuxData.users.reserve( socialGameDetails.playerDetails.size() );
+  if (socialGameData.humans.empty()) {
+    for (int pi = 0; pi < customGame->Players().size(); ++pi) {
+      Peered::SAuxUserData & gsUser = gsAuxData.users.push_back();
+      gsUser.clientId = customGame->Players()[pi].player->ClientId();
+      gsUser.faction = customGame->Players()[pi].context.team;
+    }
+  } else {
   for ( int pi = 0; pi < socialGameData.humans.size(); ++pi )
   {
     const mmaking::SGameParty & pty = socialGameData.humans[pi];
@@ -383,6 +408,7 @@ void GameSession::SetupAuxGameServerData( Peered::SAuxData & gsAuxData )
       Peered::SAuxUserData & gsUser = gsAuxData.users.back();
       gsUser.clientId = memb.mmId;
       gsUser.faction = pty.common.team;
+    }
     }
   }
 }

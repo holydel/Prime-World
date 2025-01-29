@@ -36,7 +36,7 @@ namespace roll
 
     // Rules flags
     bool exceptOrdinaryTalent;
-    bool exceptPearl; // исключить из ролла кристалы (обычные и красные)
+    bool exceptPearl; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ (пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ)
 
     RollContext()
       : talentRollItems( 0 )
@@ -919,7 +919,7 @@ namespace roll
       _awards.push_back( SAwardInfo( EAwardType::Resource3, 0, 2, 0, true )  );
       _awards.push_back( SAwardInfo( EAwardType::Pearl, 0, 2, 0, true )  );
       _awards.push_back( SAwardInfo( EAwardType::Silver, 0, 1000, 0, true )  );
-      // TODO: не добавляю red pearl, т.к. не понял назначение этой функции (больше всего похоже на дебажную)
+      // TODO: пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ red pearl, пїЅ.пїЅ. пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ (пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ)
 
       for ( NWorld::PFResourcesCollection::TalentMap::const_iterator it = talentsCollection->GetTalents().begin(); it != talentsCollection->GetTalents().end(); ++it )
       {
@@ -1002,7 +1002,7 @@ namespace roll
       // is premium
       const bool hasPremium = userPreData.playerInfo.hasPremium;
 
-      // выбираем контейнер
+      // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
       const NDb::RollContainer* container = NULL;
       {
         const vector<NDb::Ptr<NDb::RollContainer>>& dbContainers = hasPremium ? settings->premiumEventContainers : settings->eventContainers;
@@ -1012,22 +1012,22 @@ namespace roll
         container = dbContainers[dbContainerIdx];
       }
 
-      // контекст
+      // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
       RollContext ctx;
       {
         ctx.rollAsPremium = hasPremium;
         ctx.talentRollItems = NULL;
       }
 
-      // ролим за очки
+      // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ
       RollContainerForScore(userAward, settings, userPreData, userPostData, _preGame, 
         isPlayerVictorious, _cfg, userRollInput, ctx, container);
 
-      // ролим за доп очки
+      // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
       RollContainerForAdditionalScore(userAward, settings, userPreData, userPostData, _preGame, 
         isPlayerVictorious, _cfg, userRollInput, ctx, container);
 
-      // ролим дефолтовую награду
+      // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
       RollDefaultContainer(userAward, settings, userPreData, userPostData, _preGame, 
         isPlayerVictorious, _cfg, userRollInput, ctx);
 
@@ -1037,7 +1037,7 @@ namespace roll
 
     void DropNRoll::RollUsualContainers( SUserAward & userAward, const NDb::ModeRollSettings * settings, const SPreGamePerUserData & userPreData, const SPostGamePerUserData & userPostData, const SPreGameData & _preGame, const bool isPlayerVictorious, const RollConfig* _cfg )
     {
-      // проверки
+      // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
       if ( settings->premiumContainers.empty() )
       {
         ROLL_LOG_DBG( "No premium containers defined in %s", settings->GetDBID().GetFormatted() );
@@ -1056,7 +1056,7 @@ namespace roll
       // is premium
       const bool hasPremium = userPreData.playerInfo.hasPremium;
 
-      // выбираем контейнер
+      // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
       const NDb::RollContainer* container = NULL;
       {
         // !Nested containers currently are NOT supported!
@@ -1079,7 +1079,7 @@ namespace roll
         container = containers[0];
       }
 
-      // контекст
+      // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
       RollContext ctx;
       {
         ctx.rollAsPremium = hasPremium;
@@ -1088,15 +1088,15 @@ namespace roll
           ValidateRollData( ctx, container, settings->version, userPreData.clientId );
       }
 
-      // ролим за очки
+      // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ
       RollContainerForScore(userAward, settings, userPreData, userPostData, _preGame, 
         isPlayerVictorious, _cfg, userRollInput, ctx, container);
 
-      // ролим за доп очки
+      // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
       RollContainerForAdditionalScore(userAward, settings, userPreData, userPostData, _preGame, 
         isPlayerVictorious, _cfg, userRollInput, ctx, container);
 
-      // ролим дефолтовую награду
+      // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
       RollDefaultContainer(userAward, settings, userPreData, userPostData, _preGame, 
         isPlayerVictorious, _cfg, userRollInput, ctx);
     }
@@ -1106,7 +1106,7 @@ namespace roll
       const SPostGamePerUserData & userPostData, const SPreGameData & _preGame, const bool isPlayerVictorious, const RollConfig* _cfg,
       RollInputData & userRollInput, RollContext & ctx, const NDb::RollContainer* container)
     {
-      // считаем очки
+      // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
       float score = 0;
       {
         score = userPostData.scoring.score * settings->talentsMultiplicator;
@@ -1125,7 +1125,7 @@ namespace roll
       userRollInput.cristalsCoeff = _cfg->cristalsAmountModifier > 1.0f ? _cfg->cristalsAmountModifier : 1.0f;
       userRollInput.redCristalsCoeff = _cfg->redCristalsAmountModifier > 1.0f ? _cfg->redCristalsAmountModifier : 1.0f;
 
-      // ролим за очки
+      // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ
       float constainerCost = GetContainerCostByRank( container, userRollInput.newHeroRank );
       while ( score > 0 && score >= constainerCost )
       {
@@ -1141,7 +1141,7 @@ namespace roll
       const SPostGamePerUserData & userPostData, const SPreGameData & _preGame, const bool isPlayerVictorious, const RollConfig* _cfg,
       RollInputData & userRollInput, RollContext & ctx, const NDb::RollContainer* container)
     {
-      // считаем доп очки
+      // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
       int additionalContainers = 0;
       {
         ROLL_LOG_DBG( "Rolling additional containers (user=%d)", userPreData.clientId );
@@ -1175,7 +1175,7 @@ namespace roll
       userRollInput.cristalsCoeff = _cfg->cristalsAmountModifier > 1.0f ? _cfg->cristalsAmountModifier : 1.0f;
       userRollInput.redCristalsCoeff = _cfg->redCristalsAmountModifier > 1.0f ? _cfg->redCristalsAmountModifier : 1.0f;
 
-      // ролим за доп очки
+      // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
       for ( int i = 0; i < additionalContainers; ++i )
       {
         RollPlayersAwardsFromContainer( userAward.awards, ctx, container, userRollInput );
@@ -1187,7 +1187,7 @@ namespace roll
       const SPostGamePerUserData & userPostData, const SPreGameData & _preGame, const bool isPlayerVictorious, const RollConfig* _cfg,
       RollInputData & userRollInput, RollContext & ctx)
     {
-      // ролим дефолтовую награду
+      // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
       if (settings->defaultContainer)
       {
         // Apply resource coeffs on default container
@@ -1349,7 +1349,7 @@ namespace roll
           }
         }
 
-        // ролим либо евентовые награды, либо обычные
+        // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         if (!RollEventContainers(userAward, settingsForRoll, userPreData, userPostData, _preGame, isPlayerVictorious, _cfg))
           RollUsualContainers( userAward, settingsForRoll, userPreData, userPostData, _preGame, isPlayerVictorious, _cfg );
 
@@ -1843,7 +1843,7 @@ namespace roll
         return;
       }
       
-      // с введением клановых ивентов рейтинг теперь не добавка к дневному рейтингу клана, а очки, которые надо вычесть из пула ивента - начисляются ниже
+      // пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ, пїЅ пїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
       //RollGuildRating( _guildAwards, rollGuildsData, _preGame, _postGame, _map );
 
       const NDb::GuildLevels* pDBGuildLevels = rollSettings->guildLevels;
@@ -1853,11 +1853,11 @@ namespace roll
         return;
       }
 
-      // Награды для гильдий
+      // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
       for (map<NCore::TGuildAuid,RollGuildData>::const_iterator it = rollGuildsData.begin(); it != rollGuildsData.end(); ++it)
       {
         const RollGuildData& rollGuildData = it->second;
-        // Только победившая гильдия получает свои награды
+        // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         if ( _postGame.victoriousFaction != rollGuildData.faction )
           continue;
 
@@ -1871,7 +1871,7 @@ namespace roll
         bool bRandomTalentBonusProcessed = false;
 
         // Process GuildLevels
-        // Стартуем с уровня гильдии. В процессе проверяем для отдельных наград на уровень домика.
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ. пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ.
         const vector<NDb::GuildLevel>& guildLevels = pDBGuildLevels->levels;
         const int lastLevel = min( rollGuildData.level, guildLevels.size() - 1 );
         for ( int level = lastLevel; level >= 0; --level )
@@ -1905,7 +1905,7 @@ namespace roll
               NDb::RollContainer const* pDBRollContainer = pAddExpBonus->singleRollSettings.rollContainer;
               if ( pDBRollContainer )
               {
-                // Реализовано с использованием существующего механизма ролла из контейнера по вероятностям
+                // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
                 RollInputData rollInput;
                 rollInput.clientId = rollGuildData.id;
@@ -1939,8 +1939,8 @@ namespace roll
         return;
       }
 
-      // Награды для членов гильдии
-      // Сейчас даются независимо от гильдийности боя. Пока только +% к опыту
+      // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+      // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ. пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ +% пїЅ пїЅпїЅпїЅпїЅпїЅ
       for ( int userIndex = 0, userSize = _rollResult.size(); userIndex < userSize; ++userIndex )
       {
         const SPreGamePerUserData & userPreData = _preGame.users[userIndex];
@@ -1965,7 +1965,7 @@ namespace roll
         bool bAddExpBonusProcessed = false;
 
         // Process GuildLevels
-        // Стартуем с уровня домика
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
         const vector<NDb::GuildLevel>& guildLevels = pDBGuildLevels->levels;
         const int lastLevel = min( buildingLevel, guildLevels.size() - 1 );
         for ( int level = lastLevel; level >= 0; --level )
@@ -2196,7 +2196,7 @@ namespace roll
             if(rollBonusDataCache->hasBonusValue(*userAwardInfo))
             {
               userAwardInfo->count += bonusValue;
-              //TODO: бонусы могут быть теперь комбинированные - надо допилить нормальное логгирование всех id
+              //TODO: пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ - пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ id
               ROLL_LOG_DBG( "Award buff has applied (buff id=%s type=%s count=%d (%d) user=%d)", userAwardInfo->bonus.id, roll::EAwardType::ToString(userAwardInfo->type), userAwardInfo->count, userAwardInfo->bonus.count, cid );
             }
             else
@@ -2388,9 +2388,9 @@ namespace roll
 
       AwardHeroEnergy( _rollResult, settings, _preGame, _postGame );
 
-      AwardHeroExperienceAndFame( _rollResult, settings, _preGame, _postGame, _cfg );
+      //AwardHeroExperienceAndFame( _rollResult, settings, _preGame, _postGame, _cfg );
 
-      RollContainers( _rollResult, settings, _preGame, _postGame, _cfg );
+      //RollContainers( _rollResult, settings, _preGame, _postGame, _cfg );
 
       RollEndurance( _rollResult, settings, _preGame, _postGame );
 
@@ -2398,9 +2398,9 @@ namespace roll
 
       ApplyPremium( _rollResult, settings, _preGame, _postGame, _cfg );
 
-      RollMarketingEvents( _rollResult, _preGame, _postGame );
+      //RollMarketingEvents( _rollResult, _preGame, _postGame );
 
-      RollGuildMembersAwards( _rollResult, settings, _preGame, _postGame );
+      //RollGuildMembersAwards( _rollResult, settings, _preGame, _postGame );
 
       ClanWarsAwardsSettingsHolder cwSettings(settings->clanWarsSettings.GetPtr(), advMapDesc->teamSize, settings);
       GuildWarEventrPointsCalculator cwAwardsCalculator(cwSettings, _preGame, _postGame);
@@ -2496,7 +2496,7 @@ namespace roll
           clansData_.AddMember(clanId, clientId, isWinner, pguIter->faction, mit->scoring.score, pguIter->playerInfo.hasPremium);
         }
 
-        // подсчитываем кол-во чуваков в пати в команде, чтобы потом дать бонус клановых очков, если против како-го то юзера играли юзеры в пати
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ-пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ-пїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ
         if(pguIter->playerInfo.partyId > 0)
         {
           ++playersInParties_[pguIter->faction];
@@ -2666,14 +2666,14 @@ namespace roll
 
         //add awards
         awIter->awards.push_back(SAwardInfo(roll::EAwardType::ClanWarsPlayerRating, 0, playerPoints, 0, true, clanMember->hasPremium_));
-        awIter->awards.push_back(SAwardInfo(roll::EAwardType::ClanWarsClanRating, 0, clanPoints, 0, true)); // это в разборе наград отправляется в статистику и в пересчет рейтинга мембера и только
-        awIter->awards.push_back(SAwardInfo(roll::EAwardType::GuildWarEventPoints, 0, clanPoints, 0, true)); // это не уйдет в персональных наградах, а будет агрегированно в гильдейскую
+        awIter->awards.push_back(SAwardInfo(roll::EAwardType::ClanWarsClanRating, 0, clanPoints, 0, true)); // пїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+        awIter->awards.push_back(SAwardInfo(roll::EAwardType::GuildWarEventPoints, 0, clanPoints, 0, true)); // пїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
       }
     }
 
     void GuildWarEventrPointsCalculator::FinalizeClanWarAwards(vector<roll::SUserAward> & playersAwards, map<NCore::TGuildAuid, SGuildAward>& guildAwards)
     {
-      // аггрегируем очки стратегии (клана) и очки клановго ивента от всех мемберов в клановую награду, а так же применяем премиум к очкам тактики (игрока)
+      // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ (пїЅпїЅпїЅпїЅпїЅ) пїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅ пїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ (пїЅпїЅпїЅпїЅпїЅпїЅ)
 
       struct UserAwardInfoFinder
       {
@@ -2702,8 +2702,8 @@ namespace roll
 
         if ( clanMember->hasPremium_ )
         {
-          // игрокам с премиумом может приехать больше поинтов, если дизайнеры соблаговолят
-          //суммируем, чтобы отправить в гильдию клановые очки от всех мемберов победивших в бою
+          // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+          //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅ
           awardInfoIterator = find_if(awIter->awards.begin(), awIter->awards.end(), UserAwardInfoFinder(roll::EAwardType::ClanWarsPlayerRating));
           if(awardInfoIterator != awIter->awards.end())
           {
@@ -2712,7 +2712,7 @@ namespace roll
           }
         }
 
-        //суммируем, чтобы отправить в гильдию клановые очки от всех мемберов победивших в бою
+        //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅ
         awardInfoIterator = find_if(awIter->awards.begin(), awIter->awards.end(), UserAwardInfoFinder(roll::EAwardType::ClanWarsClanRating));
         if(awardInfoIterator != awIter->awards.end())
         {
@@ -2720,14 +2720,14 @@ namespace roll
           AddClanPoints(guildAwards, clanMember->cid_, userAwardInfo->count, roll::EAwardType::ClanWarsClanRating);
         }
         
-        //а теперь подсчитаем сколько всего очков из пула выжрал клан за этот бой
+        //пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ
         awardInfoIterator = find_if(awIter->awards.begin(), awIter->awards.end(), UserAwardInfoFinder(roll::EAwardType::GuildWarEventPoints));
         if(awardInfoIterator != awIter->awards.end())
         {
           userAwardInfo = awardInfoIterator;
           AddClanPoints(guildAwards, clanMember->cid_, userAwardInfo->count, roll::EAwardType::GuildWarEventPoints);
 
-          //удалим из личных наград, ибо они там не нужны более
+          //пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
           awIter->awards.erase(awardInfoIterator);
         }
       }
