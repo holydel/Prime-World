@@ -132,7 +132,7 @@ void ClientAuth::DevAuth( LoginReply & _reply, const LoginHello & _hello )
       return;
     }
     const char* token = _hello.sessionkey.c_str();
-    std::string response = GetSessionData(token);
+    std::string response = GetSessionData(token, false);
 
     Json::Value parsedValue = ParseJson(response.c_str());
 

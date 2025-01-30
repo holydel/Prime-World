@@ -1,11 +1,14 @@
 #include "stdafx.h"
 #include "Server/Db/DBServer.auto.h"
+#include "System/Crc32Checksum.h"
 #include "LobbyCustomGame.h"
 #include "LobbyServerConnection.h"
 #include "LobbyConfig.h"
 #include "Client/LobbyPvx/RLobbyClientInterface.auto.h"
 #include "Server/LiveMMaking/IMMakingLogic.h" //To get to 'IHeroesTable'
 #include "LobbyLog.h"
+
+#include "Shared/shared_data.h"
 
 
 namespace lobby
@@ -431,6 +434,84 @@ void CustomGame::DropReadinessAndBroadcast()
   }
 }
 
+static const char* heroes [] = {
+  "prince",
+  "snowqueen",
+  "faceless",
+  "warlord",
+  "thundergod",
+  "invisible",
+  "mowgly",
+  "inventor",
+  "artist",
+  "highlander",
+  "marine",
+  "firefox",
+  "healer",
+  "night",
+  "rockman",
+  "assassin",
+  "unicorn",
+  "hunter",
+  "ghostlord",
+  "ratcatcher",
+  "archeress",
+  "werewolf",
+  "frogenglut",
+  "witchdoctor",
+  "manawyrm",
+  "bard",
+  "naga",
+  "mage",
+  "fairy",
+  "witcher",
+  "alchemist",
+  "demonolog",
+  "vampire",
+  "witch",
+  "crusader_A",
+  "crusader_B",
+  "monster",
+  "angel",
+  "freeze",
+  "gunslinger",
+  "reaper",
+  "fluffy",
+  "rifleman",
+  "magicgirl",
+  "pinkgirl",
+  "ironknight",
+  "fallenangel",
+  "bladedancer",
+  "ent",
+  "plaguedoctor",
+  "katana",
+  "plane",
+  "zealot",
+  "wraithking",
+  "dryad",
+  "stalker",
+  "gunner",
+  "chronicle",
+  "brewer",
+  "shadow",
+  "wendigo",
+  "trickster",
+  "banshee",
+  "shaman",
+  "bomber"
+};
+
+static void FillPlayerInfo(NCore::PlayerInfo& playerInfo, const WebLauncherPostRequest::WebUserData& userData) 
+{
+  static WebTalentsData talentsData;
+  playerInfo.heroRating = userData.currentRating;
+  playerInfo.ratingDeltaPrediction.onVictory = userData.victoryRating - userData.currentRating;
+  playerInfo.ratingDeltaPrediction.onDefeat = userData.lossRating - userData.currentRating;
+  int heroId = std::min(std::max((size_t)(userData.heroId - 1), 0u), _countof(heroes) - 1u);
+  playerInfo.heroId = Crc32Checksum().AddString( heroes[heroId] ).Get();
+  const std::vector<WebLauncherPostRequest::TalentWebData>& talentSet = userData.talents;
+}
 
 
 void CustomGame::SetupGameStartInfo( vector<Peered::ClientInfo> & _gameServerData, TGameLineUp & _lineup )
@@ -466,6 +547,12 @@ void CustomGame::SetupGameStartInfo( vector<Peered::ClientInfo> & _gameServerDat
     const CustomGameMember& member = players[i];
 
     _gameServerData[i].clientId = member.player->ClientId();
+    WebUsersDataMap::iterator itP = playersUserData.find(member.player->UserInfo().nickname.c_str() + 1);
+    if (itP != playersUserData.end()) {
+      const WebLauncherPostRequest::WebUserData& userData = itP->second;
+      NCore::PlayerInfo& playerInfo = _gameServerData[i].info;
+      FillPlayerInfo(playerInfo, userData);
+    }
 
     _lineup[i].user = member.player->UserInfo();
     _lineup[i].context = member.context;

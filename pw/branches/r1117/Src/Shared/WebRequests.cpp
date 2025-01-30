@@ -78,12 +78,13 @@ std::string WebPostRequest::SendPostRequest(const std::string& jsonData) {
   return responseStream;
 }
 
-std::string GetSessionData(const char* token) {
+std::string GetSessionData(const char* token, bool registerSession) {
   WebPostRequest request(SERVER_IP_W, L"/api", SYNCHRONIZER_PORT, 0);
 
   Json::Value data;
   data["sessionToken"] = Json::Value (std::string(token, 32));
   data["apiKey"] = Json::Value (API_KEY);
+  data["create"] = Json::Value (registerSession);
 
   Json::Value result;
   result["data"] = data;

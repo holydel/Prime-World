@@ -8,6 +8,7 @@
 #include <json/json.h>
 #include "../PW_Game/server_ip.h"
 
+
 class WebLauncherPostRequest
 {
 	HINTERNET hInternet;
@@ -15,16 +16,10 @@ class WebLauncherPostRequest
 	HINTERNET hRequest;
 
 	std::map<std::string, int> characterMap;
-	std::map<int, std::string> classTalentMap;
-
-	std::vector<int> keysClassTalent;
 public:
   WebLauncherPostRequest();
 
   void Init(const wchar_t* serverUrl, const wchar_t* objectName, int serverPort, DWORD flags);
-
-
-  void FillData();
 
   ~WebLauncherPostRequest();
 
@@ -93,11 +88,9 @@ public:
     RegisterInSessionRequest_Error,
   };
 
-  std::string ConvertFromClassID(int id);
   WebLoginResponse GetSessionData(const char* token, const char* apiKey = "");
   std::string WebLauncherPostRequest::SendPostRequest(const std::string& jsonData);
   std::string CreateDebugSession();
-  void NotifyGameStart(const char* nickname, const char* sessionToken);
 };
 typedef std::map<std::wstring, WebLauncherPostRequest::WebUserData> WebUsersDataMap;
 

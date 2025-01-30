@@ -21,7 +21,7 @@ public:
   std::string WebPostRequest::SendPostRequest(const std::string& jsonData);
 };
 
-extern std::string GetSessionData(const char* token);
+extern std::string GetSessionData(const char* token, bool registerSession);
 
 extern bool useMirrorServer;
 

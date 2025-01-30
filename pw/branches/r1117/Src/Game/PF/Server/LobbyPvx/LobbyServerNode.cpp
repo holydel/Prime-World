@@ -369,7 +369,7 @@ nstl::map<nstl::string, StrongMT<CustomGame>> g_games;
 nstl::map<nstl::wstring, int> playerNicknameToWebUserIdMap;
 lobby::EOperationResult::Enum ServerNode::TryCreateWebSession(const char* token)
 {
-  std::string response = GetSessionData(token);
+  std::string response = GetSessionData(token, true);
 
   Json::Value parsedValue = ParseJson(response.c_str());
 
@@ -414,6 +414,7 @@ lobby::EOperationResult::Enum ServerNode::TryCreateWebSession(const char* token)
   game = CreateCustomGame( params, 0 );
   NI_VERIFY( game, "Custom game was NOT created", return EOperationResult::RestrictedAccess );
 
+  game->playersUserData = usersDataMap;
 
   for (WebUsersDataMap::iterator it = usersDataMap.begin(); it != usersDataMap.end(); ++it) {
     std::wstring nickname = it->first;
@@ -863,6 +864,10 @@ void ServerNode::PollGames()
     if ( game->CanBeRemoved( now ) )
     {
       LOBBY_LOG_MSG( "Removing empty game %s", FmtGameId( gameId ) );
+      nstl::map<nstl::string, StrongMT<CustomGame>>::iterator tokenIt = g_games.find(game->GetSessionToken());
+      if (tokenIt != g_games.end()) {
+        g_games.erase(tokenIt);
+      }
       it = games.erase( it ); //'game' is no longer valid
     }
     else

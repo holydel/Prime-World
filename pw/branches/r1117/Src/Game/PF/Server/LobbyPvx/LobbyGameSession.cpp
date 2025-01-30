@@ -193,7 +193,6 @@ void GameSession::SetupSocialMMaking( const mmaking::SGame & _game, const social
 }
 
 
-
 void GameSession::SetupFromCustomGame( CustomGame * _customGame )
 {
   customGame = _customGame;
@@ -209,11 +208,6 @@ void GameSession::SetupFromCustomGame( CustomGame * _customGame )
     socialLobby::PlayerDetails& playerDetails = socialGameDetails.playerDetails.push_back();
     playerDetails.uid = player->UserInfo().userId;
     playerDetails.nick = player->UserInfo().nickname;
-    playerDetails.gameData.heroRating = (int)2022;
-    playerDetails.gameData.ratingDeltaPrediction.onVictory = 20;
-    playerDetails.gameData.ratingDeltaPrediction.onDefeat = 15;
-    
-    
   }
 
   customGame->SetupGameStartInfo( gameServerData, lineup );

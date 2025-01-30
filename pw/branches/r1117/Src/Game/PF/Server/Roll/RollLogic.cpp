@@ -943,7 +943,7 @@ namespace roll
       if ( !IsPvPGameMode( _preGame ) )
         return;
 
-      RollSingleRating( _rollResult, EAwardType::PlayerRating, settings, _preGame, _postGame, &NCore::PlayerInfo::playerRating, _map );
+      //RollSingleRating( _rollResult, EAwardType::PlayerRating, settings, _preGame, _postGame, &NCore::PlayerInfo::playerRating, _map );
       RollSingleRating( _rollResult, EAwardType::HeroRating, settings, _preGame, _postGame, &NCore::PlayerInfo::heroRating, _map );
     }
 
@@ -974,6 +974,7 @@ namespace roll
         const SPostGamePerUserData & userPostData = _postGame.users[userIndex];
 
         float ratingChange = 0;
+        /*
         if ( !calculator.GetDelta( userPreData.clientId, ratingChange, true ) ) {
           ROLL_LOG_ERR( "Player rating calculation failed for user %d", userPreData.clientId );
           continue;
@@ -981,6 +982,12 @@ namespace roll
 
         if ( ( ratingChange > 0 ) && ( userPostData.statistics.clientState != Peered::EGameFinishClientState::FinishedGame ) )
           ratingChange *= -1;
+          */
+        if (userPreData.faction != _postGame.victoriousFaction || userPostData.statistics.clientState != Peered::EGameFinishClientState::FinishedGame) {
+          ratingChange = userPreData.playerInfo.ratingDeltaPrediction.onDefeat; // userPreData.playerInfo.ratingDeltaPrediction.onDefeat;
+        } else {
+          ratingChange = userPreData.playerInfo.ratingDeltaPrediction.onVictory;
+        }
 
         if ( ratingChange != 0 ) //mmmm... Since rating change is float...
         {
@@ -2356,14 +2363,14 @@ namespace roll
 
 
       // Cancel awarding on short games
-      if ( settings->minSessionDuration > 0 && _postGame.totalSeconds < (uint)settings->minSessionDuration )
-      {
-        ROLL_LOG_DBG( "Awarding disabled for due to a short game duration. game=%016x, duration=%d", _preGame.socialLobbyGameId, _postGame.totalSeconds );
-
-        UpdateRollDataCache( _rollResult );
-
-        return;
-      }
+//       if ( settings->minSessionDuration > 0 && _postGame.totalSeconds < (uint)settings->minSessionDuration )
+//       {
+//         ROLL_LOG_DBG( "Awarding disabled for due to a short game duration. game=%016x, duration=%d", _preGame.socialLobbyGameId, _postGame.totalSeconds );
+// 
+//         UpdateRollDataCache( _rollResult );
+// 
+//         return;
+//       }
 
       // Uncommon session result. No awarding
       if ( _postGame.gameResult != lobby::EGameResult::SyncResults || _postGame.victoriousFaction == lobby::ETeam::None )

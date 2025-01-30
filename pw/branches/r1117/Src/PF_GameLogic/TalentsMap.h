@@ -1,3 +1,4 @@
+#pragma once
 static const char* talentsMap[] = { "G001",
   "G002",
   "G003",

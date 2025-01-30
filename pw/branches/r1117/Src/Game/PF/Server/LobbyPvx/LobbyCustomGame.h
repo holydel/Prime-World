@@ -3,6 +3,7 @@
 
 #include "CommonTypes.h"
 #include "LobbyConfig.h"
+#include "../PF_GameLogic/WebLauncher.h"
 
 
 namespace mmaking
@@ -85,6 +86,8 @@ public:
 
   void SetSessionToken(const char* _sessionToken) { sessionToken = _sessionToken; }
   const char* GetSessionToken() { return sessionToken.c_str(); }
+
+  WebUsersDataMap                 playersUserData;
 
 private:
   const TGameId                   id;
