@@ -504,7 +504,6 @@ static const char* heroes [] = {
 
 static void FillPlayerInfo(NCore::PlayerInfo& playerInfo, const WebLauncherPostRequest::WebUserData& userData) 
 {
-  static WebTalentsData talentsData;
   playerInfo.heroRating = userData.currentRating;
   playerInfo.ratingDeltaPrediction.onVictory = userData.victoryRating - userData.currentRating;
   playerInfo.ratingDeltaPrediction.onDefeat = userData.lossRating - userData.currentRating;

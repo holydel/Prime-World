@@ -1200,14 +1200,14 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
 
     char* token = strtok(const_cast<char*>(protocolLine), delimiter);
     std::vector<std::string> allTokens;
-    allTokens.reserve(4);
+    allTokens.reserve(5);
 
     while (token != 0) {
       allTokens.push_back(token);
       token = strtok(0, delimiter);
     }
 
-    if(allTokens.size() < 4) {
+    if(allTokens.size() < 5) {
       ShowLocalizedErrorMB( L"StartViaLauncher", L"Invalid protocol" );
       return 0;
     }
@@ -1216,6 +1216,10 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
     const char* protocolToken = allTokens[2].c_str();
     g_protocolToken = protocolToken;
     const char* versionStr = allTokens[3].c_str();
+    const char* goMirrorFirst = allTokens[4].c_str();
+    if (goMirrorFirst[0] == '1') {
+      useMirrorServer = true;
+    }
 
     int versionMajor = VERSION_MAJOR;
     int versionMinor = VERSION_MINOR;
@@ -1236,7 +1240,7 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
       WebLauncherPostRequest rprequest;
       response = rprequest.GetSessionData(protocolToken);
       if (response.retCode == WebLauncherPostRequest::LoginResponse_WEB_FAILED_CONNECTION) {
-        useMirrorServer = true;
+        useMirrorServer = !useMirrorServer;
         WebLauncherPostRequest mirror_rprequest;
         response = mirror_rprequest.GetSessionData(protocolToken);
       }

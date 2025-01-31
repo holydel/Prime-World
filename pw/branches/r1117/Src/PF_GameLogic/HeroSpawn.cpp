@@ -310,7 +310,6 @@ namespace NWorld
     NHPTimer::GetTime( time );
 
     NDb::Ptr<NDb::HeroesDB> pHeroes = NDb::SessionRoot::GetRoot()->logicRoot->heroes;
-    WebTalentsData talentsData;
 
     NI_VERIFY(pWorld,     "Invalid world!",           return false; );
     NI_VERIFY(pSpawnInfo, "Invalid spawn info!",      return false; );
@@ -575,7 +574,7 @@ namespace NWorld
  								  num5lineUpgrades++;
                  }
  
- 							  std::string className = talentsData.ConvertFromClassID(-talentId);
+ 							  std::string className = ConvertFromClassID(-talentId);
  							  //std::string className = prequest.ConvertFromClassID(-1);
  							  talentInfo.id = Crc32Checksum().AddString(className.c_str()).Get();
  						  }
