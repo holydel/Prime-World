@@ -72,9 +72,6 @@ REGISTER_DEV_VAR( "boost_thread_priority_val", s_boostVal, STORAGE_NONE);
 #endif
 
 
-extern std::map<std::wstring, WebLauncherPostRequest::WebUserData> g_usersData;
-
-
 namespace lobby
 {
 

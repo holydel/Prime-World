@@ -58,7 +58,7 @@ public:
 
 
   struct PlayerInfoByUserId {
-    wstring nickname;
+    nstl::wstring nickname;
     int teamId;
     bool isLeaver;
     int userId;
@@ -198,6 +198,9 @@ static bool CheckPlayerInfo(const Json::Value& playerInfo)
   return true;
 }
 
-extern std::string GetSkinByHeroPersistentId(const std::string& heroPersistentId, int skinId);
-extern std::string WideCharToMultiByteString(const wchar_t* wideCharString);
-extern std::string Fix1251Encoding(std::string utf8String);
+extern std::map<nstl::wstring, WebLauncherPostRequest::WebUserData> g_usersData;
+extern map<int, WebLauncherPostRequest::PlayerInfoByUserId> userIdToNicknameMap;
+
+std::string GetSkinByHeroPersistentId(const std::string& heroPersistentId, int skinId);
+std::string WideCharToMultiByteString(const wchar_t* wideCharString);
+std::string Fix1251Encoding(std::string utf8String);

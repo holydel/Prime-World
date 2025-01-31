@@ -33,10 +33,10 @@ extern int g_fixedTeamCam;
 
 static std::map<std::wstring, int> s_userNicknameToUserIdMap;
 
-std::map<std::wstring, WebLauncherPostRequest::WebUserData> g_usersData;
 int g_playersCount;
 
-extern map<int, WebLauncherPostRequest::PlayerInfoByUserId> userIdToNicknameMap;
+std::map<nstl::wstring, WebLauncherPostRequest::WebUserData> g_usersData;
+map<int, WebLauncherPostRequest::PlayerInfoByUserId> userIdToNicknameMap;
 
 
 WebLauncherPostRequest::WebLauncherPostRequest()
@@ -669,7 +669,7 @@ WebLauncherPostRequest::WebLoginResponse WebLauncherPostRequest::GetSessionData(
       resData.profileStats[i] = profileStats[i].asInt();
     }
 
-    g_usersData[wideCharString] = resData;
+    g_usersData[wideCharString.c_str()] = resData;
 
     g_playersCount++;
     curPlayer = usersData[g_playersCount];

@@ -37,8 +37,6 @@
 #include "../PW_Game/server_ip.h"
 #include "Shared/shared_data.h"
 
-map<int, WebLauncherPostRequest::PlayerInfoByUserId> userIdToNicknameMap;
-extern std::map<std::wstring, WebLauncherPostRequest::WebUserData> g_usersData;
 namespace 
 {
   struct BotOverride
@@ -463,7 +461,7 @@ namespace NWorld
     }
     WebLauncherPostRequest prequest;
 
-    std::map<std::wstring, WebLauncherPostRequest::WebUserData>& usersData = g_usersData;
+    std::map<nstl::wstring, WebLauncherPostRequest::WebUserData>& usersData = g_usersData;
 
     // process spawn
     int heroesSpawned = 0;
@@ -519,7 +517,7 @@ namespace NWorld
 		if (players[it->playerId].playerType == NCore::EPlayerType::Human) {
 
       if (!players[it->playerId].nickname.empty()) {
-        std::wstring nick = players[it->playerId].nickname.c_str() + 1;
+        nstl::wstring nick = players[it->playerId].nickname.c_str() + 1;
         userData = usersData[nick];
 
         WebLauncherPostRequest::PlayerInfoByUserId pInfo;
