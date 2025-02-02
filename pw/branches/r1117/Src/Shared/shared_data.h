@@ -834,4 +834,4 @@ static const char* classTalentsMap [] = {
   "Bomber_A3_SUP",
 };
 
-static const char* ConvertFromClassID(int id) { return classTalentsMap[id-1]; }
+static const char* ConvertFromClassID(int id) { return classTalentsMap[id-2]; }
