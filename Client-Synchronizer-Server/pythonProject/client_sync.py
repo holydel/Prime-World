@@ -4,9 +4,12 @@ from datetime import datetime as dt
 import requests
 import threading
 import hashlib
+from logging.handlers import TimedRotatingFileHandler
 
 import logging
 import sys
+import time
+
 
 from requests import session
 from transliterate import translit
@@ -19,7 +22,8 @@ stdout_handler = logging.StreamHandler(sys.stdout)
 stdout_handler.setLevel(logging.DEBUG)
 stdout_handler.setFormatter(formatter)
 
-file_handler = logging.FileHandler('sync_log.txt',encoding='utf-8')
+file_handler = TimedRotatingFileHandler('sync_logs/sync_log.txt', when='midnight', interval=1, backupCount=7, encoding='utf-8')
+#file_handler = logging.FileHandler('sync_log.txt',encoding='utf-8')
 file_handler.setLevel(logging.DEBUG)
 file_handler.setFormatter(formatter)
 
@@ -50,6 +54,21 @@ def killOldSessions(sessionDict):
             targetTimeDifferenceToKill = timeToKillTestSession
         if (dt.now() - oldSession['timestamp']).total_seconds() > targetTimeDifferenceToKill:
             del sessionDict[oldSessionToken] # remove old sessions
+            
+            
+def sendSessionFinishData(data):
+    def sendInfo(data):
+        infoSend = False
+        while not infoSend:
+            try:
+                requests.post('https://pw2.26rus-game.ru/api/launcher/', json={'method': 'finishGame', 'data': data});
+                infoSend = True
+            except:
+                logger.info('No backend response!!!      ' + str(json.dumps(data)))
+                time.sleep(10)
+    
+    thread = threading.Thread(target=sendInfo, args=(data,))
+    thread.start()
 
 @app.route('/api', methods=['POST'])
 def api():
@@ -108,6 +127,56 @@ def api():
                 'error': ''
             }
             return jsonify(response)
+            
+        if method == 'createWebSession':
+            if 'sessionToken' not in data or 'apiKey' not in data or 'create' not in data:
+                response = {
+                    'error': 'Invalid request'
+                }
+                logger.info('Response!!!      ' + method + ': ' + str(json.dumps(response)))
+                return jsonify(response)
+            
+            sessionToken = data['sessionToken']
+            apiKey = data['apiKey']
+            
+            if apiKey != api_key:
+                response = {
+                    'error': 'Invalid api key'
+                }
+                logger.info('Response!!!      ' + method + ': ' + str(json.dumps(response)))
+                return jsonify(response)
+            
+            if sessionToken not in webSessions:
+                response = {
+                    'error': 'Session token was not found in active sessions'
+                }
+                logger.info('Response!!!      ' + method + ': ' + str(json.dumps(response)))
+                return jsonify(response)
+                
+            with webSessions[sessionToken]['lock']:
+                if data['create']:
+                    if webSessions[sessionToken]['gameStarted']:
+                        response = {
+                            'error': 'Game has been already created'
+                        }
+                        logger.info('Response!!!      ' + method + ': ' + str(json.dumps(response)))
+                        return jsonify(response)
+                    else:
+                        webSessions[sessionToken]['gameStarted'] = True
+                    
+                mapId = 'Maps/Multiplayer/MOBA/_.ADMPDSCR.xdb';
+                if 'mapId' in webSessions[sessionToken]:
+                    mapId = webSessions[sessionToken]['mapId'];
+                    
+                response = {
+                    'error': '',
+                    'usersData': list(webSessions[sessionToken]['players'].values()),
+                    'mapId': mapId
+                }
+                logger.info('Response!!!      ' + method + ': ' + str(json.dumps(response)))
+                return jsonify(response)
+            
+            
 
         # Connect player to web-session
         if method == 'connectToWebSession':
@@ -152,7 +221,7 @@ def api():
                     targetTimeDifferenceToKill = timeToKillRottenSession
                     if (dt.now() - rotSession['timestamp']).total_seconds() > targetTimeDifferenceToKill:
                         rotKillerData = {"sessionToken":sessionToken,"win":0,"afk":[]}
-                        killerResponse = requests.post('https://playpw.fun/api/launcher/', json={'method': 'finishGame', 'data': rotKillerData})
+                        sendSessionFinishData(rotKillerData)
                         response = {
                             'error': 'Rotten session'
                         }
@@ -196,16 +265,20 @@ def api():
                 }
                 return jsonify(response)
                 
+            if 'afk' in data and not data['afk']:
+                data['afk'] = []
+                
             sessionToken = data['sessionToken']
             
             if sessionToken not in webSessions:
                 # synchronizer restarted, just send results
                 webSessions[sessionToken] = {'players': {}, 'lock': threading.Lock(), 'timestamp': dt.now(), 'gameName': '', 'gameStarted': False, 'gameFinished': True, 'gameCreated': False }
                 with webSessions[sessionToken]['lock']:
-                    requests.post('https://playpw.fun/api/launcher/', json={'method': 'finishGame', 'data': data})
+                    sendSessionFinishData(data)
                     response = {
                         'error': '',
                     }
+                    logger.info('Response!!!      ' + str(json.dumps(response)))
                     return jsonify(response)
 
             with webSessions[sessionToken]['lock']:
@@ -216,18 +289,16 @@ def api():
                     return jsonify(response)
                 else:
                     webSessions[sessionToken]['gameFinished'] = True
-                    requests.post('https://playpw.fun/api/launcher/', json={'method': 'finishGame', 'data': data})
+                    sendSessionFinishData(data)
                     response = {
                         'error': '',
                     }
+                    logger.info('Response!!!      ' + str(json.dumps(response)))
                     return jsonify(response)
-
-        if method == 'validateInstall':
-            checkInstallResp = requests.post('https://playpw.fun/api/launcher/', json={'method': 'validateInstall', 'data': data})
-            logger.info('Response!!!      ' + str(checkInstallResp.content))
+                    
+        if method == 'notifyGameFinishLegacy':
             response = {
                 'error': '',
-                'data': True
             }
             return jsonify(response)
 
@@ -291,105 +362,6 @@ def api():
             }
             return jsonify(response)
 
-        # (Deprecated) Get Users Data
-        if method == 'getDataUsers':
-            reqJson = json.loads(request.data.decode(encoding='utf-8', errors='ignore'), strict=False) # for some reason encoding is not valid here
-            data = reqJson['data']
-            sessionToken = reqJson['sessionToken']
-            if sessionToken in activeSessionTokens: # if session exists - request or load usersTalents
-                session = activeSessionTokens[sessionToken]
-                if 'usersData' in session:
-                    return session['usersData']
-                r = requests.post('https://playpw.fun/api/launcher/', json={'method': 'getDataUsers', 'data': data})
-                activeSessionTokens[sessionToken]['usersData'] = r.content
-                return r.content
-            else:
-                return 'No session exists'
-
-        # (Deprecated) Register user in (custom) session
-        if method == 'registerUserInSession':
-            killOldSessions(activeSessionTokens)
-            
-            sessionToken = data['sessionToken']
-            if sessionToken not in activeSessionTokens:
-                if sessionToken not in activeSessionTokens:
-                    activeSessionTokens[sessionToken] = {'token': sessionToken, 'gameName': '', 'players': [ { 'nickname': data['nickname'], 'heroId': data['heroId'] } ], 'timestamp': dt.now()}
-                    response = {
-                        'error': '',
-                        'data': ''
-                    }
-                    return jsonify(response)
-                
-            if sessionToken in activeSessionTokens: # if session exists - try to add new player
-                session = activeSessionTokens[sessionToken]
-
-                if session['gameName'] == '': # wait for creator
-                    response = {
-                        'error': 'Wait',
-                        'data': ''
-                    }
-                    return jsonify(response)
-                else: # lobby was successfully created
-                    for player in activeSessionTokens[sessionToken]['players']:
-                        if player['nickname'] == data['nickname']: # player already registered in this session
-                            response = {
-                                'error': 'PlayerAlreadyRegistered',
-                                'data': ''
-                            }
-                            return jsonify(response)
-                    activeSessionTokens[sessionToken]['players'].append({ 'nickname': data['nickname'], 'heroId': data['heroId'] })
-                    response = {
-                        'error': '',
-                        'data': session['gameName']
-                    }
-                    return jsonify(response)
-            else: # if session does not exist - create one
-                activeSessionTokens[sessionToken] = {'token': sessionToken, 'gameName': '', 'players': [ { 'nickname': data['nickname'], 'heroId': data['heroId'] } ], 'timestamp': dt.now()}
-                response = {
-                    'error': '',
-                    'data': ''
-                }
-                return jsonify(response)
-
-        # (Deprecated) Lobby created by player
-        if method == 'lobbyCreated':
-            sessionToken = data['sessionToken']
-            if sessionToken in activeSessionTokens:
-                session = activeSessionTokens[sessionToken]
-
-                if session['gameName'] == '':  # save gameId
-                    activeSessionTokens[sessionToken]['gameName'] = data['nickname'] # just save creator's nickname for now
-                    response = {
-                        'error': '',
-                        'data': 0
-                    }
-                    return jsonify(response)
-                else:
-                    return 'Game already registered by someone else'
-            else:
-                return 'Invalid session id'
-
-        # (Deprecated) Get game name for reconnect
-        if method == 'getGameNameForReconnect':
-            sessionToken = data['sessionToken']
-            if sessionToken in activeSessionTokens:
-                session = activeSessionTokens[sessionToken]
-                
-                if 'usersData' not in session:
-                    activeSessionTokens[sessionToken]['players'].append({ 'nickname': 'FakeReconnect', 'heroId': 'FakeHero' })
-                    response = {
-                        'error': 'Connect',
-                        'data': session['gameName']
-                    }
-                    return jsonify(response)
-
-                response = {
-                    'error': '',
-                    'data': session['gameName']
-                }
-                return jsonify(response)
-            else:
-                return 'Invalid session id'
 
         return 'Unknown method in json'
     else:
