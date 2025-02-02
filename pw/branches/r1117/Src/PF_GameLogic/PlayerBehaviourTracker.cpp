@@ -116,7 +116,7 @@ namespace NWorld
     , deathTimeHistoryCapacity(0)
     , deathTimeHistory()
     , spamDetectedHistory()
-    , state(EState::Disabled)
+    , state(EState::Idle)
     
   {
 
@@ -137,7 +137,7 @@ namespace NWorld
     , tracking(0U)
     , complaints(0U)
     , insultComplaints(0U)
-    , state(EState::Disabled)
+    , state(EState::Idle)
     , firstDetectedMark(EMark::None)
     , player(player)
   {
@@ -147,16 +147,16 @@ namespace NWorld
       return;
 
     const bool trackIdler = true;
-    const bool trackFeeder =
-      (deathTimeHistoryCapacity > 0) &&
-      (params->feederDeathCount > 0) &&
-      (params->feederDeathTime > 0);
-    const bool trackBadPlayer =
-      (params->goodActionTimeout > 0);
-    const bool trackBadZumaPlayer =
-      (params->goodZumaActionTimeout > 0);
-    const bool trackReports =  (params->badBehaviourComplaintsThreshold > 0);
-    const bool trackMessage =(params->insultComplaintsThreshold);
+    const bool trackFeeder = true;
+//       (deathTimeHistoryCapacity > 0) &&
+//       (params->feederDeathCount > 0) &&
+//       (params->feederDeathTime > 0);
+    const bool trackBadPlayer = true;
+      //(params->goodActionTimeout > 0);
+    const bool trackBadZumaPlayer = true;
+      //(params->goodZumaActionTimeout > 0);
+    const bool trackReports = true;// (params->badBehaviourComplaintsThreshold > 0);
+    const bool trackMessage = true;// (params->insultComplaintsThreshold);
 
     if (trackIdler)
       AddTracking(EMark::Idler);
@@ -630,6 +630,7 @@ namespace PlayerBehaviourTracking
       if (!IsValid(tracker))
         return;
 
+      /*
       switch (tracker->GetFirstDetectedMark())
       {
       case PlayerBehaviourTracker::EMark::Idler:
@@ -648,6 +649,8 @@ namespace PlayerBehaviourTracking
       default:
         stats.extra.badBehaviourDetected = StatisticService::EDetectedBadBehaviour::None;
       }
+      */
+      stats.extra.badBehaviourDetected = tracker->GetMarks();
 
       {
           stats.extra.badBehaviourReported = tracker->IsBadBehaviourReported() || tracker->IsToxicPlayer();
