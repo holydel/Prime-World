@@ -1235,14 +1235,14 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
 
     WebLauncherPostRequest::WebLoginResponse response;
     if (protocolMethod == "runGame" || protocolMethod == "reconnect") {
-      WebLauncherPostRequest cprequest;
-      cprequest.CreateDebugSession();
+      //WebLauncherPostRequest cprequest;
+      //cprequest.CreateDebugSession();
       WebLauncherPostRequest rprequest;
       response = rprequest.GetSessionData(protocolToken);
       if (response.retCode == WebLauncherPostRequest::LoginResponse_WEB_FAILED_CONNECTION) {
-        useMirrorServer = !useMirrorServer;
-        WebLauncherPostRequest mirror_rprequest;
-        response = mirror_rprequest.GetSessionData(protocolToken);
+       useMirrorServer = !useMirrorServer;
+       WebLauncherPostRequest mirror_rprequest;
+       response = mirror_rprequest.GetSessionData(protocolToken);
       }
     } else {
       ShowLocalizedErrorMB( L"StartViaLauncher", L"Invalid protocol syntax" );
