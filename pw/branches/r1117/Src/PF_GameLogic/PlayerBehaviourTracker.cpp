@@ -168,10 +168,10 @@ namespace NWorld
       AddTracking(EMark::BadZumaPlayer);
     if (trackReports)
       AddTracking(EMark::Reported);
-    if (trackMessage)
-      AddTracking(EMark::ToxicPlayer);
-    if (trackMessage)
-      AddTracking(EMark::ToxicPlayerReported);
+//     if (trackMessage)
+//       AddTracking(EMark::ToxicPlayer);
+//     if (trackMessage)
+//       AddTracking(EMark::ToxicPlayerReported);
 
     const bool disabled = ((tracking & EMark::GetValidMarksMask()) == 0U);
 
@@ -220,7 +220,7 @@ namespace NWorld
 
   bool PlayerBehaviourTracker::HasTracking(const EMark::Enum mark) const
   {
-    if (!IsArmed() && mark != EMark::ToxicPlayer && mark != EMark::ToxicPlayerReported)
+    if (!IsArmed())
       return false;
 
     if (!EMark::IsValid(mark))

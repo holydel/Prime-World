@@ -225,11 +225,11 @@ void ChatUiController::Update()
           //PlayerBehaviourTracking::DispatchEvent(chatMessage.userId, EPlayerBehaviourEvent::AutoMuteMessage);
         }  
 
-        nstl::wstring msgCopy = chatMessage.message;
-        CensorFilter::Filter(&msgCopy[0]);
-        if (msgCopy != chatMessage.message) {
-          PlayerBehaviourTracking::DispatchEvent(chatMessage.userId, EPlayerBehaviourEvent::MessageInFilter);
-        }  
+//         nstl::wstring msgCopy = chatMessage.message;
+//         CensorFilter::Filter(&msgCopy[0]);
+//         if (msgCopy != chatMessage.message) {
+//           PlayerBehaviourTracking::DispatchEvent(chatMessage.userId, EPlayerBehaviourEvent::MessageInFilter);
+//         }  
       
 
       if ( g_sessionChatOff)
