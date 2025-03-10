@@ -77,7 +77,8 @@ namespace Game
 {
 
 GameContext::GameContext( const char * _sessionKey, const char * _devLogin, const char * _mapId, NGameX::ISocialConnection * _socialConnection, NGameX::GuildEmblem* _guildEmblem, const bool _isSpectator, const bool _isTutorial ) :
-  socialMode( _sessionKey ? true : false ),
+  socialMode( false ),
+  sessionToken (_sessionKey),
   status( EContextStatus::Ready ),
   clientWasInitialized( false ),
   socialConnection(_socialConnection),
@@ -230,10 +231,7 @@ void GameContext::Start()
 
   loadingStatusHandler = loadingScreen->GetLoadingStatusHandler();
 
-  if ( socialMode )
-    ConnectToCluster( devLogin, "" );
-  else if (devLogin.size())
-    ConnectToCluster(devLogin, "");
+  ConnectToCluster(devLogin, "", sessionToken);
 }
 
 
@@ -482,7 +480,7 @@ void GameContext::PollFastReconnect()
       if ( fastReconnectCtx->CanTryNow() )
       {
         MessageTrace( "Reconnecting fast, try #%d...", fastReconnectCtx->TryIndex() );
-        ConnectToCluster( lastLogin, "", Login::LoginType::FAST_RECONNECT );
+        ConnectToCluster( lastLogin, "", "", Login::LoginType::FAST_RECONNECT );
       }
       break;
 
@@ -617,7 +615,7 @@ void GameContext::SetDeveloperSex( lobby::ESex::Enum _sex )
 
 
 
-void GameContext::ConnectToCluster( const string & login, const string & password, Login::LoginType::Enum _loginType )
+void GameContext::ConnectToCluster( const string & login, const string & password, const string & sessionToken, Login::LoginType::Enum _loginType )
 {
   Cleanup();
   Init();
@@ -625,19 +623,8 @@ void GameContext::ConnectToCluster( const string & login, const string & passwor
   NI_VERIFY( status == EContextStatus::Ready, "", return );
   NI_VERIFY( clientTransportSystem, "Client transport system could not be initialized!", return );
 
-  if ( socialMode )
-  {
-    //clientTransportSystem->Login( socialLoginAddress, socialLogin, "", socialPassword, _loginType );
-	clientTransportSystem->Login( Transport::ClientCfg::GetLoginAddress(), login, password, g_loginTestSessionPath, _loginType );
-    lastLogin = login;
-  }
-  else
-  {
-//#ifndef _SHIPPING
-    clientTransportSystem->Login( Transport::ClientCfg::GetLoginAddress(), login, password, g_loginTestSessionPath, _loginType );
-//#endif
-    lastLogin = login;
-  }
+  clientTransportSystem->Login( Transport::ClientCfg::GetLoginAddress(), login, password, sessionToken, _loginType );
+  lastLogin = login;
 
   status = EContextStatus::WaitingLogin;
   if ( loadingStatusHandler) 
@@ -695,6 +682,12 @@ void GameContext::JoinGame( int gameId )
 }
 
 
+
+void GameContext::JoinWebGame(const string & token)
+{
+  NI_VERIFY( lobbyClient, "", return );
+  lobbyClient->JoinWebGame(token);
+}
 
 void GameContext::Reconnect( int gameId, int team, const string & heroId )
 {
@@ -906,7 +899,7 @@ bool GameContext::LoginOnServer( const char * name, const vector<wstring> & args
     if ( args.size() >= 2 )
       pass = NStr::ToMBCS( args[1] );
 
-    ConnectToCluster( login, pass );
+    ConnectToCluster( login, pass, "" );
     return true;
   }
 

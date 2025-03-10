@@ -1,0 +1,3 @@
+
+set(SOURCES_Src_Game_PF_Server_LobbySocial_SocialLobbyService SocialLobbyService.cpp SocialLobbyService.h)
+set(LIBRARIES_Src_Game_PF_Server_LobbySocial_SocialLobbyService )

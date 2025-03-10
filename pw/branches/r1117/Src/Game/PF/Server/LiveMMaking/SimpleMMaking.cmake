@@ -1,0 +1,3 @@
+
+set(SOURCES_Src_Game_PF_Server_LiveMMaking_SimpleMMaking SimpleMMaking.h SimpleMMaking.cpp)
+set(LIBRARIES_Src_Game_PF_Server_LiveMMaking_SimpleMMaking )

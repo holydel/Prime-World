@@ -214,7 +214,7 @@ void ChatUiController::Update()
       {
         if (chatMessage.message.size() >=aiLogicParams->behaviourTrackerParams->autoMuteMessageLength)
         {
-          PlayerBehaviourTracking::DispatchEvent(chatMessage.userId, EPlayerBehaviourEvent::AutoMuteMessageLength);
+          //PlayerBehaviourTracking::DispatchEvent(chatMessage.userId, EPlayerBehaviourEvent::AutoMuteMessageLength);
         }
         if (isUpperString(chatMessage.message))
         {
@@ -222,13 +222,19 @@ void ChatUiController::Update()
         }
         if(uMessCount[chatMessage.userId]>=aiLogicParams->behaviourTrackerParams->autoMuteMinMessage)
         {
-          PlayerBehaviourTracking::DispatchEvent(chatMessage.userId, EPlayerBehaviourEvent::AutoMuteMessage);
+          //PlayerBehaviourTracking::DispatchEvent(chatMessage.userId, EPlayerBehaviourEvent::AutoMuteMessage);
         }  
+
+//         nstl::wstring msgCopy = chatMessage.message;
+//         CensorFilter::Filter(&msgCopy[0]);
+//         if (msgCopy != chatMessage.message) {
+//           PlayerBehaviourTracking::DispatchEvent(chatMessage.userId, EPlayerBehaviourEvent::MessageInFilter);
+//         }  
       
 
       if ( g_sessionChatOff)
       {
-        // NUM_TASK свои сообщения всё же должны получать
+        // NUM_TASK пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         if (chatMessage.userId != chatClient->GetGameUserId())
           continue;
       }

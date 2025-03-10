@@ -70,6 +70,18 @@ pw/branches/r1117/Src/Ionic.Zip.dll
 PW_MicroUpdater/.vs/PW_MicroUpdater.csproj.dtbcache.json
 Client-Synchronizer-Server/pythonProject/sync_log.txt
 Client-Synchronizer-Server/pythonProject/api_key.txt
+pw/branches/r1117/Src/UniServerApp/UniServerApp.dir
+pw/branches/r1117/Src/UniServerApp/Release/UniServerApp.lib
+pw/branches/r1117/Src/UniServerApp/Release/UniServerApp.exp
+pw/branches/r1117/Vendor/wsdlpull/win32/vs2008
+pw/branches/r1117/Src/UniServerApp/*.dll
+pw/branches/r1117/Src/UniServerApp/*.exe
+pw/branches/r1117/Src/UniServerApp/*.pdb
+pw/branches/r1117/Src/UniServerApp/*.exp
+pw/branches/r1117/Src/UniServerApp/Release
+pw/branches/r1117/Src/UniServerApp/ShippingSingleExe
+pw/branches/r1117/Tools/TestFramework/UniServerApp.auto
+pw/branches/r1117/Src/Shared/ShippingSingleExe
 rating/game_session.json
 rating/rating_json.txt
 Client-Synchronizer-Server/pythonProject/finish_game.py
@@ -78,3 +90,4 @@ PW_NanoUpdater/PW_NanoUpdater/.vs/PW_NanoUpdater/v17/*
 PW_PackData/FilePileCompiler/ccl.txt
 PW_NanoUpdater/PW_NanoUpdater/Tools
 pw_publish/branch/Client/PvP/Bin/logs
+UpdateRepos

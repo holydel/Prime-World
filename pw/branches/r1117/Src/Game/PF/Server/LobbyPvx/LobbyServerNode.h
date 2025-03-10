@@ -88,7 +88,7 @@ public:
   virtual void OnConfigReload();
 
   RIServerInstance * AddClient( RILobbyUser * user, int clientRevision );
-
+  lobby::EOperationResult::Enum TryCreateWebSession(const char* token);
   StrongMT<CustomGame> CreateCustomGame( const SGameParameters & _params, int autostartPlayers );
   void InsertGame( GameSession * _game );
   void InsertCustomGame( CustomGame * _game );
@@ -175,7 +175,7 @@ private:
 
   void LoadHeroes();
   void GetClientUsername( Transport::TClientId userId, wstring & username );
-  StrongMT<ServerConnection> NewConnection( Transport::TClientId clientId );
+  StrongMT<ServerConnection> NewConnection( Transport::TClientId clientId, const wstring & username = wstring(L"") );
   TConnections::iterator GetConnectionForChannel( Transport::IChannel * channel, bool createIfNeeded );
   ServerConnection * FindConnection( Transport::TClientId clientId );
   void CloseConnection( ServerNode::TConnections::iterator it );

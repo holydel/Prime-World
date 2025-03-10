@@ -32,6 +32,8 @@ public:
   REMOTE virtual void SetDeveloperParty( int party ) = 0;
 
   REMOTE virtual EOperationResult::Enum JoinSocialGame() = 0;
+
+  REMOTE virtual EOperationResult::Enum ConnectToWebLobby(const string & token) = 0;
 };
 
 }; //namespace lobby

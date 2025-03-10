@@ -59,7 +59,6 @@ GameSession::~GameSession()
 }
 
 
-
 void GameSession::Poll( NHPTimer::FTime now )
 {
   NI_PROFILE_FUNCTION;
@@ -194,10 +193,22 @@ void GameSession::SetupSocialMMaking( const mmaking::SGame & _game, const social
 }
 
 
-
 void GameSession::SetupFromCustomGame( CustomGame * _customGame )
 {
   customGame = _customGame;
+
+  socialGameData.mapType = NDb::MAPTYPE_PVP;
+  socialGameData.mapId = customGame->Params().mapId;
+
+  int playersCount = customGame->Players().size();
+  socialGameDetails.playerDetails.reserve(playersCount);
+
+  for (int p = 0; p < playersCount; ++p) {
+    const StrongMT<ServerConnection>& player = customGame->Players()[p].player;
+    socialLobby::PlayerDetails& playerDetails = socialGameDetails.playerDetails.push_back();
+    playerDetails.uid = player->UserInfo().userId;
+    playerDetails.nick = player->UserInfo().nickname;
+  }
 
   customGame->SetupGameStartInfo( gameServerData, lineup );
 
@@ -205,7 +216,7 @@ void GameSession::SetupFromCustomGame( CustomGame * _customGame )
 }
 
 
-
+extern nstl::map<nstl::wstring, int> playerNicknameToWebUserIdMap;
 EOperationResult::Enum GameSession::ReconnectToCustomGame( ServerConnection * player )
 {
   LOBBY_LOG_MSG( "Trying to rejoin player %d to custom game %s...", player->ClientId(), strGameId );
@@ -219,7 +230,13 @@ EOperationResult::Enum GameSession::ReconnectToCustomGame( ServerConnection * pl
   NI_VERIFY( ( gameServer || gameSvcInstId.Valid() ) && gameServerInternal, "", return EOperationResult::InternalError );
   NI_VERIFY( player->RemoteUser(), "", return EOperationResult::InternalError );
 
-  gameServerInternal->OnRejoinClient( player->ClientId(), this, &GameSession::OnRejoinClientAnswer );
+  nstl::map<nstl::wstring, int>::iterator it = playerNicknameToWebUserIdMap.find(player->UserInfo().nickname.c_str());
+  if (it == playerNicknameToWebUserIdMap.end()) {
+    LOBBY_LOG_ERR( "Player is not found %s (%d)", player->UserInfo().nickname.c_str(), player->ClientId() );
+    return EOperationResult::InternalError;
+  }
+
+  gameServerInternal->OnRejoinClient( it->second, this, &GameSession::OnRejoinClientAnswer );
 
   player->RemoteUser()->StartSession( gameId, params, lineup, gameServer, gameSvcInstId, (unsigned)Timestamp() );
   return EOperationResult::Ok;
@@ -360,6 +377,13 @@ void GameSession::SetupAuxGameServerData( Peered::SAuxData & gsAuxData )
   }
 
   gsAuxData.users.reserve( socialGameDetails.playerDetails.size() );
+  if (socialGameData.humans.empty()) {
+    for (int pi = 0; pi < customGame->Players().size(); ++pi) {
+      Peered::SAuxUserData & gsUser = gsAuxData.users.push_back();
+      gsUser.clientId = customGame->Players()[pi].player->ClientId();
+      gsUser.faction = customGame->Players()[pi].context.team;
+    }
+  } else {
   for ( int pi = 0; pi < socialGameData.humans.size(); ++pi )
   {
     const mmaking::SGameParty & pty = socialGameData.humans[pi];
@@ -378,6 +402,7 @@ void GameSession::SetupAuxGameServerData( Peered::SAuxData & gsAuxData )
       Peered::SAuxUserData & gsUser = gsAuxData.users.back();
       gsUser.clientId = memb.mmId;
       gsUser.faction = pty.common.team;
+    }
     }
   }
 }

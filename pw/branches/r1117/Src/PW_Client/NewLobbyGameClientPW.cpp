@@ -50,6 +50,10 @@
 #include "PF_GameLogic/WebLauncher.h"
 #include "PF_GameLogic/HeroSpawn.h"
 #include "../PW_Game/server_ip.h"
+#include <Shared/WebRequests.h>
+#include <PF_GameLogic/WebLauncher.h>
+
+extern string g_sessionToken;
 
 static bool s_threaded_loading = true;
 REGISTER_VAR( "threaded_loading", s_threaded_loading, STORAGE_NONE );
@@ -66,9 +70,6 @@ REGISTER_DEV_VAR( "boost_thread_priority_val", s_boostVal, STORAGE_NONE);
 #ifndef INSULT_REPORT_ITEM_ID
 #define INSULT_REPORT_ITEM_ID 2
 #endif
-
-
-extern std::map<std::wstring, WebLauncherPostRequest::WebUserData> g_usersData;
 
 
 namespace lobby
@@ -782,6 +783,42 @@ void GameClientPW::OnCombatScreenStarted( NCore::IWorldBase * _world, const NGam
 }
 
 
+static void SendFinishGameRequest(const StatisticService::RPC::SessionClientResults & _sessionResults, const NGameX::ReplayInfo & _replayInfo)
+{
+  Json::Value data(Json::objectValue);
+  data["sessionToken"] = Json::Value (g_sessionToken.c_str());
+  data["sideWon"] = Json::Value (_sessionResults.sideWon);
+
+  data["isWon"] = Json::Value (_replayInfo.isWon);
+
+  Json::Value playersInfo(Json::arrayValue);
+  nstl::vector<Json::Value> playerInfosValues(_sessionResults.players.size());
+  for (int pId = 0; pId < _sessionResults.players.size(); ++pId) {
+    const StatisticService::RPC::SessionClientResultsPlayer& infoFromPlayer = _sessionResults.players[pId];
+    Json::Value& playerInfo = playerInfosValues[pId];
+
+    playerInfo["uid"] = Json::Value (infoFromPlayer.userid); 
+    playerInfo["kills"] = Json::Value (infoFromPlayer.scoring.kills);
+    playerInfo["deaths"] = Json::Value (infoFromPlayer.scoring.deaths);
+    playerInfo["assists"] = Json::Value (infoFromPlayer.scoring.assists);
+    playerInfo["timeInIdle"] = Json::Value(infoFromPlayer.scoring.timeInIdle);
+    playerInfo["timeAtHome"] = Json::Value(infoFromPlayer.scoring.timeAtHome);
+    playerInfo["timeInDeath"] = Json::Value(infoFromPlayer.scoring.timeInDeath);
+    playerInfo["timeElapsed"] = Json::Value(infoFromPlayer.scoring.timeElapsed);
+    playerInfo["badBehaviourDetected"] = Json::Value(infoFromPlayer.extra.badBehaviourDetected);
+    playerInfo["badBehaviourReported"] = Json::Value(infoFromPlayer.extra.badBehaviourReported);
+    playersInfo.append(playerInfo);
+  }
+  data["playersInfo"] = playersInfo;
+
+  Json::Value sessionResultsJson = Json::objectValue;
+  sessionResultsJson["data"] = data;
+  sessionResultsJson["method"] = Json::Value("notifyGameFinishLegacy");
+
+  std::string res = GetFormattedJson(sessionResultsJson);
+  WebPostRequest request(useMirrorServer ? MIRROR_SERVER_IP_W : SERVER_IP_W, L"/api", SYNCHRONIZER_PORT, 0);
+  request.SendPostRequest(res);
+}
 
 void GameClientPW::OnVictory( const StatisticService::RPC::SessionClientResults & _sessionResults, const NGameX::ReplayInfo & _replayInfo )
 {
@@ -790,14 +827,9 @@ void GameClientPW::OnVictory( const StatisticService::RPC::SessionClientResults 
     NScreenCommands::PushCommand( NScreenCommands::CreatePopScreenCommand( networkStatusScreen ) );
   networkStatusScreen = 0;
 
-  vector<int> playersIds;
-  for (int i = 0; i < _sessionResults.players.size(); ++i) {
-    playersIds.push_back(_sessionResults.players[i].userid);
-  }
-  WebLauncherPostRequest sessionResultRequest;
-  sessionResultRequest.SendFinishGameRequest(playersIds, _sessionResults.sideWon);
-
   GameClient::OnVictory( _sessionResults, _replayInfo );
+
+  SendFinishGameRequest(_sessionResults, _replayInfo);
 }
 
 

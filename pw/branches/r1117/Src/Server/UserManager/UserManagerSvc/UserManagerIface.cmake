@@ -1,0 +1,3 @@
+
+set(SOURCES_Src_Server_UserManager_UserManagerSvc_UserManagerIface UserManagerIface.cpp UserManagerIface.h)
+set(LIBRARIES_Src_Server_UserManager_UserManagerSvc_UserManagerIface )

@@ -3,6 +3,7 @@
 
 #include "CommonTypes.h"
 #include "LobbyConfig.h"
+#include "../PF_GameLogic/WebLauncher.h"
 
 
 namespace mmaking
@@ -81,6 +82,12 @@ public:
   void SetupGameStartInfo( vector<Peered::ClientInfo> & _gameServerData, TGameLineUp & _lineup );
 
   void SetDeveloperParty( ServerConnection * player, int party );
+  void StartGame();
+
+  void SetSessionToken(const char* _sessionToken) { sessionToken = _sessionToken; }
+  const char* GetSessionToken() { return sessionToken.c_str(); }
+
+  WebUsersDataMap                 playersUserData;
 
 private:
   const TGameId                   id;
@@ -91,6 +98,7 @@ private:
   StrongMT<mmaking::IHeroesTable> heroes;
   int                             autostartPlayers;
   bool                            eliseevHackForPve;
+  nstl::string                    sessionToken;
 
   void ChangeState( ECustomGameState::Enum _st ) { state = _st; }
   int FindPlayer( ServerConnection * player );
@@ -98,7 +106,6 @@ private:
   void FindOutNewPlayerInfo( string & heroId, ETeam::Enum & teamId, int teamSizes[2] );
   void ComplementWithLegacyAi( TGameLineUp & _lineup );
   void BalanceCustomGame();
-  void StartGame();
 
   void BroadcastPlayerSettings( size_t playerIndex );
   void BroadcastPlayerLeaveCustom( Transport::TClientId playerClientId );

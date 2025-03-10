@@ -37,7 +37,7 @@ namespace
     if (!IsValid(params))
       return 1;
 
-    // 25 смертей - это даже слишком
+    // 25 пїЅпїЅпїЅпїЅпїЅпїЅпїЅ - пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     return Clamp(params->feederDeathCount, 0, 25);
   }
 
@@ -116,7 +116,7 @@ namespace NWorld
     , deathTimeHistoryCapacity(0)
     , deathTimeHistory()
     , spamDetectedHistory()
-    , state(EState::Disabled)
+    , state(EState::Idle)
     
   {
 
@@ -137,7 +137,7 @@ namespace NWorld
     , tracking(0U)
     , complaints(0U)
     , insultComplaints(0U)
-    , state(EState::Disabled)
+    , state(EState::Idle)
     , firstDetectedMark(EMark::None)
     , player(player)
   {
@@ -147,16 +147,16 @@ namespace NWorld
       return;
 
     const bool trackIdler = true;
-    const bool trackFeeder =
-      (deathTimeHistoryCapacity > 0) &&
-      (params->feederDeathCount > 0) &&
-      (params->feederDeathTime > 0);
-    const bool trackBadPlayer =
-      (params->goodActionTimeout > 0);
-    const bool trackBadZumaPlayer =
-      (params->goodZumaActionTimeout > 0);
-    const bool trackReports =  (params->badBehaviourComplaintsThreshold > 0);
-    const bool trackMessage =(params->insultComplaintsThreshold);
+    const bool trackFeeder = true;
+//       (deathTimeHistoryCapacity > 0) &&
+//       (params->feederDeathCount > 0) &&
+//       (params->feederDeathTime > 0);
+    const bool trackBadPlayer = true;
+      //(params->goodActionTimeout > 0);
+    const bool trackBadZumaPlayer = true;
+      //(params->goodZumaActionTimeout > 0);
+    const bool trackReports = true;// (params->badBehaviourComplaintsThreshold > 0);
+    const bool trackMessage = true;// (params->insultComplaintsThreshold);
 
     if (trackIdler)
       AddTracking(EMark::Idler);
@@ -168,10 +168,10 @@ namespace NWorld
       AddTracking(EMark::BadZumaPlayer);
     if (trackReports)
       AddTracking(EMark::Reported);
-    if (trackMessage)
-      AddTracking(EMark::ToxicPlayer);
-    if (trackMessage)
-      AddTracking(EMark::ToxicPlayerReported);
+//     if (trackMessage)
+//       AddTracking(EMark::ToxicPlayer);
+//     if (trackMessage)
+//       AddTracking(EMark::ToxicPlayerReported);
 
     const bool disabled = ((tracking & EMark::GetValidMarksMask()) == 0U);
 
@@ -195,6 +195,40 @@ namespace NWorld
   PlayerBehaviourTracker::~PlayerBehaviourTracker()
   {
 
+  }
+
+  bool PlayerBehaviourTracker::IsArmed() const
+  {
+    switch (state)
+    {
+    case EState::Armed:
+      return true;
+    default:
+      return false;
+    }
+  }
+
+  bool PlayerBehaviourTracker::HasMark(const EMark::Enum mark) const
+  {
+    if (!EMark::IsValid(mark))
+      return false;
+
+    const unsigned bits = 1U << static_cast<unsigned>(mark);
+
+    return ((marks & bits) != 0U);
+  }
+
+  bool PlayerBehaviourTracker::HasTracking(const EMark::Enum mark) const
+  {
+    if (!IsArmed())
+      return false;
+
+    if (!EMark::IsValid(mark))
+      return false;
+
+    const unsigned bits = 1U << static_cast<unsigned>(mark);
+
+    return ((marks & bits) == 0U) && ((tracking & bits) != 0U);
   }
 
   void PlayerBehaviourTracker::AddMark(const EMark::Enum mark)
@@ -245,7 +279,7 @@ namespace NWorld
     marks = 0U;
     complaints = 0U;
 
-    firstDetectedMark = EMark::None;
+    //firstDetectedMark = EMark::None;
 
     state = EState::Armed;
 
@@ -327,14 +361,14 @@ namespace NWorld
 
   void PlayerBehaviourTracker::UpdateAndCheckToxicPlayer(bool isBadMessage=false)
   {
-    NI_ASSERT(HasTracking(EMark::ToxicPlayerReported), "Invalid state");
+    NI_ASSERT(HasTracking(EMark::ToxicPlayer), "Invalid state");
 
     const int checkReports = static_cast<int>(insultComplaints);
 
-    if (checkReports < params->insultComplaintsThreshold && isBadMessage)
-      return;
+    //if (isBadMessage)
+//      return;
     DevTrace("### behaviour: ToxicPlayer detected! (uid=%d)", GetPlayerUserId());
-    AddMark(EMark::ToxicPlayerReported);
+    AddMark(EMark::ToxicPlayer);
   }
 
   void PlayerBehaviourTracker::UpdateAndCheckReported()
@@ -466,8 +500,8 @@ namespace NWorld
       break;
     case EPlayerBehaviourEvent::MessageInFilter:
     case EPlayerBehaviourEvent::CapsMeessage:
-    case EPlayerBehaviourEvent::AutoMuteMessageLength: 
-    case EPlayerBehaviourEvent::AutoMuteMessage:
+    //case EPlayerBehaviourEvent::AutoMuteMessageLength: 
+    //case EPlayerBehaviourEvent::AutoMuteMessage:
         DevTrace("### behaviour: %s is applicable! (uid=%d)", GetBehaviourEventName(event), GetPlayerUserId());
         if (HasTracking(EMark::ToxicPlayer))
         {
@@ -596,6 +630,7 @@ namespace PlayerBehaviourTracking
       if (!IsValid(tracker))
         return;
 
+      /*
       switch (tracker->GetFirstDetectedMark())
       {
       case PlayerBehaviourTracker::EMark::Idler:
@@ -614,6 +649,8 @@ namespace PlayerBehaviourTracking
       default:
         stats.extra.badBehaviourDetected = StatisticService::EDetectedBadBehaviour::None;
       }
+      */
+      stats.extra.badBehaviourDetected = tracker->GetMarks();
 
       {
           stats.extra.badBehaviourReported = tracker->IsBadBehaviourReported() || tracker->IsToxicPlayer();

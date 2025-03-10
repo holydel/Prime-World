@@ -1,0 +1,12 @@
+source = 'thrift-0.9.1'
+
+includePaths = [
+]
+
+
+local_root = 'lib/cpp/src/thrift'
+_sources = [
+]
+
+components = [
+]

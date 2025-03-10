@@ -1,0 +1,3 @@
+
+set(SOURCES_Src_PF_GameLogic_ResourcesCollection ResourcesCollection.h PFResourcesCollection.h)
+set(LIBRARIES_Src_PF_GameLogic_ResourcesCollection )

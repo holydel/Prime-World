@@ -1,0 +1,3 @@
+
+set(SOURCES_Src_Network_PacketDispatcher PacketDispatcher.h PacketDispatcher.cpp)
+set(LIBRARIES_Src_Network_PacketDispatcher )

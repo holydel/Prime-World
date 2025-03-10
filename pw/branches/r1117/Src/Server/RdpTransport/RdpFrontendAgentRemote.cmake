@@ -1,0 +1,3 @@
+
+set(SOURCES_Src_Server_RdpTransport_RdpFrontendAgentRemote RdpFrontendAgentRemote.h)
+set(LIBRARIES_Src_Server_RdpTransport_RdpFrontendAgentRemote )

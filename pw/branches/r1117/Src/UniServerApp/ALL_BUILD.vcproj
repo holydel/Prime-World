@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding = "UTF-8"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="9.00"
+	Name="ALL_BUILD"
+	ProjectGUID="{A5DF1CAD-3DA6-3DAC-9E5C-D61170B1497F}"
+	Keyword="Win32Proj">
+	<Platforms>
+		<Platform
+			Name="Win32"/>
+	</Platforms>
+	<Configurations>
+		<Configuration
+			Name="Debug|Win32"
+			IntermediateDirectory="ALL_BUILD.dir\Debug"
+			ConfigurationType="10"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="false"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				AssemblerListingLocation="$(IntDir)\"
+				DisableSpecificWarnings="4100"
+				ExceptionHandling="0"
+				PreprocessorDefinitions=";&quot;_DO_ASSERT /D SERVER_DB /D BOOST_ALL_NO_LIB /D NI_FORCE_DISABLE_INLINE_PROFILER /MDd /D TRANSPORT_LAYER_COMPONENT /Zi /D DB_TYPES_REGISTRATOR_SILENT /D NI_DISABLE_CRASHRPT /WX /EHa /DCURL_STATICLIB /D_HAS_ITERATOR_DEBUGGING=0 /D LOG_THREAD_EXIT /D CHECK_TOWN_CONSISTENCY /D VISUAL_CUTTED&quot;;CMAKE_INTDIR=\&quot;Debug\&quot;"
+				ObjectFile="$(IntDir)\"
+/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions=";&quot;_DO_ASSERT /D SERVER_DB /D BOOST_ALL_NO_LIB /D NI_FORCE_DISABLE_INLINE_PROFILER /MDd /D TRANSPORT_LAYER_COMPONENT /Zi /D DB_TYPES_REGISTRATOR_SILENT /D NI_DISABLE_CRASHRPT /WX /EHa /DCURL_STATICLIB /D_HAS_ITERATOR_DEBUGGING=0 /D LOG_THREAD_EXIT /D CHECK_TOWN_CONSISTENCY /D VISUAL_CUTTED&quot;;CMAKE_INTDIR=\&quot;Debug\&quot;"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+				MkTypLibCompatible="false"
+				TargetEnvironment="1"
+				GenerateStublessProxies="true"
+				TypeLibraryName="$(InputName).tlb"
+				OutputDirectory="$(IntDir)"
+				HeaderFileName="$(InputName).h"
+				DLLDataFileName=""
+				InterfaceIdentifierFileName="$(InputName)_i.c"
+				ProxyFileName="$(InputName)_p.c"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+		</Configuration>
+		<Configuration
+			Name="Release|Win32"
+			IntermediateDirectory="ALL_BUILD.dir\Release"
+			ConfigurationType="10"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="false"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				AssemblerListingLocation="$(IntDir)\"
+				DisableSpecificWarnings="4100"
+				ExceptionHandling="0"
+				PreprocessorDefinitions=";&quot;_DO_ASSERT /D SERVER_DB /D BOOST_ALL_NO_LIB /D NI_FORCE_DISABLE_INLINE_PROFILER /MDd /D TRANSPORT_LAYER_COMPONENT /Zi /D DB_TYPES_REGISTRATOR_SILENT /D NI_DISABLE_CRASHRPT /WX /EHa /DCURL_STATICLIB /D_HAS_ITERATOR_DEBUGGING=0 /D LOG_THREAD_EXIT /D CHECK_TOWN_CONSISTENCY /D VISUAL_CUTTED&quot;;CMAKE_INTDIR=\&quot;Release\&quot;"
+				ObjectFile="$(IntDir)\"
+/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions=";&quot;_DO_ASSERT /D SERVER_DB /D BOOST_ALL_NO_LIB /D NI_FORCE_DISABLE_INLINE_PROFILER /MDd /D TRANSPORT_LAYER_COMPONENT /Zi /D DB_TYPES_REGISTRATOR_SILENT /D NI_DISABLE_CRASHRPT /WX /EHa /DCURL_STATICLIB /D_HAS_ITERATOR_DEBUGGING=0 /D LOG_THREAD_EXIT /D CHECK_TOWN_CONSISTENCY /D VISUAL_CUTTED&quot;;CMAKE_INTDIR=\&quot;Release\&quot;"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+				MkTypLibCompatible="false"
+				TargetEnvironment="1"
+				GenerateStublessProxies="true"
+				TypeLibraryName="$(InputName).tlb"
+				OutputDirectory="$(IntDir)"
+				HeaderFileName="$(InputName).h"
+				DLLDataFileName=""
+				InterfaceIdentifierFileName="$(InputName)_i.c"
+				ProxyFileName="$(InputName)_p.c"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+		</Configuration>
+		<Configuration
+			Name="MinSizeRel|Win32"
+			IntermediateDirectory="ALL_BUILD.dir\MinSizeRel"
+			ConfigurationType="10"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="false"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				AssemblerListingLocation="$(IntDir)\"
+				DisableSpecificWarnings="4100"
+				ExceptionHandling="0"
+				PreprocessorDefinitions=";&quot;_DO_ASSERT /D SERVER_DB /D BOOST_ALL_NO_LIB /D NI_FORCE_DISABLE_INLINE_PROFILER /MDd /D TRANSPORT_LAYER_COMPONENT /Zi /D DB_TYPES_REGISTRATOR_SILENT /D NI_DISABLE_CRASHRPT /WX /EHa /DCURL_STATICLIB /D_HAS_ITERATOR_DEBUGGING=0 /D LOG_THREAD_EXIT /D CHECK_TOWN_CONSISTENCY /D VISUAL_CUTTED&quot;;CMAKE_INTDIR=\&quot;MinSizeRel\&quot;"
+				ObjectFile="$(IntDir)\"
+/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions=";&quot;_DO_ASSERT /D SERVER_DB /D BOOST_ALL_NO_LIB /D NI_FORCE_DISABLE_INLINE_PROFILER /MDd /D TRANSPORT_LAYER_COMPONENT /Zi /D DB_TYPES_REGISTRATOR_SILENT /D NI_DISABLE_CRASHRPT /WX /EHa /DCURL_STATICLIB /D_HAS_ITERATOR_DEBUGGING=0 /D LOG_THREAD_EXIT /D CHECK_TOWN_CONSISTENCY /D VISUAL_CUTTED&quot;;CMAKE_INTDIR=\&quot;MinSizeRel\&quot;"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+				MkTypLibCompatible="false"
+				TargetEnvironment="1"
+				GenerateStublessProxies="true"
+				TypeLibraryName="$(InputName).tlb"
+				OutputDirectory="$(IntDir)"
+				HeaderFileName="$(InputName).h"
+				DLLDataFileName=""
+				InterfaceIdentifierFileName="$(InputName)_i.c"
+				ProxyFileName="$(InputName)_p.c"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+		</Configuration>
+		<Configuration
+			Name="RelWithDebInfo|Win32"
+			IntermediateDirectory="ALL_BUILD.dir\RelWithDebInfo"
+			ConfigurationType="10"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="false"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				AssemblerListingLocation="$(IntDir)\"
+				DisableSpecificWarnings="4100"
+				ExceptionHandling="0"
+				PreprocessorDefinitions=";&quot;_DO_ASSERT /D SERVER_DB /D BOOST_ALL_NO_LIB /D NI_FORCE_DISABLE_INLINE_PROFILER /MDd /D TRANSPORT_LAYER_COMPONENT /Zi /D DB_TYPES_REGISTRATOR_SILENT /D NI_DISABLE_CRASHRPT /WX /EHa /DCURL_STATICLIB /D_HAS_ITERATOR_DEBUGGING=0 /D LOG_THREAD_EXIT /D CHECK_TOWN_CONSISTENCY /D VISUAL_CUTTED&quot;;CMAKE_INTDIR=\&quot;RelWithDebInfo\&quot;"
+				ObjectFile="$(IntDir)\"
+/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions=";&quot;_DO_ASSERT /D SERVER_DB /D BOOST_ALL_NO_LIB /D NI_FORCE_DISABLE_INLINE_PROFILER /MDd /D TRANSPORT_LAYER_COMPONENT /Zi /D DB_TYPES_REGISTRATOR_SILENT /D NI_DISABLE_CRASHRPT /WX /EHa /DCURL_STATICLIB /D_HAS_ITERATOR_DEBUGGING=0 /D LOG_THREAD_EXIT /D CHECK_TOWN_CONSISTENCY /D VISUAL_CUTTED&quot;;CMAKE_INTDIR=\&quot;RelWithDebInfo\&quot;"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+				MkTypLibCompatible="false"
+				TargetEnvironment="1"
+				GenerateStublessProxies="true"
+				TypeLibraryName="$(InputName).tlb"
+				OutputDirectory="$(IntDir)"
+				HeaderFileName="$(InputName).h"
+				DLLDataFileName=""
+				InterfaceIdentifierFileName="$(InputName)_i.c"
+				ProxyFileName="$(InputName)_p.c"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+		</Configuration>
+	</Configurations>
+	<Files>
+			<File
+				RelativePath="C:\Users\rekon\source\repos\Prime-World-2022\pw\branches\r1117\Src\Game\PF\UniServer\UniServerApp.auto\CMakeLists.txt">
+			</File>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

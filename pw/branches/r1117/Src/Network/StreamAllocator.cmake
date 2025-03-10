@@ -1,0 +1,3 @@
+
+set(SOURCES_Src_Network_StreamAllocator StreamAllocator.h StreamAllocator.cpp)
+set(LIBRARIES_Src_Network_StreamAllocator )

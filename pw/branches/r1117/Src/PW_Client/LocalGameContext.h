@@ -81,18 +81,20 @@ protected:
   //IGameContextUiInterface
   virtual bool          LoginInProgress() const { return false; }
   virtual void          SetDeveloperSex( lobby::ESex::Enum _sex ) { developerSex = _sex; }
-  virtual void          ConnectToCluster( const string & login, const string & password,  Login::LoginType::Enum _loginType = Login::LoginType::ORDINARY ) {}
+  virtual void          ConnectToCluster( const string & login, const string & password, const string & sessionToken,  Login::LoginType::Enum _loginType = Login::LoginType::ORDINARY ) {}
   virtual NWorld::IMapCollection * Maps() { return mapCollection; }
   virtual void          RefreshGamesList() {}
   virtual void          PopGameList( lobby::TDevGamesList & buffer ) { buffer.clear(); }
   virtual lobby::EOperationResult::Enum LastLobbyOperationResult() const { return lobby::EOperationResult::Ok; }
   virtual void          CreateGame( const char * mapId, int maxPlayers );
   virtual void          JoinGame( int gameId ) {}
+  virtual void          JoinWebGame( const string & token ) {}
   virtual void          Reconnect( int gameId, int team, const string & heroId ) {}
   virtual void          Spectate( int gameId ) {}
   virtual void          ChangeCustomGameSettings( lobby::ETeam::Enum team, lobby::ETeam::Enum faction, const string & heroId );
   virtual void          SetReady( lobby::EGameMemberReadiness::Enum readiness );
   virtual void          SetDeveloperParty(int);
+
 
   //NGameX::IGameControl
   virtual void OnCombatScreenStarted( NCore::IWorldBase * _world, const NGameX::ReplayInfo & _replayInfo );

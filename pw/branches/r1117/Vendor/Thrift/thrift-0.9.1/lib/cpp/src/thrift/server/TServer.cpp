@@ -17,6 +17,8 @@
  * under the License.
  */
 
+
+/*
 #include <thrift/thrift-config.h>
 
 #ifdef HAVE_SYS_TIME_H
@@ -31,7 +33,7 @@
 #endif
 
 namespace apache { namespace thrift { namespace server {
-/*
+
 int increase_max_fds(int max_fds=(1<<24))  {
   struct rlimit fdmaxrl;
 
@@ -42,6 +44,9 @@ int increase_max_fds(int max_fds=(1<<24))  {
   }
 
   return static_cast<int>(fdmaxrl.rlim_cur);
+  return 0;
 }
-*/
+
 }}} // apache::thrift::server
+
+*/

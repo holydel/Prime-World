@@ -41,6 +41,8 @@
 
 #include "System/InlineProfiler.h"
 #include "LobbyLog.h"
+#include <Shared/WebRequests.h>
+#include <PF_GameLogic/WebLauncher.h>
 
 
 
@@ -231,6 +233,221 @@ RIServerInstance * ServerNode::AddClient( RILobbyUser * user, int clientRevision
 
 
 
+static WebUsersDataMap GetUsersData(Json::Value usersData) {
+  WebUsersDataMap resultMap;
+  // Get users data
+  int playersCount = 0;
+  Json::Value curPlayer = usersData[playersCount];
+  while (!curPlayer.empty()) {
+    if (!CheckPlayerInfo(curPlayer)) {
+      WebUsersDataMap emptyMap;
+      return emptyMap;
+    }
+
+    std::string curNickname = curPlayer.get("nickname", Json::Value()).asString();
+
+    std::wstring wideCharString = Fix1251EncodingW(curNickname);
+
+    WebLauncherPostRequest::WebUserData resData;
+    Json::Value rating = curPlayer.get("rating", Json::Value());
+    resData.currentRating = rating.get("current", Json::Value()).asFloat();
+    resData.victoryRating = rating.get("victory", Json::Value()).asFloat();
+    resData.lossRating = rating.get("loss", Json::Value()).asFloat();
+    resData.heroSkinID = curPlayer.get("skin", Json::Value()).asInt();
+    resData.userId = curPlayer.get("id", Json::Value()).asInt();
+
+    resData.talents.resize(36);
+
+    Json::Value dataTalents = curPlayer.get("build", Json::Value());
+    for (int i = 0; i < 36; ++i) {
+      if (dataTalents[i].empty() || dataTalents[i].asInt() == 0) {
+        resData.talents.clear();
+        break; // empty slot in build
+      }
+      resData.talents[i].webTalentId = dataTalents[i].asInt();
+    }
+    if (!resData.talents.empty()) {
+      Json::Value dataActives = curPlayer.get("bar", Json::Value());
+      for (int a = 0; a < 10; ++a) {
+        if (!dataActives[a].empty()) {
+          int activeRaw = dataActives[a].asInt();
+          if (activeRaw != 0) {
+            int activeRef = abs(activeRaw) - 1;
+            bool isSmartCast = activeRaw < 0;
+
+            resData.talents[activeRef].activeSlot = a;
+            resData.talents[activeRef].isSmartCast = isSmartCast;
+          }
+        }
+      }
+    }
+
+    Json::Value hero = curPlayer.get("hero", Json::Value());
+    Json::Value team = curPlayer.get("team", Json::Value());
+    Json::Value party = curPlayer.get("party", Json::Value());
+    resData.heroId = hero.asInt();
+    resData.teamId = team.asInt() - 1;
+    resData.partyId = party.asInt();
+
+    resultMap[wideCharString] = resData;
+
+    playersCount++;
+    curPlayer = usersData[playersCount];
+  }
+  return resultMap;
+}
+
+static const char* heroes [] = {
+  "prince",
+  "snowqueen",
+  "faceless",
+  "warlord",
+  "thundergod",
+  "invisible",
+  "mowgly",
+  "inventor",
+  "artist",
+  "highlander",
+  "marine",
+  "firefox",
+  "healer",
+  "night",
+  "rockman",
+  "assassin",
+  "unicorn",
+  "hunter",
+  "ghostlord",
+  "ratcatcher",
+  "archeress",
+  "werewolf",
+  "frogenglut",
+  "witchdoctor",
+  "manawyrm",
+  "bard",
+  "naga",
+  "mage",
+  "fairy",
+  "witcher",
+  "alchemist",
+  "demonolog",
+  "vampire",
+  "witch",
+  "crusader_A",
+  "crusader_B",
+  "monster",
+  "angel",
+  "freeze",
+  "gunslinger",
+  "reaper",
+  "fluffy",
+  "rifleman",
+  "magicgirl",
+  "pinkgirl",
+  "ironknight",
+  "fallenangel",
+  "bladedancer",
+  "ent",
+  "plaguedoctor",
+  "katana",
+  "plane",
+  "zealot",
+  "wraithking",
+  "dryad",
+  "stalker",
+  "gunner",
+  "chronicle",
+  "brewer",
+  "shadow",
+  "wendigo",
+  "trickster",
+  "banshee",
+  "shaman",
+  "bomber"
+};
+
+nstl::map<nstl::string, StrongMT<CustomGame>> g_games;
+nstl::map<nstl::wstring, int> playerNicknameToWebUserIdMap;
+lobby::EOperationResult::Enum ServerNode::TryCreateWebSession(const char* token)
+{
+  std::string response = GetSessionData(token, true);
+
+  Json::Value parsedValue = ParseJson(response.c_str());
+
+  if (parsedValue.empty()) {
+    LOBBY_LOG_ERR( "Failed to get info from the synchronizer %s", token );
+    return EOperationResult::RestrictedAccess;
+  }
+  Json::Value errorSet = parsedValue.get("error", "ERROR");
+  if (!errorSet.asString().empty()) {
+    LOBBY_LOG_ERR( "Error occurred during session creation: %s (%s)", errorSet.asString().c_str(), token );
+    return EOperationResult::RestrictedAccess;
+  }
+
+  Json::Value mapId = parsedValue.get("mapId", Json::Value());
+  if (mapId.empty() || !mapId.isString()) {
+    LOBBY_LOG_ERR( "Error occurred during session creation: Invalid mapId %s", token );
+    return EOperationResult::RestrictedAccess;
+  }
+
+  Json::Value usersData = parsedValue.get("usersData", Json::Value());
+  if (usersData.empty() || !usersData.isArray()) {
+    LOBBY_LOG_ERR( "Error occurred during session creation: Empty usersData %s", token );
+    return EOperationResult::RestrictedAccess;
+  }
+
+  WebUsersDataMap usersDataMap = GetUsersData(usersData);
+  if (usersDataMap.empty()) {
+    LOBBY_LOG_ERR( "Error occurred during session creation: Invalid usersData %s", token );
+    return EOperationResult::RestrictedAccess;
+  }
+
+  SGameParameters params;
+  params.gameType = EGameType::Custom;
+  params.name = L"";
+  params.mapId = mapId.asString().c_str();
+  params.slotsCount = usersDataMap.size();
+  params.maxPlayersPerTeam = usersDataMap.size() / 2;
+  params.randomSeed = GetGameRandom();
+  params.manoeuvresFaction = lobby::ETeam::None;
+
+  StrongMT<lobby::CustomGame>& game = g_games[token];
+  game = CreateCustomGame( params, 0 );
+  NI_VERIFY( game, "Custom game was NOT created", return EOperationResult::RestrictedAccess );
+
+  game->playersUserData = usersDataMap;
+
+  for (WebUsersDataMap::iterator it = usersDataMap.begin(); it != usersDataMap.end(); ++it) {
+    std::wstring nickname = it->first;
+
+    std::wstring currentLogin = std::wstring(L" ") + nickname;
+    currentLogin[0] = 0x09;
+
+    WebLauncherPostRequest::WebUserData userData = it->second;
+    playerNicknameToWebUserIdMap[currentLogin.c_str()] = userData.userId;
+    StrongMT<lobby::ServerConnection> fakeConnection = NewConnection(userData.userId, currentLogin.c_str());
+    EOperationResult::Enum result = game->SetupCustom( fakeConnection.Get() );
+
+    int heroId = std::min(std::max((size_t)(userData.heroId - 1), 0u), _countof(heroes) - 1u);
+    lobby::ETeam::Enum teamId = lobby::ETeam::Enum(userData.teamId);
+
+    const char* heroPersistentId = heroes[heroId];
+
+    game->ChangeCustomGameSettings(fakeConnection.Get(), teamId, teamId, heroPersistentId);
+    game->SetDeveloperParty(fakeConnection.Get(), userData.partyId);
+    if ( result != EOperationResult::Ok ) {
+      LOBBY_LOG_ERR( "Error occurred during session creation: Failed to add NewConnection %s", token );
+      return EOperationResult::RestrictedAccess;
+    }
+  }
+  game->SetSessionToken(token);
+  game->StartGame();
+
+  InsertCustomGame( game );
+  //StartCustomGame( game );
+
+  return EOperationResult::Ok;
+}
+
 void ServerNode::OnNewNode( Transport::IChannel * channel, rpc::Node * node )
 {
   NI_PROFILE_FUNCTION;
@@ -296,6 +513,39 @@ Network::NetAddress ServerNode::GetSvcAddress( const Transport::TServiceId & _se
 }
 
 
+static void SendFinishGameRequest(const char* sessionToken, const StatisticService::RPC::SessionClientResults & _finishInfo, const nstl::vector<Peered::SClientStatistics> & _clientsStatistics)
+{
+  if (!sessionToken) { 
+    return; 
+  }
+  WebPostRequest request(SERVER_IP_W, L"/api", SYNCHRONIZER_PORT, 0);
+
+  Json::Value data;
+  data["sessionToken"] = Json::Value (sessionToken);
+  data["apiKey"] = Json::Value (API_KEY);
+  data["win"] = Json::Value ((int)_finishInfo.sideWon + 1);
+  Json::Value afk = Json::arrayValue;
+
+  if (_finishInfo.sideWon != -1) {
+    for (int pId = 0; pId < _clientsStatistics.size(); ++pId) {
+      const Peered::SClientStatistics& clientStat = _clientsStatistics[pId];
+      if (clientStat.clientState != Peered::EGameFinishClientState::FinishedGame) {
+        afk.append(Json::Value((int)clientStat.clientId));
+      }
+    }
+  }
+  data["afk"] = afk;
+
+  Json::Value result;
+  result["data"] = data;
+  result["method"] = Json::Value("notifyGameFinish");
+
+  Json::FastWriter writer;
+  std::string res = writer.write(result);
+
+  request.SendPostRequest(res);
+}
+
 
 void ServerNode::OnGameFinish( Peered::TSessionId _sessionId, EGameResult::Enum _gameResult, const StatisticService::RPC::SessionClientResults & _info, const nstl::vector<Peered::SClientStatistics> & _clientsStatistics )
 {
@@ -306,9 +556,28 @@ void ServerNode::OnGameFinish( Peered::TSessionId _sessionId, EGameResult::Enum 
   LogGameFinish( _sessionId, _gameResult, _info, _clientsStatistics );
 
   GameSession * game = FindGame( _sessionId );
-  if ( game )
+  if ( game ) {
+    SendFinishGameRequest(game->GetSessionToken(), _info, _clientsStatistics);
     game->OnGameFinish( _gameResult, _info, _clientsStatistics );
-  else {
+
+    StatisticService::RPC::SessionResultEvent info;
+    for(int i = 0; i < _clientsStatistics.size(); ++i) {
+      const Peered::SClientStatistics& clientStat = _clientsStatistics[i];
+      StatisticService::RPC::SessionClientResultsPlayer player;
+      player.userid = clientStat.clientId;
+      info.clientData.players.push_back(player);
+
+      StatisticService::RPC::SessionServerResultsPlayer svPlr;
+      svPlr.userid = clientStat.clientId;
+      svPlr.finishStatus = Peered::EGameFinishClientState::FinishedGame;
+      info.serverPlayersInfo.push_back( svPlr );
+    }
+    info.result = 1;
+    info.sessionid = _sessionId;
+    info.clientData.sideWon = _info.sideWon;
+
+    statistics->Message( info );
+  } else {
     LOBBY_LOG_ERR( "Game sessionId=%d not found on finish", FmtGameId( _sessionId ) );
     return;
   }
@@ -417,13 +686,17 @@ void ServerNode::GetClientUsername( Transport::TClientId userId, wstring & usern
 
 
 
-StrongMT<ServerConnection> ServerNode::NewConnection( Transport::TClientId clientId )
+StrongMT<ServerConnection> ServerNode::NewConnection( Transport::TClientId clientId, const wstring & username )
 {
   StrongMT<ServerConnection> conn = new ServerConnection( config, this, clientId );
 
   SUserInfo info;
   info.userId = clientId;
-  GetClientUsername( clientId, info.nickname );
+  if (username.empty()) {
+    GetClientUsername( clientId, info.nickname );
+  } else {
+    info.nickname = username;
+  }
   info.zzimaSex = ESex::Male;
 
   conn->SetUserInfo( info );
@@ -591,13 +864,16 @@ void ServerNode::PollGames()
     if ( game->CanBeRemoved( now ) )
     {
       LOBBY_LOG_MSG( "Removing empty game %s", FmtGameId( gameId ) );
+      nstl::map<nstl::string, StrongMT<CustomGame>>::iterator tokenIt = g_games.find(game->GetSessionToken());
+      if (tokenIt != g_games.end()) {
+        g_games.erase(tokenIt);
+      }
       it = games.erase( it ); //'game' is no longer valid
     }
     else
       ++it;
   }
 }
-
 
 
 void ServerNode::PollCustomGames()
@@ -769,6 +1045,7 @@ GameSession * ServerNode::NewGameSession( TGameId id, const SGameParameters & pa
 void ServerNode::StartCustomGame( CustomGame * game )
 {
   StrongMT<GameSession> gameSess = NewGameSession( game->Id(), game->Params() );
+  gameSess->SetSessionToken(game->GetSessionToken());
   if ( !gameSess )
     return;
   gameSess->SetupFromCustomGame( game );
@@ -918,7 +1195,7 @@ void ServerNode::CreateExtClusterTransport()
   extClusterAddrTranslator = new Coordinator::AddressTranslator( "ext_cluster", classRoutes );
 
   TL::Cfg cfg;
-  cfg.firstServerPort = Network::GetFirstServerPort();
+  cfg.firstServerPort = Network::GetFirstServerPortBack();
   cfg.mf_ = Transport::GetGlobalMessageFactory();
   cfg.at_ = extClusterAddrTranslator;
   cfg.threads_ = TL::GlobalCfg::GetThreads();

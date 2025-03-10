@@ -88,7 +88,7 @@ absent and prefix them with an 0x01 byte if they are present
 */
 
 #define __STDC_LIMIT_MACROS
-#include <stdint.h>
+#include <thrift/windows/config.h>
 #include <thrift/protocol/TDenseProtocol.h>
 #include <thrift/TReflectionLocal.h>
 

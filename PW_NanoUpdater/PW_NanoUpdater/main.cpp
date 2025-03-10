@@ -17,6 +17,7 @@
 #include <functional>
 
 class admin_rights_exception : std::exception {};
+class unhandled_error : std::exception {};
 struct null_streambuf : public std::streambuf
 {
    using int_type = std::streambuf::int_type;
@@ -34,6 +35,51 @@ static bool isAdminRightsRequired = false;
 
 bool isRunningAdm = false;
 
+
+static const char* releaseFileUrls[] = {
+   "https://gitflic.ru/project/prime-world-classic/prime-world-classic-game/release/c24c9dd1-ac10-4045-8773-7083e4a70d80/b7a8d56f-9f7d-4dbf-87b0-7c939ecd7194/download",
+   "https://gitflic.ru/project/prime-world-classic/prime-world-classic-game/release/c24c9dd1-ac10-4045-8773-7083e4a70d80/a7112311-ed44-4c1d-9c63-95dbc92b9bdd/download",
+   "https://gitflic.ru/project/prime-world-classic/prime-world-classic-game/release/c24c9dd1-ac10-4045-8773-7083e4a70d80/b793de95-0abd-426e-95a6-7757d549dc8e/download",
+   "https://gitflic.ru/project/prime-world-classic/prime-world-classic-game/release/c24c9dd1-ac10-4045-8773-7083e4a70d80/bd03c1c1-def1-4e56-be61-72b59e5dad96/download",
+   "https://gitflic.ru/project/prime-world-classic/prime-world-classic-game/release/c24c9dd1-ac10-4045-8773-7083e4a70d80/0631bf93-ede4-4bb5-8f22-0b21cae989cd/download",
+   "https://gitflic.ru/project/prime-world-classic/prime-world-classic-game/release/c24c9dd1-ac10-4045-8773-7083e4a70d80/80251363-41b4-403b-9690-7e36c4752698/download",
+   "https://gitflic.ru/project/prime-world-classic/prime-world-classic-game/release/c24c9dd1-ac10-4045-8773-7083e4a70d80/c2c8a6a0-4ca2-46c9-9e44-8844e9a937ef/download",
+   "https://gitflic.ru/project/prime-world-classic/prime-world-classic-game/release/c24c9dd1-ac10-4045-8773-7083e4a70d80/8c0b504f-e2b0-458d-a48a-0754c3c38135/download",
+   };
+
+static const char* releaseFileUrlsMirrors[] = {
+   "https://github.com/Prime-World-Classic/Prime-World/releases/download/2.0/data01.pile",
+   "https://github.com/Prime-World-Classic/Prime-World/releases/download/2.0/data02.pile",
+   "https://github.com/Prime-World-Classic/Prime-World/releases/download/2.0/data03.pile",
+   "https://github.com/Prime-World-Classic/Prime-World/releases/download/2.0/data04.pile",
+   "https://github.com/Prime-World-Classic/Prime-World/releases/download/2.0/data05.pile",
+   "https://github.com/Prime-World-Classic/Prime-World/releases/download/2.0/data06.pile",
+   "https://github.com/Prime-World-Classic/Prime-World/releases/download/2.0/Asks_RU.fsb",
+   "https://github.com/Prime-World-Classic/Prime-World/releases/download/2.0/Music.fsb",
+};
+
+static const char* releaseFilePaths[] = {
+   "..\\Game\\Packs\\data01.pile",
+   "..\\Game\\Packs\\data02.pile",
+   "..\\Game\\Packs\\data03.pile",
+   "..\\Game\\Packs\\data04.pile",
+   "..\\Game\\Packs\\data05.pile",
+   "..\\Game\\Packs\\data06.pile",
+   "..\\Game\\Data\\Audio\\Asks_RU.fsb",
+   "..\\Game\\Data\\Audio\\Music.fsb"
+};
+
+static const char* releaseFileHashes[] = {
+   "..\\Game\\Hashes\\data01.pile.md5",
+   "..\\Game\\Hashes\\data02.pile.md5",
+   "..\\Game\\Hashes\\data03.pile.md5",
+   "..\\Game\\Hashes\\data04.pile.md5",
+   "..\\Game\\Hashes\\data05.pile.md5",
+   "..\\Game\\Hashes\\data06.pile.md5",
+   "..\\Game\\Hashes\\Asks_RU.fsb.md5",
+   "..\\Game\\Hashes\\Music.fsb.md5"
+};
+
 #ifdef ADMIN_MANIFEST
 class kill_admin_process_exception : std::exception {};
 static std::atomic<bool> killAdminProcess;
@@ -45,6 +91,7 @@ int SocketListen(std::atomic<bool>& doWork);
 int SocketTrancieve(const char* argv, std::atomic<bool>& doWork);
 void TransmitMessage(char const* strbuf, std::streamsize strSize);
 void DownloadRelease(const std::string& fileUrl, const std::string& filePath, const std::string& md5Path, int r);
+bool CheckFileMD5Hash(const std::string& filename, const std::string& md5FileName);
 
 
 void ThrowIfNotWithAdminRights() {
@@ -70,11 +117,7 @@ void CheckError(const char* stage)
    if (error < 0) {
       std::string errorLast = git_error_last()->message;
       std::cerr << stage << " failed: " << errorLast << std::endl;
-      if (isAdminRightsRequired) {
-         throw admin_rights_exception(); // Try with admin rights just in case
-      } else {
-         throw std::exception();
-      }
+      throw unhandled_error();
    }
 }
 
@@ -115,15 +158,22 @@ int fetch_progress(const git_transfer_progress* stats, void* payload) {
 }
 
 
+void CleanRepo(const char* repoPath)
+{
+   std::string path = repoPath;
+   path += "\\.git";
+   std::filesystem::remove_all(path);
+}
+
+
 void InitRepo(git_repository** repo, git_remote** remote, const char* repoPath, const char* remoteRepoUrl)
 {
    ThrowIfNotWithAdminRights();
 
    error = git_repository_init(repo, repoPath, false);
    if (error) {
-      std::string path = repoPath;
-      path += "\\.git";
-      std::filesystem::remove_all(path);
+      CleanRepo(repoPath);
+
       error = git_repository_init(repo, repoPath, false);
       CheckError("Init");
    }
@@ -194,23 +244,21 @@ void RemoteFetch(git_repository* repo, git_remote* remote, const char* remoteRep
    // Fetch from remotes
    git_fetch_options fetchOpts = GIT_FETCH_OPTIONS_INIT;
    fetchOpts.callbacks.transfer_progress = fetch_progress;
-   fetchOpts.depth = 1;
+   //fetchOpts.depth = 1;
    //fetchOpts.prune = GIT_FETCH_PRUNE;
    //error = git_remote_fetch(remote, nullptr, &fetchOpts, nullptr);
-   if (true) {
-      git_remote_callbacks remoteCallbacks = GIT_REMOTE_CALLBACKS_INIT;
-      error = git_remote_connect(remote, GIT_DIRECTION_FETCH, &remoteCallbacks, nullptr, nullptr);
-      CheckError("Fetch connect");
-      
-      error = git_remote_download(remote, nullptr, &fetchOpts);
-      CheckError("Fetch download");
+   git_remote_callbacks remoteCallbacks = GIT_REMOTE_CALLBACKS_INIT;
+   error = git_remote_connect(remote, GIT_DIRECTION_FETCH, &remoteCallbacks, nullptr, nullptr);
+   CheckError("Fetch connect");
 
-      error = git_remote_disconnect(remote);
-      CheckError("Remote disconnect");
+   error = git_remote_download(remote, nullptr, &fetchOpts);
+   CheckError("Fetch download");
 
-      error = git_remote_update_tips(remote, &remoteCallbacks, fetchOpts.update_fetchhead, fetchOpts.download_tags, nullptr);
-      CheckError("Remote disconnect");
-   }
+   error = git_remote_disconnect(remote);
+   CheckError("Remote disconnect");
+
+   error = git_remote_update_tips(remote, &remoteCallbacks, fetchOpts.update_fetchhead, fetchOpts.download_tags, nullptr);
+   CheckError("Remote disconnect");
 
    // Search for heads
    git_oid fetch_head_oid;
@@ -432,6 +480,29 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
    int argc = argVector.size();
    char** argv = argVector.data();
 #endif
+
+#ifdef TEST_HASHES
+   std::atomic<bool> hashesValid = true;
+   std::thread tests[_countof(releaseFileUrls)];
+
+   for (int r = 0; r < _countof(releaseFileUrls); ++r) {
+      tests[r] = std::thread([r, &hashesValid]() {
+         if (!CheckFileMD5Hash(releaseFilePaths[r], releaseFileHashes[r])) {
+            hashesValid.store(false);
+         }
+         });
+   }
+
+   for (int r = 0; r < _countof(releaseFileUrls); ++r) {
+      tests[r].join();
+   }
+
+   if (!hashesValid.load()) {
+      return 201;
+   }
+   return 0;
+#endif
+
    bool skipRelease = false;
    for (int a = 0; a < argc; ++a) {
       if (std::string(argv[a]) == "inno") {
@@ -502,8 +573,18 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
    };
 
    const char* remoteRepoUrl[] = {
+      "https://gitflic.ru/project/prime-world-classic/content_pwc.git",
+      "https://gitflic.ru/project/prime-world-classic/pwc-gitupdates.git",
+   };
+
+   const char* remoteMirrorUrl[] = {
       "https://gitlab.com/prime-world-classic/content.git",
       "https://gitlab.com/prime-world-classic/PWCGitUpdates.git",
+   };
+
+   const char* remoteMirrorUrl2[] = {
+      "https://github.com/Prime-World-Classic/content.git",
+      "https://github.com/Prime-World-Classic/PWCGitUpdates.git",
    };
    const char* branchName = "main";
 
@@ -523,8 +604,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
    }
 #endif
 
-   try {
-      for (int i = 0; i < _countof(repoPath); ++i) {
+   for (int i = 0; i < _countof(repoPath); ++i) {
+#ifndef NDEBUG
+      break;
+#endif
+      try {
          if (isRunningAdm) {
             std::stringstream strStream;
             strStream << "#{\"type\":\"label\", \"data\":\"" << repoLabels[i] << "\"}" << std::endl;
@@ -536,23 +620,40 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
          refName = "";
          UpdateRepo(repoPath[i], remoteRepoUrl[i], branchName);
       }
-   }
-   catch (admin_rights_exception) {
+      catch (admin_rights_exception) {
 #ifndef ADMIN_MANIFEST
-      _error = git_libgit2_shutdown();
-      LaunchAdminNanoUpdater();
-      return 0;
+         _error = git_libgit2_shutdown();
+         LaunchAdminNanoUpdater();
+         return 0;
 #endif
-   }
+      }
 #ifdef ADMIN_MANIFEST
-   catch (kill_admin_process_exception) {
-      mainProcessChecker.join();
-      exit(0);
-   }
+      catch (kill_admin_process_exception) {
+         mainProcessChecker.join();
+         exit(0);
+      }
 #endif
-   catch (std::exception ex) {
-      std::cerr << "Exception: " << ex.what();
-      return 0;
+      catch (unhandled_error) {
+         try {
+            CleanRepo(repoPath[i]);
+            refName = "";
+            UpdateRepo(repoPath[i], remoteMirrorUrl[i], branchName);
+         }
+         catch (unhandled_error) {
+            try {
+               CleanRepo(repoPath[i]);
+               refName = "";
+               UpdateRepo(repoPath[i], remoteMirrorUrl2[i], branchName);
+            }
+            catch (unhandled_error) {
+               throw std::exception("Failed mirrors");
+            }
+         }
+      }
+      catch (std::exception ex) {
+         std::cerr << "Exception: " << ex.what();
+         return 1;
+      }
    }
 
    _error = git_libgit2_shutdown();
@@ -560,43 +661,14 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
       std::cerr << "Failed to shutdown libgit2 library!";
    }
 
-
-   const char* releaseFileUrls[] = {
-      "https://github.com/Prime-World-Classic/Prime-World/releases/download/2.0/data01.pile",
-      "https://github.com/Prime-World-Classic/Prime-World/releases/download/2.0/data02.pile",
-      "https://github.com/Prime-World-Classic/Prime-World/releases/download/2.0/data03.pile",
-      "https://github.com/Prime-World-Classic/Prime-World/releases/download/2.0/data04.pile",
-      "https://github.com/Prime-World-Classic/Prime-World/releases/download/2.0/data05.pile",
-      "https://github.com/Prime-World-Classic/Prime-World/releases/download/2.0/data06.pile",
-      "https://github.com/Prime-World-Classic/Prime-World/releases/download/2.0/Asks_RU.fsb",
-      "https://github.com/Prime-World-Classic/Prime-World/releases/download/2.0/Music.fsb",
-   };
-
-   const char* releaseFilePaths[] = {
-      "..\\Game\\Packs\\data01.pile",
-      "..\\Game\\Packs\\data02.pile",
-      "..\\Game\\Packs\\data03.pile",
-      "..\\Game\\Packs\\data04.pile",
-      "..\\Game\\Packs\\data05.pile",
-      "..\\Game\\Packs\\data06.pile",
-      "..\\Game\\Data\\Audio\\Asks_RU.fsb",
-      "..\\Game\\Data\\Audio\\Music.fsb"
-   };
-
-   const char* releaseFileHashes[] = {
-      "..\\Game\\Hashes\\data01.pile.md5",
-      "..\\Game\\Hashes\\data02.pile.md5",
-      "..\\Game\\Hashes\\data03.pile.md5",
-      "..\\Game\\Hashes\\data04.pile.md5",
-      "..\\Game\\Hashes\\data05.pile.md5",
-      "..\\Game\\Hashes\\data06.pile.md5",
-      "..\\Game\\Hashes\\Asks_RU.fsb.md5",
-      "..\\Game\\Hashes\\Music.fsb.md5"
-   };
-
    try {
       for (int r = 0; r < _countof(releaseFileUrls); ++r) {
-         DownloadRelease(releaseFileUrls[r], releaseFilePaths[r], releaseFileHashes[r], r);
+         try {
+            DownloadRelease(releaseFileUrls[r], releaseFilePaths[r], releaseFileHashes[r], r);
+         }
+         catch (unhandled_error) {
+            DownloadRelease(releaseFileUrlsMirrors[r], releaseFilePaths[r], releaseFileHashes[r], r);
+         }
       }
    }
    catch (admin_rights_exception) {
@@ -604,6 +676,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
       LaunchAdminNanoUpdater();
       return 0;
 #endif
+   }
+   catch (unhandled_error) {
+      return 0;
    }
 #ifdef ADMIN_MANIFEST
    catch (kill_admin_process_exception) {

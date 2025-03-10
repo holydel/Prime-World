@@ -20,7 +20,7 @@
 #ifndef _THRIFT_PROTOCOL_TBASE64UTILS_H_
 #define _THRIFT_PROTOCOL_TBASE64UTILS_H_
 
-#include <stdint.h>
+#include <thrift/windows/config.h>
 #include <string>
 
 namespace apache { namespace thrift { namespace protocol {

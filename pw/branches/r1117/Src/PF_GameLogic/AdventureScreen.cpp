@@ -119,11 +119,11 @@
 #include "TargetSelectorHelper.hpp"
 #include "../PF_GameLogic/WebLauncher.h"
 
+
 extern "C" INTERMODULE_EXPORT void TooSmartCompiler()
 {
 }
 
-extern map<int, WebLauncherPostRequest::PlayerInfoByUserId> userIdToNicknameMap;
 
 //UGLY: Global to access "precache_session_data" var defined in HeroSpawn.cpp
 extern bool G_GetPrechacheSessionData();

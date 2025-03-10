@@ -88,13 +88,14 @@ protected:
   //IGameContextUiInterface
   virtual bool          LoginInProgress() const;
   virtual void          SetDeveloperSex( lobby::ESex::Enum _sex );
-  virtual void          ConnectToCluster( const string & login, const string & password, Login::LoginType::Enum _loginType = Login::LoginType::ORDINARY );
+  virtual void          ConnectToCluster( const string & login, const string & password, const string & sessionToken, Login::LoginType::Enum _loginType = Login::LoginType::ORDINARY );
   virtual NWorld::IMapCollection * Maps();
   virtual void          RefreshGamesList();
   virtual void          PopGameList( lobby::TDevGamesList & buffer );
   virtual lobby::EOperationResult::Enum LastLobbyOperationResult() const;
   virtual void          CreateGame( const char * mapId, int maxPlayers );
   virtual void          JoinGame( int gameId );
+  virtual void          JoinWebGame( const string & token );
   virtual void          Reconnect( int gameId, int team, const string & heroId );
   virtual void          Spectate( int gameId );
   virtual void          ChangeCustomGameSettings( lobby::ETeam::Enum team, lobby::ETeam::Enum faction, const string & heroId );
@@ -126,6 +127,8 @@ private:
   string                              socialLoginAddress;
   string                              socialLogin;
   string                              socialPassword;
+
+  string                              sessionToken;
 
   bool                                clientWasInitialized;
   const bool                          isSpectator;

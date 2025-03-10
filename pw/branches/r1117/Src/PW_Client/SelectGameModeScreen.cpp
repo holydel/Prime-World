@@ -15,6 +15,7 @@ extern int g_playerTeamId;
 extern int g_playerHeroId;
 extern int g_playerPartyId;
 extern int g_playersCount;
+extern std::string g_protocolToken;
 
 static string s_reconnect_hero = "rockman";
 static int s_reconnect_team = 1;
@@ -57,10 +58,10 @@ bool SelectGameModeScreen::Init( UI::User * uiUser )
     for ( int i = 0; i < pMapList->maps.size(); ++i )
       logic->AddMapEntry( i, maps->CustomDescId( i ), maps->CustomTitle( i ), maps->CustomDescription( i ) );
   }
-
+/*
   if ( StrongMT<Game::IGameContextUiInterface> cl = gameCtx.Lock() )
     cl->RefreshGamesList();
-
+*/
   return true; 
 } 
 
@@ -138,6 +139,27 @@ void SelectGameModeScreen::Step( bool bAppActive )
   if ( !locked || !logic )
     return;
 
+  lobby::EOperationResult::Enum joinResult = locked->LastLobbyOperationResult();
+  if (g_sessionStatus == WebLauncherPostRequest::RegisterInSessionRequest_WebJoinRetry) {
+    if (joinResult == lobby::EOperationResult::InternalError) {
+      locked->JoinWebGame(g_protocolToken.c_str());
+      joinResult = lobby::EOperationResult::InProgress;
+    }
+    if (joinResult == lobby::EOperationResult::Ok) {
+      g_sessionStatus = WebLauncherPostRequest::RegisterInSessionRequest_Error;
+    }
+  }
+  if (g_sessionStatus == WebLauncherPostRequest::RegisterInSessionRequest_WebJoin) {
+    if (joinResult == lobby::EOperationResult::InternalError) {
+      locked->JoinWebGame(g_protocolToken.c_str());
+      joinResult = lobby::EOperationResult::InProgress;
+    }
+    if (joinResult == lobby::EOperationResult::Ok) {
+      locked->JoinWebGame(g_protocolToken.c_str());
+      g_sessionStatus = WebLauncherPostRequest::RegisterInSessionRequest_WebJoinRetry;
+    }
+  }
+
   // 3. Select hero
   if (locked->GetLobbyStatus() == lobby::EClientStatus::InCustomLobby && g_sessionStatus == WebLauncherPostRequest::RegisterInSessionRequest_Joined) {
     int heroId = std::min(std::max((size_t)(g_playerHeroId - 1), 0u), _countof(heroes) - 1u);
@@ -152,7 +174,7 @@ void SelectGameModeScreen::Step( bool bAppActive )
   }
 
   lobby::TDevGamesList infos;
-  locked->PopGameList( infos );
+  //locked->PopGameList( infos );
 
   // 1. Create game for others
   if (g_sessionStatus == WebLauncherPostRequest::RegisterInSessionRequest_Create) {
@@ -168,15 +190,7 @@ void SelectGameModeScreen::Step( bool bAppActive )
   if (g_sessionStatus == WebLauncherPostRequest::RegisterInSessionRequest_Reconnect || g_sessionStatus == WebLauncherPostRequest::RegisterInSessionRequest_WebReconnect) {
     int requiredGameId = -1;
 
-    // Fix 1251 encoding
-    int utf8Length = static_cast<int>(g_sessionName.length());
-    int wideCharLength = MultiByteToWideChar(CP_UTF8, 0, g_sessionName.c_str(), utf8Length, NULL, 0);
-
-    wchar_t* wideCharString = new wchar_t[wideCharLength + 1];
-    MultiByteToWideChar(CP_UTF8, 0, g_sessionName.c_str(), utf8Length, wideCharString, wideCharLength);
-    wideCharString[wideCharLength] = L'\0';
-
-    wstring nameTofind = wideCharString;
+    wstring nameTofind = Fix1251EncodingW(g_sessionName.c_str()).c_str();
     nameTofind += L"'s game";
 
     for( lobby::TDevGamesList::iterator it = infos.begin(); it != infos.end(); ++it ) {
@@ -203,15 +217,7 @@ void SelectGameModeScreen::Step( bool bAppActive )
   if (g_sessionStatus == WebLauncherPostRequest::RegisterInSessionRequest_Connect || g_sessionStatus == WebLauncherPostRequest::RegisterInSessionRequest_WebConnect) {
     int requiredGameId = -1;
 
-    // Fix 1251 encoding
-    int utf8Length = static_cast<int>(g_sessionName.length());
-    int wideCharLength = MultiByteToWideChar(CP_UTF8, 0, g_sessionName.c_str(), utf8Length, NULL, 0);
-
-    wchar_t* wideCharString = new wchar_t[wideCharLength + 1];
-    MultiByteToWideChar(CP_UTF8, 0, g_sessionName.c_str(), utf8Length, wideCharString, wideCharLength);
-    wideCharString[wideCharLength] = L'\0';
-
-    wstring nameTofind = wideCharString;
+    wstring nameTofind = Fix1251EncodingW(g_sessionName.c_str()).c_str();
     nameTofind += L"'s game";
 
     for( lobby::TDevGamesList::iterator it = infos.begin(); it != infos.end(); ++it ) {
@@ -231,7 +237,7 @@ void SelectGameModeScreen::Step( bool bAppActive )
   }
 
 
-  lobby::EOperationResult::Enum joinResult = locked->LastLobbyOperationResult();
+  joinResult = locked->LastLobbyOperationResult();
   if ( joinResult != lobby::EOperationResult::InProgress )
     logic->UpdateJoinResult( joinResult );
 

@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include <sys/socket.h>
+//#include <sys/socket.h>
 #include <thrift/server/TSimpleServer.h>
 #include <thrift/protocol/TBinaryProtocol.h>
 #include <thrift/transport/TServerSocket.h>
@@ -26,7 +26,7 @@ namespace Monitoring
 
   int ThriftModule::open(ThriftModuleCfg const & cfg)
   {
-    nsocket::Initialize();
+    //nsocket::Initialize();
     boost::shared_ptr<TProtocolFactory> protocolFactory(new TBinaryProtocolFactory());
     boost::shared_ptr<ThriftHandler> handler(new ThriftHandler(cfg.mc));
     boost::shared_ptr<TProcessor> processor(new Thrift::MonitoringProcessor(handler));

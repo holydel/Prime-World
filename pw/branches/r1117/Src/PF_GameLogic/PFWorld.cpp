@@ -1500,6 +1500,7 @@ bool PFWorld::CanTrackPlayersBehaviour(const NCore::MapStartInfo& msi) const
       canTrack = false;
   }
 
+  /*
   if (canTrack)
   {
     NCore::TPlayersStartInfo::const_iterator it = msi.playersInfo.begin();
@@ -1515,6 +1516,7 @@ bool PFWorld::CanTrackPlayersBehaviour(const NCore::MapStartInfo& msi) const
       break;
     }
   }
+  */
 #endif
 
   DebugTrace("Player behaviour tracking is %s for this game", (canTrack ? "enabled" : "disabled"));

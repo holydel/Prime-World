@@ -25,6 +25,9 @@ bool CheckJob::Perform( webClient::IHttpClient * httpClient )
   requestText += urlEncText;
 
   string answerHeader, answerBody;
+  if (sett->cleanSpeakUrl.empty()) {
+    return false;
+  }
   if ( !httpClient->PerformPOST( sett->cleanSpeakUrl.c_str(), requestText.c_str(), requestText.length(), answerHeader, answerBody ) )
   {
     ErrorTrace( "CleanSpeak: HTTP request failed! req=%d, aux=%d, url=%s, text='%s'", requestId, auxId, sett->cleanSpeakUrl, requestText );

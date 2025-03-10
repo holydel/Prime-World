@@ -1,0 +1,3 @@
+
+set(SOURCES_Src_Server_RdpTransport_RdpTransport RdpTransport.h RdpTransport.cpp)
+set(LIBRARIES_Src_Server_RdpTransport_RdpTransport )

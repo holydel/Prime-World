@@ -1,7 +1,7 @@
+#include "ChatSvc/stdafx.h"
 #include <ChatSvc/ChatCensorCheckOp.h>
 #include <ChatSvc/ChatUserContext.h>
 #include <ChatSvc/ChatSvcLogging.h>
-
 namespace chat
 {
 

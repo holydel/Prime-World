@@ -1,0 +1,3 @@
+
+set(SOURCES_Src_System_DebugTraceDumper DebugTraceDumper.cpp DebugTraceDumper.h)
+set(LIBRARIES_Src_System_DebugTraceDumper )

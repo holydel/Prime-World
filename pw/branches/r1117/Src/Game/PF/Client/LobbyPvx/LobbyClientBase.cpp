@@ -58,7 +58,7 @@ ClientBase::ClientBase( Transport::TClientId _clientId, bool _inSocialMode ) :
 inSocialMode( _inSocialMode ),
 status( EClientStatus::Initial ),
 errorCode( EClientError::NoError ),
-lastLobbyOperationResult( EOperationResult::Ok ),
+lastLobbyOperationResult( EOperationResult::InternalError ),
 clientId( _clientId ),
 now( 0 ),
 statusTimeLimit( -1 ),
@@ -405,9 +405,6 @@ void ClientBase::StartSession( TGameId _sessionId, const SGameParameters & _para
 {
   MessageTrace( "Starting game session. map='%s', players=%d, gameid=%s, custom=%i, gs_svcid=%s, gs_instid=%s", _params.mapId, _gameLineUp.size(), FmtGameId( _sessionId ), _params.customGame, _gsInstId.serviceId, _gsInstId.instanceId );
 
-  WebLauncherPostRequest lobbyCreatedRequest;
-  lobbyCreatedRequest.NotifyGameStart(g_devLogin.c_str(), g_sessionToken.c_str());
-
   for ( int i = 0; i < _gameLineUp.size(); ++i )
     MessageTrace( "  Player info. uid=%d, sex=%d, nick=%d, type=%d, team=%d, hero=%s, bot_skin=%s", _gameLineUp[i].user.userId, (int)_gameLineUp[i].user.zzimaSex, _gameLineUp[i].user.nickname,
     (int)_gameLineUp[i].context.playerType, (int)_gameLineUp[i].context.team, _gameLineUp[i].context.hero, _gameLineUp[i].context.botSkin );
@@ -572,9 +569,6 @@ void ClientBase::CreateGame( const char * mapId, int maxPlayers, int maxPlayersP
   serverInst->CreateCustomGame( maxPlayers, maxPlayersPerTeam, mapId, autostartPlayers, this, &ClientBase::OnOperatioResult );
 
   lastLobbyOperationResult = EOperationResult::InProgress;
-
-  WebLauncherPostRequest lobbyCreatedRequest;
-  lobbyCreatedRequest.LobbyCreatedRequest(g_devLogin.c_str(), g_sessionToken.c_str());
 }
 
 
@@ -589,6 +583,16 @@ void ClientBase::JoinGame( int gameId )
 }
 
 
+
+void ClientBase::JoinWebGame(const string & token)
+{
+  NI_VERIFY( status == EClientStatus::Connected, "", return );
+  NI_VERIFY( serverInst, "", return );
+
+  serverInst->ConnectToWebLobby( token, this, &ClientBase::OnOperatioResult );
+  lastLobbyOperationResult = EOperationResult::InProgress;
+
+}
 
 void ClientBase::ReconnectGame( int gameId, int team, const string& heroId )
 {

@@ -2,6 +2,8 @@
 #include "ClientAuth.h"
 #include "System/SafeTextFormatStl.h"
 #include "System/SafeTextFormatNstl.h"
+#include <Shared/WebRequests.h>
+#include <PF_GameLogic/WebLauncher.h>
 
 NI_DEFINE_REFCOUNT( newLogin::IClientAuth );
 
@@ -77,7 +79,13 @@ void ClientAuth::AuthorizeClient( LoginReply & _reply, const LoginHello & _hello
 {
   threading::MutexLock lock( mutex );
 
-  if ( _hello.sessionkey.empty() )
+  if ( _hello.sessionkey.empty() ) {
+
+    WarningTrace( "Empty session key. %s", _hello.login.c_str() );
+    _reply.code = Login::ELoginResult::Refused;
+    return;
+  }
+
   {
     DevAuth( _reply, _hello );
     return;
@@ -105,9 +113,75 @@ void ClientAuth::AuthorizeClient( LoginReply & _reply, const LoginHello & _hello
 }
 
 
-
+static nstl::map<nstl::string, int> s_userLoginsToIdMap;
 void ClientAuth::DevAuth( LoginReply & _reply, const LoginHello & _hello )
 {
+  _reply.code = Login::ELoginResult::ServerError;
+  if ( _hello.login.empty() )
+  {
+    _reply.code = Login::ELoginResult::Refused;
+    WarningTrace( "Dev mode authorization refused, login is empty" );
+    return;
+  }
+
+  nstl::map<nstl::string, int>::iterator it = s_userLoginsToIdMap.find(_hello.login);
+  if (it == s_userLoginsToIdMap.end()) {
+    if (_hello.sessionkey.length() < 32) {
+      _reply.code = Login::ELoginResult::AccessDenied;
+      WarningTrace( "Dev mode authorization refused. Not valid session key. login=%s", _hello.login );
+      return;
+    }
+    const char* token = _hello.sessionkey.c_str();
+    std::string response = GetSessionData(token, false);
+
+    Json::Value parsedValue = ParseJson(response.c_str());
+
+    if (parsedValue.empty()) {
+      ErrorTrace( "Failed to get info from the synchronizer %s", token );
+      return;
+    }
+    Json::Value errorSet = parsedValue.get("error", "ERROR");
+    if (!errorSet.asString().empty()) {
+      ErrorTrace( "Error occurred during session creation: %s (%s)", errorSet.asString().c_str(), token );
+      return;
+    }
+    Json::Value usersData = parsedValue.get("usersData", Json::Value());
+    if (usersData.empty() || !usersData.isArray()) {
+      ErrorTrace( "Error occurred during session creation: Empty usersData %s", token );
+      return;
+    }
+
+    int playersCount = 0;
+    Json::Value curPlayer = usersData[playersCount];
+    while (!curPlayer.empty()) {
+      if (!CheckPlayerInfo(curPlayer)) {
+        return;
+      }
+
+      nstl::string curNickname = Fix1251Encoding(curPlayer.get("nickname", Json::Value()).asString().c_str()).c_str();
+      int userWebId = curPlayer.get("id", Json::Value()).asInt();
+
+      if (curNickname == _hello.login.c_str() + 1) {
+        s_userLoginsToIdMap[_hello.login] = userWebId;
+
+        _reply.code = Login::ELoginResult::Success;
+        _reply.uid = userWebId;
+        return;
+      }
+
+      playersCount++;
+      curPlayer = usersData[playersCount];
+    }
+
+    it = s_userLoginsToIdMap.find(_hello.login);
+  }
+  if (it == s_userLoginsToIdMap.end()) {
+    _reply.code = Login::ELoginResult::AccessDenied;
+    ErrorTrace( "Dev mode authorization failed! login=%s", _hello.login );
+    return;
+  }
+
+/*
   unsigned firstDevUid = config->Cfg()->firstDevUid;
 
   if ( !firstDevUid )
@@ -116,23 +190,17 @@ void ClientAuth::DevAuth( LoginReply & _reply, const LoginHello & _hello )
     WarningTrace( "Dev mode authorization refused. login=%s", _hello.login );
     return;
   }
-
-  if ( _hello.login.empty() )
-  {
-    _reply.code = Login::ELoginResult::Refused;
-    WarningTrace( "Dev mode authorization refused, login is empty" );
-    return;
-  }
+*/
 
   _reply.code = Login::ELoginResult::Success;
-  _reply.uid = 0;
-
+  _reply.uid = it->second;
+/*
   if ( !nextDevUserId )
     nextDevUserId = firstDevUid;
 
   if ( !RestoreDevAuth( _reply, _hello ) )
     _reply.uid = nextDevUserId++;
-
+*/
   MessageTrace( "Dev mode authorization ok. login=%s, uid=%d", _hello.login, _reply.uid );
 }
 

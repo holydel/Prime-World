@@ -1,4 +1,5 @@
 #include "stdafx.h"
+#include "ChatSvc/stdafx.h"
 #include "StatClientHttpDispatcher.h"
 
 

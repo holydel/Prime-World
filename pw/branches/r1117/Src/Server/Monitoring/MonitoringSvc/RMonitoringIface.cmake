@@ -1,0 +1,3 @@
+
+set(SOURCES_Src_Server_Monitoring_MonitoringSvc_RMonitoringIface )
+set(LIBRARIES_Src_Server_Monitoring_MonitoringSvc_RMonitoringIface )

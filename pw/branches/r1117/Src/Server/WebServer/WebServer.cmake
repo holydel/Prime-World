@@ -1,0 +1,3 @@
+
+set(SOURCES_Src_Server_WebServer_WebServer WebServer.h WebServer.cpp WebServerMongoose.h WebServerMongoose.cpp)
+set(LIBRARIES_Src_Server_WebServer_WebServer )

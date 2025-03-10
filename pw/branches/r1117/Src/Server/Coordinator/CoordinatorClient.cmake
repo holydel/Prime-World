@@ -1,0 +1,3 @@
+
+set(SOURCES_Src_Server_Coordinator_CoordinatorClient CoordinatorClientRunner.cpp CoordinatorClientRunner.h CoordinatorClient.cpp CoordinatorClient.h CoordinatorClientInternals.h CoordinatorClientInternals.cpp CoordinatorClientIface.h CoordinatorClientNaming.h)
+set(LIBRARIES_Src_Server_Coordinator_CoordinatorClient )

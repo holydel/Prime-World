@@ -1,0 +1,3 @@
+
+set(SOURCES_Src_System_InlineProfiler InlineProfiler.h)
+set(LIBRARIES_Src_System_InlineProfiler )

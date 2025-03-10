@@ -1,0 +1,184 @@
+Local time: +3:00 UTC
+ProcessId: 30200
+(30204) 01:25:34.667  m: Universal server
+(30204) 01:25:34.667  m: Usage: UniServerApp [coordinator] [login] [relay] [chat] [lobby] [matchmaking] [hybridserver] [clusteradmin] [-netStat]
+(30204) 01:25:34.667  m: Should be started in <project>/Bin/ or <project>/ServerBin/ directory
+(30204) 01:25:34.667  m: Cannot read configuration file "c:\Users\rekon\source\repos\Prime-World-2022\pw\branches\r1117\Src\Profiles\server.cfg"
+(30204) 01:25:34.667  d: Failed to open file c:/Users/rekon/source/repos/Prime-World-2022/pw/branches/r1117/Src/Data\Session.ROOT.xdb with error 3.
+(30204) 01:25:34.667  d: UniServer version: pwclassic - 1.6.00.0000
+(30204) 01:25:34.668  m: Registering service. svc_class=relay, ext=false, policy=2
+(30204) 01:25:34.668  m: Registering service. svc_class=relaybalancer, ext=false, policy=1
+(30204) 01:25:34.668  m: Registering service. svc_class=login, ext=false, policy=1
+(30204) 01:25:34.668  m: Registering service. svc_class=usermanager, ext=false, policy=1
+(30204) 01:25:34.668  m: Registering service. svc_class=newlogin, ext=false, policy=2
+(30204) 01:25:34.668  m: Registering service. svc_class=clientctrl, ext=false, policy=1
+(30204) 01:25:34.668  m: Registering service. svc_class=gamebalancer, ext=false, policy=1
+(30204) 01:25:34.669  m: Registering service. svc_class=gamesvc, ext=false, policy=2
+(30204) 01:25:34.669  m: Registering service. svc_class=lobby, ext=false, policy=2
+(30204) 01:25:34.669  m: Registering service. svc_class=chat, ext=false, policy=1
+(30204) 01:25:34.669  m: Registering service. svc_class=gateway, ext=false, policy=2
+(30204) 01:25:34.669  m: Registering service. svc_class=livemmaking, ext=false, policy=2
+(30204) 01:25:34.669  m: Registering service. svc_class=social_lobby, ext=false, policy=1
+(30204) 01:25:34.669  m: Registering service. svc_class=rollbalancer, ext=false, policy=1
+(30204) 01:25:34.670  m: Registering service. svc_class=roll, ext=false, policy=2
+(30204) 01:25:34.670  m: Registering service. svc_class=clusteradmin, ext=false, policy=1
+(30204) 01:25:34.670  m: Registering service. svc_class=monitoring, ext=false, policy=1
+(30204) 01:25:34.670  m: Registering service. svc_class=matchmaking, ext=false, policy=1
+(30204) 01:25:34.699  m: First server address(not loopback): 192.168.56.1
+(30204) 01:25:34.699  m: C:37020 Coordinator chat clientctrl clusteradmin gamebalancer gamesvc gateway livemmaking lobby login matchmaking monitoring newlogin relay relaybalancer roll rollbalancer social_lobby usermanager [30200][ru]
+(30204) 01:25:34.699  m: 18 configs to load
+(30204) 01:25:34.699  m: Loading config for service 'chat'...
+(30204) 01:25:34.699  m: Cannot read configuration file "c:\Users\rekon\source\repos\Prime-World-2022\pw\branches\r1117\Src\Profiles\pvx_srv_chat.cfg"
+(30204) 01:25:34.699  m: Loading config for service 'clientctrl'...
+(30204) 01:25:34.699  m: Cannot read configuration file "c:\Users\rekon\source\repos\Prime-World-2022\pw\branches\r1117\Src\Profiles\pvx_srv_clientctrl.cfg"
+(30204) 01:25:34.699  m: Loading config for service 'clusteradmin'...
+(30204) 01:25:34.699  m: Cannot read configuration file "c:\Users\rekon\source\repos\Prime-World-2022\pw\branches\r1117\Src\Profiles\pvx_srv_clusteradmin.cfg"
+(30204) 01:25:34.700  m: Loading config for service 'gamebalancer'...
+(30204) 01:25:34.700  m: Cannot read configuration file "c:\Users\rekon\source\repos\Prime-World-2022\pw\branches\r1117\Src\Profiles\pvx_srv_gamebalancer.cfg"
+(30204) 01:25:34.700  m: Loading config for service 'gamesvc'...
+(30204) 01:25:34.700  m: Cannot read configuration file "c:\Users\rekon\source\repos\Prime-World-2022\pw\branches\r1117\Src\Profiles\pvx_srv_gamesvc.cfg"
+(30204) 01:25:34.700  m: Loading config for service 'gateway'...
+(30204) 01:25:34.700  m: Cannot read configuration file "c:\Users\rekon\source\repos\Prime-World-2022\pw\branches\r1117\Src\Profiles\pvx_srv_gateway.cfg"
+(30204) 01:25:34.701  m: Loading config for service 'livemmaking'...
+(30204) 01:25:34.701  m: Cannot read configuration file "c:\Users\rekon\source\repos\Prime-World-2022\pw\branches\r1117\Src\Profiles\pvx_srv_livemmaking.cfg"
+(30204) 01:25:34.701  m: Loading config for service 'lobby'...
+(30204) 01:25:34.701  m: Cannot read configuration file "c:\Users\rekon\source\repos\Prime-World-2022\pw\branches\r1117\Src\Profiles\pvx_srv_lobby.cfg"
+(30204) 01:25:34.701  m: Loading config for service 'login'...
+(30204) 01:25:34.702  m: Cannot read configuration file "c:\Users\rekon\source\repos\Prime-World-2022\pw\branches\r1117\Src\Profiles\pvx_srv_login.cfg"
+(30204) 01:25:34.702  m: Loading config for service 'matchmaking'...
+(30204) 01:25:34.702  m: Cannot read configuration file "c:\Users\rekon\source\repos\Prime-World-2022\pw\branches\r1117\Src\Profiles\pvx_srv_matchmaking.cfg"
+(30204) 01:25:34.702  m: Loading config for service 'monitoring'...
+(30204) 01:25:34.702  m: Cannot read configuration file "c:\Users\rekon\source\repos\Prime-World-2022\pw\branches\r1117\Src\Profiles\pvx_srv_monitoring.cfg"
+(30204) 01:25:34.703  m: Loading config for service 'newlogin'...
+(30204) 01:25:34.703  m: Cannot read configuration file "c:\Users\rekon\source\repos\Prime-World-2022\pw\branches\r1117\Src\Profiles\pvx_srv_newlogin.cfg"
+(30204) 01:25:34.703  m: Loading config for service 'relay'...
+(30204) 01:25:34.703  m: Cannot read configuration file "c:\Users\rekon\source\repos\Prime-World-2022\pw\branches\r1117\Src\Profiles\pvx_srv_relay.cfg"
+(30204) 01:25:34.703  m: Loading config for service 'relaybalancer'...
+(30204) 01:25:34.703  m: Cannot read configuration file "c:\Users\rekon\source\repos\Prime-World-2022\pw\branches\r1117\Src\Profiles\pvx_srv_relaybalancer.cfg"
+(30204) 01:25:34.703  m: Loading config for service 'roll'...
+(30204) 01:25:34.703  m: Cannot read configuration file "c:\Users\rekon\source\repos\Prime-World-2022\pw\branches\r1117\Src\Profiles\pvx_srv_roll.cfg"
+(30204) 01:25:34.703  m: Loading config for service 'rollbalancer'...
+(30204) 01:25:34.703  m: Cannot read configuration file "c:\Users\rekon\source\repos\Prime-World-2022\pw\branches\r1117\Src\Profiles\pvx_srv_rollbalancer.cfg"
+(30204) 01:25:34.703  m: Loading config for service 'social_lobby'...
+(30204) 01:25:34.704  m: Cannot read configuration file "c:\Users\rekon\source\repos\Prime-World-2022\pw\branches\r1117\Src\Profiles\pvx_srv_social_lobby.cfg"
+(30204) 01:25:34.704  m: Loading config for service 'usermanager'...
+(30204) 01:25:34.704  m: Cannot read configuration file "c:\Users\rekon\source\repos\Prime-World-2022\pw\branches\r1117\Src\Profiles\pvx_srv_usermanager.cfg"
+(30204) 01:25:34.705  m: Starting TCP/IP transport
+(30204) 01:25:34.705  m: [naio] InitLog Ok
+(30204) 01:25:34.706  m: [naio] Thread pool is created
+(30204) 01:25:34.706  m: [naio] ChannelManager is created
+(30204) 01:25:34.706  m: [naio] Connector is created
+(30204) 01:25:34.718  m: [naio] Thread pool is started
+(30204) 01:25:34.718  m: [naio] ChannelManager is opened
+(30204) 01:25:34.719  d: Coordinator::CoordinatorServer::CoordinatorServer
+(30204) 01:25:34.720  d: GateKeeper: Created direct service listener. svcid=coordinator, ptr=2ed07d0, ip=0.0.0.0:37020
+(30204) 01:25:34.720  d: Coordinator::CoordinatorServer::Init(coordAddr=0.0.0.0:37020
+(30204) 01:25:34.720  d: Coordinator::CoordinatorServer::SetServicePolicy(intf=chat)
+(30204) 01:25:34.721  d: Coordinator::CoordinatorServer::SetServicePolicy(intf=clientctrl)
+(30204) 01:25:34.721  d: Coordinator::CoordinatorServer::SetServicePolicy(intf=clusteradmin)
+(30204) 01:25:34.721  d: Coordinator::CoordinatorServer::SetServicePolicy(intf=gamebalancer)
+(30204) 01:25:34.721  d: Coordinator::CoordinatorServer::SetServicePolicy(intf=gamesvc)
+(30204) 01:25:34.721  d: Coordinator::CoordinatorServer::SetServicePolicy(intf=gateway)
+(30204) 01:25:34.721  d: Coordinator::CoordinatorServer::SetServicePolicy(intf=livemmaking)
+(30204) 01:25:34.722  d: Coordinator::CoordinatorServer::SetServicePolicy(intf=lobby)
+(30204) 01:25:34.722  d: Coordinator::CoordinatorServer::SetServicePolicy(intf=login)
+(30204) 01:25:34.722  d: Coordinator::CoordinatorServer::SetServicePolicy(intf=matchmaking)
+(30204) 01:25:34.722  d: Coordinator::CoordinatorServer::SetServicePolicy(intf=monitoring)
+(30204) 01:25:34.722  d: Coordinator::CoordinatorServer::SetServicePolicy(intf=newlogin)
+(30204) 01:25:34.722  d: Coordinator::CoordinatorServer::SetServicePolicy(intf=relay)
+(30204) 01:25:34.722  d: Coordinator::CoordinatorServer::SetServicePolicy(intf=relaybalancer)
+(30204) 01:25:34.722  d: Coordinator::CoordinatorServer::SetServicePolicy(intf=roll)
+(30204) 01:25:34.722  d: Coordinator::CoordinatorServer::SetServicePolicy(intf=rollbalancer)
+(30204) 01:25:34.723  d: Coordinator::CoordinatorServer::SetServicePolicy(intf=social_lobby)
+(30204) 01:25:34.723  d: Coordinator::CoordinatorServer::SetServicePolicy(intf=usermanager)
+(30204) 01:25:34.723  m: IP addresses: backend=localhost, frontend=localhost
+(30204) 01:25:34.724  d: Adding permanent route. tag=backend, svc=coordinator, addr=0.0.0.0:37020
+(23516) 01:25:34.725  d: GateKeeper: Generated pipeid(s=_cc_pvx t=coordinator c=-1 p=coordinator)
+(26900) 01:25:34.725  E: [TL] Open connection is FAILED(netaddr=0.0.0.0:37020)
+(23516) 01:25:34.725  m: GateKeeper: Pipe created for service. name=coordinator
+(23516) 01:25:34.726  m: Node requested successfully(svcid=coordinator)
+(23516) 01:25:34.726  m: Query rpc interface(svcid=coordinator iface=coordinator.server)
+(23516) 01:25:34.736  m: GateKeeper: Close pipe(name=coordinator)
+(23516) 01:25:34.736  d: GateKeeper: Close pipe(gkn=_cc_pvx p=coordinator)
+(23516) 01:25:34.747  E: Iface request FAILED due to rpc error. svcid=coordinator, iface=coordinator.server, rpcsts=Disconnected(3)
+(23516) 01:25:36.743  d: GateKeeper: Generated pipeid(s=_cc_pvx t=coordinator c=-1 p=coordinator)
+(29896) 01:25:36.743  E: [TL] Open connection is FAILED(netaddr=0.0.0.0:37020)
+(23516) 01:25:36.743  m: GateKeeper: Pipe created for service. name=coordinator
+(23516) 01:25:36.743  m: Node requested successfully(svcid=coordinator)
+(23516) 01:25:36.743  m: Query rpc interface(svcid=coordinator iface=coordinator.server)
+(23516) 01:25:36.754  m: GateKeeper: Close pipe(name=coordinator)
+(23516) 01:25:36.754  d: GateKeeper: Close pipe(gkn=_cc_pvx p=coordinator)
+(23516) 01:25:36.765  E: Iface request FAILED due to rpc error. svcid=coordinator, iface=coordinator.server, rpcsts=Disconnected(3)
+(23516) 01:25:38.756  d: GateKeeper: Generated pipeid(s=_cc_pvx t=coordinator c=-1 p=coordinator)
+(29856) 01:25:38.756  E: [TL] Open connection is FAILED(netaddr=0.0.0.0:37020)
+(23516) 01:25:38.756  m: GateKeeper: Pipe created for service. name=coordinator
+(23516) 01:25:38.757  m: Node requested successfully(svcid=coordinator)
+(23516) 01:25:38.757  m: Query rpc interface(svcid=coordinator iface=coordinator.server)
+(23516) 01:25:38.768  m: GateKeeper: Close pipe(name=coordinator)
+(23516) 01:25:38.768  d: GateKeeper: Close pipe(gkn=_cc_pvx p=coordinator)
+(23516) 01:25:38.779  E: Iface request FAILED due to rpc error. svcid=coordinator, iface=coordinator.server, rpcsts=Disconnected(3)
+(23516) 01:25:40.777  d: GateKeeper: Generated pipeid(s=_cc_pvx t=coordinator c=-1 p=coordinator)
+(29916) 01:25:40.777  E: [TL] Open connection is FAILED(netaddr=0.0.0.0:37020)
+(23516) 01:25:40.777  m: GateKeeper: Pipe created for service. name=coordinator
+(23516) 01:25:40.777  m: Node requested successfully(svcid=coordinator)
+(23516) 01:25:40.777  m: Query rpc interface(svcid=coordinator iface=coordinator.server)
+(23516) 01:25:40.788  m: GateKeeper: Close pipe(name=coordinator)
+(23516) 01:25:40.788  d: GateKeeper: Close pipe(gkn=_cc_pvx p=coordinator)
+(23516) 01:25:40.799  E: Iface request FAILED due to rpc error. svcid=coordinator, iface=coordinator.server, rpcsts=Disconnected(3)
+(23516) 01:25:42.795  d: GateKeeper: Generated pipeid(s=_cc_pvx t=coordinator c=-1 p=coordinator)
+(29888) 01:25:42.795  E: [TL] Open connection is FAILED(netaddr=0.0.0.0:37020)
+(23516) 01:25:42.795  m: GateKeeper: Pipe created for service. name=coordinator
+(23516) 01:25:42.796  m: Node requested successfully(svcid=coordinator)
+(23516) 01:25:42.796  m: Query rpc interface(svcid=coordinator iface=coordinator.server)
+(23516) 01:25:42.806  m: GateKeeper: Close pipe(name=coordinator)
+(23516) 01:25:42.806  d: GateKeeper: Close pipe(gkn=_cc_pvx p=coordinator)
+(23516) 01:25:42.817  E: Iface request FAILED due to rpc error. svcid=coordinator, iface=coordinator.server, rpcsts=Disconnected(3)
+(23516) 01:25:44.817  d: GateKeeper: Generated pipeid(s=_cc_pvx t=coordinator c=-1 p=coordinator)
+(29812) 01:25:44.817  E: [TL] Open connection is FAILED(netaddr=0.0.0.0:37020)
+(23516) 01:25:44.817  m: GateKeeper: Pipe created for service. name=coordinator
+(23516) 01:25:44.817  m: Node requested successfully(svcid=coordinator)
+(23516) 01:25:44.817  m: Query rpc interface(svcid=coordinator iface=coordinator.server)
+(23516) 01:25:44.828  m: GateKeeper: Close pipe(name=coordinator)
+(23516) 01:25:44.828  d: GateKeeper: Close pipe(gkn=_cc_pvx p=coordinator)
+(23516) 01:25:44.839  E: Iface request FAILED due to rpc error. svcid=coordinator, iface=coordinator.server, rpcsts=Disconnected(3)
+(23516) 01:25:46.837  d: GateKeeper: Generated pipeid(s=_cc_pvx t=coordinator c=-1 p=coordinator)
+(29824) 01:25:46.837  E: [TL] Open connection is FAILED(netaddr=0.0.0.0:37020)
+(23516) 01:25:46.837  m: GateKeeper: Pipe created for service. name=coordinator
+(23516) 01:25:46.837  m: Node requested successfully(svcid=coordinator)
+(23516) 01:25:46.837  m: Query rpc interface(svcid=coordinator iface=coordinator.server)
+(23516) 01:25:46.849  m: GateKeeper: Close pipe(name=coordinator)
+(23516) 01:25:46.849  d: GateKeeper: Close pipe(gkn=_cc_pvx p=coordinator)
+(23516) 01:25:46.860  E: Iface request FAILED due to rpc error. svcid=coordinator, iface=coordinator.server, rpcsts=Disconnected(3)
+(23516) 01:25:48.854  d: GateKeeper: Generated pipeid(s=_cc_pvx t=coordinator c=-1 p=coordinator)
+(29936) 01:25:48.854  E: [TL] Open connection is FAILED(netaddr=0.0.0.0:37020)
+(23516) 01:25:48.854  m: GateKeeper: Pipe created for service. name=coordinator
+(23516) 01:25:48.854  m: Node requested successfully(svcid=coordinator)
+(23516) 01:25:48.854  m: Query rpc interface(svcid=coordinator iface=coordinator.server)
+(23516) 01:25:48.865  m: GateKeeper: Close pipe(name=coordinator)
+(23516) 01:25:48.865  d: GateKeeper: Close pipe(gkn=_cc_pvx p=coordinator)
+(23516) 01:25:48.876  E: Iface request FAILED due to rpc error. svcid=coordinator, iface=coordinator.server, rpcsts=Disconnected(3)
+(23516) 01:25:50.876  d: GateKeeper: Generated pipeid(s=_cc_pvx t=coordinator c=-1 p=coordinator)
+(14168) 01:25:50.876  E: [TL] Open connection is FAILED(netaddr=0.0.0.0:37020)
+(23516) 01:25:50.876  m: GateKeeper: Pipe created for service. name=coordinator
+(23516) 01:25:50.877  m: Node requested successfully(svcid=coordinator)
+(23516) 01:25:50.877  m: Query rpc interface(svcid=coordinator iface=coordinator.server)
+(23516) 01:25:50.888  m: GateKeeper: Close pipe(name=coordinator)
+(23516) 01:25:50.888  d: GateKeeper: Close pipe(gkn=_cc_pvx p=coordinator)
+(23516) 01:25:50.898  E: Iface request FAILED due to rpc error. svcid=coordinator, iface=coordinator.server, rpcsts=Disconnected(3)
+(23516) 01:25:52.891  d: GateKeeper: Generated pipeid(s=_cc_pvx t=coordinator c=-1 p=coordinator)
+(29936) 01:25:52.892  E: [TL] Open connection is FAILED(netaddr=0.0.0.0:37020)
+(23516) 01:25:52.892  m: GateKeeper: Pipe created for service. name=coordinator
+(23516) 01:25:52.892  m: Node requested successfully(svcid=coordinator)
+(23516) 01:25:52.892  m: Query rpc interface(svcid=coordinator iface=coordinator.server)
+(23516) 01:25:52.903  m: GateKeeper: Close pipe(name=coordinator)
+(23516) 01:25:52.903  d: GateKeeper: Close pipe(gkn=_cc_pvx p=coordinator)
+(23516) 01:25:52.914  E: Iface request FAILED due to rpc error. svcid=coordinator, iface=coordinator.server, rpcsts=Disconnected(3)
+(23516) 01:25:54.908  d: GateKeeper: Generated pipeid(s=_cc_pvx t=coordinator c=-1 p=coordinator)
+(29804) 01:25:54.908  E: [TL] Open connection is FAILED(netaddr=0.0.0.0:37020)
+(23516) 01:25:54.909  m: GateKeeper: Pipe created for service. name=coordinator
+(23516) 01:25:54.909  m: Node requested successfully(svcid=coordinator)
+(23516) 01:25:54.909  m: Query rpc interface(svcid=coordinator iface=coordinator.server)
+(23516) 01:25:54.920  m: GateKeeper: Close pipe(name=coordinator)
+(23516) 01:25:54.920  d: GateKeeper: Close pipe(gkn=_cc_pvx p=coordinator)
+(23516) 01:25:54.930  E: Iface request FAILED due to rpc error. svcid=coordinator, iface=coordinator.server, rpcsts=Disconnected(3)
+(20884) 01:25:55.427  m: Stopping server ...

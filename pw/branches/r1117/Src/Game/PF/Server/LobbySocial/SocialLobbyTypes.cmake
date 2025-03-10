@@ -1,0 +1,3 @@
+
+set(SOURCES_Src_Game_PF_Server_LobbySocial_SocialLobbyTypes SocialLobbyTypes.h SocialLobbyTypes.cpp)
+set(LIBRARIES_Src_Game_PF_Server_LobbySocial_SocialLobbyTypes )

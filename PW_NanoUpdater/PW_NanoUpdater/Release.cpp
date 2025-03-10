@@ -12,9 +12,9 @@
 
 #pragma comment(lib, "Wininet.lib")
 
-#pragma optimize("", off)
-
 extern bool isRunningAdm;
+class admin_rights_exception : std::exception {};
+class unhandled_error : std::exception {};
 
 void ThrowIfNotWithAdminRights();
 void TestKillAdminProcess();
@@ -64,7 +64,11 @@ bool CheckFileMD5Hash(const std::string& filename, const std::string& md5FileNam
 #ifdef NDEBUG
    if (md5File.fail()) {
       std::cerr << "Hash failed" << std::endl;
+#ifdef TEST_HASHES
+      return false;
+#else
       return true;
+#endif
    }
 #endif
    if (fileStream.is_open()) {
@@ -174,9 +178,14 @@ void DownloadRelease(const std::string& fileUrl, const std::string& filePath, co
 
       if (!CheckFileMD5Hash(filename, md5Path)) {
          std::cerr << "Failed to update: " << filename << std::endl;
+         throw unhandled_error();
       }
+   }
+   catch (admin_rights_exception ex) {
+      throw ex;
    }
    catch (const std::exception& e) {
       std::cerr << "Release download failed: " << e.what() << std::endl;
+      throw e;
    }
 }
