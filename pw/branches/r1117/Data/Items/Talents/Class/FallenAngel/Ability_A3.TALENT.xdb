@@ -72,6 +72,16 @@
 				<Item href="/Items/Talents/Class/FallenAngel/const_A3u_Damage" />
 				<Item href="/Items/Talents/Class/FallenAngel/const_A3_Range" />
 				<Item href="/Items/Talents/Class/FallenAngel/const_A3_DamagePerSecond" />
+				<Item href="/Items/Talents/Class/FallenAngel/Ability_A3.TALENT" id="E52C0FBE-7DE9-41D1-8CE8-28617E6E7196">
+					<UnitConstant>
+						<name>A3_Heal</name>
+						<var>
+							<compiledString>FQAAAAADAAAACQAAABMAAABBAAAAVYvsUWoBUdkFWwAAANkcJFHZBVcAAADZHCRqAItFCIsQi00Ii4I0AQAA/9BR2RwkagGLTRCLEYtNEItCYP/Q3DVPAAAA2V382UX8i+VdwwAAAAAAAARAAABIQgCAg0M=</compiledString>
+							<returnType>float</returnType>
+							<sString>damageScale(sIntellect,50, 263)/2.5</sString>
+						</var>
+					</UnitConstant>
+				</Item>
 			</vars>
 		</UnitConstantsContainer>
 	</constants>
@@ -190,37 +200,6 @@
 													<stopBehaviour>StopByAllChilds</stopBehaviour>
 													<unstackableWith href="" />
 												</StatusApplicator>
-											</Item>
-										</applicators>
-										<dispatch href="" />
-									</Spell>
-								</Item>
-								<Item href="/Items/Talents/Class/FallenAngel/Ability_A3.TALENT" id="2FF71B67-317F-4EF3-8E7C-FCD26D2824D1">
-									<Spell>
-										<applicators>
-											<Item href="/Items/Talents/Class/FallenAngel/Ability_A3.TALENT" id="8EF12D95-F3C4-42C8-9A1E-6343B74C6DAE">
-												<AddApplicatorDuration>
-													<applicators>
-														<Item href="/Items/Talents/Class/FallenAngel/status_A3_Mark.APLR" />
-													</applicators>
-													<applyTarget>ApplicatorTarget</applyTarget>
-													<caption>обновляем время</caption>
-													<durationToAdd>
-														<compiledString>FQwAAAABAAAAGAAAAEEzX0R1cmF0aW9uAFWL7ItFDFCLTQhRaAAAAACLVRCLAotNEItQUP/SXcM=</compiledString>
-														<returnType>float</returnType>
-														<sString>cA3_Duration</sString>
-													</durationToAdd>
-													<enabled>
-														<compiledString></compiledString>
-														<returnType>bool</returnType>
-														<sString>true</sString>
-													</enabled>
-													<flags>2</flags>
-													<formulaName></formulaName>
-													<LoggingEvent>-1</LoggingEvent>
-													<nameToCheck></nameToCheck>
-													<providerName></providerName>
-												</AddApplicatorDuration>
 											</Item>
 										</applicators>
 										<dispatch href="" />
@@ -348,37 +327,6 @@
 													<stopBehaviour>StopByAllChilds</stopBehaviour>
 													<unstackableWith href="" />
 												</StatusApplicator>
-											</Item>
-										</applicators>
-										<dispatch href="" />
-									</Spell>
-								</Item>
-								<Item href="/Items/Talents/Class/FallenAngel/Ability_A3.TALENT" id="684A88B6-123E-4B29-9871-0EC894EB2C4A">
-									<Spell>
-										<applicators>
-											<Item href="/Items/Talents/Class/FallenAngel/Ability_A3.TALENT" id="7DDDAE95-6D84-46E3-8387-F6A47CADDB38">
-												<AddApplicatorDuration>
-													<applicators>
-														<Item href="/Items/Talents/Class/FallenAngel/status_A3_Mark.APLR" />
-													</applicators>
-													<applyTarget>ApplicatorTarget</applyTarget>
-													<caption>обновляем время</caption>
-													<durationToAdd>
-														<compiledString>FQwAAAABAAAAGAAAAEEzX0R1cmF0aW9uAFWL7ItFDFCLTQhRaAAAAACLVRCLAotNEItQUP/SXcM=</compiledString>
-														<returnType>float</returnType>
-														<sString>cA3_Duration</sString>
-													</durationToAdd>
-													<enabled>
-														<compiledString></compiledString>
-														<returnType>bool</returnType>
-														<sString>true</sString>
-													</enabled>
-													<flags>2</flags>
-													<formulaName></formulaName>
-													<LoggingEvent>-1</LoggingEvent>
-													<nameToCheck></nameToCheck>
-													<providerName></providerName>
-												</AddApplicatorDuration>
 											</Item>
 										</applicators>
 										<dispatch href="" />

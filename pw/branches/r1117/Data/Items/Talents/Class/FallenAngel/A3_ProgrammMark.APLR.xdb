@@ -179,6 +179,47 @@
 			</stopCondition>
 			<stopEvents>0</stopEvents>
 		</Item>
+		<Item>
+			<applicator href="/Items/Talents/Class/FallenAngel/A3_ProgrammMark.APLR" id="601BCC84-0F5B-4FA0-A2BD-E7AE7E97D9A9">
+				<HealApplicator>
+					<amount>
+						<compiledString>FQsAAAACAAAAGAAAACsAAABBM3VfRGFtYWdlAFWL7FGLRQxQi00IUWgAAAAAi1UQiwKLTRCLUFD/0tw1OQAAANld/NlF/IvlXcMAAAAAAAAEQA==</compiledString>
+						<returnType>float</returnType>
+						<sString>cA3u_Damage/2.5</sString>
+					</amount>
+					<applyTarget>AbilityOwner</applyTarget>
+					<caption>Heal</caption>
+					<enabled>
+						<compiledString>FSAAAAACAAAAJwAAAEAAAABGYWxsZW5BbmdlbF9BM3UARmFsbGVuQW5nZWxfQTN1AFWL7IPsCGgAAAAAi0UIixCLTQiLgqgBAAD/0IXAdCpoEAAAAItNCIsRi00Ii4KoAQAA/9CJRfyLTfyLEYtN/ItCBP/QiEX76wTGRfsAikX7i+Vdww==</compiledString>
+						<returnType>bool</returnType>
+						<sString>tal("FallenAngel_A3u")</sString>
+					</enabled>
+					<formulaName></formulaName>
+					<healTarget>Health</healTarget>
+					<ignoreHealingMods>false</ignoreHealingMods>
+					<LoggingEvent>-1</LoggingEvent>
+					<providerName></providerName>
+					<uiEvent href="/UI/Events/CommonEvents/EventHeal.UIEV" />
+				</HealApplicator>
+			</applicator>
+			<continueCondition>
+				<compiledString></compiledString>
+				<returnType>bool</returnType>
+				<sString>0</sString>
+			</continueCondition>
+			<continueEvents>2</continueEvents>
+			<delay>
+				<compiledString></compiledString>
+				<returnType>float</returnType>
+				<sString>-1.0</sString>
+			</delay>
+			<stopCondition>
+				<compiledString></compiledString>
+				<returnType>bool</returnType>
+				<sString>0</sString>
+			</stopCondition>
+			<stopEvents>0</stopEvents>
+		</Item>
 	</applicators>
 	<applyTarget>ApplicatorTarget</applyTarget>
 	<behaviorFlags>147</behaviorFlags>

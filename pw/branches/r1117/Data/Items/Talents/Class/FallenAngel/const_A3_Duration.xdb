@@ -4,8 +4,8 @@
 	<BackLink DBID="/Items/Talents/Class/FallenAngel/Ability_A3u.TALENT" Count="1" />
 	<name>A3_Duration</name>
 	<var>
-		<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAABAQA==</compiledString>
+		<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAAAAQA==</compiledString>
 		<returnType>float</returnType>
-		<sString>3</sString>
+		<sString>2</sString>
 	</var>
 </UnitConstant>
