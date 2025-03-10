@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StatusApplicator>
-	<BackLink DBID="/Items/Talents/Class/Warlord/Ability4.TALENT" Count="1" />
+	<BackLink DBID="/Items/Talents/Class/Warlord/Ability4.TALENT" Count="3" />
 	<applicators>
 		<Item href="/Items/Talents/Class/Warlord/status_A4_banner.APLR" id="F1448B8A-5BF0-442F-8448-9ABADB0449F8">
 			<StatModApplicator>
@@ -147,9 +147,9 @@
 		<sString>0</sString>
 	</customCounter>
 	<customProgress>
-		<compiledString>FSgAAAADAAAANQAAAFUAAABnAAAARmxhZ0J1ZmZUaW1lAAAAAGR1cmF0aW9uAAAAAEE0X0R1cmF0aW9uAFWL7IPsEGoBi0UQUGgAAAAAi00IixGLTQiLgpwBAAD/0IlF/ItNDFGLVQhSaBwAAACLRRCLEItNEItCUP/QaBAAAACLTfyLEYtN/ItCVN1d9P/Q3HX02V3w2UXwi+Vdww==</compiledString>
+		<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAACAvw==</compiledString>
 		<returnType>float</returnType>
-		<sString>sender.applFlagBuffTime(UNIT).GetVariable("duration") / cA4_Duration</sString>
+		<sString>-1</sString>
 	</customProgress>
 	<description textref="/Items/Talents/Class/Warlord/status_A4_banner.APLR_description.txt" />
 	<dispellPriority>NonDispellable</dispellPriority>
@@ -166,9 +166,9 @@
 	<formulaName></formulaName>
 	<image href="/UI/Styles/Icons/Heroes/Warlord/A4.ITEX" />
 	<lifeTime>
-		<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAACAvw==</compiledString>
+		<compiledString>FQwAAAABAAAAGAAAAEE0X0R1cmF0aW9uAFWL7ItFDFCLTQhRaAAAAACLVRCLAotNEItQUP/SXcM=</compiledString>
 		<returnType>float</returnType>
-		<sString>-1</sString>
+		<sString>cA4_Duration</sString>
 	</lifeTime>
 	<LoggingEvent>-1</LoggingEvent>
 	<name textref="/Items/Talents/Class/Warlord/status_A4_banner.APLR_name.txt" />

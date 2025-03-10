@@ -445,6 +445,26 @@
 											<stopEvents>0</stopEvents>
 										</Item>
 										<Item>
+											<applicator href="/GameLogic/GeneralApplicators/ChangeTerrainToNative.APLR" />
+											<continueCondition>
+												<compiledString>FQAAAAAAAAAAVYvsMsBdww==</compiledString>
+												<returnType>bool</returnType>
+												<sString>0</sString>
+											</continueCondition>
+											<continueEvents>1</continueEvents>
+											<delay>
+												<compiledString></compiledString>
+												<returnType>float</returnType>
+												<sString>-1.0</sString>
+											</delay>
+											<stopCondition>
+												<compiledString>FQAAAAAAAAAAVYvsMsBdww==</compiledString>
+												<returnType>bool</returnType>
+												<sString>0</sString>
+											</stopCondition>
+											<stopEvents>0</stopEvents>
+										</Item>
+										<Item>
 											<applicator href="/Items/Talents/Class/Warlord/Ability2.TALENT" id="B9EE1508-16A5-4D2F-9E71-969FADBFCF6F">
 												<FlagsApplicator>
 													<applyTarget>ApplicatorTarget</applyTarget>
@@ -879,6 +899,26 @@
 					</UnitConstant>
 				</Item>
 				<Item href="/Items/Talents/Class/Warlord/const_A2u_TT_Haste_MoveAmount" />
+				<Item href="/Items/Talents/Class/Warlord/Ability2.TALENT" id="0E8FC3A3-7169-44E9-ADBD-E057749A4F00">
+					<UnitConstant>
+						<name>Time_Terrain</name>
+						<var>
+							<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAACgQA==</compiledString>
+							<returnType>float</returnType>
+							<sString>5</sString>
+						</var>
+					</UnitConstant>
+				</Item>
+				<Item href="/Items/Talents/Class/Warlord/Ability2.TALENT" id="347F6AC4-48F8-4566-9457-071D94BE9CA0">
+					<UnitConstant>
+						<name>Radius_Terrain</name>
+						<var>
+							<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAAAwQQ==</compiledString>
+							<returnType>float</returnType>
+							<sString>11</sString>
+						</var>
+					</UnitConstant>
+				</Item>
 			</vars>
 		</UnitConstantsContainer>
 	</constants>

@@ -2,7 +2,7 @@
 <Talent>
 	<BackLink DBID="/Social.ROOT" Count="1" />
 	<BackLink DBID="/SocialTest.ROOT" Count="1" />
-	<BackLink DBID="/Items/Talents/Frogenglut.TALENTSET" Count="1" />
+	<BackLink DBID="/Items/Talents/Frogenglut.TALENTSET" Count="2" />
 	<BackLink DBID="/Items/Talents/Class/Frogenglut/Ability4_2.TALENT" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/Frogenglut/Ability4_2u.TALENT" Count="1" />
 	<BackLink DBID="/Test/Talents/Frog/Duel.TALENTSET" Count="1" />
@@ -65,6 +65,16 @@
 				<Item href="/Items/Talents/Class/Frogenglut/const_A4u_WaitDuration" />
 				<Item href="/Items/Talents/Class/Frogenglut/const_A4u_JumpNumber" />
 				<Item href="/Items/Talents/Class/Frogenglut/const_A4u_EnergyReduce" />
+				<Item href="/Items/Talents/Class/Frogenglut/Ability4_Upg.TALENT" id="387E9F4D-AEC3-43A4-93EB-AE2FD35C9471">
+					<UnitConstant>
+						<name>DecMoveSpeed_WithReduction</name>
+						<var>
+							<compiledString>FQAAAAACAAAACAAAABIAAABVi+xqAVHZBUQAAADZHCRR2QVAAAAA2RwkagCLRQiLEItNCIuCMAEAAP/QUdkcJGoBi00QixGLTRCLQmD/0F3DAABAQQAAcEI=</compiledString>
+							<returnType>float</returnType>
+							<sString>damageScale( sStrength, 12 , 60)</sString>
+						</var>
+					</UnitConstant>
+				</Item>
 			</vars>
 		</UnitConstantsContainer>
 	</constants>

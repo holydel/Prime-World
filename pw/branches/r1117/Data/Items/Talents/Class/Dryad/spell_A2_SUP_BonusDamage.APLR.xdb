@@ -38,12 +38,12 @@
 						<cancelInvisibility>false</cancelInvisibility>
 						<caption>- урон в % (Dryad_A2_SUP)</caption>
 						<damage>
-							<compiledString>FQsAAAACAAAAJwAAAD0AAABEbWdQZXJjZW50AFWL7IPsDItFDIsQi00Mi0IM/9CLTQxRi1UIUmgAAAAAi0UQixCLTRCLQlDdXfj/0NwNTgAAANxN+Nld9NlF9IvlXcN7FK5H4XqEPw==</compiledString>
+							<compiledString>FQoAAAABAAAAFgAAAEEyX0RhbWFnZQBVi+yLRQxQi00IUWgAAAAAi1UQiwKLTRCLUFD/0l3D</compiledString>
 							<returnType>float</returnType>
-							<sString> rMaxLife * ( cDmgPercent * 0.01)</sString>
+							<sString>cA2_Damage</sString>
 						</damage>
 						<damageMode>4</damageMode>
-						<damageType>Pure</damageType>
+						<damageType>Energy</damageType>
 						<enabled>
 							<compiledString>FQAAAAAAAAAAVYvssAFdww==</compiledString>
 							<returnType>bool</returnType>
@@ -53,7 +53,7 @@
 						<LoggingEvent>-1</LoggingEvent>
 						<providerName></providerName>
 						<timeLimiter>-1</timeLimiter>
-						<uiEvent href="/UI/Events/CommonEvents/EventDamageDealed.UIEV" />
+						<uiEvent href="/UI/Events/CommonEvents/EventDamageDealed_Energy.UIEV" />
 					</DamageApplicator>
 				</Item>
 			</applicators>
@@ -79,9 +79,9 @@
 		</Spell>
 	</spell>
 	<startCondition>
-		<compiledString>FR0AAAACAAAAJAAAAD0AAABEcnlhZF9BMl9TVVAAAAAARHJ5YWRfQTJfU1VQAFWL7IPsCGgAAAAAi0UIixCLTQiLgqgBAAD/0IXAdCpoEAAAAItNCIsRi00Ii4KoAQAA/9CJRfyLTfyLEYtN/ItCBP/QiEX76wTGRfsAikX7i+Vdww==</compiledString>
+		<compiledString>FQAAAAAAAAAAVYvssAFdww==</compiledString>
 		<returnType>bool</returnType>
-		<sString>tal("Dryad_A2_SUP")</sString>
+		<sString>true</sString>
 	</startCondition>
 	<startOffset>
 		<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAAAAPw==</compiledString>

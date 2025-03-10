@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StatusApplicator>
+	<BackLink DBID="/Items/Talents/Class/Frogenglut/Ability4.TALENT" Count="1" />
+	<BackLink DBID="/Items/Talents/Class/Frogenglut/status_A4_StackCount.APLR" Count="1" />
+	<applicators />
+	<applyTarget>ApplicatorTarget</applyTarget>
+	<behaviorFlags>216</behaviorFlags>
+	<caption>Статус когда стаков нет</caption>
+	<customCounter>
+		<compiledString>FQwAAAABAAAAEAAAAEp1bXBDaGFyZ2VzAFWL7GgAAAAAi0UIixCLTQiLgogBAAD/0FHZHCToBQAAAIPEBF3DuAEAAAAPovfCAAAABHQH8w8sRCQEw+kAAAAAVYvsg+wM2UUI2X38D7dF/A0ADAAAiUX42W3421302W38i0X0i+Vdww==</compiledString>
+		<returnType>int</returnType>
+		<sString>f2l(sender.vJumpCharges)</sString>
+	</customCounter>
+	<customProgress>
+		<compiledString>FT0AAAADAAAASgAAAGoAAAB8AAAARnJvZ2VuZ2x1dF9BNFN0YWNrQ29vbGRvd25TcGVsbABkdXJhdGlvbgAAAABBNF9TdGFja0Nvb2xkb3duAFWL7IPsEGoBi0UQUGgAAAAAi00IixGLTQiLgpwBAAD/0IlF/ItNDFGLVQhSaCwAAACLRRCLEItNEItCUP/QaCAAAACLTfyLEYtN/ItCVN1d9P/Q3HX02V3w2UXwi+Vdww==</compiledString>
+		<returnType>float</returnType>
+		<sString>sender.applFrogenglut_A4StackCooldownSpell(UNIT).GetVariable("duration")/cA4_StackCooldown</sString>
+	</customProgress>
+	<description textref="/Items/Talents/Class/Frogenglut/status_A4_ZeroStacks.APLR_description.txt" />
+	<dispellPriority>NonDispellable</dispellPriority>
+	<effect>
+		<Item href="" />
+		<Item href="" />
+	</effect>
+	<enabled>
+		<compiledString>FQwAAAACAAAAEQAAACcAAABKdW1wQ2hhcmdlcwBVi+xRaAAAAACLRQiLEItNCIuCiAEAAP/Q3B1JAAAA3+D2xAV6CcdF/AEAAADrB8dF/AAAAACKRfyL5V3DAAAAAAAA8D8=</compiledString>
+		<returnType>bool</returnType>
+		<sString>sender.vJumpCharges&lt;1</sString>
+	</enabled>
+	<flags>0</flags>
+	<formulaName></formulaName>
+	<image href="/UI/Styles/Icons/Heroes/Frogenglut/A4.ITEX" />
+	<lifeTime>
+		<compiledString></compiledString>
+		<returnType>float</returnType>
+		<sString>-1.0</sString>
+	</lifeTime>
+	<LoggingEvent>-1</LoggingEvent>
+	<name textref="/Items/Talents/Class/Frogenglut/status_A4_ZeroStacks.APLR_name.txt" />
+	<power>1</power>
+	<providerName></providerName>
+	<stackableAcrossUnits>Unstackable</stackableAcrossUnits>
+	<stackCount>0</stackCount>
+	<startCondition>
+		<compiledString></compiledString>
+		<returnType>bool</returnType>
+		<sString>true</sString>
+	</startCondition>
+	<statusPosition>-89</statusPosition>
+	<stopBehaviour>StopByTime</stopBehaviour>
+	<unstackableWith href="/Items/Talents/Class/Frogenglut/status_A4_ZeroStacks.APLR" id="BE17CEBD-C456-4D0C-BC7C-7128BB89013E">
+		<ApplicatorsList>
+			<applicatorLists />
+			<applicators>
+				<Item href="/Items/Talents/Class/Frogenglut/status_A4_StackCount.APLR" />
+			</applicators>
+		</ApplicatorsList>
+	</unstackableWith>
+</StatusApplicator>

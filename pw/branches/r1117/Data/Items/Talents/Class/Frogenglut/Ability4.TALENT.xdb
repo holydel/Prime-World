@@ -2,7 +2,7 @@
 <Talent>
 	<BackLink DBID="/Social.ROOT" Count="1" />
 	<BackLink DBID="/SocialTest.ROOT" Count="1" />
-	<BackLink DBID="/Items/Talents/Frogenglut.TALENTSET" Count="1" />
+	<BackLink DBID="/Items/Talents/Frogenglut.TALENTSET" Count="2" />
 	<BackLink DBID="/Items/Talents/Class/Frogenglut/Ability4.TALENT" Count="2" />
 	<BackLink DBID="/Items/Talents/Class/Frogenglut/Ability4_2.TALENT" Count="2" />
 	<BackLink DBID="/Items/Talents/Class/Frogenglut/Ability4_2u.TALENT" Count="1" />
@@ -152,339 +152,6 @@
 														<sString>true</sString>
 													</startCondition>
 												</GhostMoveApplicator>
-											</applicator>
-											<continueCondition>
-												<compiledString>FQAAAAAAAAAAVYvsMsBdww==</compiledString>
-												<returnType>bool</returnType>
-												<sString>0</sString>
-											</continueCondition>
-											<continueEvents>1</continueEvents>
-											<delay>
-												<compiledString></compiledString>
-												<returnType>float</returnType>
-												<sString>-1.0</sString>
-											</delay>
-											<stopCondition>
-												<compiledString>FQAAAAAAAAAAVYvsMsBdww==</compiledString>
-												<returnType>bool</returnType>
-												<sString>0</sString>
-											</stopCondition>
-											<stopEvents>0</stopEvents>
-										</Item>
-										<Item>
-											<applicator href="/Items/Talents/Class/Frogenglut/Ability4.TALENT" id="95295EF1-078C-4CC4-AB45-A1FA25E9888E">
-												<ProgramApplicator>
-													<applicators>
-														<Item>
-															<applicator href="/Items/Talents/Class/Frogenglut/Ability4.TALENT" id="A751D668-D3B8-4E74-9237-B207FE4052AE">
-																<RefreshCooldownApplicator>
-																	<allowCdIncrease>false</allowCdIncrease>
-																	<applyTarget>AbilityOwner</applyTarget>
-																	<caption>(A4u) обнулить КД</caption>
-																	<enabled>
-																		<compiledString></compiledString>
-																		<returnType>bool</returnType>
-																		<sString>true</sString>
-																	</enabled>
-																	<flags>128</flags>
-																	<formulaName></formulaName>
-																	<LoggingEvent>-1</LoggingEvent>
-																	<providerName></providerName>
-																	<reduceByPercent>false</reduceByPercent>
-																	<reductionAmount>
-																		<compiledString></compiledString>
-																		<returnType>float</returnType>
-																		<sString>-1.0f</sString>
-																	</reductionAmount>
-																	<refreshThis>true</refreshThis>
-																	<talents>
-																		<Item href="/Items/Talents/Class/Frogenglut/Ability4.TALENT" />
-																	</talents>
-																	<useListAs>ListAsRule</useListAs>
-																</RefreshCooldownApplicator>
-															</applicator>
-															<continueCondition>
-																<compiledString>FQAAAAAAAAAAVYvsMsBdww==</compiledString>
-																<returnType>bool</returnType>
-																<sString>0</sString>
-															</continueCondition>
-															<continueEvents>1</continueEvents>
-															<delay>
-																<compiledString></compiledString>
-																<returnType>float</returnType>
-																<sString>-1.0</sString>
-															</delay>
-															<stopCondition>
-																<compiledString>FQAAAAAAAAAAVYvsMsBdww==</compiledString>
-																<returnType>bool</returnType>
-																<sString>0</sString>
-															</stopCondition>
-															<stopEvents>0</stopEvents>
-														</Item>
-														<Item>
-															<applicator href="/Items/Talents/Class/Frogenglut/Ability4.TALENT" id="87B526F8-0873-469D-ADC8-3429416DEFBA">
-																<PermanentStatModApplicator>
-																	<applyTarget>ApplicatorTarget</applyTarget>
-																	<caption>A4_FrogJump</caption>
-																	<customApplyType>None</customApplyType>
-																	<enabled>
-																		<compiledString></compiledString>
-																		<returnType>bool</returnType>
-																		<sString>true</sString>
-																	</enabled>
-																	<formulaName></formulaName>
-																	<LoggingEvent>-1</LoggingEvent>
-																	<modifier>
-																		<addValue>
-																			<compiledString></compiledString>
-																			<returnType>float</returnType>
-																			<sString>1.0f</sString>
-																		</addValue>
-																		<multValue>
-																			<compiledString></compiledString>
-																			<returnType>float</returnType>
-																			<sString>1.0f</sString>
-																		</multValue>
-																		<stat>Life</stat>
-																		<topModifier>false</topModifier>
-																		<variable>A4_FrogJump</variable>
-																	</modifier>
-																	<providerName></providerName>
-																</PermanentStatModApplicator>
-															</applicator>
-															<continueCondition>
-																<compiledString>FQAAAAAAAAAAVYvsMsBdww==</compiledString>
-																<returnType>bool</returnType>
-																<sString>0</sString>
-															</continueCondition>
-															<continueEvents>1</continueEvents>
-															<delay>
-																<compiledString></compiledString>
-																<returnType>float</returnType>
-																<sString>-1.0</sString>
-															</delay>
-															<stopCondition>
-																<compiledString>FQAAAAAAAAAAVYvsMsBdww==</compiledString>
-																<returnType>bool</returnType>
-																<sString>0</sString>
-															</stopCondition>
-															<stopEvents>0</stopEvents>
-														</Item>
-														<Item>
-															<applicator href="/Items/Talents/Class/Frogenglut/Ability4.TALENT" id="CF2FF55C-A6B8-43E2-9ED6-72C56983EFF3">
-																<ProgramApplicator>
-																	<applicators>
-																		<Item>
-																			<applicator href="/Items/Talents/Class/Frogenglut/status_A4u_AddJump.APLR" />
-																			<continueCondition>
-																				<compiledString>FQAAAAAAAAAAVYvsMsBdww==</compiledString>
-																				<returnType>bool</returnType>
-																				<sString>0</sString>
-																			</continueCondition>
-																			<continueEvents>2</continueEvents>
-																			<delay>
-																				<compiledString></compiledString>
-																				<returnType>float</returnType>
-																				<sString>-1.0</sString>
-																			</delay>
-																			<stopCondition>
-																				<compiledString>FQAAAAAAAAAAVYvsMsBdww==</compiledString>
-																				<returnType>bool</returnType>
-																				<sString>0</sString>
-																			</stopCondition>
-																			<stopEvents>0</stopEvents>
-																		</Item>
-																		<Item>
-																			<applicator href="/Items/Talents/Class/Frogenglut/Ability4.TALENT" id="60D1D0F6-3073-4B84-B080-29E354B25534">
-																				<TriggerApplicator>
-																					<actionsCount>
-																						<compiledString></compiledString>
-																						<returnType>int</returnType>
-																						<sString>0</sString>
-																					</actionsCount>
-																					<applyTarget>AbilityOwner</applyTarget>
-																					<behaviorFlags>187</behaviorFlags>
-																					<caption>Запускаем принудительно кд</caption>
-																					<effect>
-																						<Item href="" />
-																						<Item href="" />
-																					</effect>
-																					<enabled>
-																						<compiledString></compiledString>
-																						<returnType>bool</returnType>
-																						<sString>true</sString>
-																					</enabled>
-																					<formulaName></formulaName>
-																					<lifeTime>
-																						<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DzcxMPg==</compiledString>
-																						<returnType>float</returnType>
-																						<sString>0.2</sString>
-																					</lifeTime>
-																					<LoggingEvent>-1</LoggingEvent>
-																					<playAck>false</playAck>
-																					<processor href="/Items/Talents/Class/Frogenglut/Ability4.TALENT" id="51394B31-0A9C-49AB-AF1C-E2326B62E68F">
-																						<EventProcessorCondition>
-																							<applyTarget>AbilityOwner</applyTarget>
-																							<condition>
-																								<compiledString></compiledString>
-																								<returnType>bool</returnType>
-																								<sString>true</sString>
-																							</condition>
-																							<events>40960</events>
-																							<onlyParent>false</onlyParent>
-																							<spell href="" />
-																						</EventProcessorCondition>
-																					</processor>
-																					<providerName></providerName>
-																					<startCondition>
-																						<compiledString></compiledString>
-																						<returnType>bool</returnType>
-																						<sString>true</sString>
-																					</startCondition>
-																					<useAbilityCooldown>true</useAbilityCooldown>
-																					<useAbilityOwnerMana>false</useAbilityOwnerMana>
-																				</TriggerApplicator>
-																			</applicator>
-																			<continueCondition>
-																				<compiledString>FQAAAAAAAAAAVYvsMsBdww==</compiledString>
-																				<returnType>bool</returnType>
-																				<sString>0</sString>
-																			</continueCondition>
-																			<continueEvents>1</continueEvents>
-																			<delay>
-																				<compiledString></compiledString>
-																				<returnType>float</returnType>
-																				<sString>-1.0</sString>
-																			</delay>
-																			<stopCondition>
-																				<compiledString>FQAAAAAAAAAAVYvsMsBdww==</compiledString>
-																				<returnType>bool</returnType>
-																				<sString>0</sString>
-																			</stopCondition>
-																			<stopEvents>0</stopEvents>
-																		</Item>
-																		<Item>
-																			<applicator href="/Items/Talents/Class/Frogenglut/Ability4.TALENT" id="8CBB1DD7-E595-4EF4-851C-BCD820665363">
-																				<PermanentStatModApplicator>
-																					<applyTarget>AbilityOwner</applyTarget>
-																					<caption>Обнуляем счетчик</caption>
-																					<customApplyType>None</customApplyType>
-																					<enabled>
-																						<compiledString></compiledString>
-																						<returnType>bool</returnType>
-																						<sString>true</sString>
-																					</enabled>
-																					<formulaName></formulaName>
-																					<LoggingEvent>-1</LoggingEvent>
-																					<modifier>
-																						<addValue>
-																							<compiledString></compiledString>
-																							<returnType>float</returnType>
-																							<sString>0.0f</sString>
-																						</addValue>
-																						<multValue>
-																							<compiledString></compiledString>
-																							<returnType>float</returnType>
-																							<sString>0.0f</sString>
-																						</multValue>
-																						<stat>Life</stat>
-																						<topModifier>false</topModifier>
-																						<variable>A4_FrogJump</variable>
-																					</modifier>
-																					<providerName></providerName>
-																				</PermanentStatModApplicator>
-																			</applicator>
-																			<continueCondition>
-																				<compiledString>FQAAAAAAAAAAVYvsMsBdww==</compiledString>
-																				<returnType>bool</returnType>
-																				<sString>0</sString>
-																			</continueCondition>
-																			<continueEvents>1</continueEvents>
-																			<delay>
-																				<compiledString></compiledString>
-																				<returnType>float</returnType>
-																				<sString>-1.0</sString>
-																			</delay>
-																			<stopCondition>
-																				<compiledString>FQAAAAAAAAAAVYvsMsBdww==</compiledString>
-																				<returnType>bool</returnType>
-																				<sString>0</sString>
-																			</stopCondition>
-																			<stopEvents>0</stopEvents>
-																		</Item>
-																	</applicators>
-																	<applyTarget>ApplicatorTarget</applyTarget>
-																	<behaviorFlags>152</behaviorFlags>
-																	<caption>Программа прыжков</caption>
-																	<effect>
-																		<Item href="" />
-																		<Item href="" />
-																	</effect>
-																	<enabled>
-																		<compiledString></compiledString>
-																		<returnType>bool</returnType>
-																		<sString>true</sString>
-																	</enabled>
-																	<formulaName></formulaName>
-																	<lifeTime>
-																		<compiledString></compiledString>
-																		<returnType>float</returnType>
-																		<sString>-1.0</sString>
-																	</lifeTime>
-																	<LoggingEvent>-1</LoggingEvent>
-																	<providerName></providerName>
-																	<startCondition>
-																		<compiledString>FQwAAAACAAAAEQAAACcAAABBNF9Gcm9nSnVtcABVi+xRaAAAAACLRQiLEItNCIuCiAEAAP/Q3B1JAAAA3+D2xER6CcdF/AEAAADrB8dF/AAAAACKRfyL5V3DAAAAAAAA8D8=</compiledString>
-																		<returnType>bool</returnType>
-																		<sString>sender.vA4_FrogJump == 1</sString>
-																	</startCondition>
-																</ProgramApplicator>
-															</applicator>
-															<continueCondition>
-																<compiledString>FQAAAAAAAAAAVYvsMsBdww==</compiledString>
-																<returnType>bool</returnType>
-																<sString>0</sString>
-															</continueCondition>
-															<continueEvents>1</continueEvents>
-															<delay>
-																<compiledString></compiledString>
-																<returnType>float</returnType>
-																<sString>-1.0</sString>
-															</delay>
-															<stopCondition>
-																<compiledString>FQAAAAAAAAAAVYvsMsBdww==</compiledString>
-																<returnType>bool</returnType>
-																<sString>0</sString>
-															</stopCondition>
-															<stopEvents>0</stopEvents>
-														</Item>
-													</applicators>
-													<applyTarget>AbilityOwner</applyTarget>
-													<behaviorFlags>152</behaviorFlags>
-													<caption>Программа Прыжков</caption>
-													<effect>
-														<Item href="" />
-														<Item href="" />
-													</effect>
-													<enabled>
-														<compiledString></compiledString>
-														<returnType>bool</returnType>
-														<sString>true</sString>
-													</enabled>
-													<formulaName></formulaName>
-													<lifeTime>
-														<compiledString></compiledString>
-														<returnType>float</returnType>
-														<sString>-1.0</sString>
-													</lifeTime>
-													<LoggingEvent>-1</LoggingEvent>
-													<providerName></providerName>
-													<startCondition>
-														<compiledString>FTcAAAAEAAAAPgAAAFcAAACNAAAAqgAAAEZyb2dlbmdsdXRfQTR1AABGcm9nZW5nbHV0X0E0dQAAQTRfRnJvZ0p1bXAASnVtcE51bWJlcgBVi+yD7BRoAAAAAItFCIsQi00Ii4KoAQAA/9CFwHQqaBAAAACLTQiLEYtNCIuCqAEAAP/QiUX8i038ixGLTfyLQgT/0IhF++sExkX7AA+2TfuFyXRFaCAAAACLVQiLAotNCIuQiAEAAP/Si0UMUItNCFFoLAAAAItVEIsCi00Qi1BQ3V3w/9LcXfDf4PbEAXUJx0XsAQAAAOsHx0XsAAAAAIpF7IvlXcM=</compiledString>
-														<returnType>bool</returnType>
-														<sString>tal("Frogenglut_A4u") &amp;&amp; sender.vA4_FrogJump &lt;= cJumpNumber</sString>
-													</startCondition>
-												</ProgramApplicator>
 											</applicator>
 											<continueCondition>
 												<compiledString>FQAAAAAAAAAAVYvsMsBdww==</compiledString>
@@ -852,9 +519,9 @@
 																		<cancelInvisibility>false</cancelInvisibility>
 																		<caption>урон</caption>
 																		<damage>
-																			<compiledString>FVoAAAAIAAAAYQAAAHoAAAC0AAAAygAAAN4AAAD9AAAAFwEAAEIBAABGcm9nZW5nbHV0X0E0dQAARnJvZ2VuZ2x1dF9BNHUAAEE0X0Zyb2dKdW1wAEE0X0RhbWFnZQAAAEE0X0RhbWFnZQAAAEE0dV9EYW1hZ2UAAEE0X0RhbWFnZQBVi+yD7CRoAAAAAItFCIsQi00Ii4KoAQAA/9CFwHQqaBAAAACLTQiLEYtNCIuCqAEAAP/QiUX8i038ixGLTfyLQgT/0IhF++sExkX7AA+2TfuFyQ+EhgAAAGggAAAAi1UIiwKLTQiLkIgBAAD/0twdYwEAAN/g9sREeh+LRQxQi00IUWgsAAAAi1UQiwKLTRCLUFD/0t1d8Os9i0UMUItNCFFoOAAAAItVEIsCi00Qi1BQ/9KLRQxQi00IUWhEAAAAi1UQiwKLTRCLUFDdXej/0tx96N1d8N1F8N1d4Osdi0UMUItNCFFoUAAAAItVEIsCi00Qi1BQ/9LdXeDdReDZXdzZRdyL5V3DAAAAAAAA8D8=</compiledString>
+																			<compiledString>FQoAAAABAAAAFgAAAEE0X0RhbWFnZQBVi+yLRQxQi00IUWgAAAAAi1UQiwKLTRCLUFD/0l3D</compiledString>
 																			<returnType>float</returnType>
-																			<sString>tal("Frogenglut_A4u") ? (sender.vA4_FrogJump == 1 ?  cA4_Damage : cA4_Damage/cA4u_Damage) : cA4_Damage</sString>
+																			<sString>cA4_Damage</sString>
 																		</damage>
 																		<damageMode>0</damageMode>
 																		<damageType>Energy</damageType>
@@ -869,6 +536,125 @@
 																		<timeLimiter>-1</timeLimiter>
 																		<uiEvent href="/UI/Events/CommonEvents/EventDamageDealed_Energy.UIEV" />
 																	</DamageApplicator>
+																</Item>
+																<Item href="/Items/Talents/Class/Frogenglut/Ability4.TALENT" id="662FC896-0902-4609-A7CF-711D1825E2D2">
+																	<StatusApplicator parent="/Heroes/DefaultStatus/_SLOW_MOVE.APLR">
+																		<applicators>
+																			<Item href="/Items/Talents/Class/Frogenglut/Ability4.TALENT" id="C97E3C0D-41A6-4715-BC97-6D1D5F9FEB8A">
+																				<StatModApplicator>
+																					<applyTarget>ApplicatorTarget</applyTarget>
+																					<behaviorFlags>152</behaviorFlags>
+																					<caption> -- Уменьшаем Движение</caption>
+																					<constraint>None</constraint>
+																					<dontUpdate>false</dontUpdate>
+																					<effect>
+																						<Item href="" />
+																						<Item href="" />
+																					</effect>
+																					<enabled>
+																						<compiledString></compiledString>
+																						<returnType>bool</returnType>
+																						<sString>true</sString>
+																					</enabled>
+																					<formulaName></formulaName>
+																					<lifeTime>
+																						<compiledString></compiledString>
+																						<returnType>float</returnType>
+																						<sString>-1.0</sString>
+																					</lifeTime>
+																					<LoggingEvent>-1</LoggingEvent>
+																					<modifier>
+																						<addValue>
+																							<compiledString>FQAAAAAAAAAAVYvs2e5dwwAAAAA=</compiledString>
+																							<returnType>float</returnType>
+																							<sString>0</sString>
+																						</addValue>
+																						<multValue>
+																							<compiledString>FRsAAAACAAAAKAAAADsAAABEZWNNb3ZlU3BlZWRfV2l0aFJlZHVjdGlvbgBVi+xRi0UMUItNCFFoAAAAAItVEIsCi00Qi1BQ/9LcDVUAAADZ6N7h2V382UX8i+VdwwAAAAAAAPA/exSuR+F6hD8=</compiledString>
+																							<returnType>float</returnType>
+																							<sString>1 - cDecMoveSpeed_WithReduction*0.01</sString>
+																						</multValue>
+																						<stat>MoveSpeed</stat>
+																						<topModifier>false</topModifier>
+																						<variable></variable>
+																					</modifier>
+																					<providerName></providerName>
+																					<startCondition>
+																						<compiledString></compiledString>
+																						<returnType>bool</returnType>
+																						<sString>true</sString>
+																					</startCondition>
+																					<statModName>Dec_MoveSpeed</statModName>
+																				</StatModApplicator>
+																			</Item>
+																			<Item href="/Heroes/DefaultStatus/SlowFX.APLR" />
+																			<Item href="/Items/Talents/Class/Frogenglut/Ability4.TALENT" id="05D7D6CC-2525-445D-94F6-F6C2E9B7FBEC">
+																				<UIMessageApplicator>
+																					<applyTarget>ApplicatorTarget</applyTarget>
+																					<caption> - FlyOff Message</caption>
+																					<enabled>
+																						<compiledString></compiledString>
+																						<returnType>bool</returnType>
+																						<sString>true</sString>
+																					</enabled>
+																					<formulaName></formulaName>
+																					<LoggingEvent>-1</LoggingEvent>
+																					<message textref="/Items/Talents/Class/Frogenglut/Ability4.TALENT_05d7d6cc2525445d94f6f6c2e9b7fbec_message.txt" />
+																					<providerName></providerName>
+																					<uiEvent href="" />
+																					<value>
+																						<compiledString></compiledString>
+																						<returnType>float</returnType>
+																						<sString>-1.0</sString>
+																					</value>
+																				</UIMessageApplicator>
+																			</Item>
+																		</applicators>
+																		<applyTarget>ApplicatorTarget</applyTarget>
+																		<behaviorFlags>144</behaviorFlags>
+																		<caption>- Стандарт.статус "Замедление" (Dec_MoveSpeed, Slow_Duration)</caption>
+																		<customCounter>
+																			<compiledString></compiledString>
+																			<returnType>int</returnType>
+																			<sString>0</sString>
+																		</customCounter>
+																		<customProgress>
+																			<compiledString></compiledString>
+																			<returnType>float</returnType>
+																			<sString>-1.0</sString>
+																		</customProgress>
+																		<dispellPriority>Medium</dispellPriority>
+																		<effect>
+																			<Item href="" />
+																			<Item href="" />
+																		</effect>
+																		<enabled>
+																			<compiledString>FT8AAAAGAAAARgAAAFwAAABoAAAAfgAAAIoAAACjAAAASW1tdW5lMkNvbnRyb2wAAEFsbG93Q29udHJvbAAAAABGcm9nZW5nbHV0X0E0dQAARnJvZ2VuZ2x1dF9BNHUAVYvsg+wMaAAAAACLRQyLEItNDIuCiAEAAP/Q3B33AAAA3+D2xER7ImgQAAAAi00MixGLTQyLgogBAAD/0Nwd7wAAAN/g9sREelhoIAAAAItNCIsRi00Ii4KoAQAA/9CFwHQqaDAAAACLTQiLEYtNCIuCqAEAAP/QiUX8i038ixGLTfyLQgT/0IhF++sExkX7AA+2TfuFyXQJx0X0AQAAAOsHx0X0AAAAAIpF9IvlXcMAAAAAAADwPwAAAAAAAAAA</compiledString>
+																			<returnType>bool</returnType>
+																			<sString>(receiver.vImmune2Control == 0 || receiver.vAllowControl == 1) &amp;&amp; tal("Frogenglut_A4u")</sString>
+																		</enabled>
+																		<flags>8</flags>
+																		<formulaName>StandartStatus_Slow</formulaName>
+																		<image href="/UI/Styles/Icons/Statuses/Standard/Slow.ITEX" />
+																		<lifeTime>
+																			<compiledString>FQ4AAAABAAAAGgAAAFNsb3dfRHVyYXRpb24AVYvsi0UMUItNCFFoAAAAAItVEIsCi00Qi1BQ/9Jdww==</compiledString>
+																			<returnType>float</returnType>
+																			<sString>cSlow_Duration</sString>
+																		</lifeTime>
+																		<LoggingEvent>-1</LoggingEvent>
+																		<power>9</power>
+																		<providerName></providerName>
+																		<stackableAcrossUnits>Unstackable</stackableAcrossUnits>
+																		<stackCount>0</stackCount>
+																		<startCondition>
+																			<compiledString>FRkAAAAEAAAAJgAAADkAAABtAAAAkQAAAFNsb3dfU3RhcnRDb25kaXRpb24AV2FyZABVi+xRi0UMUItNCFFoAAAAAItVEIsCi00Qi1BQ/9LcHckAAADf4PbERHtvUdno2RwkUdnu2RwkagGLRQyLEItNDItCWP/QD7bIUehpAAAAg8QM3B3JAAAA3+D2xER7O4tVDIsCi00Mi1BQ/9KD+BF0KWoAi0UQUGgUAAAAi00MixGLTQyLgpwBAAD/0DtFEHUJx0X8AQAAAOsHx0X8AAAAAIpF/IvlXcMAAAAAAACAPwAAAAAAAAAAVYvsUQ+2RQiFwHQI2UUM2V386wbZRRDZXfzZRfyL5V3D</compiledString>
+																			<returnType>bool</returnType>
+																			<sString>cSlow_StartCondition &amp;&amp; ut_bldg( false, true ) &amp;&amp; rUnitKind != 17 &amp;&amp; receiver.applWard(GLOBAL) == pMisc</sString>
+																		</startCondition>
+																		<statusPosition>0</statusPosition>
+																		<stopBehaviour>StopByTime</stopBehaviour>
+																		<unstackableWith href="/Heroes/DefaultStatus/List_SlowUnstacked.APLS" />
+																	</StatusApplicator>
 																</Item>
 															</applicators>
 															<dispatch href="/Items/Talents/Class/Frogenglut/Ability4.TALENT" id="AAF0E19C-7942-42BA-B01E-5721D76983D5">
@@ -1072,6 +858,55 @@
 											</stopCondition>
 											<stopEvents>0</stopEvents>
 										</Item>
+										<Item>
+											<applicator href="/Items/Talents/Class/Frogenglut/Ability4.TALENT" id="101F66B0-A86F-4FA7-91C6-03152A82C2F7">
+												<PermanentStatModApplicator>
+													<applyTarget>AbilityOwner</applyTarget>
+													<caption>Отбираем стек</caption>
+													<customApplyType>None</customApplyType>
+													<enabled>
+														<compiledString></compiledString>
+														<returnType>bool</returnType>
+														<sString>true</sString>
+													</enabled>
+													<formulaName></formulaName>
+													<LoggingEvent>-1</LoggingEvent>
+													<modifier>
+														<addValue>
+															<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAACAvw==</compiledString>
+															<returnType>float</returnType>
+															<sString>-1</sString>
+														</addValue>
+														<multValue>
+															<compiledString></compiledString>
+															<returnType>float</returnType>
+															<sString>1.0f</sString>
+														</multValue>
+														<stat>Life</stat>
+														<topModifier>false</topModifier>
+														<variable>JumpCharges</variable>
+													</modifier>
+													<providerName></providerName>
+												</PermanentStatModApplicator>
+											</applicator>
+											<continueCondition>
+												<compiledString></compiledString>
+												<returnType>bool</returnType>
+												<sString>0</sString>
+											</continueCondition>
+											<continueEvents>2</continueEvents>
+											<delay>
+												<compiledString></compiledString>
+												<returnType>float</returnType>
+												<sString>-1.0</sString>
+											</delay>
+											<stopCondition>
+												<compiledString></compiledString>
+												<returnType>bool</returnType>
+												<sString>0</sString>
+											</stopCondition>
+											<stopEvents>0</stopEvents>
+										</Item>
 									</applicators>
 									<applyTarget>AbilityOwner</applyTarget>
 									<behaviorFlags>154</behaviorFlags>
@@ -1152,7 +987,34 @@
 		<returnType>float</returnType>
 		<sString>0.0f</sString>
 	</castAllowRange>
-	<castLimitations />
+	<castLimitations>
+		<Item href="/Items/Talents/Class/Frogenglut/Ability4.TALENT" id="29706767-C90C-4E5C-9E9D-7A7B120D960E">
+			<ConditionCastLimitation>
+				<condition>
+					<compiledString>FQwAAAACAAAAEQAAACcAAABKdW1wQ2hhcmdlcwBVi+xRaAAAAACLRQiLEItNCIuCiAEAAP/Q3B1JAAAA3+D2xAF1CcdF/AEAAADrB8dF/AAAAACKRfyL5V3DAAAAAAAA8D8=</compiledString>
+					<returnType>bool</returnType>
+					<sString>sender.vJumpCharges&gt;=1</sString>
+				</condition>
+				<uiEvent href="/Items/Talents/Class/Frogenglut/Ability4.TALENT" id="3913113C-C736-44A6-B180-CEB3E8A3C71D">
+					<UIEvent>
+						<signRecipients>ALL_PLAYERS</signRecipients>
+						<UISigns>
+							<Item href="/Items/Talents/Class/Frogenglut/Ability4.TALENT" id="7F622C1B-650F-4E30-8F13-37D2EDEF5401">
+								<UISignMessageToStatusLine>
+									<messages>
+										<Item textref="/Items/Talents/Class/Frogenglut/Ability4.TALENT_7f622c1b650f4e308f1337d2edef5401_messages_0.txt" />
+										<Item textref="" />
+										<Item textref="" />
+									</messages>
+									<signRecipients>USE_FROM_PARENT</signRecipients>
+								</UISignMessageToStatusLine>
+							</Item>
+						</UISigns>
+					</UIEvent>
+				</uiEvent>
+			</ConditionCastLimitation>
+		</Item>
+	</castLimitations>
 	<commonDescription textref="/Items/Talents/Class/Frogenglut/Ability4.TALENT_commonDescription.txt" />
 	<compiledDescriptionA textref="" />
 	<compiledDescriptionB textref="" />
@@ -1179,9 +1041,9 @@
 					<UnitConstant>
 						<name>A4_Damage</name>
 						<var>
-							<compiledString>FQAAAAACAAAACAAAABIAAABVi+xqAVHZBUEAAADZHCRR2QU9AAAA2RwkagGLRQiLEItNCItCDP/QUdkcJGoBi00QixGLTRCLQmD/0F3DAACMQgBAA0Q=</compiledString>
+							<compiledString>FQAAAAACAAAACAAAABIAAABVi+xqAVHZBUEAAADZHCRR2QU9AAAA2RwkagGLRQiLEItNCItCDP/QUdkcJGoBi00QixGLTRCLQmD/0F3DAABgQgAA0kM=</compiledString>
 							<returnType>float</returnType>
-							<sString>damageScaleCustomLife(sMaxLife,70, 525)</sString>
+							<sString>damageScaleCustomLife(sMaxLife,56, 420)</sString>
 						</var>
 					</UnitConstant>
 				</Item>
@@ -1250,6 +1112,56 @@
 						</var>
 					</UnitConstant>
 				</Item>
+				<Item href="/Items/Talents/Class/Frogenglut/Ability4.TALENT" id="87248C0B-5675-4E66-BF31-8FBFE3E6BEEF">
+					<UnitConstant>
+						<name>MaxJumpCharges</name>
+						<var>
+							<compiledString>FR8AAAACAAAAJgAAAD8AAABGcm9nZW5nbHV0X0E0dQAARnJvZ2VuZ2x1dF9BNHUAVYvsg+wMaAAAAACLRQiLEItNCIuCqAEAAP/QhcB0KmgQAAAAi00IixGLTQiLgqgBAAD/0IlF/ItN/IsRi038i0IE/9CIRfvrBMZF+wAPtk3799kbyffZg8ECiU3020X0i+Vdww==</compiledString>
+							<returnType>float</returnType>
+							<sString>tal("Frogenglut_A4u") ? 3 :2</sString>
+						</var>
+					</UnitConstant>
+				</Item>
+				<Item href="/Items/Talents/Class/Frogenglut/Ability4.TALENT" id="8BC52B6F-2E20-4E24-9186-ED3F34B71A55">
+					<UnitConstant>
+						<name>JumpCharges</name>
+						<var>
+							<compiledString>FQwAAAABAAAAEAAAAEp1bXBDaGFyZ2VzAFWL7GgAAAAAi0UIixCLTQiLgogBAAD/0F3D</compiledString>
+							<returnType>float</returnType>
+							<sString>sender.vJumpCharges</sString>
+						</var>
+					</UnitConstant>
+				</Item>
+				<Item href="/Items/Talents/Class/Frogenglut/Ability4.TALENT" id="7DAB4524-529B-40F5-8055-24F0D70D4482">
+					<UnitConstant>
+						<name>A4_StackCooldown</name>
+						<var>
+							<compiledString>FWwAAAAJAAAAcwAAAIkAAACTAAAAmAAAALEAAAC9AAAA1gAAAOIAAAD7AAAAVG90YWxfQ29vbGRvd25SZWR1Y3Rpb24AR2x5cGhSZWZyZXNoZXJfQ0RSX0Ftb3VudAAAAFNpZ25PZkNvcHlfQ0RSX0Ftb3VudAAAAFRvdGFsX0Nvb2xkb3duVWx0aW1hdGVSZWR1Y3Rpb24AVYvsg+wcaAAAAACLRQiLEItNCIuCiAEAAP/Q3DUgAQAA2eje4dwNEAEAAGgYAAAAi00IixGLTQiLgogBAADdXfj/0Nw1IAEAANno3uHcTfhoNAAAAItNCIsRi00Ii4KIAQAA3V3w/9DcNSABAADZ6N7h3E3waEwAAACLTQiLEYtNCIuCiAEAAN1d6P/Q3DUgAQAA2eje4dxN6Nld5NlF5IvlXcMAAAAAAAA+QAAAAAAAAPA/AAAAAAAAWUA=</compiledString>
+							<returnType>float</returnType>
+							<sString>30 * (1 - sender.vTotal_CooldownReduction/100) * (1 - sender.vGlyphRefresher_CDR_Amount/100) * (1 - sender.vSignOfCopy_CDR_Amount/100) * (1 - sender.vTotal_CooldownUltimateReduction/100)</sString>
+						</var>
+					</UnitConstant>
+				</Item>
+				<Item href="/Items/Talents/Class/Frogenglut/Ability4.TALENT" id="F5D872D7-B4EF-4F5D-8D07-C01E24B9EBB9">
+					<UnitConstant>
+						<name>DecMoveSpeed_WithReduction</name>
+						<var>
+							<compiledString>FQAAAAACAAAACAAAABIAAABVi+xqAVHZBUQAAADZHCRR2QVAAAAA2RwkagCLRQiLEItNCIuCMAEAAP/QUdkcJGoBi00QixGLTRCLQmD/0F3DAABAQQAAcEI=</compiledString>
+							<returnType>float</returnType>
+							<sString>damageScale( sStrength, 12 , 60)</sString>
+						</var>
+					</UnitConstant>
+				</Item>
+				<Item href="/Items/Talents/Class/Frogenglut/Ability4.TALENT" id="5686B641-5382-4E50-BE6B-416737C2BE8B">
+					<UnitConstant>
+						<name>Slow_Duration</name>
+						<var>
+							<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAAAAQA==</compiledString>
+							<returnType>float</returnType>
+							<sString>2</sString>
+						</var>
+					</UnitConstant>
+				</Item>
 			</vars>
 		</UnitConstantsContainer>
 	</constants>
@@ -1258,9 +1170,9 @@
 		<percent>0</percent>
 	</consumptionBonus>
 	<cooldownTime>
-		<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAADIQg==</compiledString>
+		<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAAAAPw==</compiledString>
 		<returnType>float</returnType>
-		<sString>100</sString>
+		<sString>0.5</sString>
 	</cooldownTime>
 	<cooldownTimeSecondState>
 		<compiledString></compiledString>
@@ -1297,9 +1209,9 @@
 	<isUltimateTalent>true</isUltimateTalent>
 	<isUnitFreeAfterCast>false</isUnitFreeAfterCast>
 	<manaCost>
-		<compiledString>FVIAAAAKAAAAWQAAAG8AAACDAAAAnQAAALMAAADHAAAA3gAAAPQAAAAIAQAAJwEAAEE0X0Zyb2dKdW1wAEZpcnN0Q29zdAAAAEE0X0Zyb2dKdW1wAFNlY29uZENvc3QAAEE0X0Zyb2dKdW1wAFRoaXJkQ29zdAAAAFRoaXJkQ29zdABVi+yD7AxoAAAAAItFCIsQi00Ii4KIAQAA/9DcHV4BAADf4PbERHoii00MUYtVCFJoDAAAAItFEIsQi00Qi0JQ/9DZXfzpqwAAAGgYAAAAi00IixGLTQiLgogBAAD/0NwdVgEAAN/g9sREeh+LTQxRi1UIUmgkAAAAi0UQixCLTRCLQlD/0Nld+OtkaDAAAACLTQiLEYtNCIuCiAEAAP/Q3B1OAQAA3+D2xER6H4tNDFGLVQhSaDwAAACLRRCLEItNEItCUP/Q2V306x2LTQxRi1UIUmhIAAAAi0UQixCLTRCLQlD/0Nld9NlF9Nld+NlF+Nld/NlF/IvlXcMAAAAAAAAAQAAAAAAAAPA/AAAAAAAAAAA=</compiledString>
+		<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAADIQg==</compiledString>
 		<returnType>float</returnType>
-		<sString>sender.vA4_FrogJump == 0 ? cFirstCost : ( sender.vA4_FrogJump == 1 ? cSecondCost : ( sender.vA4_FrogJump == 2 ? cThirdCost : cThirdCost))</sString>
+		<sString>100</sString>
 	</manaCost>
 	<marker></marker>
 	<microAI href="/Items/Talents/Class/Frogenglut/Ability4.TALENT" id="50D27522-F412-42E0-A892-9E43E6DF7A2E">
@@ -1344,13 +1256,240 @@
 	<name textref="/Items/Talents/Class/Frogenglut/Ability4.TALENT_name.txt" />
 	<node></node>
 	<passiveApplicators>
-		<Item href="/Items/Talents/Class/Frogenglut/Ability4.TALENT" id="F16709F3-13AD-42E0-86D8-39DD2C0FD9F2">
-			<FlagsApplicator parent="/GameLogic/GeneralApplicators/ForbidTalentByCondition.APLR">
+		<Item href="/Items/Talents/Class/Frogenglut/Ability4.TALENT" id="28773E0B-EE77-4C3A-A4E4-5066CC569015">
+			<PermanentStatModApplicator>
+				<applyTarget>ApplicatorTarget</applyTarget>
+				<caption></caption>
+				<customApplyType>None</customApplyType>
+				<enabled>
+					<compiledString></compiledString>
+					<returnType>bool</returnType>
+					<sString>true</sString>
+				</enabled>
+				<formulaName></formulaName>
+				<LoggingEvent>-1</LoggingEvent>
+				<modifier>
+					<addValue>
+						<compiledString>FQ8AAAABAAAAGwAAAE1heEp1bXBDaGFyZ2VzAFWL7ItFDFCLTQhRaAAAAACLVRCLAotNEItQUP/SXcM=</compiledString>
+						<returnType>float</returnType>
+						<sString>cMaxJumpCharges</sString>
+					</addValue>
+					<multValue>
+						<compiledString></compiledString>
+						<returnType>float</returnType>
+						<sString>1.0f</sString>
+					</multValue>
+					<stat>Life</stat>
+					<topModifier>false</topModifier>
+					<variable>JumpCharges</variable>
+				</modifier>
+				<providerName></providerName>
+			</PermanentStatModApplicator>
+		</Item>
+		<Item href="/Items/Talents/Class/Frogenglut/Ability4.TALENT" id="5CD5CEDE-E1F2-4C12-B28A-552414FCC892">
+			<SpellPeriodicallyApplicator>
+				<applyTarget>ApplicatorTarget</applyTarget>
+				<behaviorFlags>216</behaviorFlags>
+				<caption>Перенакладываем программу набирания стеков, если её нет, а стеки нужны</caption>
+				<effect>
+					<Item href="" />
+					<Item href="" />
+				</effect>
+				<enabled>
+					<compiledString>FZ4AAAAJAAAApQAAAL4AAAD0AAAAFAEAADABAABJAQAAfwEAAJ8BAADQAQAARnJvZ2VuZ2x1dF9BNAAAAEZyb2dlbmdsdXRfQTQAAABGcm9nZW5nbHV0X0E0AAAASnVtcENoYXJnZXMARnJvZ2VuZ2x1dF9BNAAAAEZyb2dlbmdsdXRfQTQAAABGcm9nZW5nbHV0X0E0AAAATWF4SnVtcENoYXJnZXMAAEZyb2dlbmdsdXRfQTRTdGFja0Nvb2xkb3duUHJvZ3JhbQBVi+yD7CRoAAAAAItFCIsQi00Ii4KoAQAA/9CFwHQqaBAAAACLTQiLEYtNCIuCqAEAAP/QiUX8i038ixGLTfyLQgT/0IhF++sExkX7AA+2TfuFyXQ3aCAAAACLVQiLAotNCIuQqAEAAP/SiUX0i0UMUItNCFFoMAAAAItV9IsCi030i1BQ/9LZXfDrBdnu2V3waDwAAACLRQiLEItNCIuCqAEAAP/QhcB0KmhMAAAAi00IixGLTQiLgqgBAAD/0IlF7ItN7IsRi03si0IE/9CIRevrBMZF6wAPtk3rhcl0N2hcAAAAi1UIiwKLTQiLkKgBAAD/0olF5ItFDFCLTQhRaGwAAACLVeSLAotN5ItQUP/S2V3g6wXZ7tld4NlF8NlF4N7Z3+D2xEF1KWoBi0UQUGh8AAAAi00IixGLTQiLgpwBAAD/0DtFEHUJx0XcAQAAAOsHx0XcAAAAAIpF3IvlXcMAAAAA</compiledString>
+					<returnType>bool</returnType>
+					<sString>talconst("Frogenglut_A4","JumpCharges") &lt; talconst("Frogenglut_A4","MaxJumpCharges") &amp;&amp; sender.applFrogenglut_A4StackCooldownProgram(UNIT) == pMisc</sString>
+				</enabled>
+				<formulaName></formulaName>
+				<lifeTime>
+					<compiledString></compiledString>
+					<returnType>float</returnType>
+					<sString>-1.0</sString>
+				</lifeTime>
+				<LoggingEvent>-1</LoggingEvent>
+				<period>
+					<compiledString>FQAAAAAAAAAAVYvs2e5dwwAAAAA=</compiledString>
+					<returnType>float</returnType>
+					<sString>0</sString>
+				</period>
+				<providerName></providerName>
+				<scaleMode>ScaleIsTime</scaleMode>
+				<spell href="/Items/Talents/Class/Frogenglut/Ability4.TALENT" id="EDEAFE4A-015B-4F58-9228-FA6429F2FAEB">
+					<Spell>
+						<applicators>
+							<Item href="/Items/Talents/Class/Frogenglut/Ability4.TALENT" id="67B71400-DDA4-420F-9770-BD508E09A5ED">
+								<ProgramApplicator>
+									<applicators>
+										<Item>
+											<applicator href="/Items/Talents/Class/Frogenglut/status_A4_StackCountCooldown.APLR" />
+											<continueCondition>
+												<compiledString>FQAAAAAAAAAAVYvsMsBdww==</compiledString>
+												<returnType>bool</returnType>
+												<sString>0</sString>
+											</continueCondition>
+											<continueEvents>2</continueEvents>
+											<delay>
+												<compiledString></compiledString>
+												<returnType>float</returnType>
+												<sString>-1.0</sString>
+											</delay>
+											<stopCondition>
+												<compiledString>FQAAAAAAAAAAVYvsMsBdww==</compiledString>
+												<returnType>bool</returnType>
+												<sString>0</sString>
+											</stopCondition>
+											<stopEvents>0</stopEvents>
+										</Item>
+										<Item>
+											<applicator href="/Items/Talents/Class/Frogenglut/Ability4.TALENT" id="93F898CA-E9BA-42C6-A251-4DD5FD9BC237">
+												<PermanentStatModApplicator>
+													<applyTarget>ApplicatorTarget</applyTarget>
+													<caption>Добавляем стек, если можно</caption>
+													<customApplyType>None</customApplyType>
+													<enabled>
+														<compiledString>FXsAAAAIAAAAggAAAJsAAADRAAAA8QAAAA0BAAAmAQAAXAEAAHwBAABGcm9nZW5nbHV0X0E0AAAARnJvZ2VuZ2x1dF9BNAAAAEZyb2dlbmdsdXRfQTQAAABKdW1wQ2hhcmdlcwBGcm9nZW5nbHV0X0E0AAAARnJvZ2VuZ2x1dF9BNAAAAEZyb2dlbmdsdXRfQTQAAABNYXhKdW1wQ2hhcmdlcwBVi+yD7CRoAAAAAItFCIsQi00Ii4KoAQAA/9CFwHQqaBAAAACLTQiLEYtNCIuCqAEAAP/QiUX8i038ixGLTfyLQgT/0IhF++sExkX7AA+2TfuFyXQ3aCAAAACLVQiLAotNCIuQqAEAAP/SiUX0i0UMUItNCFFoMAAAAItV9IsCi030i1BQ/9LZXfDrBdnu2V3waDwAAACLRQiLEItNCIuCqAEAAP/QhcB0KmhMAAAAi00IixGLTQiLgqgBAAD/0IlF7ItN7IsRi03si0IE/9CIRevrBMZF6wAPtk3rhcl0N2hcAAAAi1UIiwKLTQiLkKgBAAD/0olF5ItFDFCLTQhRaGwAAACLVeSLAotN5ItQUP/S2V3g6wXZ7tld4NlF8NlF4N7Z3+D2xEF1CcdF3AEAAADrB8dF3AAAAACKRdyL5V3DAAAAAA==</compiledString>
+														<returnType>bool</returnType>
+														<sString>talconst("Frogenglut_A4","JumpCharges") &lt; talconst("Frogenglut_A4","MaxJumpCharges") </sString>
+													</enabled>
+													<formulaName></formulaName>
+													<LoggingEvent>-1</LoggingEvent>
+													<modifier>
+														<addValue>
+															<compiledString>FQAAAAAAAAAAVYvs2ehdwwAAgD8=</compiledString>
+															<returnType>float</returnType>
+															<sString>1</sString>
+														</addValue>
+														<multValue>
+															<compiledString></compiledString>
+															<returnType>float</returnType>
+															<sString>1.0f</sString>
+														</multValue>
+														<stat>Life</stat>
+														<topModifier>false</topModifier>
+														<variable>JumpCharges</variable>
+													</modifier>
+													<providerName></providerName>
+												</PermanentStatModApplicator>
+											</applicator>
+											<continueCondition>
+												<compiledString>FQAAAAAAAAAAVYvsMsBdww==</compiledString>
+												<returnType>bool</returnType>
+												<sString>0</sString>
+											</continueCondition>
+											<continueEvents>2</continueEvents>
+											<delay>
+												<compiledString></compiledString>
+												<returnType>float</returnType>
+												<sString>-1.0</sString>
+											</delay>
+											<stopCondition>
+												<compiledString>FQAAAAAAAAAAVYvsMsBdww==</compiledString>
+												<returnType>bool</returnType>
+												<sString>0</sString>
+											</stopCondition>
+											<stopEvents>0</stopEvents>
+										</Item>
+									</applicators>
+									<applyTarget>ApplicatorTarget</applyTarget>
+									<behaviorFlags>219</behaviorFlags>
+									<caption>Программа набирания стеков</caption>
+									<effect>
+										<Item href="" />
+										<Item href="" />
+									</effect>
+									<enabled>
+										<compiledString>FRsAAAACAAAAIgAAAD8AAABKdW1wQ2hhcmdlcwBNYXhKdW1wQ2hhcmdlcwBVi+yD7AxoAAAAAItFCIsQi00Ii4KIAQAA/9CLTQxRi1UIUmgMAAAAi0UQixCLTRCLQlDdXfj/0Nxd+N/g9sRBdQnHRfQBAAAA6wfHRfQAAAAAikX0i+Vdww==</compiledString>
+										<returnType>bool</returnType>
+										<sString>sender.vJumpCharges &lt; cMaxJumpCharges </sString>
+									</enabled>
+									<formulaName>Frogenglut_A4StackCooldownProgram</formulaName>
+									<lifeTime>
+										<compiledString></compiledString>
+										<returnType>float</returnType>
+										<sString>-1.0</sString>
+									</lifeTime>
+									<LoggingEvent>-1</LoggingEvent>
+									<providerName></providerName>
+									<startCondition>
+										<compiledString>FRsAAAACAAAAIgAAAD8AAABKdW1wQ2hhcmdlcwBNYXhKdW1wQ2hhcmdlcwBVi+yD7AxoAAAAAItFCIsQi00Ii4KIAQAA/9CLTQxRi1UIUmgMAAAAi0UQixCLTRCLQlDdXfj/0Nxd+N/g9sRBdQnHRfQBAAAA6wfHRfQAAAAAikX0i+Vdww==</compiledString>
+										<returnType>bool</returnType>
+										<sString>sender.vJumpCharges &lt; cMaxJumpCharges </sString>
+									</startCondition>
+								</ProgramApplicator>
+							</Item>
+						</applicators>
+						<dispatch href="/Items/Talents/Class/Frogenglut/Ability4.TALENT" id="A0AFDD86-45F7-4076-A815-3F4AA4E9BBCA">
+							<DispatchImmediate>
+								<alwaysApply>false</alwaysApply>
+								<applyEffect>
+									<Item href="" />
+									<Item href="" />
+								</applyEffect>
+								<applyEffectIgnoreVisibility>false</applyEffectIgnoreVisibility>
+								<applyEffectOrientation>Default</applyEffectOrientation>
+								<applyEffectRandomAnglePoints>0</applyEffectRandomAnglePoints>
+								<dieAfterApply>true</dieAfterApply>
+								<dispatchEffect>
+									<Item href="" />
+									<Item href="" />
+								</dispatchEffect>
+								<flags>0</flags>
+								<instantApply>false</instantApply>
+							</DispatchImmediate>
+						</dispatch>
+					</Spell>
+				</spell>
+				<startCondition>
+					<compiledString>FQAAAAAAAAAAVYvssAFdww==</compiledString>
+					<returnType>bool</returnType>
+					<sString>true</sString>
+				</startCondition>
+				<startOffset>
+					<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DzczMPQ==</compiledString>
+					<returnType>float</returnType>
+					<sString>0.1</sString>
+				</startOffset>
+				<targetSelector href="" />
+			</SpellPeriodicallyApplicator>
+		</Item>
+		<Item href="/Items/Talents/Class/Frogenglut/status_A4_ZeroStacks.APLR" />
+		<Item href="/Items/Talents/Class/Frogenglut/status_A4_StackCount.APLR" />
+		<Item href="/Items/Talents/Class/Frogenglut/Ability4.TALENT" id="E96F32D0-712C-48C5-835E-B4E3F64F0D04">
+			<FlagsApplicator>
+				<applyTarget>ApplicatorTarget</applyTarget>
+				<behaviorFlags>0</behaviorFlags>
+				<caption>автозапрет таланта при ForbidMoveSpeical</caption>
+				<consumables />
+				<effect>
+					<Item href="" />
+					<Item href="" />
+				</effect>
+				<enabled>
+					<compiledString>FQwAAAACAAAAKgAAAEAAAABKdW1wQ2hhcmdlcwBVi+xRaAAAAgCLRQyLEItNDItCaP/QD7bIhcl1K2gAAAAAi1UIiwKLTQiLkIgBAAD/0twdYgAAAN/g9sQFewnHRfwAAAAA6wfHRfwBAAAAikX8i+VdwwAAAAAAAPA/</compiledString>
+					<returnType>bool</returnType>
+					<sString>rFlag(131072) || sender.vJumpCharges&lt;1</sString>
+				</enabled>
+				<flag>1024</flag>
+				<formulaName></formulaName>
+				<lifeTime>
+					<compiledString></compiledString>
+					<returnType>float</returnType>
+					<sString>-1.0</sString>
+				</lifeTime>
+				<LoggingEvent>-1</LoggingEvent>
+				<providerName></providerName>
+				<startCondition>
+					<compiledString></compiledString>
+					<returnType>bool</returnType>
+					<sString>true</sString>
+				</startCondition>
 				<talents>
 					<Item href="/Items/Talents/Class/Frogenglut/Ability4.TALENT" />
 				</talents>
+				<useListAs>ListAsRule</useListAs>
 			</FlagsApplicator>
 		</Item>
+		<Item href="" />
 	</passiveApplicators>
 	<persistentId>Frogenglut_A4</persistentId>
 	<prerequisiteTalents />

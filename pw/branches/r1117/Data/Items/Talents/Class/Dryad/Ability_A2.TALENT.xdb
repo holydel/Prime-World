@@ -625,6 +625,16 @@
 				<Item href="/Items/Talents/Class/Dryad/const_A0_Count" />
 				<Item href="/Items/Talents/Class/Dryad/const_A2_SUP_DmgPercent" />
 				<Item href="/Items/Talents/Class/Dryad/const_A0_HealAmount" />
+				<Item href="/Items/Talents/Class/Dryad/Ability_A2.TALENT" id="30F84F9B-5321-470F-B89A-4C4AC05BD45C">
+					<UnitConstant>
+						<name>A2_Damage</name>
+						<var>
+							<compiledString>FR0AAAAGAAAAJAAAAD0AAAB3AAAAgQAAALcAAADBAAAARHJ5YWRfQTJfU1VQAAAAAERyeWFkX0EyX1NVUABVi+yD7AxoAAAAAItFCIsQi00Ii4KoAQAA/9CFwHQqaBAAAACLTQiLEYtNCIuCqAEAAP/QiUX8i038ixGLTfyLQgT/0IhF++sExkX7AA+2TfuFyXRAagFR2QUDAQAA2RwkUdkF/wAAANkcJGoAi1UIiwKLTQiLkDQBAAD/0lHZHCRqAYtFEIsQi00Qi0Jg/9DZXfTrPmoBUdkF+wAAANkcJFHZBfcAAADZHCRqAItNCIsRi00Ii4I0AQAA/9BR2RwkagGLTRCLEYtNEItCYP/Q2V302UX0i+VdwwAAAEEAAHxCZmYmQQAApEI=</compiledString>
+							<returnType>float</returnType>
+							<sString>tal("Dryad_A2_SUP")? damageScale( sIntellect, 10.4, 82 ) : damageScale( sIntellect, 8, 63 )</sString>
+						</var>
+					</UnitConstant>
+				</Item>
 			</vars>
 		</UnitConstantsContainer>
 	</constants>
@@ -663,7 +673,7 @@
 			<instantApply>true</instantApply>
 		</DispatchImmediate>
 	</dispatch>
-	<flags>33031</flags>
+	<flags>32775</flags>
 	<forceBonus>0</forceBonus>
 	<image href="/UI/Styles/Icons/Heroes/Dryad/A2.ITEX" />
 	<imageSecondState href="" />

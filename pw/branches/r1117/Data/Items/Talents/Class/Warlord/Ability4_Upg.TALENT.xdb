@@ -2,7 +2,7 @@
 <Talent>
 	<BackLink DBID="/Social.ROOT" Count="1" />
 	<BackLink DBID="/SocialTest.ROOT" Count="1" />
-	<BackLink DBID="/Items/Talents/Warlord.TALENTSET" Count="1" />
+	<BackLink DBID="/Items/Talents/Warlord.TALENTSET" Count="2" />
 	<BackLink DBID="/Items/Talents/Class/Warlord/Ability4_2.TALENT" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/Warlord/Ability4_2u.TALENT" Count="1" />
 	<BackLink DBID="/Test/Talents/Warlord/Duel.TALENTSET" Count="1" />

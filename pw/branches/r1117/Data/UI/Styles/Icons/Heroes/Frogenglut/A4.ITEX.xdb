@@ -3,6 +3,8 @@
 	<BackLink DBID="/Items/Talents/Class/Frogenglut/Ability4.TALENT" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/Frogenglut/Ability4_Upg.TALENT" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/Frogenglut/status_A4u_AddJump.APLR" Count="1" />
+	<BackLink DBID="/Items/Talents/Class/Frogenglut/status_A4_StackCount.APLR" Count="1" />
+	<BackLink DBID="/Items/Talents/Class/Frogenglut/status_A4_ZeroStacks.APLR" Count="1" />
 	<generatedFileName></generatedFileName>
 	<importOnlyShape>false</importOnlyShape>
 	<mipLevels>0</mipLevels>

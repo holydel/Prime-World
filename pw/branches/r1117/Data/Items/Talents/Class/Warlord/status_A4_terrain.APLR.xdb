@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StatusApplicator>
-	<BackLink DBID="/Items/Talents/Class/Warlord/Ability4.TALENT" Count="1" />
+	<BackLink DBID="/Items/Talents/Class/Warlord/Ability4.TALENT" Count="3" />
 	<applicators>
 		<Item href="/Items/Talents/Class/Warlord/status_A4_terrain.APLR" id="A8AA99AF-3D0C-4847-88E4-9995304E1601">
 			<StatModApplicator>
@@ -70,9 +70,9 @@
 		<Item href="" />
 	</effect>
 	<enabled>
-		<compiledString>FQcAAAACAAAAHwAAAEEAAABUYXJnZXQAVYvsg+wQVotFEIsQi00Qi0JI/9CJRfxoAAAAAItN/IsRi038i0JM/9CJRfiLTfiLEYtN+IsC/9DcHZcAAADf4PbEQXU8i00QixGLTRCLQkj/0IlF9ItN9IsRi030i0Io/9CL8ItNCIsRi00Ii4KQAQAA/9A78HUJx0XwAQAAAOsHx0XwAAAAAIpF8F6L5V3DAAAAAAAAAAA=</compiledString>
+		<compiledString>FQAAAAAAAAAAVYvssAFdww==</compiledString>
 		<returnType>bool</returnType>
-		<sString>mObjectParent-&gt;GetObject("Target")-&gt;GetLife() &gt; 0 &amp;&amp; mObjectParent-&gt;GetTerrainType() == sFctn</sString>
+		<sString>true</sString>
 	</enabled>
 	<flags>0</flags>
 	<formulaName></formulaName>
@@ -89,9 +89,9 @@
 	<stackableAcrossUnits>Unstackable</stackableAcrossUnits>
 	<stackCount>0</stackCount>
 	<startCondition>
-		<compiledString></compiledString>
+		<compiledString>FQAAAAAAAAAAVYvsVotFCIsQi00Ii0JM/9CL8ItNCIsRi00Ii4KQAQAA/9AzyTvwD5TBisFeXcM=</compiledString>
 		<returnType>bool</returnType>
-		<sString>true</sString>
+		<sString> sTerrainType == sFctn</sString>
 	</startCondition>
 	<statusPosition>0</statusPosition>
 	<stopBehaviour>StopByTime</stopBehaviour>

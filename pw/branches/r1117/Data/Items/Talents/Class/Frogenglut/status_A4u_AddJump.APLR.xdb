@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StatusApplicator>
-	<BackLink DBID="/Items/Talents/Class/Frogenglut/Ability4.TALENT" Count="1" />
 	<applicators />
 	<applyTarget>AbilityOwner</applyTarget>
 	<behaviorFlags>1</behaviorFlags>

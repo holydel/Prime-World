@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StatusApplicator>
+	<BackLink DBID="/Items/Talents/Class/Frogenglut/Ability4.TALENT" Count="1" />
+	<applicators />
+	<applyTarget>ApplicatorTarget</applyTarget>
+	<behaviorFlags>217</behaviorFlags>
+	<caption>Статус А4 Твари про кулдаун со стеками</caption>
+	<customCounter>
+		<compiledString></compiledString>
+		<returnType>int</returnType>
+		<sString>0</sString>
+	</customCounter>
+	<customProgress>
+		<compiledString></compiledString>
+		<returnType>float</returnType>
+		<sString>-1.0</sString>
+	</customProgress>
+	<description textref="" />
+	<dispellPriority>NonDispellable</dispellPriority>
+	<effect>
+		<Item href="" />
+		<Item href="" />
+	</effect>
+	<enabled>
+		<compiledString>FXsAAAAIAAAAggAAAJsAAADRAAAA8QAAAA0BAAAmAQAAXAEAAHwBAABGcm9nZW5nbHV0X0E0AAAARnJvZ2VuZ2x1dF9BNAAAAEZyb2dlbmdsdXRfQTQAAABKdW1wQ2hhcmdlcwBGcm9nZW5nbHV0X0E0AAAARnJvZ2VuZ2x1dF9BNAAAAEZyb2dlbmdsdXRfQTQAAABNYXhKdW1wQ2hhcmdlcwBVi+yD7CRoAAAAAItFCIsQi00Ii4KoAQAA/9CFwHQqaBAAAACLTQiLEYtNCIuCqAEAAP/QiUX8i038ixGLTfyLQgT/0IhF++sExkX7AA+2TfuFyXQ3aCAAAACLVQiLAotNCIuQqAEAAP/SiUX0i0UMUItNCFFoMAAAAItV9IsCi030i1BQ/9LZXfDrBdnu2V3waDwAAACLRQiLEItNCIuCqAEAAP/QhcB0KmhMAAAAi00IixGLTQiLgqgBAAD/0IlF7ItN7IsRi03si0IE/9CIRevrBMZF6wAPtk3rhcl0N2hcAAAAi1UIiwKLTQiLkKgBAAD/0olF5ItFDFCLTQhRaGwAAACLVeSLAotN5ItQUP/S2V3g6wXZ7tld4NlF8NlF4N7Z3+D2xEF1CcdF3AEAAADrB8dF3AAAAACKRdyL5V3DAAAAAA==</compiledString>
+		<returnType>bool</returnType>
+		<sString>talconst("Frogenglut_A4","JumpCharges") &lt; talconst("Frogenglut_A4","MaxJumpCharges")</sString>
+	</enabled>
+	<flags>0</flags>
+	<formulaName>Frogenglut_A4StackCooldownSpell</formulaName>
+	<image href="" />
+	<lifeTime>
+		<compiledString>FUEAAAAEAAAASAAAAGEAAACXAAAAtwAAAEZyb2dlbmdsdXRfQTQAAABGcm9nZW5nbHV0X0E0AAAARnJvZ2VuZ2x1dF9BNAAAAEE0X1N0YWNrQ29vbGRvd24AVYvsg+wQaAAAAACLRQiLEItNCIuCqAEAAP/QhcB0KmgQAAAAi00IixGLTQiLgqgBAAD/0IlF/ItN/IsRi038i0IE/9CIRfvrBMZF+wAPtk37hcl0N2ggAAAAi1UIiwKLTQiLkKgBAAD/0olF9ItFDFCLTQhRaDAAAACLVfSLAotN9ItQUP/S2V3w6wXZ7tld8NlF8IvlXcMAAAAA</compiledString>
+		<returnType>float</returnType>
+		<sString>talconst("Frogenglut_A4","A4_StackCooldown")</sString>
+	</lifeTime>
+	<LoggingEvent>-1</LoggingEvent>
+	<name textref="" />
+	<power>0</power>
+	<providerName></providerName>
+	<stackableAcrossUnits>Unstackable</stackableAcrossUnits>
+	<stackCount>0</stackCount>
+	<startCondition>
+		<compiledString>FXsAAAAIAAAAggAAAJsAAADRAAAA8QAAAA0BAAAmAQAAXAEAAHwBAABGcm9nZW5nbHV0X0E0AAAARnJvZ2VuZ2x1dF9BNAAAAEZyb2dlbmdsdXRfQTQAAABKdW1wQ2hhcmdlcwBGcm9nZW5nbHV0X0E0AAAARnJvZ2VuZ2x1dF9BNAAAAEZyb2dlbmdsdXRfQTQAAABNYXhKdW1wQ2hhcmdlcwBVi+yD7CRoAAAAAItFCIsQi00Ii4KoAQAA/9CFwHQqaBAAAACLTQiLEYtNCIuCqAEAAP/QiUX8i038ixGLTfyLQgT/0IhF++sExkX7AA+2TfuFyXQ3aCAAAACLVQiLAotNCIuQqAEAAP/SiUX0i0UMUItNCFFoMAAAAItV9IsCi030i1BQ/9LZXfDrBdnu2V3waDwAAACLRQiLEItNCIuCqAEAAP/QhcB0KmhMAAAAi00IixGLTQiLgqgBAAD/0IlF7ItN7IsRi03si0IE/9CIRevrBMZF6wAPtk3rhcl0N2hcAAAAi1UIiwKLTQiLkKgBAAD/0olF5ItFDFCLTQhRaGwAAACLVeSLAotN5ItQUP/S2V3g6wXZ7tld4NlF8NlF4N7Z3+D2xEF1CcdF3AEAAADrB8dF3AAAAACKRdyL5V3DAAAAAA==</compiledString>
+		<returnType>bool</returnType>
+		<sString>talconst("Frogenglut_A4","JumpCharges") &lt; talconst("Frogenglut_A4","MaxJumpCharges")</sString>
+	</startCondition>
+	<statusPosition>-88</statusPosition>
+	<stopBehaviour>StopByTime</stopBehaviour>
+	<unstackableWith href="" />
+</StatusApplicator>
