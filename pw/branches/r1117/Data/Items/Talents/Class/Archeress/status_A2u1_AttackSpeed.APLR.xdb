@@ -14,9 +14,9 @@
 					<Item href="" />
 				</effect>
 				<enabled>
-					<compiledString></compiledString>
+					<compiledString>FQAAAAAAAAAAVYvsg+wMi0UIixCLTQiLgjQBAAD/0ItNCIsRi00Ii4IwAQAA3V34/9DcXfjf4PbEAXUJx0X0AQAAAOsHx0X0AAAAAIpF9IvlXcM=</compiledString>
 					<returnType>bool</returnType>
-					<sString>true</sString>
+					<sString>sIntellect&lt;=sStrength</sString>
 				</enabled>
 				<formulaName></formulaName>
 				<lifeTime>
@@ -37,6 +37,53 @@
 						<sString>1.0f</sString>
 					</multValue>
 					<stat>AttackSpeed</stat>
+					<topModifier>false</topModifier>
+					<variable></variable>
+				</modifier>
+				<providerName></providerName>
+				<startCondition>
+					<compiledString></compiledString>
+					<returnType>bool</returnType>
+					<sString>true</sString>
+				</startCondition>
+				<statModName></statModName>
+			</StatModApplicator>
+		</Item>
+		<Item href="/Items/Talents/Class/Archeress/status_A2u1_AttackSpeed.APLR" id="E47F1ABF-E7D3-4973-9942-A6EF73652ED9">
+			<StatModApplicator>
+				<applyTarget>ApplicatorTarget</applyTarget>
+				<behaviorFlags>0</behaviorFlags>
+				<caption>Увеличиваем Хитрость</caption>
+				<constraint>None</constraint>
+				<dontUpdate>false</dontUpdate>
+				<effect>
+					<Item href="/Effects/Buffs/Increase/_DamageStart.EFFT" />
+					<Item href="" />
+				</effect>
+				<enabled>
+					<compiledString>FQAAAAAAAAAAVYvsg+wMi0UIixCLTQiLgjQBAAD/0ItNCIsRi00Ii4IwAQAA3V34/9DcXfjf4PbEBXoJx0X0AQAAAOsHx0X0AAAAAIpF9IvlXcM=</compiledString>
+					<returnType>bool</returnType>
+					<sString>sIntellect&gt;sStrength</sString>
+				</enabled>
+				<formulaName></formulaName>
+				<lifeTime>
+					<compiledString></compiledString>
+					<returnType>float</returnType>
+					<sString>-1.0</sString>
+				</lifeTime>
+				<LoggingEvent>-1</LoggingEvent>
+				<modifier>
+					<addValue>
+						<compiledString>FRAAAAABAAAAHAAAAEluY19BdHRhY2tTcGVlZABVi+yLRQxQi00IUWgAAAAAi1UQiwKLTRCLUFD/0l3D</compiledString>
+						<returnType>float</returnType>
+						<sString>cInc_AttackSpeed</sString>
+					</addValue>
+					<multValue>
+						<compiledString></compiledString>
+						<returnType>float</returnType>
+						<sString>1.0f</sString>
+					</multValue>
+					<stat>Dexterity</stat>
 					<topModifier>false</topModifier>
 					<variable></variable>
 				</modifier>

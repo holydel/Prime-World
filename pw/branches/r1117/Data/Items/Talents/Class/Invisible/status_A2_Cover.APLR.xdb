@@ -400,6 +400,53 @@
 				<statModName></statModName>
 			</StatModApplicator>
 		</Item>
+		<Item href="/Items/Talents/Class/Invisible/status_A2_Cover.APLR" id="2A43FDCE-A94F-4EDC-86B0-D713EDFC1638">
+			<StatModApplicator>
+				<applyTarget>ApplicatorTarget</applyTarget>
+				<behaviorFlags>0</behaviorFlags>
+				<caption>RegenX2</caption>
+				<constraint>None</constraint>
+				<dontUpdate>false</dontUpdate>
+				<effect>
+					<Item href="" />
+					<Item href="" />
+				</effect>
+				<enabled>
+					<compiledString>FR8AAAACAAAAJgAAAD8AAABJbnZpc2libGVfQTJ1MgAASW52aXNpYmxlX0EydTIAVYvsg+wIaAAAAACLRQiLEItNCIuCqAEAAP/QhcB0KmgQAAAAi00IixGLTQiLgqgBAAD/0IlF/ItN/IsRi038i0IE/9CIRfvrBMZF+wCKRfuL5V3D</compiledString>
+					<returnType>bool</returnType>
+					<sString>tal("Invisible_A2u2")</sString>
+				</enabled>
+				<formulaName></formulaName>
+				<lifeTime>
+					<compiledString></compiledString>
+					<returnType>float</returnType>
+					<sString>-1.0</sString>
+				</lifeTime>
+				<LoggingEvent>-1</LoggingEvent>
+				<modifier>
+					<addValue>
+						<compiledString>FQ4AAAABAAAAGgAAAEEwX1JlZ2VuQWJzWDIAVYvsi0UMUItNCFFoAAAAAItVEIsCi00Qi1BQ/9Jdww==</compiledString>
+						<returnType>float</returnType>
+						<sString>cA0_RegenAbsX2</sString>
+					</addValue>
+					<multValue>
+						<compiledString></compiledString>
+						<returnType>float</returnType>
+						<sString>1.0f</sString>
+					</multValue>
+					<stat>LifeRegenerationAbsolute</stat>
+					<topModifier>false</topModifier>
+					<variable></variable>
+				</modifier>
+				<providerName></providerName>
+				<startCondition>
+					<compiledString></compiledString>
+					<returnType>bool</returnType>
+					<sString>true</sString>
+				</startCondition>
+				<statModName></statModName>
+			</StatModApplicator>
+		</Item>
 	</applicators>
 	<applyTarget>ApplicatorTarget</applyTarget>
 	<behaviorFlags>144</behaviorFlags>

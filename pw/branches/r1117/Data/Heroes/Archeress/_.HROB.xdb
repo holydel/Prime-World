@@ -696,6 +696,11 @@
 								<applicator href="/Heroes/Archeress/_.HROB" id="72668419-65A4-4AFB-9BC7-1B258B88A8FB">
 									<DamageApplicator parent="/Items/Talents/Class/Archeress/PhysDamage.APLR">
 										<applyTarget>PrevApplicatorTarget</applyTarget>
+										<damage>
+											<compiledString>FScAAAACAAAANgAAAFAAAABNYXRlcmlhbERhbWFnZQAAQXJjaGVyZXNzX0ExX0RhbWFnZUluYwBVi+yD7AyLRQxQi00IUWgAAAAAi1UQiwKLTRCLUFD/0otFDFCLTQhRaBAAAACLVRCLAotNEItQUN1d+P/S3E342V302UX0i+Vdww==</compiledString>
+											<returnType>float</returnType>
+											<sString>cMaterialDamage*cArcheress_A1_DamageInc</sString>
+										</damage>
 										<damageMode>8</damageMode>
 										<providerName></providerName>
 									</DamageApplicator>
@@ -708,6 +713,11 @@
 								<applicator href="/Heroes/Archeress/_.HROB" id="D1AEB3D9-7A3A-44AB-B9BB-356AABB32392">
 									<DamageApplicator parent="/Items/Talents/Class/Archeress/MagicDamage.APLR">
 										<applyTarget>PrevApplicatorTarget</applyTarget>
+										<damage>
+											<compiledString>FScAAAACAAAANgAAAFAAAABFbmVyZ3lEYW1hZ2UAAAAAQXJjaGVyZXNzX0ExX0RhbWFnZUluYwBVi+yD7AyLRQxQi00IUWgAAAAAi1UQiwKLTRCLUFD/0otFDFCLTQhRaBAAAACLVRCLAotNEItQUN1d+P/S3E342V302UX0i+Vdww==</compiledString>
+											<returnType>float</returnType>
+											<sString>cEnergyDamage*cArcheress_A1_DamageInc</sString>
+										</damage>
 										<damageMode>8</damageMode>
 										<enabled>
 											<compiledString>FRQAAAACAAAAMQAAAFEAAABXYXJkAAAAAEltTWFnaWNHYXRlAFWL7FGLRQyLEItNDItCUP/Qg/gRdElqAItNEFFoAAAAAItVDIsCi00Mi5CcAQAA/9I7RRB1KWoAi0UQUGgIAAAAi00MixGLTQyLgpwBAAD/0DtFEHUJx0X8AQAAAOsHx0X8AAAAAIpF/IvlXcM=</compiledString>
@@ -853,6 +863,16 @@
 						<Item href="/Items/Talents/Class/Archeress/const_A3_BonusDamage" />
 						<Item href="/Items/Talents/Class/Archeress/const_A3_MaxDamage" />
 						<Item href="/Items/Talents/Class/Archeress/const_A3_BonusDamagePercent" />
+						<Item href="/Heroes/Archeress/_.HROB" id="57CA1552-92D2-4BCB-8B90-338D913120F0">
+							<UnitConstant>
+								<name>Archeress_A1_DamageInc</name>
+								<var>
+									<compiledString>FRcAAAADAAAAHgAAADQAAABBAAAAQXJjaGVyZXNzX0ExX0RhbWFnZUluYwBVi+yD7AxoAAAAAItFDIsQi00Mi4KIAQAA/9DcHWwAAADf4PbERHsL3QVkAAAA3V346wXZ6N1d+N1F+Nld9NlF9IvlXcMAAAAAAADwPzMzMzMzM/M/AAAAAAAAAAA=</compiledString>
+									<returnType>float</returnType>
+									<sString>receiver.vArcheress_A1_DamageInc? 1.2 : 1</sString>
+								</var>
+							</UnitConstant>
+						</Item>
 					</vars>
 				</UnitConstantsContainer>
 			</constants>

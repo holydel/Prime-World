@@ -28,7 +28,7 @@
 	</enabled>
 	<flags>0</flags>
 	<formulaName></formulaName>
-	<image href="/UI/Styles/Icons/Heroes/WitchDoctor/A2.ITEX" />
+	<image href="" />
 	<lifeTime>
 		<compiledString></compiledString>
 		<returnType>float</returnType>

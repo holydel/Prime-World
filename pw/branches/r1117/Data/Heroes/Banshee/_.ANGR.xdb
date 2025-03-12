@@ -6442,16 +6442,7 @@
 			<surfSpeedY>0</surfSpeedY>
 		</Item>
 		<Item>
-			<markers>
-				<Item>
-					<name>doCast4</name>
-					<virtPar>0.2</virtPar>
-				</Item>
-				<Item>
-					<name>workTime4</name>
-					<virtPar>0.6666667</virtPar>
-				</Item>
-			</markers>
+			<markers />
 			<nextNode>idle</nextNode>
 			<nodeName>ability4</nodeName>
 			<nodeType>Normal</nodeType>

@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StatusApplicator>
 	<BackLink DBID="/Items/Talents/Class/WitchDoctor/Ability0.TALENT" Count="1" />
+	<BackLink DBID="/Maps/Test/PlaneMap/Ability0.TALENT" Count="1" />
+	<BackLink DBID="/Buildings/A/MiniGame/_.MINI" Count="1" />
 	<applicators>
 		<Item href="/Items/Talents/Class/WitchDoctor/_refreshMana.APLR" />
 		<Item href="/Items/Talents/Class/WitchDoctor/status_A0_ForestMagic.APLR" id="E62125A6-A966-4AA4-BBE7-3F29440C2F47">
@@ -71,9 +73,9 @@
 		<Item href="" />
 	</effect>
 	<enabled>
-		<compiledString>FS8AAAAFAAAAPAAAAFQAAABnAAAAcwAAAIkAAABUcmVlc0NvdW50ZXIAAAAAdGFyZ2V0c0NvdW50AAAAAEV2aWxUcmVlSXNOZWFyAFWL7IPsCGoBi0UQUGgAAAAAi00IixGLTQiLgpwBAAD/0IlF/GgQAAAAi038ixGLTfyLQlT/0NwdswAAAN/g9sRBdCtoIAAAAItNCIsRi00Ii4KIAQAA/9DcHasAAADf4PbEAXQJx0X4AAAAAOsHx0X4AQAAAIpF+IvlXcMAAAAAAADwPwAAAAAAAAAA</compiledString>
+		<compiledString>FTkAAAAGAAAARgAAAF4AAABxAAAAfQAAAJMAAAClAAAAVHJlZXNDb3VudGVyAAAAAHRhcmdldHNDb3VudAAAAABFdmlsVHJlZUlzTmVhcgAAQ3Jvd0Zvcm0AVYvsg+wIagGLRRBQaAAAAACLTQiLEYtNCIuCnAEAAP/QiUX8aBAAAACLTfyLEYtN/ItCVP/Q3B3dAAAA3+D2xEF0ImggAAAAi00IixGLTQiLgogBAAD/0Nwd1QAAAN/g9sQBdSlqAYtNEFFoMAAAAItVCIsCi00Ii5CcAQAA/9I5RRB1CcdF+AEAAADrB8dF+AAAAACKRfiL5V3DAAAAAAAA8D8AAAAAAAAAAA==</compiledString>
 		<returnType>bool</returnType>
-		<sString>sender.FindApplicator("TreesCounter", pMisc, UNIT)-&gt;GetVariable("targetsCount") &gt; 0 || sender.vEvilTreeIsNear &gt;= 1</sString>
+		<sString>(sender.FindApplicator("TreesCounter", pMisc, UNIT)-&gt;GetVariable("targetsCount") &gt; 0 || sender.vEvilTreeIsNear &gt;= 1) &amp;&amp; (pMisc == sender.applCrowForm(UNIT))</sString>
 	</enabled>
 	<flags>0</flags>
 	<formulaName></formulaName>

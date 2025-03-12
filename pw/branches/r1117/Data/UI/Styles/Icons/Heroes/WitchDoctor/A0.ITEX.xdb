@@ -3,6 +3,8 @@
 	<BackLink DBID="/Items/Talents/Class/WitchDoctor/Ability0.TALENT" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/WitchDoctor/status_A0_ForestMagic.APLR" Count="1" />
 	<BackLink DBID="/Maps/PvE/Series/Coop1/Heroes/WitchDoctor/Ability0.TALENT" Count="2" />
+	<BackLink DBID="/Maps/Test/PlaneMap/Ability0.TALENT" Count="1" />
+	<BackLink DBID="/Buildings/A/MiniGame/_.MINI" Count="1" />
 	<generatedFileName></generatedFileName>
 	<importOnlyShape>false</importOnlyShape>
 	<mipLevels>0</mipLevels>

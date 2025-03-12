@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <UITexture>
-	<BackLink DBID="/Items/Talents/Class/FireFox/Ability0.TALENT" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/FireFox/status_A0.APLR" Count="1" />
 	<generatedFileName></generatedFileName>
 	<importOnlyShape>false</importOnlyShape>

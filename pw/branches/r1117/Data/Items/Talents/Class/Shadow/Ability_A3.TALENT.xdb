@@ -324,9 +324,9 @@
 					<UnitConstant>
 						<name>BlockMax</name>
 						<var>
-							<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAABwQg==</compiledString>
+							<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAABIQg==</compiledString>
 							<returnType>float</returnType>
-							<sString>60.0f</sString>
+							<sString>50.0f</sString>
 						</var>
 					</UnitConstant>
 				</Item>

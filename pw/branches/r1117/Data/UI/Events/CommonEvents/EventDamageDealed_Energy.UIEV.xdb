@@ -185,7 +185,7 @@
 	<BackLink DBID="/Items/Talents/Class/SnowQueen/status_A3_IceShiverEnemy.APLR" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/Stalker/Ability_A2.TALENT" Count="3" />
 	<BackLink DBID="/Items/Talents/Class/ThunderGod/_A0_SUP_Strike.APLR" Count="1" />
-	<BackLink DBID="/Items/Talents/Class/ThunderGod/Ability2.TALENT" Count="2" />
+	<BackLink DBID="/Items/Talents/Class/ThunderGod/Ability2.TALENT" Count="14" />
 	<BackLink DBID="/Items/Talents/Class/ThunderGod/Ability3.TALENT" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/ThunderGod/Ability4.TALENT" Count="3" />
 	<BackLink DBID="/Items/Talents/Class/ThunderGod/Ability4_2.TALENT" Count="2" />
@@ -208,7 +208,7 @@
 	<BackLink DBID="/Items/Talents/Class/Werewolf/Ability2.TALENT" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/Witch/Ability_A4_2.TALENT" Count="2" />
 	<BackLink DBID="/Items/Talents/Class/WitchDoctor/Ability1.TALENT" Count="2" />
-	<BackLink DBID="/Items/Talents/Class/WitchDoctor/Ability2.TALENT" Count="1" />
+	<BackLink DBID="/Items/Talents/Class/WitchDoctor/Ability2.TALENT" Count="2" />
 	<BackLink DBID="/Items/Talents/Class/WitchDoctor/Ability4_2.TALENT" Count="2" />
 	<BackLink DBID="/Items/Talents/Level2/G503_AA_DMG.TALENT" Count="1" />
 	<BackLink DBID="/Items/Talents/Level2/G510_FireWard.TALENT" Count="1" />
@@ -270,6 +270,11 @@
 	<BackLink DBID="/Summons/Rat/RatAutoatack.APLR" Count="1" />
 	<BackLink DBID="/Summons/Whisper/DamagingLink.SPLL" Count="1" />
 	<BackLink DBID="/Summons/Whisper/PvE_Coop1Explosion.APLR" Count="1" />
+	<BackLink DBID="/Items/Talents/Level2/G792_StrOrInt.TALENT" Count="1" />
+	<BackLink DBID="/Items/Talents/TalentKits/Redset_DoubleAttack/status_redset5_1_CreepBuffStatus.APLR" Count="1" />
+	<BackLink DBID="/Items/Talents/Class/Dryad/spell_A2_SUP_BonusDamage.APLR" Count="1" />
+	<BackLink DBID="/Buildings/DefaultStats/MainBuildingAutoAttackEnergy.APLR" Count="1" />
+	<BackLink DBID="/Items/Talents/Class/WitchDoctor/status_A3_CrowForm.APLR" Count="2" />
 	<signRecipients>EVENT_PARTICIPANTS</signRecipients>
 	<UISigns>
 		<Item href="/UI/Events/CommonEvents/EventDamageDealed_Energy.UIEV" id="FCDDC7F1-12E2-4611-8C2F-927182843C56">

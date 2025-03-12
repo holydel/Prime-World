@@ -791,7 +791,7 @@
 							<returnType>bool</returnType>
 							<sString>0</sString>
 						</continueCondition>
-						<continueEvents>2</continueEvents>
+						<continueEvents>1</continueEvents>
 						<delay>
 							<compiledString></compiledString>
 							<returnType>float</returnType>
@@ -799,6 +799,67 @@
 						</delay>
 						<stopCondition>
 							<compiledString>FQAAAAAAAAAAVYvsMsBdww==</compiledString>
+							<returnType>bool</returnType>
+							<sString>0</sString>
+						</stopCondition>
+						<stopEvents>0</stopEvents>
+					</Item>
+					<Item>
+						<applicator href="/Items/Talents/Class/WitchDoctor/Ability1.TALENT" id="9412619B-E551-453F-B40A-A917E67A05E2">
+							<SpellApplicator>
+								<applyTarget>ApplicatorTarget</applyTarget>
+								<caption></caption>
+								<enabled>
+									<compiledString>FQkAAAABAAAAEwAAAFRyZWVCdWZmAFWL7GoBi0UQUGgAAAAAi00IixGLTQiLgpwBAAD/0DPJO0UQD5XBisFdww==</compiledString>
+									<returnType>bool</returnType>
+									<sString>sender.applTreeBuff(UNIT) != pMisc</sString>
+								</enabled>
+								<formulaName></formulaName>
+								<LoggingEvent>-1</LoggingEvent>
+								<providerName></providerName>
+								<spell href="/Items/Talents/Class/WitchDoctor/Ability1.TALENT" id="CFC83766-76D2-48EE-9921-C75501497BBC">
+									<Spell>
+										<applicators>
+											<Item href="/Items/Talents/Class/WitchDoctor/SummonEvilTreeAppl.APLR" />
+										</applicators>
+										<dispatch href="/Items/Talents/Class/WitchDoctor/Ability1.TALENT" id="B58EECB6-51B7-443A-BE7F-C4ED2F911153">
+											<DispatchImmediate>
+												<alwaysApply>false</alwaysApply>
+												<applyEffect>
+													<Item href="" />
+													<Item href="" />
+												</applyEffect>
+												<applyEffectIgnoreVisibility>false</applyEffectIgnoreVisibility>
+												<applyEffectOrientation>Default</applyEffectOrientation>
+												<applyEffectRandomAnglePoints>0</applyEffectRandomAnglePoints>
+												<dieAfterApply>true</dieAfterApply>
+												<dispatchEffect>
+													<Item href="" />
+													<Item href="" />
+												</dispatchEffect>
+												<flags>0</flags>
+												<instantApply>false</instantApply>
+											</DispatchImmediate>
+										</dispatch>
+									</Spell>
+								</spell>
+								<spellTarget>ApplicatorTarget</spellTarget>
+								<targetSelector href="" />
+							</SpellApplicator>
+						</applicator>
+						<continueCondition>
+							<compiledString></compiledString>
+							<returnType>bool</returnType>
+							<sString>0</sString>
+						</continueCondition>
+						<continueEvents>2</continueEvents>
+						<delay>
+							<compiledString></compiledString>
+							<returnType>float</returnType>
+							<sString>-1.0</sString>
+						</delay>
+						<stopCondition>
+							<compiledString></compiledString>
 							<returnType>bool</returnType>
 							<sString>0</sString>
 						</stopCondition>

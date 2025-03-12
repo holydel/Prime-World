@@ -2,6 +2,7 @@
 <DBSceneComponent>
 	<BackLink DBID="/Summons/Crow/FXApply.EFFT" Count="1" />
 	<BackLink DBID="/Summons/Crow/FXMove.EFFT" Count="1" />
+	<BackLink DBID="/Summons/Crow/_.SOBJ" Count="1" />
 	<attached>
 		<Item>
 			<attachFlags>15</attachFlags>

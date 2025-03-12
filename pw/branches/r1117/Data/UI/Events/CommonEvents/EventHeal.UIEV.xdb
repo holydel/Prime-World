@@ -107,7 +107,7 @@
 	<BackLink DBID="/Items/Talents/Class/Vampire/Ability_A3.TALENT" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/Vampire/Ability_A4_2.TALENT" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/Vampire/status_A4_StunAndDPS.APLR" Count="2" />
-	<BackLink DBID="/Items/Talents/Class/Warlord/Ability4.TALENT" Count="1" />
+	<BackLink DBID="/Items/Talents/Class/Warlord/Ability4.TALENT" Count="2" />
 	<BackLink DBID="/Items/Talents/Class/Warlord/status_A4_banner.APLR" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/Wendigo/A2_DamageHeal.APLR" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/Witcher/Ability_A3.TALENT" Count="1" />
@@ -147,6 +147,8 @@
 	<BackLink DBID="/Summons/Dispenser/status_A2_DispHeal.APLR" Count="1" />
 	<BackLink DBID="/Summons/HealingWard/_A.SUMMONED" Count="1" />
 	<BackLink DBID="/Summons/Wolf/_mowglyA3uHeal.APLR" Count="1" />
+	<BackLink DBID="/Items/Talents/Class/FallenAngel/A3_ProgrammMark.APLR" Count="1" />
+	<BackLink DBID="/Items/Talents/Class/WitchDoctor/status_A3_CrowForm.APLR" Count="1" />
 	<signRecipients>ALL_PLAYERS</signRecipients>
 	<UISigns>
 		<Item href="/UI/Events/CommonEvents/EventHeal.UIEV" id="878B438C-C615-4D95-A3F9-437FB33C2559">

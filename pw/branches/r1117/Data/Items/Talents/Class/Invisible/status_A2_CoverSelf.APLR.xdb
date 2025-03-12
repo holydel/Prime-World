@@ -55,6 +55,53 @@
 				<statModName></statModName>
 			</StatModApplicator>
 		</Item>
+		<Item href="/Items/Talents/Class/Invisible/status_A2_CoverSelf.APLR" id="B51A4B42-B7EC-4A52-B3BF-BB2641EBD092">
+			<StatModApplicator>
+				<applyTarget>ApplicatorTarget</applyTarget>
+				<behaviorFlags>0</behaviorFlags>
+				<caption>RegenSelf</caption>
+				<constraint>None</constraint>
+				<dontUpdate>false</dontUpdate>
+				<effect>
+					<Item href="" />
+					<Item href="" />
+				</effect>
+				<enabled>
+					<compiledString>FR8AAAACAAAAJgAAAD8AAABJbnZpc2libGVfQTJ1MgAASW52aXNpYmxlX0EydTIAVYvsg+wIaAAAAACLRQiLEItNCIuCqAEAAP/QhcB0KmgQAAAAi00IixGLTQiLgqgBAAD/0IlF/ItN/IsRi038i0IE/9CIRfvrBMZF+wCKRfuL5V3D</compiledString>
+					<returnType>bool</returnType>
+					<sString>tal("Invisible_A2u2")</sString>
+				</enabled>
+				<formulaName></formulaName>
+				<lifeTime>
+					<compiledString></compiledString>
+					<returnType>float</returnType>
+					<sString>-1.0</sString>
+				</lifeTime>
+				<LoggingEvent>-1</LoggingEvent>
+				<modifier>
+					<addValue>
+						<compiledString>FQwAAAABAAAAGAAAAEEwX1JlZ2VuQWJzAFWL7ItFDFCLTQhRaAAAAACLVRCLAotNEItQUP/SXcM=</compiledString>
+						<returnType>float</returnType>
+						<sString>cA0_RegenAbs</sString>
+					</addValue>
+					<multValue>
+						<compiledString></compiledString>
+						<returnType>float</returnType>
+						<sString>1.0f</sString>
+					</multValue>
+					<stat>LifeRegenerationAbsolute</stat>
+					<topModifier>false</topModifier>
+					<variable></variable>
+				</modifier>
+				<providerName></providerName>
+				<startCondition>
+					<compiledString></compiledString>
+					<returnType>bool</returnType>
+					<sString>true</sString>
+				</startCondition>
+				<statModName></statModName>
+			</StatModApplicator>
+		</Item>
 	</applicators>
 	<caption>статус Покров для Невидимки</caption>
 	<description textref="/Items/Talents/Class/Invisible/status_A2_CoverSelf.APLR_description.txt" />

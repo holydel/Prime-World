@@ -211,6 +211,7 @@
 																	<returnType>float</returnType>
 																	<sString>cMaterialDamage * nt(cTerrainMultiplier, 1)</sString>
 																</damage>
+																<damageMode>8</damageMode>
 															</DamageApplicator>
 														</Item>
 														<Item href="/Items/Talents/Class/Archeress/Ability_A1.TALENT" id="90D1732C-3E00-44A7-855E-85B0F2012811">
@@ -220,9 +221,61 @@
 																	<returnType>float</returnType>
 																	<sString>cEnergyDamage * nt(cTerrainMultiplier, 1)</sString>
 																</damage>
+																<damageMode>8</damageMode>
 															</DamageApplicator>
 														</Item>
 														<Item href="/Heroes/DefaultStatus/_SLOW_MOVE.APLR" />
+														<Item href="/Items/Talents/Class/Archeress/Ability_A1.TALENT" id="2F950FC3-D02E-4057-A68B-53E53EFF2C56">
+															<StatusApplicator>
+																<applicators />
+																<applyTarget>ApplicatorTarget</applyTarget>
+																<behaviorFlags>144</behaviorFlags>
+																<caption>Доп урон Атаки по целям, задетым Шквалом(статус)</caption>
+																<customCounter>
+																	<compiledString></compiledString>
+																	<returnType>int</returnType>
+																	<sString>0</sString>
+																</customCounter>
+																<customProgress>
+																	<compiledString></compiledString>
+																	<returnType>float</returnType>
+																	<sString>-1.0</sString>
+																</customProgress>
+																<description textref="/Items/Talents/Class/Archeress/Ability_A1.TALENT_2f950fc3d02e4057a68b53e53eff2c56_description.txt" />
+																<dispellPriority>Medium</dispellPriority>
+																<effect>
+																	<Item href="" />
+																	<Item href="" />
+																</effect>
+																<enabled>
+																	<compiledString></compiledString>
+																	<returnType>bool</returnType>
+																	<sString>true</sString>
+																</enabled>
+																<flags>2</flags>
+																<formulaName>Archeress_A1_DamageInc</formulaName>
+																<image href="/UI/Styles/Icons/Heroes/Archeress/A1.ITEX" />
+																<lifeTime>
+																	<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAACAQA==</compiledString>
+																	<returnType>float</returnType>
+																	<sString>4</sString>
+																</lifeTime>
+																<LoggingEvent>-1</LoggingEvent>
+																<name textref="/Items/Talents/Class/Archeress/Ability_A1.TALENT_2f950fc3d02e4057a68b53e53eff2c56_name.txt" />
+																<power>0</power>
+																<providerName></providerName>
+																<stackableAcrossUnits>Unstackable</stackableAcrossUnits>
+																<stackCount>0</stackCount>
+																<startCondition>
+																	<compiledString></compiledString>
+																	<returnType>bool</returnType>
+																	<sString>true</sString>
+																</startCondition>
+																<statusPosition>0</statusPosition>
+																<stopBehaviour>StopByTime</stopBehaviour>
+																<unstackableWith href="" />
+															</StatusApplicator>
+														</Item>
 													</applicators>
 													<dispatch href="/Items/Talents/Class/Archeress/Ability_A1.TALENT" id="8BDD3C74-F2DD-49EE-944A-648C2B7B5C88">
 														<DispatchImmediate>
@@ -609,9 +662,9 @@
 					<UnitConstant>
 						<name>MaterialDamageBase</name>
 						<var>
-							<compiledString>FQAAAAACAAAACAAAABIAAABVi+xqAVHZBUQAAADZHCRR2QVAAAAA2RwkagCLRQiLEItNCIuCMAEAAP/QUdkcJGoBi00QixGLTRCLQmD/0F3DAAAoQgCAnUM=</compiledString>
+							<compiledString>FQAAAAACAAAACAAAABIAAABVi+xqAVHZBUQAAADZHCRR2QVAAAAA2RwkagCLRQiLEItNCIuCNAEAAP/QUdkcJGoBi00QixGLTRCLQmD/0F3DAAAoQgCAnUM=</compiledString>
 							<returnType>float</returnType>
-							<sString>damageScale(sStrength, 42, 315)</sString>
+							<sString>damageScale(sIntellect, 42, 315)</sString>
 						</var>
 					</UnitConstant>
 				</Item>
@@ -772,9 +825,9 @@
 	<type>Channelling</type>
 	<upgradeLevel>0</upgradeLevel>
 	<useRange>
-		<compiledString>FQYAAAABAAAAEgAAAFJhbmdlAFWL7ItFDFCLTQhRaAAAAACLVRCLAotNEItQUP/SXcM=</compiledString>
+		<compiledString>FQYAAAACAAAAFQAAADsAAABSYW5nZQBVi+yD7AyLRQxQi00IUWgAAAAAi1UQiwKLTRCLUFD/0otFCIsQi00Ii4I0AQAA3V34/9DcNUwAAADcRfjZXfTZRfSL5V3DAAAAAAAAWUA=</compiledString>
 		<returnType>float</returnType>
-		<sString>cRange</sString>
+		<sString>cRange+(sIntellect/100)</sString>
 	</useRange>
 	<useRangeMaterial href="/Effects/UI/AOESelection/Radius.MTRL" />
 	<variativeMaxTalentStats />

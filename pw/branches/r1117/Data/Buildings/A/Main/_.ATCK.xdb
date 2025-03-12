@@ -19,6 +19,7 @@
 	<aoeType>None</aoeType>
 	<applicators>
 		<Item href="/Buildings/DefaultStats/MainBuildingAutoAttack.APLR" />
+		<Item href="/Buildings/DefaultStats/MainBuildingAutoAttackEnergy.APLR" />
 		<Item href="/Buildings/DefaultStats/StackTowerDamage.APLR" />
 		<Item href="/Buildings/A/Main/_.ATCK" id="02F040B0-4CF3-4315-BAD4-5FAD5D004021">
 			<UIMessageApplicator>

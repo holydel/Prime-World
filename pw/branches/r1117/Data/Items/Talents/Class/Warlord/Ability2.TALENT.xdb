@@ -919,6 +919,16 @@
 						</var>
 					</UnitConstant>
 				</Item>
+				<Item href="/Items/Talents/Class/Warlord/Ability2.TALENT" id="47BB868F-9B85-4895-8AEA-7E5DB17AC37A">
+					<UnitConstant>
+						<name>Enabled_Terrain</name>
+						<var>
+							<compiledString>FQwAAAABAAAAFwAAAFdhcmxvcmRGbGFnAFWL7FFqAYtFEFBoAAAAAItNCIsRi00Ii4KcAQAA/9AzyTtFEA+VwYlN/NtF/IvlXcM=</compiledString>
+							<returnType>float</returnType>
+							<sString>sender.applWarlordFlag(UNIT) != pMisc</sString>
+						</var>
+					</UnitConstant>
+				</Item>
 			</vars>
 		</UnitConstantsContainer>
 	</constants>

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <UITexture>
-	<BackLink DBID="/Items/Talents/Class/WitchDoctor/Ability4.TALENT" Count="1" />
+	<BackLink DBID="/Items/Talents/Class/WitchDoctor/Ability4.TALENT" Count="2" />
 	<BackLink DBID="/Items/Talents/Class/WitchDoctor/Ability4_Upg1.TALENT" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/WitchDoctor/status_A4_InstantTree.APLR" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/WitchDoctor/status_A4_MaxTrees.APLR" Count="1" />
@@ -9,6 +9,7 @@
 	<BackLink DBID="/Summons/EvilTree/TripleBlink.ABLT" Count="1" />
 	<BackLink DBID="/Maps/PvE/Series/Coop1/Heroes/WitchDoctor/Ability4.TALENT" Count="1" />
 	<BackLink DBID="/Maps/PvE/Series/Coop1/Heroes/WitchDoctor/Ability4_Upg1.TALENT" Count="1" />
+	<BackLink DBID="/Items/Talents/Class/WitchDoctor/Ability2.TALENT" Count="1" />
 	<generatedFileName></generatedFileName>
 	<importOnlyShape>false</importOnlyShape>
 	<mipLevels>0</mipLevels>

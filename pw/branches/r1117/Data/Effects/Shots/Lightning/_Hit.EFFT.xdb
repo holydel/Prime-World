@@ -8,7 +8,7 @@
 	<BackLink DBID="/Buildings/DefaultStats/TempleAttack.APLR" Count="1" />
 	<BackLink DBID="/Effects/Shots/Lightning/_Hit.EFFT" Count="3" />
 	<BackLink DBID="/Items/Talents/Class/Plane/programm.APLR" Count="1" />
-	<BackLink DBID="/Items/Talents/Class/ThunderGod/Ability2.TALENT" Count="1" />
+	<BackLink DBID="/Items/Talents/Class/ThunderGod/Ability2.TALENT" Count="7" />
 	<BackLink DBID="/Items/Talents/Class/ThunderGod/Ability3.TALENT" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/Trickster/Ability2Upg.TALENT" Count="1" />
 	<BackLink DBID="/Maps/Multiplayer/CTE/Temples/_A.FNTN" Count="1" />

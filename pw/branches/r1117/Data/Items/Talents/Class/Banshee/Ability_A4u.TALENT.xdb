@@ -3,6 +3,7 @@
 	<BackLink DBID="/Items/Talents/Class/Banshee/Ability_A4_2u.TALENT" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/Banshee/Ability_A4_2.TALENT" Count="1" />
 	<BackLink DBID="/Items/Talents/Banshee_Alternative.TALENTSET" Count="1" />
+	<BackLink DBID="/Items/Talents/Banshee.TALENTSET" Count="1" />
 	<activationConditions />
 	<activeCustomTrigger>true</activeCustomTrigger>
 	<allowChase>

@@ -18,6 +18,8 @@
 	<BackLink DBID="/Test/Talents/WitchDoctor/Elite_Str.TALENTSET" Count="1" />
 	<BackLink DBID="/Test/Talents/WitchDoctor/Epic_Int.TALENTSET" Count="1" />
 	<BackLink DBID="/Test/Talents/WitchDoctor/Epic_Str.TALENTSET" Count="1" />
+	<BackLink DBID="/Items/Talents/Class/WitchDoctor/status_A3_CrowForm.APLR" Count="3" />
+	<BackLink DBID="/Items/Talents/Class/WitchDoctor/status_A3_BearForm.APLR" Count="2" />
 	<activationConditions />
 	<activeCustomTrigger>true</activeCustomTrigger>
 	<allowChase>
@@ -37,103 +39,647 @@
 	</aoeSize>
 	<aoeType>Disk</aoeType>
 	<applicators>
-		<Item href="/Items/Talents/Class/WitchDoctor/appl_A3_CrowProgram.APLR" />
-		<Item href="/Items/Talents/Class/WitchDoctor/Ability3.TALENT" id="B5F7E72B-BCF1-40E9-B035-4757CB5F1C78">
-			<SpellApplicator>
+		<Item href="/Items/Talents/Class/WitchDoctor/Ability3.TALENT" id="F9C5CA12-126E-4495-A64F-2C973FDE1822">
+			<SpellSwitchApplicator>
+				<activeSpellIndex>
+					<compiledString>FQAAAAAAAAAAVYvsi0UIM8k7RQwPlMGLwV3D</compiledString>
+					<returnType>int</returnType>
+					<sString>$IsAppliedOnSelf?  1 : 0</sString>
+				</activeSpellIndex>
 				<applyTarget>ApplicatorTarget</applyTarget>
-				<caption>Вторая ворона</caption>
+				<caption></caption>
+				<dontUseDispatches>false</dontUseDispatches>
 				<enabled>
-					<compiledString>FR0AAAACAAAAJAAAAD0AAABWZWR1bl9BM19TVVAAAAAAVmVkdW5fQTNfU1VQAFWL7IPsCGgAAAAAi0UIixCLTQiLgqgBAAD/0IXAdCpoEAAAAItNCIsRi00Ii4KoAQAA/9CJRfyLTfyLEYtN/ItCBP/QiEX76wTGRfsAikX7i+Vdww==</compiledString>
+					<compiledString></compiledString>
 					<returnType>bool</returnType>
-					<sString>tal("Vedun_A3_SUP")</sString>
+					<sString>true</sString>
 				</enabled>
 				<formulaName></formulaName>
 				<LoggingEvent>-1</LoggingEvent>
 				<providerName></providerName>
-				<spell href="/Items/Talents/Class/WitchDoctor/Ability3.TALENT" id="6BB3C3D8-D5B5-449D-9EF2-574E867D6188">
-					<Spell>
-						<applicators>
-							<Item href="/Items/Talents/Class/WitchDoctor/appl_A3_CrowProgram.APLR" />
-						</applicators>
-						<dispatch href="/Items/Talents/Class/WitchDoctor/Ability3.TALENT" id="EA8B70FF-3408-4F51-B693-BB0E497D8DFB">
-							<DispatchLinear>
-								<aiming>Pursue</aiming>
-								<alwaysApply>false</alwaysApply>
-								<applyEffect>
-									<Item href="" />
-									<Item href="" />
-								</applyEffect>
-								<applyEffectIgnoreVisibility>false</applyEffectIgnoreVisibility>
-								<applyEffectOrientation>Default</applyEffectOrientation>
-								<applyEffectRandomAnglePoints>0</applyEffectRandomAnglePoints>
-								<dieAfterApply>true</dieAfterApply>
-								<dispatchEffect>
-									<Item href="/Summons/Crow/FXMove.EFFT" />
-									<Item href="" />
-								</dispatchEffect>
-								<flags>0</flags>
-								<flyMode>Linear</flyMode>
-								<fromLocator>Above</fromLocator>
-								<height>0</height>
-								<killEffect>false</killEffect>
-								<locatorOrient>false</locatorOrient>
-								<maxDeviation>180</maxDeviation>
-								<maxDistance>-1</maxDistance>
-								<maxRise>0</maxRise>
-								<minRise>0</minRise>
-								<persistentApplicators />
-								<speed>15</speed>
-								<suspendTime>0</suspendTime>
-								<toLocator>Above</toLocator>
-							</DispatchLinear>
-						</dispatch>
-					</Spell>
-				</spell>
-				<spellTarget>ApplicatorTarget</spellTarget>
-				<targetSelector href="/Items/Talents/Class/WitchDoctor/Ability3.TALENT" id="AEE3420B-2043-48B4-845C-93186FB9AE90">
-					<CountingTargetSelector>
-						<enableSorting>false</enableSorting>
-						<flags>0</flags>
-						<heroesFirst>true</heroesFirst>
-						<mode>Normal</mode>
-						<order>Decreasing</order>
-						<sortingValue>
-							<compiledString></compiledString>
-							<returnType>float</returnType>
-							<sString>1</sString>
-						</sortingValue>
-						<targetSelector href="/Items/Talents/Class/WitchDoctor/Ability3.TALENT" id="9206D3A6-9D09-444B-BEF5-66CB6C54B598">
-							<AreaTargetSelector>
-								<absolutePosition>
-									<x>0</x>
-									<y>0</y>
-								</absolutePosition>
-								<flags>1</flags>
-								<mode>Normal</mode>
-								<range>
-									<compiledString>FQ0AAAABAAAAGQAAAEEzX1NVUF9SYW5nZQBVi+yLRQxQi00IUWgAAAAAi1UQiwKLTRCLUFD/0l3D</compiledString>
-									<returnType>float</returnType>
-									<sString>cA3_SUP_Range</sString>
-								</range>
-								<targetFilter>681312319</targetFilter>
-								<targetSelector href="/Items/Talents/Class/WitchDoctor/Ability3.TALENT" id="F0ACF9A4-D50D-44D2-A525-04C9000A7460">
-									<SelectApplicatorTarget>
-										<applicatorIndex>0</applicatorIndex>
-										<applicatorName></applicatorName>
-										<namedApplicatorTarget>ApplicatorTarget</namedApplicatorTarget>
-										<selectTarget>AbilityTarget</selectTarget>
-									</SelectApplicatorTarget>
-								</targetSelector>
-							</AreaTargetSelector>
-						</targetSelector>
-						<targetsNumber>
-							<compiledString></compiledString>
-							<returnType>int</returnType>
-							<sString>1</sString>
-						</targetsNumber>
-					</CountingTargetSelector>
-				</targetSelector>
-			</SpellApplicator>
+				<spells>
+					<Item href="/Items/Talents/Class/WitchDoctor/Ability3.TALENT" id="035DFBA8-AF90-45CF-AC99-B121AEE857EC">
+						<Spell>
+							<applicators>
+								<Item href="/Items/Talents/Class/WitchDoctor/Ability3.TALENT" id="7662740B-F852-41A6-9DDD-F10AB8A61FC3">
+									<AbilityEndApplicator>
+										<applyTarget>ApplicatorTarget</applyTarget>
+										<cancelApplicators>true</cancelApplicators>
+										<caption>End of Ability если выключить аппликатор</caption>
+										<enabled>
+											<compiledString>FQAAAAAAAAAAVYvsi0UQixCLTRCLAv/QXcM=</compiledString>
+											<returnType>bool</returnType>
+											<sString>mIsAbilityOn</sString>
+										</enabled>
+										<formulaName></formulaName>
+										<LoggingEvent>-1</LoggingEvent>
+										<providerName></providerName>
+									</AbilityEndApplicator>
+								</Item>
+								<Item href="/Items/Talents/Class/WitchDoctor/appl_A3_CrowProgram.APLR" />
+								<Item href="/Items/Talents/Class/WitchDoctor/Ability3.TALENT" id="A6848564-0E2F-4D33-80F7-BE749A60A32E">
+									<SpellApplicator>
+										<applyTarget>ApplicatorTarget</applyTarget>
+										<caption>Вторая ворона</caption>
+										<enabled>
+											<compiledString>FR0AAAACAAAAJAAAAD0AAABWZWR1bl9BM19TVVAAAAAAVmVkdW5fQTNfU1VQAFWL7IPsCGgAAAAAi0UIixCLTQiLgqgBAAD/0IXAdCpoEAAAAItNCIsRi00Ii4KoAQAA/9CJRfyLTfyLEYtN/ItCBP/QiEX76wTGRfsAikX7i+Vdww==</compiledString>
+											<returnType>bool</returnType>
+											<sString>tal("Vedun_A3_SUP")</sString>
+										</enabled>
+										<formulaName></formulaName>
+										<LoggingEvent>-1</LoggingEvent>
+										<providerName></providerName>
+										<spell href="/Items/Talents/Class/WitchDoctor/Ability3.TALENT" id="9BD6FD76-BDD7-4CFD-A9D8-454C4A74C65C">
+											<Spell>
+												<applicators>
+													<Item href="/Items/Talents/Class/WitchDoctor/appl_A3_CrowProgram.APLR" />
+												</applicators>
+												<dispatch href="/Items/Talents/Class/WitchDoctor/Ability3.TALENT" id="F40780A2-8E7D-4965-92D2-FE6BE893DA00">
+													<DispatchLinear>
+														<aiming>Pursue</aiming>
+														<alwaysApply>false</alwaysApply>
+														<applyEffect>
+															<Item href="" />
+															<Item href="" />
+														</applyEffect>
+														<applyEffectIgnoreVisibility>false</applyEffectIgnoreVisibility>
+														<applyEffectOrientation>Default</applyEffectOrientation>
+														<applyEffectRandomAnglePoints>0</applyEffectRandomAnglePoints>
+														<dieAfterApply>true</dieAfterApply>
+														<dispatchEffect>
+															<Item href="/Summons/Crow/FXMove.EFFT" />
+															<Item href="" />
+														</dispatchEffect>
+														<flags>0</flags>
+														<flyMode>Linear</flyMode>
+														<fromLocator>Above</fromLocator>
+														<height>0</height>
+														<killEffect>false</killEffect>
+														<locatorOrient>false</locatorOrient>
+														<maxDeviation>180</maxDeviation>
+														<maxDistance>-1</maxDistance>
+														<maxRise>0</maxRise>
+														<minRise>0</minRise>
+														<persistentApplicators />
+														<speed>15</speed>
+														<suspendTime>0</suspendTime>
+														<toLocator>Above</toLocator>
+													</DispatchLinear>
+												</dispatch>
+											</Spell>
+										</spell>
+										<spellTarget>ApplicatorTarget</spellTarget>
+										<targetSelector href="/Items/Talents/Class/WitchDoctor/Ability3.TALENT" id="977B86E0-DFAC-4B18-8A82-8CAB2C5F2A73">
+											<CountingTargetSelector>
+												<enableSorting>false</enableSorting>
+												<flags>0</flags>
+												<heroesFirst>true</heroesFirst>
+												<mode>Normal</mode>
+												<order>Decreasing</order>
+												<sortingValue>
+													<compiledString></compiledString>
+													<returnType>float</returnType>
+													<sString>1</sString>
+												</sortingValue>
+												<targetSelector href="/Items/Talents/Class/WitchDoctor/Ability3.TALENT" id="0654F45D-9898-4259-83D4-DA7689EDEDC5">
+													<AreaTargetSelector>
+														<absolutePosition>
+															<x>0</x>
+															<y>0</y>
+														</absolutePosition>
+														<flags>1</flags>
+														<mode>Normal</mode>
+														<range>
+															<compiledString>FQ0AAAABAAAAGQAAAEEzX1NVUF9SYW5nZQBVi+yLRQxQi00IUWgAAAAAi1UQiwKLTRCLUFD/0l3D</compiledString>
+															<returnType>float</returnType>
+															<sString>cA3_SUP_Range</sString>
+														</range>
+														<targetFilter>681312319</targetFilter>
+														<targetSelector href="/Items/Talents/Class/WitchDoctor/Ability3.TALENT" id="E3DE3BC0-D1C8-46EC-BF30-CF802B7ECBC1">
+															<SelectApplicatorTarget>
+																<applicatorIndex>0</applicatorIndex>
+																<applicatorName></applicatorName>
+																<namedApplicatorTarget>ApplicatorTarget</namedApplicatorTarget>
+																<selectTarget>AbilityTarget</selectTarget>
+															</SelectApplicatorTarget>
+														</targetSelector>
+													</AreaTargetSelector>
+												</targetSelector>
+												<targetsNumber>
+													<compiledString></compiledString>
+													<returnType>int</returnType>
+													<sString>1</sString>
+												</targetsNumber>
+											</CountingTargetSelector>
+										</targetSelector>
+									</SpellApplicator>
+								</Item>
+							</applicators>
+							<dispatch href="/Items/Talents/Class/WitchDoctor/Ability3.TALENT" id="26875ECB-C03C-483A-AC4B-E1FDF48093C3">
+								<DispatchImmediate>
+									<alwaysApply>false</alwaysApply>
+									<applyEffect>
+										<Item href="" />
+										<Item href="" />
+									</applyEffect>
+									<applyEffectIgnoreVisibility>false</applyEffectIgnoreVisibility>
+									<applyEffectOrientation>Default</applyEffectOrientation>
+									<applyEffectRandomAnglePoints>0</applyEffectRandomAnglePoints>
+									<dieAfterApply>true</dieAfterApply>
+									<dispatchEffect>
+										<Item href="" />
+										<Item href="" />
+									</dispatchEffect>
+									<flags>0</flags>
+									<instantApply>false</instantApply>
+								</DispatchImmediate>
+							</dispatch>
+						</Spell>
+					</Item>
+					<Item href="/Items/Talents/Class/WitchDoctor/Ability3.TALENT" id="629CE2FF-8BFD-44DB-A6BC-2A644E67FB4D">
+						<Spell>
+							<applicators>
+								<Item href="/Items/Talents/Class/WitchDoctor/Ability3.TALENT" id="4FC06203-A909-4CA0-9C31-CB621A152A8E">
+									<ProgramApplicator>
+										<applicators>
+											<Item>
+												<applicator href="/Items/Talents/Class/WitchDoctor/Ability3.TALENT" id="57012F2A-D21F-42BC-8C7B-3579463CEE40">
+													<StatModApplicator>
+														<applyTarget>ApplicatorTarget</applyTarget>
+														<behaviorFlags>0</behaviorFlags>
+														<caption>TransformProgrammStart == 1</caption>
+														<constraint>None</constraint>
+														<dontUpdate>false</dontUpdate>
+														<effect>
+															<Item href="" />
+															<Item href="" />
+														</effect>
+														<enabled>
+															<compiledString></compiledString>
+															<returnType>bool</returnType>
+															<sString>true</sString>
+														</enabled>
+														<formulaName></formulaName>
+														<lifeTime>
+															<compiledString></compiledString>
+															<returnType>float</returnType>
+															<sString>-1.0</sString>
+														</lifeTime>
+														<LoggingEvent>-1</LoggingEvent>
+														<modifier>
+															<addValue>
+																<compiledString>FQAAAAAAAAAAVYvs2ehdwwAAgD8=</compiledString>
+																<returnType>float</returnType>
+																<sString>1</sString>
+															</addValue>
+															<multValue>
+																<compiledString></compiledString>
+																<returnType>float</returnType>
+																<sString>1.0f</sString>
+															</multValue>
+															<stat>Life</stat>
+															<topModifier>false</topModifier>
+															<variable>TransformProgrammStart</variable>
+														</modifier>
+														<providerName></providerName>
+														<startCondition>
+															<compiledString></compiledString>
+															<returnType>bool</returnType>
+															<sString>true</sString>
+														</startCondition>
+														<statModName></statModName>
+													</StatModApplicator>
+												</applicator>
+												<continueCondition>
+													<compiledString></compiledString>
+													<returnType>bool</returnType>
+													<sString>0</sString>
+												</continueCondition>
+												<continueEvents>1</continueEvents>
+												<delay>
+													<compiledString></compiledString>
+													<returnType>float</returnType>
+													<sString>-1.0</sString>
+												</delay>
+												<stopCondition>
+													<compiledString>FSEAAAAEAAAAJgAAADwAAABIAAAAXgAAAFZhbXBSZXNTdGFydGVkAABEcmFnb25SZXNTdGFydGVkAFWL7FFoAAAAAItFCIsQi00Ii4KIAQAA/9DcHYAAAADf4PbERHsraBAAAACLTQiLEYtNCIuCiAEAAP/Q3B2AAAAA3+D2xER7CcdF/AAAAADrB8dF/AEAAACKRfyL5V3DAAAAAAAA8D8=</compiledString>
+													<returnType>bool</returnType>
+													<sString>sender.vVampResStarted == 1 || sender.vDragonResStarted == 1</sString>
+												</stopCondition>
+												<stopEvents>0</stopEvents>
+											</Item>
+											<Item>
+												<applicator href="/GameLogic/GeneralApplicators/Transformed.APLR" />
+												<continueCondition>
+													<compiledString></compiledString>
+													<returnType>bool</returnType>
+													<sString>0</sString>
+												</continueCondition>
+												<continueEvents>1</continueEvents>
+												<delay>
+													<compiledString></compiledString>
+													<returnType>float</returnType>
+													<sString>-1.0</sString>
+												</delay>
+												<stopCondition>
+													<compiledString></compiledString>
+													<returnType>bool</returnType>
+													<sString>0</sString>
+												</stopCondition>
+												<stopEvents>0</stopEvents>
+											</Item>
+											<Item>
+												<applicator href="/Items/Talents/Class/WitchDoctor/Ability3.TALENT" id="A434DABF-9DE0-4536-8AB6-615C88E01252">
+													<ProgramApplicator>
+														<applicators>
+															<Item>
+																<applicator href="/Items/Talents/Class/WitchDoctor/Ability3.TALENT" id="BEEF1C03-A370-427B-B1F5-5D81D9241C4F">
+																	<FlagsApplicator>
+																		<applyTarget>AbilityOwner</applyTarget>
+																		<behaviorFlags>184</behaviorFlags>
+																		<caption>Эффект перевоплащения</caption>
+																		<consumables />
+																		<effect>
+																			<Item href="/Effects/General/Puff/_General.EFFT" />
+																			<Item href="" />
+																		</effect>
+																		<enabled>
+																			<compiledString>FRIAAAACAAAAFwAAAC0AAABBNF9TdGFydFRyYW5zZm9ybQBVi+xRaAAAAACLRQiLEItNCIuCiAEAAP/Q3B1PAAAA3+D2xEF6CcdF/AEAAADrB8dF/AAAAACKRfyL5V3DAAAAAAAAAAA=</compiledString>
+																			<returnType>bool</returnType>
+																			<sString>sender.vA4_StartTransform &lt;= 0</sString>
+																		</enabled>
+																		<flag>0</flag>
+																		<formulaName></formulaName>
+																		<lifeTime>
+																			<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAAAAQA==</compiledString>
+																			<returnType>float</returnType>
+																			<sString>2</sString>
+																		</lifeTime>
+																		<LoggingEvent>-1</LoggingEvent>
+																		<providerName></providerName>
+																		<startCondition>
+																			<compiledString>FQAAAAAAAAAAVYvssAFdww==</compiledString>
+																			<returnType>bool</returnType>
+																			<sString>true</sString>
+																		</startCondition>
+																		<talents />
+																		<useListAs>ListAsRule</useListAs>
+																	</FlagsApplicator>
+																</applicator>
+																<continueCondition>
+																	<compiledString></compiledString>
+																	<returnType>bool</returnType>
+																	<sString>0</sString>
+																</continueCondition>
+																<continueEvents>1</continueEvents>
+																<delay>
+																	<compiledString></compiledString>
+																	<returnType>float</returnType>
+																	<sString>-1.0</sString>
+																</delay>
+																<stopCondition>
+																	<compiledString>FSEAAAAEAAAAJgAAADwAAABIAAAAXgAAAFZhbXBSZXNTdGFydGVkAABEcmFnb25SZXNTdGFydGVkAFWL7FFoAAAAAItFCIsQi00Ii4KIAQAA/9DcHYAAAADf4PbERHsraBAAAACLTQiLEYtNCIuCiAEAAP/Q3B2AAAAA3+D2xER7CcdF/AAAAADrB8dF/AEAAACKRfyL5V3DAAAAAAAA8D8=</compiledString>
+																	<returnType>bool</returnType>
+																	<sString>sender.vVampResStarted == 1 || sender.vDragonResStarted == 1 </sString>
+																</stopCondition>
+																<stopEvents>0</stopEvents>
+															</Item>
+															<Item>
+																<applicator href="/Items/Talents/Class/WitchDoctor/Ability3.TALENT" id="93CCAC2E-7508-449D-8DC3-249B9F008A30">
+																	<SceneObjectChangeApplicator>
+																		<applyTarget>ApplicatorTarget</applyTarget>
+																		<behaviorFlags>153</behaviorFlags>
+																		<caption>Замена модели</caption>
+																		<effect>
+																			<Item href="" />
+																			<Item href="" />
+																		</effect>
+																		<enabled>
+																			<compiledString>FQAAAAAAAAAAVYvssAFdww==</compiledString>
+																			<returnType>bool</returnType>
+																			<sString>true</sString>
+																		</enabled>
+																		<formulaName></formulaName>
+																		<lifeTime>
+																			<compiledString></compiledString>
+																			<returnType>float</returnType>
+																			<sString>-1.0</sString>
+																		</lifeTime>
+																		<LoggingEvent>-1</LoggingEvent>
+																		<providerName></providerName>
+																		<sceneObjectIndex>
+																			<compiledString></compiledString>
+																			<returnType>int</returnType>
+																			<sString>0</sString>
+																		</sceneObjectIndex>
+																		<sceneObjects>
+																			<Item href="/Summons/Crow/CrowObject/_.SOBJ" />
+																		</sceneObjects>
+																		<startCondition>
+																			<compiledString>FQAAAAAAAAAAVYvssAFdww==</compiledString>
+																			<returnType>bool</returnType>
+																			<sString>true</sString>
+																		</startCondition>
+																	</SceneObjectChangeApplicator>
+																</applicator>
+																<continueCondition>
+																	<compiledString></compiledString>
+																	<returnType>bool</returnType>
+																	<sString>0</sString>
+																</continueCondition>
+																<continueEvents>1</continueEvents>
+																<delay>
+																	<compiledString></compiledString>
+																	<returnType>float</returnType>
+																	<sString>-1.0</sString>
+																</delay>
+																<stopCondition>
+																	<compiledString>FSEAAAAEAAAAJgAAADwAAABIAAAAXgAAAFZhbXBSZXNTdGFydGVkAABEcmFnb25SZXNTdGFydGVkAFWL7FFoAAAAAItFCIsQi00Ii4KIAQAA/9DcHYAAAADf4PbERHsraBAAAACLTQiLEYtNCIuCiAEAAP/Q3B2AAAAA3+D2xER7CcdF/AAAAADrB8dF/AEAAACKRfyL5V3DAAAAAAAA8D8=</compiledString>
+																	<returnType>bool</returnType>
+																	<sString>sender.vVampResStarted == 1 || sender.vDragonResStarted == 1 </sString>
+																</stopCondition>
+																<stopEvents>0</stopEvents>
+															</Item>
+															<Item>
+																<applicator href="/Items/Talents/Class/WitchDoctor/status_A3_CrowForm.APLR" />
+																<continueCondition>
+																	<compiledString></compiledString>
+																	<returnType>bool</returnType>
+																	<sString>0</sString>
+																</continueCondition>
+																<continueEvents>2</continueEvents>
+																<delay>
+																	<compiledString></compiledString>
+																	<returnType>float</returnType>
+																	<sString>-1.0</sString>
+																</delay>
+																<stopCondition>
+																	<compiledString>FSEAAAAEAAAAJgAAADwAAABIAAAAXgAAAFZhbXBSZXNTdGFydGVkAABEcmFnb25SZXNTdGFydGVkAFWL7FFoAAAAAItFCIsQi00Ii4KIAQAA/9DcHYAAAADf4PbERHsraBAAAACLTQiLEYtNCIuCiAEAAP/Q3B2AAAAA3+D2xER7CcdF/AAAAADrB8dF/AEAAACKRfyL5V3DAAAAAAAA8D8=</compiledString>
+																	<returnType>bool</returnType>
+																	<sString>sender.vVampResStarted == 1 || sender.vDragonResStarted == 1 </sString>
+																</stopCondition>
+																<stopEvents>0</stopEvents>
+															</Item>
+															<Item>
+																<applicator href="/Items/Talents/Class/WitchDoctor/Ability3.TALENT" id="FC86A150-9653-4916-9A5A-11C5137B5E1F">
+																	<FlagsApplicator>
+																		<applyTarget>AbilityOwner</applyTarget>
+																		<behaviorFlags>184</behaviorFlags>
+																		<caption>Эффект развоплощения</caption>
+																		<consumables />
+																		<effect>
+																			<Item href="/Effects/General/Puff/_General.EFFT" />
+																			<Item href="" />
+																		</effect>
+																		<enabled>
+																			<compiledString>FQAAAAAAAAAAVYvssAFdww==</compiledString>
+																			<returnType>bool</returnType>
+																			<sString>true</sString>
+																		</enabled>
+																		<flag>0</flag>
+																		<formulaName></formulaName>
+																		<lifeTime>
+																			<compiledString>FQAAAAAAAAAAVYvs2ehdwwAAgD8=</compiledString>
+																			<returnType>float</returnType>
+																			<sString>1</sString>
+																		</lifeTime>
+																		<LoggingEvent>-1</LoggingEvent>
+																		<providerName></providerName>
+																		<startCondition>
+																			<compiledString>FQAAAAAAAAAAVYvssAFdww==</compiledString>
+																			<returnType>bool</returnType>
+																			<sString>true</sString>
+																		</startCondition>
+																		<talents />
+																		<useListAs>ListAsRule</useListAs>
+																	</FlagsApplicator>
+																</applicator>
+																<continueCondition>
+																	<compiledString></compiledString>
+																	<returnType>bool</returnType>
+																	<sString>0</sString>
+																</continueCondition>
+																<continueEvents>1</continueEvents>
+																<delay>
+																	<compiledString></compiledString>
+																	<returnType>float</returnType>
+																	<sString>-1.0</sString>
+																</delay>
+																<stopCondition>
+																	<compiledString></compiledString>
+																	<returnType>bool</returnType>
+																	<sString>0</sString>
+																</stopCondition>
+																<stopEvents>0</stopEvents>
+															</Item>
+														</applicators>
+														<applyTarget>AbilityOwner</applyTarget>
+														<behaviorFlags>218</behaviorFlags>
+														<caption>Программа</caption>
+														<effect>
+															<Item href="" />
+															<Item href="" />
+														</effect>
+														<enabled>
+															<compiledString></compiledString>
+															<returnType>bool</returnType>
+															<sString>true</sString>
+														</enabled>
+														<formulaName></formulaName>
+														<lifeTime>
+															<compiledString></compiledString>
+															<returnType>float</returnType>
+															<sString>-1.0</sString>
+														</lifeTime>
+														<LoggingEvent>-1</LoggingEvent>
+														<providerName></providerName>
+														<startCondition>
+															<compiledString></compiledString>
+															<returnType>bool</returnType>
+															<sString>true</sString>
+														</startCondition>
+													</ProgramApplicator>
+												</applicator>
+												<continueCondition>
+													<compiledString></compiledString>
+													<returnType>bool</returnType>
+													<sString>0</sString>
+												</continueCondition>
+												<continueEvents>2</continueEvents>
+												<delay>
+													<compiledString></compiledString>
+													<returnType>float</returnType>
+													<sString>-1.0</sString>
+												</delay>
+												<stopCondition>
+													<compiledString></compiledString>
+													<returnType>bool</returnType>
+													<sString>0</sString>
+												</stopCondition>
+												<stopEvents>0</stopEvents>
+											</Item>
+											<Item>
+												<applicator href="/GameLogic/GeneralApplicators/EndOfAbility.APLR" />
+												<continueCondition>
+													<compiledString></compiledString>
+													<returnType>bool</returnType>
+													<sString>0</sString>
+												</continueCondition>
+												<continueEvents>1</continueEvents>
+												<delay>
+													<compiledString></compiledString>
+													<returnType>float</returnType>
+													<sString>-1.0</sString>
+												</delay>
+												<stopCondition>
+													<compiledString></compiledString>
+													<returnType>bool</returnType>
+													<sString>0</sString>
+												</stopCondition>
+												<stopEvents>0</stopEvents>
+											</Item>
+										</applicators>
+										<applyTarget>AbilityOwner</applyTarget>
+										<behaviorFlags>218</behaviorFlags>
+										<caption>Программа перевоплощения</caption>
+										<effect>
+											<Item href="" />
+											<Item href="" />
+										</effect>
+										<enabled>
+											<compiledString></compiledString>
+											<returnType>bool</returnType>
+											<sString>true</sString>
+										</enabled>
+										<formulaName></formulaName>
+										<lifeTime>
+											<compiledString></compiledString>
+											<returnType>float</returnType>
+											<sString>-1.0</sString>
+										</lifeTime>
+										<LoggingEvent>-1</LoggingEvent>
+										<providerName></providerName>
+										<startCondition>
+											<compiledString>FQAAAAAAAAAAVYvssAFdww==</compiledString>
+											<returnType>bool</returnType>
+											<sString>true</sString>
+										</startCondition>
+									</ProgramApplicator>
+								</Item>
+								<Item href="/Items/Talents/Class/WitchDoctor/Ability3.TALENT" id="D6998B13-9465-445F-BBF0-03134E7EA242">
+									<TriggerApplicator>
+										<actionsCount>
+											<compiledString>FQAAAAAAAAAAVYvsuAEAAABdww==</compiledString>
+											<returnType>int</returnType>
+											<sString>1</sString>
+										</actionsCount>
+										<applyTarget>ApplicatorTarget</applyTarget>
+										<behaviorFlags>1</behaviorFlags>
+										<caption>автоматическое завершение абилки</caption>
+										<effect>
+											<Item href="" />
+											<Item href="" />
+										</effect>
+										<enabled>
+											<compiledString>FQAAAAAAAAAAVYvssAFdww==</compiledString>
+											<returnType>bool</returnType>
+											<sString>true; //mIsAbilityOn</sString>
+										</enabled>
+										<formulaName></formulaName>
+										<lifeTime>
+											<compiledString>FREAAAACAAAAHgAAADEAAABDcm93Rm9ybUR1cmF0aW9uAFWL7FGLRQxQi00IUWgAAAAAi1UQiwKLTRCLUFD/0twFPwAAANld/NlF/IvlXcMAAACgmZm5Pw==</compiledString>
+											<returnType>float</returnType>
+											<sString>cCrowFormDuration + 0.1f</sString>
+										</lifeTime>
+										<LoggingEvent>-1</LoggingEvent>
+										<playAck>false</playAck>
+										<processor href="/Items/Talents/Class/WitchDoctor/Ability3.TALENT" id="E3CC6047-386B-47F4-A5C2-F91B71933A4E">
+											<EventProcessorCondition>
+												<applyTarget>ApplicatorTarget</applyTarget>
+												<condition>
+													<compiledString>FQwAAAACAAAAKgAAAEAAAABBM0lzV29ya2luZwBVi+xRaAAAABCLRQiLEItNCItCaP/QD7bIhcl1K2gAAAAAi1UIiwKLTQiLkIgBAAD/0twdYgAAAN/g9sRBewnHRfwAAAAA6wfHRfwBAAAAikX8i+VdwwAAAAAAAAAA</compiledString>
+													<returnType>bool</returnType>
+													<sString>sFlag(268435456) || sender.vA3IsWorking &lt;= 0</sString>
+												</condition>
+												<events>8192</events>
+												<onlyParent>false</onlyParent>
+												<spell href="/Items/Talents/Class/WitchDoctor/Ability3.TALENT" id="D5D1B3FB-9527-47A6-8F82-51B53B7ABCD2">
+													<Spell>
+														<applicators>
+															<Item href="/Items/Talents/Class/WitchDoctor/Ability3.TALENT" id="3C870801-7EE0-41FB-B48B-5E37DE0A01CC">
+																<AbilityEndApplicator>
+																	<applyTarget>ApplicatorTarget</applyTarget>
+																	<cancelApplicators>true</cancelApplicators>
+																	<caption>завершить абилку</caption>
+																	<enabled>
+																		<compiledString></compiledString>
+																		<returnType>bool</returnType>
+																		<sString>true</sString>
+																	</enabled>
+																	<formulaName></formulaName>
+																	<LoggingEvent>-1</LoggingEvent>
+																	<providerName></providerName>
+																</AbilityEndApplicator>
+															</Item>
+															<Item href="/Items/Talents/TalentKits/Redset7_11_MiniRefresher/appl_G766_RefreshAndNotify.APLR" />
+														</applicators>
+														<dispatch href="/Items/Talents/Class/WitchDoctor/Ability3.TALENT" id="EE30B0C9-E0BD-4476-A74D-CEC116BDB612">
+															<DispatchImmediate>
+																<alwaysApply>false</alwaysApply>
+																<applyEffect>
+																	<Item href="" />
+																	<Item href="" />
+																</applyEffect>
+																<applyEffectIgnoreVisibility>false</applyEffectIgnoreVisibility>
+																<applyEffectOrientation>Default</applyEffectOrientation>
+																<applyEffectRandomAnglePoints>0</applyEffectRandomAnglePoints>
+																<dieAfterApply>true</dieAfterApply>
+																<dispatchEffect>
+																	<Item href="" />
+																	<Item href="" />
+																</dispatchEffect>
+																<flags>0</flags>
+																<instantApply>false</instantApply>
+															</DispatchImmediate>
+														</dispatch>
+													</Spell>
+												</spell>
+											</EventProcessorCondition>
+										</processor>
+										<providerName></providerName>
+										<startCondition>
+											<compiledString></compiledString>
+											<returnType>bool</returnType>
+											<sString>true</sString>
+										</startCondition>
+										<useAbilityCooldown>false</useAbilityCooldown>
+										<useAbilityOwnerMana>false</useAbilityOwnerMana>
+									</TriggerApplicator>
+								</Item>
+							</applicators>
+							<dispatch href="/Items/Talents/Class/WitchDoctor/Ability3.TALENT" id="38830DBB-245A-40BD-A526-021E85935DFA">
+								<DispatchImmediate>
+									<alwaysApply>false</alwaysApply>
+									<applyEffect>
+										<Item href="" />
+										<Item href="" />
+									</applyEffect>
+									<applyEffectIgnoreVisibility>false</applyEffectIgnoreVisibility>
+									<applyEffectOrientation>Default</applyEffectOrientation>
+									<applyEffectRandomAnglePoints>0</applyEffectRandomAnglePoints>
+									<dieAfterApply>true</dieAfterApply>
+									<dispatchEffect>
+										<Item href="" />
+										<Item href="" />
+									</dispatchEffect>
+									<flags>0</flags>
+									<instantApply>false</instantApply>
+								</DispatchImmediate>
+							</dispatch>
+						</Spell>
+					</Item>
+				</spells>
+			</SpellSwitchApplicator>
 		</Item>
 	</applicators>
 	<askId>3</askId>
@@ -170,6 +716,26 @@
 					<sString>pSecond-&gt;FindApplicator("CrowEye", pMisc, UNIT) == pMisc</sString>
 				</condition>
 				<uiEvent href="/UI/Events/ErrorMessages/CastError_AlreadyHaveStatus.UIEV" />
+			</ConditionCastLimitation>
+		</Item>
+		<Item href="/Items/Talents/Class/WitchDoctor/Ability3.TALENT" id="2A94BC13-AF96-46E5-BB02-CC9767701050">
+			<ConditionCastLimitation>
+				<condition>
+					<compiledString>FQAAAAAAAAAAVYvsUVaLRQg7RQx1BsZF/wHrKotNDIsRi00Mi4KQAQAA/9CL8ItNCIsRi00Ii4KQAQAA/9A78A+VwYhN/4pF/16L5V3D</compiledString>
+					<returnType>bool</returnType>
+					<sString>$IsAppliedOnSelf? true: (rFctn != sFctn? true:false)</sString>
+				</condition>
+				<uiEvent href="/UI/Events/ErrorMessages/CastError_NoValidTargets.UIEV" />
+			</ConditionCastLimitation>
+		</Item>
+		<Item href="/Items/Talents/Class/WitchDoctor/Ability3.TALENT" id="C5413A41-67BA-43CE-9E4C-02262F64657C">
+			<ConditionCastLimitation>
+				<condition>
+					<compiledString>FQkAAAABAAAAEwAAAENyb3dGb3JtAFWL7GoBi0UQUGgAAAAAi00IixGLTQiLgpwBAAD/0DPJOUUQD5TBisFdww==</compiledString>
+					<returnType>bool</returnType>
+					<sString>(pMisc == sender.applCrowForm(UNIT))</sString>
+				</condition>
+				<uiEvent href="/UI/Events/ErrorMessages/CastError_NoValidTargets.UIEV" />
 			</ConditionCastLimitation>
 		</Item>
 	</castLimitations>
@@ -335,6 +901,36 @@
 						</var>
 					</UnitConstant>
 				</Item>
+				<Item href="/Items/Talents/Class/WitchDoctor/Ability3.TALENT" id="FE4215BA-A9C1-44FF-9754-62C46D8D8DF3">
+					<UnitConstant>
+						<name>Haste_Duration</name>
+						<var>
+							<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAAAgQQ==</compiledString>
+							<returnType>float</returnType>
+							<sString>10</sString>
+						</var>
+					</UnitConstant>
+				</Item>
+				<Item href="/Items/Talents/Class/WitchDoctor/Ability3.TALENT" id="995FCFE5-F03B-4A5C-AF51-311B9E4D94E9">
+					<UnitConstant>
+						<name>Haste_Percent</name>
+						<var>
+							<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAADwQQ==</compiledString>
+							<returnType>float</returnType>
+							<sString>30</sString>
+						</var>
+					</UnitConstant>
+				</Item>
+				<Item href="/Items/Talents/Class/WitchDoctor/Ability3.TALENT" id="B10703BA-3EB0-4C64-AE3B-1060BDB974CE">
+					<UnitConstant>
+						<name>CrowFormDuration</name>
+						<var>
+							<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAAAgQQ==</compiledString>
+							<returnType>float</returnType>
+							<sString>10</sString>
+						</var>
+					</UnitConstant>
+				</Item>
 			</vars>
 		</UnitConstantsContainer>
 	</constants>
@@ -386,7 +982,7 @@
 			<toLocator>Above</toLocator>
 		</DispatchLinear>
 	</dispatch>
-	<flags>15</flags>
+	<flags>32783</flags>
 	<forceBonus>9</forceBonus>
 	<image href="/UI/Styles/Icons/Heroes/WitchDoctor/A3.ITEX" />
 	<imageSecondState href="" />
@@ -490,8 +1086,8 @@
 	<shortDescription textref="/Items/Talents/Class/WitchDoctor/Ability3.TALENT_shortDescription.txt" />
 	<talentRollGroups>63</talentRollGroups>
 	<talentStats />
-	<targetType>672989247</targetType>
-	<type>Active</type>
+	<targetType>2015166527</targetType>
+	<type>Switchable</type>
 	<upgradeLevel>0</upgradeLevel>
 	<useRange>
 		<compiledString>FQsAAAABAAAAFwAAAFJhbmdlX0xvbmcAVYvsi0UMUItNCFFoAAAAAItVEIsCi00Qi1BQ/9Jdww==</compiledString>

@@ -55,9 +55,9 @@
 					<UnitConstant>
 						<name>A0_Damage</name>
 						<var>
-							<compiledString>FQAAAAAAAAAAVYvsg+wMi0UIixCLTQiLgjQBAAD/0ItNCIsRi00Ii4I8AQAA3V34/9DcTfjZXfTZRfSL5V3D</compiledString>
+							<compiledString>FQAAAAAAAAAAVYvsg+wMi0UIixCLTQiLgjABAAD/0ItNCIsRi00Ii4I8AQAA3V34/9DcTfjZXfTZRfSL5V3D</compiledString>
 							<returnType>float</returnType>
-							<sString>sIntellect * sBaseAttack</sString>
+							<sString>sStrength * sBaseAttack</sString>
 						</var>
 					</UnitConstant>
 				</Item>
@@ -88,6 +88,16 @@
 							<compiledString>FRoAAAACAAAAKQAAADsAAABBMF9EYW1hZ2UAAABEYW1hZ2VTdW1tYW5kAFWL7IPsDItFDFCLTQhRaAAAAACLVRCLAotNEItQUP/SaAwAAACLRQiLEItNCIuCiAEAAN1d+P/Q3EX42V302UX0i+Vdww==</compiledString>
 							<returnType>float</returnType>
 							<sString>cA0_Damage+ sender.vDamageSummand</sString>
+						</var>
+					</UnitConstant>
+				</Item>
+				<Item href="/Items/Talents/Class/Archeress/Ability_A0.TALENT" id="C273CDF6-B28D-4D91-A08A-A5D547BDD4CC">
+					<UnitConstant>
+						<name>A0_VampTT</name>
+						<var>
+							<compiledString>FQAAAAACAAAACAAAABIAAABVi+xqAVHZBUQAAADZHCRR2QVAAAAA2RwkagCLRQiLEItNCIuCNAEAAP/QUdkcJGoAi00QixGLTRCLQmD/0F3DAADAQAAA8EE=</compiledString>
+							<returnType>float</returnType>
+							<sString>abilityScale(sIntellect, 6, 30)</sString>
 						</var>
 					</UnitConstant>
 				</Item>
@@ -131,7 +141,55 @@
 	<naftaCost>0</naftaCost>
 	<name textref="/Items/Talents/Class/Archeress/Ability_A0.TALENT_name.txt" />
 	<node></node>
-	<passiveApplicators />
+	<passiveApplicators>
+		<Item href="/Items/Talents/Class/Archeress/Ability_A0.TALENT" id="979D3AAE-AC29-4A49-802E-FF6D025A9288">
+			<StatModApplicator>
+				<applyTarget>ApplicatorTarget</applyTarget>
+				<behaviorFlags>0</behaviorFlags>
+				<caption>Lifesteal</caption>
+				<constraint>None</constraint>
+				<dontUpdate>false</dontUpdate>
+				<effect>
+					<Item href="" />
+					<Item href="" />
+				</effect>
+				<enabled>
+					<compiledString></compiledString>
+					<returnType>bool</returnType>
+					<sString>true</sString>
+				</enabled>
+				<formulaName></formulaName>
+				<lifeTime>
+					<compiledString></compiledString>
+					<returnType>float</returnType>
+					<sString>-1.0</sString>
+				</lifeTime>
+				<LoggingEvent>-1</LoggingEvent>
+				<modifier>
+					<addValue>
+						<compiledString>FQoAAAABAAAAFgAAAEEwX1ZhbXBUVABVi+yLRQxQi00IUWgAAAAAi1UQiwKLTRCLUFD/0l3D</compiledString>
+						<returnType>float</returnType>
+						<sString>cA0_VampTT</sString>
+					</addValue>
+					<multValue>
+						<compiledString></compiledString>
+						<returnType>float</returnType>
+						<sString>1.0f</sString>
+					</multValue>
+					<stat>LifeDrain</stat>
+					<topModifier>false</topModifier>
+					<variable></variable>
+				</modifier>
+				<providerName></providerName>
+				<startCondition>
+					<compiledString></compiledString>
+					<returnType>bool</returnType>
+					<sString>true</sString>
+				</startCondition>
+				<statModName></statModName>
+			</StatModApplicator>
+		</Item>
+	</passiveApplicators>
 	<persistentId>Archeress_A0</persistentId>
 	<prerequisiteTalents />
 	<rarity>Class</rarity>

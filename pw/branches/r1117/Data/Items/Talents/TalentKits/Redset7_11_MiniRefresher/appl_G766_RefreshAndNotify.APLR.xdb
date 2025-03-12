@@ -26,6 +26,7 @@
 	<BackLink DBID="/Items/Talents/Class/WraithKing/Ability_A1.TALENT" Count="2" />
 	<BackLink DBID="/Items/Talents/Class/Zealot/Ability_A3.TALENT" Count="1" />
 	<BackLink DBID="/Maps/PvE/Series/Episode1/Talents/witcher/Ability1.TALENT" Count="1" />
+	<BackLink DBID="/Items/Talents/Class/WitchDoctor/Ability3.TALENT" Count="1" />
 	<applyTarget>AbilityOwner</applyTarget>
 	<caption>Spell for G766 (custom use w/out trigger)</caption>
 	<enabled>

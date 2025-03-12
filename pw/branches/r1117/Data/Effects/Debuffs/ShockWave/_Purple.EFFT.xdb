@@ -3,7 +3,7 @@
 	<BackLink DBID="/Effects/Debuffs/ShockWave/_Purple.EFFT" Count="2" />
 	<BackLink DBID="/Items/Talents/Class/Demonolog/ProgrammaRootAndSilence.APLR" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/Faceless/Ability3.TALENT" Count="1" />
-	<BackLink DBID="/Items/Talents/Class/ThunderGod/Ability2.TALENT" Count="1" />
+	<BackLink DBID="/Items/Talents/Class/ThunderGod/Ability2.TALENT" Count="7" />
 	<BackLink DBID="/Items/Talents/Level4/G498_Blink.TALENT" Count="1" />
 	<BackLink DBID="/Maps/Tutorial/Talents/Tutorial_ThunderGodA2.TALENT" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/Trickster/Ability2Upg.TALENT" Count="1" />

@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StatusApplicator>
+	<BackLink DBID="/Items/Talents/Class/WitchDoctor/Ability3.TALENT" Count="1" />
+	<applicators>
+		<Item href="/Items/Talents/Class/WitchDoctor/status_A3_CrowForm.APLR" id="E91FA6EB-9C69-4890-A662-6668B0AB4318">
+			<FlagsApplicator>
+				<applyTarget>ApplicatorTarget</applyTarget>
+				<behaviorFlags>0</behaviorFlags>
+				<caption>Запрет использования талантов</caption>
+				<consumables />
+				<effect>
+					<Item href="" />
+					<Item href="" />
+				</effect>
+				<enabled>
+					<compiledString></compiledString>
+					<returnType>bool</returnType>
+					<sString>true</sString>
+				</enabled>
+				<flag>1028</flag>
+				<formulaName></formulaName>
+				<lifeTime>
+					<compiledString></compiledString>
+					<returnType>float</returnType>
+					<sString>-1.0</sString>
+				</lifeTime>
+				<LoggingEvent>-1</LoggingEvent>
+				<providerName></providerName>
+				<startCondition>
+					<compiledString></compiledString>
+					<returnType>bool</returnType>
+					<sString>true</sString>
+				</startCondition>
+				<talents>
+					<Item href="/Items/Talents/Class/WitchDoctor/Ability3.TALENT" />
+				</talents>
+				<useListAs>ListAsException</useListAs>
+			</FlagsApplicator>
+		</Item>
+		<Item href="/Items/Talents/Class/WitchDoctor/status_A3_CrowForm.APLR" id="3A6AD0C2-6BE1-4E1F-AAA9-BA4A50E924A2">
+			<FlagsApplicator>
+				<applyTarget>ApplicatorTarget</applyTarget>
+				<behaviorFlags>0</behaviorFlags>
+				<caption>Запрет использования талантов на 1 сек</caption>
+				<consumables />
+				<effect>
+					<Item href="" />
+					<Item href="" />
+				</effect>
+				<enabled>
+					<compiledString></compiledString>
+					<returnType>bool</returnType>
+					<sString>true</sString>
+				</enabled>
+				<flag>1024</flag>
+				<formulaName></formulaName>
+				<lifeTime>
+					<compiledString>FQAAAAAAAAAAVYvs2ehdwwAAgD8=</compiledString>
+					<returnType>float</returnType>
+					<sString>1</sString>
+				</lifeTime>
+				<LoggingEvent>-1</LoggingEvent>
+				<providerName></providerName>
+				<startCondition>
+					<compiledString></compiledString>
+					<returnType>bool</returnType>
+					<sString>true</sString>
+				</startCondition>
+				<talents>
+					<Item href="/Items/Talents/Class/WitchDoctor/Ability3.TALENT" />
+				</talents>
+				<useListAs>ListAsRule</useListAs>
+			</FlagsApplicator>
+		</Item>
+		<Item href="/Heroes/DefaultStatus/_HASTE_status.APLR" />
+		<Item href="/Items/Talents/Class/WitchDoctor/status_A3_CrowForm.APLR" id="3825D6E8-F821-4211-AEFC-40419F45C1A7">
+			<FlyApplicator>
+				<animatedStopTime>0.2</animatedStopTime>
+				<applyTarget>ApplicatorTarget</applyTarget>
+				<behaviorFlags>0</behaviorFlags>
+				<caption>Собственно Полёт</caption>
+				<collisionFlags>7</collisionFlags>
+				<effect>
+					<Item href="" />
+					<Item href="" />
+				</effect>
+				<enabled>
+					<compiledString></compiledString>
+					<returnType>bool</returnType>
+					<sString>true</sString>
+				</enabled>
+				<flightHeight>6</flightHeight>
+				<formulaName></formulaName>
+				<lifeTime>
+					<compiledString>FQ8AAAABAAAAGwAAAEhhc3RlX0R1cmF0aW9uAFWL7ItFDFCLTQhRaAAAAACLVRCLAotNEItQUP/SXcM=</compiledString>
+					<returnType>float</returnType>
+					<sString>cHaste_Duration</sString>
+				</lifeTime>
+				<LoggingEvent>-1</LoggingEvent>
+				<providerName></providerName>
+				<push>false</push>
+				<radiusFixObstacle>30</radiusFixObstacle>
+				<replaceAnimations />
+				<startCondition>
+					<compiledString></compiledString>
+					<returnType>bool</returnType>
+					<sString>true</sString>
+				</startCondition>
+				<startSpell href="" />
+				<startTime>1</startTime>
+				<stopSpell href="" />
+				<stopTime>1</stopTime>
+			</FlyApplicator>
+		</Item>
+		<Item href="/Items/Talents/Class/WitchDoctor/status_A3_CrowForm.APLR" id="9B619044-722E-450B-80F5-395A356D508D">
+			<EyeApplicator>
+				<applyTarget>ApplicatorTarget</applyTarget>
+				<behaviorFlags>0</behaviorFlags>
+				<cancelObstacles>true</cancelObstacles>
+				<caption>unobstructed vision</caption>
+				<effect>
+					<Item href="" />
+					<Item href="" />
+				</effect>
+				<enabled>
+					<compiledString>FQAAAAAAAAAAVYvssAFdww==</compiledString>
+					<returnType>bool</returnType>
+					<sString>true</sString>
+				</enabled>
+				<eyeTarget>ApplicatorTarget</eyeTarget>
+				<flags>8</flags>
+				<formulaName></formulaName>
+				<lifeTime>
+					<compiledString></compiledString>
+					<returnType>float</returnType>
+					<sString>-1.0</sString>
+				</lifeTime>
+				<LoggingEvent>-1</LoggingEvent>
+				<providerName></providerName>
+				<startCondition>
+					<compiledString></compiledString>
+					<returnType>bool</returnType>
+					<sString>true</sString>
+				</startCondition>
+				<visRange>
+					<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAABgQQ==</compiledString>
+					<returnType>float</returnType>
+					<sString>14</sString>
+				</visRange>
+			</EyeApplicator>
+		</Item>
+		<Item href="/Items/Talents/Class/WitchDoctor/status_A3_CrowForm.APLR" id="C828EF14-B9BE-4B0D-B338-FCC7E21DA060">
+			<StatModApplicator>
+				<applyTarget>ApplicatorTarget</applyTarget>
+				<behaviorFlags>0</behaviorFlags>
+				<caption>A3IsWorking = 1</caption>
+				<constraint>None</constraint>
+				<dontUpdate>true</dontUpdate>
+				<effect>
+					<Item href="" />
+					<Item href="" />
+				</effect>
+				<enabled>
+					<compiledString></compiledString>
+					<returnType>bool</returnType>
+					<sString>true</sString>
+				</enabled>
+				<formulaName></formulaName>
+				<lifeTime>
+					<compiledString></compiledString>
+					<returnType>float</returnType>
+					<sString>-1.0</sString>
+				</lifeTime>
+				<LoggingEvent>-1</LoggingEvent>
+				<modifier>
+					<addValue>
+						<compiledString>FQAAAAAAAAAAVYvs2ehdwwAAgD8=</compiledString>
+						<returnType>float</returnType>
+						<sString>1.0f</sString>
+					</addValue>
+					<multValue>
+						<compiledString></compiledString>
+						<returnType>float</returnType>
+						<sString>1.0f</sString>
+					</multValue>
+					<stat>Life</stat>
+					<topModifier>false</topModifier>
+					<variable>A3IsWorking</variable>
+				</modifier>
+				<providerName></providerName>
+				<startCondition>
+					<compiledString></compiledString>
+					<returnType>bool</returnType>
+					<sString>true</sString>
+				</startCondition>
+				<statModName></statModName>
+			</StatModApplicator>
+		</Item>
+		<Item href="/Items/Talents/Class/WitchDoctor/status_A3_CrowForm.APLR" id="D7A19337-B97C-4EF1-AEEC-B5AF6A713198">
+			<AbilityEndApplicator>
+				<applyTarget>ApplicatorTarget</applyTarget>
+				<cancelApplicators>true</cancelApplicators>
+				<caption>End of Ability если выключить аппликатор</caption>
+				<enabled>
+					<compiledString>FQAAAAAAAAAAVYvsi0UQixCLTRCLAv/QD7bA99gbwIPAAV3D</compiledString>
+					<returnType>bool</returnType>
+					<sString>!mIsAbilityOn</sString>
+				</enabled>
+				<formulaName></formulaName>
+				<LoggingEvent>-1</LoggingEvent>
+				<providerName></providerName>
+			</AbilityEndApplicator>
+		</Item>
+	</applicators>
+	<applyTarget>AbilityOwner</applyTarget>
+	<behaviorFlags>3</behaviorFlags>
+	<caption>Статус перевоплощения</caption>
+	<customCounter>
+		<compiledString></compiledString>
+		<returnType>int</returnType>
+		<sString>0</sString>
+	</customCounter>
+	<customProgress>
+		<compiledString></compiledString>
+		<returnType>float</returnType>
+		<sString>-1.0</sString>
+	</customProgress>
+	<description textref="/Items/Talents/Class/WitchDoctor/status_A3_CrowForm.APLR_description.txt" />
+	<dispellPriority>NonDispellable</dispellPriority>
+	<effect>
+		<Item href="" />
+		<Item href="" />
+	</effect>
+	<enabled>
+		<compiledString>FQAAAAAAAAAAVYvsi0UQixCLTRCLAv/QXcM=</compiledString>
+		<returnType>bool</returnType>
+		<sString>mIsAbilityOn</sString>
+	</enabled>
+	<flags>0</flags>
+	<formulaName>CrowForm</formulaName>
+	<image href="/UI/Styles/Icons/Heroes/WitchDoctor/A3.ITEX" />
+	<lifeTime>
+		<compiledString>FREAAAABAAAAHQAAAENyb3dGb3JtRHVyYXRpb24AVYvsi0UMUItNCFFoAAAAAItVEIsCi00Qi1BQ/9Jdww==</compiledString>
+		<returnType>float</returnType>
+		<sString>cCrowFormDuration</sString>
+	</lifeTime>
+	<LoggingEvent>-1</LoggingEvent>
+	<name textref="/Items/Talents/Class/WitchDoctor/status_A3_CrowForm.APLR_name.txt" />
+	<power>0</power>
+	<providerName></providerName>
+	<stackableAcrossUnits>Unstackable</stackableAcrossUnits>
+	<stackCount>0</stackCount>
+	<startCondition>
+		<compiledString></compiledString>
+		<returnType>bool</returnType>
+		<sString>true</sString>
+	</startCondition>
+	<statusPosition>0</statusPosition>
+	<stopBehaviour>StopByTime</stopBehaviour>
+	<unstackableWith href="" />
+</StatusApplicator>

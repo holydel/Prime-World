@@ -87,7 +87,7 @@
 	<BackLink DBID="/Summons/Wolf/Slowdown.APLR" Count="1" />
 	<BackLink DBID="/Items/Talents/Level1/G295_LifeDrain.TALENT" Count="2" />
 	<BackLink DBID="/Items/Talents/Class/Inventor/Ability_A1.TALENT" Count="4" />
-	<BackLink DBID="/Items/Talents/Class/MagicGirl/Ability_A4_3.TALENT" Count="1" />
+	<BackLink DBID="/Items/Talents/Class/Frogenglut/Ability4.TALENT" Count="3" />
 	<applicators>
 		<Item href="/Heroes/DefaultStatus/_SLOW_MOVE.APLR" id="BD7263A6-11FD-4EAA-A701-C57196049889">
 			<StatModApplicator>

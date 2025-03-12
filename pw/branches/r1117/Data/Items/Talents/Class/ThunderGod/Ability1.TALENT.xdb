@@ -334,8 +334,6 @@
 						<providerName></providerName>
 					</PermanentStatModApplicator>
 				</Item>
-				<Item href="/Items/Talents/Class/ThunderGod/_ElectroStack_ModeOff.APLR" />
-				<Item href="/Items/Talents/Class/ThunderGod/status_ElectroStack_Off.APLR" />
 				<Item href="/Items/Talents/Class/ThunderGod/Ability1.TALENT" id="3D52B688-5F9E-470C-BC7C-72F3388C7AE4">
 					<SpellApplicator>
 						<applyTarget>ApplicatorTarget</applyTarget>

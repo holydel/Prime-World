@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StatusApplicator>
-	<BackLink DBID="/Items/Talents/Class/WitchDoctor/Ability2.TALENT" Count="1" />
 	<applicators>
 		<Item href="/Heroes/DefaultStatus/_TechHaste_status.APLR" />
 	</applicators>

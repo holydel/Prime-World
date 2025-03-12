@@ -810,9 +810,9 @@
 					<UnitConstant>
 						<name>Damage</name>
 						<var>
-							<compiledString>FQAAAAACAAAACAAAABIAAABVi+xqAVHZBUQAAADZHCRR2QVAAAAA2RwkagCLRQiLEItNCIuCNAEAAP/QUdkcJGoBi00QixGLTRCLQmD/0F3Dzcz0QgCAZUQ=</compiledString>
+							<compiledString>FQAAAAACAAAACAAAABIAAABVi+xqAVHZBUQAAADZHCRR2QVAAAAA2RwkagCLRQiLEItNCIuCNAEAAP/QUdkcJGoBi00QixGLTRCLQmD/0F3DAADcQgCATkQ=</compiledString>
 							<returnType>float</returnType>
-							<sString>damageScale( sIntellect,122.4, 918)</sString>
+							<sString>damageScale( sIntellect,110, 826)</sString>
 						</var>
 					</UnitConstant>
 				</Item>

@@ -4,7 +4,7 @@
 	<groups>
 		<Item>
 			<caption>Атакующие</caption>
-			<cooldown>25</cooldown>
+			<cooldown>0.1</cooldown>
 			<description textref="/GameLogic/TalentGroup.TGRP_groups_0_description.txt" />
 			<name textref="/GameLogic/TalentGroup.TGRP_groups_0_name.txt" />
 			<talents>
@@ -48,7 +48,7 @@
 		</Item>
 		<Item>
 			<caption>Защитные</caption>
-			<cooldown>25</cooldown>
+			<cooldown>0.1</cooldown>
 			<description textref="/GameLogic/TalentGroup.TGRP_groups_1_description.txt" />
 			<name textref="/GameLogic/TalentGroup.TGRP_groups_1_name.txt" />
 			<talents>
@@ -88,7 +88,7 @@
 		</Item>
 		<Item>
 			<caption>Тактические</caption>
-			<cooldown>10</cooldown>
+			<cooldown>0.1</cooldown>
 			<description textref="/GameLogic/TalentGroup.TGRP_groups_2_description.txt" />
 			<name textref="/GameLogic/TalentGroup.TGRP_groups_2_name.txt" />
 			<talents>

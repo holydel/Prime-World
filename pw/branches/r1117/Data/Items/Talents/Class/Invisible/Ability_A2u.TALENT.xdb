@@ -61,6 +61,16 @@
 			<vars>
 				<Item href="/Items/Talents/Class/Invisible/const_A2u_AddStats" />
 				<Item href="/Items/Talents/Class/Invisible/const_A2u_AfterDuration" />
+				<Item href="/Items/Talents/Class/Invisible/Ability_A2u.TALENT" id="53E23C3D-DA4C-4ABE-88A0-CA3B3098C692">
+					<UnitConstant>
+						<name>A0_RegenAbsX2</name>
+						<var>
+							<compiledString>FQAAAAACAAAACQAAABMAAABVi+xRagFR2QVPAAAA2RwkUdkFSwAAANkcJGoAi0UIixCLTQiLgjQBAAD/0FHZHCRqAItNEIsRi00Qi0Jg/9DcwNld/NlF/IvlXcMzM4NAzcz0QQ==</compiledString>
+							<returnType>float</returnType>
+							<sString>abilityScale( sIntellect, 4.1,  30.6 )*2</sString>
+						</var>
+					</UnitConstant>
+				</Item>
 			</vars>
 		</UnitConstantsContainer>
 	</constants>

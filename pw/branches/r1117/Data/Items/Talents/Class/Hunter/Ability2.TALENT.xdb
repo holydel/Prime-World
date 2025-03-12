@@ -290,9 +290,9 @@
 	<isUltimateTalent>false</isUltimateTalent>
 	<isUnitFreeAfterCast>true</isUnitFreeAfterCast>
 	<manaCost>
-		<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAABIQw==</compiledString>
+		<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAADIQg==</compiledString>
 		<returnType>float</returnType>
-		<sString>200</sString>
+		<sString>100</sString>
 	</manaCost>
 	<marker>doCast2</marker>
 	<microAI href="/Items/Talents/Class/Hunter/Ability2.TALENT" id="D49684C3-E50D-41CB-97A5-AE534C3379EA">

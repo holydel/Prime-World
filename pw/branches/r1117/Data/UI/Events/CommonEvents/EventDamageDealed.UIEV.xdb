@@ -11,7 +11,6 @@
 	<BackLink DBID="/Creeps/Minions/Minion3/DummyTestDps.ATCK" Count="1" />
 	<BackLink DBID="/Heroes/PinkGirl/_.HROB" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/Artist/status_A3_damage.APLR" Count="1" />
-	<BackLink DBID="/Items/Talents/Class/Dryad/spell_A2_SUP_BonusDamage.APLR" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/FireFox/status_A2_Burn.APLR" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/FireFox/status_A2_Burn_Upg.APLR" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/Marine/A0_BonusDamage.APLR" Count="1" />

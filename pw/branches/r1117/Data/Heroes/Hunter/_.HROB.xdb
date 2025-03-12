@@ -1083,16 +1083,16 @@
 					<calcIncrement>6</calcIncrement>
 					<calcValue>637.5</calcValue>
 					<increment>
-						<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAADAQA==</compiledString>
+						<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAABYQQ==</compiledString>
 						<returnType>float</returnType>
-						<sString>6</sString>
+						<sString>13.5</sString>
 					</increment>
 					<levelUpgrades />
 					<statId>Energy</statId>
 					<value>
-						<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAGAfRA==</compiledString>
+						<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAEA1RA==</compiledString>
 						<returnType>float</returnType>
-						<sString>637.5</sString>
+						<sString>725</sString>
 					</value>
 				</Item>
 				<Item>

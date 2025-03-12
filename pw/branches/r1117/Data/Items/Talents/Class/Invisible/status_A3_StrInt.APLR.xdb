@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StatusApplicator>
-	<BackLink DBID="/Items/Talents/Class/Invisible/Ability_A3.TALENT" Count="1" />
+	<BackLink DBID="/Items/Talents/Class/Invisible/Ability_A3.TALENT" Count="2" />
 	<applicators>
 		<Item href="/Items/Talents/Class/Invisible/status_A3_StrInt.APLR" id="DC830F4A-F5B2-43B7-AE16-E3441147A1D3">
 			<StatModApplicator>
@@ -14,9 +14,10 @@
 					<Item href="" />
 				</effect>
 				<enabled>
-					<compiledString>FQAAAAAAAAAAVYvsg+wMi0UMixCLTQyLgrgAAAD/0ItNDIsRi00Mi4K8AAAA3V34/9DcXfjf4PbEQXoJx0X0AQAAAOsHx0X0AAAAAIpF9IvlXcM=</compiledString>
+					<compiledString>FQ8AAAABAAAASQAAAEludmlzaWJsZV9BdXJhAFWL7IPsDItFDIsQi00Mi4K4AAAA/9CLTQyLEYtNDIuCvAAAAN1d+P/Q3F343+D2xEF6KWoBi00QUWgAAAAAi1UMiwKLTQyLkJwBAAD/0jtFEHUJx0X0AQAAAOsHx0X0AAAAAIpF9IvlXcM=</compiledString>
 					<returnType>bool</returnType>
-					<sString>rBaseStrength &gt;= rBaseIntellect</sString>
+					<sString>rBaseStrength &gt;= rBaseIntellect  &amp;&amp; 
+receiver.FindApplicator("Invisible_Aura", pMisc, UNIT) == pMisc</sString>
 				</enabled>
 				<formulaName></formulaName>
 				<lifeTime>
@@ -61,9 +62,10 @@
 					<Item href="" />
 				</effect>
 				<enabled>
-					<compiledString>FQAAAAAAAAAAVYvsg+wMi0UMixCLTQyLgrgAAAD/0ItNDIsRi00Mi4K8AAAA3V34/9DcXfjf4PbEQXUJx0X0AQAAAOsHx0X0AAAAAIpF9IvlXcM=</compiledString>
+					<compiledString>FQ8AAAABAAAASQAAAEludmlzaWJsZV9BdXJhAFWL7IPsDItFDIsQi00Mi4K4AAAA/9CLTQyLEYtNDIuCvAAAAN1d+P/Q3F343+D2xEF1KWoBi00QUWgAAAAAi1UMiwKLTQyLkJwBAAD/0jtFEHUJx0X0AQAAAOsHx0X0AAAAAIpF9IvlXcM=</compiledString>
 					<returnType>bool</returnType>
-					<sString>rBaseStrength &lt; rBaseIntellect</sString>
+					<sString>rBaseStrength &lt; rBaseIntellect  &amp;&amp; 
+receiver.FindApplicator("Invisible_Aura", pMisc, UNIT) == pMisc</sString>
 				</enabled>
 				<formulaName></formulaName>
 				<lifeTime>
@@ -84,6 +86,102 @@
 						<sString>1.0f</sString>
 					</multValue>
 					<stat>Intellect</stat>
+					<topModifier>false</topModifier>
+					<variable></variable>
+				</modifier>
+				<providerName></providerName>
+				<startCondition>
+					<compiledString></compiledString>
+					<returnType>bool</returnType>
+					<sString>true</sString>
+				</startCondition>
+				<statModName></statModName>
+			</StatModApplicator>
+		</Item>
+		<Item href="/Items/Talents/Class/Invisible/status_A3_StrInt.APLR" id="1387F357-5487-427C-A340-5317E7A5664E">
+			<StatModApplicator>
+				<applyTarget>ApplicatorTarget</applyTarget>
+				<behaviorFlags>0</behaviorFlags>
+				<caption>+Int</caption>
+				<constraint>None</constraint>
+				<dontUpdate>false</dontUpdate>
+				<effect>
+					<Item href="" />
+					<Item href="" />
+				</effect>
+				<enabled>
+					<compiledString>FQ8AAAABAAAASQAAAEludmlzaWJsZV9BdXJhAFWL7IPsDItFDIsQi00Mi4K4AAAA/9CLTQyLEYtNDIuCvAAAAN1d+P/Q3F343+D2xEF1KWoBi00QUWgAAAAAi1UMiwKLTQyLkJwBAAD/0jtFEHQJx0X0AQAAAOsHx0X0AAAAAIpF9IvlXcM=</compiledString>
+					<returnType>bool</returnType>
+					<sString>rBaseStrength &lt; rBaseIntellect &amp;&amp; 
+receiver.FindApplicator("Invisible_Aura", pMisc, UNIT) != pMisc</sString>
+				</enabled>
+				<formulaName></formulaName>
+				<lifeTime>
+					<compiledString></compiledString>
+					<returnType>float</returnType>
+					<sString>-1.0</sString>
+				</lifeTime>
+				<LoggingEvent>-1</LoggingEvent>
+				<modifier>
+					<addValue>
+						<compiledString>FQ0AAAABAAAAGgAAAEEzX0FkZFN0ckludABVi+xRi0UMUItNCFFoAAAAAItVEIsCi00Qi1BQ/9LcwNld/NlF/IvlXcM=</compiledString>
+						<returnType>float</returnType>
+						<sString>cA3_AddStrInt*2</sString>
+					</addValue>
+					<multValue>
+						<compiledString></compiledString>
+						<returnType>float</returnType>
+						<sString>1.0f</sString>
+					</multValue>
+					<stat>Intellect</stat>
+					<topModifier>false</topModifier>
+					<variable></variable>
+				</modifier>
+				<providerName></providerName>
+				<startCondition>
+					<compiledString></compiledString>
+					<returnType>bool</returnType>
+					<sString>true</sString>
+				</startCondition>
+				<statModName></statModName>
+			</StatModApplicator>
+		</Item>
+		<Item href="/Items/Talents/Class/Invisible/status_A3_StrInt.APLR" id="366C48A0-AF97-48FF-A0EE-6FF31C003AF6">
+			<StatModApplicator>
+				<applyTarget>ApplicatorTarget</applyTarget>
+				<behaviorFlags>0</behaviorFlags>
+				<caption>+Str</caption>
+				<constraint>None</constraint>
+				<dontUpdate>false</dontUpdate>
+				<effect>
+					<Item href="" />
+					<Item href="" />
+				</effect>
+				<enabled>
+					<compiledString>FQ8AAAABAAAASQAAAEludmlzaWJsZV9BdXJhAFWL7IPsDItFDIsQi00Mi4K4AAAA/9CLTQyLEYtNDIuCvAAAAN1d+P/Q3F343+D2xEF6KWoBi00QUWgAAAAAi1UMiwKLTQyLkJwBAAD/0jtFEHQJx0X0AQAAAOsHx0X0AAAAAIpF9IvlXcM=</compiledString>
+					<returnType>bool</returnType>
+					<sString>rBaseStrength &gt;= rBaseIntellect &amp;&amp; 
+receiver.FindApplicator("Invisible_Aura", pMisc, UNIT) != pMisc</sString>
+				</enabled>
+				<formulaName></formulaName>
+				<lifeTime>
+					<compiledString></compiledString>
+					<returnType>float</returnType>
+					<sString>-1.0</sString>
+				</lifeTime>
+				<LoggingEvent>-1</LoggingEvent>
+				<modifier>
+					<addValue>
+						<compiledString>FQ0AAAABAAAAGgAAAEEzX0FkZFN0ckludABVi+xRi0UMUItNCFFoAAAAAItVEIsCi00Qi1BQ/9LcwNld/NlF/IvlXcM=</compiledString>
+						<returnType>float</returnType>
+						<sString>cA3_AddStrInt*2</sString>
+					</addValue>
+					<multValue>
+						<compiledString></compiledString>
+						<returnType>float</returnType>
+						<sString>1.0f</sString>
+					</multValue>
+					<stat>Strength</stat>
 					<topModifier>false</topModifier>
 					<variable></variable>
 				</modifier>

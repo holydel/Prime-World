@@ -11,7 +11,7 @@
 	<BackLink DBID="/Test/Talents/Invisible/Epic_Int.TALENTSET" Count="1" />
 	<BackLink DBID="/Test/Talents/Invisible/Epic_Str.TALENTSET" Count="1" />
 	<BackLink DBID="/Items/Talents/TalentList_Mighty/Invisible_Mighty.TALENTSET" Count="1" />
-	<BackLink DBID="/Items/Talents/Invisible.TALENTSET" Count="1" />
+	<BackLink DBID="/Items/Talents/Invisible.TALENTSET" Count="2" />
 	<activationConditions />
 	<activeCustomTrigger>true</activeCustomTrigger>
 	<allowChase>
@@ -65,6 +65,16 @@
 				<name>Boost_Stat</name>
 			</ConditionFormula>
 		</Item>
+		<Item href="/Items/Talents/Class/Invisible/Ability_A3.TALENT" id="052D8241-E6D3-4B4D-AB78-57B00766EFD1">
+			<ConditionFormula>
+				<condition>
+					<compiledString>FQ8AAAABAAAAGQAAAEludmlzaWJsZV9BdXJhAFWL7GoBi0UQUGgAAAAAi00MixGLTQyLgpwBAAD/0DPJO0UQD5XBisFdww==</compiledString>
+					<returnType>bool</returnType>
+					<sString>receiver.FindApplicator("Invisible_Aura", pMisc, UNIT) != pMisc </sString>
+				</condition>
+				<name>A3_Aura</name>
+			</ConditionFormula>
+		</Item>
 	</conditionFormulas>
 	<conflictingTalents />
 	<constants href="/Items/Talents/Class/Invisible/Ability_A3.TALENT" id="8C134AF6-C1BF-4918-B063-C3FD58AF4F51">
@@ -86,7 +96,19 @@
 						<var>
 							<compiledString>FQAAAAACAAAACAAAABIAAABVi+xqAVHZBUQAAADZHCRR2QVAAAAA2RwkagCLRQiLEItNCIuCvAAAAP/QUdkcJGoAi00QixGLTRCLQmD/0F3DSOHaP4/CTUE=</compiledString>
 							<returnType>float</returnType>
-							<sString>abilityScale( sBaseIntellect, 1.71f, 12.86f )</sString>
+							<sString>
+abilityScale( sBaseIntellect, 1.71f, 12.86f )</sString>
+						</var>
+					</UnitConstant>
+				</Item>
+				<Item href="/Items/Talents/Class/Invisible/Ability_A3.TALENT" id="396B02AF-E4F3-445A-9865-ADC8ECCDF3C3">
+					<UnitConstant>
+						<name>A3_AddStrIntX2</name>
+						<var>
+							<compiledString>FQAAAAACAAAACQAAABMAAABVi+xRagFR2QVPAAAA2RwkUdkFSwAAANkcJGoAi0UIixCLTQiLgrwAAAD/0FHZHCRqAItNEIsRi00Qi0Jg/9DcwNld/NlF/IvlXcNI4do/j8JNQQ==</compiledString>
+							<returnType>float</returnType>
+							<sString>
+abilityScale( sBaseIntellect, 1.71f, 12.86f )*2</sString>
 						</var>
 					</UnitConstant>
 				</Item>
@@ -131,6 +153,102 @@
 	<name textref="/Items/Talents/Class/Invisible/Ability_A3.TALENT_name.txt" />
 	<node></node>
 	<passiveApplicators>
+		<Item href="/Items/Talents/Class/Invisible/Ability_A3.TALENT" id="85EF2393-65F1-4B71-9D02-4AF9273ED433">
+			<AuraApplicator>
+				<applicators>
+					<Item href="/Items/Talents/Class/Invisible/Ability_A3.TALENT" id="3E62AC51-AAA4-43B9-B493-0ECA4E559D80">
+						<StatusApplicator>
+							<applicators />
+							<applyTarget>ApplicatorTarget</applyTarget>
+							<behaviorFlags>4</behaviorFlags>
+							<caption></caption>
+							<customCounter>
+								<compiledString></compiledString>
+								<returnType>int</returnType>
+								<sString>0</sString>
+							</customCounter>
+							<customProgress>
+								<compiledString></compiledString>
+								<returnType>float</returnType>
+								<sString>-1.0</sString>
+							</customProgress>
+							<description textref="" />
+							<dispellPriority>NonDispellable</dispellPriority>
+							<effect>
+								<Item href="" />
+								<Item href="" />
+							</effect>
+							<enabled>
+								<compiledString></compiledString>
+								<returnType>bool</returnType>
+								<sString>true</sString>
+							</enabled>
+							<flags>0</flags>
+							<formulaName>Invisible_Aura</formulaName>
+							<image href="" />
+							<lifeTime>
+								<compiledString></compiledString>
+								<returnType>float</returnType>
+								<sString>-1.0</sString>
+							</lifeTime>
+							<LoggingEvent>-1</LoggingEvent>
+							<name textref="" />
+							<power>0</power>
+							<providerName></providerName>
+							<stackableAcrossUnits>Unstackable</stackableAcrossUnits>
+							<stackCount>0</stackCount>
+							<startCondition>
+								<compiledString></compiledString>
+								<returnType>bool</returnType>
+								<sString>true</sString>
+							</startCondition>
+							<statusPosition>0</statusPosition>
+							<stopBehaviour>StopByTime</stopBehaviour>
+							<unstackableWith href="" />
+						</StatusApplicator>
+					</Item>
+				</applicators>
+				<applyTarget>ApplicatorTarget</applyTarget>
+				<behaviorFlags>0</behaviorFlags>
+				<caption>фейк статус</caption>
+				<effect>
+					<Item href="" />
+					<Item href="" />
+				</effect>
+				<enabled>
+					<compiledString></compiledString>
+					<returnType>bool</returnType>
+					<sString>true</sString>
+				</enabled>
+				<formulaName></formulaName>
+				<lifeTime>
+					<compiledString></compiledString>
+					<returnType>float</returnType>
+					<sString>-1.0</sString>
+				</lifeTime>
+				<LoggingEvent>-1</LoggingEvent>
+				<providerName></providerName>
+				<range>
+					<compiledString>FQsAAAABAAAAFwAAAFJhbmdlX0xvbmcAVYvsi0UMUItNCFFoAAAAAItVEIsCi00Qi1BQ/9Jdww==</compiledString>
+					<returnType>float</returnType>
+					<sString>cRange_Long</sString>
+				</range>
+				<startCondition>
+					<compiledString></compiledString>
+					<returnType>bool</returnType>
+					<sString>true</sString>
+				</startCondition>
+				<targets>2040319</targets>
+				<targetSelector href="/Items/Talents/Class/Invisible/Ability_A3.TALENT" id="8F35348D-D1F8-43FA-B67C-0288CCD64A6F">
+					<HeroEnumerator>
+						<flags>0</flags>
+						<mode>Normal</mode>
+						<targetFilter>268435459</targetFilter>
+					</HeroEnumerator>
+				</targetSelector>
+				<type>Ally</type>
+			</AuraApplicator>
+		</Item>
 		<Item href="/Items/Talents/Class/Invisible/Ability_A3.TALENT" id="8F760171-2FC0-49A9-ADA9-938B2641C15F">
 			<AuraApplicator>
 				<applicators>

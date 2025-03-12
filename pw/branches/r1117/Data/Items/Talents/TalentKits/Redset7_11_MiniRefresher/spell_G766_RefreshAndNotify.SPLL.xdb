@@ -26,11 +26,11 @@
 				<formulaName></formulaName>
 				<LoggingEvent>-1</LoggingEvent>
 				<providerName></providerName>
-				<reduceByPercent>false</reduceByPercent>
+				<reduceByPercent>true</reduceByPercent>
 				<reductionAmount>
-					<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAACAvw==</compiledString>
+					<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DzcxMPw==</compiledString>
 					<returnType>float</returnType>
-					<sString>-1</sString>
+					<sString>0.8</sString>
 				</reductionAmount>
 				<refreshThis>true</refreshThis>
 				<talents />

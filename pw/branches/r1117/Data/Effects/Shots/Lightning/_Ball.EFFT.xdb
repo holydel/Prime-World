@@ -2,7 +2,7 @@
 <BasicEffectStandalone>
 	<BackLink DBID="/Effects/Shots/Lightning/_Ball.EFFT" Count="3" />
 	<BackLink DBID="/Items/Talents/Class/Plane/programm.APLR" Count="1" />
-	<BackLink DBID="/Items/Talents/Class/ThunderGod/Ability2.TALENT" Count="1" />
+	<BackLink DBID="/Items/Talents/Class/ThunderGod/Ability2.TALENT" Count="7" />
 	<BackLink DBID="/Maps/Tutorial/Talents/Tutorial_ThunderGodA2.TALENT" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/Trickster/Ability2Upg.TALENT" Count="1" />
 	<component href="/Effects/Shots/Lightning/_BallTRS.PRXY" />

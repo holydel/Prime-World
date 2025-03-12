@@ -363,6 +363,26 @@
 						</var>
 					</UnitConstant>
 				</Item>
+				<Item href="/Items/Talents/Class/Invisible/Ability_A2.TALENT" id="ACF5A753-2793-4E8D-804B-C00490B3B9E5">
+					<UnitConstant>
+						<name>A0_RegenAbs</name>
+						<var>
+							<compiledString>FQAAAAACAAAACAAAABIAAABVi+xqAVHZBUQAAADZHCRR2QVAAAAA2RwkagCLRQiLEItNCIuCNAEAAP/QUdkcJGoAi00QixGLTRCLQmD/0F3DMzODQM3M9EE=</compiledString>
+							<returnType>float</returnType>
+							<sString>abilityScale( sIntellect, 4.1,  30.6 )</sString>
+						</var>
+					</UnitConstant>
+				</Item>
+				<Item href="/Items/Talents/Class/Invisible/Ability_A2.TALENT" id="2EB4B9D6-1B33-48E4-94EB-0BA9899B5E2B">
+					<UnitConstant>
+						<name>A0_RegenAbsX2</name>
+						<var>
+							<compiledString>FQAAAAACAAAACQAAABMAAABVi+xRagFR2QVPAAAA2RwkUdkFSwAAANkcJGoAi0UIixCLTQiLgjQBAAD/0FHZHCRqAItNEIsRi00Qi0Jg/9DcwNld/NlF/IvlXcMzM4NAzcz0QQ==</compiledString>
+							<returnType>float</returnType>
+							<sString>abilityScale( sIntellect, 4.1,  30.6 )*2</sString>
+						</var>
+					</UnitConstant>
+				</Item>
 			</vars>
 		</UnitConstantsContainer>
 	</constants>

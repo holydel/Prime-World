@@ -29,6 +29,7 @@
 	<aoeType>None</aoeType>
 	<applicators>
 		<Item href="/Buildings/DefaultStats/MainBuildingAutoAttack.APLR" />
+		<Item href="/Buildings/DefaultStats/MainBuildingAutoAttackEnergy.APLR" />
 		<Item href="/Buildings/DefaultStats/StackTowerDamage.APLR" />
 	</applicators>
 	<autoTargetSelector href="" />

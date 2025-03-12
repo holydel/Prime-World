@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StatusApplicator>
+	<BackLink DBID="/Items/Talents/Class/Invisible/Ability_A4.TALENT" Count="1" />
+	<applicators />
+	<applyTarget>ApplicatorTarget</applyTarget>
+	<behaviorFlags>217</behaviorFlags>
+	<caption>Статус А4 Твари про кулдаун со стеками</caption>
+	<customCounter>
+		<compiledString></compiledString>
+		<returnType>int</returnType>
+		<sString>0</sString>
+	</customCounter>
+	<customProgress>
+		<compiledString></compiledString>
+		<returnType>float</returnType>
+		<sString>-1.0</sString>
+	</customProgress>
+	<description textref="" />
+	<dispellPriority>NonDispellable</dispellPriority>
+	<effect>
+		<Item href="" />
+		<Item href="" />
+	</effect>
+	<enabled>
+		<compiledString>FXoAAAAIAAAAgQAAAJoAAADQAAAA8AAAAAwBAAAlAQAAWwEAAHsBAABJbnZpc2libGVfQTQAAAAASW52aXNpYmxlX0E0AAAAAEludmlzaWJsZV9BNAAAAABGYW5DaGFyZ2VzAABJbnZpc2libGVfQTQAAAAASW52aXNpYmxlX0E0AAAAAEludmlzaWJsZV9BNAAAAABNYXhGYW5DaGFyZ2VzAFWL7IPsJGgAAAAAi0UIixCLTQiLgqgBAAD/0IXAdCpoEAAAAItNCIsRi00Ii4KoAQAA/9CJRfyLTfyLEYtN/ItCBP/QiEX76wTGRfsAD7ZN+4XJdDdoIAAAAItVCIsCi00Ii5CoAQAA/9KJRfSLRQxQi00IUWgwAAAAi1X0iwKLTfSLUFD/0tld8OsF2e7ZXfBoPAAAAItFCIsQi00Ii4KoAQAA/9CFwHQqaEwAAACLTQiLEYtNCIuCqAEAAP/QiUXsi03sixGLTeyLQgT/0IhF6+sExkXrAA+2TeuFyXQ3aFwAAACLVQiLAotNCIuQqAEAAP/SiUXki0UMUItNCFFobAAAAItV5IsCi03ki1BQ/9LZXeDrBdnu2V3g2UXw2UXg3tnf4PbEQXUJx0XcAQAAAOsHx0XcAAAAAIpF3IvlXcMAAAAA</compiledString>
+		<returnType>bool</returnType>
+		<sString>talconst("Invisible_A4","FanCharges") &lt; talconst("Invisible_A4","MaxFanCharges")</sString>
+	</enabled>
+	<flags>0</flags>
+	<formulaName>Invisible_A4StackCooldownSpell</formulaName>
+	<image href="" />
+	<lifeTime>
+		<compiledString>FUEAAAAEAAAASAAAAGEAAACXAAAAtwAAAEludmlzaWJsZV9BNAAAAABJbnZpc2libGVfQTQAAAAASW52aXNpYmxlX0E0AAAAAEE0X1N0YWNrQ29vbGRvd24AVYvsg+wQaAAAAACLRQiLEItNCIuCqAEAAP/QhcB0KmgQAAAAi00IixGLTQiLgqgBAAD/0IlF/ItN/IsRi038i0IE/9CIRfvrBMZF+wAPtk37hcl0N2ggAAAAi1UIiwKLTQiLkKgBAAD/0olF9ItFDFCLTQhRaDAAAACLVfSLAotN9ItQUP/S2V3w6wXZ7tld8NlF8IvlXcMAAAAA</compiledString>
+		<returnType>float</returnType>
+		<sString>talconst("Invisible_A4","A4_StackCooldown")</sString>
+	</lifeTime>
+	<LoggingEvent>-1</LoggingEvent>
+	<name textref="" />
+	<power>0</power>
+	<providerName></providerName>
+	<stackableAcrossUnits>Unstackable</stackableAcrossUnits>
+	<stackCount>0</stackCount>
+	<startCondition>
+		<compiledString>FXoAAAAIAAAAgQAAAJoAAADQAAAA8AAAAAwBAAAlAQAAWwEAAHsBAABJbnZpc2libGVfQTQAAAAASW52aXNpYmxlX0E0AAAAAEludmlzaWJsZV9BNAAAAABGYW5DaGFyZ2VzAABJbnZpc2libGVfQTQAAAAASW52aXNpYmxlX0E0AAAAAEludmlzaWJsZV9BNAAAAABNYXhGYW5DaGFyZ2VzAFWL7IPsJGgAAAAAi0UIixCLTQiLgqgBAAD/0IXAdCpoEAAAAItNCIsRi00Ii4KoAQAA/9CJRfyLTfyLEYtN/ItCBP/QiEX76wTGRfsAD7ZN+4XJdDdoIAAAAItVCIsCi00Ii5CoAQAA/9KJRfSLRQxQi00IUWgwAAAAi1X0iwKLTfSLUFD/0tld8OsF2e7ZXfBoPAAAAItFCIsQi00Ii4KoAQAA/9CFwHQqaEwAAACLTQiLEYtNCIuCqAEAAP/QiUXsi03sixGLTeyLQgT/0IhF6+sExkXrAA+2TeuFyXQ3aFwAAACLVQiLAotNCIuQqAEAAP/SiUXki0UMUItNCFFobAAAAItV5IsCi03ki1BQ/9LZXeDrBdnu2V3g2UXw2UXg3tnf4PbEQXUJx0XcAQAAAOsHx0XcAAAAAIpF3IvlXcMAAAAA</compiledString>
+		<returnType>bool</returnType>
+		<sString>talconst("Invisible_A4","FanCharges") &lt; talconst("Invisible_A4","MaxFanCharges")</sString>
+	</startCondition>
+	<statusPosition>-88</statusPosition>
+	<stopBehaviour>StopByTime</stopBehaviour>
+	<unstackableWith href="" />
+</StatusApplicator>
