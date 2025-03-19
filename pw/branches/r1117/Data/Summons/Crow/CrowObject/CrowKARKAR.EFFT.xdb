@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BasicEffectAttached>
+	<BackLink DBID="/Items/Talents/Class/WitchDoctor/status_A3_CrowForm.APLR" Count="1" />
+	<attachFlags>0</attachFlags>
+	<attachType>Body</attachType>
+	<component href="/Summons/Crow/CrowObject/CrowKARKAR.EFFT" id="0006F0E0-8EDB-4786-A570-AE5AAA09D786">
+		<DBSoundSceneComponent>
+			<attached />
+			<caption>sound_attack</caption>
+			<desc>
+				<eventName>CrowAttack</eventName>
+				<groupName>Heroes/WitchDoctor/Animation</groupName>
+				<projectName>PF</projectName>
+			</desc>
+			<groupFlags>0</groupFlags>
+			<locatorList href="" />
+			<orientation>Default</orientation>
+			<timeInterval>0</timeInterval>
+		</DBSoundSceneComponent>
+	</component>
+	<deathType>Anim</deathType>
+	<enableCondition href="" />
+	<fadeIn>0</fadeIn>
+	<fadeOut>0</fadeOut>
+	<groupFlags>0</groupFlags>
+	<lifeTime>0</lifeTime>
+</BasicEffectAttached>

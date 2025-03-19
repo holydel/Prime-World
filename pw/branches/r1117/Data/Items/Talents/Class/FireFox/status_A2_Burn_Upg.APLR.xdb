@@ -2,6 +2,7 @@
 <StatusApplicator>
 	<BackLink DBID="/Items/Talents/Class/FireFox/Ability1.TALENT" Count="4" />
 	<BackLink DBID="/Heroes/Firefox/_.HROB" Count="2" />
+	<BackLink DBID="/Items/Talents/Class/FireFox/status_A4.APLR" Count="1" />
 	<applicators>
 		<Item href="/Items/Talents/Class/FireFox/status_A2_Burn_Upg.APLR" id="BE218228-8BFD-4CAD-9909-49CBCED89708">
 			<SpellPeriodicallyApplicator>
@@ -40,11 +41,13 @@
 									<cancelInvisibility>false</cancelInvisibility>
 									<caption>урон</caption>
 									<damage>
-										<compiledString>FfgAAAAPAAAAAgEAABsBAABRAQAAcQEAAI0BAACmAQAA3AEAAPwBAAAYAgAAMQIAAGcCAACHAgAANgMAAFEDAABxAwAARmlyZUZveF9BQTpkYW1hZ2VEZWFsZWQARmlyZWZveF9BMgAARmlyZWZveF9BMgAARmlyZWZveF9BMgAAQnVybl9CYXNlRGFtYWdlTXVsdABGaXJlRm94X0E0XzJEYW1hZ2U6ZGFtYWdlRGVhbGVkAEZpcmVmb3hfQTIAAEZpcmVmb3hfQTIAAEZpcmVmb3hfQTIAAEJ1cm5fQmFzZURhbWFnZU11bHQARmlyZUZveF9BMTpkYW1hZ2VEZWFsZWQARmlyZWZveF9BMgAARmlyZWZveF9BMgAARmlyZWZveF9BMgAAQnVybl9CYXNlRGFtYWdlTXVsdABVi+yB7IAAAABoGAAAAItFCIsQi00Ii4KoAQAA/9CFwHQqaCQAAACLTQiLEYtNCIuCqAEAAP/QiUX8i038ixGLTfyLQgT/0IhF++sExkX7AA+2TfuFyXQ3aDAAAACLVQiLAotNCIuQqAEAAP/SiUX0i0UMUItNCFFoPAAAAItV9IsCi030i1BQ/9LZXfDrBdnu2V3waHAAAACLRQiLEItNCIuCqAEAAP/QhcB0Kmh8AAAAi00IixGLTQiLgqgBAAD/0IlF7ItN7IsRi03si0IE/9CIRevrBMZF6wAPtk3rhcl0N2iIAAAAi1UIiwKLTQiLkKgBAAD/0olF5ItFDFCLTQhRaJQAAACLVeSLAotN5ItQUP/S2V3g6wXZ7tld4GjAAAAAi0UIixCLTQiLgqgBAAD/0IXAdCpozAAAAItNCIsRi00Ii4KoAQAA/9CJRdyLTdyLEYtN3ItCBP/QiEXb6wTGRdsAD7ZN24XJdDdo2AAAAItVCIsCi00Ii5CoAQAA/9KJRdSLRQxQi00IUWjkAAAAi1XUiwKLTdSLUFD/0tld0OsF2e7ZXdCLRRCLEItNEItCSP/QiUXMi03MixGLTcyLQkj/0IlFyItNyIsRi03Ii0JI/9CJRcSLTRCLEYtNEItCSP/QiUXAi03AixGLTcCLQkj/0IlFvItNvIsRi028i0JI/9CJRbiLTRCLEYtNEItCSP/QiUW0i020ixGLTbSLQkj/0IlFsItNsIsRi02wi0JI/9CJRazZRdBoqAAAAItNrIsRi02si0JU3V2k/9DcTaTZReBoUAAAAItNuIsRi024i0JU2cndXZzdXZT/0NxNlNlF8GgAAAAAi03EixGLTcSLQlTZyd1djN1dhP/Q3E2E3EWM3EWc2V2A2UWAi+VdwwAAAAA=</compiledString>
+										<compiledString>FUgBAAAUAAAAUgEAAGsBAAChAQAAwQEAAN0BAAD2AQAALAIAAEwCAABoAgAAgQIAALcCAADXAgAA8wIAAAwDAABCAwAAYgMAAEEEAABcBAAAggQAAKsEAABGaXJlRm94X0FBOmRhbWFnZURlYWxlZABGaXJlZm94X0EwAABGaXJlZm94X0EwAABGaXJlZm94X0EwAABCdXJuX0Jhc2VEYW1hZ2VNdWx0AEZpcmVGb3hfQTRfMkRhbWFnZTpkYW1hZ2VEZWFsZWQARmlyZWZveF9BMAAARmlyZWZveF9BMAAARmlyZWZveF9BMAAAQnVybl9CYXNlRGFtYWdlTXVsdABGaXJlRm94X0ExOmRhbWFnZURlYWxlZABGaXJlZm94X0EwAABGaXJlZm94X0EwAABGaXJlZm94X0EwAABCdXJuX0Jhc2VEYW1hZ2VNdWx0AEZpcmVGb3hfQTQ6ZGFtYWdlRGVhbGVkAEZpcmVmb3hfQTAAAEZpcmVmb3hfQTAAAEZpcmVmb3hfQTAAAEJ1cm5fQmFzZURhbWFnZU11bHQAVYvsgeysAAAAaBgAAACLRQiLEItNCIuCqAEAAP/QhcB0KmgkAAAAi00IixGLTQiLgqgBAAD/0IlF/ItN/IsRi038i0IE/9CIRfvrBMZF+wAPtk37hcl0N2gwAAAAi1UIiwKLTQiLkKgBAAD/0olF9ItFDFCLTQhRaDwAAACLVfSLAotN9ItQUP/S2V3w6wXZ7tld8GhwAAAAi0UIixCLTQiLgqgBAAD/0IXAdCpofAAAAItNCIsRi00Ii4KoAQAA/9CJReyLTeyLEYtN7ItCBP/QiEXr6wTGResAD7ZN64XJdDdoiAAAAItVCIsCi00Ii5CoAQAA/9KJReSLRQxQi00IUWiUAAAAi1XkiwKLTeSLUFD/0tld4OsF2e7ZXeBowAAAAItFCIsQi00Ii4KoAQAA/9CFwHQqaMwAAACLTQiLEYtNCIuCqAEAAP/QiUXci03cixGLTdyLQgT/0IhF2+sExkXbAA+2TduFyXQ3aNgAAACLVQiLAotNCIuQqAEAAP/SiUXUi0UMUItNCFFo5AAAAItV1IsCi03Ui1BQ/9LZXdDrBdnu2V3QaBABAACLRQiLEItNCIuCqAEAAP/QhcB0KmgcAQAAi00IixGLTQiLgqgBAAD/0IlFzItNzIsRi03Mi0IE/9CIRcvrBMZFywAPtk3Lhcl0N2goAQAAi1UIiwKLTQiLkKgBAAD/0olFxItFDFCLTQhRaDQBAACLVcSLAotNxItQUP/S2V3A6wXZ7tldwItFEIsQi00Qi0JI/9CJRbyLTbyLEYtNvItCSP/QiUW4i024ixGLTbiLQkj/0IlFtItNEIsRi00Qi0JI/9CJRbCLTbCLEYtNsItCSP/QiUWsi02sixGLTayLQkj/0IlFqItNEIsRi00Qi0JI/9CJRaSLTaSLEYtNpItCSP/QiUWgi02gixGLTaCLQkj/0IlFnItNEIsRi00Qi0JI/9CJRZiLTZiLEYtNmItCSP/QiUWUi02UixGLTZSLQkj/0IlFkNlFwGj4AAAAi02QixGLTZCLQlTdXYj/0NxNiNlF0GioAAAAi02cixGLTZyLQlTZyd1dgN2deP/////Q3I14////2UXgaFAAAACLTaiLEYtNqItCVNnJ3Z1w////3Z1o/////9DcjWj////ZRfBoAAAAAItNtIsRi020i0JU2cndnWD////dnVj/////0NyNWP///9yFYP///9yFcP///9xFgNmdVP///9mFVP///4vlXcMAAAAA</compiledString>
 										<returnType>float</returnType>
-										<sString>mObjectParent-&gt;GetObjectParent()-&gt;GetObjectParent()-&gt;GetVariable("FireFox_AA:damageDealed") * talconst("Firefox_A2", "Burn_BaseDamageMult") +
-mObjectParent-&gt;GetObjectParent()-&gt;GetObjectParent()-&gt;GetVariable("FireFox_A4_2Damage:damageDealed") * talconst("Firefox_A2", "Burn_BaseDamageMult") +
-mObjectParent-&gt;GetObjectParent()-&gt;GetObjectParent()-&gt;GetVariable("FireFox_A1:damageDealed") * talconst("Firefox_A2", "Burn_BaseDamageMult")</sString>
+										<sString>mObjectParent-&gt;GetObjectParent()-&gt;GetObjectParent()-&gt;GetVariable("FireFox_AA:damageDealed") * talconst("Firefox_A0", "Burn_BaseDamageMult") +
+mObjectParent-&gt;GetObjectParent()-&gt;GetObjectParent()-&gt;GetVariable("FireFox_A4_2Damage:damageDealed") * talconst("Firefox_A0", "Burn_BaseDamageMult") +
+mObjectParent-&gt;GetObjectParent()-&gt;GetObjectParent()-&gt;GetVariable("FireFox_A1:damageDealed") * talconst("Firefox_A0", "Burn_BaseDamageMult")+
+mObjectParent-&gt;GetObjectParent()-&gt;GetObjectParent()-&gt;GetVariable("FireFox_A4:damageDealed") * talconst("Firefox_A0", "Burn_BaseDamageMult")
+</sString>
 									</damage>
 									<damageMode>4</damageMode>
 									<damageType>Pure</damageType>
@@ -117,17 +120,17 @@ mObjectParent-&gt;GetObjectParent()-&gt;GetObjectParent()-&gt;GetVariable("FireF
 		<Item href="" />
 	</effect>
 	<enabled>
-		<compiledString>FU4AAAAIAAAAfQAAAKkAAADXAAAA6gAAAPoAAAATAQAASQEAAGIBAABXYXJkAAAAAGRhbWFnZURlYWxlZAAAAABGaXJlZm94X0EyAABGaXJlZm94X0EyAABGaXJlZm94X0E0XzJVAAAARmlyZWZveF9BNF8yVQBVi+yD7BhR2ejZHCRR2e7ZHCRqAYtFDIsQi00Mi0JY/9APtshR6EYBAACDxAzcHa4BAADf4PbERA+LFAEAAItVDIsCi00Mi1BQ/9KD+BEPhP4AAABqAItFEFBoAAAAAItNDIsRi00Mi4KcAQAA/9A7RRAPhdoAAACLTRCLEYtNEItCSP/QiUX8aAgAAACLTfyLEYtN/ItCVP/Q3B2uAQAA3+D2xEEPhacAAABoGAAAAItNCIsRi00Ii4KoAQAA/9CFwHQqaCQAAACLTQiLEYtNCIuCqAEAAP/QiUX4i034ixGLTfiLQgT/0IhF9+sExkX3AA+2TfeFyXRYaDAAAACLVQiLAotNCIuQqAEAAP/ShcB0KmhAAAAAi0UIixCLTQiLgqgBAAD/0IlF8ItN8IsRi03wi0IE/9CIRe/rBMZF7wAPtk3vhcl0CcdF6AEAAADrB8dF6AAAAACKReiL5V3DAAAAAAAAAAAAAAAAAACAP1WL7FEPtkUIhcB0CNlFDNld/OsG2UUQ2V382UX8i+Vdww==</compiledString>
+		<compiledString>FS8AAAAGAAAAXgAAAIoAAAC4AAAAywAAANcAAADwAAAAV2FyZAAAAABkYW1hZ2VEZWFsZWQAAAAARmlyZWZveF9BMgAARmlyZWZveF9BMgBVi+yD7BBR2ejZHCRR2e7ZHCRqAYtFDIsQi00Mi0JY/9APtshR6PMAAACDxAzcHTwBAADf4PbERA+LwQAAAItVDIsCi00Mi1BQ/9KD+BEPhKsAAABqAItFEFBoAAAAAItNDIsRi00Mi4KcAQAA/9A7RRAPhYcAAACLTRCLEYtNEItCSP/QiUX8aAgAAACLTfyLEYtN/ItCVP/Q3B08AQAA3+D2xEF1WGgYAAAAi00IixGLTQiLgqgBAAD/0IXAdCpoJAAAAItNCIsRi00Ii4KoAQAA/9CJRfiLTfiLEYtN+ItCBP/QiEX36wTGRfcAD7ZN94XJdAnHRfABAAAA6wfHRfAAAAAAikXwi+VdwwAAAAAAAAAAAAAAAAAAgD9Vi+xRD7ZFCIXAdAjZRQzZXfzrBtlFENld/NlF/IvlXcM=</compiledString>
 		<returnType>bool</returnType>
-		<sString>ut_bldg(false, true) &amp;&amp; rUnitKind != 17 &amp;&amp; receiver.applWard(GLOBAL) == pMisc &amp;&amp; mObjectParent-&gt;GetVariable("damageDealed") &gt; 0 &amp;&amp; tal("Firefox_A2") &amp;&amp; tal("Firefox_A4_2U")</sString>
+		<sString>ut_bldg(false, true) &amp;&amp; rUnitKind != 17 &amp;&amp; receiver.applWard(GLOBAL) == pMisc &amp;&amp; mObjectParent-&gt;GetVariable("damageDealed") &gt; 0 &amp;&amp; tal("Firefox_A2") </sString>
 	</enabled>
 	<flags>3</flags>
 	<formulaName></formulaName>
 	<image href="/UI/Styles/Icons/Heroes/Firefox/A2.ITEX" />
 	<lifeTime>
-		<compiledString>FTEAAAAFAAAAOAAAAFEAAACHAAAApwAAAMcAAABGaXJlZm94X0EyAABGaXJlZm94X0EyAABGaXJlZm94X0EyAABCdXJuRHVyYXRpb24AVYvsg+wUaAAAAACLRQiLEItNCIuCqAEAAP/QhcB0KmgMAAAAi00IixGLTQiLgqgBAAD/0IlF/ItN/IsRi038i0IE/9CIRfvrBMZF+wAPtk37hcl0N2gYAAAAi1UIiwKLTQiLkKgBAAD/0olF9ItFDFCLTQhRaCQAAACLVfSLAotN9ItQUP/S2V3w6wXZ7tld8NlF8NwF1QAAANld7NlF7IvlXcMAAAAAAADgPwAAAAA=</compiledString>
+		<compiledString>FTEAAAAFAAAAOAAAAFEAAACHAAAApwAAAMcAAABGaXJlZm94X0EwAABGaXJlZm94X0EwAABGaXJlZm94X0EwAABCdXJuRHVyYXRpb24AVYvsg+wUaAAAAACLRQiLEItNCIuCqAEAAP/QhcB0KmgMAAAAi00IixGLTQiLgqgBAAD/0IlF/ItN/IsRi038i0IE/9CIRfvrBMZF+wAPtk37hcl0N2gYAAAAi1UIiwKLTQiLkKgBAAD/0olF9ItFDFCLTQhRaCQAAACLVfSLAotN9ItQUP/S2V3w6wXZ7tld8NlF8NwF1QAAANld7NlF7IvlXcMAAAAAAADgPwAAAAA=</compiledString>
 		<returnType>float</returnType>
-		<sString>talconst("Firefox_A2","BurnDuration") + 0.5f</sString>
+		<sString>talconst("Firefox_A0","BurnDuration") + 0.5f</sString>
 	</lifeTime>
 	<LoggingEvent>-1</LoggingEvent>
 	<name textref="/Items/Talents/Class/FireFox/status_A2_Burn_Upg.APLR_name.txt" />

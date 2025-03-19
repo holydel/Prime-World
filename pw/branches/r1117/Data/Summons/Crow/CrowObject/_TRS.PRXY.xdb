@@ -46,7 +46,7 @@
 					</posDynamics>
 					<rotDynamics>
 						<maxValue>-1</maxValue>
-						<speed>7</speed>
+						<speed>9</speed>
 					</rotDynamics>
 					<scaleDynamics>
 						<maxValue>-1</maxValue>

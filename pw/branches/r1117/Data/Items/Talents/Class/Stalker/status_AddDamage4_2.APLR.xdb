@@ -51,9 +51,9 @@
 	<stackableAcrossUnits>Unstackable</stackableAcrossUnits>
 	<stackCount>0</stackCount>
 	<startCondition>
-		<compiledString>FR4AAAACAAAAJQAAAD4AAABTdGFsa2VyX0E0XzJ1AAAAU3RhbGtlcl9BNF8ydQBVi+yD7AhoAAAAAItFCIsQi00Ii4KoAQAA/9CFwHQqaBAAAACLTQiLEYtNCIuCqAEAAP/QiUX8i038ixGLTfyLQgT/0IhF++sExkX7AIpF+4vlXcM=</compiledString>
+		<compiledString>FQAAAAAAAAAAVYvssAFdww==</compiledString>
 		<returnType>bool</returnType>
-		<sString>tal("Stalker_A4_2u")</sString>
+		<sString>true</sString>
 	</startCondition>
 	<statusPosition>0</statusPosition>
 	<stopBehaviour>StopByTime</stopBehaviour>

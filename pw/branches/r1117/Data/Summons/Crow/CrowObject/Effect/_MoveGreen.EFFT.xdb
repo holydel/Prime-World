@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BasicEffectAttached>
+	<BackLink DBID="/Items/Talents/Level3/Status_G515_New_Haste.APLR" Count="1" />
+	<BackLink DBID="/Items/Talents/Class/WitchDoctor/status_A3_CrowForm.APLR" Count="1" />
+	<attachFlags>3</attachFlags>
+	<attachType>Body</attachType>
+	<component href="/Summons/Crow/CrowObject/Effect/_MoveGreenTRS.PRXY" />
+	<deathType>Manual</deathType>
+	<enableCondition href="" />
+	<fadeIn>0</fadeIn>
+	<fadeOut>0</fadeOut>
+	<groupFlags>0</groupFlags>
+	<lifeTime>0</lifeTime>
+</BasicEffectAttached>

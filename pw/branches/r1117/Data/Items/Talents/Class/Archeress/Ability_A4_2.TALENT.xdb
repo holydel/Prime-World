@@ -595,9 +595,9 @@
 	<isUltimateTalent>true</isUltimateTalent>
 	<isUnitFreeAfterCast>true</isUnitFreeAfterCast>
 	<manaCost>
-		<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAACWQw==</compiledString>
+		<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAABIQw==</compiledString>
 		<returnType>float</returnType>
-		<sString>300</sString>
+		<sString>200</sString>
 	</manaCost>
 	<marker></marker>
 	<microAI href="/Items/Talents/Class/Archeress/Ability_A4_2.TALENT" id="6790935D-3711-4748-BB75-C6AA6E65C2C7">

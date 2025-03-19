@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Texture>
 	<BackLink DBID="/MiniGames/Minigame02/Effects/Glue/_.PRXY" Count="2" />
+	<BackLink DBID="/Effects/Buffs/Runes/Warlord/_Blue.PRXY" Count="1" />
 	<generatedFileName></generatedFileName>
 	<mipLevels>0</mipLevels>
 	<mipLevelUsage>AutoGenerate</mipLevelUsage>

@@ -19,7 +19,7 @@
 	<BackLink DBID="/Test/Talents/WitchDoctor/Epic_Int.TALENTSET" Count="1" />
 	<BackLink DBID="/Test/Talents/WitchDoctor/Epic_Str.TALENTSET" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/WitchDoctor/status_A3_CrowForm.APLR" Count="3" />
-	<BackLink DBID="/Items/Talents/Class/WitchDoctor/status_A3_BearForm.APLR" Count="2" />
+	<BackLink DBID="/Items/Talents/Class/WitchDoctor/Ability3.TALENT" Count="2" />
 	<activationConditions />
 	<activeCustomTrigger>true</activeCustomTrigger>
 	<allowChase>
@@ -173,6 +173,33 @@
 											</CountingTargetSelector>
 										</targetSelector>
 									</SpellApplicator>
+								</Item>
+								<Item href="/Items/Talents/Class/WitchDoctor/Ability3.TALENT" id="24E78FB1-DE9A-4F5C-9B72-D2A6DD5C8E5A">
+									<RefreshCooldownApplicator>
+										<allowCdIncrease>true</allowCdIncrease>
+										<applyTarget>AbilityOwner</applyTarget>
+										<caption>Cбросить себе кулдаун на A2</caption>
+										<enabled>
+											<compiledString></compiledString>
+											<returnType>bool</returnType>
+											<sString>true</sString>
+										</enabled>
+										<flags>128</flags>
+										<formulaName></formulaName>
+										<LoggingEvent>-1</LoggingEvent>
+										<providerName></providerName>
+										<reduceByPercent>false</reduceByPercent>
+										<reductionAmount>
+											<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAACgwQ==</compiledString>
+											<returnType>float</returnType>
+											<sString>-20</sString>
+										</reductionAmount>
+										<refreshThis>true</refreshThis>
+										<talents>
+											<Item href="/Items/Talents/Class/WitchDoctor/Ability3.TALENT" />
+										</talents>
+										<useListAs>ListAsRule</useListAs>
+									</RefreshCooldownApplicator>
 								</Item>
 							</applicators>
 							<dispatch href="/Items/Talents/Class/WitchDoctor/Ability3.TALENT" id="26875ECB-C03C-483A-AC4B-E1FDF48093C3">
@@ -768,6 +795,16 @@
 	<constants href="/Items/Talents/Class/WitchDoctor/Ability3.TALENT" id="1E7F14EB-A8A0-424B-A86C-49539DA5F77B">
 		<UnitConstantsContainer>
 			<vars>
+				<Item href="/Items/Talents/Class/WitchDoctor/Ability3.TALENT" id="6E574FB9-6823-42A5-AB12-42DCD0B15409">
+					<UnitConstant>
+						<name>A3_Cooldown</name>
+						<var>
+							<compiledString>FUoAAAAHAAAAUQAAAGcAAABxAAAAdgAAAI8AAACbAAAAtAAAAFRvdGFsX0Nvb2xkb3duUmVkdWN0aW9uAEdseXBoUmVmcmVzaGVyX0NEUl9BbW91bnQAAABTaWduT2ZDb3B5X0NEUl9BbW91bnQAVYvsg+wUaAAAAACLRQiLEItNCIuCiAEAAP/Q3DXZAAAA2eje4dwNyQAAAGgYAAAAi00IixGLTQiLgogBAADdXfj/0Nw12QAAANno3uHcTfhoNAAAAItNCIsRi00Ii4KIAQAA3V3w/9DcNdkAAADZ6N7h3E3w2V3s2UXsi+VdwwAAAAAAADlAAAAAAAAA8D8AAAAAAABZQA==</compiledString>
+							<returnType>float</returnType>
+							<sString>25 * (1 - sender.vTotal_CooldownReduction/100) * (1 - sender.vGlyphRefresher_CDR_Amount/100) * (1 - sender.vSignOfCopy_CDR_Amount/100)</sString>
+						</var>
+					</UnitConstant>
+				</Item>
 				<Item href="/Items/Talents/Class/WitchDoctor/Ability3.TALENT" id="FC9D3F94-44CB-4527-B052-92D0E7B2435C">
 					<UnitConstant>
 						<name>A3_Damage</name>
@@ -931,6 +968,36 @@
 						</var>
 					</UnitConstant>
 				</Item>
+				<Item href="/Items/Talents/Class/WitchDoctor/Ability3.TALENT" id="397E79B2-9D34-4987-960E-DD5CD5CBD4C5">
+					<UnitConstant>
+						<name>BurnEnergy</name>
+						<var>
+							<compiledString>FQ4AAAACAAAAHQAAADIAAABCdXJuRW5lcmd5X1RUAFWL7IPsDItFDFCLTQhRaAAAAACLVRCLAotNEItQUP/S2eDcDVMAAACLRQyLEItNDItCEN1d+P/Q3E342V302UX0i+Vdw3sUrkfheoQ/</compiledString>
+							<returnType>float</returnType>
+							<sString>-cBurnEnergy_TT*0.01*rMaxEnergy</sString>
+						</var>
+					</UnitConstant>
+				</Item>
+				<Item href="/Items/Talents/Class/WitchDoctor/Ability3.TALENT" id="DF3EDCCC-278F-49A2-BC74-D5A3A5788DED">
+					<UnitConstant>
+						<name>BurnEnergy_TT</name>
+						<var>
+							<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAADAPw==</compiledString>
+							<returnType>float</returnType>
+							<sString>1.5</sString>
+						</var>
+					</UnitConstant>
+				</Item>
+				<Item href="/Items/Talents/Class/WitchDoctor/Ability3.TALENT" id="DEA1B4DF-7FFE-4C26-8F56-690B5F5D24D5">
+					<UnitConstant>
+						<name>CrowVision</name>
+						<var>
+							<compiledString>FQAAAAACAAAACAAAABIAAABVi+xqAVHZBUQAAADZHCRR2QVAAAAA2RwkagCLRQiLEItNCIuCNAEAAP/QUdkcJGoAi00QixGLTRCLQmD/0F3DAAAAQQAAkEE=</compiledString>
+							<returnType>float</returnType>
+							<sString>abilityScale(sIntellect, 8, 18)</sString>
+						</var>
+					</UnitConstant>
+				</Item>
 			</vars>
 		</UnitConstantsContainer>
 	</constants>
@@ -939,9 +1006,9 @@
 		<percent>0</percent>
 	</consumptionBonus>
 	<cooldownTime>
-		<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAADIQQ==</compiledString>
+		<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAACgQA==</compiledString>
 		<returnType>float</returnType>
-		<sString>25</sString>
+		<sString>5</sString>
 	</cooldownTime>
 	<cooldownTimeSecondState>
 		<compiledString></compiledString>

@@ -72,9 +72,9 @@
 				</modifier>
 				<providerName></providerName>
 				<startCondition>
-					<compiledString>FQAAAAAAAAAAVYvsVotFCIsQi00Ii0JM/9CL8ItNCIsRi00Ii4KQAQAA/9AzyTvwD5TBisFeXcM=</compiledString>
+					<compiledString>FSAAAAACAAAAUgAAAGsAAABGaXJlZm94X0E0X1VwZzEARmlyZWZveF9BNF9VcGcxAFWL7IPsDFaLRQiLEItNCItCTP/Qi/CLTQiLEYtNCIuCkAEAAP/QM8k78A+UwYXJdFhoAAAAAItVCIsCi00Ii5CoAQAA/9KFwHQqaBAAAACLRQiLEItNCIuCqAEAAP/QiUX8i038ixGLTfyLQgT/0IhF++sExkX7AA+2TfuFyXQJx0X0AQAAAOsHx0X0AAAAAIpF9F6L5V3D</compiledString>
 					<returnType>bool</returnType>
-					<sString> nt( 1, 0 )</sString>
+					<sString> nt( 1, 0 ) &amp;&amp; tal("Firefox_A4_Upg1")</sString>
 				</startCondition>
 				<statModName></statModName>
 			</StatModApplicator>
@@ -403,6 +403,10 @@
 																			</Item>
 																			<Item>
 																				<applicator href="/Items/Talents/Class/FireFox/status_A2_Burn.APLR" />
+																				<variableNames />
+																			</Item>
+																			<Item>
+																				<applicator href="/Items/Talents/Class/FireFox/status_A2_Burn_Upg.APLR" />
 																				<variableNames />
 																			</Item>
 																		</applicators>

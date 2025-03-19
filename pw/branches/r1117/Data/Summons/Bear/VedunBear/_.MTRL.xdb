@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BasicMaterial>
 	<BackLink DBID="/Summons/Bear/S1/_.SOBJ" Count="1" />
+	<BackLink DBID="/Summons/Bear/VedunBear/_.SOBJ" Count="1" />
 	<caption></caption>
 	<diffuseColor>
 		<A>1</A>
@@ -17,7 +18,7 @@
 			<minFilter>Linear</minFilter>
 			<mipFilter>Linear</mipFilter>
 		</samplerState>
-		<texture href="/Summons/Bear/S1/_.MTRL" id="7E646106-4601-40F9-A34E-5A17E3235FBE">
+		<texture href="/Summons/Bear/VedunBear/_.MTRL" id="7E646106-4601-40F9-A34E-5A17E3235FBE">
 			<Texture>
 				<generatedFileName></generatedFileName>
 				<mipLevels>0</mipLevels>
@@ -30,7 +31,7 @@
 				</size>
 				<srcFileName crc="0">/Summons/Bear/S1/_.tga</srcFileName>
 				<startMipLevel>1</startMipLevel>
-				<textureFileName>/Summons/Bear/S1/_.dds</textureFileName>
+				<textureFileName>/Summons/Bear/VedunBear/_.dds</textureFileName>
 				<textureType>Color</textureType>
 			</Texture>
 		</texture>
@@ -104,7 +105,7 @@
 			<minFilter>Linear</minFilter>
 			<mipFilter>Linear</mipFilter>
 		</samplerState>
-		<texture href="/Summons/Bear/S1/_.MTRL" id="F03FF2B3-F895-46EE-83F7-EFAFE9149EA0">
+		<texture href="/Summons/Bear/VedunBear/_.MTRL" id="F03FF2B3-F895-46EE-83F7-EFAFE9149EA0">
 			<Texture>
 				<generatedFileName></generatedFileName>
 				<mipLevels>0</mipLevels>
@@ -117,7 +118,7 @@
 				</size>
 				<srcFileName crc="0">/Summons/Bear/S1/_SPC.tga</srcFileName>
 				<startMipLevel>2</startMipLevel>
-				<textureFileName>/Summons/Bear/S1/_SPC.dds</textureFileName>
+				<textureFileName>/Summons/Bear/VedunBear/_SPC.dds</textureFileName>
 				<textureType>Color</textureType>
 			</Texture>
 		</texture>

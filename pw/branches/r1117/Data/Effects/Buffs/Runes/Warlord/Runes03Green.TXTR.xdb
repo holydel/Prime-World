@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Texture>
+	<BackLink DBID="/Effects/Buffs/Runes/_Blue.PRXY" Count="1" />
+	<BackLink DBID="/Effects/Buffs/Runes/Warlord/_Blue.PRXY" Count="1" />
+	<generatedFileName></generatedFileName>
+	<mipLevels>0</mipLevels>
+	<mipLevelUsage>AutoGenerate</mipLevelUsage>
+	<mipSharpenPasses></mipSharpenPasses>
+	<pixelFormat>DXT5</pixelFormat>
+	<size>
+		<height>64</height>
+		<width>256</width>
+	</size>
+	<srcFileName crc="0">/Effects/Buffs/Runes/Warlord/Runes03Green.dds</srcFileName>
+	<startMipLevel>0</startMipLevel>
+	<textureFileName>/Effects/Buffs/Runes/Warlord/Runes03Green.dds</textureFileName>
+	<textureType>Color</textureType>
+</Texture>

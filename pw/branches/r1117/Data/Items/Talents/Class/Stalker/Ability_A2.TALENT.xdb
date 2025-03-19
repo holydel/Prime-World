@@ -9,6 +9,7 @@
 	<BackLink DBID="/Items/Talents/Level2/G567_CasterBase.TALENT" Count="1" />
 	<BackLink DBID="/Items/Talents/TalentKits/Redset6_2_CDR/appl_Redset6_2_RefreshCooldown.APLR" Count="1" />
 	<BackLink DBID="/Items/Talents/TalentList_Mighty/Stalker_Mighty.TALENTSET" Count="1" />
+	<BackLink DBID="/Items/Talents/Class/WitchDoctor/Ability2.TALENT" Count="1" />
 	<activationConditions />
 	<activeCustomTrigger>true</activeCustomTrigger>
 	<allowChase>

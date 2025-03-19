@@ -442,7 +442,7 @@
 											</applicators>
 											<dispatch href="/Items/Talents/Class/Rifleman/Ability_A4.TALENT" id="FB4F658B-14BD-482A-8C7B-0DBD3DD7C999">
 												<DispatchLinear>
-													<aiming>Straight</aiming>
+													<aiming>Pursue</aiming>
 													<alwaysApply>false</alwaysApply>
 													<applyEffect>
 														<Item href="" />

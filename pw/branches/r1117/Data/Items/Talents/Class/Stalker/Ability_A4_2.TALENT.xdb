@@ -42,9 +42,9 @@
 												<Item href="" />
 											</effect>
 											<enabled>
-												<compiledString>FQAAAAACAAAABwAAACAAAABVi+xRUdkFSgAAANkcJItFCIsQi00Ii4KsAQAA/9DcHUIAAADf4PbEQXoJx0X8AQAAAOsHx0X8AAAAAIpF/IvlXcMAAAAAAAAAAM3MTD4=</compiledString>
+												<compiledString>FQAAAAAAAAAAVYvssAFdww==</compiledString>
 												<returnType>bool</returnType>
-												<sString>sender.GetDamageTaken(0.2) &lt;= 0</sString>
+												<sString>true</sString>
 											</enabled>
 											<fadeIn>
 												<compiledString>FQAAAAAAAAAAVYvs2ehdwwAAgD8=</compiledString>
@@ -272,6 +272,7 @@
 				</startCondition>
 			</ProgramApplicator>
 		</Item>
+		<Item href="/Heroes/DefaultStatus/_HASTE_status.APLR" />
 	</applicators>
 	<askId>4</askId>
 	<autoTargetSelector href="" />
@@ -334,6 +335,36 @@
 							<compiledString>FQAAAAAAAAAAVYvs2ehdwwAAgD8=</compiledString>
 							<returnType>float</returnType>
 							<sString>1</sString>
+						</var>
+					</UnitConstant>
+				</Item>
+				<Item href="/Items/Talents/Class/Stalker/Ability_A4_2.TALENT" id="C54B4635-106F-4BBC-A6DC-13AF109CCEEA">
+					<UnitConstant>
+						<name>Haste_Percent</name>
+						<var>
+							<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAACgQQ==</compiledString>
+							<returnType>float</returnType>
+							<sString>20</sString>
+						</var>
+					</UnitConstant>
+				</Item>
+				<Item href="/Items/Talents/Class/Stalker/Ability_A4_2.TALENT" id="60603810-37B8-49A8-B1A9-CAC56D90127B">
+					<UnitConstant>
+						<name>Haste_Condition</name>
+						<var>
+							<compiledString>FR4AAAACAAAAJQAAAD4AAABTdGFsa2VyX0E0XzJ1AAAAU3RhbGtlcl9BNF8ydQBVi+yD7AxoAAAAAItFCIsQi00Ii4KoAQAA/9CFwHQqaBAAAACLTQiLEYtNCIuCqAEAAP/QiUX8i038ixGLTfyLQgT/0IhF++sExkX7AA+2TfuJTfTbRfSL5V3D</compiledString>
+							<returnType>float</returnType>
+							<sString>tal("Stalker_A4_2u")</sString>
+						</var>
+					</UnitConstant>
+				</Item>
+				<Item href="/Items/Talents/Class/Stalker/Ability_A4_2.TALENT" id="375AF726-4F8A-40E4-BA32-9265BBEAA5FF">
+					<UnitConstant>
+						<name>Haste_Duration</name>
+						<var>
+							<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAABwQQ==</compiledString>
+							<returnType>float</returnType>
+							<sString>15</sString>
 						</var>
 					</UnitConstant>
 				</Item>

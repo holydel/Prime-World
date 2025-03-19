@@ -656,9 +656,9 @@
 		<percent>0</percent>
 	</consumptionBonus>
 	<cooldownTime>
-		<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAAAgQQ==</compiledString>
+		<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAADwQQ==</compiledString>
 		<returnType>float</returnType>
-		<sString>10</sString>
+		<sString>30</sString>
 	</cooldownTime>
 	<cooldownTimeSecondState>
 		<compiledString></compiledString>
@@ -695,9 +695,9 @@
 	<isUltimateTalent>true</isUltimateTalent>
 	<isUnitFreeAfterCast>true</isUnitFreeAfterCast>
 	<manaCost>
-		<compiledString>FQsAAAACAAAAEAAAACYAAABGYW5DaGFyZ2VzAFWL7FFoAAAAAItFCIsQi00Ii4KIAQAA/9DcDTQAAADZXfzZRfyL5V3DAAAAAAAAREA=</compiledString>
+		<compiledString>FQsAAAACAAAAGAAAACsAAABGYW5DaGFyZ2VzAFWL7FGLRQxQi00IUWgAAAAAi1UQiwKLTRCLUFD/0twNOQAAANld/NlF/IvlXcMAAAAAAABJQA==</compiledString>
 		<returnType>float</returnType>
-		<sString>40*sender.vFanCharges</sString>
+		<sString>50*cFanCharges</sString>
 	</manaCost>
 	<marker>doCast4</marker>
 	<microAI href="/Items/Talents/Class/Invisible/Ability_A4.TALENT" id="75A161E9-B116-47EE-9391-002FFC424BBB">

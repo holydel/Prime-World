@@ -10,6 +10,7 @@
 	<BackLink DBID="/Heroes/Unicorn/FXability1.PRXY" Count="1" />
 	<BackLink DBID="/Heroes/WitchDoctor/FXability0.PRXY" Count="1" />
 	<BackLink DBID="/Terrain/BaseB/ConstructionTowerFX.PRXY" Count="1" />
+	<BackLink DBID="/Effects/Buffs/Runes/Warlord/_Blue.PRXY" Count="1" />
 	<generatedFileName></generatedFileName>
 	<mipLevels>0</mipLevels>
 	<mipLevelUsage>AutoGenerate</mipLevelUsage>

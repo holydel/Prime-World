@@ -1010,9 +1010,9 @@
 	<isUltimateTalent>false</isUltimateTalent>
 	<isUnitFreeAfterCast>false</isUnitFreeAfterCast>
 	<manaCost>
-		<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAAB6Qw==</compiledString>
+		<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAAAWQw==</compiledString>
 		<returnType>float</returnType>
-		<sString>250</sString>
+		<sString>150</sString>
 	</manaCost>
 	<marker></marker>
 	<microAI href="/Items/Talents/Class/Assassin/Ability_A4.TALENT" id="6DFD8FCB-6E44-4429-A491-81F6C6F68FD5">

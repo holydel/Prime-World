@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BasicEffectStandalone>
-	<BackLink DBID="/Items/Talents/Class/WitchDoctor/Ability1.TALENT" Count="1" />
+	<BackLink DBID="/Items/Talents/Class/WitchDoctor/Ability1.TALENT" Count="2" />
 	<component href="/Effects/Debuffs/Roots/_EvilCycleBigTRS.PRXY" />
 	<deathType>Manual</deathType>
 	<enableCondition href="" />

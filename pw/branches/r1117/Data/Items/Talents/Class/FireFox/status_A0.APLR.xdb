@@ -22,9 +22,9 @@
 		<Item href="" />
 	</effect>
 	<enabled>
-		<compiledString>FQkAAAABAAAAJQAAAElkbGVUaW1lAFWL7IPsDItFCIsQi00Ii0JI/9CLTQxRi1UIUmgAAAAAi0UQixCLTRCLQlDdXfj/0Nxd+N/g9sQFegnHRfQBAAAA6wfHRfQAAAAAikX0i+Vdww==</compiledString>
+		<compiledString>FQAAAAAAAAAAVYvsi0UMixCLTQyLQkT/0F3D</compiledString>
 		<returnType>bool</returnType>
-		<sString>sTimeStanding &gt; cIdleTime</sString>
+		<sString>rIsMoving</sString>
 	</enabled>
 	<flags>0</flags>
 	<formulaName></formulaName>

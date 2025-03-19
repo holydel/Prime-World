@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HealApplicator>
+	<BackLink DBID="/Items/Talents/Class/Stalker/Ability_A1.TALENT" Count="1" />
+	<amount>
+		<compiledString>FQ4AAAABAAAAGgAAAEEwX0hlYWxBbW91bnQAVYvsi0UMUItNCFFoAAAAAItVEIsCi00Qi1BQ/9Jdww==</compiledString>
+		<returnType>float</returnType>
+		<sString>cA0_HealAmount</sString>
+	</amount>
+	<applyTarget>AbilityOwner</applyTarget>
+	<caption>Хил</caption>
+	<enabled>
+		<compiledString>FQAAAAAAAAAAVYvssAFdww==</compiledString>
+		<returnType>bool</returnType>
+		<sString>true</sString>
+	</enabled>
+	<formulaName></formulaName>
+	<healTarget>Health</healTarget>
+	<ignoreHealingMods>false</ignoreHealingMods>
+	<LoggingEvent>-1</LoggingEvent>
+	<providerName></providerName>
+	<uiEvent href="/UI/Events/CommonEvents/EventHeal.UIEV" />
+</HealApplicator>

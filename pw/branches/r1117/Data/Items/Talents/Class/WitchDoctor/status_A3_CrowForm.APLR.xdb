@@ -2,6 +2,105 @@
 <StatusApplicator>
 	<BackLink DBID="/Items/Talents/Class/WitchDoctor/Ability3.TALENT" Count="1" />
 	<applicators>
+		<Item href="/Items/Talents/Class/WitchDoctor/status_A3_CrowForm.APLR" id="DD920193-47FC-432A-AF8A-42D8C59144EF">
+			<SpellPeriodicallyApplicator>
+				<applyTarget>ApplicatorTarget</applyTarget>
+				<behaviorFlags>1</behaviorFlags>
+				<caption></caption>
+				<effect>
+					<Item href="" />
+					<Item href="" />
+				</effect>
+				<enabled>
+					<compiledString>FQAAAAAAAAAAVYvssAFdww==</compiledString>
+					<returnType>bool</returnType>
+					<sString>true</sString>
+				</enabled>
+				<formulaName></formulaName>
+				<lifeTime>
+					<compiledString></compiledString>
+					<returnType>float</returnType>
+					<sString>-1.0</sString>
+				</lifeTime>
+				<LoggingEvent>-1</LoggingEvent>
+				<period>
+					<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAABAQA==</compiledString>
+					<returnType>float</returnType>
+					<sString>3</sString>
+				</period>
+				<providerName></providerName>
+				<scaleMode>ScaleIsTime</scaleMode>
+				<spell href="/Items/Talents/Class/WitchDoctor/status_A3_CrowForm.APLR" id="9F5413BF-EE8C-410B-A617-BD631168F0EB">
+					<Spell>
+						<applicators>
+							<Item href="/Items/Talents/Class/WitchDoctor/status_A3_CrowForm.APLR" id="037B17F8-9EA0-4CD5-AA1E-40C2DE627FBA">
+								<FlagsApplicator>
+									<applyTarget>ApplicatorTarget</applyTarget>
+									<behaviorFlags>0</behaviorFlags>
+									<caption></caption>
+									<consumables />
+									<effect>
+										<Item href="/Summons/Crow/CrowObject/CrowKARKAR.EFFT" />
+										<Item href="" />
+									</effect>
+									<enabled>
+										<compiledString></compiledString>
+										<returnType>bool</returnType>
+										<sString>true</sString>
+									</enabled>
+									<flag>0</flag>
+									<formulaName></formulaName>
+									<lifeTime>
+										<compiledString></compiledString>
+										<returnType>float</returnType>
+										<sString>-1.0</sString>
+									</lifeTime>
+									<LoggingEvent>-1</LoggingEvent>
+									<providerName></providerName>
+									<startCondition>
+										<compiledString></compiledString>
+										<returnType>bool</returnType>
+										<sString>true</sString>
+									</startCondition>
+									<talents />
+									<useListAs>ListAsRule</useListAs>
+								</FlagsApplicator>
+							</Item>
+						</applicators>
+						<dispatch href="/Items/Talents/Class/WitchDoctor/status_A3_CrowForm.APLR" id="C656EB64-E593-4B31-AAFA-84B13727B528">
+							<DispatchImmediate>
+								<alwaysApply>false</alwaysApply>
+								<applyEffect>
+									<Item href="" />
+									<Item href="" />
+								</applyEffect>
+								<applyEffectIgnoreVisibility>false</applyEffectIgnoreVisibility>
+								<applyEffectOrientation>Default</applyEffectOrientation>
+								<applyEffectRandomAnglePoints>0</applyEffectRandomAnglePoints>
+								<dieAfterApply>true</dieAfterApply>
+								<dispatchEffect>
+									<Item href="" />
+									<Item href="" />
+								</dispatchEffect>
+								<flags>0</flags>
+								<instantApply>false</instantApply>
+							</DispatchImmediate>
+						</dispatch>
+					</Spell>
+				</spell>
+				<startCondition>
+					<compiledString>FQAAAAAAAAAAVYvssAFdww==</compiledString>
+					<returnType>bool</returnType>
+					<sString>true</sString>
+				</startCondition>
+				<startOffset>
+					<compiledString>FQAAAAAAAAAAVYvs2ehdwwAAgD8=</compiledString>
+					<returnType>float</returnType>
+					<sString>1</sString>
+				</startOffset>
+				<targetSelector href="" />
+			</SpellPeriodicallyApplicator>
+		</Item>
 		<Item href="/Items/Talents/Class/WitchDoctor/status_A3_CrowForm.APLR" id="E91FA6EB-9C69-4890-A662-6668B0AB4318">
 			<FlagsApplicator>
 				<applyTarget>ApplicatorTarget</applyTarget>
@@ -72,7 +171,6 @@
 				<useListAs>ListAsRule</useListAs>
 			</FlagsApplicator>
 		</Item>
-		<Item href="/Heroes/DefaultStatus/_HASTE_status.APLR" />
 		<Item href="/Items/Talents/Class/WitchDoctor/status_A3_CrowForm.APLR" id="3825D6E8-F821-4211-AEFC-40419F45C1A7">
 			<FlyApplicator>
 				<animatedStopTime>0.2</animatedStopTime>
@@ -92,9 +190,9 @@
 				<flightHeight>6</flightHeight>
 				<formulaName></formulaName>
 				<lifeTime>
-					<compiledString>FQ8AAAABAAAAGwAAAEhhc3RlX0R1cmF0aW9uAFWL7ItFDFCLTQhRaAAAAACLVRCLAotNEItQUP/SXcM=</compiledString>
+					<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DADwcRg==</compiledString>
 					<returnType>float</returnType>
-					<sString>cHaste_Duration</sString>
+					<sString>9999</sString>
 				</lifeTime>
 				<LoggingEvent>-1</LoggingEvent>
 				<providerName></providerName>
@@ -143,9 +241,9 @@
 					<sString>true</sString>
 				</startCondition>
 				<visRange>
-					<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAABgQQ==</compiledString>
+					<compiledString>FQsAAAABAAAAFwAAAENyb3dWaXNpb24AVYvsi0UMUItNCFFoAAAAAItVEIsCi00Qi1BQ/9Jdww==</compiledString>
 					<returnType>float</returnType>
-					<sString>14</sString>
+					<sString>cCrowVision</sString>
 				</visRange>
 			</EyeApplicator>
 		</Item>
@@ -161,9 +259,9 @@
 					<Item href="" />
 				</effect>
 				<enabled>
-					<compiledString></compiledString>
+					<compiledString>FQAAAAABAAAAJQAAAFWL7IPsDItFCIsQi00Ii0IE/9CLTQiLEYtNCItCEN1d+P/Q3A1KAAAA3F343+D2xAV6CcdF9AEAAADrB8dF9AAAAACKRfSL5V3DmpmZmZmZqT8=</compiledString>
 					<returnType>bool</returnType>
-					<sString>true</sString>
+					<sString>sEnergy&gt;sMaxEnergy*0.05</sString>
 				</enabled>
 				<formulaName></formulaName>
 				<lifeTime>
@@ -196,15 +294,109 @@
 				<statModName></statModName>
 			</StatModApplicator>
 		</Item>
+		<Item href="/Items/Talents/Class/WitchDoctor/status_A3_CrowForm.APLR" id="1EE880A4-1163-42B3-AE0F-57A931F0D1F8">
+			<StatModApplicator>
+				<applyTarget>ApplicatorTarget</applyTarget>
+				<behaviorFlags>0</behaviorFlags>
+				<caption>Отнимаем ману</caption>
+				<constraint>None</constraint>
+				<dontUpdate>false</dontUpdate>
+				<effect>
+					<Item href="" />
+					<Item href="" />
+				</effect>
+				<enabled>
+					<compiledString></compiledString>
+					<returnType>bool</returnType>
+					<sString>true</sString>
+				</enabled>
+				<formulaName></formulaName>
+				<lifeTime>
+					<compiledString></compiledString>
+					<returnType>float</returnType>
+					<sString>-1.0</sString>
+				</lifeTime>
+				<LoggingEvent>-1</LoggingEvent>
+				<modifier>
+					<addValue>
+						<compiledString>FQsAAAABAAAAFwAAAEJ1cm5FbmVyZ3kAVYvsi0UMUItNCFFoAAAAAItVEIsCi00Qi1BQ/9Jdww==</compiledString>
+						<returnType>float</returnType>
+						<sString>cBurnEnergy</sString>
+					</addValue>
+					<multValue>
+						<compiledString></compiledString>
+						<returnType>float</returnType>
+						<sString>1.0f</sString>
+					</multValue>
+					<stat>EnergyRegenerationAbsolute</stat>
+					<topModifier>false</topModifier>
+					<variable></variable>
+				</modifier>
+				<providerName></providerName>
+				<startCondition>
+					<compiledString></compiledString>
+					<returnType>bool</returnType>
+					<sString>true</sString>
+				</startCondition>
+				<statModName></statModName>
+			</StatModApplicator>
+		</Item>
+		<Item href="/Items/Talents/Class/WitchDoctor/status_A3_CrowForm.APLR" id="AC402523-8BF8-4792-A032-92ED61F7E726">
+			<StatModApplicator>
+				<applyTarget>ApplicatorTarget</applyTarget>
+				<behaviorFlags>144</behaviorFlags>
+				<caption>Стремительность</caption>
+				<constraint>None</constraint>
+				<dontUpdate>false</dontUpdate>
+				<effect>
+					<Item href="/Summons/Crow/CrowObject/Effect/_MoveGreen.EFFT" />
+					<Item href="" />
+				</effect>
+				<enabled>
+					<compiledString>FQAAAAAAAAAAVYvssAFdww==</compiledString>
+					<returnType>bool</returnType>
+					<sString>true</sString>
+				</enabled>
+				<formulaName></formulaName>
+				<lifeTime>
+					<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAACAvw==</compiledString>
+					<returnType>float</returnType>
+					<sString>-1.0</sString>
+				</lifeTime>
+				<LoggingEvent>-1</LoggingEvent>
+				<modifier>
+					<addValue>
+						<compiledString>FQAAAAAAAAAAVYvs2e5dwwAAAAA=</compiledString>
+						<returnType>float</returnType>
+						<sString>0</sString>
+					</addValue>
+					<multValue>
+						<compiledString>FQ4AAAACAAAAGwAAAC4AAABIYXN0ZV9QZXJjZW50AFWL7FGLRQxQi00IUWgAAAAAi1UQiwKLTRCLUFD/0twNSAAAANno3sHZXfzZRfyL5V3DAAAAAAAA8D97FK5H4XqEPw==</compiledString>
+						<returnType>float</returnType>
+						<sString>1 + cHaste_Percent*0.01</sString>
+					</multValue>
+					<stat>MoveSpeed</stat>
+					<topModifier>false</topModifier>
+					<variable></variable>
+				</modifier>
+				<providerName></providerName>
+				<startCondition>
+					<compiledString>FQAAAAAAAAAAVYvssAFdww==</compiledString>
+					<returnType>bool</returnType>
+					<sString>true</sString>
+				</startCondition>
+				<statModName>Haste_Percent</statModName>
+			</StatModApplicator>
+		</Item>
 		<Item href="/Items/Talents/Class/WitchDoctor/status_A3_CrowForm.APLR" id="D7A19337-B97C-4EF1-AEEC-B5AF6A713198">
 			<AbilityEndApplicator>
 				<applyTarget>ApplicatorTarget</applyTarget>
 				<cancelApplicators>true</cancelApplicators>
 				<caption>End of Ability если выключить аппликатор</caption>
 				<enabled>
-					<compiledString>FQAAAAAAAAAAVYvsi0UQixCLTRCLAv/QD7bA99gbwIPAAV3D</compiledString>
+					<compiledString>FQAAAAABAAAAJgAAAFWL7FGLRRCLEItNEIsC/9APtsiFyXUji1UIiwKLTQiLUAT/0twdSAAAAN/g9sQFegnHRfwBAAAA6wfHRfwAAAAAikX8i+VdwwAAAAAAAElA</compiledString>
 					<returnType>bool</returnType>
-					<sString>!mIsAbilityOn</sString>
+					<sString>!mIsAbilityOn &amp;&amp; sEnergy&lt;50</sString>
 				</enabled>
 				<formulaName></formulaName>
 				<LoggingEvent>-1</LoggingEvent>
@@ -240,9 +432,9 @@
 	<formulaName>CrowForm</formulaName>
 	<image href="/UI/Styles/Icons/Heroes/WitchDoctor/A3.ITEX" />
 	<lifeTime>
-		<compiledString>FREAAAABAAAAHQAAAENyb3dGb3JtRHVyYXRpb24AVYvsi0UMUItNCFFoAAAAAItVEIsCi00Qi1BQ/9Jdww==</compiledString>
+		<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAACAvw==</compiledString>
 		<returnType>float</returnType>
-		<sString>cCrowFormDuration</sString>
+		<sString>-1</sString>
 	</lifeTime>
 	<LoggingEvent>-1</LoggingEvent>
 	<name textref="/Items/Talents/Class/WitchDoctor/status_A3_CrowForm.APLR_name.txt" />

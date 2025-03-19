@@ -138,7 +138,7 @@
 							<srcFileName crc="0">/Summons/Bear/S1/stun.ma</srcFileName>
 						</Item>
 					</animations>
-					<animGraph href="/Summons/Bear/_.ANGR" />
+					<animGraph href="/Summons/Bear/VedunBear/_.ANGR" />
 					<anims />
 					<attached>
 						<Item>
@@ -1330,7 +1330,7 @@
 					<faceFXAnims />
 					<groupFlags>4</groupFlags>
 					<keys />
-					<locatorList href="/Summons/Bear/_.LOLS" />
+					<locatorList href="/Summons/Bear/VedunBear/_.LOLS" />
 					<mayaFileName>/Summons/Bear/VedunBear/_root.mayaSkel</mayaFileName>
 					<orientation>Default</orientation>
 					<selection>root</selection>
@@ -1342,7 +1342,7 @@
 							<geometryFileName>/Summons/Bear/VedunBear/_.skin</geometryFileName>
 							<jointsCountPerVertex>4</jointsCountPerVertex>
 							<materialsReferences>
-								<Item href="/Summons/Bear/S1/_.MTRL" />
+								<Item href="/Summons/Bear/VedunBear/_.MTRL" />
 							</materialsReferences>
 							<mayaFileName>/Summons/Bear/VedunBear/_.mayaSkin</mayaFileName>
 							<selection></selection>

@@ -3,6 +3,7 @@
 	<BackLink DBID="/Heroes/WitchDoctor/_A.SOBJ" Count="1" />
 	<BackLink DBID="/Heroes/WitchDoctor/_B.SOBJ" Count="1" />
 	<BackLink DBID="/Summons/Crow/_.ANSC" Count="1" />
+	<BackLink DBID="/Summons/Crow/CrowObject/_.ANSC" Count="1" />
 	<caption>lambert7</caption>
 	<diffuseColor>
 		<A>1</A>

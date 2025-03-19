@@ -279,9 +279,9 @@
 																		<Item href="" />
 																	</effect>
 																	<enabled>
-																		<compiledString>FR8AAAACAAAAJgAAAD8AAABTdGFsa2VyX0EwX1NVUAAAU3RhbGtlcl9BMF9TVVAAVYvsg+wIaAAAAACLRQiLEItNCIuCqAEAAP/QhcB0KmgQAAAAi00IixGLTQiLgqgBAAD/0IlF/ItN/IsRi038i0IE/9CIRfvrBMZF+wCKRfuL5V3D</compiledString>
+																		<compiledString>FRgAAAACAAAAHwAAADgAAABTdGFsa2VyX0ExdQBTdGFsa2VyX0ExdQBVi+yD7AhoAAAAAItFCIsQi00Ii4KoAQAA/9CFwHQqaAwAAACLTQiLEYtNCIuCqAEAAP/QiUX8i038ixGLTfyLQgT/0IhF++sExkX7AIpF+4vlXcM=</compiledString>
 																		<returnType>bool</returnType>
-																		<sString>tal("Stalker_A0_SUP")</sString>
+																		<sString> tal("Stalker_A1u")</sString>
 																	</enabled>
 																	<formulaName></formulaName>
 																	<lifeTime>
@@ -353,6 +353,113 @@
 																			<segmentEnd>CurrentPosition</segmentEnd>
 																			<segmentEndTargetSelector href="" />
 																			<targetFilter>536870915</targetFilter>
+																		</CapsuleTargetSelector>
+																	</targetSelector>
+																</SpellPeriodicallyApplicator>
+															</applicator>
+															<continueCondition>
+																<compiledString></compiledString>
+																<returnType>bool</returnType>
+																<sString>0</sString>
+															</continueCondition>
+															<continueEvents>1</continueEvents>
+															<delay>
+																<compiledString></compiledString>
+																<returnType>float</returnType>
+																<sString>-1.0</sString>
+															</delay>
+															<stopCondition>
+																<compiledString></compiledString>
+																<returnType>bool</returnType>
+																<sString>0</sString>
+															</stopCondition>
+															<stopEvents>0</stopEvents>
+														</Item>
+														<Item>
+															<applicator href="/Items/Talents/Class/Stalker/Ability_A1.TALENT" id="92457D66-2122-4F84-947B-6114A35811C5">
+																<SpellPeriodicallyApplicator>
+																	<applyTarget>ApplicatorTarget</applyTarget>
+																	<behaviorFlags>0</behaviorFlags>
+																	<caption>отхил за каждого крипа, пока едем</caption>
+																	<effect>
+																		<Item href="" />
+																		<Item href="" />
+																	</effect>
+																	<enabled>
+																		<compiledString>FRgAAAACAAAAHwAAADgAAABTdGFsa2VyX0ExdQBTdGFsa2VyX0ExdQBVi+yD7AhoAAAAAItFCIsQi00Ii4KoAQAA/9CFwHQqaAwAAACLTQiLEYtNCIuCqAEAAP/QiUX8i038ixGLTfyLQgT/0IhF++sExkX7AIpF+4vlXcM=</compiledString>
+																		<returnType>bool</returnType>
+																		<sString>tal("Stalker_A1u")</sString>
+																	</enabled>
+																	<formulaName></formulaName>
+																	<lifeTime>
+																		<compiledString></compiledString>
+																		<returnType>float</returnType>
+																		<sString>-1.0</sString>
+																	</lifeTime>
+																	<LoggingEvent>-1</LoggingEvent>
+																	<period>
+																		<compiledString></compiledString>
+																		<returnType>float</returnType>
+																		<sString>0.0f</sString>
+																	</period>
+																	<providerName></providerName>
+																	<scaleMode>ScaleIsCount</scaleMode>
+																	<spell href="/Items/Talents/Class/Stalker/Ability_A1.TALENT" id="4264D80E-EA06-490A-9964-30D80898E8FA">
+																		<Spell>
+																			<applicators>
+																				<Item href="/Items/Talents/Class/Stalker/appl_A1_HealAmount_1.APLR" />
+																			</applicators>
+																			<dispatch href="/Items/Talents/Class/Stalker/Ability_A1.TALENT" id="F6D568A8-2E61-45EA-8C42-48A1D6FC61E2">
+																				<DispatchImmediate>
+																					<alwaysApply>false</alwaysApply>
+																					<applyEffect>
+																						<Item href="" />
+																						<Item href="" />
+																					</applyEffect>
+																					<applyEffectIgnoreVisibility>false</applyEffectIgnoreVisibility>
+																					<applyEffectOrientation>Default</applyEffectOrientation>
+																					<applyEffectRandomAnglePoints>0</applyEffectRandomAnglePoints>
+																					<dieAfterApply>true</dieAfterApply>
+																					<dispatchEffect>
+																						<Item href="" />
+																						<Item href="" />
+																					</dispatchEffect>
+																					<flags>0</flags>
+																					<instantApply>false</instantApply>
+																				</DispatchImmediate>
+																			</dispatch>
+																		</Spell>
+																	</spell>
+																	<startCondition>
+																		<compiledString></compiledString>
+																		<returnType>bool</returnType>
+																		<sString>true</sString>
+																	</startCondition>
+																	<startOffset>
+																		<compiledString></compiledString>
+																		<returnType>float</returnType>
+																		<sString>0.0f</sString>
+																	</startOffset>
+																	<targetSelector href="/Items/Talents/Class/Stalker/Ability_A1.TALENT" id="8AC3B859-54CC-4CB9-8A33-B3E9FCE98B7A">
+																		<CapsuleTargetSelector>
+																			<cutoffFirstSegment>false</cutoffFirstSegment>
+																			<flags>0</flags>
+																			<mode>SendOnce</mode>
+																			<range>
+																				<compiledString>FQYAAAACAAAAEwAAACYAAABXaWR0aABVi+xRi0UMUItNCFFoAAAAAItVEIsCi00Qi1BQ/9LcDTQAAADZXfzZRfyL5V3DAAAAAAAA4D8=</compiledString>
+																				<returnType>float</returnType>
+																				<sString>cWidth * 0.5</sString>
+																			</range>
+																			<rangeFromOwner>
+																				<compiledString></compiledString>
+																				<returnType>float</returnType>
+																				<sString>0.0f</sString>
+																			</rangeFromOwner>
+																			<segmentBegin>PreviousPosition</segmentBegin>
+																			<segmentDirectionOffset>0</segmentDirectionOffset>
+																			<segmentEnd>CurrentPosition</segmentEnd>
+																			<segmentEndTargetSelector href="" />
+																			<targetFilter>572276796</targetFilter>
 																		</CapsuleTargetSelector>
 																	</targetSelector>
 																</SpellPeriodicallyApplicator>
@@ -701,9 +808,9 @@
 					<UnitConstant>
 						<name>Range</name>
 						<var>
-							<compiledString>FQ0AAAACAAAAGgAAAC0AAABSYW5nZV9NZWRpdW0AVYvsUYtFDFCLTQhRaAAAAACLVRCLAotNEItQUP/S3AU7AAAA2V382UX8i+VdwwAAAAAAAPA/</compiledString>
+							<compiledString>FT0AAAAHAAAARAAAAF0AAACbAAAArgAAALQAAADGAAAA2QAAAFN0YWxrZXJfQTRfMnUAAABTdGFsa2VyX0E0XzJ1AAAAUmFuZ2VfTWVkaXVtAAAAAFJhbmdlX01lZGl1bQBVi+yD7BRoAAAAAItFCIsQi00Ii4KoAQAA/9CFwHQqaBAAAACLTQiLEYtNCIuCqAEAAP/QiUX8i038ixGLTfyLQgT/0IhF++sExkX7AA+2TfuFyXQri1UMUotFCFBoIAAAAItNEIsRi00Qi0JQ/9DcBfUAAADcDe0AAADdXfDrI4tNDFGLVQhSaDAAAACLRRCLEItNEItCUP/Q3AX1AAAA3V3w3UXw2V3s2UXsi+VdwwAAAAAAAPg/AAAAAAAA8D8=</compiledString>
 							<returnType>float</returnType>
-							<sString>cRange_Medium + 1</sString>
+							<sString>tal("Stalker_A4_2u")? (cRange_Medium+1) *1.5: (cRange_Medium+1)</sString>
 						</var>
 					</UnitConstant>
 				</Item>
@@ -747,6 +854,16 @@
 				<Item href="/Items/Talents/Class/Stalker/const_ArmorCut_Amount" />
 				<Item href="/Items/Talents/Class/Stalker/const_WillCut_Amount" />
 				<Item href="/Items/Talents/Class/Stalker/const_A0_SUP_HealAmount" />
+				<Item href="/Items/Talents/Class/Stalker/Ability_A1.TALENT" id="F68E8083-924E-4326-93A8-B141EE3EA987">
+					<UnitConstant>
+						<name>A0_HealAmount</name>
+						<var>
+							<compiledString>FR8AAAACAAAAJgAAAD8AAABTdGFsa2VyX0EwX1NVUAAAU3RhbGtlcl9BMF9TVVAAVYvsg+wUaAAAAACLRQiLEItNCIuCqAEAAP/QhcB0KmgQAAAAi00IixGLTQiLgqgBAAD/0IlF/ItN/IsRi038i0IE/9CIRfvrBMZF+wAPtk37hcl0FItVCIsCi00Ii1A4/9LcwN1d8OsQi0UIixCLTQiLQjj/0N1d8N1F8Nld7NlF7IvlXcM=</compiledString>
+							<returnType>float</returnType>
+							<sString>tal("Stalker_A0_SUP")? sLifeDrain*2 :sLifeDrain</sString>
+						</var>
+					</UnitConstant>
+				</Item>
 			</vars>
 		</UnitConstantsContainer>
 	</constants>

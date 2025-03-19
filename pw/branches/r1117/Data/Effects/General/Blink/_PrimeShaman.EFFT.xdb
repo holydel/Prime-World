@@ -2,6 +2,7 @@
 <BasicEffectStandalone>
 	<BackLink DBID="/Effects/General/Blink/_PrimeShaman.EFFT" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/Shaman/Ability_A2.TALENT" Count="2" />
+	<BackLink DBID="/Items/Talents/Class/WitchDoctor/Ability1.TALENT" Count="2" />
 	<component href="/Effects/General/Blink/_PrimeShamanTRS.PRXY" />
 	<deathType>Anim</deathType>
 	<enableCondition href="" />

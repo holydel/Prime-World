@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BasicEffectAttached>
 	<BackLink DBID="/Creeps/Champions/Champion1/PvE_R16_C2.CREEP" Count="1" />
-	<BackLink DBID="/Items/Talents/Class/Archeress/status_A2u1_AttackSpeed.APLR" Count="1" />
+	<BackLink DBID="/Items/Talents/Class/Archeress/status_A2u1_AttackSpeed.APLR" Count="2" />
 	<BackLink DBID="/Items/Talents/Class/Banshee/status_A3.APLR" Count="1" />
 	<attachFlags>1</attachFlags>
 	<attachType>Above</attachType>

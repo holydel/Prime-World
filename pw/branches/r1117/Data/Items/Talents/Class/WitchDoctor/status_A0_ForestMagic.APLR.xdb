@@ -73,9 +73,9 @@
 		<Item href="" />
 	</effect>
 	<enabled>
-		<compiledString>FTkAAAAGAAAARgAAAF4AAABxAAAAfQAAAJMAAAClAAAAVHJlZXNDb3VudGVyAAAAAHRhcmdldHNDb3VudAAAAABFdmlsVHJlZUlzTmVhcgAAQ3Jvd0Zvcm0AVYvsg+wIagGLRRBQaAAAAACLTQiLEYtNCIuCnAEAAP/QiUX8aBAAAACLTfyLEYtN/ItCVP/Q3B3dAAAA3+D2xEF0ImggAAAAi00IixGLTQiLgogBAAD/0Nwd1QAAAN/g9sQBdSlqAYtNEFFoMAAAAItVCIsCi00Ii5CcAQAA/9I5RRB1CcdF+AEAAADrB8dF+AAAAACKRfiL5V3DAAAAAAAA8D8AAAAAAAAAAA==</compiledString>
+		<compiledString>FUUAAAAHAAAAUgAAAGoAAAB9AAAAiQAAAJ8AAACxAAAA0QAAAFRyZWVzQ291bnRlcgAAAAB0YXJnZXRzQ291bnQAAAAARXZpbFRyZWVJc05lYXIAAENyb3dGb3JtAAAAAEJlYXJGb3JtAFWL7IPsCGoBi0UQUGgAAAAAi00IixGLTQiLgpwBAAD/0IlF/GgQAAAAi038ixGLTfyLQlT/0NwdCQEAAN/g9sRBdCJoIAAAAItNCIsRi00Ii4KIAQAA/9DcHQEBAADf4PbEAXVJagGLTRBRaDAAAACLVQiLAotNCIuQnAEAAP/SOUUQdSlqAYtFEFBoPAAAAItNCIsRi00Ii4KcAQAA/9A5RRB1CcdF+AEAAADrB8dF+AAAAACKRfiL5V3DAAAAAAAA8D8AAAAAAAAAAA==</compiledString>
 		<returnType>bool</returnType>
-		<sString>(sender.FindApplicator("TreesCounter", pMisc, UNIT)-&gt;GetVariable("targetsCount") &gt; 0 || sender.vEvilTreeIsNear &gt;= 1) &amp;&amp; (pMisc == sender.applCrowForm(UNIT))</sString>
+		<sString>(sender.FindApplicator("TreesCounter", pMisc, UNIT)-&gt;GetVariable("targetsCount") &gt; 0 || sender.vEvilTreeIsNear &gt;= 1) &amp;&amp; (pMisc == sender.applCrowForm(UNIT)) &amp;&amp; (pMisc == sender.applBearForm(UNIT))</sString>
 	</enabled>
 	<flags>0</flags>
 	<formulaName></formulaName>

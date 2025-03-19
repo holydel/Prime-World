@@ -178,7 +178,7 @@
 			<geometryFileName>/Summons/Crow/CrowObject/_.skin</geometryFileName>
 			<jointsCountPerVertex>4</jointsCountPerVertex>
 			<materialsReferences>
-				<Item href="/Summons/Crow/_.MTRL" />
+				<Item href="/Summons/Crow/CrowObject/_.MTRL" />
 			</materialsReferences>
 			<mayaFileName>/Summons/Crow/CrowObject/_.mayaSkin</mayaFileName>
 			<selection></selection>
