@@ -614,9 +614,9 @@
 										</enabled>
 										<formulaName></formulaName>
 										<lifeTime>
-											<compiledString>FREAAAACAAAAHgAAADEAAABDcm93Rm9ybUR1cmF0aW9uAFWL7FGLRQxQi00IUWgAAAAAi1UQiwKLTRCLUFD/0twFPwAAANld/NlF/IvlXcMAAACgmZm5Pw==</compiledString>
+											<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAACAvw==</compiledString>
 											<returnType>float</returnType>
-											<sString>cCrowFormDuration + 0.1f</sString>
+											<sString>-1</sString>
 										</lifeTime>
 										<LoggingEvent>-1</LoggingEvent>
 										<playAck>false</playAck>

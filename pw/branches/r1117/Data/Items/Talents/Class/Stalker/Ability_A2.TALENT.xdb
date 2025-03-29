@@ -181,7 +181,6 @@
 																							</Item>
 																							<Item href="/Items/Talents/Class/Stalker/appl_A0_Debuff.APLR" />
 																							<Item href="/Heroes/DefaultStatus/_STUN_Status.APLR" />
-																							<Item href="/Items/Talents/Class/Stalker/appl_A0_SUP_HealAmount.APLR" />
 																						</applicators>
 																						<dispatch href="/Items/Talents/Class/Stalker/Ability_A2.TALENT" id="BCEF98A5-E40F-461A-B3D1-79106C659FD1">
 																							<DispatchImmediate>
@@ -373,7 +372,6 @@
 																							</Item>
 																							<Item href="/Items/Talents/Class/Stalker/appl_A0_Debuff.APLR" />
 																							<Item href="/Heroes/DefaultStatus/_STUN_Status.APLR" />
-																							<Item href="/Items/Talents/Class/Stalker/appl_A0_SUP_HealAmount.APLR" />
 																						</applicators>
 																						<dispatch href="/Items/Talents/Class/Stalker/Ability_A2.TALENT" id="537212AC-37E2-466F-8210-BCEE8FE3C336">
 																							<DispatchImmediate>

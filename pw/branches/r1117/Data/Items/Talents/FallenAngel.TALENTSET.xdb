@@ -48,7 +48,7 @@
 					<aIPriority>2</aIPriority>
 					<refineRate>5</refineRate>
 					<status>normal</status>
-					<talent href="/Items/Talents/Class/FallenAngel/Ability_A4_2.TALENT" />
+					<talent href="/Items/Talents/Class/FallenAngel/Ability_A4.TALENT" />
 				</Item>
 				<Item>
 					<aIPriority>2</aIPriority>
@@ -88,7 +88,7 @@
 					<aIPriority>3</aIPriority>
 					<refineRate>5</refineRate>
 					<status>normal</status>
-					<talent href="/Items/Talents/Class/FallenAngel/Ability_A4_2u.TALENT" />
+					<talent href="/Items/Talents/Class/FallenAngel/Ability_A4u.TALENT" />
 				</Item>
 				<Item>
 					<aIPriority>0</aIPriority>
@@ -118,7 +118,7 @@
 					<aIPriority>0</aIPriority>
 					<refineRate>5</refineRate>
 					<status>normal</status>
-					<talent href="/Items/Talents/Level3/G547_SilenceDamageBase.TALENT" />
+					<talent href="/Items/Talents/Class/FallenAngel/Ability_A3u.TALENT" />
 				</Item>
 			</talents>
 		</Item>

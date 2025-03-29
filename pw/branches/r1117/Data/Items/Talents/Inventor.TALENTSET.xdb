@@ -14,7 +14,7 @@
 					<aIPriority>3</aIPriority>
 					<refineRate>5</refineRate>
 					<status>normal</status>
-					<talent href="/Items/Talents/Level1/G775_StrOrInt.TALENT" />
+					<talent href="/Items/Talents/Class/Inventor/Ability_A1.TALENT" />
 				</Item>
 				<Item>
 					<aIPriority>0</aIPriority>

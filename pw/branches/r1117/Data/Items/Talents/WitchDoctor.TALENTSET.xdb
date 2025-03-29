@@ -112,13 +112,13 @@
 					<aIPriority>0</aIPriority>
 					<refineRate>5</refineRate>
 					<status>normal</status>
-					<talent href="/Items/Talents/Level3/G777_MoveSpeed_Super.TALENT" />
+					<talent href="/Items/Talents/Level3/G500_Str_Dex.TALENT" />
 				</Item>
 				<Item>
 					<aIPriority>0</aIPriority>
 					<refineRate>5</refineRate>
 					<status>normal</status>
-					<talent href="/Items/Talents/Level3/G692_Int.TALENT" />
+					<talent href="/Items/Talents/Level3/G499_Int_Dex.TALENT" />
 				</Item>
 			</talents>
 		</Item>
@@ -158,7 +158,7 @@
 					<aIPriority>0</aIPriority>
 					<refineRate>5</refineRate>
 					<status>normal</status>
-					<talent href="/Items/Talents/Level4/G658_InvisibilityStrOrInt.TALENT" />
+					<talent href="/Items/Talents/Level4/G498_Blink.TALENT" />
 				</Item>
 			</talents>
 		</Item>
