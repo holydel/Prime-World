@@ -13,6 +13,7 @@
 	<BackLink DBID="/Social/Lootboxes/ROLLCONTS/roll_Season9_Mediocre.ROLLCONT" Count="1" />
 	<BackLink DBID="/Social/Lootboxes/ROLLCONTS/roll_NY2020_MediocreList.ROLLCONT" Count="1" />
 	<BackLink DBID="/Social/Lootboxes/ROLLCONTS/roll_Season13_MediocreList.ROLLCONT" Count="1" />
+	<BackLink DBID="/Items/Talents/Gunslinger.TALENTSET" Count="1" />
 	<activationConditions />
 	<activeCustomTrigger>true</activeCustomTrigger>
 	<allowChase>
@@ -176,9 +177,9 @@
 					<UnitConstant>
 						<name>PhisDmg</name>
 						<var>
-							<compiledString>FTMAAAAIAAAAOgAAAFAAAABkAAAAdwAAAIoAAACgAAAAtAAAANgAAABHNTA0X0FjdGl2ZQBHNTA0X0JvbnVzAABHNTA1X0FjdGl2ZQBHNTA1X0FkZERhbWFnZQBVi+yD7BBoAAAAAItFCIsQi00Ii4KIAQAA/9DcHRgBAADf4PbEQXUpi00MUYtVCFJoDAAAAItFEIsQi00Qi0JQ/9DcNRABAADZ6N7B3V346wXZ6N1d+GgYAAAAi00IixGLTQiLgogBAAD/0NwdGAEAAN/g9sRBdR+LTQxRi1UIUmgkAAAAi0UQixCLTRCLQlD/0Nld9OsF2e7ZXfRR2ejZHCRR2QX8AAAA2Rwki00QixGLTRCLQmz/0NxN+NhF9Nld8NlF8IvlXcMAAEBBAACAPwAAAAAAAAAAAADwPwAAAAAAAFlAAAAAAAAAAAA=</compiledString>
+							<compiledString>FTMAAAAJAAAAOgAAAFAAAABkAAAAdwAAAIoAAACgAAAAtAAAANQAAADeAAAARzUwNF9BY3RpdmUARzUwNF9Cb251cwAARzUwNV9BY3RpdmUARzUwNV9BZGREYW1hZ2UAVYvsg+wQaAAAAACLRQiLEItNCIuCiAEAAP/Q3B0zAQAA3+D2xEF1KYtNDFGLVQhSaAwAAACLRRCLEItNEItCUP/Q3DUrAQAA2ejewd1d+OsF2ejdXfhoGAAAAItNCIsRi00Ii4KIAQAA/9DcHTMBAADf4PbEQXUfi00MUYtVCFJoJAAAAItFEIsQi00Qi0JQ/9DZXfTrBdnu2V30agFR2QUbAQAA2RwkUdkFFwEAANkcJGoAi00IixGLTQiLQhz/0FHZHCRqAYtNEIsRi00Qi0Jg/9DcTfjYRfTZXfDZRfCL5V3DAACwQQAAAEIAAAAAAAAAAAAA8D8AAAAAAABZQAAAAAAAAAAA</compiledString>
 							<returnType>float</returnType>
-							<sString>refineScale(12, 1) * (sender.vG504_Active &gt; 0 ? (1 + cG504_Bonus/100) : 1) + (sender.vG505_Active &gt; 0 ? cG505_AddDamage : 0)</sString>
+							<sString>damageScale(sAttackSpeed, 22, 32) * (sender.vG504_Active &gt; 0 ? (1 + cG504_Bonus/100) : 1) + (sender.vG505_Active &gt; 0 ? cG505_AddDamage : 0)</sString>
 						</var>
 					</UnitConstant>
 				</Item>

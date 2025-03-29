@@ -2,7 +2,7 @@
 <UnitConstant>
 	<BackLink DBID="/Items/Talents/Class/Gunslinger/Ability_A4.TALENT" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/Gunslinger/Ability_A4u.TALENT" Count="1" />
-	<name>A4_AddDex</name>
+	<name>A4_AddAttackSpeed</name>
 	<var>
 		<compiledString>FQAAAAACAAAACAAAABIAAABVi+xqAVHZBUQAAADZHCRR2QVAAAAA2RwkagCLRQiLEItNCIuCvAAAAP/QUdkcJGoAi00QixGLTRCLQmD/0F3DAAAAQQAAcEI=</compiledString>
 		<returnType>float</returnType>
