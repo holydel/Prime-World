@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AbilityUpgradeApplicator>
+	<BackLink DBID="/Items/Talents/Level2/G563_AxesEngReg.TALENT" Count="1" />
+	<applicators>
+		<Item href="/Items/Talents/TalentKits/Redset4_4_Axes/status_ImproveAA_1.APLR" id="6C8D66AB-9A78-41AA-8C78-BE6993C590FD">
+			<SpellApplicator>
+				<applyTarget>ApplicatorTarget</applyTarget>
+				<caption>Спелл действует только на существ и солдат</caption>
+				<enabled>
+					<compiledString>FQsAAAACAAAAbAAAAIIAAABJbW11bmUyQXhlAFWL7IPsCItFDIsQi00Mi0JQ/9CD+AN0SItNDIsRi00Mi0JQ/9CD+AR0NotNDIsRi00Mi0JQ/9CD+AV0JItNDIsRi00Mi0JQ/9CD+BJ0EotNDIsRi00Mi0JQ/9CD+BN1QWgAAAAAi00MixGLTQyLgogBAAD/0NwdugAAAN/g9sREegnHRfwBAAAA6wfHRfwAAAAAg338AXUJx0X4AQAAAOsHx0X4AAAAAIpF+IvlXcMAAAAAAAAAAA==</compiledString>
+					<returnType>bool</returnType>
+					<sString>(rUnitKind == 3 || rUnitKind == 4 || rUnitKind == 5 || rUnitKind == 18 || rUnitKind == 19) &amp;&amp; (!receiver.vImmune2Axe==1)</sString>
+				</enabled>
+				<formulaName></formulaName>
+				<LoggingEvent>-1</LoggingEvent>
+				<providerName></providerName>
+				<spell href="/Items/Talents/TalentKits/Redset4_4_Axes/status_ImproveAA_1.APLR" id="C172FE09-123F-4A67-9CAC-2F09563DFD30">
+					<Spell>
+						<applicators>
+							<Item href="/Items/Talents/TalentKits/Redset4_4_Axes/status_ImproveAA_1.APLR" id="C3A0AFC3-8B59-447D-BD18-5B90AE567E96">
+								<SpellApplicator>
+									<applyTarget>ApplicatorTarget</applyTarget>
+									<caption>Прок с уроном</caption>
+									<enabled>
+										<compiledString>FQAAAAAAAAAAVYvssAFdww==</compiledString>
+										<returnType>bool</returnType>
+										<sString>true</sString>
+									</enabled>
+									<formulaName></formulaName>
+									<LoggingEvent>-1</LoggingEvent>
+									<providerName></providerName>
+									<spell href="/Items/Talents/TalentKits/Redset4_4_Axes/status_ImproveAA_1.APLR" id="AB8E9C71-33C3-49DE-A0EE-EBB6DF24E2D9">
+										<Spell>
+											<applicators>
+												<Item href="/Items/Talents/TalentKits/Redset4_4_Axes/status_ImproveAA_1.APLR" id="2567A86D-F27A-459D-B533-86E7AB090402">
+													<DamageApplicator>
+														<applyTarget>ApplicatorTarget</applyTarget>
+														<cancelInvisibility>false</cancelInvisibility>
+														<caption>Damage</caption>
+														<damage>
+															<compiledString>FQoAAAABAAAAFgAAAEFkZERhbWFnZQBVi+yLRQxQi00IUWgAAAAAi1UQiwKLTRCLUFD/0l3D</compiledString>
+															<returnType>float</returnType>
+															<sString>cAddDamage</sString>
+														</damage>
+														<damageMode>0</damageMode>
+														<damageType>Energy</damageType>
+														<enabled>
+															<compiledString></compiledString>
+															<returnType>bool</returnType>
+															<sString>true</sString>
+														</enabled>
+														<formulaName></formulaName>
+														<LoggingEvent>-1</LoggingEvent>
+														<providerName></providerName>
+														<timeLimiter>-1</timeLimiter>
+														<uiEvent href="/UI/Events/CommonEvents/EventDamageDealed_Energy.UIEV" />
+													</DamageApplicator>
+												</Item>
+											</applicators>
+											<dispatch href="/Items/Talents/TalentKits/Redset4_4_Axes/status_ImproveAA_1.APLR" id="3EF00957-D617-4301-8FF3-54C824AE0A4A">
+												<DispatchImmediate>
+													<alwaysApply>false</alwaysApply>
+													<applyEffect>
+														<Item href="" />
+														<Item href="" />
+													</applyEffect>
+													<applyEffectIgnoreVisibility>false</applyEffectIgnoreVisibility>
+													<applyEffectOrientation>Default</applyEffectOrientation>
+													<applyEffectRandomAnglePoints>0</applyEffectRandomAnglePoints>
+													<dieAfterApply>true</dieAfterApply>
+													<dispatchEffect>
+														<Item href="" />
+														<Item href="" />
+													</dispatchEffect>
+													<flags>0</flags>
+													<instantApply>false</instantApply>
+												</DispatchImmediate>
+											</dispatch>
+										</Spell>
+									</spell>
+									<spellTarget>ApplicatorTarget</spellTarget>
+									<targetSelector href="" />
+								</SpellApplicator>
+							</Item>
+						</applicators>
+						<dispatch href="/Items/Talents/TalentKits/Redset4_4_Axes/status_ImproveAA_1.APLR" id="7C8FEAB3-82F4-4F2C-B584-06BE7BA58A9C">
+							<DispatchImmediate>
+								<alwaysApply>false</alwaysApply>
+								<applyEffect>
+									<Item href="" />
+									<Item href="" />
+								</applyEffect>
+								<applyEffectIgnoreVisibility>false</applyEffectIgnoreVisibility>
+								<applyEffectOrientation>Default</applyEffectOrientation>
+								<applyEffectRandomAnglePoints>0</applyEffectRandomAnglePoints>
+								<dieAfterApply>true</dieAfterApply>
+								<dispatchEffect>
+									<Item href="" />
+									<Item href="" />
+								</dispatchEffect>
+								<flags>0</flags>
+								<instantApply>true</instantApply>
+							</DispatchImmediate>
+						</dispatch>
+					</Spell>
+				</spell>
+				<spellTarget>ApplicatorTarget</spellTarget>
+				<targetSelector href="" />
+			</SpellApplicator>
+		</Item>
+	</applicators>
+	<applyCount>
+		<compiledString></compiledString>
+		<returnType>int</returnType>
+		<sString>0</sString>
+	</applyCount>
+	<applyTarget>ApplicatorTarget</applyTarget>
+	<behaviorFlags>152</behaviorFlags>
+	<caption>улучшение автоатаки</caption>
+	<effect>
+		<Item href="" />
+		<Item href="" />
+	</effect>
+	<enabled>
+		<compiledString></compiledString>
+		<returnType>bool</returnType>
+		<sString>true</sString>
+	</enabled>
+	<flags>0</flags>
+	<formulaName></formulaName>
+	<lifeTime>
+		<compiledString></compiledString>
+		<returnType>float</returnType>
+		<sString>-1.0</sString>
+	</lifeTime>
+	<LoggingEvent>-1</LoggingEvent>
+	<persistentApplicators />
+	<providerName></providerName>
+	<startCondition>
+		<compiledString></compiledString>
+		<returnType>bool</returnType>
+		<sString>true</sString>
+	</startCondition>
+	<talents />
+	<targetAbility>BaseAttack</targetAbility>
+	<useListAs>ListAsRule</useListAs>
+</AbilityUpgradeApplicator>

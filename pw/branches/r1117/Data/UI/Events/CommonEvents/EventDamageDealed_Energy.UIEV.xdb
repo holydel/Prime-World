@@ -270,11 +270,10 @@
 	<BackLink DBID="/Summons/Rat/RatAutoatack.APLR" Count="1" />
 	<BackLink DBID="/Summons/Whisper/DamagingLink.SPLL" Count="1" />
 	<BackLink DBID="/Summons/Whisper/PvE_Coop1Explosion.APLR" Count="1" />
-	<BackLink DBID="/Items/Talents/Level2/G792_StrOrInt.TALENT" Count="1" />
-	<BackLink DBID="/Items/Talents/TalentKits/Redset_DoubleAttack/status_redset5_1_CreepBuffStatus.APLR" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/Dryad/spell_A2_SUP_BonusDamage.APLR" Count="1" />
 	<BackLink DBID="/Buildings/DefaultStats/MainBuildingAutoAttackEnergy.APLR" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/WitchDoctor/status_A3_CrowForm.APLR" Count="2" />
+	<BackLink DBID="/Items/Talents/TalentKits/Redset4_4_Axes/status_ImproveAA_1.APLR" Count="1" />
 	<signRecipients>EVENT_PARTICIPANTS</signRecipients>
 	<UISigns>
 		<Item href="/UI/Events/CommonEvents/EventDamageDealed_Energy.UIEV" id="FCDDC7F1-12E2-4611-8C2F-927182843C56">

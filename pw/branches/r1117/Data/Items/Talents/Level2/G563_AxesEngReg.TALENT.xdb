@@ -465,7 +465,7 @@
 				<useAbilityOwnerMana>false</useAbilityOwnerMana>
 			</TriggerApplicator>
 		</Item>
-		<Item href="/Items/Talents/TalentKits/Redset4_4_Axes/status_ImproveAA.APLR" />
+		<Item href="/Items/Talents/TalentKits/Redset4_4_Axes/status_ImproveAA_1.APLR" />
 	</passiveApplicators>
 	<persistentId>G563</persistentId>
 	<prerequisiteTalents />
