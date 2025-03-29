@@ -255,9 +255,9 @@
 					<UnitConstant>
 						<name>A4_AddAtkSpeed</name>
 						<var>
-							<compiledString>FQAAAAACAAAACAAAABIAAABVi+xqAVHZBUQAAADZHCRR2QVAAAAA2RwkagCLRQiLEItNCIuCuAAAAP/QUdkcJGoAi00QixGLTRCLQmD/0F3DAABAQAAAoEE=</compiledString>
+							<compiledString>FQAAAAACAAAACAAAABIAAABVi+xqAVHZBUQAAADZHCRR2QVAAAAA2RwkagCLRQiLEItNCIuCMAEAAP/QUdkcJGoAi00QixGLTRCLQmD/0F3DAABAQAAAoEE=</compiledString>
 							<returnType>float</returnType>
-							<sString>abilityScale(sBaseStrength, 3, 20)</sString>
+							<sString>abilityScale(sStrength, 3, 20)</sString>
 						</var>
 					</UnitConstant>
 				</Item>
@@ -265,9 +265,9 @@
 					<UnitConstant>
 						<name>A4_AddLife</name>
 						<var>
-							<compiledString>FQAAAAACAAAACAAAABIAAABVi+xqAVHZBUQAAADZHCRR2QVAAAAA2RwkagCLRQiLEItNCIuCyAAAAP/QUdkcJGoBi00QixGLTRCLQmD/0F3DMzPvQgBAYEQ=</compiledString>
+							<compiledString>FQAAAAACAAAACAAAABIAAABVi+xqAVHZBUQAAADZHCRR2QVAAAAA2RwkagCLRQiLEItNCIuCQAEAAP/QUdkcJGoBi00QixGLTRCLQmD/0F3DAAAqQwBgn0Q=</compiledString>
 							<returnType>float</returnType>
-							<sString>damageScale(sBaseStamina,119.6, 897)</sString>
+							<sString>damageScale(sStamina,170, 1275)</sString>
 						</var>
 					</UnitConstant>
 				</Item>
