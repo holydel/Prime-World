@@ -1146,9 +1146,9 @@
 					<UnitConstant>
 						<name>DecMoveSpeed_WithReduction</name>
 						<var>
-							<compiledString>FQAAAAACAAAACAAAABIAAABVi+xqAVHZBUQAAADZHCRR2QVAAAAA2RwkagCLRQiLEItNCIuCMAEAAP/QUdkcJGoBi00QixGLTRCLQmD/0F3DAABAQQAAcEI=</compiledString>
+							<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAAAgQg==</compiledString>
 							<returnType>float</returnType>
-							<sString>damageScale( sStrength, 12 , 60)</sString>
+							<sString>40</sString>
 						</var>
 					</UnitConstant>
 				</Item>
