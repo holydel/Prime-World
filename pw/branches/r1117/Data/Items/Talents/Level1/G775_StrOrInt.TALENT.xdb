@@ -9,6 +9,7 @@
 	<BackLink DBID="/Social/Lootboxes/LB_G775" Count="1" />
 	<BackLink DBID="/Items/RerollShop/TalentsList_SuperSpeed" Count="1" />
 	<BackLink DBID="/Social/Quests/TalentQuests/_Settings" Count="1" />
+	<BackLink DBID="/Items/Talents/Fluffy.TALENTSET" Count="1" />
 	<activationConditions />
 	<activeCustomTrigger>true</activeCustomTrigger>
 	<allowChase>

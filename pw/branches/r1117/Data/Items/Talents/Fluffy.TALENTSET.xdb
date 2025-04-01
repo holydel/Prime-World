@@ -20,13 +20,13 @@
 					<aIPriority>0</aIPriority>
 					<refineRate>5</refineRate>
 					<status>normal</status>
-					<talent href="/Items/Talents/Level2/G792_StrOrInt.TALENT" />
+					<talent href="/Items/Talents/Level1/G775_StrOrInt.TALENT" />
 				</Item>
 				<Item>
 					<aIPriority>0</aIPriority>
 					<refineRate>5</refineRate>
 					<status>normal</status>
-					<talent href="/Items/Talents/Level2/G792_StrOrInt.TALENT" />
+					<talent href="/Items/Talents/Level1/G562_AxesBase.TALENT" />
 				</Item>
 				<Item>
 					<aIPriority>0</aIPriority>
