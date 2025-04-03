@@ -1305,9 +1305,9 @@
 					<UnitConstant>
 						<name>A4u_AddDamage</name>
 						<var>
-							<compiledString>FQAAAAACAAAACAAAABIAAABVi+xqAVHZBUQAAADZHCRR2QVAAAAA2RwkagCLRQiLEItNCIuCNAEAAP/QUdkcJGoBi00QixGLTRCLQmD/0F3DAADgQAAACEI=</compiledString>
+							<compiledString>FQAAAAACAAAACAAAABIAAABVi+xqAVHZBUQAAADZHCRR2QVAAAAA2RwkagCLRQiLEItNCIuCNAEAAP/QUdkcJGoBi00QixGLTRCLQmD/0F3DAABQQQAAikI=</compiledString>
 							<returnType>float</returnType>
-							<sString>damageScale(sIntellect, 7, 34)</sString>
+							<sString>damageScale(sIntellect, 13, 69)</sString>
 						</var>
 					</UnitConstant>
 				</Item>
