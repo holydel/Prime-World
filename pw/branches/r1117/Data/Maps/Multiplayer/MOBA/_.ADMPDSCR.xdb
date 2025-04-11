@@ -33,6 +33,7 @@
 	<BackLink DBID="/Maps/_.MAPLST" Count="1" />
 	<BackLink DBID="/Maps/Multiplayer/MOBA/Mod10/_.ADMPDSCR" Count="1" />
 	<BackLink DBID="/Tech/Default/_.MAPLST" Count="1" />
+	<BackLink DBID="/Maps/Multiplayer/MOBA/Trening/_.ADMPDSCR" Count="1" />
 	<acceptNeeded>false</acceptNeeded>
 	<AvailableForLeavers>true</AvailableForLeavers>
 	<botsUseSkins>false</botsUseSkins>

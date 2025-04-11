@@ -1,18 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <AdvMapSettings>
-	<BackLink DBID="/Maps/Multiplayer/MOBA/_.ADMP" Count="1" />
-	<BackLink DBID="/Maps/Multiplayer/MOBA/Test_PVP_1x1.ADMPDSCR" Count="1" />
-	<BackLink DBID="/Maps/Multiplayer/MOBA/Test_PVP_2x2.ADMPDSCR" Count="1" />
-	<BackLink DBID="/Maps/Multiplayer/MOBA/Test_PVP_3x3.ADMPDSCR" Count="1" />
-	<BackLink DBID="/Maps/Multiplayer/MOBA/Training.ADMPSTTN" Count="1" />
-	<BackLink DBID="/Maps/Multiplayer/MOBA/Map2/_.ADMP" Count="1" />
-	<BackLink DBID="/Maps/Multiplayer/MOBA/Mod10/_.ADMPDSCR" Count="1" />
-	<BackLink DBID="/Maps/Multiplayer/MOBA/Mod10/Test_PvP_1x1.ADMPDSCR" Count="1" />
-	<BackLink DBID="/Maps/Multiplayer/MOBA/Mod9/_.ADMP" Count="1" />
-	<BackLink DBID="/Maps/Multiplayer/MOBA/Mod9/Test_PVP_1x1.ADMPDSCR" Count="1" />
-	<BackLink DBID="/Maps/Multiplayer/MOBA/NightMap/_.ADMP" Count="1" />
-	<BackLink DBID="/Maps/Multiplayer/PFmap/Mod2/_.ADMP" Count="1" />
-	<BackLink DBID="/Maps/Multiplayer/MOBA/NewYear/_.ADMPSTTN" Count="1" />
 	<BackLink DBID="/Maps/Multiplayer/MOBA/Trening/_.ADMPDSCR" Count="1" />
 	<battleStartDelay>60</battleStartDelay>
 	<creepAnnounceList href="" />
@@ -28,7 +15,7 @@
 		<imageFreeze href="" />
 	</customBattleStartAnnouncement>
 	<dialogsCollection href="" />
-	<dictionary href="/Maps/Multiplayer/MOBA/_.ADMPSTTN" id="1D8AB6EE-F9F8-42F4-9E52-CB219FFB3313">
+	<dictionary href="/Maps/Multiplayer/MOBA/Trening/_.ADMPSTTN" id="FA85EAC6-F5CF-4EB5-B803-88E78C8289FB">
 		<DictionaryPreloadingResources>
 			<resources>
 				<Item>
@@ -38,6 +25,14 @@
 				<Item>
 					<key>Dragon</key>
 					<resource href="/Creeps/Bosses/Boss1/PVP_Walked.CREEP" />
+				</Item>
+				<Item>
+					<key>NaftaPotion20000</key>
+					<resource href="/Items/Temp/Test-Nafta2000.ARCT" />
+				</Item>
+				<Item>
+					<key>RemoveCooldown</key>
+					<resource href="/Items/Temp/Test-RemoveCooldown.ARCT" />
 				</Item>
 			</resources>
 		</DictionaryPreloadingResources>
@@ -80,7 +75,7 @@
 		<teamNaftaForPresence>-1</teamNaftaForPresence>
 	</primeSettings>
 	<questsCollection href="" />
-	<scriptFileName>/GameLogic/Scripts/Moba.lua</scriptFileName>
+	<scriptFileName>/GameLogic/Scripts/Trening.lua</scriptFileName>
 	<showAllHeroes>true</showAllHeroes>
 	<towersVulnerabilityDelay>0</towersVulnerabilityDelay>
 	<trainingForceCoeff>1</trainingForceCoeff>
@@ -113,7 +108,7 @@
 		</Item>
 	</triggerMarkerBinding>
 	<useCustomBattleStartAnnouncement>false</useCustomBattleStartAnnouncement>
-	<votingForSurrender href="/Maps/Multiplayer/MOBA/_.ADMPSTTN" id="51EB42CF-4CF5-46AA-A525-AC387A3D939D">
+	<votingForSurrender href="/Maps/Multiplayer/MOBA/Trening/_.ADMPSTTN" id="FB20C646-0431-48DD-8B93-AE88DC83F14C">
 		<VotingForSurrenderPerMission>
 			<cooldownAfterPrevisionVoting>120</cooldownAfterPrevisionVoting>
 			<cooldownAfterStart>600</cooldownAfterStart>

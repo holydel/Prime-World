@@ -2,6 +2,7 @@
 <Consumable>
 	<BackLink DBID="/Maps/Multiplayer/PFmap/Mod4/_.ADMPSTTN" Count="1" />
 	<BackLink DBID="/Maps/Multiplayer/MOBA/Mod4/_.ADMPSTTN" Count="1" />
+	<BackLink DBID="/Maps/Multiplayer/MOBA/Trening/_.ADMPSTTN" Count="1" />
 	<activeCustomTrigger>true</activeCustomTrigger>
 	<allowChase>
 		<compiledString></compiledString>
@@ -75,9 +76,9 @@
 		</UnitConstantsContainer>
 	</constants>
 	<cooldownTime>
-		<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAACgQQ==</compiledString>
+		<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAACgQA==</compiledString>
 		<returnType>float</returnType>
-		<sString>20</sString>
+		<sString>5</sString>
 	</cooldownTime>
 	<cooldownTimeSecondState>
 		<compiledString></compiledString>

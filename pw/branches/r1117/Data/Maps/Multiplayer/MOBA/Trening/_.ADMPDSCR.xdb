@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AdvMapDescription parent="/Maps/Multiplayer/MOBA/_.ADMPDSCR">
+	<BackLink DBID="/Maps/_.MAPLST" Count="1" />
+	<BackLink DBID="/Tech/Default/_.MAPLST" Count="1" />
+	<mapSettings href="/Maps/Multiplayer/MOBA/Trening/_.ADMPSTTN" />
+	<productionMode>false</productionMode>
+	<title textref="/Maps/Multiplayer/MOBA/Trening/_.ADMPDSCR_title.txt" />
+</AdvMapDescription>

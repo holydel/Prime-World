@@ -12,6 +12,7 @@
 	<BackLink DBID="/Maps/Multiplayer/MOBA/Mod7/_.ADMPDSCR" Count="1" />
 	<BackLink DBID="/Maps/Multiplayer/MOBA/Mod8/_.ADMPDSCR" Count="1" />
 	<BackLink DBID="/Maps/Multiplayer/MOBA/NewYear/_.ADMPSTTN" Count="1" />
+	<BackLink DBID="/Maps/Multiplayer/MOBA/Trening/_.ADMPSTTN" Count="1" />
 	<abilities>
 		<Item href="" />
 		<Item href="" />
