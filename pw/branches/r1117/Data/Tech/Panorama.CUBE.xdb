@@ -22,6 +22,8 @@
 	<BackLink DBID="/Tech/Experimental.LTEN" Count="1" />
 	<BackLink DBID="/Tech/Generic.LTEN" Count="1" />
 	<BackLink DBID="/Tech/Natural.LTEN" Count="1" />
+	<BackLink DBID="/Maps/Multiplayer/MidOnly/Aram/_.LTEN" Count="1" />
+	<BackLink DBID="/Maps/Multiplayer/MidOnly/Aram/_N.LTEN" Count="1" />
 	<pixelFormat>DXT1</pixelFormat>
 	<size>_256</size>
 	<srcFileName_0 crc="2721904142">/Tech/Panorama_CUB_0.tga</srcFileName_0>

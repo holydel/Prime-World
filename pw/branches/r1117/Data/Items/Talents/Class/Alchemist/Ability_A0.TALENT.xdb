@@ -76,6 +76,7 @@
 				<Item href="/Items/Talents/Class/Alchemist/const_MasterStatConnected_AttackSpeed" />
 				<Item href="/Items/Talents/Class/Alchemist/const_MasterStatConnected_Stamina" />
 				<Item href="/Items/Talents/Class/Alchemist/const_MasterStatConnected_Will" />
+				<Item href="/Items/Talents/Class/Alchemist/const_MasterStatConnected_Range" />
 				<Item href="/Items/Talents/Class/Alchemist/const_A0CloneBonusToSpeed" />
 				<Item href="/Items/Talents/Class/Alchemist/Ability_A0.TALENT" id="7D41BAA6-3C76-4507-9FDC-DEA1BC85A5D4">
 					<UnitConstant>

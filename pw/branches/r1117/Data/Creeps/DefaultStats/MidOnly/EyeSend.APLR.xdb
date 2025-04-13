@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <AuraApplicator>
 	<BackLink DBID="/Maps/Multiplayer/MidOnly/Mains/AbilityToReduceCD.ABLT" Count="1" />
+	<BackLink DBID="/Maps/Multiplayer/MidOnly/Aram/Mains/AbilityToReduceCD.ABLT" Count="1" />
 	<applicators>
 		<Item href="/Creeps/DefaultStats/MidOnly/EyeSend.APLR" id="DDE6477F-E822-4BFA-BF6A-C10FF78A1902">
 			<EyeApplicator>

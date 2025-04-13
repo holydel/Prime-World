@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BasicEffectStandalone>
 	<BackLink DBID="/Effects/Shots/FireBall/_Blue.EFFT" Count="1" />
-	<BackLink DBID="/Heroes/FallenAngel/_.HROB" Count="1" />
+	<BackLink DBID="/Heroes/FallenAngel/_.HROB" Count="3" />
 	<component href="/Effects/Shots/FireBall/_BlueTRS.PRXY" />
 	<deathType>Manual</deathType>
 	<enableCondition href="" />

@@ -2,6 +2,7 @@
 <SpellApplicator>
 	<BackLink DBID="/Maps/Multiplayer/CTE/Temples/_A.FNTN" Count="1" />
 	<BackLink DBID="/Maps/Multiplayer/MidOnly/Temples/_A.FNTN" Count="1" />
+	<BackLink DBID="/Maps/Multiplayer/MidOnly/Aram/Temples/_A.FNTN" Count="2" />
 	<applyTarget>AbilityOwner</applyTarget>
 	<caption></caption>
 	<enabled>

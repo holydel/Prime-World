@@ -551,6 +551,16 @@
 						</var>
 					</UnitConstant>
 				</Item>
+				<Item href="/Items/Talents/Class/Bomber/Ability_A2.TALENT" id="95F9985C-D78A-46C0-8C65-7A381C4880ED">
+					<UnitConstant>
+						<name>RangeIntOreStr</name>
+						<var>
+							<compiledString>FQ0AAAADAAAARQAAAE8AAACOAAAAUmFuZ2VfRXhMb25nAFWL7IPsEItFCIsQi00Ii4I0AQAA/9CLTQiLEYtNCIuCMAEAAN1d+P/Q3F343+D2xAV6QGoBUdkFtAAAANkcJFHZBbAAAADZHCRqAItNCIsRi00Ii4I0AQAA/9BR2RwkagGLTRCLEYtNEItCYP/Q2V306wXZ7tld9ItNDFGLVQhSaAAAAACLRRCLEItNEItCUP/Q2EX02V3w2UXwi+VdwwAAAAAAAKBAAADIQQ==</compiledString>
+							<returnType>float</returnType>
+							<sString>cRange_ExLong + (sIntellect&gt;sStrength ? damageScale(sIntellect,5,25) : 0)</sString>
+						</var>
+					</UnitConstant>
+				</Item>
 			</vars>
 		</UnitConstantsContainer>
 	</constants>
@@ -686,9 +696,9 @@
 	<type>Active</type>
 	<upgradeLevel>0</upgradeLevel>
 	<useRange>
-		<compiledString>FQ0AAAABAAAAGQAAAFJhbmdlX0V4TG9uZwBVi+yLRQxQi00IUWgAAAAAi1UQiwKLTRCLUFD/0l3D</compiledString>
+		<compiledString>FQ8AAAABAAAAGwAAAFJhbmdlSW50T3JlU3RyAFWL7ItFDFCLTQhRaAAAAACLVRCLAotNEItQUP/SXcM=</compiledString>
 		<returnType>float</returnType>
-		<sString>cRange_ExLong</sString>
+		<sString>cRangeIntOreStr</sString>
 	</useRange>
 	<useRangeMaterial href="/Effects/UI/AOESelection/Radius.MTRL" />
 	<variativeMaxTalentStats />

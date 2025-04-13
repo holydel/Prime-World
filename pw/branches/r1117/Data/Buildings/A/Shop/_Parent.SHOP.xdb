@@ -6,6 +6,7 @@
 	<BackLink DBID="/Maps/Multiplayer/MOBA/Shops/_A_NY.SHOP" Count="1" />
 	<BackLink DBID="/Maps/Multiplayer/MOBA/Shops/Mod9_A.SHOP" Count="1" />
 	<BackLink DBID="/Maps/Tutorial/Shops/_A.SHOP" Count="1" />
+	<BackLink DBID="/Maps/Multiplayer/MidOnly/Aram/Shops/_A.SHOP" Count="5" />
 	<abilities>
 		<Item href="" />
 		<Item href="" />

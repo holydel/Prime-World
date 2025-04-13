@@ -50,6 +50,10 @@
 	<BackLink DBID="/Maps/Tutorial/Barracks/TopB.QRTR" Count="1" />
 	<BackLink DBID="/Maps/Tutorial/Temples/_A.FNTN" Count="1" />
 	<BackLink DBID="/Maps/Tutorial/Temples/_B.FNTN" Count="1" />
+	<BackLink DBID="/Maps/Multiplayer/MidOnly/Aram/Barracks/_A.QRTR" Count="1" />
+	<BackLink DBID="/Maps/Multiplayer/MidOnly/Aram/Barracks/_B.QRTR" Count="1" />
+	<BackLink DBID="/Maps/Multiplayer/MidOnly/Aram/Temples/_A.FNTN" Count="1" />
+	<BackLink DBID="/Maps/Multiplayer/MidOnly/Aram/Temples/_B.FNTN" Count="1" />
 	<deathTime>5</deathTime>
 	<effect href="" />
 	<effectOffset>0.5</effectOffset>

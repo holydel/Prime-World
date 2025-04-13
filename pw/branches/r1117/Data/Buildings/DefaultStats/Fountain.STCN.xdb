@@ -10,6 +10,8 @@
 	<BackLink DBID="/Maps/PvE/Series/Coop1/Buildings/B_Temple.FNTN" Count="1" />
 	<BackLink DBID="/Maps/Tutorial/Temples/_A.FNTN" Count="1" />
 	<BackLink DBID="/Maps/Tutorial/Temples/_B.FNTN" Count="1" />
+	<BackLink DBID="/Maps/Multiplayer/MidOnly/Aram/Temples/_A.FNTN" Count="1" />
+	<BackLink DBID="/Maps/Multiplayer/MidOnly/Aram/Temples/_B.FNTN" Count="1" />
 	<stats>
 		<Item>
 			<calcIncrement>0</calcIncrement>

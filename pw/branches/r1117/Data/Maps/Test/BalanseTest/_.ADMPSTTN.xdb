@@ -16,7 +16,16 @@
 		<imageFreeze href="" />
 	</customBattleStartAnnouncement>
 	<dialogsCollection href="" />
-	<dictionary href="" />
+	<dictionary href="/Maps/Test/BalanseTest/_.ADMPSTTN" id="5C475488-4912-4D61-9AE1-626F8821F205">
+		<DictionaryPreloadingResources>
+			<resources>
+				<Item>
+					<key>RemoveCooldown</key>
+					<resource href="/Items/Temp/Test-RemoveCooldown.ARCT" />
+				</Item>
+			</resources>
+		</DictionaryPreloadingResources>
+	</dictionary>
 	<emblemHeroNeeds>3</emblemHeroNeeds>
 	<enableAllScriptFunctions>false</enableAllScriptFunctions>
 	<enableAnnouncements>true</enableAnnouncements>
@@ -89,7 +98,7 @@
 		<naftaForKill>-1</naftaForKill>
 		<naftaSpecForKill>-1</naftaSpecForKill>
 		<neutralKillExperienceModifier href="" />
-		<startPrimePerTeam>1500</startPrimePerTeam>
+		<startPrimePerTeam>400000</startPrimePerTeam>
 		<teamNaftaForPresence>-1</teamNaftaForPresence>
 	</primeSettings>
 	<questsCollection href="" />

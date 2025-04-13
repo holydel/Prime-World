@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <UIEvent>
 	<BackLink DBID="/Maps/Multiplayer/MidOnly/Mains/AbilityToReduceCD.ABLT" Count="1" />
+	<BackLink DBID="/Maps/Multiplayer/MidOnly/Aram/Mains/AbilityToReduceCD.ABLT" Count="1" />
 	<signRecipients>EVENT_PARTICIPANTS</signRecipients>
 	<UISigns>
 		<Item href="/UI/Events/CommonEvents/EventDamageDealed_toSiege_MO.UIEV" id="1DA35BD1-A21C-4F30-9B3A-3E7FDE9F503A">

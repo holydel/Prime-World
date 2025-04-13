@@ -6,6 +6,12 @@
 	<BackLink DBID="/Maps/Multiplayer/MidOnly/Mod1/_.ADMPDSCR" Count="1" />
 	<BackLink DBID="/Maps/Multiplayer/MidOnly/Mod1/Test_PVP_1x1.ADMPDSCR" Count="1" />
 	<BackLink DBID="/Maps/Multiplayer/MidOnly/Mod1/Test_PVP_2x2.ADMPDSCR" Count="1" />
+	<BackLink DBID="/Maps/Multiplayer/MidOnly/Aram/Mod1/_.ADMPDSCR" Count="1" />
+	<BackLink DBID="/Maps/Multiplayer/MidOnly/Aram/Mod1/Test_PVP_1x1.ADMPDSCR" Count="1" />
+	<BackLink DBID="/Maps/Multiplayer/MidOnly/Aram/Mod1/Test_PVP_2x2.ADMPDSCR" Count="1" />
+	<BackLink DBID="/Maps/Multiplayer/MidOnly/Aram/_.ADMPDSCR" Count="1" />
+	<BackLink DBID="/Maps/Multiplayer/MidOnly/Aram/Test_PVP_1x1.ADMPDSCR" Count="1" />
+	<BackLink DBID="/Maps/Multiplayer/MidOnly/Aram/Test_PVP_2x2.ADMPDSCR" Count="1" />
 	<faction href="/Maps/Multiplayer/MidOnly/Scoring.SCTB" id="7B9D2208-AD6B-4611-8C77-45EF8543CEC7">
 		<FactionScoringTable>
 			<bossKill>0</bossKill>

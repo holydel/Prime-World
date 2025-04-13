@@ -2,6 +2,7 @@
 <LightEnvironment>
 	<BackLink DBID="/Maps/Multiplayer/MidOnly/_.ADMP" Count="1" />
 	<BackLink DBID="/Maps/Multiplayer/MidOnly/_N.LTEN" Count="1" />
+	<BackLink DBID="/Maps/Multiplayer/MidOnly/Aram/_N.LTEN" Count="1" />
 	<AmbientColor>
 		<A>1</A>
 		<B>0.27</B>

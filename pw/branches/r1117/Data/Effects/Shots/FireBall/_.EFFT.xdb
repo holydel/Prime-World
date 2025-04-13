@@ -23,6 +23,8 @@
 	<BackLink DBID="/Test/Talents/Test-Cat_Bouncing.TALENT" Count="1" />
 	<BackLink DBID="/Heroes/Firefox/_.HROB" Count="1" />
 	<BackLink DBID="/Creeps/Bosses/Boss1/AttackAbility_Walked.ATCK" Count="1" />
+	<BackLink DBID="/Maps/Multiplayer/MidOnly/Aram/Temples/_A.FNTN" Count="1" />
+	<BackLink DBID="/Maps/Multiplayer/MidOnly/Aram/Temples/_B.FNTN" Count="1" />
 	<component href="/Effects/Shots/FireBall/_TRS.PRXY" />
 	<deathType>Manual</deathType>
 	<enableCondition href="" />
