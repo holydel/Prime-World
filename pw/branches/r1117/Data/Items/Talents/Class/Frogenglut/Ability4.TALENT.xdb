@@ -34,6 +34,36 @@
 	</aoeSize>
 	<aoeType>Disk</aoeType>
 	<applicators>
+		<Item href="/Items/Talents/Class/Frogenglut/Ability4.TALENT" id="0246CBCD-D8CB-4F11-ADB0-B5ECD084DB9F">
+			<PermanentStatModApplicator>
+				<applyTarget>AbilityOwner</applyTarget>
+				<caption>Отбираем прыжок</caption>
+				<customApplyType>None</customApplyType>
+				<enabled>
+					<compiledString></compiledString>
+					<returnType>bool</returnType>
+					<sString>true</sString>
+				</enabled>
+				<formulaName></formulaName>
+				<LoggingEvent>-1</LoggingEvent>
+				<modifier>
+					<addValue>
+						<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAACAvw==</compiledString>
+						<returnType>float</returnType>
+						<sString>-1</sString>
+					</addValue>
+					<multValue>
+						<compiledString></compiledString>
+						<returnType>float</returnType>
+						<sString>1.0f</sString>
+					</multValue>
+					<stat>Life</stat>
+					<topModifier>false</topModifier>
+					<variable>CurrentJumpCharges</variable>
+				</modifier>
+				<providerName></providerName>
+			</PermanentStatModApplicator>
+		</Item>
 		<Item href="/Items/Talents/Class/Frogenglut/Ability4.TALENT" id="A3CB3C0B-E131-4A7A-9BB4-ECEA23FB90EF">
 			<SpellApplicator>
 				<applyTarget>AbilityOwner</applyTarget>
@@ -244,7 +274,7 @@
 														<Item href="" />
 													</effect>
 													<enabled>
-														<compiledString></compiledString>
+														<compiledString>FQAAAAAAAAAAVYvssAFdww==</compiledString>
 														<returnType>bool</returnType>
 														<sString>true</sString>
 													</enabled>
@@ -858,55 +888,6 @@
 											</stopCondition>
 											<stopEvents>0</stopEvents>
 										</Item>
-										<Item>
-											<applicator href="/Items/Talents/Class/Frogenglut/Ability4.TALENT" id="101F66B0-A86F-4FA7-91C6-03152A82C2F7">
-												<PermanentStatModApplicator>
-													<applyTarget>AbilityOwner</applyTarget>
-													<caption>Отбираем стек</caption>
-													<customApplyType>None</customApplyType>
-													<enabled>
-														<compiledString></compiledString>
-														<returnType>bool</returnType>
-														<sString>true</sString>
-													</enabled>
-													<formulaName></formulaName>
-													<LoggingEvent>-1</LoggingEvent>
-													<modifier>
-														<addValue>
-															<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAACAvw==</compiledString>
-															<returnType>float</returnType>
-															<sString>-1</sString>
-														</addValue>
-														<multValue>
-															<compiledString></compiledString>
-															<returnType>float</returnType>
-															<sString>1.0f</sString>
-														</multValue>
-														<stat>Life</stat>
-														<topModifier>false</topModifier>
-														<variable>JumpCharges</variable>
-													</modifier>
-													<providerName></providerName>
-												</PermanentStatModApplicator>
-											</applicator>
-											<continueCondition>
-												<compiledString></compiledString>
-												<returnType>bool</returnType>
-												<sString>0</sString>
-											</continueCondition>
-											<continueEvents>2</continueEvents>
-											<delay>
-												<compiledString></compiledString>
-												<returnType>float</returnType>
-												<sString>-1.0</sString>
-											</delay>
-											<stopCondition>
-												<compiledString></compiledString>
-												<returnType>bool</returnType>
-												<sString>0</sString>
-											</stopCondition>
-											<stopEvents>0</stopEvents>
-										</Item>
 									</applicators>
 									<applyTarget>AbilityOwner</applyTarget>
 									<behaviorFlags>154</behaviorFlags>
@@ -991,9 +972,9 @@
 		<Item href="/Items/Talents/Class/Frogenglut/Ability4.TALENT" id="29706767-C90C-4E5C-9E9D-7A7B120D960E">
 			<ConditionCastLimitation>
 				<condition>
-					<compiledString>FQwAAAACAAAAEQAAACcAAABKdW1wQ2hhcmdlcwBVi+xRaAAAAACLRQiLEItNCIuCiAEAAP/Q3B1JAAAA3+D2xAF1CcdF/AEAAADrB8dF/AAAAACKRfyL5V3DAAAAAAAA8D8=</compiledString>
+					<compiledString>FRMAAAACAAAAGAAAAC4AAABDdXJyZW50SnVtcENoYXJnZXMAVYvsUWgAAAAAi0UIixCLTQiLgogBAAD/0NwdUAAAAN/g9sQBdQnHRfwBAAAA6wfHRfwAAAAAikX8i+VdwwAAAAAAAPA/</compiledString>
 					<returnType>bool</returnType>
-					<sString>sender.vJumpCharges&gt;=1</sString>
+					<sString>sender.vCurrentJumpCharges&gt;=1</sString>
 				</condition>
 				<uiEvent href="/Items/Talents/Class/Frogenglut/Ability4.TALENT" id="3913113C-C736-44A6-B180-CEB3E8A3C71D">
 					<UIEvent>
@@ -1126,9 +1107,9 @@
 					<UnitConstant>
 						<name>JumpCharges</name>
 						<var>
-							<compiledString>FQwAAAABAAAAEAAAAEp1bXBDaGFyZ2VzAFWL7GgAAAAAi0UIixCLTQiLgogBAAD/0F3D</compiledString>
+							<compiledString>FRMAAAABAAAAFwAAAEN1cnJlbnRKdW1wQ2hhcmdlcwBVi+xoAAAAAItFCIsQi00Ii4KIAQAA/9Bdww==</compiledString>
 							<returnType>float</returnType>
-							<sString>sender.vJumpCharges</sString>
+							<sString>sender.vCurrentJumpCharges</sString>
 						</var>
 					</UnitConstant>
 				</Item>
@@ -1136,9 +1117,9 @@
 					<UnitConstant>
 						<name>A4_StackCooldown</name>
 						<var>
-							<compiledString>FWwAAAAJAAAAcwAAAIkAAACTAAAAmAAAALEAAAC9AAAA1gAAAOIAAAD7AAAAVG90YWxfQ29vbGRvd25SZWR1Y3Rpb24AR2x5cGhSZWZyZXNoZXJfQ0RSX0Ftb3VudAAAAFNpZ25PZkNvcHlfQ0RSX0Ftb3VudAAAAFRvdGFsX0Nvb2xkb3duVWx0aW1hdGVSZWR1Y3Rpb24AVYvsg+wcaAAAAACLRQiLEItNCIuCiAEAAP/Q3DUgAQAA2eje4dwNEAEAAGgYAAAAi00IixGLTQiLgogBAADdXfj/0Nw1IAEAANno3uHcTfhoNAAAAItNCIsRi00Ii4KIAQAA3V3w/9DcNSABAADZ6N7h3E3waEwAAACLTQiLEYtNCIuCiAEAAN1d6P/Q3DUgAQAA2eje4dxN6Nld5NlF5IvlXcMAAAAAAAA+QAAAAAAAAPA/AAAAAAAAWUA=</compiledString>
+							<compiledString>FWwAAAAJAAAAcwAAAIkAAACTAAAAmAAAALEAAAC9AAAA1gAAAOIAAAD7AAAAVG90YWxfQ29vbGRvd25SZWR1Y3Rpb24AR2x5cGhSZWZyZXNoZXJfQ0RSX0Ftb3VudAAAAFNpZ25PZkNvcHlfQ0RSX0Ftb3VudAAAAFRvdGFsX0Nvb2xkb3duVWx0aW1hdGVSZWR1Y3Rpb24AVYvsg+wcaAAAAACLRQiLEItNCIuCiAEAAP/Q3DUgAQAA2eje4dwNEAEAAGgYAAAAi00IixGLTQiLgogBAADdXfj/0Nw1IAEAANno3uHcTfhoNAAAAItNCIsRi00Ii4KIAQAA3V3w/9DcNSABAADZ6N7h3E3waEwAAACLTQiLEYtNCIuCiAEAAN1d6P/Q3DUgAQAA2eje4dxN6Nld5NlF5IvlXcMAAAAAAIA9QAAAAAAAAPA/AAAAAAAAWUA=</compiledString>
 							<returnType>float</returnType>
-							<sString>30 * (1 - sender.vTotal_CooldownReduction/100) * (1 - sender.vGlyphRefresher_CDR_Amount/100) * (1 - sender.vSignOfCopy_CDR_Amount/100) * (1 - sender.vTotal_CooldownUltimateReduction/100)</sString>
+							<sString>29.5 * (1 - sender.vTotal_CooldownReduction/100) * (1 - sender.vGlyphRefresher_CDR_Amount/100) * (1 - sender.vSignOfCopy_CDR_Amount/100) * (1 - sender.vTotal_CooldownUltimateReduction/100)</sString>
 						</var>
 					</UnitConstant>
 				</Item>
@@ -1218,9 +1199,9 @@
 		<TargetSelectorMicroAI>
 			<castWhenIdle>false</castWhenIdle>
 			<condition>
-				<compiledString></compiledString>
+				<compiledString>FRMAAAACAAAAGAAAAC4AAABDdXJyZW50SnVtcENoYXJnZXMAVYvsUWgAAAAAi0UIixCLTQiLgogBAAD/0NwdUAAAAN/g9sRBdQnHRfwBAAAA6wfHRfwAAAAAikX8i+VdwwAAAAAAAAAA</compiledString>
 				<returnType>bool</returnType>
-				<sString>true</sString>
+				<sString>sender.vCurrentJumpCharges&gt;0</sString>
 			</condition>
 			<targetSelector href="/Items/Talents/Class/Frogenglut/Ability4.TALENT" id="67E31C3D-066E-4F45-B0D9-5AD9C0D67A51">
 				<ConvertTargetToLand>
@@ -1259,7 +1240,7 @@
 		<Item href="/Items/Talents/Class/Frogenglut/Ability4.TALENT" id="28773E0B-EE77-4C3A-A4E4-5066CC569015">
 			<PermanentStatModApplicator>
 				<applyTarget>ApplicatorTarget</applyTarget>
-				<caption></caption>
+				<caption>Выдаём максимум прыжков</caption>
 				<customApplyType>None</customApplyType>
 				<enabled>
 					<compiledString></compiledString>
@@ -1275,13 +1256,13 @@
 						<sString>cMaxJumpCharges</sString>
 					</addValue>
 					<multValue>
-						<compiledString></compiledString>
+						<compiledString>FQAAAAAAAAAAVYvs2e5dwwAAAAA=</compiledString>
 						<returnType>float</returnType>
-						<sString>1.0f</sString>
+						<sString>0</sString>
 					</multValue>
 					<stat>Life</stat>
 					<topModifier>false</topModifier>
-					<variable>JumpCharges</variable>
+					<variable>CurrentJumpCharges</variable>
 				</modifier>
 				<providerName></providerName>
 			</PermanentStatModApplicator>
@@ -1296,9 +1277,9 @@
 					<Item href="" />
 				</effect>
 				<enabled>
-					<compiledString>FZ4AAAAJAAAApQAAAL4AAAD0AAAAFAEAADABAABJAQAAfwEAAJ8BAADQAQAARnJvZ2VuZ2x1dF9BNAAAAEZyb2dlbmdsdXRfQTQAAABGcm9nZW5nbHV0X0E0AAAASnVtcENoYXJnZXMARnJvZ2VuZ2x1dF9BNAAAAEZyb2dlbmdsdXRfQTQAAABGcm9nZW5nbHV0X0E0AAAATWF4SnVtcENoYXJnZXMAAEZyb2dlbmdsdXRfQTRTdGFja0Nvb2xkb3duUHJvZ3JhbQBVi+yD7CRoAAAAAItFCIsQi00Ii4KoAQAA/9CFwHQqaBAAAACLTQiLEYtNCIuCqAEAAP/QiUX8i038ixGLTfyLQgT/0IhF++sExkX7AA+2TfuFyXQ3aCAAAACLVQiLAotNCIuQqAEAAP/SiUX0i0UMUItNCFFoMAAAAItV9IsCi030i1BQ/9LZXfDrBdnu2V3waDwAAACLRQiLEItNCIuCqAEAAP/QhcB0KmhMAAAAi00IixGLTQiLgqgBAAD/0IlF7ItN7IsRi03si0IE/9CIRevrBMZF6wAPtk3rhcl0N2hcAAAAi1UIiwKLTQiLkKgBAAD/0olF5ItFDFCLTQhRaGwAAACLVeSLAotN5ItQUP/S2V3g6wXZ7tld4NlF8NlF4N7Z3+D2xEF1KWoBi0UQUGh8AAAAi00IixGLTQiLgpwBAAD/0DtFEHUJx0XcAQAAAOsHx0XcAAAAAIpF3IvlXcMAAAAA</compiledString>
+					<compiledString>FUYAAAADAAAATQAAAGoAAACPAAAAQ3VycmVudEp1bXBDaGFyZ2VzAABNYXhKdW1wQ2hhcmdlcwAARnJvZ2VuZ2x1dF9BNFN0YWNrQ29vbGRvd25Qcm9ncmFtAFWL7IPsDGgAAAAAi0UIixCLTQiLgogBAAD/0ItNDFGLVQhSaBQAAACLRRCLEItNEItCUN1d+P/Q3F343+D2xEF1KWoBi00QUWgkAAAAi1UIiwKLTQiLkJwBAAD/0jtFEHUJx0X0AQAAAOsHx0X0AAAAAIpF9IvlXcM=</compiledString>
 					<returnType>bool</returnType>
-					<sString>talconst("Frogenglut_A4","JumpCharges") &lt; talconst("Frogenglut_A4","MaxJumpCharges") &amp;&amp; sender.applFrogenglut_A4StackCooldownProgram(UNIT) == pMisc</sString>
+					<sString>sender.vCurrentJumpCharges &lt; cMaxJumpCharges &amp;&amp; sender.applFrogenglut_A4StackCooldownProgram(UNIT) == pMisc</sString>
 				</enabled>
 				<formulaName></formulaName>
 				<lifeTime>
@@ -1308,9 +1289,9 @@
 				</lifeTime>
 				<LoggingEvent>-1</LoggingEvent>
 				<period>
-					<compiledString>FQAAAAAAAAAAVYvs2e5dwwAAAAA=</compiledString>
+					<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAAAAPw==</compiledString>
 					<returnType>float</returnType>
-					<sString>0</sString>
+					<sString>0.5</sString>
 				</period>
 				<providerName></providerName>
 				<scaleMode>ScaleIsTime</scaleMode>
@@ -1347,9 +1328,9 @@
 													<caption>Добавляем стек, если можно</caption>
 													<customApplyType>None</customApplyType>
 													<enabled>
-														<compiledString>FXsAAAAIAAAAggAAAJsAAADRAAAA8QAAAA0BAAAmAQAAXAEAAHwBAABGcm9nZW5nbHV0X0E0AAAARnJvZ2VuZ2x1dF9BNAAAAEZyb2dlbmdsdXRfQTQAAABKdW1wQ2hhcmdlcwBGcm9nZW5nbHV0X0E0AAAARnJvZ2VuZ2x1dF9BNAAAAEZyb2dlbmdsdXRfQTQAAABNYXhKdW1wQ2hhcmdlcwBVi+yD7CRoAAAAAItFCIsQi00Ii4KoAQAA/9CFwHQqaBAAAACLTQiLEYtNCIuCqAEAAP/QiUX8i038ixGLTfyLQgT/0IhF++sExkX7AA+2TfuFyXQ3aCAAAACLVQiLAotNCIuQqAEAAP/SiUX0i0UMUItNCFFoMAAAAItV9IsCi030i1BQ/9LZXfDrBdnu2V3waDwAAACLRQiLEItNCIuCqAEAAP/QhcB0KmhMAAAAi00IixGLTQiLgqgBAAD/0IlF7ItN7IsRi03si0IE/9CIRevrBMZF6wAPtk3rhcl0N2hcAAAAi1UIiwKLTQiLkKgBAAD/0olF5ItFDFCLTQhRaGwAAACLVeSLAotN5ItQUP/S2V3g6wXZ7tld4NlF8NlF4N7Z3+D2xEF1CcdF3AEAAADrB8dF3AAAAACKRdyL5V3DAAAAAA==</compiledString>
+														<compiledString>FSMAAAACAAAAKgAAAEcAAABDdXJyZW50SnVtcENoYXJnZXMAAE1heEp1bXBDaGFyZ2VzAFWL7IPsDGgAAAAAi0UIixCLTQiLgogBAAD/0ItNDFGLVQhSaBQAAACLRRCLEItNEItCUN1d+P/Q3F343+D2xEF1CcdF9AEAAADrB8dF9AAAAACKRfSL5V3D</compiledString>
 														<returnType>bool</returnType>
-														<sString>talconst("Frogenglut_A4","JumpCharges") &lt; talconst("Frogenglut_A4","MaxJumpCharges") </sString>
+														<sString>sender.vCurrentJumpCharges &lt; cMaxJumpCharges </sString>
 													</enabled>
 													<formulaName></formulaName>
 													<LoggingEvent>-1</LoggingEvent>
@@ -1366,7 +1347,7 @@
 														</multValue>
 														<stat>Life</stat>
 														<topModifier>false</topModifier>
-														<variable>JumpCharges</variable>
+														<variable>CurrentJumpCharges</variable>
 													</modifier>
 													<providerName></providerName>
 												</PermanentStatModApplicator>
@@ -1398,9 +1379,9 @@
 										<Item href="" />
 									</effect>
 									<enabled>
-										<compiledString>FRsAAAACAAAAIgAAAD8AAABKdW1wQ2hhcmdlcwBNYXhKdW1wQ2hhcmdlcwBVi+yD7AxoAAAAAItFCIsQi00Ii4KIAQAA/9CLTQxRi1UIUmgMAAAAi0UQixCLTRCLQlDdXfj/0Nxd+N/g9sRBdQnHRfQBAAAA6wfHRfQAAAAAikX0i+Vdww==</compiledString>
+										<compiledString>FSMAAAACAAAAKgAAAEcAAABDdXJyZW50SnVtcENoYXJnZXMAAE1heEp1bXBDaGFyZ2VzAFWL7IPsDGgAAAAAi0UIixCLTQiLgogBAAD/0ItNDFGLVQhSaBQAAACLRRCLEItNEItCUN1d+P/Q3F343+D2xEF1CcdF9AEAAADrB8dF9AAAAACKRfSL5V3D</compiledString>
 										<returnType>bool</returnType>
-										<sString>sender.vJumpCharges &lt; cMaxJumpCharges </sString>
+										<sString>sender.vCurrentJumpCharges &lt; cMaxJumpCharges </sString>
 									</enabled>
 									<formulaName>Frogenglut_A4StackCooldownProgram</formulaName>
 									<lifeTime>
@@ -1411,9 +1392,9 @@
 									<LoggingEvent>-1</LoggingEvent>
 									<providerName></providerName>
 									<startCondition>
-										<compiledString>FRsAAAACAAAAIgAAAD8AAABKdW1wQ2hhcmdlcwBNYXhKdW1wQ2hhcmdlcwBVi+yD7AxoAAAAAItFCIsQi00Ii4KIAQAA/9CLTQxRi1UIUmgMAAAAi0UQixCLTRCLQlDdXfj/0Nxd+N/g9sRBdQnHRfQBAAAA6wfHRfQAAAAAikX0i+Vdww==</compiledString>
+										<compiledString>FSMAAAACAAAAKgAAAEcAAABDdXJyZW50SnVtcENoYXJnZXMAAE1heEp1bXBDaGFyZ2VzAFWL7IPsDGgAAAAAi0UIixCLTQiLgogBAAD/0ItNDFGLVQhSaBQAAACLRRCLEItNEItCUN1d+P/Q3F343+D2xEF1CcdF9AEAAADrB8dF9AAAAACKRfSL5V3D</compiledString>
 										<returnType>bool</returnType>
-										<sString>sender.vJumpCharges &lt; cMaxJumpCharges </sString>
+										<sString>sender.vCurrentJumpCharges &lt; cMaxJumpCharges </sString>
 									</startCondition>
 								</ProgramApplicator>
 							</Item>
@@ -1465,9 +1446,9 @@
 					<Item href="" />
 				</effect>
 				<enabled>
-					<compiledString>FQwAAAACAAAAKgAAAEAAAABKdW1wQ2hhcmdlcwBVi+xRaAAAAgCLRQyLEItNDItCaP/QD7bIhcl1K2gAAAAAi1UIiwKLTQiLkIgBAAD/0twdYgAAAN/g9sQFewnHRfwAAAAA6wfHRfwBAAAAikX8i+VdwwAAAAAAAPA/</compiledString>
+					<compiledString>FRMAAAACAAAAMQAAAEcAAABDdXJyZW50SnVtcENoYXJnZXMAVYvsUWgAAAIAi0UMixCLTQyLQmj/0A+2yIXJdStoAAAAAItVCIsCi00Ii5CIAQAA/9LcHWkAAADf4PbEBXsJx0X8AAAAAOsHx0X8AQAAAIpF/IvlXcMAAAAAAADwPw==</compiledString>
 					<returnType>bool</returnType>
-					<sString>rFlag(131072) || sender.vJumpCharges&lt;1</sString>
+					<sString>rFlag(131072) || sender.vCurrentJumpCharges&lt;1</sString>
 				</enabled>
 				<flag>1024</flag>
 				<formulaName></formulaName>
@@ -1489,7 +1470,6 @@
 				<useListAs>ListAsRule</useListAs>
 			</FlagsApplicator>
 		</Item>
-		<Item href="" />
 	</passiveApplicators>
 	<persistentId>Frogenglut_A4</persistentId>
 	<prerequisiteTalents />

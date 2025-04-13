@@ -326,6 +326,18 @@
 			</StatModApplicator>
 		</Item>
 		<Item href="/Heroes/DefaultStatus/_MasterStatConnect_Level.APLR" />
+		<Item href="/Items/Talents/Class/Alchemist/_summon_Clone.APLR" id="43F94F11-3293-4555-A8FB-137B0F40BB04">
+			<StatModApplicator parent="/Heroes/DefaultStatus/_MasterStatConnect_Will.APLR">
+				<modifier>
+					<addValue>
+						<compiledString>FRoAAAABAAAAJgAAAE1hc3RlclN0YXRDb25uZWN0ZWRfUmFuZ2UAVYvsi0UMUItNCFFoAAAAAItVEIsCi00Qi1BQ/9Jdww==</compiledString>
+						<returnType>float</returnType>
+						<sString>cMasterStatConnected_Range</sString>
+					</addValue>
+					<stat>Range</stat>
+				</modifier>
+			</StatModApplicator>
+		</Item>
 		<Item href="/GameLogic/GeneralApplicators/Pet.APLR" />
 		<Item href="/GameLogic/GeneralApplicators/Uncontrollable.APLR" />
 		<Item href="/Heroes/DefaultStatus/SummonsInvisible.APLR" />
@@ -511,7 +523,16 @@
 		<Item href="/GameLogic/GeneralApplicators/SetClone.APLR" />
 	</applicators>
 	<applyTarget>AbilityOwner</applyTarget>
-	<behaviour href="/GameLogic/SummonBehaviourRanged" />
+	<behaviour href="/Items/Talents/Class/Alchemist/_summon_Clone.APLR" id="8611A54F-1803-4E9C-B5AB-4F9544EF4DAA">
+		<SummonBehaviourCommon parent="/GameLogic/SummonBehaviourRanged">
+			<lashRange>
+				<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAAAAQQ==</compiledString>
+				<returnType>float</returnType>
+				<sString>8</sString>
+			</lashRange>
+			<summonType>Primary</summonType>
+		</SummonBehaviourCommon>
+	</behaviour>
 	<caption> - Саммоним Гомункула</caption>
 	<enabled>
 		<compiledString>FVoAAAAIAAAAYQAAAH4AAACdAAAAswAAAL8AAADVAAAA4QAAAPcAAABBMF9SZWFnZW50X0N1cnJlbnRTdGFjawBBMF9SZWFnZW50X01heFN0YWNrAElzSW5zaWRlQ2lyY2xlAABBNF9JblByb2dyZXNzAAAAQTBfQ2xvbmVBbGl2ZQBVi+yD7AxoAAAAAItFCIsQi00Ii4KIAQAA/9CLTQxRi1UIUmgYAAAAi0UQixCLTRCLQlDdXfj/0Nxd+N/g9sRBem9oLAAAAItNCIsRi00Ii4KIAQAA/9DcHRkBAADf4PbEAXVNaDwAAACLTQiLEYtNCIuCiAEAAP/Q3B0ZAQAA3+D2xER7K2hMAAAAi00IixGLTQiLgogBAAD/0NwdGQEAAN/g9sQFegnHRfQBAAAA6wfHRfQAAAAAikX0i+VdwwAAAAAAAPA/</compiledString>

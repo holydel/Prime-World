@@ -7,9 +7,9 @@
 	<behaviorFlags>216</behaviorFlags>
 	<caption>Статус когда стаков нет</caption>
 	<customCounter>
-		<compiledString>FQwAAAABAAAAEAAAAEp1bXBDaGFyZ2VzAFWL7GgAAAAAi0UIixCLTQiLgogBAAD/0FHZHCToBQAAAIPEBF3DuAEAAAAPovfCAAAABHQH8w8sRCQEw+kAAAAAVYvsg+wM2UUI2X38D7dF/A0ADAAAiUX42W3421302W38i0X0i+Vdww==</compiledString>
+		<compiledString>FRMAAAABAAAAFwAAAEN1cnJlbnRKdW1wQ2hhcmdlcwBVi+xoAAAAAItFCIsQi00Ii4KIAQAA/9BR2Rwk6AUAAACDxARdw7gBAAAAD6L3wgAAAAR0B/MPLEQkBMPpAAAAAFWL7IPsDNlFCNl9/A+3RfwNAAwAAIlF+Nlt+Ntd9Nlt/ItF9IvlXcM=</compiledString>
 		<returnType>int</returnType>
-		<sString>f2l(sender.vJumpCharges)</sString>
+		<sString>f2l(sender.vCurrentJumpCharges)</sString>
 	</customCounter>
 	<customProgress>
 		<compiledString>FT0AAAADAAAASgAAAGoAAAB8AAAARnJvZ2VuZ2x1dF9BNFN0YWNrQ29vbGRvd25TcGVsbABkdXJhdGlvbgAAAABBNF9TdGFja0Nvb2xkb3duAFWL7IPsEGoBi0UQUGgAAAAAi00IixGLTQiLgpwBAAD/0IlF/ItNDFGLVQhSaCwAAACLRRCLEItNEItCUP/QaCAAAACLTfyLEYtN/ItCVN1d9P/Q3HX02V3w2UXwi+Vdww==</compiledString>
@@ -23,9 +23,9 @@
 		<Item href="" />
 	</effect>
 	<enabled>
-		<compiledString>FQwAAAACAAAAEQAAACcAAABKdW1wQ2hhcmdlcwBVi+xRaAAAAACLRQiLEItNCIuCiAEAAP/Q3B1JAAAA3+D2xAV6CcdF/AEAAADrB8dF/AAAAACKRfyL5V3DAAAAAAAA8D8=</compiledString>
+		<compiledString>FRMAAAACAAAAGAAAAC4AAABDdXJyZW50SnVtcENoYXJnZXMAVYvsUWgAAAAAi0UIixCLTQiLgogBAAD/0NwdUAAAAN/g9sQFegnHRfwBAAAA6wfHRfwAAAAAikX8i+VdwwAAAAAAAPA/</compiledString>
 		<returnType>bool</returnType>
-		<sString>sender.vJumpCharges&lt;1</sString>
+		<sString>sender.vCurrentJumpCharges&lt;1</sString>
 	</enabled>
 	<flags>0</flags>
 	<formulaName></formulaName>
@@ -46,7 +46,7 @@
 		<returnType>bool</returnType>
 		<sString>true</sString>
 	</startCondition>
-	<statusPosition>-89</statusPosition>
+	<statusPosition>-88</statusPosition>
 	<stopBehaviour>StopByTime</stopBehaviour>
 	<unstackableWith href="/Items/Talents/Class/Frogenglut/status_A4_ZeroStacks.APLR" id="BE17CEBD-C456-4D0C-BC7C-7128BB89013E">
 		<ApplicatorsList>

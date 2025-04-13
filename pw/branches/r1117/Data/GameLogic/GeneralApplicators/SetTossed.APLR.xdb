@@ -47,7 +47,6 @@
 	<BackLink DBID="/Maps/PvE/Series/Episode1/Talents/rockman/Ability4.TALENT" Count="1" />
 	<BackLink DBID="/Maps/PvE/Series/Episode1/Talents/witcher/Ability1.TALENT" Count="1" />
 	<BackLink DBID="/Summons/EvilTree/_.SUMMONED" Count="1" />
-	<BackLink DBID="/Items/Talents/Class/Frogenglut/Ability_A4.TALENT" Count="1" />
 	<applyTarget>ApplicatorTarget</applyTarget>
 	<behaviorFlags>1</behaviorFlags>
 	<caption>Unit is thrown (Tossed)</caption>
