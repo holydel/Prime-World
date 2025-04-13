@@ -238,7 +238,6 @@
 																		<unstackableWith href="/Heroes/DefaultStatus/List_SlowUnstacked.APLS" />
 																	</StatusApplicator>
 																</Item>
-																<Item href="/Heroes/DefaultStatus/SlowFX.APLR" />
 															</applicators>
 															<dispatch href="/Items/Talents/Class/Bomber/Ability_A2.TALENT" id="5D5851B2-AA0D-47A5-90B2-AED234E8B8C8">
 																<DispatchImmediate>

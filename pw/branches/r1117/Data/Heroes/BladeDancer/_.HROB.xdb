@@ -789,7 +789,7 @@
 																					<applyTarget>AbilityOwner</applyTarget>
 																					<behaviorFlags>0</behaviorFlags>
 																					<caption>Рывок</caption>
-																					<collisionFlags>1</collisionFlags>
+																					<collisionFlags>7</collisionFlags>
 																					<enabled>
 																						<compiledString>FRAAAAACAAEAUQAAAGcAAAASAQAAQTFfTWF4RGFzaFJhbmdlAFWL7IPsHI1F+FCLTQiLEYtNCIuCjAEAAP/QUI1N8FGLVQyLAotNDIuQjAEAAP/SUOhPAAAAg8QIi0UMUItNCFFoAAAAAItVEIsCi00Qi1BQ3V3o/9LcBYwAAADcXejf4PbEQXUJx0XkAQAAAOsHx0XkAAAAAIpF5IvlXcMAAAAAAAAcQFWL7IPsFItFCNlABItNDNhhBNld9NlF9FHZHCSLVQjZAotFDNgg2V3w2UXwUdkcJI1N+OhXAAAA2UX42E342UX82E383sHZXezZRexR2Rwk6AcAAACDxASL5V3DVYvsUdlFCNkcJOgFAAAAg8QEXcNVi+xR2UUIg+wI3Rwk6Mb+//+DxAjZXfzZRfyL5V3DVYvsUYlN/ItF/NlFCNkYi0382UUM2VkEi0X8i+VdwggA</compiledString>
 																						<returnType>bool</returnType>
