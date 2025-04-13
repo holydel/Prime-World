@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <UITexture>
 	<BackLink DBID="/Maps/Multiplayer/MidOnly/_.ADMPDSCR" Count="1" />
+	<BackLink DBID="/Maps/Multiplayer/MidOnly/Aram/Aram.ADMPDSCR" Count="1" />
+	<BackLink DBID="/Maps/Multiplayer/MidOnly/Aram/_.ADMPDSCR" Count="1" />
 	<generatedFileName></generatedFileName>
 	<importOnlyShape>false</importOnlyShape>
 	<mipLevels>0</mipLevels>

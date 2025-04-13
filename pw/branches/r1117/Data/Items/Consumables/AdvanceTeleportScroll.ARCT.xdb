@@ -17,6 +17,7 @@
 	<BackLink DBID="/Maps/PvE/Series/Coop1/Violet.ADMPDSCR" Count="1" />
 	<BackLink DBID="/Maps/Multiplayer/MOBA/_.SCTB" Count="1" />
 	<BackLink DBID="/Maps/Multiplayer/MOBA/Tutorial/_.SCTB" Count="1" />
+	<BackLink DBID="/Maps/Multiplayer/MidOnly/Aram/Scoring.SCTB" Count="1" />
 	<activeCustomTrigger>true</activeCustomTrigger>
 	<allowChase>
 		<compiledString></compiledString>

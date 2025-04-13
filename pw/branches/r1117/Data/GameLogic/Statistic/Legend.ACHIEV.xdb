@@ -6,6 +6,7 @@
 	<BackLink DBID="/Maps/Multiplayer/MOBA/Achievements/Legend.ACHIEV" Count="1" />
 	<BackLink DBID="/Maps/Multiplayer/MOBA/Tutorial/_.SCTB" Count="1" />
 	<BackLink DBID="/Maps/Multiplayer/PFmap/_.SCTB" Count="1" />
+	<BackLink DBID="/Maps/Multiplayer/MidOnly/Aram/Scoring.SCTB" Count="1" />
 	<achievType>Legend</achievType>
 	<creatures>
 		<Item href="/Creeps/Bosses/Boss1/PVP.CREEP" />

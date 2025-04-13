@@ -5,6 +5,7 @@
 	<BackLink DBID="/Maps/Multiplayer/MidOnly/Scoring.SCTB" Count="1" />
 	<BackLink DBID="/Maps/Multiplayer/MOBA/Achievements/KittySlayer.ACHIEV" Count="1" />
 	<BackLink DBID="/Maps/Multiplayer/MOBA/Tutorial/_.SCTB" Count="1" />
+	<BackLink DBID="/Maps/Multiplayer/MidOnly/Aram/Scoring.SCTB" Count="1" />
 	<achievType>KittySlayer</achievType>
 	<evUI href="/GameLogic/Statistic/KittySlayer.ACHIEV" id="7ACEADDE-35AD-40B9-B0BA-6690A3EE9218">
 		<UIEvent>

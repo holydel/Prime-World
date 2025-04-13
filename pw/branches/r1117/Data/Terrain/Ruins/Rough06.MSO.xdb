@@ -9,6 +9,7 @@
 	<BackLink DBID="/Maps/Multiplayer/MOBA/NewYear/_.ADMP" Count="4" />
 	<BackLink DBID="/Maps/Multiplayer/MOBA/NightMap/_.ADMP" Count="4" />
 	<BackLink DBID="/Maps/PvE/Series/Coop1/_.ADMP" Count="1" />
+	<BackLink DBID="/Maps/Multiplayer/MidOnly/Aram/_.ADMP" Count="2" />
 	<collision>
 		<x1>-3.335667</x1>
 		<x2>3.850796</x2>

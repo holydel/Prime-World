@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <RoadMaterial>
 	<BackLink DBID="/Maps/Multiplayer/MidOnly/_.ADMP" Count="7" />
+	<BackLink DBID="/Maps/Multiplayer/MidOnly/Aram/_.ADMP" Count="7" />
 	<BorderMap>
 		<samplerState>
 			<addressU>Wrap</addressU>

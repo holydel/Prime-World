@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Critter>
 	<BackLink DBID="/Maps/Multiplayer/MidOnly/_.ADMP" Count="2" />
+	<BackLink DBID="/Maps/Multiplayer/MidOnly/Aram/_.ADMP" Count="2" />
 	<alarmRadius>4</alarmRadius>
 	<calmDownTime>4</calmDownTime>
 	<collision>

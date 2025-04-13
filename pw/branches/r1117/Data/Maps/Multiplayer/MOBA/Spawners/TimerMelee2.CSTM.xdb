@@ -15,6 +15,8 @@
 	<BackLink DBID="/Maps/Tutorial/Spawners/AT_MIssion1.CSPN" Count="3" />
 	<BackLink DBID="/Maps/Tutorial/Spawners/BT.CSPN" Count="3" />
 	<BackLink DBID="/Maps/Tutorial/Spawners/BT_Mission2.CSPN" Count="3" />
+	<BackLink DBID="/Maps/Multiplayer/MidOnly/Aram/Spawners/_A.CSPN" Count="3" />
+	<BackLink DBID="/Maps/Multiplayer/MidOnly/Aram/Spawners/_B.CSPN" Count="3" />
 	<spawnDelay>1</spawnDelay>
 	<spawnType>1</spawnType>
 	<startDelay>0</startDelay>

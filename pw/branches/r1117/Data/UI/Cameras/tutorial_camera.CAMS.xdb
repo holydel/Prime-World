@@ -2,6 +2,7 @@
 <AdventureCameraSettings parent="/UI/Cameras/strategic_game_camera.CAMS">
 	<BackLink DBID="/Maps/Multiplayer/MidOnly/_.ADMP" Count="1" />
 	<BackLink DBID="/Maps/Tutorial/_.ADMP" Count="1" />
+	<BackLink DBID="/Maps/Multiplayer/MidOnly/Aram/_.ADMP" Count="1" />
 	<centerOffset>
 		<x>0</x>
 		<y>0</y>

@@ -18,6 +18,7 @@
 	<BackLink DBID="/Terrain/Elements/RockN_S1_D.STAT" Count="1" />
 	<BackLink DBID="/Terrain/Elements/RockN_S2_D.STAT" Count="1" />
 	<BackLink DBID="/Test/Test/_.TERN" Count="67" />
+	<BackLink DBID="/Maps/Multiplayer/MidOnly/Aram/_.TERN" Count="60" />
 	<A_DiffuseMap>
 		<Add>
 			<A>0</A>

@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <AdvMapCreep parent="/Creeps/B/SuperHeavy/_Parent.CREEP">
 	<BackLink DBID="/Maps/Multiplayer/MidOnly/Spawners/_B.CSPN" Count="2" />
+	<BackLink DBID="/Maps/Multiplayer/MidOnly/Aram/Spawners/_B.CSPN" Count="2" />
 	<abilities>
 		<Item skip="1" />
 		<Item skip="1" />

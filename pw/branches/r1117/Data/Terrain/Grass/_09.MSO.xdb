@@ -3,6 +3,7 @@
 	<BackLink DBID="/Maps/Multiplayer/CTE/_.ADMP" Count="16" />
 	<BackLink DBID="/Maps/Multiplayer/MidOnly/_.ADMP" Count="10" />
 	<BackLink DBID="/Maps/PvE/Series/Coop1/_.ADMP" Count="1" />
+	<BackLink DBID="/Maps/Multiplayer/MidOnly/Aram/_.ADMP" Count="10" />
 	<collision>
 		<x1>0</x1>
 		<x2>0</x2>

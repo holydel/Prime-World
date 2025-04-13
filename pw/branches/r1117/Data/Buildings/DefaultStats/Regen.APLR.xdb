@@ -11,6 +11,8 @@
 	<BackLink DBID="/Maps/PvE/Series/Coop1/Buildings/B_Temple.FNTN" Count="1" />
 	<BackLink DBID="/Maps/Tutorial/Temples/_A.FNTN" Count="1" />
 	<BackLink DBID="/Maps/Tutorial/Temples/_B.FNTN" Count="1" />
+	<BackLink DBID="/Maps/Multiplayer/MidOnly/Aram/Temples/_A.FNTN" Count="3" />
+	<BackLink DBID="/Maps/Multiplayer/MidOnly/Aram/Temples/_B.FNTN" Count="3" />
 	<applicators>
 		<Item href="/Buildings/DefaultStats/Regen.APLR" id="245D20EE-88EE-4DF7-8F3A-60B5DC1B3AE1">
 			<SpellPeriodicallyApplicator>

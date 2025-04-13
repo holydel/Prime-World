@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <AdvMapCreep>
-	<BackLink DBID="/Maps/Multiplayer/MidOnly/_.ADMPSTTN" Count="1" />
 	<BackLink DBID="/Maps/Multiplayer/MOBA/_.ADMPSTTN" Count="1" />
 	<BackLink DBID="/Maps/Multiplayer/MOBA/Training.ADMPSTTN" Count="1" />
 	<BackLink DBID="/Maps/Multiplayer/MOBA/Mod1/_.DICT" Count="1" />
@@ -13,6 +12,7 @@
 	<BackLink DBID="/Maps/Multiplayer/MOBA/Mod8/_.ADMPDSCR" Count="1" />
 	<BackLink DBID="/Maps/Multiplayer/MOBA/NewYear/_.ADMPSTTN" Count="1" />
 	<BackLink DBID="/Maps/Multiplayer/MOBA/Trening/_.ADMPSTTN" Count="1" />
+	<BackLink DBID="/Maps/Multiplayer/MidOnly/_.ADMPSTTN" Count="1" />
 	<abilities>
 		<Item href="" />
 		<Item href="" />

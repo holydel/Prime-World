@@ -6,6 +6,7 @@
 	<BackLink DBID="/Maps/Multiplayer/MOBA/Achievements/Vendetta.ACHIEV" Count="1" />
 	<BackLink DBID="/Maps/Multiplayer/MOBA/Tutorial/_.SCTB" Count="1" />
 	<BackLink DBID="/Maps/Multiplayer/PFmap/_.SCTB" Count="1" />
+	<BackLink DBID="/Maps/Multiplayer/MidOnly/Aram/Scoring.SCTB" Count="1" />
 	<achievType>Vendetta</achievType>
 	<evUI href="/UI/Events/Achievements/Vendetta.UIEV" />
 	<image href="/UI/Styles/Icons/Announcements/Vendetta.ITEX" />

@@ -6,6 +6,7 @@
 	<BackLink DBID="/Maps/Multiplayer/MOBA/Achievements/Chase.ACHIEV" Count="1" />
 	<BackLink DBID="/Maps/Multiplayer/MOBA/Tutorial/_.SCTB" Count="1" />
 	<BackLink DBID="/Maps/Multiplayer/PFmap/_.SCTB" Count="1" />
+	<BackLink DBID="/Maps/Multiplayer/MidOnly/Aram/Scoring.SCTB" Count="1" />
 	<achievType>Chase</achievType>
 	<distanceMult>0.25</distanceMult>
 	<evUI href="/UI/Events/Achievements/Chase.UIEV" />

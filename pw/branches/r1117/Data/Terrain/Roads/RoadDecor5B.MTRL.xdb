@@ -9,6 +9,7 @@
 	<BackLink DBID="/Maps/Multiplayer/MOBA/NightMap/_.ADMP" Count="10" />
 	<BackLink DBID="/Maps/Multiplayer/PFmap/_.ADMP" Count="2" />
 	<BackLink DBID="/Maps/Multiplayer/PFmap/Mod2/_.ADMP" Count="2" />
+	<BackLink DBID="/Maps/Multiplayer/MidOnly/Aram/_.ADMP" Count="5" />
 	<BorderMap>
 		<samplerState>
 			<addressU>Wrap</addressU>

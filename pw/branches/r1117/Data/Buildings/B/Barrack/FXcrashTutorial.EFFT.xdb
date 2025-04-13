@@ -4,6 +4,7 @@
 	<BackLink DBID="/Maps/Tutorial/Barracks/CenterB.QRTR" Count="1" />
 	<BackLink DBID="/Maps/Tutorial/Barracks/TopB.QRTR" Count="1" />
 	<BackLink DBID="/Maps/Multiplayer/MidOnly/Barracks/_B.QRTR" Count="1" />
+	<BackLink DBID="/Maps/Multiplayer/MidOnly/Aram/Barracks/_B.QRTR" Count="1" />
 	<component href="/Buildings/B/Barrack/FXcrashTutorial.PRXY" />
 	<deathType>Anim</deathType>
 	<enableCondition href="" />

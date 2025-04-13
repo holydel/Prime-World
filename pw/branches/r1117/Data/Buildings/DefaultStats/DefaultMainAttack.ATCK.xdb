@@ -10,6 +10,8 @@
 	<BackLink DBID="/Maps/Test/DesignArtTest/Buildings/_B.MBLD" Count="1" />
 	<BackLink DBID="/Maps/Tutorial/Mains/_A.MBLD" Count="1" />
 	<BackLink DBID="/Maps/Tutorial/Mains/_B.MBLD" Count="1" />
+	<BackLink DBID="/Maps/Multiplayer/MidOnly/Aram/Mains/_A.MBLD" Count="1" />
+	<BackLink DBID="/Maps/Multiplayer/MidOnly/Aram/Mains/_B.MBLD" Count="1" />
 	<activeCustomTrigger>true</activeCustomTrigger>
 	<allowChase>
 		<compiledString></compiledString>

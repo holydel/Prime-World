@@ -15,6 +15,7 @@
 	<BackLink DBID="/Maps/Test/CoopCreaturesTest/_.ADMP" Count="3" />
 	<BackLink DBID="/Maps/Test/DesignArtTest/_.ADMP" Count="3" />
 	<BackLink DBID="/Maps/Tutorial/_.ADMP" Count="2" />
+	<BackLink DBID="/Maps/Multiplayer/MidOnly/Aram/_.ADMP" Count="2" />
 	<abilities>
 		<Item href="" />
 		<Item href="/Buildings/Flagstaff/_Parent.FLAG" id="9A6BF2A9-8532-466B-B6CB-77D503D55DAF">

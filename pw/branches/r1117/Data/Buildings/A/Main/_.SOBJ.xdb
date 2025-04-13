@@ -7,6 +7,7 @@
 	<BackLink DBID="/Maps/Test/DesignArtTest/Buildings/_A.MBLD" Count="1" />
 	<BackLink DBID="/Maps/Test/Duel/_.ADMP" Count="1" />
 	<BackLink DBID="/Maps/Tutorial/Mains/_A.MBLD" Count="1" />
+	<BackLink DBID="/Maps/Multiplayer/MidOnly/Aram/Mains/_A.MBLD" Count="1" />
 	<attached>
 		<Item>
 			<attachFlags>15</attachFlags>
@@ -642,7 +643,7 @@
 				<rot>
 					<w>0.5</w>
 					<x>-1.026213E-05</x>
-					<y>2.189872E-07</y>
+					<y>2.189874E-07</y>
 					<z>-0.8660254</z>
 				</rot>
 				<scale>
@@ -668,7 +669,7 @@
 				<rot>
 					<w>0.5</w>
 					<x>-1.026213E-05</x>
-					<y>2.189872E-07</y>
+					<y>2.189874E-07</y>
 					<z>-0.8660254</z>
 				</rot>
 				<scale>
@@ -694,7 +695,7 @@
 				<rot>
 					<w>0.5180709</w>
 					<x>-1.257524E-05</x>
-					<y>1.369544E-07</y>
+					<y>1.36954E-07</y>
 					<z>-0.8553377</z>
 				</rot>
 				<scale>
@@ -746,7 +747,7 @@
 				<rot>
 					<w>0.5</w>
 					<x>-1.026213E-05</x>
-					<y>2.189872E-07</y>
+					<y>2.189874E-07</y>
 					<z>-0.8660254</z>
 				</rot>
 				<scale>
