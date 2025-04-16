@@ -13,7 +13,7 @@
 	<BackLink DBID="/Items/Talents/Class/Assassin/Ability_A3_2.TALENT" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/Assassin/Ability_A3_2u.TALENT" Count="1" />
 	<BackLink DBID="/Items/Talents/TalentKits/Redset5_7_Ultimate/Status_Redset5_7_Cooldown.APLR" Count="1" />
-	<BackLink DBID="/Items/Talents/Assassin.TALENTSET" Count="1" />
+	<BackLink DBID="/Items/Talents/Assassin.TALENTSET" Count="2" />
 	<activationConditions />
 	<activeCustomTrigger>true</activeCustomTrigger>
 	<allowChase>
@@ -186,12 +186,59 @@
 								<Item href="/Items/Talents/Class/Assassin/A3_LifeTimer.APLR" />
 								<Item href="/Items/Talents/Class/Assassin/status_fake_A3.APLR" />
 								<Item href="/Items/Talents/Class/Assassin/status_fake_A3_2.APLR" />
+								<Item href="/Items/Talents/Class/Assassin/Ability_A3.TALENT" id="FCC747D0-477F-4289-8F26-DCD95BC49B04">
+									<StatModApplicator>
+										<applyTarget>ApplicatorTarget</applyTarget>
+										<behaviorFlags>0</behaviorFlags>
+										<caption>Увеличивавем скорость атаки</caption>
+										<constraint>None</constraint>
+										<dontUpdate>false</dontUpdate>
+										<effect>
+											<Item href="" />
+											<Item href="" />
+										</effect>
+										<enabled>
+											<compiledString></compiledString>
+											<returnType>bool</returnType>
+											<sString>true</sString>
+										</enabled>
+										<formulaName></formulaName>
+										<lifeTime>
+											<compiledString></compiledString>
+											<returnType>float</returnType>
+											<sString>-1.0</sString>
+										</lifeTime>
+										<LoggingEvent>-1</LoggingEvent>
+										<modifier>
+											<addValue>
+												<compiledString></compiledString>
+												<returnType>float</returnType>
+												<sString>0.0f</sString>
+											</addValue>
+											<multValue>
+												<compiledString></compiledString>
+												<returnType>float</returnType>
+												<sString>1.0f</sString>
+											</multValue>
+											<stat>Life</stat>
+											<topModifier>false</topModifier>
+											<variable></variable>
+										</modifier>
+										<providerName></providerName>
+										<startCondition>
+											<compiledString></compiledString>
+											<returnType>bool</returnType>
+											<sString>true</sString>
+										</startCondition>
+										<statModName></statModName>
+									</StatModApplicator>
+								</Item>
 								<Item href="/Items/Talents/Class/Assassin/Ability_A3.TALENT" id="5CF75F2C-337E-4B1C-B655-3224CA9D474A">
 									<EyeApplicator>
 										<applyTarget>ApplicatorTarget</applyTarget>
 										<behaviorFlags>0</behaviorFlags>
 										<cancelObstacles>false</cancelObstacles>
-										<caption></caption>
+										<caption>Видно в тумане войны</caption>
 										<effect>
 											<Item href="" />
 											<Item href="" />
@@ -272,6 +319,53 @@
 							<unstackableWith href="" />
 						</StatusApplicator>
 					</Item>
+					<Item href="/Items/Talents/Class/Assassin/Ability_A3.TALENT" id="DDDC7AF3-5DFA-46EC-BDD8-E9C8E6A2455B">
+						<StatModApplicator>
+							<applyTarget>AbilityOwner</applyTarget>
+							<behaviorFlags>0</behaviorFlags>
+							<caption>Увеличиваем скорость автоатаки</caption>
+							<constraint>None</constraint>
+							<dontUpdate>false</dontUpdate>
+							<effect>
+								<Item href="" />
+								<Item href="" />
+							</effect>
+							<enabled>
+								<compiledString></compiledString>
+								<returnType>bool</returnType>
+								<sString>true</sString>
+							</enabled>
+							<formulaName></formulaName>
+							<lifeTime>
+								<compiledString></compiledString>
+								<returnType>float</returnType>
+								<sString>-1.0</sString>
+							</lifeTime>
+							<LoggingEvent>-1</LoggingEvent>
+							<modifier>
+								<addValue>
+									<compiledString>FREAAAABAAAAHQAAAEhlcm9fQXR0YWNrU3BlZWQAVYvsi0UMUItNCFFoAAAAAItVEIsCi00Qi1BQ/9Jdww==</compiledString>
+									<returnType>float</returnType>
+									<sString>cHero_AttackSpeed</sString>
+								</addValue>
+								<multValue>
+									<compiledString>FQAAAAAAAAAAVYvs2e5dwwAAAAA=</compiledString>
+									<returnType>float</returnType>
+									<sString>0</sString>
+								</multValue>
+								<stat>Life</stat>
+								<topModifier>false</topModifier>
+								<variable>ExplicitAttacksPerSecond</variable>
+							</modifier>
+							<providerName></providerName>
+							<startCondition>
+								<compiledString>FQAAAAAAAAAAVYvssAFdww==</compiledString>
+								<returnType>bool</returnType>
+								<sString>true</sString>
+							</startCondition>
+							<statModName></statModName>
+						</StatModApplicator>
+					</Item>
 					<Item href="/Items/Talents/Class/Assassin/status_fake_self_A3.APLR" />
 					<Item href="/Items/Talents/Class/Assassin/status_fake_self_A3_2.APLR" />
 				</applicators>
@@ -300,7 +394,7 @@
 					<sString>true</sString>
 				</enabled>
 				<flags>0</flags>
-				<formulaName></formulaName>
+				<formulaName>A3AssasinStatus</formulaName>
 				<image href="" />
 				<lifeTime>
 					<compiledString>FQwAAAABAAAAGAAAAEEzX0R1cmF0aW9uAFWL7ItFDFCLTQhRaAAAAACLVRCLAotNEItQUP/SXcM=</compiledString>
@@ -431,6 +525,26 @@
 				</Item>
 				<Item href="/Items/Talents/Class/Assassin/const_A0_SUP_2_Inc_Resp_Time" />
 				<Item href="/Items/Talents/Class/Assassin/const_A0_SUP_2_Appl_Duration" />
+				<Item href="/Items/Talents/Class/Assassin/Ability_A3.TALENT" id="C15A14E7-9713-4ABE-A496-25FC7430727F">
+					<UnitConstant>
+						<name>Hero_AttackSpeed</name>
+						<var>
+							<compiledString>FQAAAAAEAAAACQAAAB8AAAAlAAAAPQAAAFWL7IPsCFHZBWMAAADZHCSLRQiLEItNCItCHP/Q3A1bAAAA3AVTAAAA2V382UX8UdkcJOgvAAAAg8QI3A1LAAAA2V342UX4i+VdwwAAAAAAAPg/AAAAAClc3z8AAADgmuZtPwAAAEBVi+xR2UUI2UUM3tnf4PbEQXUI2UUI2V386wbZRQzZXfzZRfyL5V3D</compiledString>
+							<returnType>float</returnType>
+							<sString>1.5 * min(sAttackSpeed * 0.00365f + 0.49f, 2)</sString>
+						</var>
+					</UnitConstant>
+				</Item>
+				<Item href="/Items/Talents/Class/Assassin/Ability_A3.TALENT" id="1A8B6967-5756-48F9-A833-1D108B957B40">
+					<UnitConstant>
+						<name>A3HealPerAttack</name>
+						<var>
+							<compiledString>FQAAAAACAAAACAAAABIAAABVi+xqAVHZBUQAAADZHCRR2QVAAAAA2RwkagCLRQiLEItNCIuCMAEAAP/QUdkcJGoBi00QixGLTRCLQmD/0F3DAABIQgAAFkM=</compiledString>
+							<returnType>float</returnType>
+							<sString>damageScale(sStrength, 50, 150)</sString>
+						</var>
+					</UnitConstant>
+				</Item>
 			</vars>
 		</UnitConstantsContainer>
 	</constants>

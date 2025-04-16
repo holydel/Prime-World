@@ -170,6 +170,76 @@
 						</startCondition>
 					</MoveToApplicator>
 				</Item>
+				<Item href="/Items/Talents/Class/Vampire/A2_BlinkToTarget.APLR" id="FA30582C-9DA2-4DF7-A03B-D84DB40DC6AE">
+					<VariableProxyApplicator>
+						<applicators>
+							<Item>
+								<applicator href="/Items/Talents/Class/Vampire/A2_BlinkToTarget.APLR" id="DC2BAD58-E4E5-4D23-B139-2113E6DD31B8">
+									<DamageApplicator>
+										<applyTarget>ApplicatorTarget</applyTarget>
+										<cancelInvisibility>false</cancelInvisibility>
+										<caption>урон</caption>
+										<damage>
+											<compiledString>FRIAAAABAAAAHgAAAEEyX0RhbWFnZU1hdGVyaWFsAFWL7ItFDFCLTQhRaAAAAACLVRCLAotNEItQUP/SXcM=</compiledString>
+											<returnType>float</returnType>
+											<sString>cA2_DamageMaterial</sString>
+										</damage>
+										<damageMode>4</damageMode>
+										<damageType>Material</damageType>
+										<enabled>
+											<compiledString></compiledString>
+											<returnType>bool</returnType>
+											<sString>true</sString>
+										</enabled>
+										<formulaName></formulaName>
+										<LoggingEvent>-1</LoggingEvent>
+										<providerName></providerName>
+										<timeLimiter>-1</timeLimiter>
+										<uiEvent href="/UI/Events/CommonEvents/EventDamageDealed_Material.UIEV" />
+									</DamageApplicator>
+								</applicator>
+								<variableNames>
+									<Item>damageDealed</Item>
+								</variableNames>
+							</Item>
+							<Item>
+								<applicator href="/Items/Talents/Class/Vampire/A2_BlinkToTarget.APLR" id="FC98A391-BFBD-4D0C-B332-27D5F874595F">
+									<HealApplicator>
+										<amount>
+											<compiledString>FSQAAAADAAAAQwAAAFUAAABuAAAAZGFtYWdlRGVhbGVkAAAAAEEwX0xpZmVEcmFpblBlcmNlbnQAVYvsg+wQi0UQixCLTRCLQkj/0IlF/ItNDFGLVQhSaBAAAACLRRCLEItNEItCUP/QaAAAAACLTfyLEYtN/ItCVN1d9P/Q3E303DV8AAAA2V3w2UXwi+VdwwAAAAAAAFlA</compiledString>
+											<returnType>float</returnType>
+											<sString>appl.parent.GetVariable("damageDealed") * cA0_LifeDrainPercent / 100</sString>
+										</amount>
+										<applyTarget>AbilityOwner</applyTarget>
+										<caption>heal</caption>
+										<enabled>
+											<compiledString></compiledString>
+											<returnType>bool</returnType>
+											<sString>true</sString>
+										</enabled>
+										<formulaName></formulaName>
+										<healTarget>Health</healTarget>
+										<ignoreHealingMods>false</ignoreHealingMods>
+										<LoggingEvent>-1</LoggingEvent>
+										<providerName></providerName>
+										<uiEvent href="/UI/Events/CommonEvents/EventHeal.UIEV" />
+									</HealApplicator>
+								</applicator>
+								<variableNames />
+							</Item>
+						</applicators>
+						<applyTarget>ApplicatorTarget</applyTarget>
+						<caption>Физ. урон и отхил</caption>
+						<enabled>
+							<compiledString></compiledString>
+							<returnType>bool</returnType>
+							<sString>true</sString>
+						</enabled>
+						<formulaName></formulaName>
+						<LoggingEvent>-1</LoggingEvent>
+						<providerName></providerName>
+					</VariableProxyApplicator>
+				</Item>
 				<Item href="/Items/Talents/Class/Vampire/A2_BlinkToTarget.APLR" id="08C2F62A-E997-4C91-B9A0-7EF144D8CB8E">
 					<TauntApplicator>
 						<applyTarget>AbilityOwner</applyTarget>

@@ -585,9 +585,9 @@
 								<Item href="/Maps/Test/PlaneMap/GiftGlyph/PrimeRune.GLPH" id="5F32D81E-00BD-4F95-867D-4A4B07DC56EA">
 									<SpellSwitchApplicator>
 										<activeSpellIndex>
-											<compiledString>FQAAAAAAAAAAVYvsg+wMi0UIixCLTQiLgrgAAAD/0ItNCIsRi00Ii4K8AAAA3V34/9DcXfjf4PbEQXoJx0X0AAAAAOsHx0X0AQAAAItF9IvlXcM=</compiledString>
+											<compiledString>FQAAAAAAAAAAVYvsg+wUVmoPi0UIixCLTQiLgiwBAAD/0A+28GoQi00IixGLTQiLgiwBAAD/0A+2yDvxfQzHRfwBAAAA6YAAAABqD4tVCIsCi00Ii5AsAQAA/9IPtvBqEItFCIsQi00Ii4IsAQAA/9APtsg78X4Jx0X4AAAAAOtDi1UIiwKLTQiLkLgAAAD/0otFCIsQi00Ii4K8AAAA3V3w/9DcXfDf4PbEQXoJx0XsAQAAAOsHx0XsAAAAAItN7IlN+ItV+IlV/ItF/F6L5V3D</compiledString>
 											<returnType>int</returnType>
-											<sString>sBaseStrength&gt;=sBaseIntellect?0:1</sString>
+											<sString>(pFirst-&gt;IsRecommended(15) &lt; pFirst-&gt;IsRecommended(16) ? 1 : pFirst-&gt;IsRecommended(15) &gt; pFirst-&gt;IsRecommended(16) ? 0 : sBaseStrength&gt;=sBaseIntellect)</sString>
 										</activeSpellIndex>
 										<applyTarget>ApplicatorTarget</applyTarget>
 										<caption></caption>
