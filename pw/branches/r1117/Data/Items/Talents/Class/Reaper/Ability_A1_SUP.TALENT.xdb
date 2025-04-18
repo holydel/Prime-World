@@ -69,9 +69,9 @@
 					<UnitConstant>
 						<name>A1_SUP_AddDamagePercent</name>
 						<var>
-							<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAAAgQg==</compiledString>
+							<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAACgQQ==</compiledString>
 							<returnType>float</returnType>
-							<sString>40</sString>
+							<sString>20</sString>
 						</var>
 					</UnitConstant>
 				</Item>

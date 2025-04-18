@@ -85,9 +85,9 @@
 					<UnitConstant>
 						<name>A3HealPerAttack</name>
 						<var>
-							<compiledString>FQAAAAACAAAACAAAABIAAABVi+xqAVHZBUQAAADZHCRR2QVAAAAA2RwkagCLRQiLEItNCIuCMAEAAP/QUdkcJGoBi00QixGLTRCLQmD/0F3DAABIQgAAFkM=</compiledString>
+							<compiledString>FTQAAAAEAAAAOwAAAFQAAACKAAAAqgAAAEFzc2Fzc2luX0EzAEFzc2Fzc2luX0EzAEFzc2Fzc2luX0EzAEEzSGVhbFBlckF0dGFjawBVi+yD7BBoAAAAAItFCIsQi00Ii4KoAQAA/9CFwHQqaAwAAACLTQiLEYtNCIuCqAEAAP/QiUX8i038ixGLTfyLQgT/0IhF++sExkX7AA+2TfuFyXQ3aBgAAACLVQiLAotNCIuQqAEAAP/SiUX0i0UMUItNCFFoJAAAAItV9IsCi030i1BQ/9LZXfDrBdnu2V3w2UXwi+VdwwAAAAA=</compiledString>
 							<returnType>float</returnType>
-							<sString>damageScale(sStrength, 50, 150)</sString>
+							<sString>talconst("Assassin_A3","A3HealPerAttack")</sString>
 						</var>
 					</UnitConstant>
 				</Item>
