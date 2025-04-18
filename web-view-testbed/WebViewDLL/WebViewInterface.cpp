@@ -24,3 +24,8 @@ __declspec(dllexport) void FreeWebView(void* handle)
 {
 
 }
+
+__declspec(dllexport) void UpdateWebView(void* handle)
+{
+	UpdateWebViewImpl(handle);
+}

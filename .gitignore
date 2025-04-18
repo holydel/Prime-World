@@ -71,3 +71,12 @@ Client-Synchronizer-Server/pythonProject/sync_log.txt
 Client-Synchronizer-Server/pythonProject/api_key.txt
 rating/game_session.json
 rating/rating_json.txt
+web-view-testbed/WebView/.vs
+web-view-testbed/WebView/Debug
+web-view-testbed/WebView/packages
+web-view-testbed/WebView/WebView/Debug
+web-view-testbed/WebView/x64
+web-view-testbed/WebViewDLL/Debug
+web-view-testbed/WebViewDLL/x64
+web-view-testbed/WebView/WebView/x64
+ConsoleApplication1

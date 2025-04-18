@@ -6,70 +6,99 @@
 
 LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 
+WebViewInstance* gWebViewInstance = nullptr;
 
-
-int WINAPI wWinMain2(HINSTANCE hInstance, PWSTR nCmdLine, int nCmdShow)
+//int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
+int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR nCmdLine, int nCmdShow)
 {
 	const LPCSTR CLASS_NAME = "WindowClass";
-	WNDCLASSA wc = { };
-	wc.lpfnWndProc = WindowProc;
-	wc.lpszClassName = CLASS_NAME;
-	wc.hInstance = hInstance;
-	RegisterClassA(&wc);
+	WNDCLASSEXA wcex = {};
+	wcex.cbSize = sizeof(WNDCLASSEX);
+
+	wcex.style = CS_HREDRAW | CS_VREDRAW;
+	wcex.lpfnWndProc = WindowProc;
+	wcex.cbClsExtra = 0;
+	wcex.cbWndExtra = 0;
+	wcex.hInstance = hInstance;
+	wcex.hCursor = LoadCursor(nullptr, IDC_ARROW);
+	wcex.hbrBackground = (HBRUSH)(COLOR_WINDOW + 2);
+
+	wcex.lpszClassName = CLASS_NAME;
+	RegisterClassExA(&wcex);
+
+
+
 	HWND hwnd = CreateWindowExA(
-		0,
-		CLASS_NAME,
+		WS_EX_CONTROLPARENT, CLASS_NAME,
 		"My First Window",
-		WS_OVERLAPPEDWINDOW,
-		200,
-		200,
-		800,
-		600,
+		WS_OVERLAPPEDWINDOW | WS_VISIBLE,
+		CW_USEDEFAULT,
+		0,
+		CW_USEDEFAULT,
+		0,
 		NULL,
 		NULL,
 		hInstance,
 		NULL);
 
+	//WS_EX_CONTROLPARENT, GetWindowClass(), szTitle, WS_OVERLAPPEDWINDOW, CW_USEDEFAULT,
+	//	0, CW_USEDEFAULT, 0, nullptr, nullptr, g_hInstance, nullptr
+
 	if (hwnd == 0) {
 		return 0;
 	}
 
-	WebViewInstance webView(hwnd);
+	
 	//inhect webview
 	ShowWindow(hwnd, nCmdShow);
+	UpdateWindow(hwnd);
 	nCmdShow = 1;
 	MSG msg = { };
+	gWebViewInstance = new WebViewInstance(hwnd);
 	while (GetMessage(&msg, NULL, 0, 0)) {
 		TranslateMessage(&msg);
-		DispatchMessage(&msg);
+		DispatchMessageA(&msg);
 	}
 	return 0;
 }
 
 
-int main()
-{
-	return wWinMain2(GetModuleHandleA(0), 0, SW_SHOW);
-}
+//int main()
+//{
+//	return wWinMain2(GetModuleHandleA(0), 0, SW_SHOW);
+//}
 
-
+HWND hHwndButton = 0;
 
 LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
 	switch (uMsg) {
-	case WM_DESTROY: {}PostQuitMessage(0); return 0;
-	case WM_PAINT:
+		//case WM_CREATE:
+		//	gWebViewInstance = new WebViewInstance(hwnd);
+
+		//	hHwndButton = CreateWindowA(
+		//		"BUTTON", "Click Me", WS_VISIBLE | WS_CHILD | BS_PUSHBUTTON,
+		//		50, 50, 100, 50, hwnd, NULL, NULL, NULL);
+		//	break;
+		//case WM_DESTROY: {}PostQuitMessage(0); return 0;
+		//case WM_PAINT:
+		//{
+		//	PAINTSTRUCT ps;
+		//	HDC hdc = BeginPaint(hwnd, &ps);
+		//	//FillRect(hdc, &ps.rcPaint, (HBRUSH)(COLOR_WINDOW + 5));
+		//	EndPaint(hwnd, &ps);
+		//}return 0;
+		//case WM_CLOSE:
+		//{
+		//	if (MessageBoxA(hwnd, "Close Window?", "Close", MB_OKCANCEL) == IDOK) {
+		//		DestroyWindow(hwnd);
+		//	}
+		//}return 0;
+		//}
+	case WM_COMMAND:
 	{
-		PAINTSTRUCT ps;
-		HDC hdc = BeginPaint(hwnd, &ps);
-		FillRect(hdc, &ps.rcPaint, (HBRUSH)(COLOR_WINDOW + 5));
-		EndPaint(hwnd, &ps);
-	}return 0;
-	case WM_CLOSE:
-	{
-		if (MessageBoxA(hwnd, "Close Window?", "Close", MB_OKCANCEL) == IDOK) {
-			DestroyWindow(hwnd);
-		}
-	}return 0;
+		// Handle commands here
+		return 0;
+	}
 	}
 	return DefWindowProc(hwnd, uMsg, wParam, lParam);
 }
