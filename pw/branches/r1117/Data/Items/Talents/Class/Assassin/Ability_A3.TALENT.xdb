@@ -694,6 +694,16 @@
 						</var>
 					</UnitConstant>
 				</Item>
+				<Item href="/Items/Talents/Class/Assassin/Ability_A3.TALENT" id="871485AF-2AF9-4296-824F-5F982D376AD1">
+					<UnitConstant>
+						<name>Hero_AttackSpeedTT</name>
+						<var>
+							<compiledString>FQAAAAAEAAAACQAAAB8AAAAlAAAAPQAAAFWL7IPsCFHZBWMAAADZHCSLRQiLEItNCItCHP/Q3A1bAAAA3AVTAAAA2V382UX8UdkcJOgvAAAAg8QI3A1LAAAA2V342UX4i+VdwwAAAAAAAPg/AAAAAClc3z8AAADgmuZtPwAAAEBVi+xR2UUI2UUM3tnf4PbEQXUI2UUI2V386wbZRQzZXfzZRfyL5V3D</compiledString>
+							<returnType>float</returnType>
+							<sString>min(sAttackSpeed * 0.00365f + 0.49f, 2) *1.5</sString>
+						</var>
+					</UnitConstant>
+				</Item>
 			</vars>
 		</UnitConstantsContainer>
 	</constants>

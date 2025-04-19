@@ -99,7 +99,7 @@
 	<BackLink DBID="/Items/Talents/Class/Ent/Ability_A3.TALENT" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/Ent/Ability_A4.TALENT" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/Faceless/A1Damage.APLR" Count="1" />
-	<BackLink DBID="/Items/Talents/Class/Faceless/Ability1.TALENT" Count="4" />
+	<BackLink DBID="/Items/Talents/Class/Faceless/Ability1.TALENT" Count="6" />
 	<BackLink DBID="/Items/Talents/Class/Faceless/Ability3.TALENT" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/Fairy/A2_Strike.APLR" Count="1" />
 	<BackLink DBID="/Items/Talents/Class/Fairy/status_A1_battlefairys.APLR" Count="1" />
