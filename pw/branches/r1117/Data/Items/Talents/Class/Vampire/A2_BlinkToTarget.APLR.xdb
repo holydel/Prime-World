@@ -231,14 +231,160 @@
 						<applyTarget>ApplicatorTarget</applyTarget>
 						<caption>Физ. урон и отхил</caption>
 						<enabled>
-							<compiledString></compiledString>
+							<compiledString>FQAAAAAAAAAAVYvsMsBdww==</compiledString>
 							<returnType>bool</returnType>
-							<sString>true</sString>
+							<sString>false</sString>
 						</enabled>
 						<formulaName></formulaName>
 						<LoggingEvent>-1</LoggingEvent>
 						<providerName></providerName>
 					</VariableProxyApplicator>
+				</Item>
+				<Item href="/Items/Talents/Class/Vampire/A2_BlinkToTarget.APLR" id="D8C41AC2-0C8A-4772-8EA2-F7E13549591A">
+					<StatusApplicator>
+						<applicators>
+							<Item href="/Items/Talents/Class/Vampire/A2_BlinkToTarget.APLR" id="E0911426-0BCD-48EB-AB34-8FE2FEE27571">
+								<StatModApplicator>
+									<applyTarget>AbilityOwner</applyTarget>
+									<behaviorFlags>144</behaviorFlags>
+									<caption>Баф Стойкости</caption>
+									<constraint>None</constraint>
+									<dontUpdate>true</dontUpdate>
+									<effect>
+										<Item href="" />
+										<Item href="" />
+									</effect>
+									<enabled>
+										<compiledString>FQAAAAAAAAAAVYvsg+wMi0UIixCLTQiLgkABAAD/0ItNCIsRi00Ii4JEAQAA3V34/9DcXfjf4PbEBXoJx0X0AQAAAOsHx0X0AAAAAIpF9IvlXcM=</compiledString>
+										<returnType>bool</returnType>
+										<sString>sStamina&gt;sWill</sString>
+									</enabled>
+									<formulaName></formulaName>
+									<lifeTime>
+										<compiledString></compiledString>
+										<returnType>float</returnType>
+										<sString>-1.0</sString>
+									</lifeTime>
+									<LoggingEvent>-1</LoggingEvent>
+									<modifier>
+										<addValue>
+											<compiledString>FQ8AAAABAAAAGwAAAEEydV9BZGREZWZlbmNlAFWL7ItFDFCLTQhRaAAAAACLVRCLAotNEItQUP/SXcM=</compiledString>
+											<returnType>float</returnType>
+											<sString>cA2u_AddDefence</sString>
+										</addValue>
+										<multValue>
+											<compiledString></compiledString>
+											<returnType>float</returnType>
+											<sString>1.0f</sString>
+										</multValue>
+										<stat>Stamina</stat>
+										<topModifier>false</topModifier>
+										<variable></variable>
+									</modifier>
+									<providerName></providerName>
+									<startCondition>
+										<compiledString></compiledString>
+										<returnType>bool</returnType>
+										<sString>true</sString>
+									</startCondition>
+									<statModName></statModName>
+								</StatModApplicator>
+							</Item>
+							<Item href="/Items/Talents/Class/Vampire/A2_BlinkToTarget.APLR" id="C04B8E00-5BCE-4D4C-9B81-F33EC431A230">
+								<StatModApplicator>
+									<applyTarget>AbilityOwner</applyTarget>
+									<behaviorFlags>144</behaviorFlags>
+									<caption>Баф Воли</caption>
+									<constraint>None</constraint>
+									<dontUpdate>true</dontUpdate>
+									<effect>
+										<Item href="" />
+										<Item href="" />
+									</effect>
+									<enabled>
+										<compiledString>FQAAAAAAAAAAVYvsg+wMi0UIixCLTQiLgkABAAD/0ItNCIsRi00Ii4JEAQAA3V34/9DcXfjf4PbEAXUJx0X0AQAAAOsHx0X0AAAAAIpF9IvlXcM=</compiledString>
+										<returnType>bool</returnType>
+										<sString>sStamina&lt;=sWill</sString>
+									</enabled>
+									<formulaName></formulaName>
+									<lifeTime>
+										<compiledString></compiledString>
+										<returnType>float</returnType>
+										<sString>-1.0</sString>
+									</lifeTime>
+									<LoggingEvent>-1</LoggingEvent>
+									<modifier>
+										<addValue>
+											<compiledString>FQ8AAAABAAAAGwAAAEEydV9BZGREZWZlbmNlAFWL7ItFDFCLTQhRaAAAAACLVRCLAotNEItQUP/SXcM=</compiledString>
+											<returnType>float</returnType>
+											<sString>cA2u_AddDefence</sString>
+										</addValue>
+										<multValue>
+											<compiledString></compiledString>
+											<returnType>float</returnType>
+											<sString>1.0f</sString>
+										</multValue>
+										<stat>Will</stat>
+										<topModifier>false</topModifier>
+										<variable></variable>
+									</modifier>
+									<providerName></providerName>
+									<startCondition>
+										<compiledString></compiledString>
+										<returnType>bool</returnType>
+										<sString>true</sString>
+									</startCondition>
+									<statModName></statModName>
+								</StatModApplicator>
+							</Item>
+						</applicators>
+						<applyTarget>AbilityOwner</applyTarget>
+						<behaviorFlags>144</behaviorFlags>
+						<caption>статус Усиление</caption>
+						<customCounter>
+							<compiledString></compiledString>
+							<returnType>int</returnType>
+							<sString>0</sString>
+						</customCounter>
+						<customProgress>
+							<compiledString></compiledString>
+							<returnType>float</returnType>
+							<sString>-1.0</sString>
+						</customProgress>
+						<description textref="/Items/Talents/Class/Vampire/A2_BlinkToTarget.APLR_d8c41ac20c8a47728ea2f7e13549591a_description.txt" />
+						<dispellPriority>Medium</dispellPriority>
+						<effect>
+							<Item href="" />
+							<Item href="" />
+						</effect>
+						<enabled>
+							<compiledString>FRgAAAACAAAAHwAAADgAAABWYW1waXJlX0EydQBWYW1waXJlX0EydQBVi+yD7AhoAAAAAItFCIsQi00Ii4KoAQAA/9CFwHQqaAwAAACLTQiLEYtNCIuCqAEAAP/QiUX8i038ixGLTfyLQgT/0IhF++sExkX7AIpF+4vlXcM=</compiledString>
+							<returnType>bool</returnType>
+							<sString>tal("Vampire_A2u")</sString>
+						</enabled>
+						<flags>0</flags>
+						<formulaName></formulaName>
+						<image href="/UI/Styles/Icons/Heroes/Vampire/A2.ITEX" />
+						<lifeTime>
+							<compiledString>FQAAAAABAAAABQAAAFWL7NkFCwAAAF3DAACgQA==</compiledString>
+							<returnType>float</returnType>
+							<sString>5</sString>
+						</lifeTime>
+						<LoggingEvent>-1</LoggingEvent>
+						<name textref="/Items/Talents/Class/Vampire/A2_BlinkToTarget.APLR_d8c41ac20c8a47728ea2f7e13549591a_name.txt" />
+						<power>0</power>
+						<providerName></providerName>
+						<stackableAcrossUnits>Unstackable</stackableAcrossUnits>
+						<stackCount>0</stackCount>
+						<startCondition>
+							<compiledString></compiledString>
+							<returnType>bool</returnType>
+							<sString>true</sString>
+						</startCondition>
+						<statusPosition>0</statusPosition>
+						<stopBehaviour>StopByTime</stopBehaviour>
+						<unstackableWith href="" />
+					</StatusApplicator>
 				</Item>
 				<Item href="/Items/Talents/Class/Vampire/A2_BlinkToTarget.APLR" id="08C2F62A-E997-4C91-B9A0-7EF144D8CB8E">
 					<TauntApplicator>
