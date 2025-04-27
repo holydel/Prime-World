@@ -1190,6 +1190,7 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
   }
 
   std::string protocolLineStr;
+
   if(CmdLineLite::Instance().ArgsCount() < 2) {
     WebPostRequest request(L"127.0.0.1", L"/getConnectionData", 34980, 0);
     std::string protocolResponse = request.SendPostRequest("getConnectionData");
@@ -1198,13 +1199,13 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
 
     if (parsedValue.empty()) {
       systemLog( NLogg::LEVEL_MESSAGE ) << "Invalid protocol response: \"" << protocolResponse.c_str() << "\"" << endl;
-      ShowLocalizedErrorMB( L"StartViaLauncher", L"Invalid arguments [invalid socket protocol]! Please start the game via the launcher." );
+      //ShowLocalizedErrorMB( L"StartViaLauncher", L"Invalid arguments [invalid socket protocol]! Please start the game via the launcher." );
       return 0;
     }
     Json::Value protocolValue = parsedValue.get("protocol", "");
     if (protocolValue.asString().empty()) {
       systemLog( NLogg::LEVEL_MESSAGE ) << "Empty protocol response: \"" << protocolResponse.c_str() << "\"" << endl;
-      ShowLocalizedErrorMB( L"StartViaLauncher", L"Invalid arguments [empty socket protocol]! Please start the game via the launcher." );
+      //ShowLocalizedErrorMB( L"StartViaLauncher", L"Invalid arguments [empty socket protocol]! Please start the game via the launcher." );
       return 0;
     }
 
@@ -1257,8 +1258,8 @@ int __stdcall PseudoWinMain( HINSTANCE hInstance, HWND hWnd, LPTSTR lpCmdLine, S
 
     WebLauncherPostRequest::WebLoginResponse response;
     if (protocolMethod == "runGame" || protocolMethod == "reconnect") {
-      WebLauncherPostRequest cprequest;
-      cprequest.CreateDebugSession();
+      //WebLauncherPostRequest cprequest;
+      //cprequest.CreateDebugSession();
       WebLauncherPostRequest rprequest;
       response = rprequest.GetSessionData(protocolToken);
       if (response.retCode == WebLauncherPostRequest::LoginResponse_WEB_FAILED_CONNECTION) {
